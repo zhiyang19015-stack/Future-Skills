@@ -1,0 +1,16 @@
+input_id,label,value,unit,kind,source_name,source_url,source_date,note
+server_price_usd,"Server: DigitalOcean Basic Droplet, 1 vCPU, 1 GiB memory, 25 GiB disk, 1,000 GiB transfer",6.00,USD per month,published_price,DigitalOcean Droplet pricing,https://www.digitalocean.com/pricing/droplets,2026-11-14,Singapore is one of its regions; the 512 MiB plan is USD 4.00 and the 2 GiB plan USD 12.00
+server_memory_mb,Memory of that server,1024,MB,published_price,DigitalOcean Droplet pricing,https://www.digitalocean.com/pricing/droplets,2026-11-14,
+server_transfer_gb,Transfer included with that server,1000,GB per month,published_price,DigitalOcean Droplet pricing,https://www.digitalocean.com/pricing/droplets,2026-11-14,
+llm_input_usd,Language model input: gpt-oss-120b on Fireworks AI (serverless),0.15,USD per 1M tokens,published_price,Fireworks AI pricing,https://fireworks.ai/pricing,2026-11-14,Only used for the optional wording of "Why this score?"
+llm_output_usd,Language model output: gpt-oss-120b on Fireworks AI (serverless),0.60,USD per 1M tokens,published_price,Fireworks AI pricing,https://fireworks.ai/pricing,2026-11-14,
+usd_myr,US dollar in ringgit (selling rate),4.09,MYR per USD,published_price,Bank Negara Malaysia exchange rates (open API),https://www.bnm.gov.my/exchange-rates,2026-11-13,11:30 session
+cpu_slowdown,A shared server core against the laptop core the app was timed on,3,times slower,assumption,Our assumption,https://github.com/zhiyang19015-stack/Future-Skills/blob/main/docs/feasibility.md,2026-11-14,Not measured on a server; replace it with a timing on the real machine
+journey_minutes,Time a person takes to walk the six steps once,10,minutes,assumption,Our assumption,https://github.com/zhiyang19015-stack/Future-Skills/blob/main/docs/feasibility.md,2026-11-14,
+busy_share,Share of a core we plan to use at the peak,0.7,share,assumption,Our assumption,https://github.com/zhiyang19015-stack/Future-Skills/blob/main/docs/feasibility.md,2026-11-14,
+class_size,People using it at the same moment in one workshop,40,people,assumption,Our assumption,https://github.com/zhiyang19015-stack/Future-Skills/blob/main/docs/feasibility.md,2026-11-14,
+peak_share,Share of a month's users online at the busiest moment,0.01,share,assumption,Our assumption,https://github.com/zhiyang19015-stack/Future-Skills/blob/main/docs/feasibility.md,2026-11-14,Never taken below one workshop
+sessions_per_user,Full journeys per person per month,1,sessions,assumption,Our assumption,https://github.com/zhiyang19015-stack/Future-Skills/blob/main/docs/feasibility.md,2026-11-14,
+explanations_per_session,"""Why this score?"" texts a person opens per journey",3,texts,assumption,Our assumption,https://github.com/zhiyang19015-stack/Future-Skills/blob/main/docs/feasibility.md,2026-11-14,
+chars_per_token,Characters per token for English text,4,characters,assumption,Our assumption,https://github.com/zhiyang19015-stack/Future-Skills/blob/main/docs/feasibility.md,2026-11-14,A common rule of thumb; the provider's count is what is billed
+upkeep_hours,"Hands-on upkeep: DOSM workbook each quarter, reviewing a new Economic Index release, checking links",6,hours per quarter,assumption,Our assumption,https://github.com/zhiyang19015-stack/Future-Skills/blob/main/docs/feasibility.md,2026-11-14,Time not priced: who does it is an open decision

@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 SOURCED = ("fields.csv", "occupations.csv", "elements.csv", "technologies.csv", "mycol_map.csv", "sdg_map.csv",
-           "skill_topic_map.csv", "learning_resources.csv", "onet/skill_work_activities.csv")
+           "skill_topic_map.csv", "learning_resources.csv", "onet/skill_work_activities.csv", "cost_inputs.csv")
 RESOURCE_FORMATS = {"course", "catalogue", "programme", "video"}
 SDG_TARGET = re.compile(r"^(1[0-7]|[1-9])\.([0-9]{1,2}|[a-g])$")
 
