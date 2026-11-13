@@ -17,12 +17,15 @@ The parameter:
 
 Occupation outlook, 0-100:
     pace    = adoption x tempo                                           (at most 1)
-    shift   = BUILDER_SHIFT x (builder - average) - EXPOSURE_SHIFT x (ai_share - average)
+    shift   = BUILDER_SHIFT x (builder - average) - EXPOSURE_SHIFT x gap
+    gap     = ai_share - average, or max(0, ai_share - average) when the share is thin
               (index points per 100 points of difference, at pace 1; averages over every occupation)
     outlook = demand + pace x shift
-  In words: AI adoption moves demand between occupations, away from those whose tasks are handed
-  to AI more than the average occupation and towards those handed over less and those that build
-  AI. It says nothing about total hiring, which nobody can measure yet.
+  In words: AI adoption moves demand away from occupations whose tasks are handed to AI more than
+  the average occupation, towards those that build AI and those measured to hand over less. A thin
+  share (few of the occupation's own tasks seen) earns nothing below the average: the Economic
+  Index measures chat-AI use only, so a low share there says nothing about ATMs, robots or
+  self-service machines. It says nothing about total hiring, which nobody can measure yet.
 
 Skill weight (the skill fit in matching.py, and "rising / declining" on the Radar):
     drift   = SKILL_BUILDER_SHIFT x builder - SKILL_SHIFT x (handoff - typical AI use) / 100
@@ -101,14 +104,20 @@ def role_signals(role: dict, data: dict) -> dict:
         "ai_share": ai.get("ai_share") if ai.get("ai_share") is not None else data["ai"]["reference"]["role_ai_share"],
         "ai_share_low": ai.get("ai_share_low"), "ai_share_high": ai.get("ai_share_high"),
         "has_ai_share": ai.get("ai_share") is not None,
+        "thin": ai.get("thin_evidence", True),
         "builder": ai.get("builder_share", 0.0),
     }
 
 
 def outlook_value(demand: float, ai_share: float, builder: float, tempo: float, adoption: float, reference: dict,
-                  exposure_shift: float = EXPOSURE_SHIFT, builder_shift: float = BUILDER_SHIFT) -> dict:
+                  exposure_shift: float = EXPOSURE_SHIFT, builder_shift: float = BUILDER_SHIFT,
+                  thin: bool = False) -> dict:
     pace = min(1.0, adoption * tempo)
-    exposure = -pace * exposure_shift * (ai_share - reference["role_ai_share"]) / 100
+    # A share above the average always lowers the outlook. A share below it raises the outlook only
+    # when it is measured on the occupation's own tasks: a thin share (few of its tasks seen in the
+    # Economic Index, which sees chat-AI use only) is no evidence against ATMs, robots or self-service.
+    gap = ai_share - reference["role_ai_share"]
+    exposure = -pace * exposure_shift * (max(0.0, gap) if thin else gap) / 100
     build = pace * builder_shift * (builder - reference["role_builder_share"]) / 100
     return {"pace": pace, "exposure_points": exposure, "builder_points": build,
             "outlook": clamp(demand + exposure + build)}
@@ -121,7 +130,7 @@ def status(change: float, band: float) -> str:
 def role_outlook(role: dict, data: dict, adoption: float) -> dict:
     """One occupation's outlook under an adoption value, with every part that made it."""
     s, ref = role_signals(role, data), data["ai"]["reference"]
-    v = outlook_value(s["demand"], s["ai_share"], s["builder"], s["tempo"], adoption, ref)
+    v = outlook_value(s["demand"], s["ai_share"], s["builder"], s["tempo"], adoption, ref, thin=s["thin"])
     change = v["exposure_points"] + v["builder_points"]
     return {**s, "adoption": adoption, "pace": round(v["pace"], 3),
             "exposure_points": round(v["exposure_points"], 1), "builder_points": round(v["builder_points"], 1),
@@ -189,7 +198,7 @@ def simulate(roles: list[dict], total, reference: dict, n: int = FUTURES, seed: 
             share = rng.triangular(lo, hi, clamp(r["ai_share"], lo, hi)) if lo is not None and hi is not None and hi > lo \
                 else r["ai_share"]
             v = outlook_value(clamp(r["demand"] + rng.gauss(0, DEMAND_SD)), share, r["builder"], r["tempo"],
-                              adoption, reference, k_exposure, k_builder)
+                              adoption, reference, k_exposure, k_builder, thin=r.get("thin", False))
             skill = interpolate(r["skill_curve"], adoption) if r["skill_curve"] else None
             score = min(100.0, total(r["field"], r["interest"], skill, v["outlook"]) + r["bonus"])
             scores[r["occ_id"]].append(score)

@@ -1,6 +1,6 @@
 import unittest
 
-from helpers import COOK, DATA, NURSE
+from helpers import COOK, DATA
 
 import outlook
 
@@ -20,12 +20,28 @@ class TestOutlook(unittest.TestCase):
     def test_more_ai_share_than_average_costs_outlook_points(self):
         avg = DATA["ai"]["reference"]["role_ai_share"]
         exposed = next(o for o in DATA["occupations"] if DATA["ai"]["roles"][o["occ_id"]]["ai_share"] > avg + 20)
-        sheltered = DATA["by_id"][COOK]
+        roles = DATA["ai"]["roles"]
+        sheltered = next(o for o in DATA["occupations"] if not roles[o["occ_id"]].get("thin_evidence", True)
+                         and roles[o["occ_id"]]["ai_share"] < avg - 5 and not roles[o["occ_id"]].get("builder_share"))
         self.assertLess(outlook.role_outlook(exposed, DATA, 0.5)["change"], 0)
         self.assertGreater(outlook.role_outlook(sheltered, DATA, 0.5)["change"], 0)
 
+    def test_a_thin_low_ai_share_earns_nothing(self):
+        # the Economic Index sees chat-AI use only: few tasks seen with little AI use is no evidence
+        # that ATMs, robots or self-service leave an occupation alone
+        roles, avg = DATA["ai"]["roles"], DATA["ai"]["reference"]["role_ai_share"]
+        cook = roles[COOK]
+        self.assertTrue(cook["thin_evidence"])
+        self.assertLess(cook["ai_share"], avg)
+        self.assertEqual(outlook.role_outlook(DATA["by_id"][COOK], DATA, 0.5)["change"], 0.0)
+        thin_rising = [o["occ_id"] for o in DATA["occupations"] if roles[o["occ_id"]].get("thin_evidence", True)
+                       and not roles[o["occ_id"]].get("builder_share")
+                       and outlook.role_outlook(o, DATA, 0.5)["change"] > 0]
+        self.assertEqual(thin_rising, [])
+
     def test_faster_adoption_moves_further(self):
-        occ = DATA["by_id"][NURSE]
+        avg = DATA["ai"]["reference"]["role_ai_share"]
+        occ = next(o for o in DATA["occupations"] if DATA["ai"]["roles"][o["occ_id"]]["ai_share"] > avg + 20)
         slow, fast = (abs(outlook.role_outlook(occ, DATA, a)["change"]) for a in (0.1, 0.5))
         self.assertGreater(fast, slow)
 

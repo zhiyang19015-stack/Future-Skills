@@ -69,6 +69,11 @@ class TestThePersonsSteps(unittest.TestCase):
         _, m = post("/api/match", {**BASIC, "kind": "working", "current_occupation": CLERK, "top": 3})
         self.assertEqual(m["current"]["occ_id"], CLERK)
         self.assertIn("current_occupation", m["current"]["flags"])
+        # the job they do now is not numbered among their moves; the page says how many moves score higher
+        self.assertIsNone(m["current"]["rank"])
+        self.assertIsInstance(m["current"]["moves_above"], int)
+        ranks = [r["rank"] for r in m["ranking"] if r["rank"] is not None]
+        self.assertEqual(ranks, list(range(1, len(ranks) + 1)))
 
     def test_explain_learn_futures(self):
         status, e = post("/api/explain", {**BASIC, "occ_id": ACCOUNTANT, "lang": "zh"})

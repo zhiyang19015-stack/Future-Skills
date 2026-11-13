@@ -468,7 +468,9 @@ def radar_payload(data: dict, scenario: str | None, adoption: float) -> dict:
                "status": outlook.skill_weight({"handoff": t["handoff"], "builder": t["builder"]}, adoption, ref)["status"]
                if t["handoff"] is not None else "steady"} for t in layer["topics"].values()]
     # the biggest moves first; among equal moves, the higher (or lower) outlook
-    rising = sorted(rows, key=lambda r: (-r["change"], -r["outlook"]))[:RADAR_LIST]
+    # only occupations the model moves up: measured to hand less to AI than average, or building AI
+    rising = sorted((r for r in rows if r["status"] == "rising"),
+                    key=lambda r: (-r["change"], -r["outlook"]))[:RADAR_LIST]
     declining = sorted(rows, key=lambda r: (r["change"], r["outlook"]))[:RADAR_LIST]
     return {"scenario": scenario_info(scenario, adoption), "scenarios": scenario_list(),
             "horizon_year": outlook.HORIZON_YEAR, "context": layer["context"], "reference": ref,
@@ -530,7 +532,8 @@ def occupation_detail(req, occ_id: str):
 # --- step 3: matches --------------------------------------------------------------------------------
 
 def listed(m: dict) -> bool:
-    return not {"needs_extra_education", "below_education"} & set(m["flags"])
+    """An occupation in the person's list of moves: open at their education level and not the job they do now."""
+    return not {"needs_extra_education", "below_education", "current_occupation"} & set(m["flags"])
 
 
 def scenario_ranks(profile: dict, data: dict, wanted: set) -> tuple[dict, dict]:
@@ -560,7 +563,9 @@ def match(req):
     for m in result["results"]:
         m["scenario_ranks"], m["scenario_totals"] = ranks.get(m["occ_id"]), totals.get(m["occ_id"])
     current = next((m for m in result["results"] if "current_occupation" in m["flags"]), None)
-    listed_count = sum(1 for m in result["ranking"] if not ({"needs_extra_education", "below_education"} & set(m["flags"])))
+    if current:  # the job they do now is not one of their moves: say how many moves score higher instead
+        current["moves_above"] = sum(1 for m in result["ranking"] if listed(m) and m["total"] > current["total"])
+    listed_count = sum(1 for m in result["ranking"] if listed(m))
     return reply(**{k: v for k, v in result.items() if k != "ranking"}, ranking=result["ranking"][:100],
                  listed=listed_count, total_occupations=len(result["ranking"]),
                  weights=matching.WEIGHTS, field_weights=matching.FIELD_WEIGHTS, skill_split=matching.SKILL_SPLIT,

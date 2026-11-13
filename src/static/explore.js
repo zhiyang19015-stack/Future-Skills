@@ -397,7 +397,7 @@ PAGES.matches = async () => {
     ${replanNote(m)}
     ${scenarioControl({ adoption: m.adoption, horizon: m.horizon_year }, m.scenarios)}
     ${cur ? `<section class="card stack" style="border-color:var(--brand)"><div class="row between"><div><p class="eyebrow">${t("match.now")}</p><h2>${esc(cur.title)}</h2></div>${statusChip(cur.outlook.status)}</div>
-      <p>${t("match.now.p", fmt(cur.outlook.ai_share, 0), fmt(cur.outlook.ai_share_reference, 0), signed(cur.outlook.change), `#${cur.rank}`)}</p>
+      <p>${t("match.now.p", fmt(cur.outlook.ai_share, 0), fmt(cur.outlook.ai_share_reference, 0), signed(cur.outlook.change), cur.moves_above ? t("match.now.above", cur.moves_above) : t("match.now.top"))}</p>
       <div class="row"><a class="btn small" href="#/occ/${esc(cur.occ_id)}">${t("match.now.tasks")}</a></div></section>` : ""}
     <section class="card stack"><h2>${t("match.fields.h")}</h2>
       <div class="stack tight">${m.fields.filter((f) => f.fit !== null).slice(0, 6).map((f) => `<div class="meter"><span>${esc(fieldName(f.id))}</span>${bar(f.fit)}<span class="v">${fmt(f.fit, 0)}</span></div><p class="tiny muted">${fieldExplain(f)}</p>`).join("") || `<p class="small muted">${t("match.fields.none")}</p>`}</div>
@@ -435,11 +435,12 @@ Object.assign(ACT, {
 
 /* ---------- 4 Pathway ---------- */
 
+const isMove = (x) => !["needs_extra_education", "below_education", "current_occupation"].some((f) => x.flags.includes(f));
 async function chosenOccupation(arg) {
   if (arg) { state.occId = arg; save(); return arg; }
   if (state.occId) return state.occId;
   const m = await getMatches();
-  const first = m.results.find((x) => !x.flags.includes("needs_extra_education") && !x.flags.includes("below_education")) || m.results[0];
+  const first = m.results.find((x) => isMove(x)) || m.results[0];
   return first.occ_id;
 }
 const pathResources = (L) => {
@@ -467,7 +468,8 @@ PAGES.pathway = async (args) => {
   ui.pathOcc = occId;  // the occupation this page shows: a ticked box belongs to it
   const [L, m] = await Promise.all([cached("/api/learn", matchBody({ occ_id: occId })), getMatches()]);
   const p = progressOf(L);
-  const options = m.results.filter((x) => !x.flags.includes("needs_extra_education") && !x.flags.includes("below_education")).slice(0, 12);
+  const options = m.results.filter(isMove).slice(0, 12);
+  if (m.current) options.push({ occ_id: m.current.occ_id, title: `${m.current.title} (${t("flag.current_occupation")})`, rank: null });
   if (!options.some((x) => x.occ_id === occId)) options.push({ occ_id: occId, title: L.role.name, rank: null });
   const badges = [["start", p.ticked.length >= 1], ["half", p.share >= 0.5], ["done", p.all.length > 0 && p.share >= 1]];
   let n = 0;

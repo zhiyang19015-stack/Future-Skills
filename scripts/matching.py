@@ -644,7 +644,7 @@ def stability(profile: dict, data: dict, ranked: list[dict], futures: int = outl
         drawn.append({"occ_id": m["occ_id"], "field": m["_parts"]["field"], "interest": m["_parts"]["interest"],
                       "skill_curve": None if curve[0] is None else [round(v, 3) for v in curve],
                       "demand": o["demand"], "ai_share": o["ai_share"], "ai_share_low": o["ai_share_low"],
-                      "ai_share_high": o["ai_share_high"], "builder": o["builder"], "tempo": o["tempo"],
+                      "ai_share_high": o["ai_share_high"], "builder": o["builder"], "tempo": o["tempo"], "thin": o["thin"],
                       "bonus": m["_parts"]["bonus"], "last": m["_parts"]["last"]})
     return outlook.simulate(drawn, combine, data["ai"]["reference"], n=futures)
 
@@ -672,8 +672,13 @@ def match_person(profile: dict, data: dict | None = None, scenario: str | None =
     fit = field_fit(prepared, data)
     ranked = rank(prepared, data, adoption=adoption, fit=fit)
     sim = stability(prepared, data, ranked, futures) if futures else None
-    for i, m in enumerate(ranked):
-        m["rank"] = i + 1
+    place = 0
+    for m in ranked:  # the job the person does now is shown on its own, not numbered among the moves
+        if "current_occupation" in m["flags"]:
+            m["rank"] = None
+        else:
+            place += 1
+            m["rank"] = place
     wanted = [m["occ_id"] for m in ranked[:top]] + [x for x in (include or []) if x in data["by_id"]]
     position = {m["occ_id"]: m for m in ranked}
     results = []
@@ -718,7 +723,7 @@ def main() -> int:
     for m in result["results"]:
         parts = "  ".join(f"{k} {v['score']}" for k, v in m["components"].items())
         flags = f"  [{', '.join(m['flags'])}]" if m["flags"] else ""
-        print(f"  {m['rank']:>3}. {m['total']:5.1f}  {m['title']} ({m['field_name']}){flags}")
+        print(f"  {m['rank'] or 'now':>3}. {m['total']:5.1f}  {m['title']} ({m['field_name']}){flags}")
         print(f"         {parts}  outlook {m['outlook']['status']}")
     return 0
 
