@@ -1,0 +1,911 @@
+occ_id,title,field_id,tasks,tasks_covered,ai_share,ai_share_low,ai_share_high,ai_share_measured,evidence,prior,prior_basis,reading_usage,reading_penetration,anthropic_observed_exposure,automation_pct,usage_pct,usage_pct_my,builder_share,builder_skills,data_period,formula_version
+11-1011.00,Chief Executives,11,31,4,5.2,0.0,10.6,6.3,0.64,3.3,anthropic_exposure,7.1,5.4,3.3,53.32,0.16,0.19,0.0,,2026-05,v2-all-occupations
+11-1011.03,Chief Sustainability Officers,11,18,0,3.3,0.0,18.3,0.0,0.0,3.3,anthropic_exposure,0.0,0.0,3.3,44.12,0.0,,0.0,,2026-05,v2-all-occupations
+11-1021.00,General and Operations Managers,11,17,2,10.7,8.3,13.1,10.1,0.84,13.8,anthropic_exposure,9.4,10.8,13.8,44.39,0.21,0.28,0.0,,2026-05,v2-all-occupations
+11-2011.00,Advertising and Promotions Managers,11,30,8,13.3,4.9,21.6,13.3,1.0,17.3,anthropic_exposure,9.7,16.8,17.3,32.7,0.67,1.02,0.0,,2026-05,v2-all-occupations
+11-2021.00,Marketing Managers,11,20,9,22.2,7.9,36.4,22.2,1.0,31.9,anthropic_exposure,22.6,21.7,31.9,38.42,0.53,0.62,0.0,,2026-05,v2-all-occupations
+11-2022.00,Sales Managers,11,17,4,7.1,0.0,14.9,10.2,0.48,4.3,anthropic_exposure,13.6,6.7,4.3,47.8,0.12,0.13,0.0,,2026-05,v2-all-occupations
+11-2032.00,Public Relations Managers,11,20,5,16.6,11.8,21.4,13.5,0.68,23.2,anthropic_exposure,10.0,16.9,23.2,32.26,0.17,0.18,0.0,,2026-05,v2-all-occupations
+11-2033.00,Fundraising Managers,11,16,2,10.3,0.0,22.3,4.6,0.2,11.7,field,0.0,9.2,,32.45,0.05,0.05,0.0,,2026-05,v2-all-occupations
+11-3012.00,Administrative Services Managers,11,18,4,10.4,3.8,17.0,9.3,0.56,11.7,field,18.5,0.0,0.0,66.0,0.14,0.14,0.0,,2026-05,v2-all-occupations
+11-3013.00,Facilities Managers,11,11,1,12.3,0.0,25.5,3.1,0.12,13.5,anthropic_exposure,6.2,0.0,13.5,78.43,0.03,,0.0,,2026-05,v2-all-occupations
+11-3013.01,Security Managers,11,28,5,13.3,0.0,27.7,8.8,0.04,13.5,anthropic_exposure,0.0,17.6,13.5,55.12,0.01,,0.0,,2026-05,v2-all-occupations
+11-3021.00,Computer and Information Systems Managers,11,17,6,18.6,8.7,28.5,18.6,1.0,15.6,anthropic_exposure,18.6,18.7,15.6,65.09,0.45,0.41,0.0,,2026-05,v2-all-occupations
+11-3031.00,Financial Managers,11,17,9,33.9,25.5,42.3,27.3,0.44,39.1,anthropic_exposure,26.6,28.1,39.1,49.74,0.11,0.13,0.0,,2026-05,v2-all-occupations
+11-3031.01,Treasurers and Controllers,11,22,6,29.7,20.1,39.3,12.9,0.36,39.1,anthropic_exposure,15.3,10.4,39.1,39.97,0.09,,0.0,,2026-05,v2-all-occupations
+11-3031.03,Investment Fund Managers,11,20,10,32.4,21.1,43.7,27.2,0.56,39.1,anthropic_exposure,9.7,44.6,39.1,39.5,0.14,0.12,0.0,,2026-05,v2-all-occupations
+11-3051.00,Industrial Production Managers,11,21,1,1.4,0.0,15.2,2.3,0.08,1.3,anthropic_exposure,4.6,0.0,1.3,77.83,0.02,,0.0,,2026-05,v2-all-occupations
+11-3051.01,Quality Control Systems Managers,11,27,4,5.7,0.0,11.4,5.7,1.0,1.3,anthropic_exposure,8.3,3.1,1.3,42.2,0.38,0.34,0.0,,2026-05,v2-all-occupations
+11-3051.02,Geothermal Production Managers,11,17,0,1.3,0.0,16.3,0.0,0.0,1.3,anthropic_exposure,0.0,0.0,1.3,,,,0.0,,2026-05,v2-all-occupations
+11-3051.03,Biofuels Production Managers,11,14,0,1.3,0.0,16.3,0.0,0.0,1.3,anthropic_exposure,0.0,0.0,1.3,,,,0.0,,2026-05,v2-all-occupations
+11-3051.04,Biomass Power Plant Managers,11,19,2,4.0,0.0,11.2,6.5,0.52,1.3,anthropic_exposure,4.8,8.2,1.3,79.89,0.13,0.11,0.0,,2026-05,v2-all-occupations
+11-3051.06,Hydroelectric Production Managers,11,18,0,1.3,0.0,16.3,0.0,0.0,1.3,anthropic_exposure,0.0,0.0,1.3,,,,0.0,,2026-05,v2-all-occupations
+11-3061.00,Purchasing Managers,11,18,5,19.1,5.9,32.3,12.2,0.12,20.0,anthropic_exposure,3.6,20.8,20.0,36.35,0.03,,0.0,,2026-05,v2-all-occupations
+11-3071.00,"Transportation, Storage, and Distribution Managers",11,30,5,9.1,3.1,15.1,8.8,0.6,9.6,anthropic_exposure,4.7,12.9,9.6,42.63,0.15,0.16,0.0,,2026-05,v2-all-occupations
+11-3071.04,Supply Chain Managers,11,30,0,9.2,0.0,23.6,0.0,0.04,9.6,anthropic_exposure,0.0,0.0,9.6,56.43,0.01,,0.0,,2026-05,v2-all-occupations
+11-3111.00,Compensation and Benefits Managers,11,22,1,10.9,0.0,24.7,1.5,0.08,11.7,field,3.1,0.0,0.0,38.51,0.02,,0.0,,2026-05,v2-all-occupations
+11-3121.00,Human Resources Managers,11,26,2,11.0,0.0,24.8,2.3,0.08,11.7,field,4.5,0.0,0.0,40.54,0.02,,0.0,,2026-05,v2-all-occupations
+11-3131.00,Training and Development Managers,11,12,4,24.1,16.5,31.8,21.5,0.84,37.8,anthropic_exposure,12.6,30.4,37.8,57.02,0.21,0.16,0.0,,2026-05,v2-all-occupations
+11-9013.00,"Farmers, Ranchers, and Other Agricultural Managers",11,30,2,11.0,0.0,24.8,2.3,0.08,11.7,field,4.6,0.0,0.0,42.6,0.02,,0.0,,2026-05,v2-all-occupations
+11-9021.00,Construction Managers,11,25,2,11.6,0.0,26.0,3.6,0.04,11.9,anthropic_exposure,0.0,7.2,11.9,50.55,0.01,,0.0,,2026-05,v2-all-occupations
+11-9031.00,"Education and Childcare Administrators, Preschool and Daycare",11,17,4,4.4,0.0,18.2,8.8,0.08,4.0,anthropic_exposure,0.0,17.6,4.0,34.74,0.02,,0.0,,2026-05,v2-all-occupations
+11-9032.00,"Education Administrators, Kindergarten through Secondary",11,32,5,5.8,0.0,11.6,5.8,1.0,5.2,anthropic_exposure,4.3,7.3,5.2,26.62,0.51,0.43,0.0,,2026-05,v2-all-occupations
+11-9033.00,"Education Administrators, Postsecondary",11,27,4,5.8,0.0,11.7,5.8,1.0,6.4,anthropic_exposure,5.8,5.9,6.4,32.93,0.44,0.42,0.0,,2026-05,v2-all-occupations
+11-9041.00,Architectural and Engineering Managers,11,19,3,4.2,0.0,15.6,7.8,0.24,3.1,anthropic_exposure,11.7,3.9,3.1,45.75,0.06,,0.0,,2026-05,v2-all-occupations
+11-9041.01,Biofuels/Biodiesel Technology and Product Development Managers,11,18,0,3.1,0.0,18.1,0.0,0.0,3.1,anthropic_exposure,0.0,0.0,3.1,,,,0.0,,2026-05,v2-all-occupations
+11-9051.00,Food Service Managers,11,28,3,7.9,0.7,15.1,4.4,0.52,11.7,field,5.0,3.8,0.0,52.05,0.13,0.1,0.0,,2026-05,v2-all-occupations
+11-9071.00,Gambling Managers,11,19,1,11.7,0.0,26.7,2.1,0.0,11.7,field,0.0,4.1,0.0,74.29,0.0,,0.0,,2026-05,v2-all-occupations
+11-9072.00,"Entertainment and Recreation Managers, Except Gambling",11,17,1,9.4,0.0,20.8,2.2,0.24,11.7,field,4.3,0.0,,38.79,0.06,0.08,0.0,,2026-05,v2-all-occupations
+11-9081.00,Lodging Managers,11,24,5,12.0,0.0,25.2,10.6,0.12,12.2,anthropic_exposure,9.9,11.4,12.2,61.06,0.03,,0.0,,2026-05,v2-all-occupations
+11-9111.00,Medical and Health Services Managers,11,18,3,7.1,0.0,19.1,9.3,0.2,6.6,anthropic_exposure,9.3,9.2,6.6,63.13,0.05,0.11,0.0,,2026-05,v2-all-occupations
+11-9121.00,Natural Sciences Managers,11,16,4,8.1,0.0,19.5,14.6,0.24,6.1,anthropic_exposure,13.7,15.5,6.1,45.8,0.06,,0.0,,2026-05,v2-all-occupations
+11-9121.01,Clinical Research Coordinators,11,33,3,5.9,0.0,17.9,4.9,0.2,6.1,anthropic_exposure,6.8,3.1,6.1,44.79,0.05,,0.0,,2026-05,v2-all-occupations
+11-9121.02,Water Resource Specialists,11,21,0,6.1,0.0,21.1,0.0,0.0,6.1,anthropic_exposure,0.0,0.0,6.1,,,,0.0,,2026-05,v2-all-occupations
+11-9131.00,Postmasters and Mail Superintendents,11,13,1,11.4,0.0,25.2,7.9,0.08,11.7,field,7.4,8.4,0.0,64.63,0.02,,0.0,,2026-05,v2-all-occupations
+11-9141.00,"Property, Real Estate, and Community Association Managers",11,26,3,16.0,1.6,30.4,4.9,0.04,16.5,anthropic_exposure,0.0,9.8,16.5,44.16,0.01,,0.0,,2026-05,v2-all-occupations
+11-9151.00,Social and Community Service Managers,11,16,5,17.0,5.0,29.0,12.8,0.2,18.1,anthropic_exposure,9.4,16.2,18.1,33.53,0.05,,0.0,,2026-05,v2-all-occupations
+11-9161.00,Emergency Management Directors,11,23,0,11.7,0.0,26.7,0.0,0.0,11.7,field,0.0,0.0,0.0,47.97,0.0,,0.0,,2026-05,v2-all-occupations
+11-9171.00,Funeral Home Managers,11,23,2,2.6,0.0,13.4,6.6,0.28,1.1,anthropic_exposure,6.1,7.0,1.1,55.3,0.07,0.11,0.0,,2026-05,v2-all-occupations
+11-9179.01,Fitness and Wellness Coordinators,11,24,3,6.9,3.9,9.9,6.2,0.88,12.4,anthropic_exposure,5.4,7.0,12.4,45.76,0.22,0.22,0.0,,2026-05,v2-all-occupations
+11-9179.02,Spa Managers,11,21,6,13.9,5.5,22.3,15.9,0.44,12.4,anthropic_exposure,12.2,19.6,12.4,60.15,0.11,0.12,0.0,,2026-05,v2-all-occupations
+11-9199.01,Regulatory Affairs Managers,11,27,6,8.3,0.0,19.7,12.9,0.24,6.9,anthropic_exposure,10.7,15.1,6.9,42.14,0.06,,0.0,,2026-05,v2-all-occupations
+11-9199.02,Compliance Managers,11,29,5,6.8,0.0,18.8,6.3,0.2,6.9,anthropic_exposure,4.8,7.8,6.9,36.89,0.05,0.07,0.0,,2026-05,v2-all-occupations
+11-9199.08,Loss Prevention Managers,11,27,1,6.7,0.0,21.1,3.1,0.04,6.9,anthropic_exposure,2.8,3.4,6.9,59.61,0.01,,0.0,,2026-05,v2-all-occupations
+11-9199.09,Wind Energy Operations Managers,11,16,0,6.9,0.0,21.9,0.0,0.0,6.9,anthropic_exposure,0.0,0.0,6.9,,,,0.0,,2026-05,v2-all-occupations
+11-9199.10,Wind Energy Development Managers,11,15,3,7.0,0.0,20.8,8.0,0.08,6.9,anthropic_exposure,9.7,6.3,6.9,53.91,0.02,,0.0,,2026-05,v2-all-occupations
+11-9199.11,Brownfield Redevelopment Specialists and Site Managers,11,23,0,6.9,0.0,21.9,0.0,0.0,6.9,anthropic_exposure,0.0,0.0,6.9,54.17,0.0,,0.0,,2026-05,v2-all-occupations
+13-1011.00,"Agents and Business Managers of Artists, Performers, and Athletes",13,14,3,10.1,2.3,17.9,8.2,0.48,11.8,anthropic_exposure,3.1,13.2,11.8,28.85,0.12,0.11,0.0,,2026-05,v2-all-occupations
+13-1021.00,"Buyers and Purchasing Agents, Farm Products",13,9,0,19.4,4.4,34.4,0.0,0.0,19.4,field,0.0,0.0,,67.33,0.0,,0.0,,2026-05,v2-all-occupations
+13-1022.00,"Wholesale and Retail Buyers, Except Farm Products",13,16,3,15.4,5.2,25.6,6.8,0.32,19.4,field,13.6,0.0,,40.7,0.08,0.07,0.0,,2026-05,v2-all-occupations
+13-1023.00,"Purchasing Agents, Except Wholesale, Retail, and Farm Products",13,19,6,19.4,9.2,29.6,19.3,0.32,19.4,field,17.0,21.6,,65.96,0.08,0.1,0.0,,2026-05,v2-all-occupations
+13-1031.00,"Claims Adjusters, Examiners, and Investigators",13,29,3,8.1,0.0,22.5,4.6,0.04,8.2,anthropic_exposure,2.5,6.8,8.2,41.29,0.01,,0.0,,2026-05,v2-all-occupations
+13-1032.00,"Insurance Appraisers, Auto Damage",13,7,0,19.4,4.4,34.4,0.0,0.0,19.4,field,0.0,0.0,0.0,66.07,0.0,,0.0,,2026-05,v2-all-occupations
+13-1041.00,Compliance Officers,13,16,6,15.1,7.3,22.9,18.4,0.48,12.1,anthropic_exposure,9.7,27.0,12.1,40.24,0.12,0.12,0.0,,2026-05,v2-all-occupations
+13-1041.01,Environmental Compliance Inspectors,13,26,0,12.1,0.0,27.1,0.0,0.0,12.1,anthropic_exposure,0.0,0.0,12.1,60.96,0.0,,0.0,,2026-05,v2-all-occupations
+13-1041.03,Equal Opportunity Representatives and Officers,13,18,2,12.1,0.0,27.1,4.4,0.0,12.1,anthropic_exposure,0.0,8.8,12.1,56.58,0.0,,0.0,,2026-05,v2-all-occupations
+13-1041.04,Government Property Inspectors and Investigators,13,13,2,11.3,0.0,23.9,7.3,0.16,12.1,anthropic_exposure,7.3,7.3,12.1,65.0,0.04,,0.0,,2026-05,v2-all-occupations
+13-1041.06,Coroners,13,20,1,12.1,0.0,27.1,1.9,0.0,12.1,anthropic_exposure,0.0,3.7,12.1,43.9,0.0,,0.0,,2026-05,v2-all-occupations
+13-1041.07,Regulatory Affairs Specialists,13,30,7,11.5,0.0,23.5,8.9,0.2,12.1,anthropic_exposure,9.6,8.2,12.1,44.28,0.05,,0.0,,2026-05,v2-all-occupations
+13-1041.08,Customs Brokers,13,23,5,11.9,0.0,25.1,10.8,0.12,12.1,anthropic_exposure,5.7,15.9,12.1,38.46,0.03,,0.0,,2026-05,v2-all-occupations
+13-1051.00,Cost Estimators,13,14,0,18.7,4.3,33.1,0.0,0.04,19.4,field,0.0,0.0,0.0,50.81,0.01,,0.0,,2026-05,v2-all-occupations
+13-1071.00,Human Resources Specialists,13,26,10,37.7,24.5,50.9,18.4,0.12,40.3,anthropic_exposure,5.2,31.5,40.3,42.05,0.03,,0.0,,2026-05,v2-all-occupations
+13-1074.00,Farm Labor Contractors,13,7,0,19.4,4.4,34.4,0.0,0.0,19.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+13-1075.00,Labor Relations Specialists,13,28,0,19.4,4.4,34.4,0.0,0.0,19.4,field,0.0,0.0,0.0,37.57,0.0,,0.0,,2026-05,v2-all-occupations
+13-1081.00,Logisticians,13,22,6,14.7,5.7,23.7,13.1,0.4,15.7,anthropic_exposure,17.7,8.5,15.7,54.55,0.1,0.09,0.0,,2026-05,v2-all-occupations
+13-1081.01,Logistics Engineers,13,30,5,14.8,2.2,27.4,10.1,0.16,15.7,anthropic_exposure,7.2,12.9,15.7,47.18,0.04,,0.0,,2026-05,v2-all-occupations
+13-1081.02,Logistics Analysts,13,31,5,14.8,1.6,28.0,7.8,0.12,15.7,anthropic_exposure,5.8,9.8,15.7,76.47,0.03,,0.0,,2026-05,v2-all-occupations
+13-1082.00,Project Management Specialists,13,20,7,16.2,7.9,24.5,14.9,0.72,19.4,field,18.6,11.3,,51.52,0.18,0.2,0.0,,2026-05,v2-all-occupations
+13-1111.00,Management Analysts,13,11,4,23.7,17.7,29.7,23.3,0.6,24.3,anthropic_exposure,29.1,17.5,24.3,45.46,0.15,0.16,0.0,,2026-05,v2-all-occupations
+13-1121.00,"Meeting, Convention, and Event Planners",13,21,4,8.9,1.1,16.7,7.5,0.48,10.2,anthropic_exposure,5.8,9.2,10.2,36.61,0.12,0.18,0.0,,2026-05,v2-all-occupations
+13-1131.00,Fundraisers,13,28,3,4.7,0.0,16.1,4.8,0.24,4.7,anthropic_exposure,4.4,5.3,4.7,35.99,0.06,0.09,0.0,,2026-05,v2-all-occupations
+13-1141.00,"Compensation, Benefits, and Job Analysis Specialists",13,22,4,6.6,0.0,20.4,7.3,0.08,6.5,anthropic_exposure,5.2,9.4,6.5,42.3,0.02,,0.0,,2026-05,v2-all-occupations
+13-1151.00,Training and Development Specialists,13,20,4,21.7,14.5,28.9,15.9,0.52,27.9,anthropic_exposure,11.7,20.1,27.9,47.86,0.13,0.13,0.0,,2026-05,v2-all-occupations
+13-1161.00,Market Research Analysts and Marketing Specialists,13,13,9,46.9,29.8,64.0,43.5,0.84,64.8,anthropic_exposure,27.1,59.8,64.8,45.63,0.21,0.24,0.0,,2026-05,v2-all-occupations
+13-1161.01,Search Marketing Strategists,13,36,20,31.2,12.6,49.9,31.2,1.0,64.8,anthropic_exposure,20.2,42.3,64.8,54.68,0.36,0.43,0.0,,2026-05,v2-all-occupations
+13-1199.04,Business Continuity Planners,13,21,4,15.2,6.8,23.6,11.0,0.44,18.5,anthropic_exposure,10.4,11.6,18.5,64.17,0.11,0.11,0.0,,2026-05,v2-all-occupations
+13-1199.05,Sustainability Specialists,13,14,1,17.9,3.5,32.3,4.7,0.04,18.5,anthropic_exposure,4.4,5.0,18.5,38.88,0.01,,0.0,,2026-05,v2-all-occupations
+13-1199.06,Online Merchants,13,34,19,30.0,11.2,48.7,30.0,1.0,18.5,anthropic_exposure,20.9,39.0,18.5,42.91,0.6,0.56,0.0,,2026-05,v2-all-occupations
+13-1199.07,Security Management Specialists,13,23,4,17.0,5.0,29.0,11.1,0.2,18.5,anthropic_exposure,6.3,15.9,18.5,40.25,0.05,0.07,0.0,,2026-05,v2-all-occupations
+13-2011.00,Accountants and Auditors,13,30,9,25.9,18.1,33.7,16.2,0.48,34.8,anthropic_exposure,10.9,21.5,34.8,45.02,0.12,0.15,0.0,,2026-05,v2-all-occupations
+13-2022.00,Appraisers of Personal and Business Property,13,14,0,18.7,4.3,33.1,0.0,0.04,19.4,field,0.0,0.0,,49.32,0.01,,0.0,,2026-05,v2-all-occupations
+13-2023.00,Appraisers and Assessors of Real Estate,13,28,6,18.3,5.7,30.9,12.2,0.16,19.4,field,5.8,18.6,,48.51,0.04,,0.0,,2026-05,v2-all-occupations
+13-2031.00,Budget Analysts,13,13,3,7.1,0.0,20.3,10.0,0.12,6.7,anthropic_exposure,15.0,5.0,6.7,33.96,0.03,,0.0,,2026-05,v2-all-occupations
+13-2041.00,Credit Analysts,13,11,2,16.6,2.2,31.0,8.2,0.04,16.9,anthropic_exposure,6.1,10.3,16.9,50.12,0.01,,0.0,,2026-05,v2-all-occupations
+13-2052.00,Personal Financial Advisors,13,21,10,25.0,7.5,42.5,25.0,1.0,35.0,anthropic_exposure,18.6,31.5,35.0,41.64,0.27,0.34,0.0,,2026-05,v2-all-occupations
+13-2053.00,Insurance Underwriters,13,7,1,6.2,0.0,21.2,7.5,0.0,6.2,anthropic_exposure,0.0,15.1,6.2,55.0,0.0,,0.0,,2026-05,v2-all-occupations
+13-2061.00,Financial Examiners,13,17,2,5.1,0.0,15.3,6.7,0.32,4.3,anthropic_exposure,8.6,4.7,4.3,37.29,0.08,,0.0,,2026-05,v2-all-occupations
+13-2071.00,Credit Counselors,13,23,7,16.4,6.1,26.7,16.4,1.0,23.4,anthropic_exposure,15.1,17.7,23.4,34.66,1.49,1.58,0.0,,2026-05,v2-all-occupations
+13-2072.00,Loan Officers,13,30,8,16.5,6.9,26.1,12.8,0.36,18.6,anthropic_exposure,7.8,17.7,18.6,60.79,0.09,0.1,0.0,,2026-05,v2-all-occupations
+13-2081.00,"Tax Examiners and Collectors, and Revenue Agents",13,21,1,2.8,0.0,17.2,1.7,0.04,2.8,anthropic_exposure,0.0,3.3,2.8,54.81,0.01,,0.0,,2026-05,v2-all-occupations
+13-2082.00,Tax Preparers,13,12,4,14.9,3.5,26.3,21.5,0.24,12.8,anthropic_exposure,17.9,25.0,12.8,43.79,0.06,0.08,0.0,,2026-05,v2-all-occupations
+13-2099.01,Financial Quantitative Analysts,13,21,8,23.3,12.1,34.4,23.5,0.84,22.0,anthropic_exposure,13.6,33.4,22.0,34.13,0.21,0.3,0.0,,2026-05,v2-all-occupations
+13-2099.04,"Fraud Examiners, Investigators and Analysts",13,23,3,20.8,7.0,34.6,7.4,0.08,22.0,anthropic_exposure,6.9,7.9,22.0,48.52,0.02,,0.0,,2026-05,v2-all-occupations
+15-1211.00,Computer Systems Analysts,15,22,15,39.0,17.6,60.4,39.0,1.0,27.6,anthropic_exposure,38.0,39.9,27.6,84.24,1.91,2.05,0.0,,2026-05,v2-all-occupations
+15-1211.01,Health Informatics Specialists,15,17,3,26.8,12.4,41.2,7.8,0.04,27.6,anthropic_exposure,0.0,15.6,27.6,56.36,0.01,,0.0,,2026-05,v2-all-occupations
+15-1212.00,Information Security Analysts,15,11,5,47.5,33.1,61.9,20.6,0.04,48.6,anthropic_exposure,0.0,41.1,48.6,76.1,0.01,,0.0,,2026-05,v2-all-occupations
+15-1221.00,Computer and Information Research Scientists,15,15,7,31.2,21.0,41.4,25.3,0.32,34.0,anthropic_exposure,21.0,29.6,34.0,57.93,0.08,0.12,8.5,amazon-web-services-aws-sagemaker | hugging-face | langchain | pytorch | scikit-learn | tensorflow | vector-database-software,2026-05,v2-all-occupations
+15-1231.00,Computer Network Support Specialists,15,26,9,26.8,16.6,37.0,22.9,0.32,28.7,anthropic_exposure,21.3,24.5,28.7,79.85,0.08,0.1,0.0,,2026-05,v2-all-occupations
+15-1232.00,Computer User Support Specialists,15,16,9,34.4,15.4,53.5,34.4,1.0,46.9,anthropic_exposure,35.4,33.5,46.9,65.62,2.17,1.92,0.0,,2026-05,v2-all-occupations
+15-1241.00,Computer Network Architects,15,33,8,18.5,5.9,31.1,11.4,0.16,19.9,anthropic_exposure,4.8,18.1,19.9,51.06,0.04,,0.0,,2026-05,v2-all-occupations
+15-1241.01,Telecommunications Engineering Specialists,15,26,6,17.3,7.7,26.9,12.7,0.36,19.9,anthropic_exposure,4.0,21.3,19.9,86.44,0.09,0.11,0.0,,2026-05,v2-all-occupations
+15-1242.00,Database Administrators,15,18,9,28.8,17.8,39.8,25.5,0.56,33.1,anthropic_exposure,20.0,30.9,33.1,62.83,0.14,0.2,0.0,,2026-05,v2-all-occupations
+15-1243.00,Database Architects,15,25,15,42.3,30.6,53.9,30.0,0.56,57.9,anthropic_exposure,15.9,44.0,57.9,58.66,0.14,0.2,0.0,,2026-05,v2-all-occupations
+15-1243.01,Data Warehousing Specialists,15,18,15,47.9,22.0,73.9,47.9,1.0,57.9,anthropic_exposure,26.5,69.4,57.9,60.71,1.65,1.81,0.0,,2026-05,v2-all-occupations
+15-1244.00,Network and Computer Systems Administrators,15,20,8,25.9,17.6,34.1,21.5,0.64,33.7,anthropic_exposure,17.6,25.5,33.7,68.1,0.16,0.16,0.0,,2026-05,v2-all-occupations
+15-1251.00,Computer Programmers,15,17,12,51.6,37.6,65.6,51.6,1.0,74.5,anthropic_exposure,47.7,55.5,74.5,63.31,1.67,1.97,0.0,,2026-05,v2-all-occupations
+15-1252.00,Software Developers,15,17,7,28.6,21.9,35.3,28.6,1.0,28.8,anthropic_exposure,27.3,29.8,28.8,60.79,0.35,0.36,1.3,pytorch | tensorflow,2026-05,v2-all-occupations
+15-1253.00,Software Quality Assurance Analysts and Testers,15,30,17,30.2,8.1,52.3,30.2,1.0,51.9,anthropic_exposure,22.2,38.1,51.9,75.77,1.32,1.64,0.0,,2026-05,v2-all-occupations
+15-1254.00,Web Developers,15,29,18,34.1,15.8,52.5,34.1,1.0,48.0,anthropic_exposure,27.2,41.1,48.0,55.26,0.64,0.75,0.0,,2026-05,v2-all-occupations
+15-1255.00,Web and Digital Interface Designers,15,30,18,27.4,4.6,50.2,27.4,1.0,24.9,anthropic_exposure,17.5,37.3,24.9,51.34,1.7,2.01,0.0,,2026-05,v2-all-occupations
+15-1255.01,Video Game Designers,15,24,6,12.1,4.0,20.3,9.7,0.84,24.9,anthropic_exposure,9.6,9.8,24.9,45.04,0.21,0.29,0.0,,2026-05,v2-all-occupations
+15-1299.01,Web Administrators,15,35,13,22.0,9.6,34.4,22.0,1.0,31.1,anthropic_exposure,17.3,26.7,31.1,70.62,0.26,0.21,0.0,,2026-05,v2-all-occupations
+15-1299.02,Geographic Information Systems Technologists and Technicians,15,29,9,17.9,8.9,26.9,17.9,1.0,31.1,anthropic_exposure,14.6,21.2,31.1,75.35,0.91,0.97,0.0,,2026-05,v2-all-occupations
+15-1299.03,Document Management Specialists,15,23,11,24.6,6.1,43.2,24.6,1.0,31.1,anthropic_exposure,17.6,31.6,31.1,67.37,5.1,4.49,0.0,,2026-05,v2-all-occupations
+15-1299.04,Penetration Testers,15,22,4,27.5,14.9,40.1,8.7,0.16,31.1,anthropic_exposure,17.3,0.0,31.1,69.79,0.04,,0.0,,2026-05,v2-all-occupations
+15-1299.05,Information Security Engineers,15,20,7,22.7,14.9,30.5,13.5,0.48,31.1,anthropic_exposure,23.5,3.5,31.1,63.75,0.12,0.17,0.0,,2026-05,v2-all-occupations
+15-1299.06,Digital Forensics Analysts,15,20,3,5.2,0.0,10.3,5.2,1.0,31.1,anthropic_exposure,10.3,0.0,31.1,71.93,0.25,0.28,0.0,,2026-05,v2-all-occupations
+15-1299.07,Blockchain Engineers,15,17,2,24.6,13.2,36.0,4.1,0.24,31.1,anthropic_exposure,8.3,0.0,31.1,55.35,0.06,0.07,0.0,,2026-05,v2-all-occupations
+15-1299.08,Computer Systems Engineers/Architects,15,28,17,35.1,19.6,50.5,35.1,1.0,31.1,anthropic_exposure,38.7,31.4,31.1,62.68,1.01,1.18,0.0,,2026-05,v2-all-occupations
+15-1299.09,Information Technology Project Managers,15,21,8,27.2,17.6,36.8,20.3,0.36,31.1,anthropic_exposure,15.1,25.5,31.1,60.13,0.09,0.09,0.0,,2026-05,v2-all-occupations
+15-2011.00,Actuaries,15,15,1,5.3,0.0,16.1,4.9,0.28,5.4,anthropic_exposure,4.9,5.0,5.4,34.18,0.07,0.1,0.0,,2026-05,v2-all-occupations
+15-2021.00,Mathematicians,15,12,9,36.7,12.0,61.4,36.7,1.0,42.4,anthropic_exposure,35.5,32.8,42.4,45.48,0.98,0.87,0.0,,2026-05,v2-all-occupations
+15-2031.00,Operations Research Analysts,15,17,11,32.5,13.1,51.9,32.5,1.0,42.9,anthropic_exposure,36.5,28.6,42.9,53.13,0.34,0.31,0.0,,2026-05,v2-all-occupations
+15-2041.00,Statisticians,15,19,12,33.8,15.7,51.8,33.8,1.0,21.1,anthropic_exposure,42.7,24.8,21.1,41.42,0.33,0.39,0.0,,2026-05,v2-all-occupations
+15-2041.01,Biostatisticians,15,25,8,17.7,11.0,24.4,15.1,0.56,21.1,anthropic_exposure,16.0,14.1,21.1,48.37,0.14,0.16,0.0,,2026-05,v2-all-occupations
+15-2051.00,Data Scientists,15,16,9,23.7,4.1,43.3,23.7,1.0,46.1,anthropic_exposure,43.0,4.4,46.1,47.43,0.61,0.76,5.2,pytorch | scikit-learn | tensorflow,2026-05,v2-all-occupations
+15-2051.01,Business Intelligence Analysts,15,17,12,51.1,38.9,63.3,51.1,1.0,46.1,anthropic_exposure,47.4,54.8,46.1,66.14,0.52,0.56,0.0,,2026-05,v2-all-occupations
+15-2051.02,Clinical Data Managers,15,21,10,27.5,12.7,42.4,25.0,0.88,46.1,anthropic_exposure,23.6,26.4,46.1,57.75,0.22,0.27,0.0,,2026-05,v2-all-occupations
+15-2099.01,Bioinformatics Technicians,15,19,12,35.8,13.4,58.1,35.8,1.0,47.9,anthropic_exposure,26.0,45.6,47.9,48.41,0.37,0.35,0.0,,2026-05,v2-all-occupations
+17-1011.00,"Architects, Except Landscape and Naval",17,25,4,8.1,0.0,20.1,9.5,0.2,7.8,anthropic_exposure,11.9,7.1,7.8,46.02,0.05,,0.0,,2026-05,v2-all-occupations
+17-1012.00,Landscape Architects,17,19,1,10.0,0.0,23.8,1.9,0.08,10.7,field,3.9,0.0,0.0,46.28,0.02,,0.0,,2026-05,v2-all-occupations
+17-1021.00,Cartographers and Photogrammetrists,17,14,2,8.2,0.0,22.0,10.0,0.08,8.0,anthropic_exposure,6.8,13.3,8.0,87.25,0.02,,0.0,,2026-05,v2-all-occupations
+17-1022.00,Surveyors,17,24,1,0.2,0.0,14.6,1.2,0.04,0.2,anthropic_exposure,0.0,2.4,0.2,48.04,0.01,,0.0,,2026-05,v2-all-occupations
+17-1022.01,Geodetic Surveyors,17,16,3,1.9,0.0,13.3,7.2,0.24,0.2,anthropic_exposure,14.4,0.0,0.2,64.01,0.06,0.08,0.0,,2026-05,v2-all-occupations
+17-2011.00,Aerospace Engineers,17,14,3,8.6,0.0,19.4,11.4,0.28,7.5,anthropic_exposure,16.7,6.1,7.5,51.76,0.07,0.1,0.0,,2026-05,v2-all-occupations
+17-2021.00,Agricultural Engineers,17,14,1,10.1,0.0,23.9,2.8,0.08,10.7,field,5.7,0.0,0.0,31.54,0.02,,0.0,,2026-05,v2-all-occupations
+17-2031.00,Bioengineers and Biomedical Engineers,17,30,4,12.8,0.0,26.6,6.5,0.08,13.3,anthropic_exposure,3.1,9.9,13.3,52.71,0.02,,0.0,,2026-05,v2-all-occupations
+17-2041.00,Chemical Engineers,17,14,0,10.7,0.0,25.7,0.0,0.0,10.7,field,0.0,0.0,0.0,40.82,0.0,,0.0,,2026-05,v2-all-occupations
+17-2051.00,Civil Engineers,17,16,1,1.0,0.0,13.6,2.1,0.16,0.8,anthropic_exposure,4.3,0.0,0.8,33.13,0.04,,0.0,,2026-05,v2-all-occupations
+17-2051.01,Transportation Engineers,17,26,4,1.4,0.0,14.6,5.6,0.12,0.8,anthropic_exposure,5.6,5.7,0.8,48.12,0.03,,0.0,,2026-05,v2-all-occupations
+17-2051.02,Water/Wastewater Engineers,17,28,0,0.7,0.0,13.9,0.0,0.12,0.8,anthropic_exposure,0.0,0.0,0.8,47.33,0.03,,0.0,,2026-05,v2-all-occupations
+17-2061.00,Computer Hardware Engineers,17,18,6,17.9,8.2,27.7,17.9,1.0,14.5,anthropic_exposure,16.2,19.7,14.5,45.76,0.83,0.98,0.0,,2026-05,v2-all-occupations
+17-2071.00,Electrical Engineers,17,22,5,6.4,0.0,20.2,11.8,0.08,5.9,anthropic_exposure,3.6,16.3,5.9,58.98,0.02,,0.0,,2026-05,v2-all-occupations
+17-2072.00,"Electronics Engineers, Except Computer",17,20,6,17.4,11.5,23.2,19.2,0.8,10.0,anthropic_exposure,19.6,18.8,10.0,36.88,0.2,0.19,0.0,,2026-05,v2-all-occupations
+17-2072.01,Radio Frequency Identification Device Specialists,17,21,0,10.0,0.0,25.0,0.0,0.0,10.0,anthropic_exposure,0.0,0.0,10.0,58.9,0.0,,0.0,,2026-05,v2-all-occupations
+17-2081.00,Environmental Engineers,17,29,2,3.5,0.0,16.7,2.7,0.12,3.6,anthropic_exposure,2.6,2.8,3.6,48.11,0.03,,0.0,,2026-05,v2-all-occupations
+17-2111.00,"Health and Safety Engineers, Except Mining Safety Engineers and Inspectors",17,27,1,10.0,0.0,23.8,1.5,0.08,10.7,field,3.0,0.0,0.0,44.88,0.02,,0.0,,2026-05,v2-all-occupations
+17-2111.02,Fire-Prevention and Protection Engineers,17,14,0,10.7,0.0,25.7,0.0,0.0,10.7,field,0.0,0.0,0.0,36.84,0.0,,0.0,,2026-05,v2-all-occupations
+17-2112.00,Industrial Engineers,17,20,2,3.7,0.0,17.5,3.4,0.08,3.7,anthropic_exposure,6.7,0.0,3.7,40.99,0.02,,0.0,,2026-05,v2-all-occupations
+17-2112.01,Human Factors Engineers and Ergonomists,17,26,5,4.6,0.0,15.4,6.8,0.28,3.7,anthropic_exposure,8.0,5.6,3.7,38.74,0.07,0.1,0.0,,2026-05,v2-all-occupations
+17-2112.02,Validation Engineers,17,21,3,4.0,0.0,17.2,6.0,0.12,3.7,anthropic_exposure,7.7,4.4,3.7,46.01,0.03,,0.0,,2026-05,v2-all-occupations
+17-2112.03,Manufacturing Engineers,17,24,6,7.6,0.0,15.4,11.9,0.48,3.7,anthropic_exposure,20.5,3.3,3.7,53.49,0.12,0.12,0.0,,2026-05,v2-all-occupations
+17-2121.00,Marine Engineers and Naval Architects,17,30,3,3.6,0.0,17.4,3.6,0.08,3.6,anthropic_exposure,2.1,5.1,3.6,45.58,0.02,,0.0,,2026-05,v2-all-occupations
+17-2131.00,Materials Engineers,17,21,1,10.0,0.0,23.8,1.8,0.08,10.7,field,3.7,0.0,0.0,37.28,0.02,,0.0,,2026-05,v2-all-occupations
+17-2141.00,Mechanical Engineers,17,28,7,13.7,5.7,21.7,13.7,1.0,8.1,anthropic_exposure,13.9,13.5,8.1,55.51,0.26,0.19,0.0,,2026-05,v2-all-occupations
+17-2141.01,Fuel Cell Engineers,17,26,0,8.1,0.0,23.1,0.0,0.0,8.1,anthropic_exposure,0.0,0.0,8.1,47.02,0.0,,0.0,,2026-05,v2-all-occupations
+17-2141.02,Automotive Engineers,17,25,5,9.7,3.3,16.1,9.7,1.0,8.1,anthropic_exposure,9.8,9.6,8.1,45.03,0.28,0.28,0.0,,2026-05,v2-all-occupations
+17-2151.00,"Mining and Geological Engineers, Including Mining Safety Engineers",17,18,0,10.7,0.0,25.7,0.0,0.0,10.7,field,0.0,0.0,0.0,50.0,0.0,,0.0,,2026-05,v2-all-occupations
+17-2161.00,Nuclear Engineers,17,20,1,10.4,0.0,24.8,2.1,0.04,10.7,field,4.2,0.0,0.0,59.85,0.01,,0.0,,2026-05,v2-all-occupations
+17-2171.00,Petroleum Engineers,17,23,1,10.4,0.0,24.8,1.5,0.04,10.7,field,0.0,3.0,0.0,39.07,0.01,,0.0,,2026-05,v2-all-occupations
+17-2199.03,"Energy Engineers, Except Wind and Solar",17,21,3,6.6,0.0,21.0,6.3,0.04,6.6,anthropic_exposure,3.8,8.7,6.6,44.91,0.01,,0.0,,2026-05,v2-all-occupations
+17-2199.05,Mechatronics Engineers,17,23,4,6.3,0.5,12.1,6.3,0.92,6.6,anthropic_exposure,12.6,0.0,6.6,40.89,0.23,0.3,0.0,,2026-05,v2-all-occupations
+17-2199.06,Microsystems Engineers,17,31,4,6.3,0.0,18.9,5.0,0.16,6.6,anthropic_exposure,4.6,5.3,6.6,45.82,0.04,,0.0,,2026-05,v2-all-occupations
+17-2199.07,Photonics Engineers,17,26,2,6.2,0.0,15.8,5.6,0.36,6.6,anthropic_exposure,3.8,7.4,6.6,59.95,0.09,0.12,0.0,,2026-05,v2-all-occupations
+17-2199.08,Robotics Engineers,17,24,5,6.7,0.0,21.1,9.4,0.04,6.6,anthropic_exposure,3.1,15.6,6.6,37.95,0.01,,0.0,,2026-05,v2-all-occupations
+17-2199.09,Nanosystems Engineers,17,25,4,7.6,0.0,18.4,10.0,0.28,6.6,anthropic_exposure,6.0,14.0,6.6,23.26,0.07,,0.0,,2026-05,v2-all-occupations
+17-2199.10,Wind Energy Engineers,17,16,0,6.6,0.0,21.6,0.0,0.0,6.6,anthropic_exposure,0.0,0.0,6.6,13.64,0.0,,0.0,,2026-05,v2-all-occupations
+17-2199.11,Solar Energy Systems Engineers,17,13,1,6.4,0.0,20.2,3.8,0.08,6.6,anthropic_exposure,7.7,0.0,6.6,67.6,0.02,,0.0,,2026-05,v2-all-occupations
+17-3011.00,Architectural and Civil Drafters,17,26,1,9.6,0.0,22.8,1.2,0.12,10.7,field,2.5,0.0,0.0,37.7,0.03,,0.0,,2026-05,v2-all-occupations
+17-3012.00,Electrical and Electronics Drafters,17,30,4,8.8,0.0,23.2,5.6,0.04,8.9,anthropic_exposure,0.0,11.1,8.9,60.57,0.01,,0.0,,2026-05,v2-all-occupations
+17-3013.00,Mechanical Drafters,17,16,3,10.3,0.0,23.5,7.2,0.12,10.7,field,14.3,0.0,0.0,39.95,0.03,,0.0,,2026-05,v2-all-occupations
+17-3021.00,Aerospace Engineering and Operations Technologists and Technicians,17,11,0,10.7,0.0,25.7,0.0,0.0,10.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+17-3022.00,Civil Engineering Technologists and Technicians,17,14,1,7.5,0.0,19.5,6.4,0.2,7.8,anthropic_exposure,5.9,6.9,7.8,66.32,0.05,,0.0,,2026-05,v2-all-occupations
+17-3023.00,Electrical and Electronic Engineering Technologists and Technicians,17,28,1,2.0,0.0,16.4,1.0,0.04,2.0,anthropic_exposure,0.0,2.0,2.0,52.92,0.01,,0.0,,2026-05,v2-all-occupations
+17-3024.00,Electro-Mechanical and Mechatronics Technologists and Technicians,17,28,2,10.1,0.0,23.9,2.9,0.08,10.7,field,5.8,0.0,0.0,63.17,0.02,,0.0,,2026-05,v2-all-occupations
+17-3024.01,Robotics Technicians,17,22,0,10.7,0.0,25.7,0.0,0.0,10.7,field,0.0,0.0,0.0,52.0,0.0,,0.0,,2026-05,v2-all-occupations
+17-3025.00,Environmental Engineering Technologists and Technicians,17,23,5,9.7,0.4,19.0,9.7,0.96,10.3,anthropic_exposure,15.1,4.4,10.3,39.79,0.24,0.21,0.0,,2026-05,v2-all-occupations
+17-3026.00,Industrial Engineering Technologists and Technicians,17,30,4,7.1,1.1,13.1,4.7,0.6,10.7,field,9.5,0.0,0.0,35.19,0.15,0.15,0.0,,2026-05,v2-all-occupations
+17-3026.01,Nanotechnology Engineering Technologists and Technicians,17,25,0,10.7,0.0,25.7,0.0,0.0,10.7,field,0.0,0.0,0.0,47.3,0.0,,0.0,,2026-05,v2-all-occupations
+17-3027.00,Mechanical Engineering Technologists and Technicians,17,30,4,5.7,1.6,9.8,5.4,0.76,6.8,anthropic_exposure,4.7,6.0,6.8,28.89,0.19,0.21,0.0,,2026-05,v2-all-occupations
+17-3027.01,Automotive Engineering Technicians,17,18,4,7.0,0.0,20.8,9.6,0.08,6.8,anthropic_exposure,6.9,12.3,6.8,39.87,0.02,,0.0,,2026-05,v2-all-occupations
+17-3029.01,Non-Destructive Testing Specialists,17,16,0,10.7,0.0,25.7,0.0,0.0,10.7,field,0.0,0.0,0.0,52.63,0.0,,0.0,,2026-05,v2-all-occupations
+17-3029.08,Photonics Technicians,17,24,0,10.7,0.0,25.7,0.0,0.0,10.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+17-3031.00,Surveying and Mapping Technicians,17,30,0,10.3,0.0,24.7,0.0,0.04,10.7,field,0.0,0.0,0.0,57.19,0.01,,0.0,,2026-05,v2-all-occupations
+19-1011.00,Animal Scientists,19,9,0,12.8,0.0,27.8,0.0,0.0,12.8,field,0.0,0.0,0.0,37.04,0.0,,0.0,,2026-05,v2-all-occupations
+19-1012.00,Food Scientists and Technologists,19,13,0,12.8,0.0,27.8,0.0,0.0,12.8,field,0.0,0.0,0.0,,0.0,,0.0,,2026-05,v2-all-occupations
+19-1013.00,Soil and Plant Scientists,19,27,2,5.0,0.0,19.4,3.2,0.04,5.1,anthropic_exposure,0.0,6.4,5.1,55.7,0.01,,0.0,,2026-05,v2-all-occupations
+19-1021.00,Biochemists and Biophysicists,19,24,2,7.6,0.0,22.6,3.9,0.0,7.6,anthropic_exposure,0.0,7.9,7.6,21.47,0.0,,0.0,,2026-05,v2-all-occupations
+19-1022.00,Microbiologists,19,14,1,9.5,0.0,23.9,3.5,0.04,9.7,anthropic_exposure,0.0,6.9,9.7,48.52,0.01,,0.0,,2026-05,v2-all-occupations
+19-1023.00,Zoologists and Wildlife Biologists,19,14,1,6.1,0.0,20.5,5.9,0.04,6.1,anthropic_exposure,5.3,6.5,6.1,49.42,0.01,,0.0,,2026-05,v2-all-occupations
+19-1029.01,Bioinformatics Scientists,19,20,10,25.9,11.0,40.8,25.9,1.0,24.5,anthropic_exposure,15.6,36.2,24.5,51.0,0.39,0.4,0.0,,2026-05,v2-all-occupations
+19-1029.02,Molecular and Cellular Biologists,19,22,3,14.6,7.4,21.8,5.5,0.52,24.5,anthropic_exposure,3.9,7.1,24.5,52.9,0.13,0.17,0.0,,2026-05,v2-all-occupations
+19-1029.03,Geneticists,19,24,8,24.1,9.7,38.5,15.5,0.04,24.5,anthropic_exposure,3.1,27.9,24.5,27.85,0.01,,0.0,,2026-05,v2-all-occupations
+19-1029.04,Biologists,19,22,5,20.7,9.9,31.5,10.9,0.28,24.5,anthropic_exposure,13.7,8.0,24.5,54.79,0.07,,0.0,,2026-05,v2-all-occupations
+19-1031.00,Conservation Scientists,19,30,0,12.8,0.0,27.8,0.0,0.0,12.8,field,0.0,0.0,0.0,43.33,0.0,,0.0,,2026-05,v2-all-occupations
+19-1031.02,Range Managers,19,18,0,12.8,0.0,27.8,0.0,0.0,12.8,field,0.0,0.0,0.0,62.5,0.0,,0.0,,2026-05,v2-all-occupations
+19-1031.03,Park Naturalists,19,20,1,12.3,0.0,26.7,1.5,0.04,12.8,field,3.1,0.0,0.0,54.18,0.01,,0.0,,2026-05,v2-all-occupations
+19-1032.00,Foresters,19,25,0,12.8,0.0,27.8,0.0,0.0,12.8,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+19-1041.00,Epidemiologists,19,16,2,11.7,0.0,24.3,6.3,0.16,12.8,field,4.5,3.6,0.0,38.14,0.04,,0.0,,2026-05,v2-all-occupations
+19-1042.00,"Medical Scientists, Except Epidemiologists",19,14,1,3.7,0.0,18.1,2.1,0.04,3.8,anthropic_exposure,0.0,4.3,3.8,23.28,0.01,,0.0,,2026-05,v2-all-occupations
+19-2011.00,Astronomers,19,17,5,30.6,21.0,40.2,16.5,0.36,38.5,anthropic_exposure,9.5,23.6,38.5,52.51,0.09,0.09,0.0,,2026-05,v2-all-occupations
+19-2012.00,Physicists,19,16,3,20.7,12.3,29.1,12.3,0.44,27.3,anthropic_exposure,11.2,13.4,27.3,49.59,0.11,0.1,0.0,,2026-05,v2-all-occupations
+19-2021.00,Atmospheric and Space Scientists,19,27,1,3.6,0.0,17.4,1.8,0.08,3.8,anthropic_exposure,0.0,3.6,3.8,23.85,0.02,,0.0,,2026-05,v2-all-occupations
+19-2031.00,Chemists,19,12,3,22.4,11.0,33.8,10.8,0.24,26.1,anthropic_exposure,7.2,14.5,26.1,69.08,0.06,,0.0,,2026-05,v2-all-occupations
+19-2032.00,Materials Scientists,19,16,4,15.6,5.4,25.8,9.5,0.32,18.4,anthropic_exposure,7.7,11.2,18.4,36.57,0.08,0.12,0.0,,2026-05,v2-all-occupations
+19-2041.00,"Environmental Scientists and Specialists, Including Health",19,22,5,7.9,0.7,15.1,10.1,0.52,5.5,anthropic_exposure,3.3,17.0,5.5,17.71,0.13,0.1,0.0,,2026-05,v2-all-occupations
+19-2041.01,Climate Change Policy Analysts,19,14,0,5.5,0.0,20.5,0.0,0.0,5.5,anthropic_exposure,0.0,0.0,5.5,33.71,0.0,,0.0,,2026-05,v2-all-occupations
+19-2041.02,Environmental Restoration Planners,19,23,0,5.5,0.0,20.5,0.0,0.0,5.5,anthropic_exposure,0.0,0.0,5.5,43.37,0.0,,0.0,,2026-05,v2-all-occupations
+19-2041.03,Industrial Ecologists,19,38,1,5.5,0.0,20.5,1.2,0.0,5.5,anthropic_exposure,0.0,2.4,5.5,42.55,0.0,,0.0,,2026-05,v2-all-occupations
+19-2042.00,"Geoscientists, Except Hydrologists and Geographers",19,32,1,4.3,0.0,19.3,1.7,0.0,4.3,anthropic_exposure,0.0,3.5,4.3,48.0,0.0,,0.0,,2026-05,v2-all-occupations
+19-2043.00,Hydrologists,19,25,0,7.5,0.0,22.5,0.0,0.0,7.5,anthropic_exposure,0.0,0.0,7.5,37.59,0.0,,0.0,,2026-05,v2-all-occupations
+19-2099.01,Remote Sensing Scientists and Technologists,19,24,1,3.9,0.0,11.7,4.0,0.48,3.8,anthropic_exposure,3.4,4.6,3.8,46.25,0.12,0.12,0.0,,2026-05,v2-all-occupations
+19-3011.00,Economists,19,14,5,22.6,13.0,32.2,19.8,0.36,24.2,anthropic_exposure,14.2,20.7,24.2,26.61,0.09,0.09,0.0,,2026-05,v2-all-occupations
+19-3011.01,Environmental Economists,19,20,3,16.0,8.2,23.8,7.1,0.48,24.2,anthropic_exposure,3.5,10.7,24.2,52.4,0.12,0.17,0.0,,2026-05,v2-all-occupations
+19-3022.00,Survey Researchers,19,16,5,42.2,27.8,56.6,18.4,0.04,43.2,anthropic_exposure,5.9,30.9,43.2,48.39,0.01,,0.0,,2026-05,v2-all-occupations
+19-3032.00,Industrial-Organizational Psychologists,19,25,9,18.8,9.1,28.4,18.8,1.0,15.8,anthropic_exposure,17.4,20.1,15.8,40.47,0.26,0.3,0.0,,2026-05,v2-all-occupations
+19-3033.00,Clinical and Counseling Psychologists,19,30,8,11.1,3.1,19.1,11.1,1.0,5.9,anthropic_exposure,18.6,3.5,5.9,36.35,0.74,0.73,0.0,,2026-05,v2-all-occupations
+19-3034.00,School Psychologists,19,19,4,5.1,0.0,18.3,7.8,0.12,4.7,anthropic_exposure,7.0,8.7,4.7,33.02,0.03,,0.0,,2026-05,v2-all-occupations
+19-3039.02,Neuropsychologists,19,14,3,12.3,0.0,26.1,7.7,0.08,12.8,field,4.5,10.9,0.0,23.07,0.02,,0.0,,2026-05,v2-all-occupations
+19-3039.03,Clinical Neuropsychologists,19,18,2,12.4,0.0,26.8,4.3,0.04,12.8,field,0.0,8.6,0.0,23.3,0.01,,0.0,,2026-05,v2-all-occupations
+19-3041.00,Sociologists,19,15,5,27.7,21.1,34.3,19.3,0.56,38.3,anthropic_exposure,9.0,25.6,38.3,22.88,0.14,0.09,0.0,,2026-05,v2-all-occupations
+19-3051.00,Urban and Regional Planners,19,25,2,9.4,0.0,23.8,3.4,0.04,9.6,anthropic_exposure,3.2,3.7,9.6,47.51,0.01,,0.0,,2026-05,v2-all-occupations
+19-3091.00,Anthropologists and Archeologists,19,30,6,12.5,1.1,23.9,9.2,0.24,13.5,anthropic_exposure,5.0,13.3,13.5,50.31,0.06,,0.0,,2026-05,v2-all-occupations
+19-3092.00,Geographers,19,12,2,10.5,0.0,23.7,6.5,0.12,11.0,anthropic_exposure,4.7,8.3,11.0,39.42,0.03,,0.0,,2026-05,v2-all-occupations
+19-3093.00,Historians,19,21,4,4.3,0.0,13.3,6.6,0.4,2.8,anthropic_exposure,8.3,4.9,2.8,36.46,0.1,0.1,0.0,,2026-05,v2-all-occupations
+19-3094.00,Political Scientists,19,14,9,38.4,29.1,47.7,28.2,0.4,45.2,anthropic_exposure,23.9,32.4,45.2,25.39,0.1,0.1,0.0,,2026-05,v2-all-occupations
+19-3099.01,Transportation Planners,19,22,1,3.2,0.0,17.6,1.9,0.04,3.3,anthropic_exposure,0.0,3.9,3.3,48.5,0.01,,0.0,,2026-05,v2-all-occupations
+19-4012.00,Agricultural Technicians,19,26,2,2.4,0.0,6.0,3.0,0.76,0.6,anthropic_exposure,3.0,3.1,0.6,27.71,0.19,0.14,0.0,,2026-05,v2-all-occupations
+19-4012.01,Precision Agriculture Technicians,19,22,0,0.6,0.0,15.6,0.0,0.0,0.6,anthropic_exposure,0.0,0.0,0.6,60.61,0.0,,0.0,,2026-05,v2-all-occupations
+19-4013.00,Food Science Technicians,19,16,3,20.4,5.4,35.4,8.3,0.0,20.4,anthropic_exposure,0.0,16.7,20.4,72.6,0.0,,0.0,,2026-05,v2-all-occupations
+19-4021.00,Biological Technicians,19,18,3,7.3,0.0,17.5,10.0,0.32,6.0,anthropic_exposure,14.7,5.2,6.0,59.28,0.08,0.1,0.0,,2026-05,v2-all-occupations
+19-4031.00,Chemical Technicians,19,16,5,18.3,10.2,26.5,17.8,0.96,31.5,anthropic_exposure,9.3,26.3,31.5,48.12,0.24,0.23,0.0,,2026-05,v2-all-occupations
+19-4042.00,"Environmental Science and Protection Technicians, Including Health",19,25,2,14.4,0.0,29.4,3.9,0.0,14.4,anthropic_exposure,0.0,7.9,14.4,54.19,0.0,,0.0,,2026-05,v2-all-occupations
+19-4043.00,"Geological Technicians, Except Hydrologic Technicians",19,29,4,22.4,8.0,36.8,9.5,0.04,22.9,anthropic_exposure,3.9,15.2,22.9,91.25,0.01,,0.0,,2026-05,v2-all-occupations
+19-4051.00,Nuclear Technicians,19,18,0,12.8,0.0,27.8,0.0,0.0,12.8,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+19-4051.02,Nuclear Monitoring Technicians,19,16,0,12.8,0.0,27.8,0.0,0.0,12.8,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+19-4061.00,Social Science Research Assistants,19,22,11,35.7,27.2,44.2,29.2,0.56,43.9,anthropic_exposure,17.8,40.6,43.9,57.76,0.14,0.16,0.0,,2026-05,v2-all-occupations
+19-4071.00,Forest and Conservation Technicians,19,20,1,2.2,0.0,16.6,2.2,0.04,2.2,anthropic_exposure,0.0,4.4,2.2,53.21,0.01,,0.0,,2026-05,v2-all-occupations
+19-4092.00,Forensic Science Technicians,19,24,0,12.8,0.0,27.8,0.0,0.0,12.8,field,0.0,0.0,0.0,42.55,0.0,,0.0,,2026-05,v2-all-occupations
+19-4099.01,Quality Control Analysts,19,26,4,7.5,3.1,11.8,7.5,1.0,9.6,anthropic_exposure,10.8,4.2,9.6,28.08,0.55,0.58,0.0,,2026-05,v2-all-occupations
+19-4099.03,Remote Sensing Technicians,19,21,3,9.4,0.0,22.0,8.5,0.16,9.6,anthropic_exposure,6.2,10.9,9.6,51.21,0.04,,0.0,,2026-05,v2-all-occupations
+19-5011.00,Occupational Health and Safety Specialists,19,22,1,8.6,0.2,17.0,3.4,0.44,12.8,field,3.4,0.0,0.0,46.92,0.11,0.16,0.0,,2026-05,v2-all-occupations
+19-5012.00,Occupational Health and Safety Technicians,19,26,0,12.2,0.0,26.6,0.0,0.04,12.8,field,0.0,0.0,0.0,29.37,0.01,,0.0,,2026-05,v2-all-occupations
+21-1011.00,Substance Abuse and Behavioral Disorder Counselors,21,23,2,8.5,0.0,22.3,3.5,0.08,8.9,field,3.5,3.6,,47.4,0.02,,0.0,,2026-05,v2-all-occupations
+21-1012.00,"Educational, Guidance, and Career Counselors and Advisors",21,35,8,12.0,7.3,16.7,12.1,0.8,11.8,anthropic_exposure,10.4,11.3,11.8,36.94,0.2,0.16,0.0,,2026-05,v2-all-occupations
+21-1013.00,Marriage and Family Therapists,21,17,3,7.1,0.0,14.2,7.1,1.0,8.9,field,14.2,0.0,0.0,43.27,0.53,0.54,0.0,,2026-05,v2-all-occupations
+21-1014.00,Mental Health Counselors,21,27,6,10.6,3.1,18.0,10.6,1.0,8.9,field,17.5,3.6,,39.0,0.43,0.46,0.0,,2026-05,v2-all-occupations
+21-1015.00,Rehabilitation Counselors,21,17,0,8.6,0.0,23.0,0.0,0.04,8.9,field,0.0,0.0,0.0,52.96,0.01,,0.0,,2026-05,v2-all-occupations
+21-1021.00,"Child, Family, and School Social Workers",21,21,3,1.5,0.0,14.1,5.9,0.16,0.7,anthropic_exposure,7.0,4.8,0.7,40.05,0.04,,0.0,,2026-05,v2-all-occupations
+21-1022.00,Healthcare Social Workers,21,17,1,9.2,0.0,24.2,3.1,0.0,9.2,anthropic_exposure,0.0,6.3,9.2,59.2,0.0,,0.0,,2026-05,v2-all-occupations
+21-1023.00,Mental Health and Substance Abuse Social Workers,21,13,2,8.8,0.0,23.2,6.9,0.04,8.9,field,6.4,7.4,0.0,51.46,0.01,,0.0,,2026-05,v2-all-occupations
+21-1091.00,Health Education Specialists,21,16,2,13.8,0.0,28.8,5.5,0.0,13.8,anthropic_exposure,0.0,11.0,13.8,40.82,0.0,,0.0,,2026-05,v2-all-occupations
+21-1092.00,Probation Officers and Correctional Treatment Specialists,21,21,0,8.9,0.0,23.9,0.0,0.0,8.9,field,0.0,0.0,0.0,58.82,0.0,,0.0,,2026-05,v2-all-occupations
+21-1093.00,Social and Human Service Assistants,21,19,2,8.3,0.0,21.5,3.4,0.12,8.9,field,6.7,0.0,0.0,56.17,0.03,,0.0,,2026-05,v2-all-occupations
+21-1094.00,Community Health Workers,21,29,7,8.0,0.0,16.0,8.0,1.0,8.9,field,16.0,0.0,0.0,35.04,0.36,0.38,0.0,,2026-05,v2-all-occupations
+21-2011.00,Clergy,21,21,6,12.6,5.7,19.6,13.2,0.72,11.2,anthropic_exposure,18.0,8.4,11.2,39.98,0.18,0.23,0.0,,2026-05,v2-all-occupations
+21-2021.00,"Directors, Religious Activities and Education",21,19,4,8.5,0.0,17.0,8.5,1.0,15.3,anthropic_exposure,7.9,9.1,15.3,40.4,0.76,0.83,0.0,,2026-05,v2-all-occupations
+23-1011.00,Lawyers,23,22,7,14.9,6.3,23.5,14.9,1.0,16.7,anthropic_exposure,19.2,10.7,16.7,31.49,0.62,0.53,0.0,,2026-05,v2-all-occupations
+23-1012.00,Judicial Law Clerks,23,18,2,14.3,4.1,24.5,8.5,0.32,17.0,anthropic_exposure,5.4,11.6,17.0,39.72,0.08,,0.0,,2026-05,v2-all-occupations
+23-1021.00,"Administrative Law Judges, Adjudicators, and Hearing Officers",23,14,3,28.3,15.1,41.5,12.3,0.12,30.5,anthropic_exposure,5.2,19.4,30.5,36.01,0.03,,0.0,,2026-05,v2-all-occupations
+23-1022.00,"Arbitrators, Mediators, and Conciliators",23,20,4,20.7,9.9,31.5,11.3,0.28,24.3,anthropic_exposure,4.2,18.4,24.3,37.83,0.07,,0.0,,2026-05,v2-all-occupations
+23-1023.00,"Judges, Magistrate Judges, and Magistrates",23,21,3,30.2,15.8,44.6,8.8,0.04,31.1,anthropic_exposure,4.0,13.7,31.1,50.6,0.01,,0.0,,2026-05,v2-all-occupations
+23-2011.00,Paralegals and Legal Assistants,23,12,2,17.2,14.2,20.2,14.2,0.8,29.3,anthropic_exposure,13.1,8.4,29.3,37.48,0.2,0.17,0.0,,2026-05,v2-all-occupations
+23-2093.00,"Title Examiners, Abstractors, and Searchers",23,17,2,2.4,0.0,16.2,4.9,0.08,2.2,anthropic_exposure,5.2,4.7,2.2,58.91,0.02,,0.0,,2026-05,v2-all-occupations
+25-1011.00,"Business Teachers, Postsecondary",25,25,12,29.8,17.2,42.4,25.0,0.16,30.7,anthropic_exposure,18.6,31.3,30.7,30.11,0.04,0.01,0.0,,2026-05,v2-all-occupations
+25-1021.00,"Computer Science Teachers, Postsecondary",25,26,9,23.8,9.4,38.2,15.7,0.04,24.1,anthropic_exposure,2.5,28.8,24.1,29.17,0.01,0.01,0.0,,2026-05,v2-all-occupations
+25-1022.00,"Mathematical Science Teachers, Postsecondary",25,23,8,40.9,27.1,54.7,17.2,0.08,43.0,anthropic_exposure,3.1,31.4,43.0,28.97,0.02,0.02,0.0,,2026-05,v2-all-occupations
+25-1031.00,"Architecture Teachers, Postsecondary",25,22,8,14.7,0.3,29.1,14.5,0.04,14.8,field,0.0,29.0,0.0,28.68,0.01,0.0,0.0,,2026-05,v2-all-occupations
+25-1032.00,"Engineering Teachers, Postsecondary",25,24,11,31.0,20.2,41.8,18.5,0.28,35.9,anthropic_exposure,2.8,34.2,35.9,28.35,0.07,0.07,0.0,,2026-05,v2-all-occupations
+25-1041.00,"Agricultural Sciences Teachers, Postsecondary",25,23,9,14.8,0.4,29.2,15.8,0.04,14.8,field,0.0,31.6,0.0,29.0,0.01,0.0,0.0,,2026-05,v2-all-occupations
+25-1042.00,"Biological Science Teachers, Postsecondary",25,27,12,25.2,17.4,33.0,20.9,0.48,29.1,anthropic_exposure,8.1,33.7,29.1,29.89,0.12,0.12,0.0,,2026-05,v2-all-occupations
+25-1043.00,"Forestry and Conservation Science Teachers, Postsecondary",25,25,10,5.1,0.0,17.1,17.0,0.2,2.1,anthropic_exposure,2.1,32.0,2.1,28.73,0.05,0.06,0.0,,2026-05,v2-all-occupations
+25-1051.00,"Atmospheric, Earth, Marine, and Space Sciences Teachers, Postsecondary",25,26,12,18.8,0.0,37.7,18.8,1.0,4.0,anthropic_exposure,0.0,37.7,4.0,25.18,0.34,0.3,0.0,,2026-05,v2-all-occupations
+25-1052.00,"Chemistry Teachers, Postsecondary",25,28,10,21.6,7.2,36.0,15.2,0.04,21.9,anthropic_exposure,0.0,30.5,21.9,28.77,0.01,0.0,0.0,,2026-05,v2-all-occupations
+25-1053.00,"Environmental Science Teachers, Postsecondary",25,25,10,2.9,0.0,17.3,16.3,0.04,2.3,anthropic_exposure,0.0,32.5,2.3,29.08,0.01,0.0,0.0,,2026-05,v2-all-occupations
+25-1054.00,"Physics Teachers, Postsecondary",25,24,10,14.9,0.5,29.3,17.2,0.04,14.8,field,0.0,34.4,0.0,28.66,0.01,0.0,0.0,,2026-05,v2-all-occupations
+25-1061.00,"Anthropology and Archeology Teachers, Postsecondary",25,27,11,8.0,0.0,17.6,17.9,0.36,2.4,anthropic_exposure,2.0,33.8,2.4,25.71,0.09,0.06,0.0,,2026-05,v2-all-occupations
+25-1062.00,"Area, Ethnic, and Cultural Studies Teachers, Postsecondary",25,23,9,15.1,1.9,28.3,17.5,0.12,14.8,field,2.8,32.2,0.0,29.41,0.03,0.02,0.0,,2026-05,v2-all-occupations
+25-1063.00,"Economics Teachers, Postsecondary",25,22,9,14.9,0.5,29.3,17.2,0.04,14.8,field,0.0,34.4,0.0,29.05,0.01,0.01,0.0,,2026-05,v2-all-occupations
+25-1064.00,"Geography Teachers, Postsecondary",25,25,9,14.8,0.4,29.2,14.8,0.04,14.8,field,0.0,29.6,0.0,29.13,0.01,0.01,0.0,,2026-05,v2-all-occupations
+25-1065.00,"Political Science Teachers, Postsecondary",25,22,9,14.8,0.4,29.2,16.9,0.04,14.8,field,0.0,33.7,0.0,29.08,0.01,0.01,0.0,,2026-05,v2-all-occupations
+25-1066.00,"Psychology Teachers, Postsecondary",25,29,11,31.5,17.1,45.9,15.1,0.04,32.2,anthropic_exposure,1.8,28.5,32.2,28.89,0.01,0.01,0.0,,2026-05,v2-all-occupations
+25-1067.00,"Sociology Teachers, Postsecondary",25,24,9,14.8,0.4,29.2,15.7,0.04,14.8,field,0.0,31.5,0.0,29.11,0.01,0.01,0.0,,2026-05,v2-all-occupations
+25-1071.00,"Health Specialties Teachers, Postsecondary",25,22,8,29.8,15.4,44.2,14.9,0.04,30.4,anthropic_exposure,0.0,29.9,30.4,29.06,0.01,0.01,0.0,,2026-05,v2-all-occupations
+25-1072.00,"Nursing Instructors and Teachers, Postsecondary",25,29,9,18.8,4.4,33.2,12.7,0.04,19.1,anthropic_exposure,0.0,25.3,19.1,28.47,0.01,0.0,0.0,,2026-05,v2-all-occupations
+25-1081.00,"Education Teachers, Postsecondary",25,24,9,25.8,11.4,40.2,15.7,0.04,26.2,anthropic_exposure,0.0,31.4,26.2,29.12,0.01,0.01,0.0,,2026-05,v2-all-occupations
+25-1082.00,"Library Science Teachers, Postsecondary",25,25,10,2.4,0.0,16.8,16.9,0.04,1.8,anthropic_exposure,0.0,33.7,1.8,29.39,0.01,0.01,0.0,,2026-05,v2-all-occupations
+25-1111.00,"Criminal Justice and Law Enforcement Teachers, Postsecondary",25,23,9,14.8,0.4,29.2,16.2,0.04,14.8,field,0.0,32.4,0.0,29.05,0.01,0.01,0.0,,2026-05,v2-all-occupations
+25-1112.00,"Law Teachers, Postsecondary",25,23,9,14.8,0.4,29.2,16.5,0.04,14.8,field,0.0,33.0,0.0,28.49,0.01,0.01,0.0,,2026-05,v2-all-occupations
+25-1113.00,"Social Work Teachers, Postsecondary",25,24,10,15.1,2.5,27.7,17.2,0.16,14.8,field,3.4,31.0,0.0,29.89,0.04,0.06,0.0,,2026-05,v2-all-occupations
+25-1121.00,"Art, Drama, and Music Teachers, Postsecondary",25,28,10,15.6,4.3,27.1,14.2,0.8,21.4,anthropic_exposure,2.9,25.6,21.4,33.61,0.2,0.12,0.0,,2026-05,v2-all-occupations
+25-1122.00,"Communications Teachers, Postsecondary",25,23,9,20.9,6.5,35.3,16.6,0.04,21.1,anthropic_exposure,0.0,33.2,21.1,29.07,0.01,0.01,0.0,,2026-05,v2-all-occupations
+25-1123.00,"English Language and Literature Teachers, Postsecondary",25,33,14,24.4,13.6,35.2,18.8,0.68,36.2,anthropic_exposure,3.0,34.7,36.2,30.53,0.17,0.14,0.0,,2026-05,v2-all-occupations
+25-1124.00,"Foreign Language and Literature Teachers, Postsecondary",25,24,9,23.7,9.3,38.1,17.1,0.04,24.0,anthropic_exposure,0.0,34.2,24.0,29.0,0.01,0.01,0.0,,2026-05,v2-all-occupations
+25-1125.00,"History Teachers, Postsecondary",25,25,9,10.1,0.0,24.5,14.7,0.04,9.9,anthropic_exposure,0.0,29.5,9.9,29.05,0.01,0.01,0.0,,2026-05,v2-all-occupations
+25-1126.00,"Philosophy and Religion Teachers, Postsecondary",25,22,10,19.2,0.0,38.5,19.2,1.0,22.0,anthropic_exposure,3.5,34.9,22.0,39.87,0.35,0.37,0.0,,2026-05,v2-all-occupations
+25-1192.00,"Family and Consumer Sciences Teachers, Postsecondary",25,23,9,14.8,0.4,29.2,15.9,0.04,14.8,field,0.0,31.8,0.0,28.67,0.01,0.0,0.0,,2026-05,v2-all-occupations
+25-1193.00,"Recreation and Fitness Studies Teachers, Postsecondary",25,23,10,11.7,0.0,26.1,18.4,0.04,11.4,anthropic_exposure,0.0,36.8,11.4,29.06,0.01,0.01,0.0,,2026-05,v2-all-occupations
+25-1194.00,"Career/Technical Education Teachers, Postsecondary",25,20,6,15.6,7.1,24.1,15.6,1.0,15.6,anthropic_exposure,17.4,13.9,15.6,28.07,0.38,0.39,0.0,,2026-05,v2-all-occupations
+25-2011.00,"Preschool Teachers, Except Special Education",25,34,4,14.4,0.0,28.8,5.6,0.04,14.8,field,2.0,9.1,0.0,39.93,0.01,,0.0,,2026-05,v2-all-occupations
+25-2012.00,"Kindergarten Teachers, Except Special Education",25,37,6,14.1,0.3,27.9,6.8,0.08,14.8,field,1.8,11.7,0.0,32.9,0.02,,0.0,,2026-05,v2-all-occupations
+25-2021.00,"Elementary School Teachers, Except Special Education",25,38,10,10.6,0.0,23.2,12.4,0.16,10.3,anthropic_exposure,5.8,19.0,10.3,32.46,0.04,0.06,0.0,,2026-05,v2-all-occupations
+25-2022.00,"Middle School Teachers, Except Special and Career/Technical Education",25,35,11,28.5,14.7,42.3,15.2,0.08,29.7,anthropic_exposure,3.7,26.8,29.7,36.91,0.02,,0.0,,2026-05,v2-all-occupations
+25-2023.00,"Career/Technical Education Teachers, Middle School",25,31,8,14.6,0.2,29.0,11.1,0.04,14.8,field,2.3,20.0,0.0,35.35,0.01,,0.0,,2026-05,v2-all-occupations
+25-2031.00,"Secondary School Teachers, Except Special and Career/Technical Education",25,32,8,29.0,14.0,44.0,11.6,0.0,29.0,anthropic_exposure,0.0,23.2,29.0,41.94,0.0,,0.0,,2026-05,v2-all-occupations
+25-2032.00,"Career/Technical Education Teachers, Secondary School",25,33,6,14.5,0.1,28.9,8.2,0.04,14.8,field,0.0,16.3,0.0,34.15,0.01,,0.0,,2026-05,v2-all-occupations
+25-2051.00,"Special Education Teachers, Preschool",25,36,4,2.1,0.0,12.9,5.8,0.28,0.6,anthropic_exposure,1.8,9.8,0.6,41.19,0.07,0.07,0.0,,2026-05,v2-all-occupations
+25-2055.00,"Special Education Teachers, Kindergarten",25,29,5,14.4,0.6,28.2,10.2,0.08,14.8,field,5.3,15.0,,51.55,0.02,,0.0,,2026-05,v2-all-occupations
+25-2056.00,"Special Education Teachers, Elementary School",25,30,5,13.7,1.7,25.7,9.4,0.2,14.8,field,4.7,14.0,,50.18,0.05,,0.0,,2026-05,v2-all-occupations
+25-2057.00,"Special Education Teachers, Middle School",25,40,8,13.2,0.0,27.6,9.5,0.04,13.4,anthropic_exposure,1.6,17.4,13.4,40.73,0.01,,0.0,,2026-05,v2-all-occupations
+25-2058.00,"Special Education Teachers, Secondary School",25,40,8,9.9,0.0,24.3,8.8,0.04,9.9,anthropic_exposure,0.0,17.6,9.9,40.97,0.01,,0.0,,2026-05,v2-all-occupations
+25-2059.01,Adapted Physical Education Specialists,25,20,1,2.6,0.0,17.0,3.8,0.04,2.6,anthropic_exposure,3.6,4.1,2.6,38.25,0.01,,0.0,,2026-05,v2-all-occupations
+25-3011.00,"Adult Basic Education, Adult Secondary Education, and English as a Second Language Instructors",25,37,8,7.8,0.0,18.0,10.9,0.32,6.4,anthropic_exposure,5.2,16.7,6.4,31.29,0.08,0.08,0.0,,2026-05,v2-all-occupations
+25-3021.00,Self-Enrichment Teachers,25,30,6,8.0,0.0,17.0,10.2,0.4,6.6,anthropic_exposure,4.3,16.1,6.6,46.78,0.1,0.11,0.0,,2026-05,v2-all-occupations
+25-3031.00,"Substitute Teachers, Short-Term",25,18,5,9.3,0.0,18.5,9.3,1.0,14.8,field,14.6,3.9,,23.08,1.38,1.3,0.0,,2026-05,v2-all-occupations
+25-3041.00,Tutors,25,19,8,24.1,14.0,34.1,24.1,1.0,40.8,anthropic_exposure,25.7,22.4,40.8,48.72,1.27,1.25,0.0,,2026-05,v2-all-occupations
+25-4011.00,Archivists,25,13,2,11.5,3.1,19.9,8.9,0.44,13.5,anthropic_exposure,4.4,13.5,13.5,56.92,0.11,0.08,0.0,,2026-05,v2-all-occupations
+25-4012.00,Curators,25,15,5,34.4,24.2,44.6,19.8,0.32,41.2,anthropic_exposure,8.6,31.0,41.2,23.96,0.08,0.08,0.0,,2026-05,v2-all-occupations
+25-4013.00,Museum Technicians and Conservators,25,24,0,14.8,0.0,29.8,0.0,0.0,14.8,field,0.0,0.0,0.0,60.83,0.0,,0.0,,2026-05,v2-all-occupations
+25-4022.00,Librarians and Media Collections Specialists,25,30,6,12.6,5.8,19.4,12.6,1.0,20.3,anthropic_exposure,7.8,17.4,20.3,50.74,4.22,3.3,0.0,,2026-05,v2-all-occupations
+25-4031.00,Library Technicians,25,31,5,9.1,4.4,13.8,9.1,1.0,5.4,anthropic_exposure,7.5,10.6,5.4,50.29,1.5,1.49,0.0,,2026-05,v2-all-occupations
+25-9021.00,Farm and Home Management Educators,25,15,2,13.6,0.4,26.8,5.0,0.12,14.8,field,10.0,0.0,0.0,44.16,0.03,,0.0,,2026-05,v2-all-occupations
+25-9031.00,Instructional Coordinators,25,30,13,23.3,12.6,34.1,23.3,1.0,30.4,anthropic_exposure,21.4,25.2,30.4,47.31,1.01,1.06,0.0,,2026-05,v2-all-occupations
+25-9042.00,"Teaching Assistants, Preschool, Elementary, Middle, and Secondary School, Except Special Education",25,28,4,13.1,1.7,24.5,7.9,0.24,14.8,field,5.7,10.2,,46.45,0.06,,0.0,,2026-05,v2-all-occupations
+25-9043.00,"Teaching Assistants, Special Education",25,30,2,14.3,0.0,28.7,3.2,0.04,14.8,field,0.0,6.4,,54.49,0.01,,0.0,,2026-05,v2-all-occupations
+25-9044.00,"Teaching Assistants, Postsecondary",25,20,7,18.0,8.6,27.3,18.0,1.0,10.0,anthropic_exposure,26.6,9.3,10.0,33.33,0.6,0.6,0.0,,2026-05,v2-all-occupations
+27-1011.00,Art Directors,27,16,7,22.0,12.4,31.6,23.7,0.36,21.0,anthropic_exposure,26.3,21.2,21.0,46.04,0.09,0.1,0.0,,2026-05,v2-all-occupations
+27-1012.00,Craft Artists,27,16,3,7.8,1.2,14.4,9.7,0.56,5.4,anthropic_exposure,12.7,6.7,5.4,41.8,0.14,0.22,0.0,,2026-05,v2-all-occupations
+27-1013.00,"Fine Artists, Including Painters, Sculptors, and Illustrators",27,28,6,21.2,15.2,27.2,11.6,0.6,35.6,anthropic_exposure,5.5,17.7,35.6,46.76,0.15,0.17,0.0,,2026-05,v2-all-occupations
+27-1014.00,Special Effects Artists and Animators,27,13,6,34.2,21.6,46.8,26.5,0.16,35.7,anthropic_exposure,24.8,28.2,35.7,53.59,0.04,,0.0,,2026-05,v2-all-occupations
+27-1021.00,Commercial and Industrial Designers,27,17,5,9.1,2.8,15.3,11.3,0.68,4.4,anthropic_exposure,15.2,7.3,4.4,24.07,0.17,0.17,0.0,,2026-05,v2-all-occupations
+27-1022.00,Fashion Designers,27,20,2,5.7,0.0,20.7,4.6,0.0,5.7,anthropic_exposure,0.0,9.1,5.7,46.94,0.0,,0.0,,2026-05,v2-all-occupations
+27-1023.00,Floral Designers,27,15,2,19.7,6.5,32.9,4.7,0.12,21.8,field,9.3,0.0,0.0,46.78,0.03,,0.0,,2026-05,v2-all-occupations
+27-1024.00,Graphic Designers,27,19,7,22.8,15.7,29.9,22.8,1.0,36.7,anthropic_exposure,23.5,15.6,36.7,29.63,1.07,0.97,0.0,,2026-05,v2-all-occupations
+27-1025.00,Interior Designers,27,16,2,19.0,6.4,31.6,4.4,0.16,21.8,field,8.8,0.0,0.0,41.1,0.04,,0.0,,2026-05,v2-all-occupations
+27-1026.00,Merchandise Displayers and Window Trimmers,27,24,0,21.8,6.8,36.8,0.0,0.0,21.8,field,0.0,0.0,0.0,47.3,0.0,,0.0,,2026-05,v2-all-occupations
+27-1027.00,Set and Exhibit Designers,27,27,0,20.9,6.5,35.3,0.0,0.04,21.8,field,0.0,0.0,0.0,29.67,0.01,,0.0,,2026-05,v2-all-occupations
+27-2011.00,Actors,27,18,3,10.6,5.2,16.0,10.9,0.64,10.1,anthropic_exposure,10.1,11.6,10.1,51.03,0.16,0.19,0.0,,2026-05,v2-all-occupations
+27-2012.00,Producers and Directors,27,30,8,10.7,2.3,19.1,12.6,0.44,9.2,anthropic_exposure,4.3,20.9,9.2,31.98,0.11,0.12,0.0,,2026-05,v2-all-occupations
+27-2012.03,Media Programming Directors,27,23,3,8.5,0.0,21.1,4.9,0.16,9.2,anthropic_exposure,6.0,3.9,9.2,38.51,0.04,0.07,0.0,,2026-05,v2-all-occupations
+27-2012.04,Talent Directors,27,15,1,9.2,0.0,24.2,3.0,0.0,9.2,anthropic_exposure,0.0,5.9,9.2,34.26,0.0,,0.0,,2026-05,v2-all-occupations
+27-2012.05,Media Technical Directors/Managers,27,15,0,9.2,0.0,24.2,0.0,0.0,9.2,anthropic_exposure,0.0,0.0,9.2,66.67,0.0,,0.0,,2026-05,v2-all-occupations
+27-2021.00,Athletes and Sports Competitors,27,9,0,21.8,6.8,36.8,0.0,0.0,21.8,field,0.0,0.0,0.0,47.14,0.0,,0.0,,2026-05,v2-all-occupations
+27-2022.00,Coaches and Scouts,27,27,1,17.7,5.7,29.7,1.5,0.2,21.8,field,3.0,0.0,0.0,47.89,0.05,,0.0,,2026-05,v2-all-occupations
+27-2023.00,"Umpires, Referees, and Other Sports Officials",27,16,0,21.8,6.8,36.8,0.0,0.0,21.8,field,0.0,0.0,0.0,44.26,0.0,,0.0,,2026-05,v2-all-occupations
+27-2031.00,Dancers,27,14,0,21.8,6.8,36.8,0.0,0.0,21.8,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+27-2032.00,Choreographers,27,18,1,8.0,0.0,23.0,2.6,0.0,8.0,anthropic_exposure,0.0,5.2,8.0,28.13,0.0,,0.0,,2026-05,v2-all-occupations
+27-2041.00,Music Directors and Composers,27,30,1,3.6,0.0,18.0,1.3,0.04,3.7,anthropic_exposure,0.0,2.5,3.7,41.86,0.01,,0.0,,2026-05,v2-all-occupations
+27-2042.00,Musicians and Singers,27,26,0,20.9,6.5,35.3,0.0,0.04,21.8,field,0.0,0.0,0.0,41.1,0.01,,0.0,,2026-05,v2-all-occupations
+27-2091.00,"Disc Jockeys, Except Radio",27,19,0,20.9,6.5,35.3,0.0,0.04,21.8,field,0.0,0.0,,69.71,0.01,,0.0,,2026-05,v2-all-occupations
+27-3011.00,Broadcast Announcers and Radio Disc Jockeys,27,24,3,5.8,0.0,14.8,5.1,0.4,6.3,anthropic_exposure,5.9,4.3,6.3,35.61,0.1,0.1,0.0,,2026-05,v2-all-occupations
+27-3023.00,"News Analysts, Reporters, and Journalists",27,30,9,13.6,4.2,23.1,13.6,1.0,21.0,anthropic_exposure,15.2,12.1,21.0,28.8,1.62,1.73,0.0,,2026-05,v2-all-occupations
+27-3031.00,Public Relations Specialists,27,18,9,30.7,16.2,45.2,30.7,1.0,45.3,anthropic_exposure,25.7,35.7,45.3,38.85,0.33,0.37,0.0,,2026-05,v2-all-occupations
+27-3041.00,Editors,27,22,8,17.4,6.8,28.0,17.4,1.0,24.6,anthropic_exposure,16.0,18.7,24.6,33.56,2.58,2.68,0.0,,2026-05,v2-all-occupations
+27-3042.00,Technical Writers,27,15,8,36.8,24.4,49.2,36.8,1.0,47.5,anthropic_exposure,36.3,37.3,47.5,38.86,1.67,1.73,0.0,,2026-05,v2-all-occupations
+27-3043.00,Writers and Authors,27,20,10,22.1,6.2,38.1,22.1,1.0,24.6,anthropic_exposure,24.9,19.3,24.6,28.54,2.22,2.3,0.0,,2026-05,v2-all-occupations
+27-3043.05,"Poets, Lyricists and Creative Writers",27,16,9,32.3,16.8,47.8,32.3,1.0,24.6,anthropic_exposure,36.2,28.4,24.6,29.58,1.49,1.59,0.0,,2026-05,v2-all-occupations
+27-3091.00,Interpreters and Translators,27,17,6,21.0,13.1,28.9,21.0,1.0,43.0,anthropic_exposure,21.9,20.1,43.0,63.08,0.93,1.31,0.0,,2026-05,v2-all-occupations
+27-3092.00,Court Reporters and Simultaneous Captioners,27,15,2,34.3,19.3,49.3,6.8,0.0,34.3,anthropic_exposure,0.0,13.6,34.3,56.82,0.0,,0.0,,2026-05,v2-all-occupations
+27-4011.00,Audio and Video Technicians,27,29,4,6.0,2.3,9.8,6.0,1.0,1.7,anthropic_exposure,7.0,5.0,1.7,52.1,0.33,0.35,0.0,,2026-05,v2-all-occupations
+27-4012.00,Broadcast Technicians,27,28,1,2.0,0.0,16.4,1.2,0.04,2.0,anthropic_exposure,0.0,2.4,2.0,49.8,0.01,,0.0,,2026-05,v2-all-occupations
+27-4014.00,Sound Engineering Technicians,27,14,1,20.3,6.5,34.1,2.9,0.08,21.8,field,5.7,0.0,0.0,87.58,0.02,,0.0,,2026-05,v2-all-occupations
+27-4021.00,Photographers,27,28,4,17.5,4.9,30.1,6.9,0.16,19.5,anthropic_exposure,5.8,8.0,19.5,51.25,0.04,,0.0,,2026-05,v2-all-occupations
+27-4031.00,"Camera Operators, Television, Video, and Film",27,21,3,15.3,2.1,28.5,6.5,0.12,16.5,anthropic_exposure,2.8,10.1,16.5,39.17,0.03,,0.0,,2026-05,v2-all-occupations
+27-4032.00,Film and Video Editors,27,22,6,20.7,8.7,32.7,14.2,0.2,22.3,anthropic_exposure,10.3,18.1,22.3,45.52,0.05,,0.0,,2026-05,v2-all-occupations
+29-1011.00,Chiropractors,29,13,3,9.8,0.0,19.7,9.8,1.0,6.7,field,11.4,8.3,0.0,47.61,0.32,0.24,0.0,,2026-05,v2-all-occupations
+29-1021.00,"Dentists, General",29,20,1,3.1,0.0,18.1,2.4,0.0,3.1,anthropic_exposure,0.0,4.7,3.1,36.59,0.0,,0.0,,2026-05,v2-all-occupations
+29-1022.00,Oral and Maxillofacial Surgeons,29,15,0,6.7,0.0,21.7,0.0,0.0,6.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+29-1023.00,Orthodontists,29,11,1,6.6,0.0,21.0,4.0,0.04,6.7,field,0.0,7.9,0.0,43.01,0.01,,0.0,,2026-05,v2-all-occupations
+29-1024.00,Prosthodontists,29,12,0,6.7,0.0,21.7,0.0,0.0,6.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+29-1031.00,Dietitians and Nutritionists,29,28,6,11.4,3.8,19.0,11.3,0.96,13.3,anthropic_exposure,13.2,9.4,13.3,48.1,0.24,0.17,0.0,,2026-05,v2-all-occupations
+29-1041.00,Optometrists,29,10,0,6.7,0.0,21.7,0.0,0.0,6.7,field,0.0,0.0,0.0,62.67,0.0,,0.0,,2026-05,v2-all-occupations
+29-1051.00,Pharmacists,29,21,2,7.1,1.1,13.1,5.9,0.6,9.0,anthropic_exposure,7.3,4.6,9.0,36.95,0.15,0.13,0.0,,2026-05,v2-all-occupations
+29-1071.00,Physician Assistants,29,12,3,7.6,0.0,20.8,13.6,0.12,6.7,field,20.2,7.0,0.0,51.02,0.03,,0.0,,2026-05,v2-all-occupations
+29-1071.01,Anesthesiologist Assistants,29,16,0,6.7,0.0,21.7,0.0,0.0,6.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+29-1081.00,Podiatrists,29,11,0,6.7,0.0,21.7,0.0,0.0,6.7,field,0.0,0.0,0.0,67.31,0.0,,0.0,,2026-05,v2-all-occupations
+29-1122.00,Occupational Therapists,29,17,0,0.8,0.0,15.8,0.0,0.0,0.8,anthropic_exposure,0.0,0.0,0.8,55.56,0.0,,0.0,,2026-05,v2-all-occupations
+29-1122.01,"Low Vision Therapists, Orientation and Mobility Specialists, and Vision Rehabilitation Therapists",29,21,1,0.8,0.0,15.8,1.9,0.0,0.8,anthropic_exposure,0.0,3.8,0.8,53.68,0.0,,0.0,,2026-05,v2-all-occupations
+29-1123.00,Physical Therapists,29,24,1,1.7,0.0,15.5,1.8,0.08,1.7,anthropic_exposure,0.0,3.6,1.7,37.41,0.02,,0.0,,2026-05,v2-all-occupations
+29-1124.00,Radiation Therapists,29,22,0,6.7,0.0,21.7,0.0,0.0,6.7,field,0.0,0.0,0.0,67.89,0.0,,0.0,,2026-05,v2-all-occupations
+29-1125.00,Recreational Therapists,29,11,0,6.5,0.0,20.9,0.0,0.04,6.7,field,0.0,0.0,0.0,68.9,0.01,,0.0,,2026-05,v2-all-occupations
+29-1126.00,Respiratory Therapists,29,23,0,6.7,0.0,21.7,0.0,0.0,6.7,field,0.0,0.0,0.0,51.43,0.0,,0.0,,2026-05,v2-all-occupations
+29-1127.00,Speech-Language Pathologists,29,23,0,6.5,0.0,20.9,0.0,0.04,6.7,field,0.0,0.0,0.0,45.36,0.01,,0.0,,2026-05,v2-all-occupations
+29-1128.00,Exercise Physiologists,29,25,4,6.1,1.3,11.0,6.0,0.8,6.7,field,12.1,0.0,0.0,43.66,0.2,0.16,0.0,,2026-05,v2-all-occupations
+29-1129.01,Art Therapists,29,25,3,4.0,0.0,18.4,5.1,0.04,4.0,anthropic_exposure,3.3,7.0,4.0,42.64,0.01,,0.0,,2026-05,v2-all-occupations
+29-1129.02,Music Therapists,29,30,3,4.3,0.0,15.7,5.1,0.24,4.0,anthropic_exposure,4.8,5.4,4.0,41.82,0.06,,0.0,,2026-05,v2-all-occupations
+29-1131.00,Veterinarians,29,21,1,8.9,0.0,22.7,4.2,0.08,9.3,anthropic_exposure,4.0,4.3,9.3,58.92,0.02,,0.0,,2026-05,v2-all-occupations
+29-1141.00,Registered Nurses,29,27,1,5.7,0.0,20.1,2.0,0.04,5.9,anthropic_exposure,0.0,4.0,5.9,41.77,0.01,,0.0,,2026-05,v2-all-occupations
+29-1141.01,Acute Care Nurses,29,27,3,5.8,0.0,19.0,5.3,0.12,5.9,anthropic_exposure,7.5,3.1,5.9,45.49,0.03,,0.0,,2026-05,v2-all-occupations
+29-1141.02,Advanced Practice Psychiatric Nurses,29,24,1,5.7,0.0,20.1,2.0,0.04,5.9,anthropic_exposure,0.0,4.0,5.9,44.02,0.01,,0.0,,2026-05,v2-all-occupations
+29-1141.03,Critical Care Nurses,29,29,2,5.8,0.0,20.2,3.8,0.04,5.9,anthropic_exposure,0.0,7.5,5.9,53.51,0.01,,0.0,,2026-05,v2-all-occupations
+29-1141.04,Clinical Nurse Specialists,29,30,6,6.3,0.0,18.3,7.9,0.2,5.9,anthropic_exposure,8.8,7.1,5.9,45.47,0.05,,0.0,,2026-05,v2-all-occupations
+29-1151.00,Nurse Anesthetists,29,24,0,6.7,0.0,21.7,0.0,0.0,6.7,field,0.0,0.0,0.0,69.05,0.0,,0.0,,2026-05,v2-all-occupations
+29-1161.00,Nurse Midwives,29,21,3,5.3,0.0,18.5,5.7,0.12,5.2,anthropic_exposure,3.4,8.0,5.2,41.18,0.03,,0.0,,2026-05,v2-all-occupations
+29-1171.00,Nurse Practitioners,29,27,4,9.1,0.7,17.5,8.8,0.44,9.4,anthropic_exposure,10.9,6.6,9.4,37.86,0.11,0.07,0.0,,2026-05,v2-all-occupations
+29-1181.00,Audiologists,29,22,0,6.7,0.0,21.7,0.0,0.0,6.7,field,0.0,0.0,0.0,36.11,0.0,,0.0,,2026-05,v2-all-occupations
+29-1211.00,Anesthesiologists,29,20,1,6.5,0.0,20.9,1.5,0.04,6.7,field,3.0,0.0,0.0,40.3,0.01,,0.0,,2026-05,v2-all-occupations
+29-1213.00,Dermatologists,29,18,2,6.7,0.0,21.7,4.2,0.0,6.7,field,0.0,8.4,0.0,43.28,0.0,,0.0,,2026-05,v2-all-occupations
+29-1214.00,Emergency Medicine Physicians,29,17,3,6.5,0.0,16.1,6.0,0.36,6.7,field,7.7,4.4,,28.56,0.09,,0.0,,2026-05,v2-all-occupations
+29-1215.00,Family Medicine Physicians,29,12,3,7.0,0.0,20.8,10.5,0.08,6.7,field,6.4,14.5,0.0,42.12,0.02,,0.0,,2026-05,v2-all-occupations
+29-1216.00,General Internal Medicine Physicians,29,19,3,8.3,0.0,22.1,7.2,0.08,8.4,anthropic_exposure,0.0,14.3,8.4,42.45,0.02,,0.0,,2026-05,v2-all-occupations
+29-1217.00,Neurologists,29,24,2,6.4,0.0,20.2,2.8,0.08,6.7,field,2.3,3.3,0.0,28.62,0.02,,0.0,,2026-05,v2-all-occupations
+29-1218.00,Obstetricians and Gynecologists,29,15,3,7.1,0.0,20.9,9.2,0.08,6.9,anthropic_exposure,0.0,18.5,6.9,41.95,0.02,,0.0,,2026-05,v2-all-occupations
+29-1221.00,"Pediatricians, General",29,17,3,6.7,0.0,20.5,6.6,0.08,6.7,field,5.1,8.2,0.0,45.72,0.02,,0.0,,2026-05,v2-all-occupations
+29-1222.00,"Physicians, Pathologists",29,19,2,15.4,1.0,29.8,5.0,0.04,15.8,anthropic_exposure,0.0,9.9,15.8,31.62,0.01,,0.0,,2026-05,v2-all-occupations
+29-1223.00,Psychiatrists,29,12,1,6.7,0.0,21.1,4.5,0.04,6.7,field,0.0,9.0,0.0,37.1,0.01,,0.0,,2026-05,v2-all-occupations
+29-1224.00,Radiologists,29,30,3,19.3,4.9,33.7,4.9,0.04,19.9,anthropic_exposure,0.0,9.8,19.9,53.29,0.01,,0.0,,2026-05,v2-all-occupations
+29-1229.01,Allergists and Immunologists,29,16,4,4.0,0.0,17.8,15.7,0.08,3.0,anthropic_exposure,9.4,22.0,3.0,34.37,0.02,,0.0,,2026-05,v2-all-occupations
+29-1229.02,Hospitalists,29,14,0,3.0,0.0,18.0,0.0,0.0,3.0,anthropic_exposure,0.0,0.0,3.0,58.33,0.0,,0.0,,2026-05,v2-all-occupations
+29-1229.03,Urologists,29,14,1,3.0,0.0,18.0,3.7,0.0,3.0,anthropic_exposure,0.0,7.4,3.0,63.64,0.0,,0.0,,2026-05,v2-all-occupations
+29-1229.04,Physical Medicine and Rehabilitation Physicians,29,15,0,3.0,0.0,18.0,0.0,0.0,3.0,anthropic_exposure,0.0,0.0,3.0,76.0,0.0,,0.0,,2026-05,v2-all-occupations
+29-1229.05,Preventive Medicine Physicians,29,15,0,3.0,0.0,18.0,0.0,0.0,3.0,anthropic_exposure,0.0,0.0,3.0,27.43,0.0,,0.0,,2026-05,v2-all-occupations
+29-1229.06,Sports Medicine Physicians,29,27,3,3.5,0.0,13.1,4.3,0.36,3.0,anthropic_exposure,8.5,0.0,3.0,44.74,0.09,0.08,0.0,,2026-05,v2-all-occupations
+29-1241.00,"Ophthalmologists, Except Pediatric",29,18,1,6.7,0.0,21.7,2.1,0.0,6.7,field,0.0,4.2,0.0,29.19,0.0,,0.0,,2026-05,v2-all-occupations
+29-1291.00,Acupuncturists,29,18,1,6.7,0.0,21.7,2.1,0.0,6.7,field,0.0,4.3,0.0,53.28,0.0,,0.0,,2026-05,v2-all-occupations
+29-1292.00,Dental Hygienists,29,16,2,6.7,0.0,21.1,4.8,0.04,6.7,field,4.5,5.2,0.0,32.41,0.01,,0.0,,2026-05,v2-all-occupations
+29-1299.01,Naturopathic Physicians,29,20,1,2.2,0.0,16.6,2.1,0.04,2.2,anthropic_exposure,4.2,0.0,2.2,44.87,0.01,,0.0,,2026-05,v2-all-occupations
+29-1299.02,Orthoptists,29,16,3,3.4,0.0,16.0,9.4,0.16,2.2,anthropic_exposure,10.4,8.4,2.2,50.59,0.04,,0.0,,2026-05,v2-all-occupations
+29-2011.00,Medical and Clinical Laboratory Technologists,29,15,3,6.7,0.0,21.7,9.4,0.0,6.7,field,0.0,18.8,,58.51,0.0,,0.0,,2026-05,v2-all-occupations
+29-2011.01,Cytogenetic Technologists,29,30,1,6.7,0.0,21.7,1.3,0.0,6.7,field,0.0,2.6,,51.01,0.0,,0.0,,2026-05,v2-all-occupations
+29-2011.02,Cytotechnologists,29,13,2,6.7,0.0,21.7,6.2,0.0,6.7,field,0.0,12.3,,,,,0.0,,2026-05,v2-all-occupations
+29-2011.04,Histotechnologists,29,16,1,6.7,0.0,21.7,2.7,0.0,6.7,field,0.0,5.4,,,,,0.0,,2026-05,v2-all-occupations
+29-2012.00,Medical and Clinical Laboratory Technicians,29,14,1,6.7,0.0,21.7,3.3,0.0,6.7,field,0.0,6.7,,45.16,0.0,,0.0,,2026-05,v2-all-occupations
+29-2012.01,Histology Technicians,29,8,0,6.7,0.0,21.7,0.0,0.0,6.7,field,0.0,0.0,,,,,0.0,,2026-05,v2-all-occupations
+29-2031.00,Cardiovascular Technologists and Technicians,29,21,2,6.7,0.0,21.7,3.8,0.0,6.7,field,0.0,7.7,0.0,75.47,0.0,,0.0,,2026-05,v2-all-occupations
+29-2032.00,Diagnostic Medical Sonographers,29,19,0,6.7,0.0,21.7,0.0,0.0,6.7,field,0.0,0.0,0.0,61.54,0.0,,0.0,,2026-05,v2-all-occupations
+29-2033.00,Nuclear Medicine Technologists,29,17,1,5.1,0.0,20.1,3.1,0.0,5.1,anthropic_exposure,0.0,6.1,5.1,84.06,0.0,,0.0,,2026-05,v2-all-occupations
+29-2034.00,Radiologic Technologists and Technicians,29,30,1,6.7,0.0,21.7,1.2,0.0,6.7,field,0.0,2.4,0.0,62.07,0.0,,0.0,,2026-05,v2-all-occupations
+29-2035.00,Magnetic Resonance Imaging Technologists,29,24,3,3.9,0.0,18.9,4.8,0.0,3.9,anthropic_exposure,0.0,9.6,3.9,46.74,0.0,,0.0,,2026-05,v2-all-occupations
+29-2036.00,Medical Dosimetrists,29,19,1,3.3,0.0,8.7,1.4,0.64,6.7,field,2.8,0.0,,31.66,0.16,0.1,0.0,,2026-05,v2-all-occupations
+29-2043.00,Paramedics,29,13,0,6.2,0.0,20.0,0.0,0.08,6.7,field,0.0,0.0,0.0,49.36,0.02,,0.0,,2026-05,v2-all-occupations
+29-2051.00,Dietetic Technicians,29,13,3,21.0,10.8,31.2,13.7,0.32,24.5,anthropic_exposure,12.0,15.5,24.5,48.1,0.08,,0.0,,2026-05,v2-all-occupations
+29-2052.00,Pharmacy Technicians,29,21,1,3.2,0.8,5.6,2.4,0.84,7.3,anthropic_exposure,0.0,4.9,7.3,41.6,0.21,0.18,0.0,,2026-05,v2-all-occupations
+29-2053.00,Psychiatric Technicians,29,16,1,6.6,0.0,21.0,2.9,0.04,6.7,field,5.9,0.0,0.0,59.34,0.01,,0.0,,2026-05,v2-all-occupations
+29-2055.00,Surgical Technologists,29,18,0,6.7,0.0,21.7,0.0,0.0,6.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+29-2056.00,Veterinary Technologists and Technicians,29,31,1,6.3,0.0,20.1,1.2,0.08,6.7,field,2.3,0.0,0.0,55.32,0.02,,0.0,,2026-05,v2-all-occupations
+29-2057.00,Ophthalmic Medical Technicians,29,20,1,6.7,0.0,21.7,2.1,0.0,6.7,field,0.0,4.1,0.0,,,,0.0,,2026-05,v2-all-occupations
+29-2061.00,Licensed Practical and Licensed Vocational Nurses,29,22,0,6.7,0.0,21.7,0.0,0.0,6.7,field,0.0,0.0,0.0,48.48,0.0,,0.0,,2026-05,v2-all-occupations
+29-2072.00,Medical Records Specialists,29,16,8,66.7,51.7,81.7,23.2,0.0,66.7,anthropic_exposure,0.0,46.4,66.7,74.87,0.0,,0.0,,2026-05,v2-all-occupations
+29-2081.00,"Opticians, Dispensing",29,21,0,6.7,0.0,21.7,0.0,0.0,6.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+29-2091.00,Orthotists and Prosthetists,29,15,0,6.7,0.0,21.7,0.0,0.0,6.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+29-2092.00,Hearing Aid Specialists,29,11,1,6.7,0.0,21.7,2.9,0.0,6.7,field,0.0,5.9,0.0,,,,0.0,,2026-05,v2-all-occupations
+29-2099.01,Neurodiagnostic Technologists,29,16,0,4.5,0.0,19.5,0.0,0.0,4.5,anthropic_exposure,0.0,0.0,4.5,32.79,0.0,,0.0,,2026-05,v2-all-occupations
+29-2099.05,Ophthalmic Medical Technologists,29,31,1,4.5,0.0,19.5,1.4,0.0,4.5,anthropic_exposure,0.0,2.7,4.5,88.29,0.0,,0.0,,2026-05,v2-all-occupations
+29-2099.08,Patient Representatives,29,13,3,5.3,0.0,19.1,14.3,0.08,4.5,anthropic_exposure,10.4,18.3,4.5,48.9,0.02,,0.0,,2026-05,v2-all-occupations
+29-9091.00,Athletic Trainers,29,23,4,5.6,0.0,15.8,6.3,0.32,5.3,anthropic_exposure,8.3,4.3,5.3,43.17,0.08,,0.0,,2026-05,v2-all-occupations
+29-9092.00,Genetic Counselors,29,19,5,2.3,0.0,15.5,10.0,0.12,1.2,anthropic_exposure,8.1,12.0,1.2,40.47,0.03,,0.0,,2026-05,v2-all-occupations
+29-9093.00,Surgical Assistants,29,28,0,6.7,0.0,21.7,0.0,0.0,6.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+29-9099.01,Midwives,29,36,2,5.7,0.0,17.7,1.7,0.2,6.7,field,3.5,0.0,0.0,33.74,0.05,,0.0,,2026-05,v2-all-occupations
+31-1121.00,Home Health Aides,31,15,0,4.6,0.0,19.6,0.0,0.0,4.6,field,0.0,0.0,,,,,0.0,,2026-05,v2-all-occupations
+31-1122.00,Personal Care Aides,31,11,3,6.5,0.0,16.7,10.6,0.32,4.6,field,14.8,6.4,,51.94,0.08,0.14,0.0,,2026-05,v2-all-occupations
+31-1131.00,Nursing Assistants,31,33,3,2.9,0.0,5.8,2.9,1.0,4.6,field,5.8,0.0,0.0,37.99,0.42,0.38,0.0,,2026-05,v2-all-occupations
+31-1132.00,Orderlies,31,22,0,4.6,0.0,19.6,0.0,0.0,4.6,field,0.0,0.0,0.0,85.37,0.0,,0.0,,2026-05,v2-all-occupations
+31-1133.00,Psychiatric Aides,31,17,0,4.6,0.0,19.6,0.0,0.0,4.6,field,0.0,0.0,0.0,86.05,0.0,,0.0,,2026-05,v2-all-occupations
+31-2011.00,Occupational Therapy Assistants,31,22,0,4.6,0.0,19.6,0.0,0.0,4.6,field,0.0,0.0,0.0,69.66,0.0,,0.0,,2026-05,v2-all-occupations
+31-2012.00,Occupational Therapy Aides,31,15,1,6.6,0.0,21.6,2.8,0.0,6.6,anthropic_exposure,0.0,5.6,6.6,66.67,0.0,,0.0,,2026-05,v2-all-occupations
+31-2021.00,Physical Therapist Assistants,31,21,1,4.5,0.0,18.9,2.1,0.04,4.6,field,4.3,0.0,0.0,51.18,0.01,,0.0,,2026-05,v2-all-occupations
+31-2022.00,Physical Therapist Aides,31,19,1,4.6,0.0,19.6,1.9,0.0,4.6,field,0.0,3.8,0.0,,,,0.0,,2026-05,v2-all-occupations
+31-9011.00,Massage Therapists,31,14,0,4.6,0.0,19.6,0.0,0.0,4.6,field,0.0,0.0,0.0,38.46,0.0,,0.0,,2026-05,v2-all-occupations
+31-9091.00,Dental Assistants,31,16,0,4.6,0.0,19.6,0.0,0.0,4.6,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+31-9092.00,Medical Assistants,31,20,2,4.6,0.0,15.4,4.1,0.28,4.8,anthropic_exposure,3.4,4.8,4.8,27.54,0.07,,0.0,,2026-05,v2-all-occupations
+31-9093.00,Medical Equipment Preparers,31,16,0,4.6,0.0,19.6,0.0,0.0,4.6,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+31-9094.00,Medical Transcriptionists,31,15,6,60.0,46.2,73.8,19.2,0.08,63.6,anthropic_exposure,0.0,38.4,63.6,50.78,0.02,,0.0,,2026-05,v2-all-occupations
+31-9095.00,Pharmacy Aides,31,17,2,2.2,0.0,17.2,4.4,0.0,2.2,anthropic_exposure,0.0,8.8,2.2,,0.0,,0.0,,2026-05,v2-all-occupations
+31-9096.00,Veterinary Assistants and Laboratory Animal Caretakers,31,28,1,1.8,0.0,16.8,1.7,0.0,1.8,anthropic_exposure,0.0,3.4,1.8,70.18,0.0,,0.0,,2026-05,v2-all-occupations
+31-9097.00,Phlebotomists,31,23,0,4.6,0.0,19.6,0.0,0.0,4.6,field,0.0,0.0,0.0,25.0,0.0,,0.0,,2026-05,v2-all-occupations
+31-9099.01,Speech-Language Pathology Assistants,31,11,0,4.6,0.0,19.6,0.0,0.0,4.6,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+31-9099.02,Endoscopy Technicians,31,12,1,4.6,0.0,19.6,2.6,0.0,4.6,field,0.0,5.3,0.0,,,,0.0,,2026-05,v2-all-occupations
+33-1011.00,First-Line Supervisors of Correctional Officers,33,23,3,3.2,0.0,17.6,5.5,0.04,3.1,anthropic_exposure,3.2,7.8,3.1,59.13,0.01,,0.0,,2026-05,v2-all-occupations
+33-1012.00,First-Line Supervisors of Police and Detectives,33,20,2,3.4,0.0,16.6,3.5,0.12,3.3,field,7.0,0.0,0.0,41.1,0.03,,0.0,,2026-05,v2-all-occupations
+33-1021.00,First-Line Supervisors of Firefighting and Prevention Workers,33,30,1,3.3,0.0,17.7,1.5,0.04,3.3,field,0.0,3.0,0.0,47.52,0.01,,0.0,,2026-05,v2-all-occupations
+33-1091.00,First-Line Supervisors of Security Workers,33,21,0,3.3,0.0,18.3,0.0,0.0,3.3,field,0.0,0.0,,41.09,0.0,,0.0,,2026-05,v2-all-occupations
+33-2011.00,Firefighters,33,30,0,3.3,0.0,18.3,0.0,0.0,3.3,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+33-2021.00,Fire Inspectors and Investigators,33,30,0,3.3,0.0,18.3,0.0,0.0,3.3,field,0.0,0.0,0.0,42.42,0.0,,0.0,,2026-05,v2-all-occupations
+33-2022.00,Forest Fire Inspectors and Prevention Specialists,33,16,0,3.3,0.0,18.3,0.0,0.0,3.3,field,0.0,0.0,0.0,76.61,0.0,,0.0,,2026-05,v2-all-occupations
+33-3011.00,Bailiffs,33,15,0,3.3,0.0,18.3,0.0,0.0,3.3,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+33-3012.00,Correctional Officers and Jailers,33,27,1,2.3,0.0,6.5,1.9,0.72,3.3,field,3.7,0.0,0.0,97.5,0.18,0.2,0.0,,2026-05,v2-all-occupations
+33-3021.00,Detectives and Criminal Investigators,33,30,1,3.7,0.0,18.7,1.3,0.0,3.7,anthropic_exposure,0.0,2.6,3.7,63.82,0.0,,0.0,,2026-05,v2-all-occupations
+33-3021.02,Police Identification and Records Officers,33,16,0,3.7,0.0,18.7,0.0,0.0,3.7,anthropic_exposure,0.0,0.0,3.7,,,,0.0,,2026-05,v2-all-occupations
+33-3021.06,Intelligence Analysts,33,21,2,3.8,0.0,18.2,5.0,0.04,3.7,anthropic_exposure,0.0,9.9,3.7,59.72,0.01,,2.9,tensorflow,2026-05,v2-all-occupations
+33-3031.00,Fish and Game Wardens,33,23,0,3.3,0.0,18.3,0.0,0.0,3.3,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+33-3041.00,Parking Enforcement Workers,33,20,0,3.3,0.0,18.3,0.0,0.0,3.3,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+33-3051.00,Police and Sheriff's Patrol Officers,33,30,2,11.9,0.0,26.3,3.0,0.04,12.3,anthropic_exposure,2.3,3.6,12.3,59.01,0.01,,0.0,,2026-05,v2-all-occupations
+33-3051.04,Customs and Border Protection Officers,33,11,2,11.3,0.0,23.3,7.4,0.2,12.3,anthropic_exposure,6.1,8.8,12.3,31.11,0.05,,0.0,,2026-05,v2-all-occupations
+33-3052.00,Transit and Railroad Police,33,12,1,3.3,0.0,18.3,3.3,0.0,3.3,field,0.0,6.6,0.0,45.0,0.0,,0.0,,2026-05,v2-all-occupations
+33-9011.00,Animal Control Workers,33,16,0,3.3,0.0,18.3,0.0,0.0,3.3,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+33-9021.00,Private Detectives and Investigators,33,14,0,3.3,0.0,18.3,0.0,0.0,3.3,field,0.0,0.0,0.0,72.73,0.0,,0.0,,2026-05,v2-all-occupations
+33-9031.00,Gambling Surveillance Officers and Gambling Investigators,33,8,0,3.3,0.0,18.3,0.0,0.0,3.3,field,0.0,0.0,0.0,92.0,0.0,,0.0,,2026-05,v2-all-occupations
+33-9032.00,Security Guards,33,14,0,3.3,0.0,18.3,0.0,0.0,3.3,field,0.0,0.0,0.0,86.67,0.0,,0.0,,2026-05,v2-all-occupations
+33-9091.00,Crossing Guards and Flaggers,33,12,0,3.3,0.0,18.3,0.0,0.0,3.3,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+33-9092.00,"Lifeguards, Ski Patrol, and Other Recreational Protective Service Workers",33,15,0,3.3,0.0,18.3,0.0,0.0,3.3,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+33-9093.00,Transportation Security Screeners,33,26,0,3.3,0.0,18.3,0.0,0.0,3.3,field,0.0,0.0,0.0,61.54,0.0,,0.0,,2026-05,v2-all-occupations
+33-9094.00,School Bus Monitors,33,18,1,3.3,0.0,17.7,1.9,0.04,3.3,field,3.9,0.0,,50.47,0.01,,0.0,,2026-05,v2-all-occupations
+33-9099.02,Retail Loss Prevention Specialists,33,21,3,5.7,0.0,19.5,5.9,0.08,5.7,anthropic_exposure,3.1,8.7,5.7,45.22,0.02,,0.0,,2026-05,v2-all-occupations
+35-1011.00,Chefs and Head Cooks,35,21,1,2.7,0.0,17.1,2.1,0.04,2.8,field,0.0,4.2,0.0,39.64,0.01,,0.0,,2026-05,v2-all-occupations
+35-1012.00,First-Line Supervisors of Food Preparation and Serving Workers,35,26,2,5.5,0.0,19.9,3.5,0.04,5.6,anthropic_exposure,0.0,7.0,5.6,41.64,0.01,,0.0,,2026-05,v2-all-occupations
+35-2011.00,"Cooks, Fast Food",35,20,0,2.8,0.0,17.8,0.0,0.0,2.8,field,0.0,0.0,0.0,73.77,0.0,,0.0,,2026-05,v2-all-occupations
+35-2012.00,"Cooks, Institution and Cafeteria",35,17,1,2.7,0.0,15.9,2.0,0.12,2.8,field,4.1,0.0,0.0,42.6,0.03,,0.0,,2026-05,v2-all-occupations
+35-2013.00,"Cooks, Private Household",35,13,2,3.1,0.0,16.3,5.4,0.12,2.8,field,10.9,0.0,0.0,38.84,0.03,,0.0,,2026-05,v2-all-occupations
+35-2014.00,"Cooks, Restaurant",35,20,1,1.2,0.0,15.6,1.7,0.04,1.2,anthropic_exposure,0.0,3.5,1.2,71.47,0.01,,0.0,,2026-05,v2-all-occupations
+35-2015.00,"Cooks, Short Order",35,11,0,2.8,0.0,17.8,0.0,0.0,2.8,field,0.0,0.0,0.0,72.34,0.0,,0.0,,2026-05,v2-all-occupations
+35-2021.00,Food Preparation Workers,35,31,0,2.8,0.0,17.8,0.0,0.0,2.8,field,0.0,0.0,0.0,78.95,0.0,,0.0,,2026-05,v2-all-occupations
+35-3011.00,Bartenders,35,20,1,2.7,0.0,16.5,1.5,0.08,2.8,field,3.0,0.0,0.0,46.75,0.02,,0.0,,2026-05,v2-all-occupations
+35-3023.00,Fast Food and Counter Workers,35,27,1,2.7,0.0,17.1,1.5,0.04,2.8,field,3.0,0.0,0.0,52.47,0.01,,0.0,,2026-05,v2-all-occupations
+35-3023.01,Baristas,35,19,0,2.8,0.0,17.8,0.0,0.0,2.8,field,0.0,0.0,0.0,54.55,0.0,,0.0,,2026-05,v2-all-occupations
+35-3031.00,Waiters and Waitresses,35,25,1,1.8,0.0,6.6,1.3,0.68,2.8,field,2.5,0.0,0.0,59.86,0.17,0.15,0.0,,2026-05,v2-all-occupations
+35-3041.00,"Food Servers, Nonrestaurant",35,14,0,2.8,0.0,17.8,0.0,0.0,2.8,field,0.0,0.0,0.0,84.0,0.0,,0.0,,2026-05,v2-all-occupations
+35-9011.00,Dining Room and Cafeteria Attendants and Bartender Helpers,35,23,1,2.7,0.0,16.5,2.0,0.08,2.8,field,4.0,0.0,0.0,75.04,0.02,,0.0,,2026-05,v2-all-occupations
+35-9021.00,Dishwashers,35,13,0,2.8,0.0,17.8,0.0,0.0,2.8,field,0.0,0.0,0.0,75.51,0.0,,0.0,,2026-05,v2-all-occupations
+35-9031.00,"Hosts and Hostesses, Restaurant, Lounge, and Coffee Shop",35,20,1,5.3,0.5,10.1,4.3,0.68,7.3,anthropic_exposure,3.4,5.2,7.3,31.55,0.17,0.12,0.0,,2026-05,v2-all-occupations
+37-1011.00,First-Line Supervisors of Housekeeping and Janitorial Workers,37,26,2,4.3,0.0,12.7,4.1,0.44,4.4,anthropic_exposure,2.5,5.8,4.4,43.0,0.11,0.13,0.0,,2026-05,v2-all-occupations
+37-1012.00,"First-Line Supervisors of Landscaping, Lawn Service, and Groundskeeping Workers",37,28,2,10.5,0.0,24.9,3.6,0.04,10.8,anthropic_exposure,0.0,7.1,10.8,62.39,0.01,,0.0,,2026-05,v2-all-occupations
+37-2011.00,"Janitors and Cleaners, Except Maids and Housekeeping Cleaners",37,21,0,5.1,0.0,20.1,0.0,0.0,5.1,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+37-2012.00,Maids and Housekeeping Cleaners,37,20,0,5.1,0.0,20.1,0.0,0.0,5.1,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+37-2021.00,Pest Control Workers,37,14,2,5.2,0.0,19.0,11.5,0.08,4.6,anthropic_exposure,14.3,8.8,4.6,66.62,0.02,,0.0,,2026-05,v2-all-occupations
+37-3011.00,Landscaping and Groundskeeping Workers,37,19,0,5.1,0.0,20.1,0.0,0.0,5.1,field,0.0,0.0,0.0,69.44,0.0,,0.0,,2026-05,v2-all-occupations
+37-3012.00,"Pesticide Handlers, Sprayers, and Applicators, Vegetation",37,12,0,5.1,0.0,20.1,0.0,0.0,5.1,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+37-3013.00,Tree Trimmers and Pruners,37,24,0,5.1,0.0,20.1,0.0,0.0,5.1,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+39-1013.00,First-Line Supervisors of Gambling Services Workers,39,30,0,3.3,0.0,17.7,0.0,0.04,3.4,field,0.0,0.0,0.0,37.28,0.01,,0.0,,2026-05,v2-all-occupations
+39-1014.00,"First-Line Supervisors of Entertainment and Recreation Workers, Except Gambling Services",39,19,4,5.0,0.0,17.6,8.1,0.16,4.4,anthropic_exposure,7.4,8.9,4.4,47.17,0.04,,0.0,,2026-05,v2-all-occupations
+39-1022.00,First-Line Supervisors of Personal Service Workers,39,17,2,4.1,0.0,19.1,5.1,0.0,4.1,anthropic_exposure,0.0,10.2,4.1,47.12,0.0,,0.0,,2026-05,v2-all-occupations
+39-2011.00,Animal Trainers,39,15,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,79.55,0.0,,0.0,,2026-05,v2-all-occupations
+39-2021.00,Animal Caretakers,39,22,1,3.2,0.0,15.8,1.8,0.16,3.4,field,3.5,0.0,0.0,58.47,0.04,,0.0,,2026-05,v2-all-occupations
+39-3011.00,Gambling Dealers,39,21,1,3.3,0.0,16.5,2.1,0.12,3.4,field,4.1,0.0,0.0,61.43,0.03,,0.0,,2026-05,v2-all-occupations
+39-3012.00,Gambling and Sports Book Writers and Runners,39,17,0,3.3,0.0,17.7,0.0,0.04,3.4,field,0.0,0.0,0.0,56.59,0.01,,0.0,,2026-05,v2-all-occupations
+39-3021.00,Motion Picture Projectionists,39,17,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+39-3031.00,"Ushers, Lobby Attendants, and Ticket Takers",39,23,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,73.53,0.0,,0.0,,2026-05,v2-all-occupations
+39-3091.00,Amusement and Recreation Attendants,39,17,1,6.2,0.0,21.2,3.2,0.0,6.2,anthropic_exposure,0.0,6.5,6.2,58.33,0.0,,0.0,,2026-05,v2-all-occupations
+39-3092.00,Costume Attendants,39,21,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+39-3093.00,"Locker Room, Coatroom, and Dressing Room Attendants",39,24,1,1.6,0.0,3.3,1.6,1.0,3.4,field,3.3,0.0,0.0,64.53,0.56,0.52,0.0,,2026-05,v2-all-occupations
+39-4011.00,Embalmers,39,26,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+39-4021.00,Funeral Attendants,39,24,2,3.5,0.0,17.9,5.2,0.04,3.4,field,6.9,3.6,0.0,61.86,0.01,,0.0,,2026-05,v2-all-occupations
+39-4031.00,"Morticians, Undertakers, and Funeral Arrangers",39,22,0,3.3,0.0,17.7,0.0,0.04,3.4,field,0.0,0.0,0.0,47.15,0.01,,0.0,,2026-05,v2-all-occupations
+39-5011.00,Barbers,39,20,1,3.4,0.0,17.8,2.3,0.04,3.4,field,4.6,0.0,0.0,47.54,0.01,,0.0,,2026-05,v2-all-occupations
+39-5012.00,"Hairdressers, Hairstylists, and Cosmetologists",39,20,3,3.3,0.0,17.1,6.3,0.08,3.0,anthropic_exposure,7.1,5.5,3.0,44.09,0.02,,0.0,,2026-05,v2-all-occupations
+39-5091.00,"Makeup Artists, Theatrical and Performance",39,22,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,37.5,0.0,,0.0,,2026-05,v2-all-occupations
+39-5092.00,Manicurists and Pedicurists,39,18,1,3.4,0.0,18.4,2.9,0.0,3.4,field,0.0,5.7,0.0,42.86,0.0,,0.0,,2026-05,v2-all-occupations
+39-5093.00,Shampooers,39,4,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,76.34,0.0,,0.0,,2026-05,v2-all-occupations
+39-5094.00,Skincare Specialists,39,18,2,3.7,0.0,16.3,4.8,0.16,3.4,field,9.6,0.0,0.0,58.48,0.04,,0.0,,2026-05,v2-all-occupations
+39-6011.00,Baggage Porters and Bellhops,39,17,1,7.2,0.0,21.6,6.0,0.04,7.3,anthropic_exposure,5.6,6.4,7.3,73.87,0.01,,0.0,,2026-05,v2-all-occupations
+39-6012.00,Concierges,39,18,3,18.4,4.0,32.8,8.6,0.04,18.8,anthropic_exposure,0.0,17.1,18.8,76.77,0.01,,0.0,,2026-05,v2-all-occupations
+39-7011.00,Tour Guides and Escorts,39,19,3,4.0,0.0,17.2,8.4,0.12,3.4,field,13.3,3.5,,64.08,0.03,,0.0,,2026-05,v2-all-occupations
+39-7012.00,Travel Guides,39,17,2,3.4,0.0,18.4,6.1,0.0,3.4,field,0.0,12.2,,69.92,0.0,,0.0,,2026-05,v2-all-occupations
+39-9011.00,Childcare Workers,39,24,2,2.7,0.0,12.3,5.3,0.36,1.2,anthropic_exposure,7.0,3.6,1.2,56.13,0.09,0.08,0.0,,2026-05,v2-all-occupations
+39-9011.01,Nannies,39,19,0,1.2,0.0,16.2,0.0,0.0,1.2,anthropic_exposure,0.0,0.0,1.2,50.94,0.0,,0.0,,2026-05,v2-all-occupations
+39-9031.00,Exercise Trainers and Group Fitness Instructors,39,20,2,3.5,0.0,14.3,3.7,0.28,3.4,field,7.3,0.0,0.0,42.0,0.07,0.07,0.0,,2026-05,v2-all-occupations
+39-9032.00,Recreation Workers,39,24,4,4.7,0.0,13.1,6.3,0.44,3.4,field,12.6,0.0,0.0,53.73,0.11,0.1,0.0,,2026-05,v2-all-occupations
+39-9041.00,Residential Advisors,39,30,3,6.2,0.0,15.2,5.5,0.4,6.7,anthropic_exposure,4.6,6.3,6.7,40.75,0.1,0.12,0.0,,2026-05,v2-all-occupations
+41-1011.00,First-Line Supervisors of Retail Sales Workers,41,21,6,25.0,12.4,37.6,18.1,0.16,26.3,anthropic_exposure,10.2,26.1,26.3,44.59,0.04,,0.0,,2026-05,v2-all-occupations
+41-1012.00,First-Line Supervisors of Non-Retail Sales Workers,41,18,5,22.1,8.3,35.9,12.9,0.08,22.9,anthropic_exposure,4.2,21.6,22.9,42.89,0.02,,0.0,,2026-05,v2-all-occupations
+41-2011.00,Cashiers,41,28,4,8.8,5.3,12.3,8.8,1.0,8.5,anthropic_exposure,11.0,6.7,8.5,33.41,0.94,1.0,0.0,,2026-05,v2-all-occupations
+41-2012.00,Gambling Change Persons and Booth Cashiers,41,13,0,20.4,5.4,35.4,0.0,0.0,20.4,field,0.0,0.0,0.0,81.25,0.0,,0.0,,2026-05,v2-all-occupations
+41-2021.00,Counter and Rental Clerks,41,16,4,16.3,8.9,23.7,16.3,1.0,20.5,anthropic_exposure,8.9,23.7,20.5,43.48,2.72,2.08,0.0,,2026-05,v2-all-occupations
+41-2022.00,Parts Salespersons,41,19,2,14.9,4.7,25.1,3.4,0.32,20.4,field,6.8,0.0,0.0,36.89,0.08,,0.0,,2026-05,v2-all-occupations
+41-2031.00,Retail Salespersons,41,24,6,17.0,10.1,24.0,17.0,1.0,32.2,anthropic_exposure,14.4,19.7,32.2,41.27,0.4,0.32,0.0,,2026-05,v2-all-occupations
+41-3011.00,Advertising Sales Agents,41,20,6,14.0,6.8,21.2,13.2,0.52,14.8,anthropic_exposure,12.8,13.7,14.8,31.72,0.13,0.18,0.0,,2026-05,v2-all-occupations
+41-3021.00,Insurance Sales Agents,41,19,4,31.9,16.9,46.9,10.5,0.0,31.9,anthropic_exposure,0.0,21.1,31.9,45.95,0.0,,0.0,,2026-05,v2-all-occupations
+41-3031.00,"Securities, Commodities, and Financial Services Sales Agents",41,30,13,33.9,26.6,41.1,25.8,0.56,44.1,anthropic_exposure,15.1,36.6,44.1,48.66,0.14,0.2,0.0,,2026-05,v2-all-occupations
+41-3041.00,Travel Agents,41,8,3,39.6,25.2,54.0,18.2,0.04,40.5,anthropic_exposure,0.0,36.4,40.5,61.07,0.01,,0.0,,2026-05,v2-all-occupations
+41-3091.00,"Sales Representatives of Services, Except Advertising, Insurance, Financial Services, and Travel",41,15,12,40.7,20.3,61.2,40.7,1.0,20.4,field,35.9,45.6,,45.69,0.34,0.35,0.0,,2026-05,v2-all-occupations
+41-4011.00,"Sales Representatives, Wholesale and Manufacturing, Technical and Scientific Products",41,33,15,28.7,14.7,42.7,28.7,1.0,27.1,anthropic_exposure,18.9,38.4,27.1,48.15,0.45,0.36,0.0,,2026-05,v2-all-occupations
+41-4011.07,Solar Sales Representatives and Assessors,41,13,3,24.9,11.7,38.1,8.5,0.12,27.1,anthropic_exposure,10.2,6.9,27.1,35.03,0.03,,0.0,,2026-05,v2-all-occupations
+41-4012.00,"Sales Representatives, Wholesale and Manufacturing, Except Technical and Scientific Products",41,18,10,34.5,17.5,51.6,34.5,1.0,62.8,anthropic_exposure,21.0,48.1,62.8,46.88,1.39,1.07,0.0,,2026-05,v2-all-occupations
+41-9011.00,Demonstrators and Product Promoters,41,21,5,10.6,3.0,18.2,10.6,1.0,7.9,anthropic_exposure,12.7,8.5,7.9,38.11,0.86,0.89,0.0,,2026-05,v2-all-occupations
+41-9012.00,Models,41,10,0,20.4,5.4,35.4,0.0,0.0,20.4,field,0.0,0.0,0.0,80.0,0.0,,0.0,,2026-05,v2-all-occupations
+41-9021.00,Real Estate Brokers,41,19,5,26.1,11.1,41.1,13.4,0.0,26.1,anthropic_exposure,0.0,26.8,26.1,58.04,0.0,,0.0,,2026-05,v2-all-occupations
+41-9022.00,Real Estate Sales Agents,41,33,9,25.9,13.3,38.5,13.1,0.16,28.3,anthropic_exposure,2.6,23.6,28.3,47.13,0.04,,0.0,,2026-05,v2-all-occupations
+41-9031.00,Sales Engineers,41,25,10,22.3,9.8,34.7,22.3,1.0,32.2,anthropic_exposure,21.4,23.2,32.2,70.57,0.73,0.67,0.0,,2026-05,v2-all-occupations
+41-9041.00,Telemarketers,41,12,6,25.9,5.6,46.1,25.9,1.0,28.5,anthropic_exposure,17.9,33.8,28.5,29.11,0.47,0.45,0.0,,2026-05,v2-all-occupations
+41-9091.00,"Door-to-Door Sales Workers, News and Street Vendors, and Related Workers",41,12,3,20.1,14.0,26.2,20.1,1.0,17.6,anthropic_exposure,14.0,26.2,17.6,37.62,0.36,0.32,0.0,,2026-05,v2-all-occupations
+43-1011.00,First-Line Supervisors of Office and Administrative Support Workers,43,28,8,14.7,5.8,23.6,14.7,1.0,18.6,anthropic_exposure,14.1,15.4,18.6,56.53,0.38,0.33,0.0,,2026-05,v2-all-occupations
+43-2011.00,"Switchboard Operators, Including Answering Service",43,19,5,34.3,21.7,46.9,11.5,0.16,38.6,anthropic_exposure,4.1,19.0,38.6,66.84,0.04,,0.0,,2026-05,v2-all-occupations
+43-2021.00,Telephone Operators,43,14,1,22.7,7.7,37.7,2.7,0.0,22.7,field,0.0,5.4,0.0,72.13,0.0,,0.0,,2026-05,v2-all-occupations
+43-3011.00,Bill and Account Collectors,43,15,3,29.9,14.9,44.9,10.0,0.0,29.9,anthropic_exposure,0.0,20.0,29.9,84.93,0.0,,0.0,,2026-05,v2-all-occupations
+43-3021.00,Billing and Posting Clerks,43,26,8,18.4,5.8,31.0,14.3,0.16,19.2,anthropic_exposure,5.7,22.9,19.2,44.81,0.04,,0.0,,2026-05,v2-all-occupations
+43-3031.00,"Bookkeeping, Accounting, and Auditing Clerks",43,28,9,18.1,8.3,27.8,18.1,1.0,31.0,anthropic_exposure,19.8,16.3,31.0,51.9,0.32,0.3,0.0,,2026-05,v2-all-occupations
+43-3041.00,Gambling Cage Workers,43,17,1,6.5,0.0,21.5,2.5,0.0,6.5,anthropic_exposure,0.0,5.0,6.5,65.63,0.0,,0.0,,2026-05,v2-all-occupations
+43-3051.00,Payroll and Timekeeping Clerks,43,21,2,4.9,0.0,19.3,3.7,0.04,4.9,anthropic_exposure,3.7,3.8,4.9,46.94,0.01,,0.0,,2026-05,v2-all-occupations
+43-3061.00,Procurement Clerks,43,19,4,23.8,9.4,38.2,10.5,0.04,24.4,anthropic_exposure,0.0,21.0,24.4,65.15,0.01,,0.0,,2026-05,v2-all-occupations
+43-3071.00,Tellers,43,28,2,2.3,0.0,16.1,2.4,0.08,2.3,anthropic_exposure,2.4,2.4,2.3,50.83,0.02,,0.0,,2026-05,v2-all-occupations
+43-4011.00,Brokerage Clerks,43,10,2,17.4,2.4,32.4,8.9,0.0,17.4,anthropic_exposure,0.0,17.9,17.4,60.39,0.0,,0.0,,2026-05,v2-all-occupations
+43-4021.00,Correspondence Clerks,43,17,8,25.1,10.1,40.1,25.1,1.0,27.9,anthropic_exposure,28.7,21.5,27.9,37.35,0.39,0.32,0.0,,2026-05,v2-all-occupations
+43-4031.00,"Court, Municipal, and License Clerks",43,29,5,8.6,3.2,14.0,7.7,0.64,10.2,anthropic_exposure,7.1,8.3,10.2,46.43,0.16,0.12,0.0,,2026-05,v2-all-occupations
+43-4041.00,"Credit Authorizers, Checkers, and Clerks",43,16,3,12.8,0.0,27.2,7.8,0.04,13.0,anthropic_exposure,0.0,15.6,13.0,49.57,0.01,,0.0,,2026-05,v2-all-occupations
+43-4051.00,Customer Service Representatives,43,13,6,59.1,48.3,69.9,30.8,0.28,70.1,anthropic_exposure,13.4,48.2,70.1,34.34,0.07,0.09,0.0,,2026-05,v2-all-occupations
+43-4061.00,"Eligibility Interviewers, Government Programs",43,17,2,6.3,0.0,17.7,7.1,0.24,6.0,anthropic_exposure,8.6,5.6,6.0,40.94,0.06,,0.0,,2026-05,v2-all-occupations
+43-4071.00,File Clerks,43,19,5,15.4,8.6,22.3,15.3,0.68,15.7,anthropic_exposure,19.9,10.8,15.7,74.8,0.17,0.2,0.0,,2026-05,v2-all-occupations
+43-4081.00,"Hotel, Motel, and Resort Desk Clerks",43,20,2,17.2,2.2,32.2,5.1,0.0,17.2,anthropic_exposure,0.0,10.1,17.2,42.29,0.0,,0.0,,2026-05,v2-all-occupations
+43-4111.00,"Interviewers, Except Eligibility and Loan",43,16,6,21.8,8.0,35.6,20.4,0.92,38.5,anthropic_exposure,15.3,25.5,38.5,58.79,0.23,0.29,0.0,,2026-05,v2-all-occupations
+43-4121.00,"Library Assistants, Clerical",43,32,3,9.7,0.0,24.1,6.2,0.04,9.8,anthropic_exposure,3.2,9.1,9.8,80.53,0.01,,0.0,,2026-05,v2-all-occupations
+43-4131.00,Loan Interviewers and Clerks,43,18,2,19.6,5.2,34.0,5.6,0.04,20.2,anthropic_exposure,0.0,11.1,20.2,46.26,0.01,,0.0,,2026-05,v2-all-occupations
+43-4141.00,New Accounts Clerks,43,15,1,22.7,7.7,37.7,2.7,0.0,22.7,field,0.0,5.4,0.0,63.68,0.0,,0.0,,2026-05,v2-all-occupations
+43-4151.00,Order Clerks,43,19,3,8.3,0.0,20.9,12.3,0.16,7.5,anthropic_exposure,8.6,15.9,7.5,61.67,0.04,,0.0,,2026-05,v2-all-occupations
+43-4161.00,"Human Resources Assistants, Except Payroll and Timekeeping",43,19,7,39.6,25.2,54.0,17.6,0.04,40.5,anthropic_exposure,3.6,31.6,40.5,44.91,0.01,,0.0,,2026-05,v2-all-occupations
+43-4171.00,Receptionists and Information Clerks,43,18,7,26.6,13.8,39.3,26.6,1.0,43.4,anthropic_exposure,25.1,28.0,43.4,58.64,0.37,0.43,0.0,,2026-05,v2-all-occupations
+43-4181.00,Reservation and Transportation Ticket Agents and Travel Clerks,43,19,4,20.1,9.9,30.3,10.3,0.32,24.7,anthropic_exposure,3.5,17.1,24.7,32.9,0.08,0.1,0.0,,2026-05,v2-all-occupations
+43-5011.00,Cargo and Freight Agents,43,24,0,1.7,0.0,16.7,0.0,0.0,1.7,anthropic_exposure,0.0,0.0,1.7,83.87,0.0,,0.0,,2026-05,v2-all-occupations
+43-5011.01,Freight Forwarders,43,31,2,1.8,0.0,16.2,3.1,0.04,1.7,anthropic_exposure,0.0,6.1,1.7,43.14,0.01,,0.0,,2026-05,v2-all-occupations
+43-5021.00,Couriers and Messengers,43,16,1,4.1,0.0,19.1,2.8,0.0,4.1,anthropic_exposure,0.0,5.7,4.1,97.12,0.0,,0.0,,2026-05,v2-all-occupations
+43-5031.00,Public Safety Telecommunicators,43,18,1,4.7,0.0,19.7,2.8,0.0,4.7,anthropic_exposure,0.0,5.6,4.7,93.33,0.0,,0.0,,2026-05,v2-all-occupations
+43-5032.00,"Dispatchers, Except Police, Fire, and Ambulance",43,12,2,22.1,7.7,36.5,8.9,0.04,22.6,anthropic_exposure,8.6,9.2,22.6,86.92,0.01,,0.0,,2026-05,v2-all-occupations
+43-5041.00,"Meter Readers, Utilities",43,15,0,22.7,7.7,37.7,0.0,0.0,22.7,field,0.0,0.0,0.0,82.35,0.0,,0.0,,2026-05,v2-all-occupations
+43-5051.00,Postal Service Clerks,43,19,0,22.7,7.7,37.7,0.0,0.0,22.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+43-5052.00,Postal Service Mail Carriers,43,21,0,22.7,7.7,37.7,0.0,0.0,22.7,field,0.0,0.0,0.0,52.0,0.0,,0.0,,2026-05,v2-all-occupations
+43-5053.00,"Postal Service Mail Sorters, Processors, and Processing Machine Operators",43,14,0,22.7,7.7,37.7,0.0,0.0,22.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+43-5061.00,"Production, Planning, and Expediting Clerks",43,17,3,10.5,4.5,16.5,11.3,0.6,9.3,anthropic_exposure,12.1,10.5,9.3,41.97,0.15,0.18,0.0,,2026-05,v2-all-occupations
+43-5071.00,"Shipping, Receiving, and Inventory Clerks",43,11,0,22.7,7.7,37.7,0.0,0.0,22.7,field,0.0,0.0,0.0,67.5,0.0,,0.0,,2026-05,v2-all-occupations
+43-5111.00,"Weighers, Measurers, Checkers, and Samplers, Recordkeeping",43,18,1,20.2,7.0,33.4,1.9,0.12,22.7,field,3.8,0.0,0.0,44.24,0.03,,0.0,,2026-05,v2-all-occupations
+43-6011.00,Executive Secretaries and Executive Administrative Assistants,43,22,8,21.6,10.9,32.3,21.6,1.0,23.4,anthropic_exposure,23.6,19.7,23.4,57.0,0.3,0.31,0.0,,2026-05,v2-all-occupations
+43-6012.00,Legal Secretaries and Administrative Assistants,43,14,4,20.7,9.3,32.1,14.4,0.24,22.7,field,16.6,12.2,0.0,51.28,0.06,,0.0,,2026-05,v2-all-occupations
+43-6013.00,Medical Secretaries and Administrative Assistants,43,15,4,35.2,20.8,49.6,12.1,0.04,36.2,anthropic_exposure,0.0,24.3,36.2,72.04,0.01,,0.0,,2026-05,v2-all-occupations
+43-6014.00,"Secretaries and Administrative Assistants, Except Legal, Medical, and Executive",43,31,13,26.7,14.5,39.0,26.7,1.0,45.3,anthropic_exposure,21.5,32.0,45.3,70.62,0.58,0.51,0.0,,2026-05,v2-all-occupations
+43-9021.00,Data Entry Keyers,43,9,4,54.1,43.9,64.3,26.4,0.32,67.1,anthropic_exposure,41.1,11.7,67.1,76.71,0.08,0.16,0.0,,2026-05,v2-all-occupations
+43-9022.00,Word Processors and Typists,43,19,10,30.9,16.5,45.3,30.9,1.0,23.8,anthropic_exposure,37.0,24.9,23.8,54.62,1.16,1.26,0.0,,2026-05,v2-all-occupations
+43-9031.00,Desktop Publishers,43,18,8,31.0,22.1,39.8,31.0,1.0,46.4,anthropic_exposure,29.5,32.3,46.4,54.21,0.58,0.64,0.0,,2026-05,v2-all-occupations
+43-9041.00,Insurance Claims and Policy Processing Clerks,43,25,6,11.9,2.5,21.4,11.9,1.0,14.7,anthropic_exposure,9.3,14.6,14.7,47.42,0.84,0.95,0.0,,2026-05,v2-all-occupations
+43-9051.00,"Mail Clerks and Mail Machine Operators, Except Postal Service",43,29,0,22.7,7.7,37.7,0.0,0.0,22.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+43-9061.00,"Office Clerks, General",43,20,9,30.6,18.9,42.3,30.6,1.0,45.0,anthropic_exposure,22.5,38.7,45.0,69.29,0.76,0.6,0.0,,2026-05,v2-all-occupations
+43-9071.00,"Office Machine Operators, Except Computer",43,18,1,2.4,0.0,17.4,2.8,0.0,2.4,anthropic_exposure,0.0,5.7,2.4,67.81,0.0,,0.0,,2026-05,v2-all-occupations
+43-9081.00,Proofreaders and Copy Markers,43,11,4,14.9,0.0,29.8,14.9,1.0,17.8,anthropic_exposure,21.2,8.6,17.8,56.49,0.41,0.37,0.0,,2026-05,v2-all-occupations
+43-9111.00,Statistical Assistants,43,16,7,28.9,16.0,41.8,28.9,1.0,51.0,anthropic_exposure,28.0,29.7,51.0,58.33,0.44,0.52,0.0,,2026-05,v2-all-occupations
+45-1011.00,"First-Line Supervisors of Farming, Fishing, and Forestry Workers",45,30,1,2.4,0.0,16.8,1.5,0.04,2.4,field,3.1,0.0,0.0,95.25,0.01,,0.0,,2026-05,v2-all-occupations
+45-2011.00,Agricultural Inspectors,45,22,1,2.4,0.0,16.8,1.7,0.04,2.4,field,3.4,0.0,0.0,48.77,0.01,,0.0,,2026-05,v2-all-occupations
+45-2021.00,Animal Breeders,45,21,0,2.4,0.0,17.4,0.0,0.0,2.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+45-2041.00,"Graders and Sorters, Agricultural Products",45,5,0,2.4,0.0,17.4,0.0,0.0,2.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+45-2091.00,Agricultural Equipment Operators,45,17,0,2.4,0.0,17.4,0.0,0.0,2.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+45-2092.00,"Farmworkers and Laborers, Crop, Nursery, and Greenhouse",45,27,1,2.1,0.0,15.9,3.2,0.08,2.0,anthropic_exposure,2.9,3.5,2.0,52.6,0.02,,0.0,,2026-05,v2-all-occupations
+45-2093.00,"Farmworkers, Farm, Ranch, and Aquacultural Animals",45,19,0,2.4,0.0,17.4,0.0,0.0,2.4,field,0.0,0.0,0.0,73.68,0.0,,0.0,,2026-05,v2-all-occupations
+45-3031.00,Fishing and Hunting Workers,45,29,0,2.4,0.0,17.4,0.0,0.0,2.4,field,0.0,0.0,,,,,0.0,,2026-05,v2-all-occupations
+45-4011.00,Forest and Conservation Workers,45,17,0,2.4,0.0,17.4,0.0,0.0,2.4,field,0.0,0.0,0.0,48.0,0.0,,0.0,,2026-05,v2-all-occupations
+45-4021.00,Fallers,45,17,0,2.4,0.0,17.4,0.0,0.0,2.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+45-4022.00,Logging Equipment Operators,45,9,0,2.4,0.0,17.4,0.0,0.0,2.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+45-4023.00,Log Graders and Scalers,45,12,0,2.4,0.0,17.4,0.0,0.0,2.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-1011.00,First-Line Supervisors of Construction Trades and Extraction Workers,47,15,3,3.5,0.0,17.3,9.0,0.08,3.0,anthropic_exposure,10.8,7.2,3.0,71.27,0.02,,0.0,,2026-05,v2-all-occupations
+47-1011.03,Solar Energy Installation Managers,47,15,1,3.0,0.0,17.4,2.3,0.04,3.0,anthropic_exposure,4.5,0.0,3.0,49.3,0.01,,0.0,,2026-05,v2-all-occupations
+47-2011.00,Boilermakers,47,18,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-2021.00,Brickmasons and Blockmasons,47,14,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,44.58,0.0,,0.0,,2026-05,v2-all-occupations
+47-2022.00,Stonemasons,47,16,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-2031.00,Carpenters,47,29,1,3.1,0.0,16.3,1.5,0.12,3.4,field,3.0,0.0,0.0,77.77,0.03,,0.0,,2026-05,v2-all-occupations
+47-2041.00,Carpet Installers,47,17,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,48.51,0.0,,0.0,,2026-05,v2-all-occupations
+47-2042.00,"Floor Layers, Except Carpet, Wood, and Hard Tiles",47,14,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-2043.00,Floor Sanders and Finishers,47,7,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-2044.00,Tile and Stone Setters,47,25,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,52.17,0.0,,0.0,,2026-05,v2-all-occupations
+47-2051.00,Cement Masons and Concrete Finishers,47,26,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-2053.00,Terrazzo Workers and Finishers,47,26,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-2061.00,Construction Laborers,47,27,1,2.8,0.0,17.8,1.9,0.0,2.8,anthropic_exposure,0.0,3.8,2.8,,,,0.0,,2026-05,v2-all-occupations
+47-2071.00,"Paving, Surfacing, and Tamping Equipment Operators",47,20,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-2072.00,Pile Driver Operators,47,5,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-2073.00,Operating Engineers and Other Construction Equipment Operators,47,26,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,48.44,0.0,,0.0,,2026-05,v2-all-occupations
+47-2081.00,Drywall and Ceiling Tile Installers,47,24,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-2082.00,Tapers,47,16,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-2111.00,Electricians,47,21,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,60.78,0.0,,0.0,,2026-05,v2-all-occupations
+47-2121.00,Glaziers,47,27,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,38.1,0.0,,0.0,,2026-05,v2-all-occupations
+47-2131.00,"Insulation Workers, Floor, Ceiling, and Wall",47,10,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-2132.00,"Insulation Workers, Mechanical",47,9,1,4.4,0.0,19.4,5.2,0.0,4.4,anthropic_exposure,0.0,10.4,4.4,,,,0.0,,2026-05,v2-all-occupations
+47-2141.00,"Painters, Construction and Maintenance",47,17,1,3.3,0.0,17.7,2.0,0.04,3.4,field,4.0,0.0,0.0,43.22,0.01,,0.0,,2026-05,v2-all-occupations
+47-2142.00,Paperhangers,47,19,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,47.46,0.0,,0.0,,2026-05,v2-all-occupations
+47-2151.00,Pipelayers,47,14,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-2152.00,"Plumbers, Pipefitters, and Steamfitters",47,30,1,1.2,0.0,16.2,1.7,0.0,1.2,anthropic_exposure,0.0,3.4,1.2,70.21,0.0,,0.0,,2026-05,v2-all-occupations
+47-2152.04,Solar Thermal Installers and Technicians,47,21,0,1.2,0.0,16.2,0.0,0.0,1.2,anthropic_exposure,0.0,0.0,1.2,,,,0.0,,2026-05,v2-all-occupations
+47-2161.00,Plasterers and Stucco Masons,47,15,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,33.33,0.0,,0.0,,2026-05,v2-all-occupations
+47-2171.00,Reinforcing Iron and Rebar Workers,47,9,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-2181.00,Roofers,47,25,1,1.6,0.0,16.6,2.1,0.0,1.6,anthropic_exposure,0.0,4.2,1.6,62.5,0.0,,0.0,,2026-05,v2-all-occupations
+47-2211.00,Sheet Metal Workers,47,19,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-2221.00,Structural Iron and Steel Workers,47,20,1,4.9,0.0,19.9,2.6,0.0,4.9,anthropic_exposure,0.0,5.2,4.9,,,,0.0,,2026-05,v2-all-occupations
+47-2231.00,Solar Photovoltaic Installers,47,26,1,3.3,0.0,17.7,1.7,0.04,3.4,field,3.4,0.0,0.0,97.63,0.01,,0.0,,2026-05,v2-all-occupations
+47-3011.00,"Helpers--Brickmasons, Blockmasons, Stonemasons, and Tile and Marble Setters",47,15,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-3012.00,Helpers--Carpenters,47,19,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-3013.00,Helpers--Electricians,47,25,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-3014.00,"Helpers--Painters, Paperhangers, Plasterers, and Stucco Masons",47,11,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-3015.00,"Helpers--Pipelayers, Plumbers, Pipefitters, and Steamfitters",47,15,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-3016.00,Helpers--Roofers,47,18,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-4011.00,Construction and Building Inspectors,47,19,2,4.8,0.0,19.8,4.9,0.0,4.8,anthropic_exposure,0.0,9.8,4.8,60.0,0.0,,0.0,,2026-05,v2-all-occupations
+47-4011.01,Energy Auditors,47,21,0,4.8,0.0,19.8,0.0,0.0,4.8,anthropic_exposure,0.0,0.0,4.8,39.9,0.0,,0.0,,2026-05,v2-all-occupations
+47-4021.00,Elevator and Escalator Installers and Repairers,47,20,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-4031.00,Fence Erectors,47,20,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-4041.00,Hazardous Materials Removal Workers,47,19,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-4051.00,Highway Maintenance Workers,47,19,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-4061.00,Rail-Track Laying and Maintenance Equipment Operators,47,26,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-4071.00,Septic Tank Servicers and Sewer Pipe Cleaners,47,22,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-4091.00,Segmental Pavers,47,12,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,,,,,0.0,,2026-05,v2-all-occupations
+47-4099.03,Weatherization Installers and Technicians,47,20,1,3.3,0.0,17.7,1.7,0.04,3.4,field,3.5,0.0,,44.03,0.01,,0.0,,2026-05,v2-all-occupations
+47-5011.00,"Derrick Operators, Oil and Gas",47,15,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-5012.00,"Rotary Drill Operators, Oil and Gas",47,21,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-5013.00,"Service Unit Operators, Oil and Gas",47,19,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,44.21,0.0,,0.0,,2026-05,v2-all-occupations
+47-5022.00,"Excavating and Loading Machine and Dragline Operators, Surface Mining",47,16,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-5023.00,"Earth Drillers, Except Oil and Gas",47,29,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-5032.00,"Explosives Workers, Ordnance Handling Experts, and Blasters",47,27,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-5041.00,Continuous Mining Machine Operators,47,15,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-5043.00,"Roof Bolters, Mining",47,14,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-5044.00,"Loading and Moving Machine Operators, Underground Mining",47,25,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-5051.00,"Rock Splitters, Quarry",47,9,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-5071.00,"Roustabouts, Oil and Gas",47,13,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+47-5081.00,Helpers--Extraction Workers,47,14,0,3.4,0.0,18.4,0.0,0.0,3.4,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+49-1011.00,"First-Line Supervisors of Mechanics, Installers, and Repairers",49,22,4,10.1,0.0,24.5,7.5,0.04,10.2,anthropic_exposure,3.3,11.7,10.2,49.8,0.01,,0.0,,2026-05,v2-all-occupations
+49-2011.00,"Computer, Automated Teller, and Office Machine Repairers",49,25,4,10.6,0.0,25.0,7.2,0.04,10.7,anthropic_exposure,0.0,14.4,10.7,70.08,0.01,,0.0,,2026-05,v2-all-occupations
+49-2021.00,"Radio, Cellular, and Tower Equipment Installers and Repairers",49,30,1,2.5,0.0,15.1,1.5,0.16,2.7,field,3.0,0.0,0.0,84.04,0.04,,0.0,,2026-05,v2-all-occupations
+49-2022.00,"Telecommunications Equipment Installers and Repairers, Except Line Installers",49,40,3,3.3,0.0,12.9,3.2,0.36,3.3,anthropic_exposure,1.6,4.8,3.3,30.39,0.09,0.08,0.0,,2026-05,v2-all-occupations
+49-2091.00,Avionics Technicians,49,13,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,88.35,0.0,,0.0,,2026-05,v2-all-occupations
+49-2092.00,"Electric Motor, Power Tool, and Related Repairers",49,31,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,68.75,0.0,,0.0,,2026-05,v2-all-occupations
+49-2093.00,"Electrical and Electronics Installers and Repairers, Transportation Equipment",49,15,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,81.33,0.0,,0.0,,2026-05,v2-all-occupations
+49-2094.00,"Electrical and Electronics Repairers, Commercial and Industrial Equipment",49,20,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,57.45,0.0,,0.0,,2026-05,v2-all-occupations
+49-2095.00,"Electrical and Electronics Repairers, Powerhouse, Substation, and Relay",49,15,1,2.8,0.0,14.2,2.9,0.24,2.7,field,5.8,0.0,0.0,66.28,0.06,0.08,0.0,,2026-05,v2-all-occupations
+49-2096.00,"Electronic Equipment Installers and Repairers, Motor Vehicles",49,12,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,88.17,0.0,,0.0,,2026-05,v2-all-occupations
+49-2097.00,Audiovisual Equipment Installers and Repairers,49,11,1,2.8,0.0,17.2,3.4,0.04,2.7,field,6.9,0.0,0.0,50.0,0.01,,0.0,,2026-05,v2-all-occupations
+49-2098.00,Security and Fire Alarm Systems Installers,49,16,2,3.2,0.0,16.4,5.0,0.12,3.0,anthropic_exposure,3.9,6.2,3.0,18.91,0.03,,0.0,,2026-05,v2-all-occupations
+49-3011.00,Aircraft Mechanics and Service Technicians,49,38,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,66.67,0.0,,0.0,,2026-05,v2-all-occupations
+49-3021.00,Automotive Body and Related Repairers,49,25,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+49-3022.00,Automotive Glass Installers and Repairers,49,18,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,66.67,0.0,,0.0,,2026-05,v2-all-occupations
+49-3023.00,Automotive Service Technicians and Mechanics,49,30,1,2.6,0.0,15.8,1.4,0.12,2.7,field,2.8,0.0,0.0,73.59,0.03,,0.0,,2026-05,v2-all-occupations
+49-3031.00,Bus and Truck Mechanics and Diesel Engine Specialists,49,26,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,76.76,0.0,,0.0,,2026-05,v2-all-occupations
+49-3041.00,Farm Equipment Mechanics and Service Technicians,49,14,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+49-3042.00,"Mobile Heavy Equipment Mechanics, Except Engines",49,20,0,2.6,0.0,17.0,0.0,0.04,2.7,field,0.0,0.0,0.0,77.36,0.01,,0.0,,2026-05,v2-all-occupations
+49-3043.00,Rail Car Repairers,49,20,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+49-3051.00,Motorboat Mechanics and Service Technicians,49,13,1,2.8,0.0,17.2,3.3,0.04,2.7,field,6.6,0.0,0.0,64.24,0.01,,0.0,,2026-05,v2-all-occupations
+49-3052.00,Motorcycle Mechanics,49,13,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+49-3053.00,Outdoor Power Equipment and Other Small Engine Mechanics,49,14,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+49-3091.00,Bicycle Repairers,49,18,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+49-3092.00,Recreational Vehicle Service Technicians,49,17,1,2.7,0.0,17.1,1.8,0.04,2.7,field,3.6,0.0,0.0,35.23,0.01,,0.0,,2026-05,v2-all-occupations
+49-3093.00,Tire Repairers and Changers,49,25,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+49-9011.00,Mechanical Door Repairers,49,25,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,85.71,0.0,,0.0,,2026-05,v2-all-occupations
+49-9012.00,"Control and Valve Installers and Repairers, Except Mechanical Door",49,32,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+49-9021.00,"Heating, Air Conditioning, and Refrigeration Mechanics and Installers",49,30,1,1.9,0.0,16.9,1.4,0.0,1.9,anthropic_exposure,0.0,2.8,1.9,72.61,0.0,,0.0,,2026-05,v2-all-occupations
+49-9031.00,Home Appliance Repairers,49,29,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,51.34,0.0,,0.0,,2026-05,v2-all-occupations
+49-9041.00,Industrial Machinery Mechanics,49,16,2,2.6,0.0,16.4,5.5,0.08,2.4,anthropic_exposure,5.5,5.5,2.4,82.18,0.02,,0.0,,2026-05,v2-all-occupations
+49-9043.00,"Maintenance Workers, Machinery",49,18,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+49-9044.00,Millwrights,49,23,1,2.6,0.0,15.2,1.9,0.16,2.7,field,3.9,0.0,0.0,85.26,0.04,,0.0,,2026-05,v2-all-occupations
+49-9045.00,"Refractory Materials Repairers, Except Brickmasons",49,10,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+49-9051.00,Electrical Power-Line Installers and Repairers,49,23,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,74.19,0.0,,0.0,,2026-05,v2-all-occupations
+49-9052.00,Telecommunications Line Installers and Repairers,49,20,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+49-9061.00,Camera and Photographic Equipment Repairers,49,15,1,4.1,0.0,19.1,2.9,0.0,4.1,anthropic_exposure,0.0,5.8,4.1,58.93,0.0,,0.0,,2026-05,v2-all-occupations
+49-9062.00,Medical Equipment Repairers,49,20,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,66.2,0.0,,0.0,,2026-05,v2-all-occupations
+49-9063.00,Musical Instrument Repairers and Tuners,49,24,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+49-9064.00,Watch and Clock Repairers,49,15,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+49-9071.00,"Maintenance and Repair Workers, General",49,27,1,2.7,0.0,17.1,1.7,0.04,2.7,field,3.4,0.0,0.0,75.74,0.01,,0.0,,2026-05,v2-all-occupations
+49-9081.00,Wind Turbine Service Technicians,49,12,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+49-9091.00,"Coin, Vending, and Amusement Machine Servicers and Repairers",49,18,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,75.0,0.0,,0.0,,2026-05,v2-all-occupations
+49-9092.00,Commercial Divers,49,24,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+49-9094.00,Locksmiths and Safe Repairers,49,14,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+49-9095.00,Manufactured Building and Mobile Home Installers,49,14,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,61.29,0.0,,0.0,,2026-05,v2-all-occupations
+49-9096.00,Riggers,49,14,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+49-9097.00,Signal and Track Switch Repairers,49,12,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+49-9098.00,"Helpers--Installation, Maintenance, and Repair Workers",49,16,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+49-9099.01,Geothermal Technicians,49,24,1,2.3,0.0,4.7,2.2,0.84,2.7,field,4.5,0.0,0.0,89.47,0.21,0.18,0.0,,2026-05,v2-all-occupations
+51-1011.00,First-Line Supervisors of Production and Operating Workers,51,20,2,3.4,0.0,9.4,3.8,0.6,2.7,field,3.9,3.7,0.0,35.69,0.15,0.12,0.0,,2026-05,v2-all-occupations
+51-2011.00,"Aircraft Structure, Surfaces, Rigging, and Systems Assemblers",51,26,1,4.9,0.0,19.9,2.1,0.0,4.9,anthropic_exposure,0.0,4.1,4.9,,,,0.0,,2026-05,v2-all-occupations
+51-2021.00,"Coil Winders, Tapers, and Finishers",51,11,1,2.7,0.0,17.7,3.3,0.0,2.7,field,0.0,6.7,0.0,91.67,0.0,,0.0,,2026-05,v2-all-occupations
+51-2022.00,Electrical and Electronic Equipment Assemblers,51,17,2,3.1,0.0,15.1,4.6,0.2,2.7,field,3.3,5.8,,56.47,0.05,,0.0,,2026-05,v2-all-occupations
+51-2023.00,Electromechanical Equipment Assemblers,51,14,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,,,,,0.0,,2026-05,v2-all-occupations
+51-2031.00,Engine and Other Machine Assemblers,51,12,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-2041.00,Structural Metal Fabricators and Fitters,51,23,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-2051.00,Fiberglass Laminators and Fabricators,51,16,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-2061.00,Timing Device Assemblers and Adjusters,51,17,1,3.9,0.0,18.9,2.7,0.0,3.9,anthropic_exposure,0.0,5.5,3.9,,,,0.0,,2026-05,v2-all-occupations
+51-2092.00,Team Assemblers,51,11,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,,46.36,0.0,,0.0,,2026-05,v2-all-occupations
+51-3011.00,Bakers,51,18,1,2.6,0.0,15.8,1.5,0.12,2.7,field,3.1,0.0,0.0,46.38,0.03,,0.0,,2026-05,v2-all-occupations
+51-3021.00,Butchers and Meat Cutters,51,11,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-3022.00,"Meat, Poultry, and Fish Cutters and Trimmers",51,12,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-3023.00,Slaughterers and Meat Packers,51,14,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-3091.00,"Food and Tobacco Roasting, Baking, and Drying Machine Operators and Tenders",51,19,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,53.13,0.0,,0.0,,2026-05,v2-all-occupations
+51-3092.00,Food Batchmakers,51,25,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,56.84,0.0,,0.0,,2026-05,v2-all-occupations
+51-3093.00,Food Cooking Machine Operators and Tenders,51,17,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,52.94,0.0,,0.0,,2026-05,v2-all-occupations
+51-4021.00,"Extruding and Drawing Machine Setters, Operators, and Tenders, Metal and Plastic",51,16,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-4022.00,"Forging Machine Setters, Operators, and Tenders, Metal and Plastic",51,12,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-4023.00,"Rolling Machine Setters, Operators, and Tenders, Metal and Plastic",51,19,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-4031.00,"Cutting, Punching, and Press Machine Setters, Operators, and Tenders, Metal and Plastic",51,31,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-4032.00,"Drilling and Boring Machine Tool Setters, Operators, and Tenders, Metal and Plastic",51,17,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-4033.00,"Grinding, Lapping, Polishing, and Buffing Machine Tool Setters, Operators, and Tenders, Metal and Plastic",51,18,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-4034.00,"Lathe and Turning Machine Tool Setters, Operators, and Tenders, Metal and Plastic",51,18,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-4035.00,"Milling and Planing Machine Setters, Operators, and Tenders, Metal and Plastic",51,15,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-4041.00,Machinists,51,29,1,2.5,0.0,15.7,0.9,0.12,2.7,field,1.9,0.0,0.0,28.19,0.03,,0.0,,2026-05,v2-all-occupations
+51-4051.00,Metal-Refining Furnace Operators and Tenders,51,15,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,100.0,0.0,,0.0,,2026-05,v2-all-occupations
+51-4052.00,"Pourers and Casters, Metal",51,16,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-4061.00,"Model Makers, Metal and Plastic",51,16,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-4062.00,"Patternmakers, Metal and Plastic",51,15,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,54.84,0.0,,0.0,,2026-05,v2-all-occupations
+51-4071.00,Foundry Mold and Coremakers,51,13,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-4072.00,"Molding, Coremaking, and Casting Machine Setters, Operators, and Tenders, Metal and Plastic",51,29,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,95.24,0.0,,0.0,,2026-05,v2-all-occupations
+51-4081.00,"Multiple Machine Tool Setters, Operators, and Tenders, Metal and Plastic",51,21,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,64.1,0.0,,0.0,,2026-05,v2-all-occupations
+51-4111.00,Tool and Die Makers,51,17,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,36.84,0.0,,0.0,,2026-05,v2-all-occupations
+51-4121.00,"Welders, Cutters, Solderers, and Brazers",51,30,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-4122.00,"Welding, Soldering, and Brazing Machine Setters, Operators, and Tenders",51,29,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-4191.00,"Heat Treating Equipment Setters, Operators, and Tenders, Metal and Plastic",51,23,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-4192.00,"Layout Workers, Metal and Plastic",51,14,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,42.22,0.0,,0.0,,2026-05,v2-all-occupations
+51-4193.00,"Plating Machine Setters, Operators, and Tenders, Metal and Plastic",51,33,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,72.73,0.0,,0.0,,2026-05,v2-all-occupations
+51-4194.00,"Tool Grinders, Filers, and Sharpeners",51,18,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-5111.00,Prepress Technicians and Workers,51,15,1,10.2,0.0,25.2,3.2,0.0,10.2,anthropic_exposure,0.0,6.5,10.2,94.96,0.0,,0.0,,2026-05,v2-all-occupations
+51-5112.00,Printing Press Operators,51,23,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,94.33,0.0,,0.0,,2026-05,v2-all-occupations
+51-5113.00,Print Binding and Finishing Workers,51,25,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,93.33,0.0,,0.0,,2026-05,v2-all-occupations
+51-6011.00,Laundry and Dry-Cleaning Workers,51,32,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-6021.00,"Pressers, Textile, Garment, and Related Materials",51,28,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-6031.00,Sewing Machine Operators,51,26,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-6041.00,Shoe and Leather Workers and Repairers,51,26,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,61.54,0.0,,0.0,,2026-05,v2-all-occupations
+51-6042.00,Shoe Machine Operators and Tenders,51,19,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-6051.00,"Sewers, Hand",51,11,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-6052.00,"Tailors, Dressmakers, and Custom Sewers",51,22,1,3.4,0.0,18.4,1.9,0.0,3.4,anthropic_exposure,0.0,3.9,3.4,52.94,0.0,,0.0,,2026-05,v2-all-occupations
+51-6061.00,Textile Bleaching and Dyeing Machine Operators and Tenders,51,23,1,2.1,0.0,17.1,2.2,0.0,2.1,anthropic_exposure,0.0,4.3,2.1,87.5,0.0,,0.0,,2026-05,v2-all-occupations
+51-6062.00,"Textile Cutting Machine Setters, Operators, and Tenders",51,18,1,1.5,0.0,16.5,2.6,0.0,1.5,anthropic_exposure,0.0,5.2,1.5,72.22,0.0,,0.0,,2026-05,v2-all-occupations
+51-6063.00,"Textile Knitting and Weaving Machine Setters, Operators, and Tenders",51,19,1,3.2,0.0,18.2,2.5,0.0,3.2,anthropic_exposure,0.0,5.0,3.2,65.22,0.0,,0.0,,2026-05,v2-all-occupations
+51-6064.00,"Textile Winding, Twisting, and Drawing Out Machine Setters, Operators, and Tenders",51,23,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-6091.00,"Extruding and Forming Machine Setters, Operators, and Tenders, Synthetic and Glass Fibers",51,17,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-6092.00,Fabric and Apparel Patternmakers,51,16,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,47.06,0.0,,0.0,,2026-05,v2-all-occupations
+51-6093.00,Upholsterers,51,22,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,81.25,0.0,,0.0,,2026-05,v2-all-occupations
+51-7011.00,Cabinetmakers and Bench Carpenters,51,20,1,2.7,0.0,17.1,1.6,0.04,2.7,field,3.3,0.0,0.0,44.98,0.01,,0.0,,2026-05,v2-all-occupations
+51-7021.00,Furniture Finishers,51,22,1,2.7,0.0,17.1,1.5,0.04,2.7,field,3.0,0.0,0.0,31.78,0.01,,0.0,,2026-05,v2-all-occupations
+51-7031.00,"Model Makers, Wood",51,14,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-7032.00,"Patternmakers, Wood",51,20,1,3.1,0.0,16.9,4.2,0.08,3.0,anthropic_exposure,3.8,4.5,3.0,61.33,0.02,,0.0,,2026-05,v2-all-occupations
+51-7041.00,"Sawing Machine Setters, Operators, and Tenders, Wood",51,22,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-7042.00,"Woodworking Machine Setters, Operators, and Tenders, Except Sawing",51,25,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-8011.00,Nuclear Power Reactor Operators,51,19,0,2.3,0.0,14.9,0.0,0.16,2.7,field,0.0,0.0,0.0,70.24,0.04,,0.0,,2026-05,v2-all-occupations
+51-8012.00,Power Distributors and Dispatchers,51,14,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,73.33,0.0,,0.0,,2026-05,v2-all-occupations
+51-8013.00,Power Plant Operators,51,30,2,2.8,0.0,16.0,4.5,0.12,2.6,anthropic_exposure,3.1,5.9,2.6,93.51,0.03,0.08,0.0,,2026-05,v2-all-occupations
+51-8013.03,Biomass Plant Technicians,51,18,0,2.6,0.0,17.6,0.0,0.0,2.6,anthropic_exposure,0.0,0.0,2.6,,,,0.0,,2026-05,v2-all-occupations
+51-8013.04,Hydroelectric Plant Technicians,51,21,0,2.6,0.0,17.6,0.0,0.0,2.6,anthropic_exposure,0.0,0.0,2.6,,,,0.0,,2026-05,v2-all-occupations
+51-8021.00,Stationary Engineers and Boiler Operators,51,25,1,2.0,0.0,3.9,2.0,1.0,2.7,field,3.9,0.0,0.0,84.39,0.45,0.39,0.0,,2026-05,v2-all-occupations
+51-8031.00,Water and Wastewater Treatment Plant and System Operators,51,8,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-8091.00,Chemical Plant and System Operators,51,19,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,66.28,0.0,,0.0,,2026-05,v2-all-occupations
+51-8092.00,Gas Plant Operators,51,19,1,7.2,0.0,22.2,2.8,0.0,7.2,anthropic_exposure,0.0,5.6,7.2,,,,0.0,,2026-05,v2-all-occupations
+51-8093.00,"Petroleum Pump System Operators, Refinery Operators, and Gaugers",51,24,1,4.0,0.0,19.0,2.1,0.0,4.0,anthropic_exposure,0.0,4.2,4.0,,,,0.0,,2026-05,v2-all-occupations
+51-8099.01,Biofuels Processing Technicians,51,19,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-9011.00,Chemical Equipment Operators and Tenders,51,24,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,60.87,0.0,,0.0,,2026-05,v2-all-occupations
+51-9012.00,"Separating, Filtering, Clarifying, Precipitating, and Still Machine Setters, Operators, and Tenders",51,20,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-9021.00,"Crushing, Grinding, and Polishing Machine Setters, Operators, and Tenders",51,21,1,4.2,0.0,19.2,2.3,0.0,4.2,anthropic_exposure,0.0,4.6,4.2,86.21,0.0,,0.0,,2026-05,v2-all-occupations
+51-9022.00,"Grinding and Polishing Workers, Hand",51,17,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-9023.00,"Mixing and Blending Machine Setters, Operators, and Tenders",51,20,1,2.8,0.0,17.2,5.0,0.04,2.7,field,4.8,5.1,0.0,90.28,0.01,,0.0,,2026-05,v2-all-occupations
+51-9031.00,"Cutters and Trimmers, Hand",51,18,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,83.8,0.0,,0.0,,2026-05,v2-all-occupations
+51-9032.00,"Cutting and Slicing Machine Setters, Operators, and Tenders",51,28,1,3.2,0.0,18.2,2.0,0.0,3.2,anthropic_exposure,0.0,3.9,3.2,,,,0.0,,2026-05,v2-all-occupations
+51-9041.00,"Extruding, Forming, Pressing, and Compacting Machine Setters, Operators, and Tenders",51,26,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-9051.00,"Furnace, Kiln, Oven, Drier, and Kettle Operators and Tenders",51,17,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-9061.00,"Inspectors, Testers, Sorters, Samplers, and Weighers",51,31,3,3.5,0.0,9.5,3.7,0.6,3.2,anthropic_exposure,4.2,3.2,3.2,33.03,0.15,0.14,0.0,,2026-05,v2-all-occupations
+51-9071.00,Jewelers and Precious Stone and Metal Workers,51,30,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,38.6,0.0,,0.0,,2026-05,v2-all-occupations
+51-9071.06,Gem and Diamond Workers,51,22,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,33.33,0.0,,0.0,,2026-05,v2-all-occupations
+51-9081.00,Dental Laboratory Technicians,51,17,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-9082.00,Medical Appliance Technicians,51,16,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-9083.00,Ophthalmic Laboratory Technicians,51,18,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-9111.00,Packaging and Filling Machine Operators and Tenders,51,20,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-9123.00,"Painting, Coating, and Decorating Workers",51,9,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-9124.00,"Coating, Painting, and Spraying Machine Setters, Operators, and Tenders",51,29,1,2.7,0.0,17.7,1.7,0.0,2.7,field,0.0,3.4,0.0,96.77,0.0,,0.0,,2026-05,v2-all-occupations
+51-9141.00,Semiconductor Processing Technicians,51,17,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-9151.00,Photographic Process Workers and Processing Machine Operators,51,27,1,1.1,0.0,16.1,1.8,0.0,1.1,anthropic_exposure,0.0,3.5,1.1,81.33,0.0,,0.0,,2026-05,v2-all-occupations
+51-9161.00,Computer Numerically Controlled Tool Operators,51,27,1,2.1,0.0,17.1,1.8,0.0,2.1,anthropic_exposure,0.0,3.6,2.1,83.72,0.0,,0.0,,2026-05,v2-all-occupations
+51-9162.00,Computer Numerically Controlled Tool Programmers,51,16,3,11.9,0.0,26.3,8.2,0.04,12.1,anthropic_exposure,4.1,12.2,12.1,44.79,0.01,,0.0,,2026-05,v2-all-occupations
+51-9191.00,Adhesive Bonding Machine Operators and Tenders,51,16,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-9192.00,"Cleaning, Washing, and Metal Pickling Equipment Operators and Tenders",51,11,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-9193.00,Cooling and Freezing Equipment Operators and Tenders,51,18,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-9194.00,Etchers and Engravers,51,26,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-9195.00,"Molders, Shapers, and Casters, Except Metal and Plastic",51,24,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-9195.03,"Stone Cutters and Carvers, Manufacturing",51,14,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-9195.04,"Glass Blowers, Molders, Benders, and Finishers",51,19,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-9195.05,"Potters, Manufacturing",51,23,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-9196.00,"Paper Goods Machine Setters, Operators, and Tenders",51,14,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-9197.00,Tire Builders,51,20,0,2.7,0.0,17.7,0.0,0.0,2.7,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+51-9198.00,Helpers--Production Workers,51,34,2,3.9,0.0,18.9,3.1,0.0,3.9,anthropic_exposure,0.0,6.2,3.9,90.0,0.0,,0.0,,2026-05,v2-all-occupations
+53-1041.00,Aircraft Cargo Handling Supervisors,53,6,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+53-1042.00,"First-Line Supervisors of Helpers, Laborers, and Material Movers, Hand",53,24,3,4.9,0.0,16.9,8.1,0.2,4.0,field,9.0,7.3,,52.69,0.05,,0.0,,2026-05,v2-all-occupations
+53-1042.01,Recycling Coordinators,53,23,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,,64.21,0.0,,0.0,,2026-05,v2-all-occupations
+53-1043.00,First-Line Supervisors of Material-Moving Machine and Vehicle Operators,53,22,0,3.9,0.0,18.3,0.0,0.04,4.0,field,0.0,0.0,,61.72,0.01,,0.0,,2026-05,v2-all-occupations
+53-1044.00,First-Line Supervisors of Passenger Attendants,53,19,2,4.1,0.0,17.9,4.4,0.08,4.0,field,0.0,8.9,,63.83,0.02,,0.0,,2026-05,v2-all-occupations
+53-2011.00,"Airline Pilots, Copilots, and Flight Engineers",53,24,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+53-2012.00,Commercial Pilots,53,24,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+53-2021.00,Air Traffic Controllers,53,23,1,3.9,0.0,18.3,1.1,0.04,4.0,field,2.2,0.0,0.0,48.7,0.01,,0.0,,2026-05,v2-all-occupations
+53-2022.00,Airfield Operations Specialists,53,27,1,4.8,0.0,19.8,1.7,0.0,4.8,anthropic_exposure,0.0,3.4,4.8,,,,0.0,,2026-05,v2-all-occupations
+53-2031.00,Flight Attendants,53,25,1,8.9,0.0,23.3,3.3,0.04,9.1,anthropic_exposure,3.1,3.6,9.1,71.71,0.01,,0.0,,2026-05,v2-all-occupations
+53-3011.00,"Ambulance Drivers and Attendants, Except Emergency Medical Technicians",53,11,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+53-3031.00,Driver/Sales Workers,53,11,1,2.8,0.0,17.8,4.5,0.0,2.8,anthropic_exposure,0.0,9.0,2.8,69.84,0.0,,0.0,,2026-05,v2-all-occupations
+53-3032.00,Heavy and Tractor-Trailer Truck Drivers,53,29,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,65.15,0.0,,0.0,,2026-05,v2-all-occupations
+53-3033.00,Light Truck Drivers,53,13,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+53-3051.00,"Bus Drivers, School",53,17,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+53-3052.00,"Bus Drivers, Transit and Intercity",53,14,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,85.0,0.0,,0.0,,2026-05,v2-all-occupations
+53-3053.00,Shuttle Drivers and Chauffeurs,53,26,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,60.8,0.0,,0.0,,2026-05,v2-all-occupations
+53-4011.00,Locomotive Engineers,53,15,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+53-4013.00,"Rail Yard Engineers, Dinkey Operators, and Hostlers",53,23,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+53-4022.00,"Railroad Brake, Signal, and Switch Operators and Locomotive Firers",53,25,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+53-4031.00,Railroad Conductors and Yardmasters,53,20,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+53-4041.00,Subway and Streetcar Operators,53,10,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,66.13,0.0,,0.0,,2026-05,v2-all-occupations
+53-5011.00,Sailors and Marine Oilers,53,24,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+53-5021.00,"Captains, Mates, and Pilots of Water Vessels",53,30,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+53-5022.00,Motorboat Operators,53,16,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+53-5031.00,Ship Engineers,53,17,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+53-6011.00,Bridge and Lock Tenders,53,18,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,56.76,0.0,,0.0,,2026-05,v2-all-occupations
+53-6021.00,Parking Attendants,53,15,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,82.86,0.0,,0.0,,2026-05,v2-all-occupations
+53-6031.00,Automotive and Watercraft Service Attendants,53,14,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,73.27,0.0,,0.0,,2026-05,v2-all-occupations
+53-6032.00,Aircraft Service Attendants,53,11,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,,,,,0.0,,2026-05,v2-all-occupations
+53-6041.00,Traffic Technicians,53,22,1,3.9,0.0,18.3,1.5,0.04,4.0,field,2.9,0.0,0.0,39.32,0.01,,0.0,,2026-05,v2-all-occupations
+53-6051.00,Transportation Inspectors,53,17,1,3.9,0.0,17.7,2.1,0.08,4.0,field,4.3,0.0,0.0,48.86,0.02,,0.0,,2026-05,v2-all-occupations
+53-6051.01,Aviation Inspectors,53,13,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,42.34,0.0,,0.0,,2026-05,v2-all-occupations
+53-6051.07,"Transportation Vehicle, Equipment and Systems Inspectors, Except Aviation",53,20,1,3.1,0.0,12.1,1.8,0.4,4.0,field,3.6,0.0,0.0,39.27,0.1,0.09,0.0,,2026-05,v2-all-occupations
+53-6061.00,Passenger Attendants,53,12,2,11.7,0.0,24.9,11.9,0.12,11.7,anthropic_exposure,15.3,8.5,11.7,73.97,0.03,,0.0,,2026-05,v2-all-occupations
+53-7011.00,Conveyor Operators and Tenders,53,23,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+53-7021.00,Crane and Tower Operators,53,11,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+53-7031.00,Dredge Operators,53,6,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+53-7041.00,Hoist and Winch Operators,53,13,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+53-7051.00,Industrial Truck and Tractor Operators,53,9,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+53-7061.00,Cleaners of Vehicles and Equipment,53,20,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+53-7062.00,"Laborers and Freight, Stock, and Material Movers, Hand",53,13,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,90.32,0.0,,0.0,,2026-05,v2-all-occupations
+53-7062.04,Recycling and Reclamation Workers,53,14,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+53-7063.00,Machine Feeders and Offbearers,53,13,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,77.55,0.0,,0.0,,2026-05,v2-all-occupations
+53-7064.00,"Packers and Packagers, Hand",53,12,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,80.21,0.0,,0.0,,2026-05,v2-all-occupations
+53-7065.00,Stockers and Order Fillers,53,30,2,3.7,0.0,15.1,2.7,0.24,4.0,field,5.3,0.0,0.0,45.84,0.06,0.07,0.0,,2026-05,v2-all-occupations
+53-7071.00,Gas Compressor and Gas Pumping Station Operators,53,13,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,93.55,0.0,,0.0,,2026-05,v2-all-occupations
+53-7072.00,"Pump Operators, Except Wellhead Pumpers",53,14,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+53-7073.00,Wellhead Pumpers,53,14,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations
+53-7081.00,Refuse and Recyclable Material Collectors,53,14,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,96.3,0.0,,0.0,,2026-05,v2-all-occupations
+53-7121.00,"Tank Car, Truck, and Ship Loaders",53,19,0,4.0,0.0,19.0,0.0,0.0,4.0,field,0.0,0.0,0.0,,,,0.0,,2026-05,v2-all-occupations

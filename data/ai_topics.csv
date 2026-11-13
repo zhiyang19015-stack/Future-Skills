@@ -1,0 +1,49 @@
+topic,usage_pct,usage_pct_previous,usage_pct_my,work_pct,handoff,builder,technologies,data_period
+3D modeling and printing,0.13,0.1,,18.49,59.35,N,autodesk-autocad | dassault-systemes-solidworks | bentley-microstation | autodesk-revit | trimble-sketchup-pro | autodesk-autocad-civil-3d | autodesk-navisworks | mcneel-rhinoceros-3d | autodesk-maya | navisworks-jetstream | ptc-creo-parametric | chaos-enscape | dassault-systemes-catia | mastercam-computer-aided-design-and-manufacturing-software | autodesk-fusion-360 | autodesk-inventor | lumion | maxon-cinema-4d | mechanical-electrical-plumbing-mep-design-software | openroads-designer | sidefx-houdini | zemax,2026-05
+AI agent design,0.46,0.53,0.58,74.08,61.36,Y,langchain,2026-05
+AI app building,1.26,1.33,1.46,61.63,69.07,Y,vector-database-software,2026-05
+AI evaluation and risk,0.26,0.29,0.23,33.32,28.35,Y,,2026-05
+API debugging,0.71,0.79,0.78,75.85,87.39,N,postman,2026-05
+Accounting and bookkeeping,0.45,0.4,0.39,35.17,48.63,N,intuit-quickbooks | sap-concur | intuit-turbotax | tax-software,2026-05
+Ad and traffic diagnosis,0.1,0.09,0.16,96.8,72.93,N,google-analytics | ahrefs-site-explorer | moz-search-engine-optimization-seo-software | screaming-frog-seo-spider | semrush,2026-05
+Ad campaigns,0.05,0.04,,97.57,72.16,N,bing-ads | google-ads | google-tag-manager,2026-05
+Alert routing,0.05,0.05,,85.25,68.44,N,prometheus,2026-05
+Automated pipelines,0.9,0.96,0.87,82.72,85.24,N,microsoft-sql-server-integration-services-ssis | jenkins-ci | apache-airflow | informatica-software | microsoft-power-automate | microsoft-power-platform-software | microsoft-azure-data-factory | microsoft-azure-devops-services,2026-05
+Backend architecture,0.75,0.8,0.89,73.72,64.92,N,php | go | apache-kafka | node-js | spring-framework | spring-boot | restful-api | graphql | enterprise-application-integration-eai-software | web-application-framework-software,2026-05
+Business compliance,0.44,0.42,0.59,94.12,36.68,N,tax-compliance-property-tax-management-software | sparta-systems-trackwise | emass,2026-05
+Business operations,4.55,4.43,5.05,86.53,74.48,N,sap-software | microsoft-project | oracle-peoplesoft | oracle-primavera-enterprise-project-portfolio-management | slack | kronos-workforce-timekeeper | workday-software | warehouse-management-system-wms | oracle-hris | inventory-management-systems | microsoft-team-foundation-server | procore-software | asana | sap-erp | applicant-tracking-software | purchasing-software | inventory-control-system-software | constructconnect-planswift | on-center-on-screen-takeoff | order-management-software | payroll-software | productivity-software | qualtrics-insight | sabre-central-command | shopify-software | siemens-teamcenter | transportation-management-system-tms-software,2026-05
+CRM,0.32,0.33,0.21,98.46,67.09,N,salesforce-software | marketo-marketing-automation | hubspot-software | blackbaud-the-raiser-s-edge,2026-05
+Code design,1.46,1.56,1.61,63.2,58.12,N,python | c-plus-plus | oracle-java | microsoft-visual-basic | c | perl | c-sharp | microsoft-visual-basic-for-applications-vba | ruby | eclipse-ide | microsoft-net-framework | microsoft-sql-server-reporting-services-ssrs | swift | scala | apache-maven | oracle-java-2-platform-enterprise-edition-j2ee | oracle-sql-developer | unity-technologies-unity | unreal-technology-unreal-engine | embedded-systems-development-software | national-instruments-labview | solidity | systemverilog | tool-command-language-tcl | verilog,2026-05
+Coding tools,0.17,0.21,0.16,65.95,51.71,N,microsoft-visual-studio | software-development-tools,2026-05
+Config files,0.06,0.07,,72.61,61.08,N,extensible-markup-language-xml | puppet | javascript-object-notation-json | chef,2026-05
+Conversation and meeting intelligence,0.26,0.26,0.14,89.1,73.47,N,zoom | microsoft-teams | cisco-webex | google-meet,2026-05
+Customer support and service,0.6,0.57,0.68,38.2,80.39,N,chatbot-software,2026-05
+Dashboards and charts,0.75,0.73,1.0,79.62,52.73,N,tableau | microsoft-power-bi | alteryx-software | google-looker-analytics | grafana-labs-grafana-cloud | reporting-software,2026-05
+Data analysis,0.92,0.89,0.92,70.41,59.44,N,microsoft-excel | sas | r | esri-arcgis-software | ibm-spss-statistics | apache-spark | geographic-information-system-gis-systems | google-sheets | statacorp-stata | statistical-software | esri-arcgis-survey-123 | etap | geographic-information-system-gis-software | qgis | pandas | adobe-analytics | esri-arcview | numpy | pyspark | rockware-arcmap | sas-jmp,2026-05
+Data storage,0.29,0.33,0.31,85.13,60.89,N,microsoft-access | structured-query-language-sql | microsoft-sql-server | oracle-database | mysql | teradata-database | apache-hadoop | postgresql | nosql | yardi-software | apache-cassandra | apache-hive | amazon-redshift | mongodb | amazon-elastic-compute-cloud-ec2 | elasticsearch | oracle-pl-sql | amazon-dynamodb | transact-sql | servicenow | hibernate-orm | ibm-db2 | snowflake | redis | property-management-system-pms-software | student-information-systems-sis-software | adp-workforce-now | amadeus-crs | archivists-toolkit | bioconductor-software | clinical-trial-management-software | google | operational-data-store-ods-software | orion-law-management-systems-orion | pci-express-pcie | relational-database-management-system-software | xactware-xactimate,2026-05
+Document transformation,1.34,1.19,1.36,60.5,63.19,N,adobe-acrobat | microsoft-sharepoint,2026-05
+Formatted writing,1.71,1.57,1.49,59.72,44.82,N,microsoft-word | google-docs,2026-05
+Git workflow,0.19,0.21,0.23,77.87,60.48,N,git | github | apache-subversion-svn | atlassian-bitbucket | gitlab | perforce-software | version-control-software,2026-05
+Hardening and configuration,0.04,0.05,,60.11,57.9,N,firewall-software,2026-05
+Instructional design,1.03,0.97,0.85,58.68,43.18,N,learning-management-system-lms | articulate-storyline,2026-05
+Litigation,0.11,0.09,,62.01,34.87,N,thomson-reuters-westlaw,2026-05
+Login and permissions,0.13,0.15,0.16,80.02,70.14,N,microsoft-active-directory | single-sign-on-sso,2026-05
+ML and data science,0.29,0.35,0.28,51.78,69.94,Y,tensorflow | pytorch | scikit-learn | amazon-web-services-aws-sagemaker | hugging-face,2026-05
+Making music,0.13,0.11,0.07,6.41,48.42,N,adobe-audition,2026-05
+Numerical and scientific methods,0.05,0.05,,66.98,54.45,N,the-mathworks-matlab | ansys-simulation-software | mathworks-simulink | hec-hms | hec-ras | skm-systems-analysis-power-tools | aurora-helioscope | cubic-synchro-studio | esri-arcgis-arcpy | electronic-lab-notebook-software | guidance-software-encase-enterprise | ptv-vissim | pvsyst | redcap-research-electronic-data-capture | rockware-modflow | simulation-program-with-integrated-circuit-emphasis-spice | snakemake | very-high-speed-integrated-circuit-vhsic-hardware-description-language-vhdl-simulation-software,2026-05
+Offensive security,0.1,0.11,0.15,49.64,67.53,N,kali-linux | metasploit | nmap | portswigger-burp-suite,2026-05
+Photo and video editing,0.49,0.41,0.44,10.51,59.5,N,adobe-photoshop | adobe-illustrator | adobe-creative-cloud-software | adobe-after-effects | canva | tiktok | adobe-premiere-pro | apple-final-cut-pro | video-editing-software | adobe-photoshop-lightroom | davinci-resolve | techsmith-camtasia,2026-05
+Promotional writing,4.09,3.93,4.36,83.38,36.54,N,facebook,2026-05
+Prompt engineering,0.1,0.12,0.09,82.0,53.49,Y,,2026-05
+Reference documentation,1.11,1.09,1.12,82.01,43.08,N,atlassian-confluence | springshare-libguides,2026-05
+Reverse engineering,0.05,0.05,0.08,28.78,70.78,N,disassembler-software,2026-05
+Security operations,0.05,0.06,,77.63,58.29,N,splunk-enterprise | tenable-nessus | qualys-cloud-platform,2026-05
+Server infrastructure,0.93,1.02,0.83,62.16,75.42,N,amazon-web-services-aws-software | microsoft-azure-software | ansible-software | docker | microsoft-windows-server | red-hat-enterprise-linux | amazon-web-services-aws-cloudformation | kubernetes | red-hat-openshift | ibm-terraform | border-gateway-protocol-bgp | ibm-websphere-mq | oracle-cloud-software | microsoft-internet-information-services-iis | microsoft-internet-information-services-iis-manager | web-server-software,2026-05
+Shell and systems code,0.65,0.7,0.65,55.69,70.28,N,linux | unix | shell-script | bash | microsoft-powershell | unix-shell | rust-programming-language,2026-05
+Slide decks,2.04,1.99,2.64,62.92,40.78,N,microsoft-powerpoint,2026-05
+Test writing and running,0.15,0.17,0.16,84.49,68.49,N,selenium | junit | apache-jmeter | appium | microsoft-playwright | rest-assured | testng,2026-05
+Threat detection,0.05,0.05,,50.63,53.12,N,mitre-att-ck-software,2026-05
+UI and layout review,0.14,0.13,0.11,35.34,71.77,N,figma | adobe-xd,2026-05
+Web front-end,3.33,3.3,4.01,74.44,62.29,N,javascript | hypertext-markup-language-html | microsoft-active-server-pages-asp | cascading-style-sheets-css | jquery | ajax | apache-tomcat | django | microsoft-asp-net | wordpress | google-angular | react | typescript | bootstrap | content-management-systems-cms | vue-js | web-application-software | drupal | javascript-framework-software,2026-05
+Workflow diagrams,0.08,0.09,0.14,56.83,39.33,N,microsoft-visio,2026-05
+Workplace writing,2.69,2.68,2.98,79.51,36.78,N,microsoft-office-software | microsoft-outlook | google-workspace-software | business-software-applications,2026-05

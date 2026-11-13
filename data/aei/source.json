@@ -1,0 +1,62 @@
+{
+  "economic_index": {
+    "source_name": "Anthropic Economic Index, release 2026-06-26 (Claude.ai usage)",
+    "source_url": "https://huggingface.co/datasets/Anthropic/EconomicIndex/tree/4e5f69fab13a9c3f7d0dcc31a6f893a9818738f6/release_2026_06_26",
+    "repo": "Anthropic/EconomicIndex",
+    "revision": "4e5f69fab13a9c3f7d0dcc31a6f893a9818738f6",
+    "release_date": "2026-06-26",
+    "licence": "CC-BY (data)",
+    "files": {
+      "release_2026_06_26/data/aei_claude_ai_2026-06-26.csv": "f974b358bce0e5a8417510c61da4342234cd0de9d9d0b62acf4c6dbcf8ec7b68",
+      "labor_market_impacts/task_penetration.csv": "85bee872db1d55d3e9a7f4e89da5ae4a5d59aa8ec875d728fbf4b7d820984616",
+      "labor_market_impacts/job_exposure.csv": "4f0a3adf5feeb2ec5f5d02ab18cc5e851a2a4b8470bde84c0c9335017be12d68"
+    },
+    "fetched_date": "2026-11-13",
+    "periods": [
+      {
+        "start": "2026-04-01",
+        "end": "2026-05-01"
+      },
+      {
+        "start": "2026-05-01",
+        "end": "2026-06-01"
+      }
+    ]
+  },
+  "labor_market_impacts": {
+    "source_name": "Anthropic, Labor market impacts of AI (observed exposure), 2026-03-05",
+    "source_url": "https://www.anthropic.com/research/labor-market-impacts",
+    "release_date": "2026-03-05",
+    "licence": "CC-BY (data)",
+    "fetched_date": "2026-11-13",
+    "note": "Built by Anthropic from the August and November 2025 usage samples."
+  },
+  "onet": {
+    "source_name": "O*NET 31.0 Database",
+    "source_url": "https://www.onetcenter.org/database.html",
+    "licence": "CC BY 4.0",
+    "fetched_date": "2026-11-13",
+    "files": [
+      "occupation_data.csv",
+      "essential_skills.csv",
+      "transferable_skills.csv",
+      "knowledge.csv",
+      "software_skills.csv",
+      "career_interest_types.csv",
+      "job_zones.csv",
+      "task_statements.csv",
+      "task_ratings.csv",
+      "tasks_to_dwas.csv",
+      "gwas_to_iwas_to_dwas.csv",
+      "emerging_tasks.csv",
+      "essential_skills_to_work_activities.csv",
+      "transferable_skills_to_work_activities.csv",
+      "sample_of_reported_titles.csv",
+      "related_occupations.csv",
+      "level_scale_anchors.csv",
+      "content_model_reference.csv"
+    ],
+    "occupations": 910,
+    "tasks": 18592
+  }
+}

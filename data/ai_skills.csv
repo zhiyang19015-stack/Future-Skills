@@ -1,0 +1,400 @@
+skill_id,skill_name,skill_type,handoff,handoff_my,basis,evidence,builder,note,data_period
+2.A.1.a,Reading Comprehension,skill,49.8,48.5,work_activity,Providing Consultation and Advice to Others | Getting Information | Working with Computers,N,O*NET links this skill to 15 work activities,2026-05
+2.A.1.b,Active Listening,skill,45.8,43.7,work_activity,Providing Consultation and Advice to Others | Getting Information | Making Decisions and Solving Problems,N,O*NET links this skill to 20 work activities,2026-05
+2.A.1.c,Writing,skill,43.8,42.5,work_activity,Providing Consultation and Advice to Others | Documenting/Recording Information | Interpreting the Meaning of Information for Others,N,O*NET links this skill to 10 work activities,2026-05
+2.A.1.d,Speaking,skill,42.4,40.7,work_activity,Providing Consultation and Advice to Others | Interpreting the Meaning of Information for Others | Training and Teaching Others,N,O*NET links this skill to 16 work activities,2026-05
+2.A.1.e,Mathematics,skill,59.4,58.6,work_activity,"Processing Information | Estimating the Quantifiable Characteristics of Products, Events, or Information",N,O*NET links this skill to 2 work activities,2026-05
+2.A.1.f,Science,skill,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.A.2.a,Critical Thinking,skill,48.5,46.9,work_activity,Providing Consultation and Advice to Others | Getting Information | Thinking Creatively,N,O*NET links this skill to 25 work activities,2026-05
+2.A.2.b,Active Learning,skill,33.3,32.3,work_activity,Making Decisions and Solving Problems | Training and Teaching Others | Updating and Using Relevant Knowledge,N,O*NET links this skill to 5 work activities,2026-05
+2.A.2.c,Learning Strategies,skill,27.2,28.7,work_activity,Training and Teaching Others | Coaching and Developing Others | Updating and Using Relevant Knowledge,N,O*NET links this skill to 4 work activities,2026-05
+2.A.2.d,Monitoring,skill,42.6,40.6,work_activity,"Providing Consultation and Advice to Others | Training and Teaching Others | Judging the Qualities of Objects, Services, or People",N,O*NET links this skill to 13 work activities,2026-05
+2.B.1.a,Social Perceptiveness,skill,42.3,40.6,work_activity,Providing Consultation and Advice to Others | Interpreting the Meaning of Information for Others | Training and Teaching Others,N,O*NET links this skill to 14 work activities,2026-05
+2.B.1.b,Coordination,skill,43.2,41.2,work_activity,Providing Consultation and Advice to Others | Training and Teaching Others | Performing for or Working Directly with the Public,N,O*NET links this skill to 12 work activities,2026-05
+2.B.1.c,Persuasion,skill,44.0,41.6,work_activity,Providing Consultation and Advice to Others | Communicating with People Outside the Organization | Coaching and Developing Others,N,O*NET links this skill to 10 work activities,2026-05
+2.B.1.d,Negotiation,skill,,,none,,N,Its work activities are under 0.5% of usage: too thin to read; counted as neutral,2026-05
+2.B.1.e,Instructing,skill,41.6,40.0,work_activity,Providing Consultation and Advice to Others | Interpreting the Meaning of Information for Others | Training and Teaching Others,N,O*NET links this skill to 6 work activities,2026-05
+2.B.1.f,Service Orientation,skill,42.8,40.8,work_activity,Providing Consultation and Advice to Others | Training and Teaching Others | Performing for or Working Directly with the Public,N,O*NET links this skill to 12 work activities,2026-05
+2.B.2.i,Complex Problem Solving,skill,49.6,47.9,work_activity,Providing Consultation and Advice to Others | Working with Computers | Making Decisions and Solving Problems,N,O*NET links this skill to 8 work activities,2026-05
+2.B.3.a,Operations Analysis,skill,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.B.3.b,Technology Design,skill,41.4,39.3,work_activity,Thinking Creatively,N,O*NET links this skill to 1 work activities,2026-05
+2.B.3.c,Equipment Selection,skill,,,none,,N,Its work activities are under 0.5% of usage: too thin to read; counted as neutral,2026-05
+2.B.3.d,Installation,skill,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.B.3.e,Programming,skill,72.1,69.2,work_activity,Working with Computers,N,O*NET links this skill to 1 work activities,2026-05
+2.B.3.g,Operations Monitoring,skill,,,none,,N,Its work activities are under 0.5% of usage: too thin to read; counted as neutral,2026-05
+2.B.3.h,Operation and Control,skill,,,none,,N,Its work activities are under 0.5% of usage: too thin to read; counted as neutral,2026-05
+2.B.3.j,Equipment Maintenance,skill,,,none,,N,Its work activities are under 0.5% of usage: too thin to read; counted as neutral,2026-05
+2.B.3.k,Troubleshooting,skill,,,none,,N,Its work activities are under 0.5% of usage: too thin to read; counted as neutral,2026-05
+2.B.3.l,Repairing,skill,,,none,,N,Its work activities are under 0.5% of usage: too thin to read; counted as neutral,2026-05
+2.B.3.m,Quality Control Analysis,skill,,,none,,N,Its work activities are under 0.5% of usage: too thin to read; counted as neutral,2026-05
+2.B.4.e,Judgment and Decision Making,skill,41.4,39.3,work_activity,Providing Consultation and Advice to Others | Making Decisions and Solving Problems | Training and Teaching Others,N,O*NET links this skill to 8 work activities,2026-05
+2.B.4.g,Systems Analysis,skill,52.1,50.4,work_activity,"Providing Consultation and Advice to Others | Working with Computers | Organizing, Planning, and Prioritizing Work",N,O*NET links this skill to 4 work activities,2026-05
+2.B.4.h,Systems Evaluation,skill,42.7,40.2,work_activity,Providing Consultation and Advice to Others | Making Decisions and Solving Problems | Developing Objectives and Strategies,N,O*NET links this skill to 3 work activities,2026-05
+2.B.5.a,Time Management,skill,53.3,54.0,work_activity,"Performing Administrative Activities | Organizing, Planning, and Prioritizing Work | Scheduling Work and Activities",N,O*NET links this skill to 6 work activities,2026-05
+2.B.5.b,Management of Financial Resources,skill,52.2,47.4,work_activity,"Estimating the Quantifiable Characteristics of Products, Events, or Information | Monitoring and Controlling Resources",N,O*NET links this skill to 2 work activities,2026-05
+2.B.5.c,Management of Material Resources,skill,52.2,47.4,work_activity,"Estimating the Quantifiable Characteristics of Products, Events, or Information | Monitoring and Controlling Resources",N,O*NET links this skill to 2 work activities,2026-05
+2.B.5.d,Management of Personnel Resources,skill,29.1,31.0,work_activity,Training and Teaching Others | Coaching and Developing Others | Scheduling Work and Activities,N,O*NET links this skill to 8 work activities,2026-05
+2.C.1.a,Administration and Management,knowledge,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.C.1.b,Administrative,knowledge,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.C.1.c,Economics and Accounting,knowledge,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.C.1.d,Sales and Marketing,knowledge,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.C.1.e,Customer and Personal Service,knowledge,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.C.1.f,Personnel and Human Resources,knowledge,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.C.2.a,Production and Processing,knowledge,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.C.2.b,Food Production,knowledge,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.C.3.a,Computers and Electronics,knowledge,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.C.3.b,Engineering and Technology,knowledge,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.C.3.c,Design,knowledge,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.C.3.d,Building and Construction,knowledge,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.C.3.e,Mechanical,knowledge,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.C.4.a,Mathematics,knowledge,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.C.4.b,Physics,knowledge,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.C.4.c,Chemistry,knowledge,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.C.4.d,Biology,knowledge,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.C.4.e,Psychology,knowledge,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.C.4.f,Sociology and Anthropology,knowledge,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.C.4.g,Geography,knowledge,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.C.5.a,Medicine and Dentistry,knowledge,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.C.5.b,Therapy and Counseling,knowledge,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.C.6,Education and Training,knowledge,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.C.7.a,English Language,knowledge,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.C.7.b,Foreign Language,knowledge,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.C.7.c,Fine Arts,knowledge,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.C.7.d,History and Archeology,knowledge,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.C.7.e,Philosophy and Theology,knowledge,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.C.8.a,Public Safety and Security,knowledge,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.C.8.b,Law and Government,knowledge,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.C.9.a,Telecommunications,knowledge,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.C.9.b,Communications and Media,knowledge,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+2.C.10,Transportation,knowledge,,,none,,N,O*NET links no work activity to knowledge areas; counted as neutral,2026-05
+microsoft-excel,Microsoft Excel,technology,59.44,,topic,Data analysis,N,Spreadsheet analysis,2026-05
+microsoft-office-software,Microsoft Office software,technology,36.78,,topic,Workplace writing,N,Office documents,2026-05
+microsoft-word,Microsoft Word,technology,44.82,,topic,Formatted writing,N,Formatted documents,2026-05
+microsoft-outlook,Microsoft Outlook,technology,36.78,,topic,Workplace writing,N,Work email,2026-05
+microsoft-powerpoint,Microsoft PowerPoint,technology,40.78,,topic,Slide decks,N,Presentation slides,2026-05
+microsoft-access,Microsoft Access,technology,60.89,,topic,Data storage,N,Desktop database,2026-05
+sap-software,SAP software,technology,74.48,,topic,Business operations,N,Enterprise resource planning,2026-05
+microsoft-windows,Microsoft Windows,technology,,,none,,N,Using a device's operating system is not one usage topic,2026-05
+microsoft-project,Microsoft Project,technology,74.48,,topic,Business operations,N,Planning and tracking work,2026-05
+autodesk-autocad,Autodesk AutoCAD,technology,59.35,,topic,3D modeling and printing,N,Design drawings and 3D models,2026-05
+adobe-acrobat,Adobe Acrobat,technology,63.19,,topic,Document transformation,N,Converting and editing PDF documents,2026-05
+microsoft-sharepoint,Microsoft SharePoint,technology,63.19,,topic,Document transformation,N,Documents,2026-05
+structured-query-language-sql,Structured query language SQL,technology,60.89,,topic,Data storage,N,Query language for databases,2026-05
+microsoft-visio,Microsoft Visio,technology,39.33,,topic,Workflow diagrams,N,Process and workflow diagrams,2026-05
+adobe-photoshop,Adobe Photoshop,technology,59.5,,topic,Photo and video editing,N,Image editing,2026-05
+facebook,Facebook,technology,36.54,,topic,Promotional writing,N,Posts that promote a business,2026-05
+python,Python,technology,58.12,,topic,Code design,N,General-purpose programming language,2026-05
+linux,Linux,technology,70.28,,topic,Shell and systems code,N,Command line and system administration,2026-05
+sas,SAS,technology,59.44,,topic,Data analysis,N,Statistical analysis package,2026-05
+c-plus-plus,C++,technology,58.12,,topic,Code design,N,Writing programs,2026-05
+the-mathworks-matlab,The MathWorks MATLAB,technology,54.45,,topic,Numerical and scientific methods,N,Numerical computing environment,2026-05
+google-docs,Google Docs,technology,44.82,,topic,Formatted writing,N,Formatted documents,2026-05
+adobe-illustrator,Adobe Illustrator,technology,59.5,,topic,Photo and video editing,N,Vector graphics editing,2026-05
+oracle-java,Oracle Java,technology,58.12,,topic,Code design,N,General-purpose programming language,2026-05
+r,R,technology,59.44,,topic,Data analysis,N,Statistical programming language,2026-05
+esri-arcgis-software,ESRI ArcGIS software,technology,59.44,,topic,Data analysis,N,Map-based data analysis,2026-05
+microsoft-visual-basic,Microsoft Visual Basic,technology,58.12,,topic,Code design,N,Writing programs,2026-05
+microsoft-sql-server,Microsoft SQL Server,technology,60.89,,topic,Data storage,N,Relational database,2026-05
+ibm-spss-statistics,IBM SPSS Statistics,technology,59.44,,topic,Data analysis,N,Statistical analysis package,2026-05
+adobe-indesign,Adobe InDesign,technology,,,none,,N,No usage topic matches this category,2026-05
+unix,UNIX,technology,70.28,,topic,Shell and systems code,N,Command line and system administration,2026-05
+extensible-markup-language-xml,Extensible markup language XML,technology,61.08,,topic,Config files,N,Structured markup for data and configuration,2026-05
+salesforce-software,Salesforce software,technology,67.09,,topic,CRM,N,Customer relationship management platform,2026-05
+oracle-database,Oracle Database,technology,60.89,,topic,Data storage,N,Relational database,2026-05
+javascript,JavaScript,technology,62.29,,topic,Web front-end,N,Browser programming language,2026-05
+intuit-quickbooks,Intuit QuickBooks,technology,48.63,,topic,Accounting and bookkeeping,N,Accounts and expenses,2026-05
+adobe-creative-cloud-software,Adobe Creative Cloud software,technology,59.5,,topic,Photo and video editing,N,Image and video editing suite,2026-05
+hypertext-markup-language-html,Hypertext markup language HTML,technology,62.29,,topic,Web front-end,N,Web page markup,2026-05
+oracle-peoplesoft,Oracle PeopleSoft,technology,74.48,,topic,Business operations,N,Running business processes,2026-05
+meditech-software,MEDITECH software,technology,,,none,,N,Clinical record and practice systems: no usage topic describes them,2026-05
+tableau,Tableau,technology,52.73,,topic,Dashboards and charts,N,Dashboard and reporting tool,2026-05
+c,C,technology,58.12,,topic,Code design,N,General-purpose programming language,2026-05
+perl,Perl,technology,58.12,,topic,Code design,N,Writing programs,2026-05
+epic-systems,Epic Systems,technology,,,none,,N,Clinical record and practice systems: no usage topic describes them,2026-05
+dassault-systemes-solidworks,Dassault Systemes SolidWorks,technology,59.35,,topic,3D modeling and printing,N,Design drawings and 3D models,2026-05
+apple-macos,Apple macOS,technology,,,none,,N,Using a device's operating system is not one usage topic,2026-05
+c-sharp,C#,technology,58.12,,topic,Code design,N,Writing programs,2026-05
+oracle-primavera-enterprise-project-portfolio-management,Oracle Primavera Enterprise Project Portfolio Management,technology,74.48,,topic,Business operations,N,Planning and tracking work,2026-05
+atlassian-jira,Atlassian JIRA,technology,,,none,,N,No usage topic matches this category,2026-05
+zoom,Zoom,technology,73.47,,topic,Conversation and meeting intelligence,N,Online meetings,2026-05
+amazon-web-services-aws-software,Amazon Web Services AWS software,technology,75.42,,topic,Server infrastructure,N,Cloud infrastructure services,2026-05
+mysql,MySQL,technology,60.89,,topic,Data storage,N,Relational database,2026-05
+teradata-database,Teradata Database,technology,60.89,,topic,Data storage,N,Databases,2026-05
+microsoft-active-server-pages-asp,Microsoft Active Server Pages ASP,technology,62.29,,topic,Web front-end,N,Building websites,2026-05
+bentley-microstation,Bentley MicroStation,technology,59.35,,topic,3D modeling and printing,N,Design drawings and 3D models,2026-05
+git,Git,technology,60.48,,topic,Git workflow,N,Version control,2026-05
+microsoft-azure-software,Microsoft Azure software,technology,75.42,,topic,Server infrastructure,N,Cloud infrastructure services,2026-05
+php,PHP,technology,64.92,,topic,Backend architecture,N,Server-side web language,2026-05
+eclinicalworks-ehr-software,eClinicalWorks EHR software,technology,,,none,,N,Clinical record and practice systems: no usage topic describes them,2026-05
+microsoft-visual-studio,Microsoft Visual Studio,technology,51.71,,topic,Coding tools,N,Code editor and IDE,2026-05
+microsoft-visual-basic-for-applications-vba,Microsoft Visual Basic for Applications VBA,technology,58.12,,topic,Code design,N,Writing programs,2026-05
+shell-script,Shell script,technology,70.28,,topic,Shell and systems code,N,Shell scripting,2026-05
+adobe-after-effects,Adobe After Effects,technology,59.5,,topic,Photo and video editing,N,Motion graphics and effects,2026-05
+apache-hadoop,Apache Hadoop,technology,60.89,,topic,Data storage,N,Distributed data storage,2026-05
+autodesk-revit,Autodesk Revit,technology,59.35,,topic,3D modeling and printing,N,Design drawings and 3D models,2026-05
+google-analytics,Google Analytics,technology,72.93,,topic,Ad and traffic diagnosis,N,Web traffic analytics tool,2026-05
+splunk-enterprise,Splunk Enterprise,technology,58.29,,topic,Security operations,N,Log monitoring used by security teams,2026-05
+trimble-sketchup-pro,Trimble SketchUp Pro,technology,59.35,,topic,3D modeling and printing,N,3D models,2026-05
+bash,Bash,technology,70.28,,topic,Shell and systems code,N,Shell scripting,2026-05
+cascading-style-sheets-css,Cascading style sheets CSS,technology,62.29,,topic,Web front-end,N,Web page styling,2026-05
+github,GitHub,technology,60.48,,topic,Git workflow,N,Hosted Git repositories and pull requests,2026-05
+atlassian-confluence,Atlassian Confluence,technology,43.08,,topic,Reference documentation,N,Team documentation wiki,2026-05
+microsoft-teams,Microsoft Teams,technology,73.47,,topic,Conversation and meeting intelligence,N,Meetings and team chat,2026-05
+ruby,Ruby,technology,58.12,,topic,Code design,N,Writing programs,2026-05
+eclipse-ide,Eclipse IDE,technology,58.12,,topic,Code design,N,Writing programs,2026-05
+learning-management-system-lms,Learning management system LMS,technology,43.18,,topic,Instructional design,N,Online courses,2026-05
+microsoft-net-framework,Microsoft .NET Framework,technology,58.12,,topic,Code design,N,Writing programs,2026-05
+postgresql,PostgreSQL,technology,60.89,,topic,Data storage,N,Relational database,2026-05
+microsoft-sql-server-reporting-services-ssrs,Microsoft SQL Server Reporting Services SSRS,technology,58.12,,topic,Code design,N,Writing programs,2026-05
+nosql,NoSQL,technology,60.89,,topic,Data storage,N,Non-relational databases,2026-05
+yardi-software,Yardi software,technology,60.89,,topic,Data storage,N,Databases and records systems,2026-05
+ansible-software,Ansible software,technology,75.42,,topic,Server infrastructure,N,Automated server configuration,2026-05
+apache-cassandra,Apache Cassandra,technology,60.89,,topic,Data storage,N,Databases,2026-05
+apache-hive,Apache Hive,technology,60.89,,topic,Data storage,N,Databases,2026-05
+autodesk-autocad-civil-3d,Autodesk AutoCAD Civil 3D,technology,59.35,,topic,3D modeling and printing,N,Design drawings and 3D models,2026-05
+microsoft-powershell,Microsoft PowerShell,technology,70.28,,topic,Shell and systems code,N,Scripting for system administration,2026-05
+docker,Docker,technology,75.42,,topic,Server infrastructure,N,Containers that run services,2026-05
+go,Go,technology,64.92,,topic,Backend architecture,N,Back-end service language,2026-05
+marketo-marketing-automation,Marketo Marketing Automation,technology,67.09,,topic,CRM,N,Marketing automation tied to customer records,2026-05
+puppet,Puppet,technology,61.08,,topic,Config files,N,Server configuration,2026-05
+amazon-redshift,Amazon Redshift,technology,60.89,,topic,Data storage,N,Cloud data warehouse,2026-05
+apache-kafka,Apache Kafka,technology,64.92,,topic,Backend architecture,N,Event streaming between services,2026-05
+microsoft-windows-server,Microsoft Windows Server,technology,75.42,,topic,Server infrastructure,N,Server operating system,2026-05
+mongodb,MongoDB,technology,60.89,,topic,Data storage,N,Document database,2026-05
+slack,Slack,technology,74.48,,topic,Business operations,N,Team coordination,2026-05
+jquery,jQuery,technology,62.29,,topic,Web front-end,N,Browser scripting library,2026-05
+cisco-webex,Cisco Webex,technology,73.47,,topic,Conversation and meeting intelligence,N,Online meetings,2026-05
+google-workspace-software,Google Workspace software,technology,36.78,,topic,Workplace writing,N,Office documents,2026-05
+javascript-object-notation-json,JavaScript Object Notation JSON,technology,61.08,,topic,Config files,N,Structured data format,2026-05
+mozilla-firefox,Mozilla Firefox,technology,,,none,,N,A browser is used for everything; no single topic,2026-05
+red-hat-enterprise-linux,Red Hat Enterprise Linux,technology,75.42,,topic,Server infrastructure,N,Server operating system,2026-05
+ajax,AJAX,technology,62.29,,topic,Web front-end,N,Building websites,2026-05
+amazon-elastic-compute-cloud-ec2,Amazon Elastic Compute Cloud EC2,technology,60.89,,topic,Data storage,N,Databases and records systems,2026-05
+elasticsearch,Elasticsearch,technology,60.89,,topic,Data storage,N,Databases,2026-05
+swift,Swift,technology,58.12,,topic,Code design,N,Writing programs,2026-05
+unix-shell,UNIX Shell,technology,70.28,,topic,Shell and systems code,N,Shell scripting,2026-05
+apache-subversion-svn,Apache Subversion SVN,technology,60.48,,topic,Git workflow,N,Version control,2026-05
+node-js,Node.js,technology,64.92,,topic,Backend architecture,N,Server-side JavaScript runtime,2026-05
+oracle-pl-sql,Oracle PL/SQL,technology,60.89,,topic,Data storage,N,Database procedural language,2026-05
+apache-spark,Apache Spark,technology,59.44,,topic,Data analysis,N,Large-scale data processing for analysis,2026-05
+apache-tomcat,Apache Tomcat,technology,62.29,,topic,Web front-end,N,Building websites,2026-05
+microsoft-power-bi,Microsoft Power BI,technology,52.73,,topic,Dashboards and charts,N,Dashboard and reporting tool,2026-05
+scala,Scala,technology,58.12,,topic,Code design,N,General-purpose programming language,2026-05
+selenium,Selenium,technology,68.49,,topic,Test writing and running,N,Browser test automation,2026-05
+apache-maven,Apache Maven,technology,58.12,,topic,Code design,N,Writing programs,2026-05
+apple-safari,Apple Safari,technology,,,none,,N,A browser is used for everything; no single topic,2026-05
+chef,Chef,technology,61.08,,topic,Config files,N,Server configuration,2026-05
+django,Django,technology,62.29,,topic,Web front-end,N,Building websites,2026-05
+microsoft-asp-net,Microsoft ASP.NET,technology,62.29,,topic,Web front-end,N,Building websites,2026-05
+wordpress,WordPress,technology,62.29,,topic,Web front-end,N,Website builder,2026-05
+amazon-dynamodb,Amazon DynamoDB,technology,60.89,,topic,Data storage,N,Databases,2026-05
+junit,JUnit,technology,68.49,,topic,Test writing and running,N,Unit tests,2026-05
+amazon-web-services-aws-cloudformation,Amazon Web Services AWS CloudFormation,technology,75.42,,topic,Server infrastructure,N,Infrastructure defined as templates,2026-05
+google-angular,Google Angular,technology,62.29,,topic,Web front-end,N,Front-end framework,2026-05
+microsoft-sql-server-integration-services-ssis,Microsoft SQL Server Integration Services SSIS,technology,85.24,,topic,Automated pipelines,N,Data pipeline packages,2026-05
+transact-sql,Transact-SQL,technology,60.89,,topic,Data storage,N,Database query language,2026-05
+hubspot-software,HubSpot software,technology,67.09,,topic,CRM,N,Customer relationship and marketing platform,2026-05
+apple-ios,Apple iOS,technology,,,none,,N,Using a device's operating system is not one usage topic,2026-05
+geographic-information-system-gis-systems,Geographic information system GIS systems,technology,59.44,,topic,Data analysis,N,Map-based data analysis,2026-05
+servicenow,ServiceNow,technology,60.89,,topic,Data storage,N,Databases and records systems,2026-05
+hibernate-orm,Hibernate ORM,technology,60.89,,topic,Data storage,N,Mapping code to a database,2026-05
+react,React,technology,62.29,,topic,Web front-end,N,Front-end framework,2026-05
+spring-framework,Spring Framework,technology,64.92,,topic,Backend architecture,N,Java back-end framework,2026-05
+kubernetes,Kubernetes,technology,75.42,,topic,Server infrastructure,N,Container orchestration,2026-05
+jenkins-ci,Jenkins CI,technology,85.24,,topic,Automated pipelines,N,Build and release pipelines,2026-05
+microsoft-active-directory,Microsoft Active Directory,technology,70.14,,topic,Login and permissions,N,Directory of users and permissions,2026-05
+red-hat-openshift,Red Hat OpenShift,technology,75.42,,topic,Server infrastructure,N,Running applications on servers,2026-05
+spring-boot,Spring Boot,technology,64.92,,topic,Backend architecture,N,Java back-end framework,2026-05
+ibm-db2,IBM DB2,technology,60.89,,topic,Data storage,N,Databases and records systems,2026-05
+kronos-workforce-timekeeper,Kronos Workforce Timekeeper,technology,74.48,,topic,Business operations,N,Working-time records,2026-05
+google-android,Google Android,technology,,,none,,N,Using a phone's operating system: no matching usage topic,2026-05
+microsoft-edge,Microsoft Edge,technology,,,none,,N,A browser is used for everything; no single topic,2026-05
+workday-software,Workday software,technology,74.48,,topic,Business operations,N,Running business processes,2026-05
+canva,Canva,technology,59.5,,topic,Photo and video editing,N,Template-based graphic design,2026-05
+firewall-software,Firewall software,technology,57.9,,topic,Hardening and configuration,N,Network access rules,2026-05
+henry-schein-dentrix,Henry Schein Dentrix,technology,,,none,,N,Clinical record and practice systems: no usage topic describes them,2026-05
+ibm-terraform,IBM Terraform,technology,75.42,,topic,Server infrastructure,N,Infrastructure defined as code,2026-05
+border-gateway-protocol-bgp,Border Gateway Protocol BGP,technology,75.42,,topic,Server infrastructure,N,Network routing,2026-05
+figma,Figma,technology,71.77,,topic,UI and layout review,N,Interface design tool,2026-05
+oracle-java-2-platform-enterprise-edition-j2ee,Oracle Java 2 Platform Enterprise Edition J2EE,technology,58.12,,topic,Code design,N,Writing programs,2026-05
+tiktok,TikTok,technology,59.5,,topic,Photo and video editing,N,Short promotional videos,2026-05
+google-sheets,Google Sheets,technology,59.44,,topic,Data analysis,N,Spreadsheet analysis,2026-05
+ibm-websphere-mq,IBM WebSphere MQ,technology,75.42,,topic,Server infrastructure,N,Cloud services,2026-05
+typescript,TypeScript,technology,62.29,,topic,Web front-end,N,Typed JavaScript for web apps,2026-05
+warehouse-management-system-wms,Warehouse management system WMS,technology,74.48,,topic,Business operations,N,Logistics,2026-05
+alteryx-software,Alteryx software,technology,52.73,,topic,Dashboards and charts,N,Dashboards and reports,2026-05
+oracle-hris,Oracle HRIS,technology,74.48,,topic,Business operations,N,Staff records and payroll,2026-05
+adobe-premiere-pro,Adobe Premiere Pro,technology,59.5,,topic,Photo and video editing,N,Video editing,2026-05
+apache-airflow,Apache Airflow,technology,85.24,,topic,Automated pipelines,N,Workflow and data pipeline scheduler,2026-05
+google-looker-analytics,Google Looker Analytics,technology,52.73,,topic,Dashboards and charts,N,Dashboards and reports,2026-05
+inventory-management-systems,Inventory management systems,technology,74.48,,topic,Business operations,N,Stock and inventory,2026-05
+microsoft-team-foundation-server,Microsoft Team Foundation Server,technology,74.48,,topic,Business operations,N,Planning and tracking work,2026-05
+oracle-sql-developer,Oracle SQL Developer,technology,58.12,,topic,Code design,N,Writing programs,2026-05
+procore-software,Procore software,technology,74.48,,topic,Business operations,N,Construction project management,2026-05
+snowflake,Snowflake,technology,60.89,,topic,Data storage,N,Cloud data warehouse,2026-05
+asana,Asana,technology,74.48,,topic,Business operations,N,Team coordination,2026-05
+google-meet,Google Meet,technology,73.47,,topic,Conversation and meeting intelligence,N,Online meetings,2026-05
+grafana-labs-grafana-cloud,Grafana Labs Grafana Cloud,technology,52.73,,topic,Dashboards and charts,N,Monitoring dashboards,2026-05
+informatica-software,Informatica software,technology,85.24,,topic,Automated pipelines,N,Data integration pipelines,2026-05
+sap-concur,SAP Concur,technology,48.63,,topic,Accounting and bookkeeping,N,Accounts and expenses,2026-05
+sap-erp,SAP ERP,technology,74.48,,topic,Business operations,N,Running business processes,2026-05
+ansys-simulation-software,ANSYS simulation software,technology,54.45,,topic,Numerical and scientific methods,N,Scientific and engineering computation,2026-05
+atlassian-bitbucket,Atlassian Bitbucket,technology,60.48,,topic,Git workflow,N,Hosted Git repositories,2026-05
+autodesk-navisworks,Autodesk Navisworks,technology,59.35,,topic,3D modeling and printing,N,Design drawings and 3D models,2026-05
+bootstrap,Bootstrap,technology,62.29,,topic,Web front-end,N,Building websites,2026-05
+gitlab,GitLab,technology,60.48,,topic,Git workflow,N,Hosted Git repositories,2026-05
+mitre-att-ck-software,MITRE ATT&CK software,technology,53.12,,topic,Threat detection,N,Catalogue of attacker techniques,2026-05
+mcneel-rhinoceros-3d,McNeel Rhinoceros 3D,technology,59.35,,topic,3D modeling and printing,N,3D models,2026-05
+microsoft-power-automate,Microsoft Power Automate,technology,85.24,,topic,Automated pipelines,N,Connecting systems and automating steps,2026-05
+microsoft-power-platform-software,Microsoft Power Platform software,technology,85.24,,topic,Automated pipelines,N,Connecting systems and automating steps,2026-05
+oracle-cloud-software,Oracle Cloud software,technology,75.42,,topic,Server infrastructure,N,Cloud services,2026-05
+prometheus,Prometheus,technology,68.44,,topic,Alert routing,N,Metrics monitoring and alerts,2026-05
+restful-api,RESTful API,technology,64.92,,topic,Backend architecture,N,Service interface design,2026-05
+redis,Redis,technology,60.89,,topic,Data storage,N,Databases,2026-05
+statacorp-stata,StataCorp Stata,technology,59.44,,topic,Data analysis,N,Statistical analysis package,2026-05
+tensorflow,TensorFlow,technology,69.94,,topic,ML and data science,Y,Machine-learning framework,2026-05
+web-browser-software,Web browser software,technology,,,none,,N,A browser is used for everything; no single topic,2026-05
+applicant-tracking-software,Applicant tracking software,technology,74.48,,topic,Business operations,N,Staff records and payroll,2026-05
+autodesk-maya,Autodesk Maya,technology,59.35,,topic,3D modeling and printing,N,3D modelling and animation,2026-05
+content-management-systems-cms,Content management systems CMS,technology,62.29,,topic,Web front-end,N,Website content management,2026-05
+g-code,G-code,technology,,,none,,N,Machine-tool instructions: no matching usage topic,2026-05
+graphql,GraphQL,technology,64.92,,topic,Backend architecture,N,API query layer,2026-05
+intuit-turbotax,Intuit TurboTax,technology,48.63,,topic,Accounting and bookkeeping,N,Tax returns,2026-05
+mathworks-simulink,MathWorks Simulink,technology,54.45,,topic,Numerical and scientific methods,N,Scientific and engineering computation,2026-05
+navisworks-jetstream,NavisWorks Jetstream,technology,59.35,,topic,3D modeling and printing,N,Design drawings and 3D models,2026-05
+ptc-creo-parametric,PTC Creo Parametric,technology,59.35,,topic,3D modeling and printing,N,Design drawings and 3D models,2026-05
+purchasing-software,Purchasing software,technology,74.48,,topic,Business operations,N,Purchasing and orders,2026-05
+pytorch,PyTorch,technology,69.94,,topic,ML and data science,Y,Machine-learning framework,2026-05
+statistical-software,Statistical software,technology,59.44,,topic,Data analysis,N,Statistical analysis software,2026-05
+vue-js,Vue.js,technology,62.29,,topic,Web front-end,N,Front-end framework,2026-05
+apple-final-cut-pro,Apple Final Cut Pro,technology,59.5,,topic,Photo and video editing,N,Video editing,2026-05
+blackbaud-the-raiser-s-edge,Blackbaud The Raiser's Edge,technology,67.09,,topic,CRM,N,Donor relationship management,2026-05
+chaos-enscape,Chaos Enscape,technology,59.35,,topic,3D modeling and printing,N,Design drawings and 3D models,2026-05
+dassault-systemes-catia,Dassault Systemes CATIA,technology,59.35,,topic,3D modeling and printing,N,Design drawings and 3D models,2026-05
+disassembler-software,Disassembler software,technology,70.78,,topic,Reverse engineering,N,Reading compiled code,2026-05
+esri-arcgis-survey-123,ESRI ArcGIS Survey 123,technology,59.44,,topic,Data analysis,N,Field survey data,2026-05
+etap,ETAP,technology,59.44,,topic,Data analysis,N,Map-based data analysis,2026-05
+enterprise-application-integration-eai-software,Enterprise application integration EAI software,technology,64.92,,topic,Backend architecture,N,Connecting enterprise systems,2026-05
+geographic-information-system-gis-software,Geographic information system GIS software,technology,59.44,,topic,Data analysis,N,Map-based data analysis,2026-05
+hec-hms,HEC-HMS,technology,54.45,,topic,Numerical and scientific methods,N,Scientific and engineering computation,2026-05
+hec-ras,HEC-RAS,technology,54.45,,topic,Numerical and scientific methods,N,Scientific and engineering computation,2026-05
+inventory-control-system-software,Inventory control system software,technology,74.48,,topic,Business operations,N,Stock and inventory,2026-05
+magellan-firmware,Magellan Firmware,technology,,,none,,N,Device firmware: no matching usage topic,2026-05
+mastercam-computer-aided-design-and-manufacturing-software,Mastercam computer-aided design and manufacturing software,technology,59.35,,topic,3D modeling and printing,N,Models turned into machine paths,2026-05
+property-management-system-pms-software,Property management system PMS software,technology,60.89,,topic,Data storage,N,Databases and records systems,2026-05
+qgis,QGIS,technology,59.44,,topic,Data analysis,N,Map-based data analysis,2026-05
+skm-systems-analysis-power-tools,SKM Systems Analysis Power Tools,technology,54.45,,topic,Numerical and scientific methods,N,Scientific and engineering computation,2026-05
+scikit-learn,Scikit-learn,technology,69.94,,topic,ML and data science,Y,Machine-learning library,2026-05
+student-information-systems-sis-software,Student information systems SIS software,technology,60.89,,topic,Data storage,N,Databases and records systems,2026-05
+tax-compliance-property-tax-management-software,Tax compliance property tax management software,technology,36.68,,topic,Business compliance,N,Compliance records,2026-05
+tax-software,Tax software,technology,48.63,,topic,Accounting and bookkeeping,N,Tax returns,2026-05
+tenable-nessus,Tenable Nessus,technology,58.29,,topic,Security operations,N,Vulnerability scanning,2026-05
+thomson-reuters-westlaw,Thomson Reuters Westlaw,technology,34.87,,topic,Litigation,N,Legal research for cases,2026-05
+unity-technologies-unity,Unity Technologies Unity,technology,58.12,,topic,Code design,N,Writing programs,2026-05
+unreal-technology-unreal-engine,Unreal Technology Unreal Engine,technology,58.12,,topic,Code design,N,Writing programs,2026-05
+video-editing-software,Video editing software,technology,59.5,,topic,Photo and video editing,N,Video editing,2026-05
+web-application-software,Web application software,technology,62.29,,topic,Web front-end,N,Web applications,2026-05
+pandas,pandas,technology,59.44,,topic,Data analysis,N,Data frames for analysis,2026-05
+adp-workforce-now,ADP Workforce Now,technology,60.89,,topic,Data storage,N,Databases and records systems,2026-05
+adobe-analytics,Adobe Analytics,technology,59.44,,topic,Data analysis,N,Web and marketing analytics,2026-05
+adobe-audition,Adobe Audition,technology,48.42,,topic,Making music,N,Audio recording and editing,2026-05
+adobe-photoshop-lightroom,Adobe Photoshop Lightroom,technology,59.5,,topic,Photo and video editing,N,Photo editing,2026-05
+adobe-xd,Adobe XD,technology,71.77,,topic,UI and layout review,N,Interface design tool,2026-05
+ahrefs-site-explorer,Ahrefs Site Explorer,technology,72.93,,topic,Ad and traffic diagnosis,N,Search traffic analysis,2026-05
+amadeus-crs,Amadeus CRS,technology,60.89,,topic,Data storage,N,Databases and records systems,2026-05
+amazon-web-services-aws-sagemaker,Amazon Web Services AWS SageMaker,technology,69.94,,topic,ML and data science,Y,Platform for training and serving models,2026-05
+apache-jmeter,Apache JMeter,technology,68.49,,topic,Test writing and running,N,Load testing tool,2026-05
+appium,Appium,technology,68.49,,topic,Test writing and running,N,Mobile test automation,2026-05
+archivists-toolkit,Archivists' Toolkit,technology,60.89,,topic,Data storage,N,Databases and records systems,2026-05
+articulate-storyline,Articulate Storyline,technology,43.18,,topic,Instructional design,N,E-learning authoring,2026-05
+aurora-helioscope,Aurora HelioScope,technology,54.45,,topic,Numerical and scientific methods,N,Scientific and engineering computation,2026-05
+autodesk-fusion-360,Autodesk Fusion 360,technology,59.35,,topic,3D modeling and printing,N,Models turned into machine paths,2026-05
+autodesk-inventor,Autodesk Inventor,technology,59.35,,topic,3D modeling and printing,N,Design drawings and 3D models,2026-05
+bing-ads,Bing Ads,technology,72.16,,topic,Ad campaigns,N,Online advertising,2026-05
+bioconductor-software,Bioconductor software,technology,60.89,,topic,Data storage,N,Databases and records systems,2026-05
+business-software-applications,Business software applications,technology,36.78,,topic,Workplace writing,N,Office documents,2026-05
+chatbot-software,Chatbot software,technology,80.39,,topic,Customer support and service,N,Automated customer chat,2026-05
+clinical-trial-management-software,Clinical trial management software,technology,60.89,,topic,Data storage,N,Databases and records systems,2026-05
+constructconnect-planswift,ConstructConnect PlanSwift,technology,74.48,,topic,Business operations,N,Planning and tracking work,2026-05
+cubic-synchro-studio,Cubic Synchro Studio,technology,54.45,,topic,Numerical and scientific methods,N,Scientific and engineering computation,2026-05
+davinci-resolve,DaVinci Resolve,technology,59.5,,topic,Photo and video editing,N,Video editing,2026-05
+drupal,Drupal,technology,62.29,,topic,Web front-end,N,Website content management,2026-05
+esri-arcgis-arcpy,ESRI ArcGIS ArcPy,technology,54.45,,topic,Numerical and scientific methods,N,Scientific and engineering computation,2026-05
+esri-arcview,ESRI ArcView,technology,59.44,,topic,Data analysis,N,Map-based data analysis,2026-05
+electronic-lab-notebook-software,Electronic lab notebook software,technology,54.45,,topic,Numerical and scientific methods,N,Scientific and engineering computation,2026-05
+embedded-systems-development-software,Embedded systems development software,technology,58.12,,topic,Code design,N,Writing programs,2026-05
+forsk-atoll,Forsk Atoll,technology,,,none,,N,Radio network planning: no matching usage topic,2026-05
+google,Google,technology,60.89,,topic,Data storage,N,Databases and records systems,2026-05
+google-ads,Google Ads,technology,72.16,,topic,Ad campaigns,N,Online advertising,2026-05
+google-tag-manager,Google Tag Manager,technology,72.16,,topic,Ad campaigns,N,Online advertising,2026-05
+guidance-software-encase-enterprise,Guidance Software EnCase Enterprise,technology,54.45,,topic,Numerical and scientific methods,N,Scientific and engineering computation,2026-05
+hugging-face,Hugging Face,technology,69.94,,topic,ML and data science,Y,Model hub and libraries,2026-05
+javascript-framework-software,JavaScript framework software,technology,62.29,,topic,Web front-end,N,Front-end frameworks,2026-05
+kali-linux,Kali Linux,technology,67.53,,topic,Offensive security,N,Penetration-testing toolkit,2026-05
+langchain,LangChain,technology,61.36,,topic,AI agent design,Y,Framework for LLM agents and chains,2026-05
+lumion,Lumion,technology,59.35,,topic,3D modeling and printing,N,Design drawings and 3D models,2026-05
+maxon-cinema-4d,Maxon Cinema 4D,technology,59.35,,topic,3D modeling and printing,N,3D modelling and animation,2026-05
+mechanical-electrical-plumbing-mep-design-software,Mechanical electrical plumbing MEP design software,technology,59.35,,topic,3D modeling and printing,N,Design drawings and 3D models,2026-05
+metasploit,Metasploit,technology,67.53,,topic,Offensive security,N,Exploit testing framework,2026-05
+microsoft-azure-data-factory,Microsoft Azure Data Factory,technology,85.24,,topic,Automated pipelines,N,Data pipeline orchestration,2026-05
+microsoft-azure-devops-services,Microsoft Azure DevOps Services,technology,85.24,,topic,Automated pipelines,N,Build and release pipelines,2026-05
+microsoft-internet-information-services-iis,Microsoft Internet Information Services (IIS),technology,75.42,,topic,Server infrastructure,N,Web server,2026-05
+microsoft-internet-information-services-iis-manager,Microsoft Internet Information Services (IIS) Manager,technology,75.42,,topic,Server infrastructure,N,Web server administration,2026-05
+microsoft-playwright,Microsoft Playwright,technology,68.49,,topic,Test writing and running,N,Browser test automation,2026-05
+moz-search-engine-optimization-seo-software,Moz search engine optimization SEO software,technology,72.93,,topic,Ad and traffic diagnosis,N,Search traffic analysis,2026-05
+national-instruments-labview,National Instruments LabVIEW,technology,58.12,,topic,Code design,N,Writing programs,2026-05
+nmap,Nmap,technology,67.53,,topic,Offensive security,N,Network scanning,2026-05
+numpy,NumPy,technology,59.44,,topic,Data analysis,N,Numerical arrays for analysis,2026-05
+on-center-on-screen-takeoff,On Center On-Screen Takeoff,technology,74.48,,topic,Business operations,N,Planning and tracking work,2026-05
+openroads-designer,OpenRoads Designer,technology,59.35,,topic,3D modeling and printing,N,Design drawings and 3D models,2026-05
+operational-data-store-ods-software,Operational Data Store ODS software,technology,60.89,,topic,Data storage,N,Operational data store,2026-05
+order-management-software,Order management software,technology,74.48,,topic,Business operations,N,Purchasing and orders,2026-05
+orion-law-management-systems-orion,Orion Law Management Systems Orion,technology,60.89,,topic,Data storage,N,Databases and records systems,2026-05
+outage-management-system-oms,Outage management system OMS,technology,,,none,,N,Power grid operations: no matching usage topic,2026-05
+pci-express-pcie,PCI Express PCIe,technology,60.89,,topic,Data storage,N,Databases and records systems,2026-05
+ptv-vissim,PTV Vissim,technology,54.45,,topic,Numerical and scientific methods,N,Scientific and engineering computation,2026-05
+pvsyst,PVsyst,technology,54.45,,topic,Numerical and scientific methods,N,Scientific and engineering computation,2026-05
+patient-management-software,Patient management software,technology,,,none,,N,Clinical record and practice systems: no usage topic describes them,2026-05
+payroll-software,Payroll software,technology,74.48,,topic,Business operations,N,Staff records and payroll,2026-05
+perforce-software,Perforce software,technology,60.48,,topic,Git workflow,N,Version control,2026-05
+portswigger-burp-suite,Portswigger BurP Suite,technology,67.53,,topic,Offensive security,N,Web application attack testing,2026-05
+postman,Postman,technology,87.39,,topic,API debugging,N,API request testing tool,2026-05
+productivity-software,Productivity software,technology,74.48,,topic,Business operations,N,Planning and tracking work,2026-05
+pyspark,PySpark,technology,59.44,,topic,Data analysis,N,Large-scale data processing for analysis,2026-05
+qualtrics-insight,Qualtrics Insight,technology,74.48,,topic,Business operations,N,Planning and tracking work,2026-05
+qualys-cloud-platform,Qualys Cloud Platform,technology,58.29,,topic,Security operations,N,Vulnerability scanning and management,2026-05
+redcap-research-electronic-data-capture,REDCap Research Electronic Data Capture,technology,54.45,,topic,Numerical and scientific methods,N,Scientific and engineering computation,2026-05
+rest-assured,REST Assured,technology,68.49,,topic,Test writing and running,N,API test automation,2026-05
+relational-database-management-system-software,Relational database management system software,technology,60.89,,topic,Data storage,N,Relational databases,2026-05
+reporting-software,Reporting software,technology,52.73,,topic,Dashboards and charts,N,Reports from data,2026-05
+rockware-arcmap,RockWare ArcMap,technology,59.44,,topic,Data analysis,N,Map-based data analysis,2026-05
+rockware-modflow,RockWare MODFLOW,technology,54.45,,topic,Numerical and scientific methods,N,Scientific and engineering computation,2026-05
+rust-programming-language,Rust programming language,technology,70.28,,topic,Shell and systems code,N,Systems programming language,2026-05
+sas-jmp,SAS JMP,technology,59.44,,topic,Data analysis,N,Statistical analysis package,2026-05
+sabre-central-command,Sabre Central Command,technology,74.48,,topic,Business operations,N,Running business processes,2026-05
+screaming-frog-seo-spider,Screaming Frog SEO Spider,technology,72.93,,topic,Ad and traffic diagnosis,N,Search traffic analysis,2026-05
+semrush,Semrush,technology,72.93,,topic,Ad and traffic diagnosis,N,Search traffic analysis,2026-05
+shopify-software,Shopify software,technology,74.48,,topic,Business operations,N,Running an online shop,2026-05
+sidefx-houdini,SideFX Houdini,technology,59.35,,topic,3D modeling and printing,N,3D effects and simulation,2026-05
+siemens-teamcenter,Siemens Teamcenter,technology,74.48,,topic,Business operations,N,Planning and tracking work,2026-05
+simulation-program-with-integrated-circuit-emphasis-spice,Simulation program with integrated circuit emphasis SPICE,technology,54.45,,topic,Numerical and scientific methods,N,Scientific and engineering computation,2026-05
+single-sign-on-sso,Single sign-on SSO,technology,70.14,,topic,Login and permissions,N,Sign-in and access control,2026-05
+snakemake,Snakemake,technology,54.45,,topic,Numerical and scientific methods,N,Scientific and engineering computation,2026-05
+software-development-tools,Software development tools,technology,51.71,,topic,Coding tools,N,Development tools,2026-05
+solidity,Solidity,technology,58.12,,topic,Code design,N,Smart-contract programming language,2026-05
+sparta-systems-trackwise,Sparta Systems TrackWise,technology,36.68,,topic,Business compliance,N,Compliance records,2026-05
+springshare-libguides,Springshare LibGuides,technology,43.08,,topic,Reference documentation,N,Library research guides,2026-05
+systemverilog,SystemVerilog,technology,58.12,,topic,Code design,N,Writing programs,2026-05
+techsmith-camtasia,TechSmith Camtasia,technology,59.5,,topic,Photo and video editing,N,Video editing,2026-05
+testng,TestNG,technology,68.49,,topic,Test writing and running,N,Test framework,2026-05
+tool-command-language-tcl,Tool command language Tcl,technology,58.12,,topic,Code design,N,Writing programs,2026-05
+transportation-management-system-tms-software,Transportation management system TMS software,technology,74.48,,topic,Business operations,N,Transport planning,2026-05
+vector-database-software,Vector database software,technology,69.07,,topic,AI app building,Y,Stores embeddings for AI applications,2026-05
+verilog,Verilog,technology,58.12,,topic,Code design,N,Writing programs,2026-05
+version-control-software,Version control software,technology,60.48,,topic,Git workflow,N,Version control,2026-05
+very-high-speed-integrated-circuit-vhsic-hardware-description-language-vhdl-simulation-software,Very high speed integrated circuit VHSIC hardware description language VHDL simulation software,technology,54.45,,topic,Numerical and scientific methods,N,Scientific and engineering computation,2026-05
+web-application-framework-software,Web application framework software,technology,64.92,,topic,Backend architecture,N,Server-side web frameworks,2026-05
+web-server-software,Web server software,technology,75.42,,topic,Server infrastructure,N,Web server,2026-05
+xactware-xactimate,Xactware Xactimate,technology,60.89,,topic,Data storage,N,Databases and records systems,2026-05
+zemax,Zemax,technology,59.35,,topic,3D modeling and printing,N,Design drawings and 3D models,2026-05
+emass,eMASS,technology,36.68,,topic,Business compliance,N,Security compliance records,2026-05
