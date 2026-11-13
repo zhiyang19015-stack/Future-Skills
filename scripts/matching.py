@@ -109,7 +109,9 @@ def number(value) -> float | None:
 
 _TABLES = ("fields.csv", "occupations.csv", "elements.csv", "occupation_elements.csv", "technologies.csv",
            "occupation_technologies.csv", "occupation_titles.csv", "related_occupations.csv",
-           "learning_resources.csv", "sdg_map.csv", "regulated.csv")
+           "learning_resources.csv", "sdg_map.csv", "regulated.csv", "my_restrictions.csv")
+# Flags that keep an occupation out of the listed ranking (it is scored, but placed after the rest).
+UNLISTED_FLAGS = {"needs_extra_education", "below_education", "restricted_my"}
 _cache = {"key": None, "value": None}
 
 
@@ -163,7 +165,8 @@ def static_tables() -> dict:
     for r in read_csv("sdg_map.csv"):
         sdg_rules.setdefault((r["entity_type"], r["entity_id"]), []).append(r)
     regulated = read_csv("regulated.csv")
-    value = {"fields": fields, "occupations": occupations, "by_id": {o["occ_id"]: o for o in occupations},
+    restricted = {o.strip(): r for r in read_csv("my_restrictions.csv") for o in r["occ_ids"].split(";") if o.strip()}
+    value = {"restricted": restricted,"fields": fields, "occupations": occupations, "by_id": {o["occ_id"]: o for o in occupations},
              "elements": elements, "occ_elements": occ_elements, "technologies": technologies,
              "occ_techs": occ_techs, "in_demand": in_demand, "titles": titles, "related": related,
              "resources": resources, "by_target": by_target, "sdg_rules": sdg_rules, "regulated": regulated}
@@ -206,6 +209,12 @@ def licence(occ: dict, data: dict) -> dict | None:
         if any(occ["occ_id"].startswith(p.strip()) for p in r["onet_prefixes"].split(";") if p.strip()):
             return {k: r[k] for k in ("profession", "body", "requirement", "url", "verified_date")}
     return None
+
+
+def restriction(occ: dict, data: dict) -> dict | None:
+    """A Malaysian legal limit on an occupation (data/my_restrictions.csv), when there is one."""
+    r = data.get("restricted", {}).get(occ["occ_id"])
+    return {k: r[k] for k in ("restriction_id", "topic", "note", "source_name", "source_url", "source_date")} if r else None
 
 
 def sdg_goal(target: str) -> str:
@@ -408,7 +417,9 @@ def field_insights(rows: list[dict], sources: dict, used: list[str], profile: di
             text += f", only {gap:.1f} points ahead of {second['name']}: look at both."
         else:
             text += f", a clear lead of {gap:.1f} points."
-        out.append({"type": "best_field", "field": first["id"], "text": text})
+        out.append({"type": "best_field", "field": first["id"], "second": second["id"] if second else None,
+                    "fit": first["fit"], "gap": round(gap, 1), "close": bool(second and gap < CLEAR_LEAD),
+                    "text": text})
     leaders = {k: top_key(sources[k]) for k in used}
     for i, a in enumerate(used):
         for b in used[i + 1:]:
@@ -470,14 +481,15 @@ def score(profile: dict, occ: dict, data: dict, adoption: float, weights: dict, 
     choice = sdg_choice(profile.get("sdg_goals"), targets, total or 0.0)
     flags = education_flags(occ, profile) + [name for name, applies in (
         ("field_not_scored", parts["field"] is None), ("interest_not_scored", i_fit is None),
-        ("current_occupation", profile.get("current_occupation") == occ["occ_id"])) if applies]
+        ("current_occupation", profile.get("current_occupation") == occ["occ_id"]),
+        ("restricted_my", not profile.get("show_restricted") and restriction(occ, data) is not None)) if applies]
     m = {"occ_id": occ["occ_id"], "title": occ["title"], "field_id": occ["field_id"], "field_name": occ["field_name"],
          "job_zone": occ["job_zone"], "mycol": occ["mycol"], "riasec": occ["riasec"], "search_title": occ["search_title"],
          "total": choice["total"],
          "components": {k: {"score": parts[k], "weight": WEIGHTS[k], "points": part_points[k]} for k in WEIGHTS},
          "skill_parts": skill["parts"], "outlook": future, "flags": flags, "sdg_choice": choice,
          "_parts": {"field": parts["field"], "interest": i_fit, "bonus": choice["bonus"],
-                    "last": bool({"needs_extra_education", "below_education"} & set(flags))}}
+                    "last": bool(UNLISTED_FLAGS & set(flags))}}
     if detail:
         found = licence(occ, data)
         if found:
@@ -497,6 +509,7 @@ def score(profile: dict, occ: dict, data: dict, adoption: float, weights: dict, 
                              "counts": {k: len(skill[k]) for k in ("gaps", "strengths", "tech_used", "tech_missing")}},
             "pathway": learning_path(skill, data, profile.get("hours_per_week", DEFAULT_HOURS_PER_WEEK)),
             "ai": occupation_ai(occ["occ_id"], data), "sdg": targets, "licence": found,
+            "restriction": restriction(occ, data),
             "demand_detail": data["demand"]["occupations"].get(occ["occ_id"]),
             "evidence": evidence.occupation_grade(occ, data),
         })

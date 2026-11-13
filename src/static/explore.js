@@ -142,6 +142,13 @@ function taskRow(x) {
     <span class="tiny muted" style="grid-column:1/-1">${x.ai_share > 0 ? `${t("task.range", fmt(x.ai_share_low, 0), fmt(x.ai_share_high, 0))}${x.automation_pct !== null && x.automation_pct !== undefined ? ` · ${t("task.auto", fmt(x.automation_pct, 0))}` : ""}${time ? ` · ${time}` : ""}` : t("task.none")}</span></div>`;
 }
 
+function restrictionCard(x) {
+  if (!x) return "";
+  return `<section class="card stack tight" style="border-color:var(--warn)"><h2>${t("restrict.h")}</h2>
+    <p>${t("restrict." + x.restriction_id)}</p>
+    <p class="src">${esc(x.source_name)} · <a href="${safeUrl(x.source_url)}" target="_blank" rel="noopener">${t("restrict.law")}</a> · ${dateText(x.source_date)}</p></section>`;
+}
+
 function licenceCard(l) {
   if (!l) return "";
   return `<section class="card stack tight" style="border-color:var(--warn)"><h2>${t("lic.h")}</h2>
@@ -179,6 +186,7 @@ PAGES.occ = async (args) => {
       ${jobLinks(occ.search_title)}
     </header>
     ${licenceCard(r.licence)}
+    ${restrictionCard(r.restriction)}
 
     <section class="stack"><h2>${t("occ.outlook.h", 2030)}</h2><div class="grid three">${scen}</div>
       <p class="src">${t("scn.estimate.long")}</p></section>
@@ -261,7 +269,7 @@ function whyTemplate(f) {
   const o = f.outlook;
   const scen = state.scenario === "custom" ? t("why.t.custom", Math.round(state.adoption * 100)) : t("scn." + state.scenario);
   const parts = [t("why.t.main", f.occupation, num(f.match_score), pts("field_fit"), pts("skill_fit"), pts("outlook_points"), scen,
-    t("status." + o.status).toLowerCase(), t("why.t.demand." + (o.malaysian_demand === "no data" ? "none" : o.malaysian_demand)),
+    t("status.word." + o.status), t("why.t.demand." + (o.malaysian_demand === "no data" ? "none" : o.malaysian_demand)),
     num(o.ai_share_of_tasks), num(o.average_ai_share))];
   if (f.learning_path && f.learning_path.length) {
     const c = f.learning_path[0];
@@ -311,11 +319,11 @@ function detailHtml(m, sim) {
   </div>`;
 }
 
-const FLAGS_SHOWN = ["needs_extra_education", "below_education", "current_occupation", "licence_needed"];
+const FLAGS_SHOWN = ["needs_extra_education", "below_education", "current_occupation", "licence_needed", "restricted"];
 function matchCard(m, sim) {
   const open = Boolean(ui.open[m.occ_id]);
   const s = m.stability;
-  const flags = m.flags.filter((f) => FLAGS_SHOWN.includes(f));
+  const flags = [...m.flags, ...(m.restriction ? ["restricted"] : [])].filter((f) => FLAGS_SHOWN.includes(f));
   const goals = m.sdg_choice && m.sdg_choice.bonus ? `<span class="chip rising">${t("match.sdg.bonus", m.sdg_choice.goals.join(", "), fmt(m.sdg_choice.bonus, 0))}</span>` : "";
   return `<article class="card match" id="m-${esc(m.occ_id)}">
     <span class="rank" aria-label="${t("match.rank", m.rank)}">${m.rank}</span>
@@ -379,12 +387,28 @@ function fieldExplain(f) {
     ? ` <span>(${esc(f.explain.slice(f.explain.indexOf("(") + 1, f.explain.lastIndexOf(")")))})</span>` : "");
 }
 
+// The server words field insights in English; other languages are built here from the same facts.
+function insightText(i) {
+  if (LANG === "en") return i.text;
+  const part = (k) => t("part." + k);
+  switch (i.type) {
+    case "best_field":
+      return i.close && i.second
+        ? t("ins.best.close", fieldName(i.field), fmt(i.fit, 0), fmt(i.gap, 1), fieldName(i.second))
+        : t("ins.best.clear", fieldName(i.field), fmt(i.fit, 0), fmt(i.gap, 1));
+    case "mismatch": return t("ins.mismatch", part(i.sources[0]), fieldName(i.fields[0]), part(i.sources[1]), fieldName(i.fields[1]));
+    case "one_source": return t("ins.one", part(i.sources[0]));
+    case "same_answer": case "flat": case "all_low": return t("ins." + i.type);
+    default: return i.text;
+  }
+}
+
 PAGES.matches = async () => {
   const m = await getMatches(ui.showMore ? 30 : 12);
   rememberScenarios(m.scenarios);
   const people = state.demo ? await cached("/api/profiles") : [];
   const demo = people.find((p) => p.profile_id === state.demo);
-  const listed = m.results.filter((x) => !x.flags.includes("needs_extra_education") && !x.flags.includes("below_education") && !x.flags.includes("current_occupation"));
+  const listed = m.results.filter((x) => !x.flags.includes("needs_extra_education") && !x.flags.includes("below_education") && !x.flags.includes("current_occupation") && !x.flags.includes("restricted_my"));
   const shown = ui.showMore ? listed : listed.slice(0, SHOWN_MATCHES);
   const beyond = m.ranking.filter((x) => x.flags.includes("needs_extra_education")).slice(0, 8);
   const below = m.ranking.filter((x) => x.flags.includes("below_education")).length;
@@ -401,7 +425,7 @@ PAGES.matches = async () => {
       <div class="row"><a class="btn small" href="#/occ/${esc(cur.occ_id)}">${t("match.now.tasks")}</a></div></section>` : ""}
     <section class="card stack"><h2>${t("match.fields.h")}</h2>
       <div class="stack tight">${m.fields.filter((f) => f.fit !== null).slice(0, 6).map((f) => `<div class="meter"><span>${esc(fieldName(f.id))}</span>${bar(f.fit)}<span class="v">${fmt(f.fit, 0)}</span></div><p class="tiny muted">${fieldExplain(f)}</p>`).join("") || `<p class="small muted">${t("match.fields.none")}</p>`}</div>
-      ${m.insights.length ? `<ul class="small">${m.insights.map((i) => `<li>${esc(i.text)}</li>`).join("")}</ul>` : ""}
+      ${m.insights.length ? `<ul class="small">${m.insights.map((i) => `<li>${esc(insightText(i))}</li>`).join("")}</ul>` : ""}
       <p class="src">${t("match.fields.src")}</p></section>
     ${goalPicker(m)}
     <section class="stack"><div class="row between"><h2>${t(cur ? "match.moves.h" : "match.top.h")}</h2><span class="small muted">${t("match.sim", m.simulation ? m.simulation.futures : 0)}</span></div>
@@ -409,6 +433,7 @@ PAGES.matches = async () => {
       ${!ui.showMore && listed.length > shown.length ? `<div><button type="button" class="btn" data-act="showMore">${t("match.more")}</button></div>` : ""}
       ${beyond.length ? `<p class="small muted">${t("match.beyond", beyond.map((x) => occLink(x.occ_id, x.title)).join(", "))}</p>` : ""}
       ${below ? `<p class="small muted">${t("match.below", below)}</p>` : ""}
+      ${m.restricted_hidden || m.restricted_shown ? `<p class="small muted">${t(m.restricted_shown ? "restrict.shown" : "restrict.hidden", m.restricted_hidden)} <button type="button" class="linklike" data-act="restricted">${t(m.restricted_shown ? "restrict.hide" : "restrict.show")}</button></p>` : ""}
     </section>
     ${adCard()}
     <div class="row"><a class="btn primary" href="#/futures">${t("match.futures")} →</a><a class="btn" href="#/you">${t("match.edit")}</a></div>
@@ -417,6 +442,7 @@ PAGES.matches = async () => {
 };
 Object.assign(ACT, {
   showMore: () => { ui.showMore = true; redraw(); },
+  restricted: () => { state.showRestricted = !state.showRestricted; ui.why = {}; save(); redraw(); },
   pick: (el) => { state.occId = el.dataset.id; save(); },
   goal: (el) => {
     const g = el.dataset.id;
@@ -435,7 +461,7 @@ Object.assign(ACT, {
 
 /* ---------- 4 Pathway ---------- */
 
-const isMove = (x) => !["needs_extra_education", "below_education", "current_occupation"].some((f) => x.flags.includes(f));
+const isMove = (x) => !["needs_extra_education", "below_education", "current_occupation", "restricted_my"].some((f) => x.flags.includes(f));
 async function chosenOccupation(arg) {
   if (arg) { state.occId = arg; save(); return arg; }
   if (state.occId) return state.occId;

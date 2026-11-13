@@ -315,7 +315,8 @@ def request_context(body: dict, required_changes: bool = False) -> tuple[dict, d
     goals = body.get("sdg_goals", profile.get("sdg_goals", []))
     if not isinstance(goals, list) or not all(str(g) in {str(i) for i in range(1, 18)} for g in goals):
         raise Refused("'sdg_goals' must be a list of UN goal numbers 1-17")
-    profile = matching.prepare({**profile, "hours_per_week": hours, "sdg_goals": [str(g) for g in goals]}, data)
+    profile = matching.prepare({**profile, "hours_per_week": hours, "sdg_goals": [str(g) for g in goals],
+                                "show_restricted": body.get("show_restricted") is True}, data)
     scenario, adoption = scenario_of(body)
     return data, profile, scenario, adoption, changes
 
@@ -525,15 +526,16 @@ def occupation_detail(req, occ_id: str):
                  outlook=outlook.role_outlook(occ, data, adoption), outlooks=occupation_outlooks(occ, data),
                  ai=matching.occupation_ai(occ_id, data), demand=d, tasks=[{k: t[k] for k in keep} for t in tasks],
                  skills=skills, technologies=techs, sdg=matching.occupation_sdg(occ, data),
-                 licence=matching.licence(occ, data), related=related, source=data["ai"]["source"],
+                 licence=matching.licence(occ, data), restriction=matching.restriction(occ, data), related=related, source=data["ai"]["source"],
                  evidence=evidence.occupation_grade(occ, data))
 
 
 # --- step 3: matches --------------------------------------------------------------------------------
 
 def listed(m: dict) -> bool:
-    """An occupation in the person's list of moves: open at their education level and not the job they do now."""
-    return not {"needs_extra_education", "below_education", "current_occupation"} & set(m["flags"])
+    """An occupation in the person's list of moves: open at their education level, not restricted in
+    Malaysia (unless asked for) and not the job they do now."""
+    return not (matching.UNLISTED_FLAGS | {"current_occupation"}) & set(m["flags"])
 
 
 def scenario_ranks(profile: dict, data: dict, wanted: set) -> tuple[dict, dict]:
@@ -568,6 +570,8 @@ def match(req):
     listed_count = sum(1 for m in result["ranking"] if listed(m))
     return reply(**{k: v for k, v in result.items() if k != "ranking"}, ranking=result["ranking"][:100],
                  listed=listed_count, total_occupations=len(result["ranking"]),
+                 restricted_hidden=sum(1 for m in result["ranking"] if "restricted_my" in m["flags"]),
+                 restricted_shown=bool(profile.get("show_restricted")),
                  weights=matching.WEIGHTS, field_weights=matching.FIELD_WEIGHTS, skill_split=matching.SKILL_SPLIT,
                  horizon_year=outlook.HORIZON_YEAR, scenario=scenario_info(scenario, adoption),
                  scenarios=scenario_list(), trend_data=data_version(data, changes), sdg_bonus=matching.SDG_BONUS,
@@ -917,6 +921,14 @@ def source_rows(data: dict) -> list[dict]:
                  "covers": f"{len(regulated)} professions", "released": "",
                  "fetched": max((r["verified_date"] for r in regulated if r["verified_date"]), default=""),
                  "refresh": "Checked by hand.", "rows": len(regulated)})
+    limits = read_csv("my_restrictions.csv")
+    rows.append({"id": "my_restrictions", "name": "Laws of Malaysia (legal limits on some occupations)",
+                 "url": limits[0]["source_url"] if limits else "", "licence": "",
+                 "used_for": "Occupations left out of matches unless the person chooses to show them: "
+                             + "; ".join(f"{r['topic']} ({r['source_name']})" for r in limits),
+                 "covers": f"{sum(len([o for o in r['occ_ids'].split(';') if o]) for r in limits)} occupations",
+                 "released": "", "fetched": max((r["source_date"] for r in limits), default=""),
+                 "refresh": "Checked by hand.", "rows": len(limits)})
     return rows
 
 

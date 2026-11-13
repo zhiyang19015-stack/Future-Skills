@@ -119,7 +119,7 @@ function customOccs(c) {
 }
 
 PAGES.futures = async () => {
-  const [f, wi, occs] = await Promise.all([cached("/api/futures", { ...profileBody(), hours_per_week: state.hours, sdg_goals: state.sdgGoals, top: 5 }),
+  const [f, wi, occs] = await Promise.all([cached("/api/futures", { ...profileBody(), hours_per_week: state.hours, sdg_goals: state.sdgGoals, show_restricted: Boolean(state.showRestricted), top: 5 }),
     cached("/api/whatif"), cached("/api/occupations")]);
   ui.occList = occs;
   rememberScenarios(f.scenarios);

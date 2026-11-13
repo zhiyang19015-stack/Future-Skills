@@ -110,6 +110,12 @@ def check() -> list[str]:
              f"regulated line {i}: a prefix matches no occupation")
         need(bool(r["url"]) == bool(r["verified_date"]), f"regulated line {i}: a url needs its verified_date")
 
+    for i, r in enumerate(read("my_restrictions.csv"), 2):
+        ids = [o for o in r["occ_ids"].split(";") if o]
+        need(bool(ids) and all(o in occupations for o in ids), f"my_restrictions line {i}: unknown occupation")
+        need(r["source_url"].startswith("https://") and bool(r["source_name"]), f"my_restrictions line {i}: source")
+        need(DATE.match(r["source_date"]) is not None, f"my_restrictions line {i}: source_date")
+
     for i, r in enumerate(read("mycol_map.csv"), 2):
         need(bool(r["isco"]) or bool(r["onet_codes"]) or r["basis"] == "not linked", f"mycol_map line {i}: no link")
         need(all(c in occupations for c in filter(None, r["onet_codes"].split(";"))), f"mycol_map line {i}: unknown code")

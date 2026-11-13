@@ -20,7 +20,7 @@ const STORE_KEY = "future-skills-v3";
 const SCENARIO_IDS = ["slow", "moderate", "fast"];
 const blank = () => ({
   kind: "student", currentOcc: "", zone: 4, hours: 5, fields: {}, answers: null, cv: null, skills: {}, techs: [],
-  demo: null, sdgGoals: [], scenario: "moderate", adoption: 0.25, occId: null, done: {}, seen: null, learner: null,
+  demo: null, sdgGoals: [], showRestricted: false, scenario: "moderate", adoption: 0.25, occId: null, done: {}, seen: null, learner: null,
 });
 function loadState() {
   try {
@@ -58,7 +58,7 @@ function profileBody() {
 }
 const scenarioBody = () => (state.scenario === "custom" ? { adoption: state.adoption } : { scenario: state.scenario });
 const scenarioQuery = () => (state.scenario === "custom" ? `adoption=${state.adoption}` : `scenario=${state.scenario}`);
-const matchBody = (extra = {}) => ({ ...profileBody(), ...scenarioBody(), hours_per_week: state.hours, sdg_goals: state.sdgGoals, ...extra });
+const matchBody = (extra = {}) => ({ ...profileBody(), ...scenarioBody(), hours_per_week: state.hours, sdg_goals: state.sdgGoals, show_restricted: Boolean(state.showRestricted), ...extra });
 
 /* ---------- the API: answers are kept for the visit, so moving between steps costs no data ---------- */
 
@@ -100,7 +100,7 @@ const SDG_COLOR = { 1: "#E5243B", 2: "#DDA63A", 3: "#4C9F38", 4: "#C5192D", 5: "
   9: "#FD6925", 10: "#DD1367", 11: "#FD9D24", 12: "#BF8B2E", 13: "#3F7E44", 14: "#0A97D9", 15: "#56C02B", 16: "#00689D", 17: "#19486A" };
 const goalOf = (target) => String(target).split(".")[0];
 const sdgChip = (target, title = "") => `<span class="chip sdg" style="--sdg:${SDG_COLOR[goalOf(target)] || "#19486a"}" title="${esc(title || sdgText(target))}"><i class="dot"></i>SDG ${esc(target)}</span>`;
-const statusChip = (s) => `<span class="chip ${esc(s)}"><i class="dot"></i>${t("status." + s)}</span>`;
+const statusChip = (s) => `<span class="chip ${esc(s)}" title="${esc(t("status.title"))}"><i class="dot"></i>${t("status." + s)}</span>`;
 const handoffTitle = (x) => (x.handoff === null || x.handoff === undefined ? t("skill.nodata") : t("skill.handoff.title", fmt(x.handoff, 0)));
 const dotName = (x) => `<span class="chip ${esc(x.status)}" title="${esc(handoffTitle(x))}"><i class="dot"></i>${esc(x.skill_name)}</span>`;
 const bar = (value, cls = "", extra = "") => `<div class="bar ${cls}" role="img" aria-label="${fmt(value, 0)}"><i style="width:${clamp(value || 0, 0, 100)}%"></i>${extra}</div>`;
