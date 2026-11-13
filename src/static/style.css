@@ -290,3 +290,28 @@ td.heat { font-variant-numeric: tabular-nums; font-weight: 650; }
 td.heat.h1 { background: var(--warn-soft); color: var(--warn); }
 td.heat.h2 { background: color-mix(in srgb, var(--warn) 30%, var(--surface)); color: var(--ink); }
 td.heat.h3 { background: color-mix(in srgb, var(--warn) 60%, var(--surface)); color: var(--ink); }
+
+/* ---------- the Lab (lab.js) ---------- */
+.seg a.segbtn { color: var(--muted); font-weight: 650; font-size: .92rem; padding: 8px 14px; border-radius: 9px; min-height: 38px; display: inline-flex; align-items: center; text-decoration: none; }
+.seg a.segbtn[aria-selected="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 3px rgba(0, 0, 0, .12); }
+.mix { display: flex; height: 14px; border-radius: 999px; overflow: hidden; background: var(--line); }
+.mix > i { display: block; height: 100%; }
+.m-automation { background: var(--fall); }
+.m-augmentation { background: var(--ai); }
+.m-human { background: var(--rise); }
+.m-unclear { background: var(--steady); opacity: .55; }
+i.dot.m-automation, i.dot.m-augmentation, i.dot.m-human, i.dot.m-unclear { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 4px; }
+.chip.kind-observed { background: var(--brand-soft); color: var(--brand-strong); }
+.chip.kind-research_estimate { background: var(--ai-soft); color: var(--ai); }
+.chip.kind-scenario_assumption { background: var(--warn-soft); color: var(--warn); }
+.chip.kind-user_input, .chip.kind-derived { background: transparent; border: 1px solid var(--line); color: var(--muted); }
+svg.net { width: 100%; height: auto; max-height: 460px; }
+svg.net .edge { stroke: var(--line); }
+svg.net .node { fill: var(--steady-soft); stroke: var(--steady); stroke-width: 2; }
+svg.net .node.origin { fill: var(--brand-soft); stroke: var(--brand); }
+svg.net .node.rising { fill: var(--rise-soft); stroke: var(--rise); }
+svg.net .node.declining { fill: var(--fall-soft); stroke: var(--fall); }
+svg.net .lbl { fill: var(--ink); font-size: 12px; }
+svg.net .lbl.strong { font-weight: 700; font-size: 11px; }
+ul.checks { list-style: none; padding: 0; }
+input.grow { flex: 1; min-width: 0; }

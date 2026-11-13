@@ -55,6 +55,8 @@ function profileBody() {
     if (Object.keys(state.cv.fields || {}).length) { b.cv_fields = state.cv.fields; b.cv_why = state.cv.why || {}; }
     if (Object.keys(state.cv.skills || {}).length) b.cv_skills = state.cv.skills;
   }
+  const missions = state.lab && state.lab.missions ? Object.keys(state.lab.missions).filter((k) => state.lab.missions[k].done) : [];
+  if (missions.length) b.missions_done = missions;  // finished practice missions (lab.js) count as skill evidence
   return b;
 }
 const scenarioBody = () => (state.scenario === "custom" ? { adoption: state.adoption } : { scenario: state.scenario });
@@ -174,6 +176,7 @@ function drawChrome(current) {
   const at = current === "occ" ? "radar" : current;
   $("#steps").innerHTML = STEPS.map(([id, key], i) =>
     `<a href="#/${id}"${at === id ? ' aria-current="page"' : ""}><b>${i + 1}</b><span>${t(key)}</span></a>`).join("")
+    + `<a href="#/lab"${at === "lab" ? ' aria-current="page"' : ""}><b>⚗</b><span>${t("nav.lab")}</span></a>`
     + `<a href="#/team"${at === "team" ? ' aria-current="page"' : ""}><b>+</b><span>${t("nav.team")}</span></a>`
     + `<a href="#/sources"${at === "sources" ? ' aria-current="page"' : ""}><b>i</b><span>${t("nav.sources")}</span></a>`;
   $("#foot").innerHTML = `<p>${t("foot.estimates")}</p><p>${t("foot.human")}</p>

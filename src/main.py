@@ -60,18 +60,25 @@ STATIC = HERE / "static"
 sys.path.insert(0, os.fspath(MODULES))
 
 import ai_exposure  # noqa: E402
+import challenge  # noqa: E402
 import cv_reader  # noqa: E402
+import decision_lab  # noqa: E402
 import demand  # noqa: E402
 import evidence  # noqa: E402
 import explain  # noqa: E402
+import ilo  # noqa: E402
 import impact  # noqa: E402
 import interest  # noqa: E402
 import learning  # noqa: E402
 import matching  # noqa: E402
+import missions  # noqa: E402
 import outlook  # noqa: E402
+import registry  # noqa: E402
 import releases  # noqa: E402
 import skillcheck  # noqa: E402
+import stress_test  # noqa: E402
 import team  # noqa: E402
+import transfer  # noqa: E402
 import whatif  # noqa: E402
 
 MAX_BODY = 4_000_000          # room for a base64 .docx CV
@@ -266,7 +273,39 @@ def build_profile(body: dict, data: dict) -> dict:
     if not isinstance(techs, list) or any(t not in data["technologies"] for t in techs):
         raise Refused("'technologies' must be a list of tech_ids from /api/technologies")
     profile["technologies"] = list(dict.fromkeys(techs))
+    # finished practice missions (kept in the browser): their level is a floor for their skills
+    try:
+        done = missions.validate_done(body.get("missions_done"))
+    except missions.MissionError as error:
+        raise Refused(str(error)) from None
+    if done:
+        levels, tools = missions.evidence(done, data)
+        for e, level in levels.items():
+            profile["skills"][e] = max(profile["skills"].get(e, 0.0), level)
+        profile["technologies"] = list(dict.fromkeys(profile["technologies"] + tools))
+        profile["missions_done"] = done
     return profile
+
+
+def skill_sources(body: dict, data: dict) -> dict:
+    """Where each of the person's skill levels comes from (project, cv, self), the highest level
+    winning and, at equal levels, the more trusted source. Levels assumed from the job they do now
+    are "job" (scripts/transfer.py)."""
+    found = {}
+    sets = [("self", body.get("skills") or {}), ("cv", body.get("cv_skills") or {})]
+    done = body.get("missions_done") if isinstance(body.get("missions_done"), list) else []
+    if done:
+        sets.append(("project", missions.evidence([m for m in done if m in missions.catalogue()], data)[0]))
+    trust = transfer.EVIDENCE_WEIGHT
+    for source, levels in sets:
+        if not isinstance(levels, dict):
+            continue
+        for e, v in levels.items():
+            if isinstance(v, (int, float)) and not isinstance(v, bool):
+                best = found.get(e)
+                if best is None or v > best[1] or (v == best[1] and trust[source] > trust[best[0]]):
+                    found[e] = (source, v)
+    return {e: s for e, (s, _) in found.items()}
 
 
 def scenario_of(args: dict) -> tuple[str | None, float]:
@@ -532,7 +571,7 @@ def occupation_detail(req, occ_id: str):
                  ai=matching.occupation_ai(occ_id, data), demand=d, tasks=[{k: t[k] for k in keep} for t in tasks],
                  skills=skills, technologies=techs, sdg=matching.occupation_sdg(occ, data),
                  licence=matching.licence(occ, data), restriction=matching.restriction(occ, data), related=related, source=data["ai"]["source"],
-                 evidence=evidence.occupation_grade(occ, data))
+                 evidence=evidence.occupation_grade(occ, data), ilo=ilo.for_occupation(occ, data))
 
 
 # --- step 3: matches --------------------------------------------------------------------------------
@@ -811,6 +850,93 @@ def team_own(req):
     return reply(**result, scenario=scenario_info(scenario, adoption), scenarios=scenario_list())
 
 
+# --- the Lab: stress test, skill transfer map, decision lab, confidence challenge, missions ----------
+
+def lab_number(body: dict, key: str):
+    v = body.get(key)
+    return v if v is None or (isinstance(v, (int, float)) and not isinstance(v, bool)) else "bad"
+
+
+@route("POST", "/api/lab/stress")
+def lab_stress(req):
+    """Career Stress Test for one occupation under the person's assumptions (scripts/stress_test.py).
+    With "use_profile": true the routes start from the person's own skills."""
+    body = req.json()
+    occ_id = body.get("occ_id")
+    data, profile, _, adoption, _ = request_context(body)
+    params = {k: lab_number(body, k) for k in ("friction", "demand_change", "max_weeks")}
+    params.update(adoption=adoption, hours_per_week=profile["hours_per_week"])
+    try:
+        return reply(stress_test.run(occ_id, data, params, profile if body.get("use_profile") else None,
+                                     skill_sources(body, data)))
+    except stress_test.StressError as error:
+        raise Refused(str(error)) from None
+
+
+@route("POST", "/api/lab/transfer")
+def lab_transfer(req):
+    """Skill Transfer Map from an origin occupation (default: the job the person does now)."""
+    body = req.json()
+    data, profile, _, adoption, _ = request_context(body)
+    origin = body.get("origin") or profile.get("current_occupation")
+    if origin not in data["by_id"]:
+        raise Refused("'origin' must be an occ_id (or set current_occupation)")
+    weeks = lab_number(body, "max_weeks")
+    if weeks == "bad" or (weeks is not None and not 1 <= weeks <= 520):
+        raise Refused("'max_weeks' must be a number from 1 to 520")
+    return reply(transfer.map_for(profile, data, origin, adoption, profile["hours_per_week"], skill_sources(body, data),
+                                  limit=10, max_weeks=weeks))
+
+
+@route("POST", "/api/lab/decide")
+def lab_decide(req):
+    """Career Decision Lab: stay and upskill, an adjacent move, a bigger change, under the person's limits."""
+    body = req.json()
+    data, profile, _, adoption, _ = request_context(body)
+    origin = body.get("origin")
+    if origin is not None and origin not in data["by_id"]:
+        raise Refused(f"unknown origin '{origin}'")
+    try:
+        return reply(decision_lab.run(profile, data, adoption, profile["hours_per_week"], body.get("limits"),
+                                      skill_sources(body, data), origin))
+    except decision_lab.LabError as error:
+        raise Refused(str(error)) from None
+
+
+@route("POST", "/api/lab/challenge")
+def lab_challenge(req):
+    """Why one occupation and not another: parts, what would swap them, evidence and missing data."""
+    body = req.json()
+    data, profile, _, adoption, _ = request_context(body)
+    try:
+        return reply(challenge.run(profile, data, adoption, body.get("occ_id"), body.get("other_id")))
+    except challenge.ChallengeError as error:
+        raise Refused(str(error)) from None
+
+
+@route("GET", "/api/missions")
+def missions_list(req):
+    return reply(missions=missions.all_missions(matching.static_tables()))
+
+
+@route("POST", "/api/missions")
+def missions_for(req):
+    """The practice missions on the person's gaps for one occupation."""
+    body = req.json()
+    data, profile, _, _, _ = request_context(body)
+    try:
+        return reply(missions.for_occupation(body.get("occ_id"), profile, data, profile.get("missions_done")))
+    except missions.MissionError as error:
+        raise Refused(str(error)) from None
+
+
+@route("GET", "/api/metrics")
+def metrics(req):
+    """The metric registry: every number's source, dates, method, confidence, limits and transformation."""
+    return reply(metrics=registry.registry(matching.load_data(), read_csv("demand_inputs.csv")),
+                 kinds=list(registry.KINDS))
+
+
 # --- sources and "Update data" -------------------------------------------------------------------------
 
 def run_update(with_arxiv: bool) -> None:
@@ -953,6 +1079,19 @@ def source_rows(data: dict) -> list[dict]:
                  "covers": f"{len(regulated)} professions", "released": "",
                  "fetched": max((r["verified_date"] for r in regulated if r["verified_date"]), default=""),
                  "refresh": "Checked by hand.", "rows": len(regulated)})
+    src = ilo.tables()["source"]
+    if src:
+        rows.insert(2, {"id": "ilo_wp140", "name": src["source_name"], "url": src["source_url"], "licence": "CC BY 4.0 (© ILO)",
+                        "used_for": "GenAI exposure (technical potential) of each ISCO-08 occupation and task, next to "
+                                    "observed AI use in the Career Stress Test; never averaged with it",
+                        "covers": f"{len(ilo.tables()['occupations'])} ISCO-08 occupations", "released": src["source_date"],
+                        "fetched": src["fetched_date"], "refresh": "Rebuilt by scripts/build_ilo.py when the ILO updates the index.",
+                        "rows": sum(1 for o in data["occupations"] if o.get("isco") in ilo.tables()["occupations"])})
+    rows.append({"id": "missions", "name": "Career Action Missions (our design)", "url": "", "licence": "",
+                 "used_for": "Practice tasks with a standard to meet and a product to keep",
+                 "covers": f"{len(missions.catalogue())} missions", "released": "",
+                 "fetched": max(m["source_date"] for m in missions.catalogue().values()),
+                 "refresh": "Reviewed with the courses.", "rows": len(missions.catalogue())})
     limits = read_csv("my_restrictions.csv")
     rows.append({"id": "my_restrictions", "name": "Laws of Malaysia (legal limits on some occupations)",
                  "url": limits[0]["source_url"] if limits else "", "licence": "",
@@ -982,7 +1121,8 @@ def sources(req):
                       "used_for": "Putting a score into words. It never sets a score, and a reply with a number that is "
                                   "not in our data is thrown away."},
                  reference=data["ai"]["reference"], evidence=evidence.rules(),
-                 routes={"reach_points": matching.ROUTE_REACH})
+                 routes={"reach_points": matching.ROUTE_REACH},
+                 lab={"stress": stress_test.rules(), "transfer": transfer.rules(), "ilo": ilo.rules()})
 
 
 @route("GET", "/api/scenarios")

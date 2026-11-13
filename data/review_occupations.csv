@@ -1,0 +1,21 @@
+occ_id,group,why_in_set
+43-3031.00,clerical,Highest ILO gradient and measured AI use; the lead case for automation-leaning tasks
+43-9021.00,clerical,ILO gradient 4 (data entry); checks that an exposed job is not shown as disappearing
+43-4051.00,clerical,Service by phone and chat; AI agents in the news scenarios
+43-6014.00,clerical,Office support with mixed tasks
+13-2011.00,professional,MyCOL-listed profession with high observed AI use
+15-1252.00,professional,Builds AI and uses it heavily; the two sources may disagree
+23-1011.00,professional,Regulated profession (licence) with drafting and research tasks
+25-2021.00,professional,Teaching: augmentation rather than automation expected
+35-2014.00,service,Manual service work little seen in chat-AI data
+39-9011.00,service,Care work; human-led tasks expected
+41-2031.00,service,Sales floor work in a declining DOSM group
+51-2092.00,manufacturing,Its ISCO-08 group has no ILO score; checks the missing-data path
+51-4041.00,manufacturing,Machine work: robots are not in the AI-use data
+51-9061.00,manufacturing,Inspection with some data tasks
+29-1141.00,health,MyCOL-listed and regulated; clinical scribes news scenario
+31-1131.00,health,Hands-on care with little AI use
+29-2052.00,health,Pharmacy records and dispensing
+47-2111.00,trades,Construction trade; safety programme with unknown fees
+49-3023.00,trades,Repair trade with diagnostic software
+47-2031.00,trades,Manual trade with almost no AI use
