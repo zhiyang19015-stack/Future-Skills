@@ -1,0 +1,332 @@
+tech_id,name,category,occupations,hot,in_demand,source_name,source_url,source_date
+microsoft-excel,Microsoft Excel,Spreadsheet software,849,849,335,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+microsoft-office-software,Microsoft Office software,Office suite software,807,807,379,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+microsoft-word,Microsoft Word,Word processing software,776,776,80,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+microsoft-outlook,Microsoft Outlook,Electronic mail software,635,635,185,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+microsoft-powerpoint,Microsoft PowerPoint,Presentation software,622,622,194,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+microsoft-access,Microsoft Access,Data base user interface and query software,366,366,9,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+sap-software,SAP software,Enterprise resource planning ERP software,281,281,32,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+microsoft-windows,Microsoft Windows,Operating system software,236,236,3,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+microsoft-project,Microsoft Project,Project management software,196,196,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+autodesk-autocad,Autodesk AutoCAD,Computer aided design CAD software,169,169,39,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+adobe-acrobat,Adobe Acrobat,Document management software,163,163,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+microsoft-sharepoint,Microsoft SharePoint,Document management software,163,163,11,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+structured-query-language-sql,Structured query language SQL,Data base user interface and query software,147,147,38,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+microsoft-visio,Microsoft Visio,Process mapping and design software,146,146,3,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+adobe-photoshop,Adobe Photoshop,Graphics or photo imaging software,144,144,26,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+facebook,Facebook,Web page creation and editing software,134,134,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+python,Python,Object or component oriented development software,131,131,65,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+linux,Linux,Operating system software,120,120,20,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+sas,SAS,Analytical or scientific software,116,116,12,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+c-plus-plus,C++,Object or component oriented development software,109,109,24,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+the-mathworks-matlab,The MathWorks MATLAB,Analytical or scientific software,108,108,18,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+google-docs,Google Docs,Word processing software,104,104,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+adobe-illustrator,Adobe Illustrator,Graphics or photo imaging software,100,100,17,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+oracle-java,Oracle Java,Object or component oriented development software,99,99,17,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+r,R,Object or component oriented development software,99,99,27,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+esri-arcgis-software,ESRI ArcGIS software,Geographic information system,92,92,21,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+microsoft-visual-basic,Microsoft Visual Basic,Development environment software,92,92,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+microsoft-sql-server,Microsoft SQL Server,Data base user interface and query software,90,90,3,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+ibm-spss-statistics,IBM SPSS Statistics,Analytical or scientific software,89,89,3,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+adobe-indesign,Adobe InDesign,Desktop publishing software,88,88,12,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+unix,UNIX,Operating system software,88,88,5,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+extensible-markup-language-xml,Extensible markup language XML,Enterprise application integration software,87,87,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+salesforce-software,Salesforce software,Customer relationship management CRM software,86,86,18,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+oracle-database,Oracle Database,Data base user interface and query software,85,85,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+javascript,JavaScript,Web platform development software,84,84,13,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+intuit-quickbooks,Intuit QuickBooks,Accounting software,82,82,4,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+adobe-creative-cloud-software,Adobe Creative Cloud software,Graphics or photo imaging software,78,78,20,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+hypertext-markup-language-html,Hypertext markup language HTML,Web platform development software,78,78,9,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+oracle-peoplesoft,Oracle PeopleSoft,Enterprise resource planning ERP software,77,77,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+meditech-software,MEDITECH software,Medical software,72,72,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+tableau,Tableau,Business intelligence and data analysis software,70,70,15,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+c,C,Development environment software,69,69,12,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+perl,Perl,Object or component oriented development software,65,65,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+epic-systems,Epic Systems,Medical software,59,59,19,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+dassault-systemes-solidworks,Dassault Systemes SolidWorks,Computer aided design CAD software,57,57,12,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+apple-macos,Apple macOS,Operating system software,56,56,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+c-sharp,C#,Object or component oriented development software,55,55,11,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+oracle-primavera-enterprise-project-portfolio-management,Oracle Primavera Enterprise Project Portfolio Management,Project management software,55,55,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+atlassian-jira,Atlassian JIRA,Content workflow software,52,52,14,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+zoom,Zoom,Video conferencing software,52,52,7,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+amazon-web-services-aws-software,Amazon Web Services AWS software,Data base user interface and query software,51,51,23,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+mysql,MySQL,Data base user interface and query software,50,50,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+teradata-database,Teradata Database,Data base management system software,50,50,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+microsoft-active-server-pages-asp,Microsoft Active Server Pages ASP,Web platform development software,48,48,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+bentley-microstation,Bentley MicroStation,Computer aided design CAD software,47,47,10,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+git,Git,File versioning software,47,47,13,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+microsoft-azure-software,Microsoft Azure software,Development environment software,47,47,23,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+php,PHP,Web platform development software,47,47,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+eclinicalworks-ehr-software,eClinicalWorks EHR software,Medical software,47,47,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+microsoft-visual-studio,Microsoft Visual Studio,Development environment software,46,46,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+microsoft-visual-basic-for-applications-vba,Microsoft Visual Basic for Applications VBA,Development environment software,43,43,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+shell-script,Shell script,Operating system software,43,43,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+adobe-after-effects,Adobe After Effects,Video creation and editing software,41,41,6,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+apache-hadoop,Apache Hadoop,Data base management system software,41,41,3,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+autodesk-revit,Autodesk Revit,Computer aided design CAD software,40,40,14,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+google-analytics,Google Analytics,Data mining software,40,40,5,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+splunk-enterprise,Splunk Enterprise,Cloud-based management software,40,40,4,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+trimble-sketchup-pro,Trimble SketchUp Pro,Graphics or photo imaging software,37,37,4,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+bash,Bash,Operating system software,35,35,6,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+cascading-style-sheets-css,Cascading style sheets CSS,Web platform development software,35,35,8,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+github,GitHub,Application server software,35,35,7,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+atlassian-confluence,Atlassian Confluence,Project management software,34,34,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+microsoft-teams,Microsoft Teams,Project management software,32,32,5,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+ruby,Ruby,Development environment software,32,32,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+eclipse-ide,Eclipse IDE,Development environment software,31,31,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+learning-management-system-lms,Learning management system LMS,Computer based training software,31,0,31,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+microsoft-net-framework,Microsoft .NET Framework,Development environment software,31,31,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+postgresql,PostgreSQL,Object oriented data base management software,31,31,4,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+microsoft-sql-server-reporting-services-ssrs,Microsoft SQL Server Reporting Services SSRS,Object or component oriented development software,30,30,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+nosql,NoSQL,Data base management system software,30,30,3,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+yardi-software,Yardi software,Data base user interface and query software,30,30,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+ansible-software,Ansible software,Expert system software,29,29,4,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+apache-cassandra,Apache Cassandra,Data base management system software,29,29,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+apache-hive,Apache Hive,Data base management system software,29,29,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+autodesk-autocad-civil-3d,Autodesk AutoCAD Civil 3D,Computer aided design CAD software,29,29,9,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+microsoft-powershell,Microsoft PowerShell,Development environment software,29,29,8,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+docker,Docker,Application server software,28,28,7,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+go,Go,Development environment software,28,28,5,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+marketo-marketing-automation,Marketo Marketing Automation,Sales and marketing software,28,28,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+puppet,Puppet,Configuration management software,28,28,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+amazon-redshift,Amazon Redshift,Data base user interface and query software,27,27,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+apache-kafka,Apache Kafka,Development environment software,27,27,5,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+microsoft-windows-server,Microsoft Windows Server,Application server software,27,27,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+mongodb,MongoDB,Data base management system software,27,27,3,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+slack,Slack,Cloud-based data access and sharing software,27,27,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+jquery,jQuery,Object or component oriented development software,27,27,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+cisco-webex,Cisco Webex,Video conferencing software,26,26,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+google-workspace-software,Google Workspace software,Office suite software,26,26,4,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+javascript-object-notation-json,JavaScript Object Notation JSON,Web platform development software,26,26,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+mozilla-firefox,Mozilla Firefox,Internet browser software,26,26,3,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+red-hat-enterprise-linux,Red Hat Enterprise Linux,Operating system software,26,26,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+ajax,AJAX,Web platform development software,25,25,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+amazon-elastic-compute-cloud-ec2,Amazon Elastic Compute Cloud EC2,Data base user interface and query software,25,25,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+elasticsearch,Elasticsearch,Data base management system software,25,25,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+swift,Swift,Object or component oriented development software,25,25,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+unix-shell,UNIX Shell,Operating system software,25,25,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+apache-subversion-svn,Apache Subversion SVN,File versioning software,24,24,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+node-js,Node.js,Web platform development software,24,24,3,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+oracle-pl-sql,Oracle PL/SQL,Data base management system software,24,24,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+apache-spark,Apache Spark,Business intelligence and data analysis software,23,23,4,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+apache-tomcat,Apache Tomcat,Web platform development software,23,23,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+microsoft-power-bi,Microsoft Power BI,Business intelligence and data analysis software,23,23,16,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+scala,Scala,Object or component oriented development software,23,23,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+selenium,Selenium,Program testing software,22,22,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+apache-maven,Apache Maven,Development environment software,21,21,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+apple-safari,Apple Safari,Internet browser software,21,21,3,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+chef,Chef,Configuration management software,21,21,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+django,Django,Web platform development software,21,21,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+microsoft-asp-net,Microsoft ASP.NET,Web platform development software,21,21,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+wordpress,WordPress,Web page creation and editing software,21,21,4,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+amazon-dynamodb,Amazon DynamoDB,Data base management system software,20,20,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+junit,JUnit,Program testing software,20,20,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+amazon-web-services-aws-cloudformation,Amazon Web Services AWS CloudFormation,Cloud-based management software,19,19,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+google-angular,Google Angular,Web platform development software,19,19,3,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+microsoft-sql-server-integration-services-ssis,Microsoft SQL Server Integration Services SSIS,Enterprise application integration software,19,19,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+transact-sql,Transact-SQL,Data base user interface and query software,19,19,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+hubspot-software,HubSpot software,Sales and marketing software,18,18,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+apple-ios,Apple iOS,Operating system software,17,17,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+geographic-information-system-gis-systems,Geographic information system GIS systems,Geographic information system,17,0,17,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+servicenow,ServiceNow,Data base user interface and query software,17,17,7,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+hibernate-orm,Hibernate ORM,Object oriented data base management software,16,16,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+react,React,Web platform development software,16,16,4,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+spring-framework,Spring Framework,Web platform development software,16,16,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+kubernetes,Kubernetes,Application server software,15,15,8,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+jenkins-ci,Jenkins CI,Enterprise application integration software,14,14,5,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+microsoft-active-directory,Microsoft Active Directory,Internet directory services software,14,14,8,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+red-hat-openshift,Red Hat OpenShift,Application server software,14,14,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+spring-boot,Spring Boot,Application server software,14,14,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+ibm-db2,IBM DB2,Data base user interface and query software,13,13,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+kronos-workforce-timekeeper,Kronos Workforce Timekeeper,Time accounting software,13,13,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+google-android,Google Android,Operating system software,12,12,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+microsoft-edge,Microsoft Edge,Internet browser software,12,12,3,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+workday-software,Workday software,Enterprise resource planning ERP software,12,12,6,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+canva,Canva,Graphics or photo imaging software,11,11,6,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+firewall-software,Firewall software,Network security and virtual private network VPN equipment software,11,0,11,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+henry-schein-dentrix,Henry Schein Dentrix,Medical software,11,11,3,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+ibm-terraform,IBM Terraform,Configuration management software,10,10,7,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+border-gateway-protocol-bgp,Border Gateway Protocol BGP,Switch or router software,9,9,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+figma,Figma,Graphical user interface development software,9,9,5,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+oracle-java-2-platform-enterprise-edition-j2ee,Oracle Java 2 Platform Enterprise Edition J2EE,Development environment software,9,9,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+tiktok,TikTok,Video creation and editing software,9,9,5,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+google-sheets,Google Sheets,Spreadsheet software,8,8,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+ibm-websphere-mq,IBM WebSphere MQ,Cloud-based management software,8,8,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+typescript,TypeScript,Object or component oriented development software,8,8,4,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+warehouse-management-system-wms,Warehouse management system WMS,Materials requirements planning logistics and supply chain software,8,0,8,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+alteryx-software,Alteryx software,Business intelligence and data analysis software,7,7,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+oracle-hris,Oracle HRIS,Human resources software,7,0,7,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+adobe-premiere-pro,Adobe Premiere Pro,Video creation and editing software,6,0,6,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+apache-airflow,Apache Airflow,Procedure management software,6,6,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+google-looker-analytics,Google Looker Analytics,Business intelligence and data analysis software,6,6,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+inventory-management-systems,Inventory management systems,Inventory management software,6,0,6,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+microsoft-team-foundation-server,Microsoft Team Foundation Server,Project management software,6,6,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+oracle-sql-developer,Oracle SQL Developer,Development environment software,6,6,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+procore-software,Procore software,Analytical or scientific software,6,6,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+snowflake,Snowflake,Data mining software,6,6,5,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+asana,Asana,Cloud-based data access and sharing software,5,5,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+google-meet,Google Meet,Video conferencing software,5,0,5,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+grafana-labs-grafana-cloud,Grafana Labs Grafana Cloud,Graphical user interface development software,5,5,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+informatica-software,Informatica software,Metadata management software,5,5,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+sap-concur,SAP Concur,Accounting software,5,5,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+sap-erp,SAP ERP,Enterprise resource planning ERP software,5,5,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+ansys-simulation-software,ANSYS simulation software,Analytical or scientific software,4,0,4,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+atlassian-bitbucket,Atlassian Bitbucket,Application server software,4,4,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+autodesk-navisworks,Autodesk Navisworks,Computer aided design CAD software,4,0,4,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+bootstrap,Bootstrap,Web platform development software,4,4,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+gitlab,GitLab,Application server software,4,4,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+mitre-att-ck-software,MITRE ATT&CK software,Program testing software,4,0,4,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+mcneel-rhinoceros-3d,McNeel Rhinoceros 3D,Graphics or photo imaging software,4,0,4,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+microsoft-power-automate,Microsoft Power Automate,Enterprise application integration software,4,4,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+microsoft-power-platform-software,Microsoft Power Platform software,Enterprise application integration software,4,4,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+oracle-cloud-software,Oracle Cloud software,Cloud-based management software,4,4,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+prometheus,Prometheus,Data base user interface and query software,4,4,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+restful-api,RESTful API,Web platform development software,4,0,4,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+redis,Redis,Data base management system software,4,4,0,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+statacorp-stata,StataCorp Stata,Analytical or scientific software,4,0,4,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+tensorflow,TensorFlow,Analytical or scientific software,4,4,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+web-browser-software,Web browser software,Internet browser software,4,0,4,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+applicant-tracking-software,Applicant tracking software,Human resources software,3,0,3,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+autodesk-maya,Autodesk Maya,Graphics or photo imaging software,3,0,3,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+content-management-systems-cms,Content management systems CMS,Web page creation and editing software,3,0,3,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+g-code,G-code,Object or component oriented development software,3,0,3,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+graphql,GraphQL,Data base user interface and query software,3,3,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+intuit-turbotax,Intuit TurboTax,Tax preparation software,3,3,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+mathworks-simulink,MathWorks Simulink,Analytical or scientific software,3,0,3,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+navisworks-jetstream,NavisWorks Jetstream,Computer aided design CAD software,3,0,3,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+ptc-creo-parametric,PTC Creo Parametric,Computer aided design CAD software,3,0,3,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+purchasing-software,Purchasing software,Procurement software,3,0,3,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+pytorch,PyTorch,Data base user interface and query software,3,3,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+statistical-software,Statistical software,Analytical or scientific software,3,0,3,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+vue-js,Vue.js,Web platform development software,3,3,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+apple-final-cut-pro,Apple Final Cut Pro,Video creation and editing software,2,0,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+blackbaud-the-raiser-s-edge,Blackbaud The Raiser's Edge,Customer relationship management CRM software,2,0,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+chaos-enscape,Chaos Enscape,Computer aided design CAD software,2,0,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+dassault-systemes-catia,Dassault Systemes CATIA,Computer aided design CAD software,2,0,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+disassembler-software,Disassembler software,Compiler and decompiler software,2,0,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+esri-arcgis-survey-123,ESRI ArcGIS Survey 123,Analytical or scientific software,2,0,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+etap,ETAP,Geographic information system,2,0,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+enterprise-application-integration-eai-software,Enterprise application integration EAI software,Enterprise application integration software,2,0,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+geographic-information-system-gis-software,Geographic information system GIS software,Geographic information system,2,0,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+hec-hms,HEC-HMS,Analytical or scientific software,2,0,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+hec-ras,HEC-RAS,Analytical or scientific software,2,0,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+inventory-control-system-software,Inventory control system software,Inventory management software,2,0,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+magellan-firmware,Magellan Firmware,Operating system software,2,0,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+mastercam-computer-aided-design-and-manufacturing-software,Mastercam computer-aided design and manufacturing software,Computer aided manufacturing CAM software,2,0,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+property-management-system-pms-software,Property management system PMS software,Data base user interface and query software,2,0,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+qgis,QGIS,Geographic information system,2,0,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+skm-systems-analysis-power-tools,SKM Systems Analysis Power Tools,Analytical or scientific software,2,0,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+scikit-learn,Scikit-learn,Development environment software,2,0,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+student-information-systems-sis-software,Student information systems SIS software,Data base user interface and query software,2,0,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+tax-compliance-property-tax-management-software,Tax compliance property tax management software,Compliance software,2,0,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+tax-software,Tax software,Accounting software,2,0,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+tenable-nessus,Tenable Nessus,Transaction security and virus protection software,2,0,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+thomson-reuters-westlaw,Thomson Reuters Westlaw,Information retrieval or search software,2,0,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+unity-technologies-unity,Unity Technologies Unity,Development environment software,2,0,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+unreal-technology-unreal-engine,Unreal Technology Unreal Engine,Development environment software,2,0,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+video-editing-software,Video editing software,Video creation and editing software,2,0,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+web-application-software,Web application software,Development environment software,2,0,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+pandas,pandas,Data base user interface and query software,2,0,2,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+adp-workforce-now,ADP Workforce Now,Data base user interface and query software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+adobe-analytics,Adobe Analytics,Analytical or scientific software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+adobe-audition,Adobe Audition,Music or sound editing software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+adobe-photoshop-lightroom,Adobe Photoshop Lightroom,Graphics or photo imaging software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+adobe-xd,Adobe XD,Graphics or photo imaging software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+ahrefs-site-explorer,Ahrefs Site Explorer,Web platform development software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+amadeus-crs,Amadeus CRS,Data base user interface and query software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+amazon-web-services-aws-sagemaker,Amazon Web Services AWS SageMaker,Cloud-based management software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+apache-jmeter,Apache JMeter,Object or component oriented development software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+appium,Appium,Program testing software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+archivists-toolkit,Archivists' Toolkit,Data base user interface and query software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+articulate-storyline,Articulate Storyline,Computer based training software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+aurora-helioscope,Aurora HelioScope,Analytical or scientific software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+autodesk-fusion-360,Autodesk Fusion 360,Computer aided manufacturing CAM software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+autodesk-inventor,Autodesk Inventor,Computer aided design CAD software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+bing-ads,Bing Ads,Sales and marketing software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+bioconductor-software,Bioconductor software,Data base user interface and query software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+business-software-applications,Business software applications,Office suite software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+chatbot-software,Chatbot software,Industrial control software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+clinical-trial-management-software,Clinical trial management software,Data base user interface and query software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+constructconnect-planswift,ConstructConnect PlanSwift,Project management software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+cubic-synchro-studio,Cubic Synchro Studio,Analytical or scientific software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+davinci-resolve,DaVinci Resolve,Video creation and editing software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+drupal,Drupal,Web platform development software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+esri-arcgis-arcpy,ESRI ArcGIS ArcPy,Analytical or scientific software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+esri-arcview,ESRI ArcView,Geographic information system,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+electronic-lab-notebook-software,Electronic lab notebook software,Analytical or scientific software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+embedded-systems-development-software,Embedded systems development software,Development environment software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+forsk-atoll,Forsk Atoll,Network monitoring software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+google,Google,Data base user interface and query software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+google-ads,Google Ads,Sales and marketing software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+google-tag-manager,Google Tag Manager,Sales and marketing software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+guidance-software-encase-enterprise,Guidance Software EnCase Enterprise,Analytical or scientific software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+hugging-face,Hugging Face,Development environment software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+javascript-framework-software,JavaScript framework software,Web platform development software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+kali-linux,Kali Linux,Program testing software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+langchain,LangChain,Object or component oriented development software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+lumion,Lumion,Computer aided design CAD software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+maxon-cinema-4d,Maxon Cinema 4D,Video creation and editing software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+mechanical-electrical-plumbing-mep-design-software,Mechanical electrical plumbing MEP design software,Computer aided design CAD software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+metasploit,Metasploit,Transaction security and virus protection software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+microsoft-azure-data-factory,Microsoft Azure Data Factory,Cloud-based management software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+microsoft-azure-devops-services,Microsoft Azure DevOps Services,Development environment software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+microsoft-internet-information-services-iis,Microsoft Internet Information Services (IIS),Transaction server software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+microsoft-internet-information-services-iis-manager,Microsoft Internet Information Services (IIS) Manager,Transaction server software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+microsoft-playwright,Microsoft Playwright,Program testing software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+moz-search-engine-optimization-seo-software,Moz search engine optimization SEO software,Web platform development software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+national-instruments-labview,National Instruments LabVIEW,Development environment software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+nmap,Nmap,Transaction security and virus protection software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+numpy,NumPy,Data base user interface and query software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+on-center-on-screen-takeoff,On Center On-Screen Takeoff,Project management software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+openroads-designer,OpenRoads Designer,Computer aided design CAD software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+operational-data-store-ods-software,Operational Data Store ODS software,Data base user interface and query software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+order-management-software,Order management software,Procurement software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+orion-law-management-systems-orion,Orion Law Management Systems Orion,Data base user interface and query software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+outage-management-system-oms,Outage management system OMS,Industrial control software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+pci-express-pcie,PCI Express PCIe,Data base user interface and query software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+ptv-vissim,PTV Vissim,Analytical or scientific software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+pvsyst,PVsyst,Analytical or scientific software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+patient-management-software,Patient management software,Medical software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+payroll-software,Payroll software,Human resources software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+perforce-software,Perforce software,Metadata management software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+portswigger-burp-suite,Portswigger BurP Suite,Transaction security and virus protection software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+postman,Postman,Operating system software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+productivity-software,Productivity software,Project management software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+pyspark,PySpark,Data base user interface and query software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+qualtrics-insight,Qualtrics Insight,Project management software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+qualys-cloud-platform,Qualys Cloud Platform,Cloud-based protection or security software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+redcap-research-electronic-data-capture,REDCap Research Electronic Data Capture,Analytical or scientific software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+rest-assured,REST Assured,Program testing software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+relational-database-management-system-software,Relational database management system software,Data base management system software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+reporting-software,Reporting software,Data base reporting software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+rockware-arcmap,RockWare ArcMap,Map creation software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+rockware-modflow,RockWare MODFLOW,Analytical or scientific software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+rust-programming-language,Rust programming language,Development environment software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+sas-jmp,SAS JMP,Analytical or scientific software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+sabre-central-command,Sabre Central Command,Enterprise resource planning ERP software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+screaming-frog-seo-spider,Screaming Frog SEO Spider,Web platform development software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+semrush,Semrush,Web platform development software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+shopify-software,Shopify software,Point of sale POS software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+sidefx-houdini,SideFX Houdini,Graphics or photo imaging software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+siemens-teamcenter,Siemens Teamcenter,Project management software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+simulation-program-with-integrated-circuit-emphasis-spice,Simulation program with integrated circuit emphasis SPICE,Analytical or scientific software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+single-sign-on-sso,Single sign-on SSO,Authentication server software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+snakemake,Snakemake,Analytical or scientific software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+software-development-tools,Software development tools,Development environment software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+solidity,Solidity,Development environment software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+sparta-systems-trackwise,Sparta Systems TrackWise,Compliance software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+springshare-libguides,Springshare LibGuides,Web platform development software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+systemverilog,SystemVerilog,Development environment software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+techsmith-camtasia,TechSmith Camtasia,Video creation and editing software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+testng,TestNG,Program testing software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+tool-command-language-tcl,Tool command language Tcl,Development environment software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+transportation-management-system-tms-software,Transportation management system TMS software,Mobile location based services software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+vector-database-software,Vector database software,Data base management system software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+verilog,Verilog,Development environment software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+version-control-software,Version control software,File versioning software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+very-high-speed-integrated-circuit-vhsic-hardware-description-language-vhdl-simulation-software,Very high speed integrated circuit VHSIC hardware description language VHDL simulation software,Analytical or scientific software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+web-application-framework-software,Web application framework software,Web platform development software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+web-server-software,Web server software,Transaction server software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+xactware-xactimate,Xactware Xactimate,Data base user interface and query software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+zemax,Zemax,Computer aided design CAD software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13
+emass,eMASS,Risk management data and analysis software,1,0,1,O*NET 31.0 Database,https://www.onetcenter.org/database.html,2026-11-13

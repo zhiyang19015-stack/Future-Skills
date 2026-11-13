@@ -1,0 +1,62 @@
+[
+  {
+    "profile_id": "P01",
+    "name": "Nurul",
+    "kind": "student",
+    "story": "Form Six student in Kelantan who likes biology and looking after people. Plans to study for a diploma and wonders whether health care is for her, and which job in it.",
+    "education_job_zone": 3,
+    "fields": {"29": 100, "31": 100, "21": 100},
+    "interest_answers": [2, 4, 2, 4, 2, 3, 1, 3, 3, 5, 2, 3, 2, 5, 3, 5, 3, 3, 2, 4, 2, 4, 2, 3, 1, 4, 2, 5, 2, 4, 1, 4, 2, 4, 2, 3],
+    "skills": {"2.A.1.a": 4, "2.A.1.b": 4, "2.A.1.c": 4, "2.A.1.d": 2, "2.A.1.f": 4, "2.A.2.a": 2, "2.B.1.a": 4,
+               "2.B.1.f": 4, "2.B.5.a": 2, "2.C.4.d": 4, "2.C.4.c": 2, "2.C.4.e": 2, "2.C.7.a": 4, "2.C.5.a": 2},
+    "technologies": ["microsoft-word", "microsoft-powerpoint"],
+    "hours_per_week": 6,
+    "sdg_goals": ["3"],
+    "note": "Fictional person for the demo."
+  },
+  {
+    "profile_id": "P02",
+    "name": "Siti Hajar",
+    "kind": "working",
+    "story": "Accounts assistant in Ipoh with a diploma in accounting (the sample CV). Wants to know how AI changes bookkeeping and how to move up to a professional finance role.",
+    "education_job_zone": 3,
+    "current_occupation": "43-3031.00",
+    "fields": {"13": 100, "43": 100},
+    "interest_answers": [1, 2, 2, 2, 4, 5, 2, 3, 2, 2, 4, 5, 1, 2, 2, 3, 4, 5, 2, 4, 1, 3, 4, 5, 1, 3, 2, 3, 4, 5, 1, 2, 1, 4, 3, 5],
+    "skills": {"2.A.1.a": 4, "2.A.1.c": 4, "2.A.1.e": 4, "2.A.2.a": 4, "2.B.5.a": 4, "2.B.4.e": 2, "2.B.5.b": 4,
+               "2.C.1.c": 4, "2.C.1.b": 4, "2.C.4.a": 4, "2.C.7.a": 4},
+    "technologies": ["microsoft-excel", "microsoft-word", "sap-software", "intuit-quickbooks", "google-sheets"],
+    "hours_per_week": 5,
+    "note": "Fictional person for the demo; her CV is src/static/sample_cv.txt."
+  },
+  {
+    "profile_id": "P03",
+    "name": "Kumar",
+    "kind": "student",
+    "story": "Final-year mechanical engineering student in Penang. Good at maths and CAD, likes building things, and wants to see which engineering jobs hold up as AI spreads.",
+    "education_job_zone": 4,
+    "fields": {"17": 100, "51": 100},
+    "interest_answers": [5, 4, 2, 2, 3, 2, 4, 5, 1, 1, 2, 2, 3, 3, 2, 1, 3, 3, 5, 4, 1, 2, 2, 2, 5, 5, 3, 2, 2, 3, 4, 3, 3, 2, 2, 2],
+    "skills": {"2.A.1.a": 4, "2.A.1.e": 6, "2.A.1.f": 4, "2.A.2.a": 4, "2.B.2.i": 4, "2.B.3.b": 4, "2.B.3.k": 4,
+               "2.B.4.g": 2, "2.C.3.b": 4, "2.C.3.e": 4, "2.C.4.b": 4, "2.C.4.a": 6, "2.C.3.c": 4, "2.C.2.a": 2},
+    "technologies": ["autodesk-autocad", "dassault-systemes-solidworks", "the-mathworks-matlab", "microsoft-excel", "python"],
+    "hours_per_week": 8,
+    "sdg_goals": ["7", "9"],
+    "note": "Fictional person for the demo."
+  },
+  {
+    "profile_id": "P04",
+    "name": "Mei Ling",
+    "kind": "switcher",
+    "story": "Sales assistant in a Kuala Lumpur mall with SPM. Designs the shop's social media posts in her free time and wants to switch into design or marketing.",
+    "education_job_zone": 2,
+    "current_occupation": "41-2031.00",
+    "fields": {"27": 100, "13": 100, "41": 0},
+    "interest_answers": [1, 2, 5, 3, 4, 2, 1, 2, 4, 2, 4, 2, 1, 2, 5, 3, 3, 2, 2, 3, 3, 3, 3, 2, 1, 2, 5, 3, 5, 2, 1, 2, 5, 4, 3, 2],
+    "skills": {"2.A.1.b": 4, "2.A.1.d": 4, "2.B.1.c": 4, "2.B.1.f": 4, "2.B.1.a": 4, "2.A.1.c": 2,
+               "2.C.1.d": 4, "2.C.1.e": 4, "2.C.7.c": 2, "2.C.3.c": 2},
+    "technologies": ["canva", "facebook", "tiktok", "adobe-photoshop"],
+    "hours_per_week": 10,
+    "note": "Fictional person for the demo."
+  }
+]
