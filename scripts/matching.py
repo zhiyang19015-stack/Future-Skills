@@ -30,14 +30,18 @@ Two steps, so the person first sees which fields of work fit them, then the occu
    - UN goals the person picks (sdg_goals) add SDG_BONUS points to an occupation that serves one,
      capped at 100; each occupation keeps its total without them, so the cost of the choice shows.
 
-   Education: an occupation whose Job Zone is above the person's level is flagged
-   needs_extra_education, one at least TOO_LOW zones below it below_education. Both are ranked
-   after the others, never hidden.
+   Education: reskilling often means studying further, so the person says how many levels above
+   their own they would study for (study_levels, 0 to MAX_STUDY_LEVELS; 0 when not given). An
+   occupation whose Job Zone is above their level but within that reach is flagged more_study and
+   stays in the list, so the card can say which qualification it usually needs. One beyond that
+   reach is flagged needs_extra_education, one at least TOO_LOW zones below their level
+   below_education; those two are ranked after the others, never hidden.
 
 Every weight here is our design choice, not data (SOURCES.md, "Choices and limits").
 
 Profile (data/sample_profiles.json holds fictional people only; every part is optional):
     {"kind": "student" | "working" | "switcher", "education_job_zone": 4,
+     "study_levels": 1,                          # levels above their own they would study for
      "current_occupation": "43-3031.00",         # the job a working person does now
      "fields": {"29": 100, "15": 0},             # field choices
      "interest": {...},                          # scripts/interest.py score()
@@ -73,6 +77,7 @@ SKILL_SPLIT = {"skill": 0.5, "knowledge": 0.25, "technology": 0.25}
 SDG_BONUS = {"direct": 10.0, "indirect": 6.0}
 DEFAULT_JOB_ZONE = 4         # a bachelor's degree, the usual level of a graduating student
 TOO_LOW = 2                  # Job Zones below the person's level before "below_education"
+MAX_STUDY_LEVELS = 2         # the furthest above their own level a person can say they would study
 CURRENT_FIELD = 80.0         # experience evidence for the field of the job a person does now
 CLEAR_LEAD = 10.0            # field-fit points the best field needs over the next to be called clear
 STABILITY_POOL = 30          # occupations taken into the drawn futures (the top of the ranking)
@@ -334,11 +339,12 @@ def skill_score(profile: dict, occ: dict, data: dict, weights: dict | None, deta
     if detail:
         gaps.sort(key=lambda g: (not g["rated"], -g["gap_points"]))
         strengths.sort(key=lambda s: -s["importance"] * s["ai"]["weight"])
-        # learn first the tools employers ask for in this occupation, then those that count most under
-        # the scenario; office tools nearly every job lists come last
+        # learn first what still sets a person apart: a tool AI is taking over under the scenario
+        # (declining) follows the others. Within each group the tools employers ask for in this
+        # occupation lead, then those that count most; office tools nearly every job lists come last
         asked = data["in_demand"].get(occ["occ_id"], set())
-        missing.sort(key=lambda t: (t["category"] in GENERAL_TOOLS, t["skill_id"] not in asked, -t["ai"]["weight"],
-                                    t["skill_name"]))
+        missing.sort(key=lambda t: (t["category"] in GENERAL_TOOLS, t["ai"]["status"] == "declining",
+                                    t["skill_id"] not in asked, -t["ai"]["weight"], t["skill_name"]))
         out.update(gaps=gaps, strengths=strengths, tech_used=used, tech_missing=missing)
     return out
 
@@ -456,12 +462,20 @@ def occupation_ai(occ_id: str, data: dict) -> dict | None:
         "human_tasks": [brief(t) for t in r["top_human_tasks"] if t in tasks]}
 
 
+def study_reach(profile: dict) -> int:
+    """How many Job Zones above their own the person said they would study for."""
+    levels = profile.get("study_levels") or 0
+    return max(0, min(MAX_STUDY_LEVELS, int(levels)))
+
+
 def education_flags(occ: dict, profile: dict) -> list[str]:
     zone, mine = occ.get("job_zone"), profile.get("education_job_zone")
     if zone is None or mine is None:
         return []
-    if zone > mine:
+    if zone > mine + study_reach(profile):
         return ["needs_extra_education"]
+    if zone > mine:
+        return ["more_study"]
     if zone <= mine - TOO_LOW:
         return ["below_education"]
     return []

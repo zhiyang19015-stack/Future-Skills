@@ -22,7 +22,14 @@ see it.
 
 NEWS holds ready-made changes written as headlines ("AI scribes now write clinical notes"):
 simulated events, labelled as such on the page, to watch one piece of news move the skills,
-the occupations, a person's ranking and their learning path, before and after.
+the occupations, a person's ranking and their learning path, before and after. A headline may
+name the fictional demo person whose work it is about ("person"), so the home page can play it
+for them in one tap.
+
+person_change() reads a change from one person's side: the job they do now (or, without one,
+their first match), which of its tasks moved to AI, the tools they use that lose or gain value,
+and the occupations in their own list that moved most. The page leads with that and keeps the
+changed numbers underneath as the evidence.
 """
 
 import ai_exposure
@@ -36,6 +43,12 @@ PCT_MIN, PCT_MAX = -90.0, 200.0
 HANDOFF_MAX = 98.0       # a topic is never fully hands-off: someone still asks and checks
 NEWS_FLOOR = 95.0
 SHOWN_ACTIVITIES = 80    # work activities offered on the page (any of O*NET's can be sent)
+LEAD_NEWS = "auto_bookkeeping"   # the headline the home page offers first
+TASK_MOVE = 5.0          # points of AI share a task must move by to count as changed
+TASKS_SHOWN = 5          # changed tasks of the person's job listed on the page
+WATCHED = 10             # how far down the person's list an occupation is followed
+MOVES_SHOWN = 3          # fallers and risers named in a person's list
+RANK_MOVE = 2            # places an occupation must move in the person's list to be named
 
 EXAMPLES = [
     ("service_ads_down", "Service and sales job ads fall 20%", {"job_ads": {"5": -20}}),
@@ -45,14 +58,14 @@ EXAMPLES = [
     ("electricians_on_mycol", "MyCOL adds Electricians", {"mycol": {"47-2111.00": "yes"}}),
 ]
 NEWS = [
-    {"id": "coding_agents", "field": "15", "title": "AI coding agents now ship whole features",
+    {"id": "coding_agents", "person": "P05", "field": "15", "title": "AI coding agents now ship whole features",
      "summary": "Agents plan, write, test and merge a feature from one request.",
      "handoff": {"Code design": 25, "Web front-end": 20, "Backend architecture": 20, "Test writing and running": 20,
                  "Git workflow": 20},
      "ai_share": ["Write computer programming code.", "Modify software programs to improve performance.",
                   "Design software applications.", "Develop software or computer applications.",
-                  "Test software performance.", "Resolve computer software problems."]},
-    {"id": "clinical_scribes", "field": "29", "title": "AI scribes now write clinical notes",
+                  "Develop testing routines or procedures.", "Resolve computer software problems."]},
+    {"id": "clinical_scribes", "person": "P01", "field": "29", "title": "AI scribes now write clinical notes",
      "summary": "The assistant listens to the consultation and drafts the notes and the referral letter.",
      "handoff": {"Medical Questions": 15},
      "ai_share": ["Record patient medical histories.", "Maintain medical records.",
@@ -63,7 +76,7 @@ NEWS = [
      "handoff": {"Customer support and service": 25, "Booking and scheduling": 20, "Account and billing": 20},
      "ai_share": ["Respond to customer inquiries.", "Correspond with customers to answer questions or resolve complaints.",
                   "Schedule appointments.", "Respond to customer problems or complaints."]},
-    {"id": "auto_bookkeeping", "field": "13", "title": "AI closes the monthly books",
+    {"id": "auto_bookkeeping", "person": "P02", "field": "13", "title": "AI closes the monthly books",
      "summary": "Invoices, bank feeds and receipts are matched and reconciled without anyone typing them in.",
      "handoff": {"Accounting and bookkeeping": 25, "Financial modeling": 15},
      "ai_share": ["Reconcile records of sales or other financial transactions.", "Maintain financial or account records.",
@@ -82,11 +95,13 @@ NEWS = [
      "handoff": {"Data analysis": 25, "Dashboards and charts": 30, "Data storage": 20},
      "ai_share": ["Analyze data to identify trends or relationships among variables.", "Prepare data for analysis.",
                   "Prepare analytical reports.", "Analyze business or financial data."]},
-    {"id": "design_generators", "field": "27", "title": "Design tools generate whole campaigns from a brief",
+    {"id": "design_generators", "person": "P04", "field": "27", "title": "Design tools generate whole campaigns from a brief",
      "summary": "A short brief becomes posters, social posts and a short video in seconds.",
      "handoff": {"Photo and video editing": 25, "Promotional writing": 20, "3D modeling and printing": 20},
      "ai_share": ["Create marketing materials.", "Write advertising or promotional material.",
-                  "Create images or other visual displays.", "Design websites or web applications."]},
+                  "Create computer-generated graphics or animation.", "Design layouts for print publications.",
+                  "Design layout of art or product exhibits, displays, or promotional materials.",
+                  "Design websites or web applications."]},
 ]
 
 
@@ -162,6 +177,7 @@ def news() -> list[dict]:
                  if a in groups and sum(x["ai_share"] for x in groups[a]) / len(groups[a]) < NEWS_FLOOR}
         if handoff or share:
             out.append({"id": n["id"], "field": n["field"], "title": n["title"], "summary": n["summary"],
+                        "person": n.get("person"), "lead": n["id"] == LEAD_NEWS,
                         "simulated": True, "changes": {"handoff": handoff, "ai_share": share}})
     return out
 
@@ -303,3 +319,91 @@ def path_changes(before: dict | None, after: dict | None) -> dict | None:
             "after": {"steps": sa[:6], "learn_next": learn(after), "total_hours": after["pathway"]["total_hours"]},
             "order_changed": [s["url"] for s in sb] != [s["url"] for s in sa]
             or [t["skill_id"] for t in learn(before)] != [t["skill_id"] for t in learn(after)]}
+
+
+def occupation_change(occ_id: str | None, before: dict, after: dict, adoption: float) -> dict | None:
+    """One occupation before and after a change: the AI share of its tasks, its outlook, and the
+    tasks whose AI share moved, the most important first."""
+    occ = before["by_id"].get(occ_id or "")
+    if occ is None:
+        return None
+    b = outlook.role_outlook(occ, before, adoption)
+    a = outlook.role_outlook(after["by_id"][occ_id], after, adoption)
+    was = {t["task_id"]: t for t in before["ai"]["tasks_by_occ"].get(occ_id, [])}
+    moved = []
+    for t in after["ai"]["tasks_by_occ"].get(occ_id, []):
+        old = was.get(t["task_id"])
+        if old is not None and abs(t["ai_share"] - old["ai_share"]) >= TASK_MOVE:
+            moved.append({"task_id": t["task_id"], "task": t["task"], "importance": t["importance"],
+                          "before": old["ai_share"], "after": t["ai_share"]})
+    moved.sort(key=lambda t: (-(t["importance"] or 0), t["task"]))
+    outlook_move = round(a["outlook"] - b["outlook"], 1)
+    return {"occ_id": occ_id, "title": occ["title"], "field_id": occ["field_id"],
+            "ai_share": {"before": b["ai_share"], "after": a["ai_share"]},
+            "outlook": {"before": b["outlook"], "after": a["outlook"]},
+            "status": {"before": b["status"], "after": a["status"]},
+            "ai_share_move": round(a["ai_share"] - b["ai_share"], 1), "outlook_move": outlook_move,
+            "ai_share_reference": a["ai_share_reference"],
+            "tasks": len(was), "tasks_moved": len(moved), "moved": moved[:TASKS_SHOWN],
+            # a change elsewhere shifts the average a little, so a small drift is not "touched"
+            "touched": bool(moved) or abs(outlook_move) >= outlook.ROLE_BAND / 2}
+
+
+def person_change(profile: dict, before: dict, after: dict, adoption: float,
+                  before_rows: list[dict], after_rows: list[dict]) -> dict:
+    """A change read from one person's side, for the top of the result.
+
+    subject   the job they do now or, without one, their first occupation before the change:
+              its AI share, outlook and the tasks that moved (occupation_change)
+    tools     the tools the person uses whose hands-off share or status changed
+    first     their first occupation before and after
+    reached   occupations in the first WATCHED of either list with tasks the change moved, the
+              biggest rise in AI share first: where the change lands in the person's own options
+    fallers, risers   occupations in the same lists that moved RANK_MOVE places or more, the
+              biggest move first
+    before_rows and after_rows are the person's listed occupations in rank order under one scenario.
+    """
+    current = profile.get("current_occupation")
+    subject_id = current or (before_rows[0]["occ_id"] if before_rows else None)
+    place_b = {m["occ_id"]: (i + 1, m) for i, m in enumerate(before_rows)}
+    place_a = {m["occ_id"]: (i + 1, m) for i, m in enumerate(after_rows)}
+    moves = []
+    for occ_id in dict.fromkeys([m["occ_id"] for m in before_rows[:WATCHED] + after_rows[:WATCHED]]):
+        if occ_id not in place_b or occ_id not in place_a:
+            continue
+        (rank_b, b), (rank_a, a) = place_b[occ_id], place_a[occ_id]
+        moves.append({"occ_id": occ_id, "title": b["title"], "field_id": b["field_id"],
+                      "rank": {"before": rank_b, "after": rank_a}, "rank_move": rank_b - rank_a,
+                      "total": {"before": b["total"], "after": a["total"]},
+                      "total_move": round(a["total"] - b["total"], 1),
+                      "status": {"before": b["outlook"]["status"], "after": a["outlook"]["status"]}})
+    fallers = sorted((m for m in moves if m["rank_move"] <= -RANK_MOVE), key=lambda m: (m["rank_move"], m["total_move"]))
+    risers = sorted((m for m in moves if m["rank_move"] >= RANK_MOVE), key=lambda m: (-m["rank_move"], -m["total_move"]))
+    reached = []
+    for m in moves:
+        c = occupation_change(m["occ_id"], before, after, adoption)
+        if c and c["tasks_moved"]:
+            reached.append({**m, "ai_share": c["ai_share"], "ai_share_move": c["ai_share_move"],
+                            "tasks": c["tasks"], "tasks_moved": c["tasks_moved"]})
+    reached.sort(key=lambda m: (-m["ai_share_move"], m["rank"]["before"]))
+    w_before, w_after = outlook.skill_weights(before, adoption), outlook.skill_weights(after, adoption)
+    tools = []
+    for tid in profile.get("technologies") or []:
+        x, y = w_before.get(tid, matching.STEADY), w_after.get(tid, matching.STEADY)
+        if (x["status"], x["handoff"]) != (y["status"], y["handoff"]):
+            tools.append({"skill_id": tid, "skill_name": after["technologies"][tid]["name"],
+                          "status": {"before": x["status"], "after": y["status"]},
+                          "handoff": {"before": x["handoff"], "after": y["handoff"]},
+                          "weight_move": round(y["weight"] - x["weight"], 3)})
+    tools.sort(key=lambda t: (t["weight_move"], t["skill_name"]))
+
+    def brief(m):
+        return None if m is None else {"occ_id": m["occ_id"], "title": m["title"], "total": m["total"]}
+    first_b = before_rows[0] if before_rows else None
+    first_a = after_rows[0] if after_rows else None
+    return {"subject_kind": "current" if current else "top",
+            "subject": occupation_change(subject_id, before, after, adoption),
+            "tools": tools,
+            "first": {"before": brief(first_b), "after": brief(first_a),
+                      "changed": bool(first_b and first_a and first_b["occ_id"] != first_a["occ_id"])},
+            "reached": reached[:MOVES_SHOWN], "fallers": fallers[:MOVES_SHOWN], "risers": risers[:MOVES_SHOWN]}

@@ -319,7 +319,26 @@ function detailHtml(m, sim) {
   </div>`;
 }
 
-const FLAGS_SHOWN = ["needs_extra_education", "below_education", "current_occupation", "licence_needed", "restricted"];
+const FLAGS_SHOWN = ["more_study", "needs_extra_education", "below_education", "current_occupation", "licence_needed", "restricted"];
+/* A flag as a chip; "more study" names the qualification the occupation usually needs. */
+const flagChip = (f, m) => `<span class="chip ${f === "current_occupation" ? "brand" : "warn"}">${f === "more_study" ? t("flag.more_study", t("zone." + m.job_zone)) : t("flag." + f)}</span>`;
+
+/* What the three named scenarios do to the top of this person's list, in one sentence, with the
+   reason: a list that holds is an answer too. */
+function verdictNote(m) {
+  const v = m.verdict;
+  if (!v || !hasProfile()) return "";
+  const slow = esc(v.slow_first.title), fast = esc(v.fast_first.title);
+  const head = v.kind === "top" ? t("fut.verdict.top", slow, fast) : t(v.kind === "top3" ? "fut.verdict.top3" : "fut.verdict.same", slow);
+  let why = "";
+  if (v.kind === "top" && v.slow_first.ai_share > v.ai_share_reference) {
+    why = t("match.verdict.why", slow, fmt(v.slow_first.ai_share, 0), fmt(v.ai_share_reference, 0));
+  } else if (v.kind === "same") {
+    why = v.largest_move >= 0.05 ? t("match.verdict.hold", fmt(v.largest_move)) : t("match.verdict.still");
+  }
+  return `<p class="note"><strong>${head}</strong> ${why} <a href="#/futures">${t("match.futures")} →</a></p>`;
+}
+
 function matchCard(m, sim) {
   const open = Boolean(ui.open[m.occ_id]);
   const s = m.stability;
@@ -330,7 +349,7 @@ function matchCard(m, sim) {
     <div class="body stack tight">
       <div><h2><a href="#/occ/${esc(m.occ_id)}" style="color:inherit;text-decoration:none">${esc(m.title)}</a></h2><span class="small muted">${esc(fieldName(m.field_id))}</span></div>
       <div class="tags">${statusChip(m.outlook.status)}${mycolChip(m.mycol)}${s ? `<span class="chip ai" title="${esc(t("match.stability.title", sim.futures))}">${t("match.stability", fmt(s.top3, 0))}</span>` : ""}${scenarioRanks(m)}${evidenceChip(m.evidence && m.evidence.grade)}${goals}
-        ${flags.map((f) => `<span class="chip ${f === "current_occupation" ? "brand" : "warn"}">${t("flag." + f)}</span>`).join("")}</div>
+        ${flags.map((f) => flagChip(f, m)).join("")}</div>
     </div>
     <div class="ring" style="--v:${m.total}" role="img" aria-label="${t("match.score", fmt(m.total))}"><span>${fmt(m.total)}<small>/ 100</small></span></div>
     <div class="full stack tight">${partBars(m)}
@@ -420,6 +439,7 @@ PAGES.matches = async () => {
     ${!hasProfile() ? `<div class="warn row between"><span>${t("match.empty")}</span><a class="btn small" href="#/you">${t("home.start")}</a></div>` : ""}
     ${replanNote(m)}
     ${scenarioControl({ adoption: m.adoption, horizon: m.horizon_year }, m.scenarios)}
+    ${verdictNote(m)}
     ${cur ? `<section class="card stack" style="border-color:var(--brand)"><div class="row between"><div><p class="eyebrow">${t("match.now")}</p><h2>${esc(cur.title)}</h2></div>${statusChip(cur.outlook.status)}</div>
       <p>${t("match.now.p", fmt(cur.outlook.ai_share, 0), fmt(cur.outlook.ai_share_reference, 0), signed(cur.outlook.change), cur.moves_above ? t("match.now.above", cur.moves_above) : t("match.now.top"))}</p>
       <div class="row"><a class="btn small" href="#/occ/${esc(cur.occ_id)}">${t("match.now.tasks")}</a></div></section>` : ""}
@@ -521,6 +541,7 @@ PAGES.pathway = async (args) => {
       <div class="tags">${badges.map(([id, on]) => `<span class="badge${on ? " on" : ""}">${on ? "★" : "☆"} ${t("badge." + id)}</span>`).join("")}</div>
       <div class="row"><button type="button" class="btn small" data-act="ics" data-id="${esc(occId)}">${t("path.ics")}</button><span class="src">${t("path.ics.note")}</span></div>
     </section>
+    ${(L.flags || []).includes("more_study") ? `<p class="warn">${t("path.study", t("zone." + L.role.job_zone))}</p>` : ""}
     ${licenceCard(L.licence)}
     ${stage(t("path.s1", esc(fieldName(L.role.field_id))), L.stages[0].resources.map((r) => resourceRow(r, occId)).join(""))}
     ${stage(t("path.s2"), skills, t("path.s2.p") + (L.skills_not_shown ? ` ${t("path.s2.more", L.skills_not_shown)}` : ""))}

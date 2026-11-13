@@ -35,8 +35,9 @@ async function profilePage() {
     ${skillsCard()}
     <section class="card stack">
       <h2>${t("you.more.h")}</h2>
-      <div class="grid two">
+      <div class="grid three">
         <label class="field">${t("you.zone")}<select data-on="zone">${ZONES.map((z) => `<option value="${z}"${state.zone === z ? " selected" : ""}>${t("zone." + z)}</option>`).join("")}</select></label>
+        <label class="field">${t("you.study")}<select data-on="study">${[0, 1, 2].map((n) => `<option value="${n}"${(state.study || 0) === n ? " selected" : ""}>${t("study." + n)}</option>`).join("")}</select></label>
         <label class="field">${t("you.hours")}<select data-on="hours">${[3, 5, 8, 10, 15, 20].map((h) => `<option value="${h}"${state.hours === h ? " selected" : ""}>${t("you.hours.n", h)}</option>`).join("")}</select></label>
       </div>
       <p class="small muted">${t("you.zone.note")}</p>
@@ -181,6 +182,7 @@ Object.assign(ACT, {
 });
 Object.assign(ON, {
   zone: (el) => { state.zone = Number(el.value); changed(); },
+  study: (el) => { state.study = Number(el.value); changed(); },
   hours: (el) => { state.hours = Number(el.value); save(); cache.clear(); },
   occQuery: async (el) => {  // filter in place, so the search box keeps its focus
     ui.occQuery = el.value;

@@ -19,7 +19,7 @@ const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
 const STORE_KEY = "future-skills-v3";
 const SCENARIO_IDS = ["slow", "moderate", "fast"];
 const blank = () => ({
-  kind: "student", currentOcc: "", zone: 4, hours: 5, fields: {}, answers: null, cv: null, skills: {}, techs: [],
+  kind: "student", currentOcc: "", zone: 4, study: 0, hours: 5, fields: {}, answers: null, cv: null, skills: {}, techs: [],
   demo: null, sdgGoals: [], showRestricted: false, scenario: "moderate", adoption: 0.25, occId: null, done: {}, seen: null, learner: null,
 });
 function loadState() {
@@ -46,6 +46,7 @@ const hasProfile = () => Boolean(state.demo || state.techs.length || quizDone() 
 function profileBody() {
   if (state.demo) return { profile_id: state.demo };
   const b = { kind: state.kind, education_job_zone: state.zone, technologies: state.techs };
+  if (state.study) b.study_levels = state.study;  // how many levels above their own they would study for
   if (state.kind !== "student" && state.currentOcc) b.current_occupation = state.currentOcc;
   if (Object.keys(state.fields).length) b.fields = state.fields;
   if (quizDone()) b.interest_answers = state.answers;
@@ -234,6 +235,20 @@ const ACT = {
     save();
     location.hash = "#/matches";
   },
+  /* One tap from the home page: publish a simulated headline and land on what it changes. It plays
+     for the visitor's own profile when they have one, otherwise for the demo person it is about. */
+  newsFor: async (el) => {
+    const wi = await cached("/api/whatif");
+    const n = wi.news.find((x) => x.id === el.dataset.id);
+    if (!n) return;
+    if (el.dataset.person) {
+      state = Object.assign(blank(), { demo: el.dataset.person, scenario: state.scenario, adoption: state.adoption, learner: state.learner });
+    }
+    Object.assign(ui, { open: {}, why: {}, news: n.id, whatif: null, ad: null });
+    save();
+    location.hash = "#/futures";
+    runWhatIf(n.changes);
+  },
 };
 const ON = {
   adoption: (el) => {
@@ -301,7 +316,10 @@ PAGES.home = async () => {
   const [radar, people, wi] = await Promise.all([cached("/api/radar?scenario=moderate"), cached("/api/profiles"), cached("/api/whatif")]);
   rememberScenarios(radar.scenarios);
   const started = hasProfile();
-  const news = wi.news[1] || wi.news[0];
+  const news = wi.news.find((n) => n.lead) || wi.news[0];
+  const own = started && !state.demo;  // a visitor with their own answers sees the news play for them
+  const about = news && people.find((p) => p.profile_id === news.person);
+  const newsGo = own ? t("home.news.go.you") : about ? t("home.news.go.person", esc(about.name)) : t("home.news.go");
   const counts = radar.fields.reduce((n, f) => n + f.occupations, 0);
   return `<div class="stack loose">
     <section class="hero stack">
@@ -320,6 +338,14 @@ PAGES.home = async () => {
       ${personaCards(people)}
     </section>
 
+    ${news ? `<section class="card stack" style="border-color:var(--ai)">
+      <div class="row"><span class="chip ai">${t("news.simulated")}</span>${fieldChip(news.field)}</div>
+      <p class="headline big">“${esc(t("news." + news.id + ".title"))}”</p>
+      <p class="muted">${t("home.news.p")}</p>
+      <div class="row"><button type="button" class="btn primary" data-act="newsFor" data-id="${esc(news.id)}" data-person="${own ? "" : esc(news.person || "")}">${newsGo}</button>
+        <a class="btn ghost" href="#/futures">${t("home.news.more")}</a></div>
+    </section>` : ""}
+
     <section class="card stack">
       <div><h2>${t("home.team.h")}</h2><p class="muted small">${t("home.team.p")}</p></div>
       <div class="row"><a class="btn small" href="#/team">${t("home.team.go")} →</a></div>
@@ -330,12 +356,11 @@ PAGES.home = async () => {
       ${factTiles(radar.context, radar.sources)}
     </section>
 
-    ${news ? `<section class="card stack" style="border-color:var(--ai)">
-      <div class="row"><span class="chip ai">${t("news.simulated")}</span>${fieldChip(news.field)}</div>
-      <p class="headline">“${esc(t("news." + news.id + ".title"))}”</p>
-      <p class="muted">${t("home.news.p")}</p>
-      <div class="row"><a class="btn" href="#/futures">${t("home.news.go")}</a></div>
-    </section>` : ""}
+    <section class="stack">
+      <h2>${t("home.rules.h")}</h2>
+      <div class="grid three">${[1, 2, 3].map((i) => `
+        <div class="card pad-s stack tight"><span class="strong">${t(`home.rules.${i}.h`)}</span><span class="small muted">${t(`home.rules.${i}.p`)}</span></div>`).join("")}</div>
+    </section>
 
     <section class="stack">
       <h2>${t("home.how.h")}</h2>

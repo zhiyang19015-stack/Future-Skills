@@ -14,6 +14,7 @@ tests/test_scenarios.py checks the same properties on every run.
 
 import argparse
 import json
+import sys
 from pathlib import Path
 
 import matching
@@ -105,9 +106,11 @@ def main() -> int:
     cli.add_argument("--write", action="store_true", help="save the report as docs/scenario_report.md")
     opts = cli.parse_args()
     text = as_markdown(report())
-    print(text)
     if opts.write:
         (ROOT / "docs" / "scenario_report.md").write_text(text + "\n", encoding="utf-8", newline="\n")
+    if hasattr(sys.stdout, "reconfigure"):  # the arrows in the tables are not in every console's code page
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    print(text)
     return 0
 
 

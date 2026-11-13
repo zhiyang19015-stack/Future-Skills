@@ -55,26 +55,71 @@ function changeLine(c) {
   return t(c.tasks === 1 ? "wi.share.one" : "wi.share", esc(c.label), fmt(c.before, 0), fmt(c.after, 0), c.tasks);
 }
 
-function whatIfResult(w) {
-  const top = (list) => (list[0] ? esc(list[0].title) : "–");
-  const changedTop = w.before[0] && w.after[0] && w.before[0].occ_id !== w.after[0].occ_id;
+const arrow = (b, a, unit = "") => `${fmt(b, 0)}${unit} → ${fmt(a, 0)}${unit}`;
+const turn = (s) => `${statusChip(s.before)}${s.before !== s.after ? ` → ${statusChip(s.after)}` : ""}`;
+
+/* The occupation a change is read through, the job the person does now or else their first match:
+   how many of its tasks move to AI, its AI share and outlook before and after, and those tasks. */
+function subjectBlock(y, horizon) {
+  const s = y.subject;
+  const own = y.subject_kind === "current";
+  const head = s.tasks_moved ? t(own ? "wi.you.tasks" : "wi.you.tasks.top", s.tasks_moved, s.tasks)
+    : s.touched ? t(own ? "wi.you.outlook" : "wi.you.outlook.top", signed(s.outlook_move))
+      : t(own ? "wi.you.untouched" : "wi.you.untouched.top");
+  const pair = (label, v, cls, unit) => `<div class="shift"><span>${label}</span>
+      <div class="pair">${bar(v.before, `${cls} was`)}${bar(v.after, cls)}</div><span class="v">${arrow(v.before, v.after, unit)}</span></div>`;
+  const tasks = s.moved.map((x) => `<div class="task"><span>${esc(x.task)}</span><span class="v">${arrow(x.before, x.after, "%")}</span>
+      ${bar(x.after, "ai", `<span class="mark" style="left:${clamp(x.before, 0, 100)}%"></span>`)}</div>`).join("");
+  return `<div class="stack tight">
+    <p class="headline big">${head}</p>
+    <div class="row between"><div><p class="eyebrow">${t(own ? "match.now" : "wi.you.first")}</p><h3>${occLink(s.occ_id, s.title)}</h3></div>
+      <span class="small">${turn(s.status)}</span></div>
+    ${pair(t("wi.you.share"), s.ai_share, "ai", "%")}
+    ${pair(t("wi.you.outlook.k", horizon), s.outlook, s.status.after, "")}
+    ${tasks ? `<div><h3>${t("wi.you.moved.h")}</h3>${tasks}${s.tasks_moved > s.moved.length ? `<p class="tiny muted">${t("wi.you.moved.more", s.tasks_moved - s.moved.length)}</p>` : ""}</div>` : ""}
+  </div>`;
+}
+
+/* A change, the person first: their job, the tools they use, where it lands in their own options,
+   their ranking and what to learn next. The changed numbers stay underneath as the evidence. */
+function whatIfResult(w, ctx = {}) {
+  const y = w.you || {};
   const roles = w.roles.slice(0, NEWS_ROLES).map((r) => `<div class="meter"><span>${occLink(r.occ_id, r.title)}</span>
       <span class="small">${statusChip(r.before.status)} → ${statusChip(r.after.status)}</span><span class="v ${r.move > 0 ? "pass" : r.move < 0 ? "fail" : ""}">${signed(r.move)}</span></div>`).join("");
   const skills = w.skills.slice(0, NEWS_SKILLS).map((s) => `<div class="meter"><span>${esc(s.skill_name)}</span>
-      <span class="small">${statusChip(s.before.status)} → ${statusChip(s.after.status)}</span><span class="v">${s.after.handoff === null ? "–" : `${fmt(s.before.handoff, 0)} → ${fmt(s.after.handoff, 0)}%`}</span></div>`).join("");
+      <span class="small">${statusChip(s.before.status)} → ${statusChip(s.after.status)}</span><span class="v">${s.after.handoff === null ? "–" : `${arrow(s.before.handoff, s.after.handoff)}%`}</span></div>`).join("");
+  const tools = (y.tools || []).map((x) => `<div class="meter"><span>${esc(x.skill_name)}</span><span class="small">${turn(x.status)}</span>
+      <span class="v small">${x.handoff.after === null || x.handoff.before === null ? "–" : t("wi.you.handoff", fmt(x.handoff.before, 0), fmt(x.handoff.after, 0))}</span></div>`).join("");
+  const reached = (y.reached || []).map((x) => `<div class="meter"><span>${occLink(x.occ_id, x.title)}</span>
+      <span class="small muted">${t("wi.you.reached.row", fmt(x.ai_share.before, 0), fmt(x.ai_share.after, 0), x.tasks_moved, x.tasks)}</span>
+      <span class="v">#${x.rank.before}${x.rank.before !== x.rank.after ? ` → #${x.rank.after}` : ""} <span class="tiny muted">${signed(x.total_move)}</span></span></div>`).join("");
+  const first = y.first && y.first.after ? (y.first.changed ? t("wi.top.changed", esc(y.first.before.title), esc(y.first.after.title))
+    : t("wi.first.same", esc(y.first.after.title))) : "";
   const p = w.path;
   const learn = (side) => side.learn_next.map(dotName).join("") || `<span class="small muted">–</span>`;
-  let n = 1;
+  let pathNote = "";
+  if (p) {
+    const was = Object.fromEntries(p.before.learn_next.map((x) => [x.skill_id, x.status]));
+    const turned = p.after.learn_next.filter((x) => was[x.skill_id] && was[x.skill_id] !== "declining" && x.status === "declining");
+    pathNote = p.order_changed ? t("wi.path.changed")
+      : turned.length ? t("wi.path.status", turned.length, turned.map((x) => esc(x.skill_name)).join(", ")) : t("wi.path.same");
+  }
   return `<section class="card stack fade" style="border-color:var(--ai)" id="whatif-result">
-    <div class="row between"><h2>${t("wi.h")}</h2><span class="chip warn">${t("wi.copy")}</span></div>
-    <p class="headline">${changedTop ? t("wi.top.changed", top(w.before), top(w.after)) : t("wi.top.same", top(w.after))}</p>
-    <div class="stack tight"><h3>${n++} · ${t("wi.inputs")}</h3><ul class="small stack tight">${w.changes.map((c) => `<li>${changeLine(c)}</li>`).join("")}</ul></div>
-    ${skills ? `<div class="stack tight"><h3>${n++} · ${t("wi.skills", w.skills.length)}</h3>${skills}</div>` : ""}
-    <div class="stack tight"><h3>${n++} · ${t("wi.roles", w.roles.length)}</h3>${roles || `<p class="small muted">${t("wi.roles.none")}</p>`}</div>
-    <div class="stack tight"><h3>${n++} · ${t("wi.ranking")}</h3>${beforeAfter(w)}</div>
-    ${p ? `<div class="stack tight"><h3>${n++} · ${t("wi.path", esc(p.role_name))}</h3>
+    <div class="row between"><h2>${ctx.name ? t("wi.you.for", esc(ctx.name)) : t("wi.you.h")}</h2><span class="chip warn">${t("wi.copy")}</span></div>
+    ${ui.news ? `<p class="small muted"><span class="chip ai">${t("news.simulated")}</span> “${esc(t("news." + ui.news + ".title"))}”</p>` : ""}
+    ${y.subject ? subjectBlock(y, ctx.horizon || 2030) : ""}
+    ${tools ? `<div class="stack tight"><h3>${t("wi.you.tools.h")}</h3>${tools}</div>` : ""}
+    <div class="stack tight"><h3>${t("wi.you.reached.h")}</h3>${first ? `<p class="small strong">${first}</p>` : ""}
+      ${reached || `<p class="small muted">${t("wi.you.reached.none")}</p>`}</div>
+    <div class="stack tight"><h3>${t("wi.ranking")}</h3>${beforeAfter(w)}</div>
+    ${p ? `<div class="stack tight"><h3>${t("wi.path", esc(p.role_name))}</h3>
       <div class="ba"><div><p class="tiny muted">${t("fut.before")}</p><div class="tags">${learn(p.before)}</div></div><div><p class="tiny muted">${t("fut.after")}</p><div class="tags">${learn(p.after)}</div></div></div>
-      <p class="small ${p.order_changed ? "" : "muted"}">${t(p.order_changed ? "wi.path.changed" : "wi.path.same")}</p></div>` : ""}
+      <p class="small ${pathNote === t("wi.path.same") ? "muted" : ""}">${pathNote}</p></div>` : ""}
+    <details class="more"><summary>${t("wi.evidence")}</summary><div class="stack">
+      <div class="stack tight"><h3>${t("wi.inputs")}</h3><ul class="small stack tight">${w.changes.map((c) => `<li>${changeLine(c)}</li>`).join("")}</ul></div>
+      ${skills ? `<div class="stack tight"><h3>${t("wi.skills", w.skills.length)}</h3>${skills}</div>` : ""}
+      <div class="stack tight"><h3>${t("wi.roles", w.roles.length)}</h3>${roles || `<p class="small muted">${t("wi.roles.none")}</p>`}</div>
+    </div></details>
     <p class="src">${t("wi.src", w.trend_data.id)}</p>
   </section>`;
 }
@@ -143,7 +188,7 @@ PAGES.futures = async () => {
         ${fieldChip(n.field)}<span class="headline">“${esc(t("news." + n.id + ".title"))}”</span>
         <span class="small muted">${esc(t("news." + n.id + ".sum"))}</span></button>`).join("")}</div>
       ${ui.busy.whatif ? loading(t("wi.running")) : ""}
-      ${ui.whatif ? whatIfResult(ui.whatif) : ""}
+      ${ui.whatif ? whatIfResult(ui.whatif, { horizon: f.horizon_year, name: demo && demo.name }) : ""}
       ${ui.whatif ? `<div class="row"><button type="button" class="btn small" data-act="newsClear">${t("wi.clear")}</button></div>` : ""}
     </section>
     <section class="stack"><h3>${t("wi.examples")}</h3><div class="tags">${wi.examples.map((e) => `<button type="button" class="toggle" data-act="example" data-id="${esc(e.id)}">${esc(t("ex." + e.id) === "ex." + e.id ? e.name : t("ex." + e.id))}</button>`).join("")}</div></section>

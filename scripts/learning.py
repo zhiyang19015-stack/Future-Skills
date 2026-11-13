@@ -142,6 +142,7 @@ def page(occ_id: str, data: dict | None = None, match: dict | None = None, hours
                  "field_name": occ["field_name"], "job_zone": occ["job_zone"], "mycol": occ["mycol"],
                  "description": occ["description"], "search_title": occ["search_title"]},
         "personal": bool(match),
+        "flags": list(match["flags"]) if match else [],  # "more_study": the page names the qualification it needs
         "stages": [{"id": "foundations", "resources": foundations}],
         "skills": skills,
         "skills_not_shown": not_shown,

@@ -24,7 +24,8 @@ The six steps of the app and the endpoints behind them:
                 POST /api/update           start "Update data"; GET for its status
 
 A profile (the body of /api/match, /api/explain, /api/learn, /api/futures, /api/whatif) has any of:
-    kind, education_job_zone (1-5), current_occupation, fields {field_id: 0-100},
+    kind, education_job_zone (1-5), study_levels (0-2: levels above it the person would study for),
+    current_occupation, fields {field_id: 0-100},
     interest_answers [36 x 1-5], skills {element_id: 0-7}, cv_skills {element_id: 0-7},
     technologies [tech_id], cv_fields {field_id: 0-100}, cv_why {field_id: text},
     hours_per_week (1-40), sdg_goals ["3", ...], scenario (slow | moderate | fast) or adoption (0-0.9),
@@ -233,6 +234,10 @@ def build_profile(body: dict, data: dict) -> dict:
     if isinstance(zone, bool) or zone not in range(1, 6):
         raise Refused("'education_job_zone' must be a whole number from 1 to 5")
     profile["education_job_zone"] = zone
+    study = body.get("study_levels", 0)
+    if isinstance(study, bool) or study not in range(matching.MAX_STUDY_LEVELS + 1):
+        raise Refused(f"'study_levels' must be a whole number from 0 to {matching.MAX_STUDY_LEVELS}")
+    profile["study_levels"] = study
     current = body.get("current_occupation")
     if current is not None:
         if current not in data["by_id"]:
@@ -538,16 +543,41 @@ def listed(m: dict) -> bool:
     return not (matching.UNLISTED_FLAGS | {"current_occupation"}) & set(m["flags"])
 
 
-def scenario_ranks(profile: dict, data: dict, wanted: set) -> tuple[dict, dict]:
-    """Rank and total of the wanted occupations under every named scenario, among the listed ones."""
-    ranks, totals = {}, {}
+VERDICT_TOP = 3               # how far down the list the scenarios are compared for the one-line verdict
+
+
+def scenario_ranks(profile: dict, data: dict, wanted: set) -> tuple[dict, dict, dict]:
+    """Rank and total of the wanted occupations under every named scenario, among the listed ones,
+    and the first VERDICT_TOP of each scenario's list."""
+    ranks, totals, tops = {}, {}, {}
     for name in outlook.SCENARIOS:
         order = [m for m in matching.rank(profile, data, scenario=name) if listed(m)]
+        tops[name] = [{"occ_id": m["occ_id"], "title": m["title"], "total": m["total"],
+                       "ai_share": m["outlook"]["ai_share"]} for m in order[:VERDICT_TOP]]
         for i, m in enumerate(order):
             if m["occ_id"] in wanted:
                 ranks.setdefault(m["occ_id"], {})[name] = i + 1
                 totals.setdefault(m["occ_id"], {})[name] = m["total"]
-    return ranks, totals
+    return ranks, totals, tops
+
+
+def scenario_verdict(tops: dict, reference: dict) -> dict | None:
+    """What the named scenarios do to the top of one person's list, as one of three plain cases:
+    "top" the first occupation differs, "top3" the first holds but the first three do not, "same"
+    the first three hold. A list that holds is an answer too, so the verdict also says how far the
+    scores moved; nothing here is tuned to make a list change."""
+    names = [n for n in outlook.SCENARIOS if tops.get(n)]
+    if len(names) < 2:
+        return None
+    slow, fast = names[0], names[-1]
+    firsts = {tops[n][0]["occ_id"] for n in names}
+    orders = {tuple(m["occ_id"] for m in tops[n]) for n in names}
+    fast_totals = {m["occ_id"]: m["total"] for m in tops[fast]}
+    moved = [abs(fast_totals[m["occ_id"]] - m["total"]) for m in tops[slow] if m["occ_id"] in fast_totals]
+    return {"kind": "top" if len(firsts) > 1 else "top3" if len(orders) > 1 else "same",
+            "slow": slow, "fast": fast, "slow_first": tops[slow][0], "fast_first": tops[fast][0],
+            "largest_move": round(max(moved, default=0.0), 1), "ai_share_reference": reference["role_ai_share"],
+            "top": VERDICT_TOP}
 
 
 @route("POST", "/api/match")
@@ -561,7 +591,7 @@ def match(req):
     if profile.get("current_occupation"):
         include.append(profile["current_occupation"])
     result = matching.match_person(profile, data, scenario=scenario, adoption=adoption, top=top, include=include)
-    ranks, totals = scenario_ranks(profile, data, {m["occ_id"] for m in result["results"]})
+    ranks, totals, tops = scenario_ranks(profile, data, {m["occ_id"] for m in result["results"]})
     for m in result["results"]:
         m["scenario_ranks"], m["scenario_totals"] = ranks.get(m["occ_id"]), totals.get(m["occ_id"])
     current = next((m for m in result["results"] if "current_occupation" in m["flags"]), None)
@@ -575,7 +605,8 @@ def match(req):
                  weights=matching.WEIGHTS, field_weights=matching.FIELD_WEIGHTS, skill_split=matching.SKILL_SPLIT,
                  horizon_year=outlook.HORIZON_YEAR, scenario=scenario_info(scenario, adoption),
                  scenarios=scenario_list(), trend_data=data_version(data, changes), sdg_bonus=matching.SDG_BONUS,
-                 sdg_goals=matching.sdg_goal_options(data), current=current, reference=data["ai"]["reference"])
+                 sdg_goals=matching.sdg_goal_options(data), current=current, reference=data["ai"]["reference"],
+                 verdict=scenario_verdict(tops, data["ai"]["reference"]))
 
 
 def one_match(body: dict, with_stability: bool = False):
@@ -754,7 +785,8 @@ def what_if_run(req):
                  skills=whatif.skill_changes(data, after, adoption), scenario=scenario_info(scenario, adoption),
                  before=[brief(m, i + 1) for i, m in enumerate(before_rows[:12])],
                  after=[brief(m, i + 1) for i, m in enumerate(after_rows[:12])],
-                 path=path, outlook_weight=matching.WEIGHTS["outlook"], trend_data=data_version(after, changes))
+                 path=path, outlook_weight=matching.WEIGHTS["outlook"], trend_data=data_version(after, changes),
+                 you=whatif.person_change(profile, data, after, adoption, before_rows, after_rows))
 
 
 # --- the team view: the same engine for an HR or career-centre officer ------------------------------
