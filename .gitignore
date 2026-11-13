@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Local settings and the app's own runtime files (SDG tally, release check)
+.env
+.cache/
+
+# Raw downloads stay local (see SOURCES.md), except the two "Update data" reads
+raw/*
+!raw/README.md
+!raw/dosm/
+raw/dosm/*
+!raw/dosm/jmi_data_*.xlsx
+!raw/mycol/
+raw/mycol/*
+!raw/mycol/mycol_2024_2025.csv
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

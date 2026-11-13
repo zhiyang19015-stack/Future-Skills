@@ -1,0 +1,11 @@
+[project]
+name = "future-skills"
+version = "3.0.0"
+description = "Which jobs and skills AI is changing in Malaysia, across every field, and a free path to the ones that fit you"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.10"   # statistics.correlation, X | Y type hints
+dependencies = []  # Python standard library only
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

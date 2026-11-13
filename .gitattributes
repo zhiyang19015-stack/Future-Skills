@@ -1,0 +1,5 @@
+# Text is stored with LF line endings, whatever the editor on this machine writes
+* text=auto eol=lf
+# Spreadsheets and images are kept byte for byte
+*.xlsx binary
+*.png binary
