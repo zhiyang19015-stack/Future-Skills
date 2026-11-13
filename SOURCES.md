@@ -57,6 +57,13 @@ Every constant below is our choice, not data; the Sources page shows the values 
 - **CV reading** is word matching against O*NET's tool names and job titles, a list of Malaysian titles and qualification words; job titles count only under a work-experience heading. It can miss what a CV words differently and says so.
 - **SDG links** (`data/sdg_map.csv`) are ours: a field's link holds for its occupations unless a more specific rule (a minor group, an occupation) replaces it; every link has a written reason.
 
+### Evidence grade, routes and the team view
+
+- **Evidence grade** (`scripts/evidence.py`): A from 5 of 6 points, B from 3, otherwise C. The points are our rule: 2 when the AI share is measured on the occupation's own tasks, 1 when it leans on Anthropic's observed exposure, 0 on the field average; 2, 1, 0 for an exact, close, or broad or missing MASCO mapping; 2 when the Economic Index release is at most 270 days old and demand was computed at most 60 days ago, less 1 for each that is older. It is not calibrated against outcomes and must not be read as a probability.
+- **Routes kept open**: related occupations come from O*NET 31.0 (US). The 15-point reach is our choice. The count says how many next moves remain in the model, not how many jobs exist in Malaysia.
+- **Team view** (`scripts/team.py`): each job is run as a person at the level O*NET gives the job, with no tools and no interests, so a real team member's match will differ. A move is searched only among related occupations and the job's own field. Hours are the course providers' stated lengths, not time to mastery; staff time and wages are not costed. The team in `data/sample_team.json` is fictional.
+- **Scenario report** (`scripts/scenario_report.py`): describes what the scenarios change; it sets no quota of rankings that must change.
+
 ## The optional language model
 
 Optional and only for wording: an OpenAI-compatible chat model writes the "Why this score?" text from one match's computed facts. A reply with a number not in the facts, its own prediction ("will grow", "akan meningkat", "将会增长"), the wrong language or too many words is thrown away and a template written from the same facts is shown. No personal data is sent.

@@ -18,6 +18,8 @@ The six steps of the app and the endpoints behind them:
     5 SDG       GET  /api/sdg/summary, POST /api/sdg/record             the anonymous total
     6 Futures   POST /api/futures          the three scenarios side by side
                 GET  /api/whatif, POST /api/whatif                      simulated news and changed numbers
+    Team        GET  /api/team?scenario=   the fictional team through the same engine: jobs, moves,
+                POST /api/team             skill-gap heatmap, training groups, hours, SDG (or your own team)
     Sources     GET  /api/sources          every source, its dates and licence; the model's constants
                 POST /api/update           start "Update data"; GET for its status
 
@@ -59,6 +61,7 @@ sys.path.insert(0, os.fspath(MODULES))
 import ai_exposure  # noqa: E402
 import cv_reader  # noqa: E402
 import demand  # noqa: E402
+import evidence  # noqa: E402
 import explain  # noqa: E402
 import impact  # noqa: E402
 import interest  # noqa: E402
@@ -67,6 +70,7 @@ import matching  # noqa: E402
 import outlook  # noqa: E402
 import releases  # noqa: E402
 import skillcheck  # noqa: E402
+import team  # noqa: E402
 import whatif  # noqa: E402
 
 MAX_BODY = 4_000_000          # room for a base64 .docx CV
@@ -519,7 +523,8 @@ def occupation_detail(req, occ_id: str):
                  outlook=outlook.role_outlook(occ, data, adoption), outlooks=occupation_outlooks(occ, data),
                  ai=matching.occupation_ai(occ_id, data), demand=d, tasks=[{k: t[k] for k in keep} for t in tasks],
                  skills=skills, technologies=techs, sdg=matching.occupation_sdg(occ, data),
-                 licence=matching.licence(occ, data), related=related, source=data["ai"]["source"])
+                 licence=matching.licence(occ, data), related=related, source=data["ai"]["source"],
+                 evidence=evidence.occupation_grade(occ, data))
 
 
 # --- step 3: matches --------------------------------------------------------------------------------
@@ -743,6 +748,28 @@ def what_if_run(req):
                  path=path, outlook_weight=matching.WEIGHTS["outlook"], trend_data=data_version(after, changes))
 
 
+# --- the team view: the same engine for an HR or career-centre officer ------------------------------
+
+@route("GET", "/api/team")
+def team_sample(req):
+    scenario, adoption = scenario_of(req.args)
+    return reply(**team.view(None, matching.load_data(), adoption=adoption), scenario=scenario_info(scenario, adoption),
+                 scenarios=scenario_list())
+
+
+@route("POST", "/api/team")
+def team_own(req):
+    """A team as {members: [{occ_id, headcount}], hours_per_week}: job titles and counts only, never
+    names or anything about a person. Used for this request and not stored."""
+    body = req.json()
+    scenario, adoption = scenario_of(body)
+    try:
+        result = team.view(body, matching.load_data(), adoption=adoption)
+    except team.TeamError as error:
+        raise Refused(str(error)) from None
+    return reply(**result, scenario=scenario_info(scenario, adoption), scenarios=scenario_list())
+
+
 # --- sources and "Update data" -------------------------------------------------------------------------
 
 def run_update(with_arxiv: bool) -> None:
@@ -905,7 +932,8 @@ def sources(req):
                  llm={"configured": explain.configured(), "model": explain.model_name(), "provider": explain.provider(),
                       "used_for": "Putting a score into words. It never sets a score, and a reply with a number that is "
                                   "not in our data is thrown away."},
-                 reference=data["ai"]["reference"])
+                 reference=data["ai"]["reference"], evidence=evidence.rules(),
+                 routes={"reach_points": matching.ROUTE_REACH})
 
 
 @route("GET", "/api/scenarios")

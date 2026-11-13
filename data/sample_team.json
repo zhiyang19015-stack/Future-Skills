@@ -1,0 +1,16 @@
+{
+  "name": "Fictional IT services team, Kuala Lumpur",
+  "note": "A made-up team of 20 for the demo. No real company, no real people.",
+  "synthetic": true,
+  "hours_per_week": 5,
+  "members": [
+    {"occ_id": "15-1252.00", "headcount": 5},
+    {"occ_id": "15-1253.00", "headcount": 4},
+    {"occ_id": "15-1232.00", "headcount": 3},
+    {"occ_id": "43-4051.00", "headcount": 3},
+    {"occ_id": "43-9021.00", "headcount": 2},
+    {"occ_id": "15-1254.00", "headcount": 1},
+    {"occ_id": "43-3031.00", "headcount": 1},
+    {"occ_id": "15-1299.09", "headcount": 1}
+  ]
+}

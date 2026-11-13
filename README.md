@@ -1,6 +1,8 @@
 # Future Skills
 
-Future Skills shows people in Malaysia, students and working people in any field, what AI is doing to work and what it means for them. For each of 910 occupations in 22 fields it measures how much of the work people already hand to AI (Anthropic Economic Index, Malaysia next to the world), turns that into rising and declining jobs and skills under a future you pick, ranks every occupation for you with the reasons, and builds a free learning path with the UN goals it serves. Every number carries its source and date.
+Future Skills shows people in Malaysia, students and working people in any field, what AI is doing to work and what it means for them. For each of 910 occupations in 22 fields it measures how much of the work people already hand to AI (Anthropic Economic Index, Malaysia next to the world), turns that into rising and declining jobs and skills under a future you pick, ranks every occupation for you with the reasons, and builds a free learning path with the UN goals it serves. Every number carries its source and date, and every occupation an evidence grade that says how much of it is the occupation's own data.
+
+It does not predict one future or say a job will disappear. AI use in a task is not the loss of a job: an occupation is a bundle of tasks, some handed to AI, some done with it, some still a person's. Future Skills shows which is which, how that shifts under the scenario you pick, the occupations that stay open to you, and what to learn first.
 
 **Try it:** [Open in GitHub Codespaces](https://codespaces.new/zhiyang19015-stack/Future-Skills) (starts the app in your browser), or [run it locally](#option-2--run-locally). English, Bahasa Melayu and 中文.
 
@@ -9,6 +11,14 @@ Future Skills shows people in Malaysia, students and working people in any field
 ### Problem
 
 A school leaver, a graduate or someone already at work in Malaysia has to choose what to learn next while AI changes which tasks still need people, and mostly chooses by guesswork. AI is spreading faster than training: 56% of Malaysian professionals use AI tools at work but only 26% have had formal training (Hays Asia Salary Guide 2025), and MOSTI expects more than 600,000 workers to need reskilling within three to five years. Career tests rarely look at Malaysian demand or at how far AI has already entered each kind of work, and course lists do not say which skills matter for which job. A wrong choice costs months of study for a job the person does not fit or that the market needs less.
+
+### Who it is for
+
+- **First: a working adult whose tasks AI is changing.** The lead demo person is Aiman, a fictional software QA tester whose team now uses AI to write test scripts. He sees his own job's tasks split into those AI already does and those still his, his outlook under each scenario, the adjacent occupations open to him, and a free path ordered by his gaps.
+- **Students and career switchers** use the same engine and data (four more fictional people).
+- **HR, L&D and career-centre officers** get the Team view: the same engine over a team's jobs and headcounts, shown with a fictional team of 20.
+
+First customers we would approach: university and TVET career centres, which already advise the people above and need no integration to start; enterprise HR comes after a pilot.
 
 ### Solution
 
@@ -36,18 +46,23 @@ What is measured and what is assumed are kept apart:
 - **Skill weight** = 1 + adoption × (1 if it builds AI − 2 × (hands-off share − typical AI use) ÷ 100). A skill AI takes over more than typical counts for less in your skill fit as adoption grows.
 - **Match** = 20% field fit + 15% interest + 30% skills + 35% outlook, each part shown. A part you did not answer is left out, never counted as 0.
 
+- **Evidence grade** (A, B or C; `scripts/evidence.py`): three rule-based checks, 0–2 points each: whether the AI share is measured on the occupation's own tasks, how exactly it maps to a MASCO code, and how fresh the AI-usage release and the demand numbers are. It is a grade, not a probability: nothing calibrates it against outcomes. Where there is no reliable source the app says so.
+- **Routes kept open** (career option value): of the occupations O*NET lists as related, how many are not declining under the scenario, need no higher qualification, and sit within 15 match points. A count of next moves, not a promise of jobs.
+
 Every constant is our assumption, listed on the app's Sources page and in [SOURCES.md](SOURCES.md). The app never invents jobs, courses or statistics, and the person makes the final decision.
 
 ### Key Features
 
-Six steps, plus a Sources page:
+Six steps, plus a Team view and a Sources page:
 
-1. **You** — studying, working, or switching jobs (working people pick the job they do now from all 910); the fields you like; your CV (PDF, .docx or text, read by word matching for one request and never stored: tools, highest qualification, subjects, job titles); the tools you use; a 36-statement interest questionnaire (RIASEC); and a **skills check** where you pick, for each skill, the hardest of O*NET's own examples you can already do ("Write an email to staff outlining new directives"), so your level sits on the same scale as every occupation. Or load one of four fictional people.
+1. **You** — studying, working, or switching jobs (working people pick the job they do now from all 910); the fields you like; your CV (PDF, .docx or text, read by word matching for one request and never stored: tools, highest qualification, subjects, job titles); the tools you use; a 36-statement interest questionnaire (RIASEC); and a **skills check** where you pick, for each skill, the hardest of O*NET's own examples you can already do ("Write an email to staff outlining new directives"), so your level sits on the same scale as every occupation. Or load one of five fictional people.
 2. **Radar** — what AI is already doing to work in every field: Malaysia next to the world, each field's AI share and outlook, the occupations rising and declining most, a search over all 910, and every skill, knowledge area, tool and AI-use topic with its hands-off share. Each occupation's page lists the tasks AI already does and the ones still yours, the signals behind its outlook (MyCOL, DOSM job ads, the median wage of its group), related occupations, and the body to register with if it is a regulated profession in Malaysia.
 3. **Matches** — every occupation ranked for you, with the field fit, interest, skills and outlook parts; "Why this score?" with what would raise it; how often it stays in your top 3 across 1,000 drawn futures; your own job's outlook if you work; job-search links (MYFutureJobs, JobStreet, LinkedIn) using the title Malaysians search for; a job-ad reader.
 4. **Pathway** — free courses on your own gaps, biggest first, each link opened and checked, with hours and weeks at your study time, progress and a calendar file (.ics); hands-on training in Malaysia (SKM skills certificates, site safety) where a website cannot teach the skill.
 5. **SDG** — every occupation and skill linked to UN SDG targets with a written reason; your path's hours added up per target. Pick the goals you care about and see which occupations move up and what that costs in study hours; an anonymous total over everyone who follows a path.
 6. **Futures** — your ranking under slow, moderate and fast adoption side by side, and the 1,000 drawn futures. Then **publish a piece of simulated AI news** ("AI scribes now write clinical notes", "AI closes the monthly books", "AI tutors mark homework and plan lessons"): the same pipeline runs on a changed copy of the data and shows the skills, occupations, your ranking and your path before and after. Or change one number yourself: a MASCO group's job ads, a MyCOL status, a topic's hands-off share, the AI share of a work activity.
+
+**Team** (for HR and career centres) — a team as job titles and headcounts, never names. For each job: the AI share of its tasks, its outlook under all three scenarios and its evidence grade. For each job declining under the scenario: the best-matching adjacent occupation that is not declining, with its free courses; where none qualifies the page says so and points at the tasks that stay with people. Then a skill-gap heatmap, who to train together, person-hours and course fees, and the UN targets served. The demo team is fictional.
 
 Everywhere: light and dark, built for a phone and slow mobile data (no images, no web fonts, gzip and ETags), no login, and your answers stay in your browser.
 
@@ -80,7 +95,8 @@ Everywhere: light and dark, built for a phone and slow mobile data (no images, n
 │   ├── learning_resources.csv     # Free courses and programmes, each link checked
 │   ├── regulated.csv              # Malaysian bodies a regulated profession registers with
 │   ├── interest_items.json        # The 36 interest statements
-│   └── sample_profiles.json       # Four fictional people
+│   ├── sample_profiles.json       # Five fictional people
+│   └── sample_team.json           # A fictional team of 20: job titles and headcounts
 ├── raw/                           # The DOSM workbook and the typed MyCOL list (other downloads stay out of git)
 ├── scripts/
 │   ├── build_onet.py              # O*NET 31.0 + ESCO crosswalk -> the occupation tables
@@ -91,14 +107,18 @@ Everywhere: light and dark, built for a phone and slow mobile data (no images, n
 │   ├── outlook.py                 # Scenarios: outlook, skill weights, 1,000 drawn futures
 │   ├── matching.py                # Field fit and the explained score of every occupation
 │   ├── skillcheck.py, interest.py, cv_reader.py, explain.py, learning.py, impact.py
+│   ├── evidence.py                # Evidence grade of every occupation's numbers (A, B, C)
+│   ├── team.py                    # The team view: the same matching over a team's jobs
+│   ├── scenario_report.py         # What the scenarios change for each demo person, and why
 │   ├── whatif.py                  # Simulated AI news and changed numbers, run on a copy
 │   ├── releases.py                # Reports a newer Economic Index release
 │   └── validate_data.py, check_links.py, fairness_check.py
 ├── src/
 │   ├── main.py                    # Web server and JSON API (entry point)
 │   └── static/                    # index.html, style.css, app.js, you.js, explore.js, futures.js,
-│                                  # i18n.js and quiz-i18n.js (languages), sample_cv.txt
+│                                  # team.js, i18n.js and quiz-i18n.js (languages), sample_cv.txt
 ├── tests/
+├── docs/scenario_report.md       # Generated by scripts/scenario_report.py
 ├── .devcontainer/                 # GitHub Codespaces set-up (starts the app on port 5000)
 ├── .env.example
 ├── LICENSE
@@ -156,6 +176,7 @@ All JSON; `GET /api` lists every endpoint.
 | POST | `/api/futures` | The three scenarios side by side |
 | GET / POST | `/api/whatif` | What can be changed and the simulated news / run one on a copy, before and after |
 | GET / POST | `/api/sdg/summary`, `/api/sdg/record` | The anonymous SDG total / one browser's path hours |
+| GET / POST | `/api/team?scenario=` | The fictional team, or your own `{"members": [{"occ_id", "headcount"}], "hours_per_week"}`: jobs, moves, skill-gap heatmap, training groups, hours, SDG targets. Not stored |
 | GET | `/api/sources`, `/api/scenarios`, `/api/explain/status`, `/api/health` | Sources and constants, scenarios, whether an LLM is set up |
 | GET / POST | `/api/update` | Status of / start "Update data" |
 
@@ -168,7 +189,10 @@ python scripts/validate_data.py
 python -m pytest -q               # or: python -m unittest discover tests
 python scripts/check_links.py     # needs internet: every course and professional body link still opens
 python scripts/fairness_check.py  # the same CV as 8 different people gives the same recommendations
+python scripts/scenario_report.py # what slow, moderate and fast adoption change for each demo person, and why
 ```
+
+The scenario report ([docs/scenario_report.md](docs/scenario_report.md)) is a regression check, not a target: it states how many demo people's top 3 change between slow and fast adoption, by how much each part moved, and why the others did not change. No ranking is required to flip, and the model is not tuned to make one flip.
 
 ## Data Rules
 
@@ -176,6 +200,14 @@ python scripts/fairness_check.py  # the same CV as 8 different people gives the 
 - Every row keeps `source_name`, `source_url` and `source_date` (YYYY-MM-DD), or its table's source is in `data/aei/source.json`.
 - Malaysian demand comes from DOSM and MyCOL only; O*NET (US) gives the structure of the work, never Malaysian numbers.
 - A link that cannot be checked is not shown as checked. Fictional people only: no real CVs or personal data.
+
+## Responsible Use
+
+- **What it is for:** exploring careers and planning training. It makes no hiring, firing or promotion decision and is not built to support one; the person, or the officer with the person, decides.
+- **Data kept:** none about a person on the server. Answers stay in the browser's local storage and are removed with "Clear my answers". A CV is read for one request and not stored; a PDF is read in the browser. A team is job titles and headcounts, used for one request. The only thing saved is the anonymous SDG total: a random browser id, an occupation id and hours.
+- **Data not asked for:** name, IC number, age, gender, ethnicity, religion, address. The matching has no input for them, and `scripts/fairness_check.py` shows the same CV gives the same recommendations when they appear in it. It tests what a CV's wording can leak, not every source of bias: the O*NET, MyCOL and usage data can carry their own.
+- **Before real use under the PDPA 2010:** a hosted deployment would need a privacy notice, HTTPS, access control for the Team view, and a retention period for server logs. This prototype has none of these because it stores no personal data and the demo uses fictional people only.
+- **Estimates:** every outlook is read under a named scenario to 2030 with its range and evidence grade. Two months of AI-usage data cannot be back-tested, so the outlook is exploratory, not a validated forecast.
 
 ## AI Disclosure
 

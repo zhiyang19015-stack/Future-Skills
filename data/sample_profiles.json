@@ -1,5 +1,18 @@
 [
   {
+    "profile_id": "P05",
+    "name": "Aiman",
+    "kind": "working",
+    "story": "Software QA tester in Cyberjaya, four years in the job with a computer science degree. His team now uses AI to write test scripts, and he wants to know which parts of his work stay his and what to learn first.",
+    "education_job_zone": 4,
+    "current_occupation": "15-1253.00",
+    "fields": {"15": 100},
+    "interest_answers": [3, 5, 2, 2, 2, 4, 3, 5, 1, 2, 3, 4, 2, 4, 2, 3, 2, 5, 3, 5, 2, 2, 2, 4, 3, 4, 1, 2, 3, 4, 2, 5, 2, 3, 2, 5],
+    "technologies": ["selenium", "atlassian-jira", "postman", "structured-query-language-sql", "git", "microsoft-excel"],
+    "hours_per_week": 6,
+    "note": "Fictional person for the demo: the working adult whose tasks AI is changing."
+  },
+  {
     "profile_id": "P01",
     "name": "Nurul",
     "kind": "student",

@@ -21,4 +21,5 @@ Every table the app reads. Generated tables are rebuilt by the scripts named bel
 | `learning_resources.csv` | 69 | Free courses and training programmes, what they teach (`element:`, `tech:`, `field:`, `all`), hours as the provider states them, the date each link was checked | by hand, checked by `scripts/check_links.py` |
 | `regulated.csv` | 16 | Professions that need registration in Malaysia, the body, what it requires, and the O*NET codes it covers | by hand |
 | `interest_items.json` | 36 | The interest statements, six for each RIASEC type | by hand |
-| `sample_profiles.json` | 4 | Fictional people for the demo | by hand |
+| `sample_profiles.json` | 5 | Fictional people for the demo | by hand |
+| `sample_team.json` | 8 | A fictional team of 20 for the Team view: job titles and headcounts | by hand |

@@ -173,6 +173,7 @@ function drawChrome(current) {
   const at = current === "occ" ? "radar" : current;
   $("#steps").innerHTML = STEPS.map(([id, key], i) =>
     `<a href="#/${id}"${at === id ? ' aria-current="page"' : ""}><b>${i + 1}</b><span>${t(key)}</span></a>`).join("")
+    + `<a href="#/team"${at === "team" ? ' aria-current="page"' : ""}><b>+</b><span>${t("nav.team")}</span></a>`
     + `<a href="#/sources"${at === "sources" ? ' aria-current="page"' : ""}><b>i</b><span>${t("nav.sources")}</span></a>`;
   $("#foot").innerHTML = `<p>${t("foot.estimates")}</p><p>${t("foot.human")}</p>
     <p>${t("foot.privacy")} · <a href="#/sources">${t("nav.sources")}</a> · <a href="#/" data-act="reset">${t("foot.reset")}</a></p>`;
@@ -319,6 +320,11 @@ PAGES.home = async () => {
       ${personaCards(people)}
     </section>
 
+    <section class="card stack">
+      <div><h2>${t("home.team.h")}</h2><p class="muted small">${t("home.team.p")}</p></div>
+      <div class="row"><a class="btn small" href="#/team">${t("home.team.go")} →</a></div>
+    </section>
+
     <section class="stack">
       <h2>${t("home.facts.h")}</h2>
       ${factTiles(radar.context, radar.sources)}
@@ -385,6 +391,7 @@ PAGES.sources = async () => {
         <p><span class="strong">${t("srcs.f.outlook")}</span><br><code>${t("srcs.f.outlook.code", p.builder_shift, p.exposure_shift)}</code></p>
         <p><span class="strong">${t("srcs.f.skill")}</span><br><code>${t("srcs.f.skill.code", p.skill_builder_shift, p.skill_shift, fmt(s.reference.skill_handoff, 1))}</code></p>
         <p><span class="strong">${t("srcs.f.share")}</span><br><code>${t("srcs.f.share.code", x.automation_weight, x.augmentation_weight, x.min_usage_pct)}</code></p>
+        ${s.evidence ? `<p><span class="strong">${t("srcs.f.evidence")}</span><br><span class="small">${t("srcs.ev.p", s.evidence.fresh_ai_days, s.evidence.fresh_demand_days, fmt(s.routes.reach_points, 0))}</span></p>` : ""}
         <p><span class="strong">${t("srcs.f.sim")}</span><br><span class="small">${t("srcs.f.sim.p", p.futures, p.demand_sd, Math.round(p.param_spread * 100))}</span></p>
       </div>
       <div class="tags">${s.scenarios.map((sc) => `<span class="chip plain">${t("scn." + sc.id)}: ${Math.round(sc.adoption * 100)}%</span>`).join("")}

@@ -273,3 +273,14 @@ table .bar { margin-bottom: 2px; }
   body { background: #ffffff; color: #000000; }
   .card { box-shadow: none; break-inside: avoid; border-color: #cccccc; }
 }
+
+/* evidence grade (a letter, never a percentage) and the team view's skill-gap heatmap */
+.chip.grade-A { background: var(--brand-soft); color: var(--brand-strong); }
+.chip.grade-B { background: var(--steady-soft); color: var(--steady); }
+.chip.grade-C { background: var(--warn-soft); color: var(--warn); }
+a.chip { text-decoration: none; }
+table.heatmap th.n { min-width: 92px; vertical-align: bottom; font-weight: 600; }
+td.heat { font-variant-numeric: tabular-nums; font-weight: 650; }
+td.heat.h1 { background: var(--warn-soft); color: var(--warn); }
+td.heat.h2 { background: color-mix(in srgb, var(--warn) 30%, var(--surface)); color: var(--ink); }
+td.heat.h3 { background: color-mix(in srgb, var(--warn) 60%, var(--surface)); color: var(--ink); }

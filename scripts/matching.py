@@ -61,6 +61,7 @@ from pathlib import Path
 
 import ai_exposure
 import demand
+import evidence
 import outlook
 
 DATA = Path(__file__).resolve().parents[1] / "data"
@@ -79,6 +80,8 @@ DEFAULT_HOURS_PER_WEEK = 5        # study hours a week when the person gives non
 MIN_PATH_GAP = 0.5           # gaps smaller than this (O*NET level points) get no learning step
 MAX_PATH_STEPS = 14
 DETAIL_ITEMS = 12            # gaps, strengths and tools listed on an occupation's card
+ROUTE_REACH = 15.0           # match points below this occupation's at which a related one still counts as a route
+ROUTES_SHOWN = 3
 RIASEC = ("R", "I", "A", "S", "E", "C")
 STEADY = {"weight": 1.0, "status": "steady", "handoff": None, "builder": False, "measured": False}
 SCENARIOS = outlook.SCENARIOS
@@ -495,8 +498,34 @@ def score(profile: dict, occ: dict, data: dict, adoption: float, weights: dict, 
             "pathway": learning_path(skill, data, profile.get("hours_per_week", DEFAULT_HOURS_PER_WEEK)),
             "ai": occupation_ai(occ["occ_id"], data), "sdg": targets, "licence": found,
             "demand_detail": data["demand"]["occupations"].get(occ["occ_id"]),
+            "evidence": evidence.occupation_grade(occ, data),
         })
     return m
+
+
+def routes(occ_id: str, position: dict, data: dict) -> dict:
+    """Career option value: the related occupations (O*NET) that stay open from this one.
+
+    A route is open when the person is not flagged on education for it, it is not declining under
+    the scenario, and its match is no more than ROUTE_REACH points below this occupation's. The
+    count is a graph measure of how many next moves remain, not a promise of jobs."""
+    here = position.get(occ_id)
+    if here is None:
+        return {"related": 0, "open": 0, "routes": [], "reach_points": ROUTE_REACH}
+    mine = set(data["occ_techs"].get(occ_id, []))
+    found = []
+    for rid in data["related"].get(occ_id, []):
+        other = position.get(rid)
+        if other is None:
+            continue
+        shared = mine & set(data["occ_techs"].get(rid, []))
+        found.append({"occ_id": rid, "title": other["title"], "field_id": other["field_id"], "rank": other.get("rank"),
+                      "total": other["total"], "status": other["outlook"]["status"], "shared_tools": len(shared),
+                      "open": (not other["_parts"]["last"] and other["outlook"]["status"] != "declining"
+                               and other["total"] >= here["total"] - ROUTE_REACH)})
+    open_routes = sorted((r for r in found if r["open"]), key=lambda r: (-r["total"], r["title"]))
+    return {"related": len(found), "open": len(open_routes), "routes": open_routes[:ROUTES_SHOWN],
+            "reach_points": ROUTE_REACH}
 
 
 # --- learning path ----------------------------------------------------------------------------------
@@ -652,6 +681,7 @@ def match_person(profile: dict, data: dict | None = None, scenario: str | None =
         m = detailed(prepared, data, occ_id, adoption, fit)
         m["rank"] = position[occ_id]["rank"]
         m["stability"] = (sim["roles"].get(occ_id) if sim else None)
+        m["routes"] = routes(occ_id, position, data)
         results.append(m)
     by_field = {}
     for m in ranked:

@@ -207,6 +207,7 @@ PAGES.occ = async (args) => {
       <p class="src">${t("occ.skills.src")}</p>
     </section>
 
+    ${r.evidence ? `<section class="card stack">${evidenceLines(r.evidence)}</section>` : ""}
     <section class="card stack"><h2>${t("occ.sdg.h")}</h2>${r.sdg.map((s) =>
       `<div class="stack tight"><div class="row">${sdgChip(s.target)}<span class="strong small">${esc(sdgText(s.target))}</span></div><p class="small muted">${esc(s.rationale)}</p></div>`).join("") || `<p class="small muted">–</p>`}</section>
 
@@ -303,6 +304,7 @@ function detailHtml(m, sim) {
     ${ai.ai_tasks && ai.ai_tasks.length ? `<div class="grid two">
       <div class="stack tight"><h3>${t("occ.ai.h")}</h3><div>${ai.ai_tasks.map(taskRow).join("")}</div></div>
       <div class="stack tight"><h3>${t("occ.human.h")}</h3><div>${ai.human_tasks.map(taskRow).join("")}</div></div></div>` : ""}
+    <div class="grid two">${routeLines(m.routes)}${evidenceLines(m.evidence)}</div>
     ${m.licence ? `<p class="small">${t("lic.short", esc(m.licence.body))}</p>` : ""}
     ${m.sdg.length ? `<div class="stack tight"><h3>${t("occ.sdg.h")}</h3>${m.sdg.slice(0, 2).map((x) => `<p class="small">${sdgChip(x.target)} ${esc(x.rationale)}</p>`).join("")}</div>` : ""}
     <div class="row between"><a class="btn small" href="#/occ/${esc(m.occ_id)}">${t("match.occ")}</a>${jobLinks(m.search_title)}</div>
@@ -319,7 +321,7 @@ function matchCard(m, sim) {
     <span class="rank" aria-label="${t("match.rank", m.rank)}">${m.rank}</span>
     <div class="body stack tight">
       <div><h2><a href="#/occ/${esc(m.occ_id)}" style="color:inherit;text-decoration:none">${esc(m.title)}</a></h2><span class="small muted">${esc(fieldName(m.field_id))}</span></div>
-      <div class="tags">${statusChip(m.outlook.status)}${mycolChip(m.mycol)}${s ? `<span class="chip ai" title="${esc(t("match.stability.title", sim.futures))}">${t("match.stability", fmt(s.top3, 0))}</span>` : ""}${scenarioRanks(m)}${goals}
+      <div class="tags">${statusChip(m.outlook.status)}${mycolChip(m.mycol)}${s ? `<span class="chip ai" title="${esc(t("match.stability.title", sim.futures))}">${t("match.stability", fmt(s.top3, 0))}</span>` : ""}${scenarioRanks(m)}${evidenceChip(m.evidence && m.evidence.grade)}${goals}
         ${flags.map((f) => `<span class="chip ${f === "current_occupation" ? "brand" : "warn"}">${t("flag." + f)}</span>`).join("")}</div>
     </div>
     <div class="ring" style="--v:${m.total}" role="img" aria-label="${t("match.score", fmt(m.total))}"><span>${fmt(m.total)}<small>/ 100</small></span></div>
