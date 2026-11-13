@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="AI is changing work in every field. See which jobs and skills rise or decline in Malaysia under three futures, where you fit, and the free courses to get there.">
+<title>Future Skills</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230F6E66'/%3E%3Cpath d='M8 22l5.5-6.5 4 3L24 10' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='10' r='2.6' fill='white'/%3E%3C/svg%3E">
+<link href="/static/style.css" rel="stylesheet">
+<script>
+  /* the theme the person picked last time, before the page draws, so it never flashes */
+  try { var picked = localStorage.getItem("future-skills-theme"); if (picked === "light" || picked === "dark") document.documentElement.dataset.theme = picked; } catch (e) {}
+</script>
+</head>
+<body>
+<a class="skip" href="#app">Skip to content</a>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="#/" aria-label="Future Skills home">
+      <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><rect width="32" height="32" rx="9" fill="currentColor"/><path d="M8 22l5.5-6.5 4 3L24 10" stroke="var(--surface)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="10" r="2.6" fill="var(--surface)"/></svg>
+      <span>Future Skills</span>
+    </a>
+    <div class="top-tools">
+      <label class="visually-hidden" for="lang">Language / Bahasa / 语言</label>
+      <select id="lang" class="tool">
+        <option value="en" lang="en">English</option>
+        <option value="ms" lang="ms">Bahasa Melayu</option>
+        <option value="zh" lang="zh-Hans">中文</option>
+      </select>
+      <button type="button" class="tool" id="theme" aria-label="Dark mode"></button>
+    </div>
+  </div>
+  <nav class="steps" id="steps" aria-label="Steps"></nav>
+</header>
+<main tabindex="-1" id="app"></main>
+<footer class="foot" id="foot"></footer>
+<!-- languages first, then the core, then the pages; boot() draws the first one -->
+<script src="/static/i18n.js" defer></script>
+<script src="/static/quiz-i18n.js" defer></script>
+<script src="/static/app.js" defer></script>
+<script src="/static/you.js" defer></script>
+<script src="/static/explore.js" defer></script>
+<script src="/static/futures.js" defer></script>
+<script>window.addEventListener("DOMContentLoaded", () => boot());</script>
+</body>
+</html>
