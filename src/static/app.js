@@ -330,7 +330,8 @@ PAGES.home = async () => {
       <h1>${t("home.h1")}</h1>
       <p class="lead">${t("home.lead", counts, radar.fields.length)}</p>
       <div class="row">
-        <a class="btn primary" href="#/${started ? "matches" : "you"}">${t(started ? "home.continue" : "home.start")}</a>
+        <a class="btn primary" href="#/${started ? "matches" : "quick"}">${t(started ? "home.continue" : "home.quick")}</a>
+        ${started ? "" : `<a class="btn" href="#/you">${t("home.start")}</a>`}
         <a class="btn" href="#/radar">${t("home.radar")}</a>
       </div>
       <div class="tags"><span class="chip plain">${t("home.free")}</span><span class="chip plain">${t("home.nologin")}</span><span class="chip plain">${t("home.private")}</span><span class="chip plain">English · Bahasa Melayu · 中文</span></div>

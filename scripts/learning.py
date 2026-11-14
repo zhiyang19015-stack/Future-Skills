@@ -8,7 +8,10 @@ Stages:
                      by importance.
   3. Hands-on        training programmes in Malaysia for the practical skills a course online
                      cannot teach (skills certificates, site safety), when the occupation needs them
-  4. Licence         the body a regulated profession must register with in Malaysia
+  4. Employer-paid   courses an employer registered with HRD Corp can claim (format "claimable"),
+                     those that teach the most of this path's gaps first. They are paid, so they are
+                     never in the free plan, its hours or its count of free resources.
+  5. Licence         the body a regulated profession must register with in Malaysia
 
 The page adds up the SDG targets the path serves: the occupation's own targets and those of the
 skills on it (data/sdg_map.csv), each with its reason.
@@ -22,6 +25,9 @@ import outlook
 
 MAX_SKILLS = 10
 MAX_PER_SKILL = 2
+MAX_CLAIMABLE = 3
+MIN_CLAIMABLE_POINTS = 4
+TOP_ELEMENTS = 8           # the occupation's most important skills and knowledge a course may match
 
 
 def free_for(target: str, data: dict) -> list[dict]:
@@ -36,6 +42,27 @@ def programmes_for(targets: list[str], data: dict) -> list[dict]:
             if r["format"] == "programme":
                 seen.setdefault(r["url"], matching.resource_item(r))
     return list(seen.values())
+
+
+def claimable_for(gap_targets: list[str], other_targets: list[str], data: dict) -> list[dict]:
+    """HRD Corp-claimable courses for this path: 2 points for each of the path's gaps a course
+    teaches, 1 for each of the occupation's most important skills and tools, 3 for its field, 1 for
+    every job ("all"). A course needs MIN_CLAIMABLE_POINTS, so one shared general skill is not enough."""
+    found = {}
+    field = [t for t in other_targets if t.startswith("field:")]
+    rest = [t for t in other_targets if not t.startswith("field:")]
+    for points, targets in ((2, gap_targets), (1, rest), (3, field)):
+        for t in dict.fromkeys(targets):
+            for r in data["by_target"].get(t, []):
+                if r["format"] == "claimable":
+                    entry = found.setdefault(r["url"], {"points": 0, "row": r, "teaches": []})
+                    entry["points"] += points
+                    if points == 2:
+                        entry["teaches"].append(t)
+    ranked = sorted((e for e in found.values() if e["points"] >= MIN_CLAIMABLE_POINTS),
+                    key=lambda e: (-e["points"], e["row"]["resource_id"]))
+    return [{**matching.resource_item(e["row"]), "points": e["points"], "teaches_gaps": len(e["teaches"])}
+            for e in ranked[:MAX_CLAIMABLE]]
 
 
 GAP_KEYS = ("skill_id", "skill_name", "kind", "your_level", "level_needed", "rated", "ai")
@@ -136,6 +163,12 @@ def page(occ_id: str, data: dict | None = None, match: dict | None = None, hours
     foundations = list({r["url"]: r for t in (field_target, "all") for r in free_for(t, data)}.values())
     skills, not_shown = skill_rows(occ, data, match)
     hands_on = programmes_for([f"element:{e[0]}" for e in data["occ_elements"].get(occ_id, [])] + [field_target], data)
+    top = sorted(data["occ_elements"].get(occ_id, []), key=lambda e: e[1], reverse=True)[:TOP_ELEMENTS]
+    occupation_targets = [f"element:{e[0]}" for e in top]
+    occupation_targets += [f"tech:{t}" for t in data["occ_techs"].get(occ_id, [])] + [field_target, "all"]
+    important = set(occupation_targets)
+    gap_targets = [target_of(s) for s in skills if target_of(s) in important or s["kind"] == "technology"]
+    claimable = claimable_for(gap_targets, occupation_targets, data)
     total, untimed = study_hours(foundations + [r for s in skills for r in s["resources"]])
     return {
         "role": {"role_id": occ_id, "occ_id": occ_id, "name": occ["title"], "field_id": occ["field_id"],
@@ -147,6 +180,7 @@ def page(occ_id: str, data: dict | None = None, match: dict | None = None, hours
         "skills": skills,
         "skills_not_shown": not_shown,
         "hands_on": hands_on,
+        "claimable": claimable,
         "licence": matching.licence(occ, data),
         "sdg": sdg_summary(occ, skills, data, total),
         "total_hours": total,

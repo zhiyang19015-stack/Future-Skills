@@ -524,6 +524,7 @@ PAGES.pathway = async (args) => {
       <div class="row">${dotName({ ...s.ai, skill_name: s.skill_name })}${s.your_level !== undefined && s.kind !== "technology" ? `<span class="small muted">${t("path.level", fmt(s.your_level), fmt(s.level_needed))}</span>` : ""}${(s.sdg || []).slice(0, 2).map((x) => sdgChip(x.target)).join("")}</div>
       ${s.resources.length ? s.resources.map((r) => resourceRow(r, occId)).join("") : `<p class="small muted">${t("path.nocourse")}</p>`}</div>`).join("");
   const handsOn = L.hands_on.map((r) => `<p class="small"><a href="${safeUrl(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a> · ${esc(r.provider)}<br><span class="muted">${esc(r.notes)}</span></p>`).join("");
+  const claimable = (L.claimable || []).map((r) => `<p class="small"><a href="${safeUrl(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a> · ${esc(r.provider)} · <b>${r.cost_myr ? `RM ${fmt(r.cost_myr, 0)}` : t("path.quote")}</b>${r.teaches_gaps ? ` · ${t("path.hrd.gaps", r.teaches_gaps)}` : ""}<br><span class="muted">${esc(r.notes)} · ${t("path.checked", dateText(r.verified_date))}</span></p>`).join("");
   return `<div class="stack loose">
     <header class="stack tight"><p class="eyebrow">${t("step", 4)} · ${t("nav.pathway")}</p><h1>${t("path.h1", esc(L.role.name))}</h1>
       <p class="lead">${t(L.personal && hasProfile() ? "path.lead.personal" : "path.lead.role")}</p></header>
@@ -546,6 +547,7 @@ PAGES.pathway = async (args) => {
     ${stage(t("path.s1", esc(fieldName(L.role.field_id))), L.stages[0].resources.map((r) => resourceRow(r, occId)).join(""))}
     ${stage(t("path.s2"), skills, t("path.s2.p") + (L.skills_not_shown ? ` ${t("path.s2.more", L.skills_not_shown)}` : ""))}
     ${stage(t("path.s3"), handsOn, t("path.s3.p"))}
+    ${stage(t("path.hrd"), claimable, t("path.hrd.p"))}
     <div class="row"><a class="btn primary" href="#/sdg">${t("path.sdg")} →</a><a class="btn" href="#/matches">${t("nav.matches")}</a>${jobLinks(L.role.search_title)}</div>
     <p class="src">${t("path.src")}</p>
   </div>`;

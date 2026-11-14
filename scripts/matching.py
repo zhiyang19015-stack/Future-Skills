@@ -558,12 +558,15 @@ def routes(occ_id: str, position: dict, data: dict) -> dict:
 # --- learning path ----------------------------------------------------------------------------------
 
 def is_free(r: dict) -> bool:
+    if r.get("format") == "claimable":  # paid; an employer may claim it from HRD Corp
+        return False
     return not r.get("cost_myr") or number(r["cost_myr"]) == 0
 
 
 def resource_item(r: dict) -> dict:
     return {"id": r["resource_id"], "title": r["title"], "provider": r["provider"], "format": r["format"] or "course",
             "url": r["url"], "hours": number(r["duration_hours"]), "cost_myr": number(r["cost_myr"]),
+            "fee_on_request": r["cost_myr"] == "quote",
             "level": r["level"], "language": r["language"], "verified_date": r["verified_date"], "notes": r["notes"]}
 
 

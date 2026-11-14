@@ -15,7 +15,7 @@ DATA = ROOT / "data"
 DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 SOURCED = ("fields.csv", "occupations.csv", "elements.csv", "technologies.csv", "mycol_map.csv", "sdg_map.csv",
            "skill_topic_map.csv", "learning_resources.csv", "onet/skill_work_activities.csv", "cost_inputs.csv")
-RESOURCE_FORMATS = {"course", "catalogue", "programme", "video"}
+RESOURCE_FORMATS = {"course", "catalogue", "programme", "video", "claimable"}
 SDG_TARGET = re.compile(r"^(1[0-7]|[1-9])\.([0-9]{1,2}|[a-g])$")
 
 
@@ -101,6 +101,10 @@ def check() -> list[str]:
         need(r["url"] not in seen_urls, f"learning_resources line {i}: the same url twice")
         seen_urls.add(r["url"])
         need(r["format"] in RESOURCE_FORMATS, f"learning_resources line {i}: format {r['format']}")
+        if r["format"] == "claimable":  # paid, the employer claims it from HRD Corp: never counted as free
+            need(r["cost_myr"] == "quote" or (number(r["cost_myr"], 1, 100000)),
+                 f"learning_resources line {i}: a claimable course needs a fee or 'quote'")
+            need("HRD" in r["notes"], f"learning_resources line {i}: say where the page states it is HRD Corp claimable")
         need(DATE.match(r["verified_date"]) is not None, f"learning_resources line {i}: verified_date")
         need(r["duration_hours"] == "" or number(r["duration_hours"], 0.1, 500), f"learning_resources line {i}: hours")
 

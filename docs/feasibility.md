@@ -44,6 +44,8 @@ This is a plan, not something that has happened.
 
 ## How we would know it works
 
+The Phase 1 KPIs against their baseline, worked out by code, are in [impact_verification.md](impact_verification.md): pathway coverage is past its 40% target; career clarity still needs the pilot below.
+
 Computed now from the repository ([kpi_report.md](kpi_report.md)); these are the baseline and must not fall:
 
 | KPI | Now | Level to keep |
