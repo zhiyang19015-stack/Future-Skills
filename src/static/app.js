@@ -352,7 +352,7 @@ PAGES.home = async () => {
 
     <section class="card stack">
       <div><h2>${t("home.team.h")}</h2><p class="muted small">${t("home.team.p")}</p></div>
-      <div class="row"><a class="btn small" href="#/team">${t("home.team.go")} →</a></div>
+      <div class="row"><a class="btn small" href="#/team">${t("home.team.go")} →</a><a class="btn small" href="#/pilot">${t("home.pilot.go")} →</a></div>
     </section>
 
     <section class="stack">

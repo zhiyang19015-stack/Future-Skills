@@ -37,8 +37,8 @@ This is a plan, not something that has happened.
 
 - **Size:** one career centre, 200 students in 5 workshops of 40, over 8 weeks.
 - **What a student does:** the six steps once in the workshop (about 10 minutes), then follows the learning path on their own.
-- **What the officer does:** opens the Team view for the class at the start and the end.
-- **Consent and privacy:** the app stores no names, CVs or answers on the server; a student's answers stay in their browser. The only thing counted is the anonymous path tally (a random id, an occupation and hours). The two questions below are asked on paper or a form the centre owns, with consent, and no names.
+- **What the officer does:** opens a workshop check (the app's `#/pilot` page) and puts its code on the screen; opens the Team view for the class at the start and the end.
+- **Consent and privacy:** the app stores no names, CVs or answers on the server; a student's answers stay in their browser. The only thing counted is the anonymous path tally (a random id, an occupation and hours). The clarity question below is asked inside the app by the workshop check: three picks from lists (an occupation, a skill, a free course) or "not sure yet", before and after, sent with a random browser id and the session code. No name and no typed text; only the officer's key opens the counts, and a session is deleted after 180 days.
 - **Cost:** about RM 50 a month of hosting for two months.
 - **We stop or change course if** fewer than half of the students finish the six steps in the workshop, or the officer finds the Team view does not help plan a session.
 
@@ -60,7 +60,7 @@ To be measured in the pilot; none has a value yet:
 | KPI | Baseline | Target | How it is measured |
 |---|---|---|---|
 | Finishes the six steps in one sitting | not measured | 80% of students | Counted by the officer in the workshop |
-| Can name a target occupation, its biggest skill gap and a first course | asked before the workshop | 70% after it | The same three questions on a form, before and after; answers counted as given, every response kept |
+| Can name a target occupation, its biggest skill gap and a first course | asked before the workshop | 70% after it | The workshop check in the app (`scripts/pilot.py`): the same three questions before and after, answers counted as given, every response kept and exportable. A second reading says how many answers also agree with the data. Fewer than 20 people who answered both times is shown as counts, never as a rate |
 | Starts the learning path | 0 | 40% tick at least one resource within 8 weeks | The anonymous path tally on the SDG page |
 | Hours of free study towards SDG 4.3, 4.4 and 8.5 | 0 | reported as counted, no target set | The same tally: planned and done hours per target |
 
@@ -77,7 +77,7 @@ An earlier version of this project reported a result from 20 testers. The respon
 
 ## Before real use
 
-- A hosted version needs a privacy notice, HTTPS, access control for the Team view and a retention period for server logs (PDPA 2010). The prototype has none because it stores no personal data.
+- A hosted version needs a privacy notice, HTTPS, access control for the Team view and a retention period for server logs (PDPA 2010). The prototype has none because it stores no personal data. The workshop check already has both of its own: results open only with the officer's key, and a session is deleted after 180 days.
 - The app is for exploring careers and planning training. It must not be used to hire, dismiss or promote anyone.
 - Every outlook is an estimate under a scenario the person picks. Two months of AI-usage data cannot be back-tested, so nothing is presented as a validated forecast.
 

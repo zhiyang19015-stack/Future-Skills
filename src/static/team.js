@@ -81,6 +81,6 @@ PAGES.team = async () => {
       ${v.sdg.map((s) => `<p class="small">${sdgChip(s.target)} <span class="strong">${t("team.sdg.row", s.people, fmt(s.person_hours, 0))}</span> ${esc(s.rationale)}</p>`).join("")}
     </section>` : ""}
     <p class="src">${t("team.method")} ${esc(b.note)}</p>
-    <div class="row"><a class="btn" href="#/radar">${t("nav.radar")}</a><a class="btn" href="#/sources">${t("nav.sources")}</a></div>
+    <div class="row"><a class="btn" href="#/pilot">${t("home.pilot.go")}</a><a class="btn" href="#/radar">${t("nav.radar")}</a><a class="btn" href="#/sources">${t("nav.sources")}</a></div>
   </div>`;
 };

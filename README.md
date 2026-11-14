@@ -66,6 +66,8 @@ Six steps, plus a Team view and a Sources page:
 
 **Team** (for HR and career centres) — a team as job titles and headcounts, never names. For each job: the AI share of its tasks, its outlook under all three scenarios and its evidence grade. For each job declining under the scenario: the best-matching adjacent occupation that is not declining, with its free courses; where none qualifies the page says so and points at the tasks that stay with people. Then a skill-gap heatmap, who to train together, person-hours and course fees, and the UN targets served. The demo team is fictional.
 
+**Workshop check** (for the officer running a session) — measures whether the app does its job instead of claiming it. The officer opens a session and gets a six-character code for the room and a private key. Each participant answers the same three questions before using the app and again after: a target occupation, the skill to build for it, a first free course, each a pick from a list or "not sure yet" (no name, no typed text). The officer sees counts only: how many could name all three before and after, how many of those answers also agree with the data, and every response as a CSV. Fewer than 20 people who answered both times is shown as counts, never as a rate; a session is deleted after 180 days.
+
 Everywhere: light and dark, built for a phone and slow mobile data (no images, no web fonts, gzip and ETags), no login, and your answers stay in your browser.
 
 ## Tech Stack
@@ -111,6 +113,7 @@ Everywhere: light and dark, built for a phone and slow mobile data (no images, n
 │   ├── skillcheck.py, interest.py, cv_reader.py, explain.py, learning.py, impact.py
 │   ├── evidence.py                # Evidence grade of every occupation's numbers (A, B, C)
 │   ├── team.py                    # The team view: the same matching over a team's jobs
+│   ├── pilot.py                   # The workshop check: three questions before and after, counts for the officer
 │   ├── scenario_report.py         # What the scenarios change for each demo person, and why
 │   ├── whatif.py                  # Simulated AI news and changed numbers, run on a copy
 │   ├── releases.py                # Reports a newer Economic Index release
@@ -179,6 +182,7 @@ All JSON; `GET /api` lists every endpoint.
 | GET / POST | `/api/whatif` | What can be changed and the simulated news / run one on a copy, before and after |
 | GET / POST | `/api/sdg/summary`, `/api/sdg/record` | The anonymous SDG total / one browser's path hours |
 | GET / POST | `/api/team?scenario=` | The fictional team, or your own `{"members": [{"occ_id", "headcount"}], "hours_per_week"}`: jobs, moves, skill-gap heatmap, training groups, hours, SDG targets. Not stored |
+| GET / POST | `/api/pilot/options`, `/api/pilot/session`, `/api/pilot/session/<code>`, `/api/pilot/answer`, `/api/pilot/summary` | The workshop check: the pick lists / open a session (code and key) / is the code open / one participant's three picks for `before` or `after` / the session's counts and every response, for `{"code", "key"}` |
 | GET | `/api/sources`, `/api/scenarios`, `/api/explain/status`, `/api/health` | Sources and constants, scenarios, whether an LLM is set up |
 | GET / POST | `/api/update` | Status of / start "Update data" |
 
@@ -209,7 +213,7 @@ The scenario report ([docs/scenario_report.md](docs/scenario_report.md)) is a re
 ## Responsible Use
 
 - **What it is for:** exploring careers and planning training. It makes no hiring, firing or promotion decision and is not built to support one; the person, or the officer with the person, decides.
-- **Data kept:** none about a person on the server. Answers stay in the browser's local storage and are removed with "Clear my answers". A CV is read for one request and not stored; a PDF is read in the browser. A team is job titles and headcounts, used for one request. The only thing saved is the anonymous SDG total: a random browser id, an occupation id and hours.
+- **Data kept:** none about a person on the server. Answers stay in the browser's local storage and are removed with "Clear my answers". A CV is read for one request and not stored; a PDF is read in the browser. A team is job titles and headcounts, used for one request. The only things saved are the anonymous SDG total (a random browser id, an occupation id and hours) and, when someone joins a workshop check, their three picks before and after under the same random id and the session code, deleted 180 days after the session was opened.
 - **Data not asked for:** name, IC number, age, gender, ethnicity, religion, address. The matching has no input for them, and `scripts/fairness_check.py` shows the same CV gives the same recommendations when they appear in it. It tests what a CV's wording can leak, not every source of bias: the O*NET, MyCOL and usage data can carry their own.
 - **Before real use under the PDPA 2010:** a hosted deployment would need a privacy notice, HTTPS, access control for the Team view, and a retention period for server logs. This prototype has none of these because it stores no personal data and the demo uses fictional people only.
 - **Estimates:** every outlook is read under a named scenario to 2030 with its range and evidence grade. Two months of AI-usage data cannot be back-tested, so the outlook is exploratory, not a validated forecast.

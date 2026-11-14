@@ -116,7 +116,8 @@ def as_markdown(r: dict) -> str:
         f"{c['elements_covered']} of {c['elements']} O*NET skills and knowledge areas ({element_share:g}%) | {met} |",
         f"| 1. Career clarity: testers who can name a target role, its top missing skills and a next course | "
         f"asked before the session | {p['clarity_target']:g}% of {p['clarity_testers']}+ testers | not measured with "
-        "people in this version | open: needs the pilot in [feasibility.md](feasibility.md) |", "",
+        "people yet; the app now measures it itself (the workshop check, `scripts/pilot.py`: the same three questions "
+        "before and after, every response kept) | open: needs the pilot in [feasibility.md](feasibility.md) |", "",
         "The unit of KPI 2 changed with the rewrite: Phase 1 counted 186 skills of our own list for 25 IT roles; this "
         "version uses O*NET's skills and knowledge areas, weighted by how important each is to the occupation. Both "
         "count a skill only when a free resource for it has a link we opened and dated.", "",

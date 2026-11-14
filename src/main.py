@@ -20,7 +20,9 @@ The six steps of the app and the endpoints behind them:
                 GET  /api/whatif, POST /api/whatif                      simulated news and changed numbers
     Team        GET  /api/team?scenario=   the fictional team through the same engine: jobs, moves,
                 POST /api/team             skill-gap heatmap, training groups, hours, SDG (or your own team)
-    Sources     GET  /api/sources          every source, its dates and licence; the model's constants
+    Pilot       POST /api/pilot/session, /api/pilot/answer, /api/pilot/summary    the clarity check: three
+                GET  /api/pilot/options, /api/pilot/session/<code>        questions before and after
+    Sources     GET  /api/sources         every source, its dates and licence; the model's constants
                 POST /api/update           start "Update data"; GET for its status
 
 A profile (the body of /api/match, /api/explain, /api/learn, /api/futures, /api/whatif) has any of:
@@ -73,6 +75,7 @@ import learning  # noqa: E402
 import matching  # noqa: E402
 import missions  # noqa: E402
 import outlook  # noqa: E402
+import pilot  # noqa: E402
 import registry  # noqa: E402
 import releases  # noqa: E402
 import skillcheck  # noqa: E402
@@ -928,6 +931,45 @@ def missions_for(req):
         return reply(missions.for_occupation(body.get("occ_id"), profile, data, profile.get("missions_done")))
     except missions.MissionError as error:
         raise Refused(str(error)) from None
+
+
+# --- the clarity check: KPI 1 measured in a workshop, before and after (scripts/pilot.py) ---------------
+
+def pilot_call(function, *args):
+    try:
+        return reply(function(*args))
+    except pilot.PilotError as error:
+        raise Refused(str(error)) from None
+
+
+@route("GET", "/api/pilot/options")
+def pilot_options(req):
+    return reply(pilot.options())
+
+
+@route("POST", "/api/pilot/session")
+def pilot_session(req):
+    """Open a session: returns its code and, once, the key that opens its results."""
+    return pilot_call(pilot.open_session)
+
+
+@route("GET", "/api/pilot/session/<code>")
+def pilot_exists(req, code):
+    return pilot_call(pilot.exists, code)
+
+
+@route("POST", "/api/pilot/answer")
+def pilot_answer(req):
+    body = req.json()
+    return pilot_call(pilot.answer, body.get("code"), body.get("learner"), body.get("phase"),
+                      body.get("occ_id"), body.get("gap_id"), body.get("resource_id"))
+
+
+@route("POST", "/api/pilot/summary")
+def pilot_summary(req):
+    """A session's results. The key travels in the body, never in the address."""
+    body = req.json()
+    return pilot_call(pilot.summary, body.get("code"), body.get("key"))
 
 
 @route("GET", "/api/metrics")
