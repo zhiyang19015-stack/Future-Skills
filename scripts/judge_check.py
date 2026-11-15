@@ -6,7 +6,9 @@ calls the same JSON API the web page calls (main.dispatch), so it checks what a 
     1 Blank profile     nothing filled in: what does /api/match return?
     2 Scenarios         the 5 demo people under slow, moderate and fast adoption: does the first
                         move (the job they do now is not a move) change, how many of the top 5
-                        change, the largest change in a match score
+                        change, the largest change in a match score; and does each person's
+                        Matches and Futures page name a robust choice and give a "why" for every
+                        scenario-dependent one
     3 Changed data      every simulated headline for every demo person: the ranking, the outlook
                         of the job they do now and the learning path, before and after
     4 Radar             of the first 15 "rising" occupations, how many have an AI share the
@@ -49,6 +51,7 @@ import ilo  # noqa: E402
 import main  # noqa: E402
 import matching  # noqa: E402
 import outlook  # noqa: E402
+import robust  # noqa: E402
 
 DOCS = ROOT / "docs"
 REPORT, RESULT, BASELINE = DOCS / "judge_check.md", DOCS / "judge_check.json", DOCS / "judge_check_baseline.json"
@@ -85,6 +88,26 @@ def blank_profile() -> dict:
 
 # --- 2 scenarios ------------------------------------------------------------------------------------
 
+WHY_NUMBERS = {"share_low": ("ai_share", "ai_share_reference", "outlook_move"),
+               "share_high": ("ai_share", "ai_share_reference", "outlook_move"),
+               "builder": ("builder", "builder_reference", "outlook_move"),
+               "skills_up": ("skill_move",), "skills_down": ("skill_move",), "others": ("total_move",)}
+
+
+def has_why(item: dict) -> bool:
+    """A scenario-dependent choice has a "why" when its reason is a known one and carries its numbers."""
+    w = item.get("why") or {}
+    return w.get("code") in robust.REASONS and all(w.get(k) is not None for k in WHY_NUMBERS[w["code"]])
+
+
+def robust_page(body: dict) -> dict:
+    r = body.get("robust") or {}
+    dep = r.get("dependent") or []
+    return {"robust": [x["title"] for x in r.get("robust") or []], "dependent": len(dep),
+            "with_why": sum(1 for x in dep if has_why(x)),
+            "ok": bool(r.get("robust")) and all(has_why(x) for x in dep) and bool((r.get("rules") or {}).get("estimate"))}
+
+
 def scenarios() -> dict:
     names = list(outlook.SCENARIOS)
     slow, fast = names[0], names[-1]
@@ -97,6 +120,7 @@ def scenarios() -> dict:
         new_in_fast = [o for o in ids[fast] if o not in ids[slow]]
         _, matched = call("POST", "/api/match", {"profile_id": p["profile_id"]})
         verdict = matched.get("verdict") or {}
+        pages = {"matches": robust_page(matched), "futures": robust_page(body)}
         rows.append({"profile_id": p["profile_id"], "name": p["name"], "kind": p.get("kind", "student"),
                      "first": first, "first_changed": first[slow] != first[fast],
                      "first_changed_any": len(set(first.values())) > 1,
@@ -106,12 +130,14 @@ def scenarios() -> dict:
                      "max_score_move": max((abs(m["total_move"]) for m in body["moves"]), default=0.0),
                      "first_score_move": next((m["total_move"] for m in body["moves"]
                                                if cols[slow] and m["occ_id"] == cols[slow][0]["occ_id"]), None),
-                     "verdict": verdict.get("kind")})
+                     "verdict": verdict.get("kind"), "robust": pages,
+                     "robust_ok": all(x["ok"] for x in pages.values())})
     return {"slow": slow, "fast": fast, "people": rows,
             "first_move_changed": sum(r["first_changed"] for r in rows),
             "top5_changed": sum(r["top5_changed"] for r in rows),
             "top5_set_changed": sum(1 for r in rows if r["top5_new_in_fast"]),
             "max_score_move": max((r["max_score_move"] for r in rows), default=0.0),
+            "robust_ok": sum(r["robust_ok"] for r in rows),
             # the top 5 counts as changed when another occupation enters it, not when two swap places
             "pass": sum(r["first_changed"] for r in rows) >= TARGETS["first_move_changed"]
             and sum(1 for r in rows if r["top5_new_in_fast"]) >= TARGETS["top5_changed"]}
@@ -282,6 +308,8 @@ def headline(r: dict) -> dict:
         "2. Largest move of a first move's score (points)": max((abs(x["first_score_move"] or 0) for x in s["people"]),
                                                                default=0.0),
         "2. Largest match-score move (points)": s["max_score_move"],
+        "2. Pages naming a robust choice and a why for every scenario-dependent one (of 5)":
+            s.get("robust_ok", "not checked"),
         f"3. Headline runs whose top 5 changed (of {n['runs']})": n["top5_changed"],
         f"3. Headline runs whose first move changed (of {n['runs']})": n["first_changed"],
         f"3. Own-job outlook moved 1 point or more (of {n['own_job_runs']} runs with a job)": n["own_job_moved"],
@@ -297,6 +325,14 @@ def headline(r: dict) -> dict:
         "7. Public URL": r["public"]["detail"] if not r["public"]["url"] else
         f"{r['public']['url']} ({r['public']['detail']})",
     }
+
+
+def robust_cell(x: dict) -> str:
+    if "robust" not in x:
+        return "not checked"
+    f = x["robust"]["futures"]
+    both = "both pages" if x["robust_ok"] else "missing on a page"
+    return (f"{'; '.join(f['robust']) or 'none'}; {f['dependent']} ({f['with_why']} with why), {both}")
 
 
 def mark(ok) -> str:
@@ -339,16 +375,21 @@ def as_markdown(r: dict, base: dict | None) -> str:
             f"First move = the first occupation in the person's list that is not the job they do now. "
             f"Compared: {s['slow']} against {s['fast']} adoption.", "",
             "| Person | First move: slow / moderate / fast | First move differs | First move's score move "
-            "| Top 5: new occupations under fast | Top 5 order differs | Largest score move in top 5 | Page verdict |",
-            "|---|---|---|---|---|---|---|---|"]
+            "| Top 5: new occupations under fast | Top 5 order differs | Largest score move in top 5 | Page verdict "
+            "| Robust choice; depends on scenario (with why) |",
+            "|---|---|---|---|---|---|---|---|---|"]
     for x in s["people"]:
         out += [f"| {x['name']} ({x['kind']}) | {' / '.join(x['first'].values())} | {'yes' if x['first_changed'] else 'no'} "
                 f"| {'—' if x['first_score_move'] is None else format(x['first_score_move'], '+g')} "
                 f"| {x['top5_new_in_fast']} | {'yes' if x['top5_order_changed'] else 'no'} | {x['max_score_move']:g} "
-                f"| {x['verdict']} |"]
+                f"| {x['verdict']} | {robust_cell(x)} |"]
     out += ["", f"First move differs for {s['first_move_changed']} of 5; another occupation enters the top 5 for "
             f"{s['top5_set_changed']} of 5 (set or order differs for {s['top5_changed']}); the largest move of any "
-            f"match score in a top 5 is {s['max_score_move']:g} points.", ""]
+            f"match score in a top 5 is {s['max_score_move']:g} points."
+            + (f" Matches and Futures name a robust choice and give a why for every scenario-dependent one for "
+               f"{s['robust_ok']} of 5 (robust = in the top {robust.ROBUST_TOP} under all three; depends = in the "
+               f"top {robust.TOP} under only some, or moves {robust.RANK_SWING} places or more)."
+               if "robust_ok" in s else ""), ""]
     for x in s["people"]:
         out += [f"- **{x['name']}** top 5, {s['slow']}: " + "; ".join(x["top5"][s["slow"]]),
                 f"  {s['fast']}: " + "; ".join(x["top5"][s["fast"]])]

@@ -78,6 +78,7 @@ import outlook  # noqa: E402
 import pilot  # noqa: E402
 import registry  # noqa: E402
 import releases  # noqa: E402
+import robust  # noqa: E402
 import skillcheck  # noqa: E402
 import stress_test  # noqa: E402
 import team  # noqa: E402
@@ -588,12 +589,17 @@ def listed(m: dict) -> bool:
 VERDICT_TOP = 3               # how far down the list the scenarios are compared for the one-line verdict
 
 
-def scenario_ranks(profile: dict, data: dict, wanted: set) -> tuple[dict, dict, dict]:
+def scenario_orders(profile: dict, data: dict) -> dict:
+    """The person's listed moves under every named scenario, best first (slow to fast)."""
+    return {name: [m for m in matching.rank(profile, data, scenario=name) if listed(m)] for name in outlook.SCENARIOS}
+
+
+def scenario_ranks(profile: dict, data: dict, wanted: set, orders: dict | None = None) -> tuple[dict, dict, dict]:
     """Rank and total of the wanted occupations under every named scenario, among the listed ones,
     and the first VERDICT_TOP of each scenario's list."""
     ranks, totals, tops = {}, {}, {}
-    for name in outlook.SCENARIOS:
-        order = [m for m in matching.rank(profile, data, scenario=name) if listed(m)]
+    orders = orders or scenario_orders(profile, data)
+    for name, order in orders.items():
         tops[name] = [{"occ_id": m["occ_id"], "title": m["title"], "total": m["total"],
                        "ai_share": m["outlook"]["ai_share"]} for m in order[:VERDICT_TOP]]
         for i, m in enumerate(order):
@@ -633,7 +639,8 @@ def match(req):
     if profile.get("current_occupation"):
         include.append(profile["current_occupation"])
     result = matching.match_person(profile, data, scenario=scenario, adoption=adoption, top=top, include=include)
-    ranks, totals, tops = scenario_ranks(profile, data, {m["occ_id"] for m in result["results"]})
+    orders = scenario_orders(profile, data)
+    ranks, totals, tops = scenario_ranks(profile, data, {m["occ_id"] for m in result["results"]}, orders)
     for m in result["results"]:
         m["scenario_ranks"], m["scenario_totals"] = ranks.get(m["occ_id"]), totals.get(m["occ_id"])
     current = next((m for m in result["results"] if "current_occupation" in m["flags"]), None)
@@ -648,7 +655,7 @@ def match(req):
                  horizon_year=outlook.HORIZON_YEAR, scenario=scenario_info(scenario, adoption),
                  scenarios=scenario_list(), trend_data=data_version(data, changes), sdg_bonus=matching.SDG_BONUS,
                  sdg_goals=matching.sdg_goal_options(data), current=current, reference=data["ai"]["reference"],
-                 verdict=scenario_verdict(tops, data["ai"]["reference"]))
+                 verdict=scenario_verdict(tops, data["ai"]["reference"]), robust=robust.classify(orders))
 
 
 def one_match(body: dict, with_stability: bool = False):
@@ -773,8 +780,9 @@ def futures(req):
     result = matching.match_person(profile, data, scenario=outlook.DEFAULT_SCENARIO, top=top)
     stability = {m["occ_id"]: m["stability"] for m in result["results"]}
     columns, ranks, totals, detail = [], {}, {}, {}
+    orders = scenario_orders(profile, data)
     for name, s in outlook.SCENARIOS.items():
-        ranked = [m for m in matching.rank(profile, data, scenario=name) if listed(m)]
+        ranked = orders[name]
         for i, m in enumerate(ranked):
             ranks.setdefault(m["occ_id"], {})[name] = i + 1
             totals.setdefault(m["occ_id"], {})[name] = m["total"]
@@ -797,7 +805,7 @@ def futures(req):
     return reply(scenarios=columns, moves=moves, horizon_year=outlook.HORIZON_YEAR, top_changes=len(set(tops)) > 1,
                  top3_changes=len({tuple(m["occ_id"] for m in c["top"][:3]) for c in columns}) > 1,
                  simulation=result["simulation"], trend_data=data_version(data, changes),
-                 parameters=outlook.parameters())
+                 parameters=outlook.parameters(), robust=robust.classify(orders))
 
 
 @route("GET", "/api/whatif")
