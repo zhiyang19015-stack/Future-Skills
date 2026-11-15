@@ -147,6 +147,35 @@ function scenarioControl(info, scenarios) {
   </section>`;
 }
 
+/* Robust and scenario-dependent choices (/api/match and /api/futures, "robust"): which occupations
+   hold under all three named scenarios, which ones only make the list under some, and why. Every
+   number comes from the API; this only puts it into words. Shared by Matches and Futures. */
+function robustWhy(w) {
+  const k = w.code;
+  let s;
+  if (k === "share_low" || k === "share_high") s = t("rb.why." + k, fmt(w.ai_share, 0), fmt(w.ai_share_reference, 0), signed(w.outlook_move), signed(w.total_move));
+  else if (k === "builder") s = t("rb.why.builder", fmt(w.builder, 0), fmt(w.builder_reference, 0), signed(w.outlook_move), signed(w.total_move));
+  else if (k === "skills_up" || k === "skills_down") s = t("rb.why." + k, signed(w.skill_move), signed(w.total_move));
+  else s = w.crossed ? t("rb.why.others", signed(w.total_move), esc(w.crossed.title), signed(w.crossed.total_move), fmt(w.crossed.ai_share, 0))
+    : t("rb.why.others.none", signed(w.total_move));
+  return w.thin && (k === "share_low" || k === "share_high") ? `${s}${LANG === "zh" ? "" : " "}${t("rb.thin")}` : s;
+}
+function robustCard(r) {
+  if (!r || !r.scenarios || r.scenarios.length < 2) return "";
+  const q = r.rules;
+  const names = (ids) => ids.map((id) => t("scn." + id + ".short").toLowerCase()).join(t("rb.or"));
+  const robust = r.robust.map((x) => `<li><span class="strong">${occLink(x.occ_id, x.title)}</span>
+      <div class="small muted">${x.kind === "first" ? (x.lead === null ? t("rb.first.nolead") : t("rb.first", fmt(x.lead))) : t("rb.top3", q.robust_top, x.ranks[r.slow], x.ranks.moderate ?? "–", x.ranks[r.fast], fmt(x.score_move))}</div></li>`).join("");
+  const dep = r.dependent.map((x) => `<li><span class="strong">${occLink(x.occ_id, x.title)}</span>
+      <div class="small">${x.kind === "enters" ? t("rb.when.enters", q.top, names(x.in_top), x.ranks[r.slow], x.ranks[r.fast]) : t("rb.when.moves", q.top, x.ranks[r.slow], x.ranks[r.fast])}</div>
+      <div class="small muted">${robustWhy(x.why)}</div></li>`).join("");
+  return `<section class="card stack robust" id="robust"><div class="row between"><h2>${t("rb.h")}</h2><span class="chip warn">${t("scn.estimate")}</span></div>
+    <p class="small muted">${t("rb.p", q.robust_top, q.top, q.rank_swing)}</p>
+    <div class="grid two"><div class="stack tight"><h3>${t("rb.robust.h")}</h3>${robust ? `<ul class="plainlist stack tight">${robust}</ul>` : `<p class="small">${t("rb.robust.none", q.robust_top)}</p>`}</div>
+      <div class="stack tight"><h3>${t("rb.dep.h")}</h3>${dep ? `<ul class="plainlist stack tight">${dep}</ul>` : `<p class="small muted">${t("rb.dep.none", q.top)}</p>`}</div></div>
+    <p class="src">${t("scn.estimate.long")}</p></section>`;
+}
+
 /* Job-search links: the government job portal and the two biggest job sites in Malaysia, searched
    with the occupation's common title (each opens a search without signing in). */
 function jobLinks(searchTitle) {

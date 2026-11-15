@@ -1,6 +1,6 @@
 {
  "date": "2026-11-16",
- "commit": "5e2a48f",
+ "commit": "6381887",
  "targets": {
   "first_move_changed": 3,
   "top5_changed": 4,
@@ -71,7 +71,28 @@
     "top5_changed": true,
     "max_score_move": 6.2,
     "first_score_move": 0.8,
-    "verdict": "top3"
+    "verdict": "top3",
+    "robust": {
+     "matches": {
+      "robust": [
+       "Digital Forensics Analysts",
+       "Data Scientists"
+      ],
+      "dependent": 2,
+      "with_why": 2,
+      "ok": true
+     },
+     "futures": {
+      "robust": [
+       "Digital Forensics Analysts",
+       "Data Scientists"
+      ],
+      "dependent": 2,
+      "with_why": 2,
+      "ok": true
+     }
+    },
+    "robust_ok": true
    },
    {
     "profile_id": "P01",
@@ -112,7 +133,30 @@
     "top5_changed": false,
     "max_score_move": 0.0,
     "first_score_move": 0.0,
-    "verdict": "same"
+    "verdict": "same",
+    "robust": {
+     "matches": {
+      "robust": [
+       "Speech-Language Pathology Assistants",
+       "Ophthalmic Medical Technicians",
+       "Occupational Therapy Assistants"
+      ],
+      "dependent": 0,
+      "with_why": 0,
+      "ok": true
+     },
+     "futures": {
+      "robust": [
+       "Speech-Language Pathology Assistants",
+       "Ophthalmic Medical Technicians",
+       "Occupational Therapy Assistants"
+      ],
+      "dependent": 0,
+      "with_why": 0,
+      "ok": true
+     }
+    },
+    "robust_ok": true
    },
    {
     "profile_id": "P02",
@@ -153,7 +197,30 @@
     "top5_changed": true,
     "max_score_move": 2.6,
     "first_score_move": -1.0,
-    "verdict": "top"
+    "verdict": "top",
+    "robust": {
+     "matches": {
+      "robust": [
+       "Budget Analysts",
+       "Tax Preparers",
+       "Financial Examiners"
+      ],
+      "dependent": 0,
+      "with_why": 0,
+      "ok": true
+     },
+     "futures": {
+      "robust": [
+       "Budget Analysts",
+       "Tax Preparers",
+       "Financial Examiners"
+      ],
+      "dependent": 0,
+      "with_why": 0,
+      "ok": true
+     }
+    },
+    "robust_ok": true
    },
    {
     "profile_id": "P03",
@@ -194,7 +261,30 @@
     "top5_changed": true,
     "max_score_move": 1.2,
     "first_score_move": -0.1,
-    "verdict": "same"
+    "verdict": "same",
+    "robust": {
+     "matches": {
+      "robust": [
+       "Solar Energy Systems Engineers",
+       "Civil Engineers",
+       "Transportation Engineers"
+      ],
+      "dependent": 3,
+      "with_why": 3,
+      "ok": true
+     },
+     "futures": {
+      "robust": [
+       "Solar Energy Systems Engineers",
+       "Civil Engineers",
+       "Transportation Engineers"
+      ],
+      "dependent": 3,
+      "with_why": 3,
+      "ok": true
+     }
+    },
+    "robust_ok": true
    },
    {
     "profile_id": "P04",
@@ -235,13 +325,37 @@
     "top5_changed": true,
     "max_score_move": 3.9,
     "first_score_move": 0.0,
-    "verdict": "top3"
+    "verdict": "top3",
+    "robust": {
+     "matches": {
+      "robust": [
+       "Talent Directors",
+       "Art Directors",
+       "Media Programming Directors"
+      ],
+      "dependent": 2,
+      "with_why": 2,
+      "ok": true
+     },
+     "futures": {
+      "robust": [
+       "Talent Directors",
+       "Art Directors",
+       "Media Programming Directors"
+      ],
+      "dependent": 2,
+      "with_why": 2,
+      "ok": true
+     }
+    },
+    "robust_ok": true
    }
   ],
   "first_move_changed": 1,
   "top5_changed": 4,
   "top5_set_changed": 3,
   "max_score_move": 6.2,
+  "robust_ok": 5,
   "pass": false
  },
  "news": {
