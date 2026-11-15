@@ -115,6 +115,7 @@ Everywhere: light and dark, built for a phone and slow mobile data (no images, n
 │   ├── team.py                    # The team view: the same matching over a team's jobs
 │   ├── pilot.py                   # The workshop check: three questions before and after, counts for the officer
 │   ├── scenario_report.py         # What the scenarios change for each demo person, and why
+│   ├── judge_check.py             # The finalist judges' live checks, run on the API -> docs/judge_check.md
 │   ├── whatif.py                  # Simulated AI news and changed numbers, run on a copy
 │   ├── releases.py                # Reports a newer Economic Index release
 │   └── validate_data.py, check_links.py, fairness_check.py
@@ -196,6 +197,7 @@ python -m pytest -q               # or: python -m unittest discover tests
 python scripts/check_links.py     # needs internet: every course and professional body link still opens
 python scripts/fairness_check.py  # the same CV as 8 different people gives the same recommendations
 python scripts/scenario_report.py # what slow, moderate and fast adoption change for each demo person, and why
+python scripts/judge_check.py --write  # the finalist judges' live checks on the real API -> docs/judge_check.md
 python scripts/kpi.py            # KPIs computed from the data: path coverage, evidence grades, sourced rows
 python scripts/cost_model.py     # times one full journey and prices a month of hosting from listed prices
 python scripts/impact_report.py  # the Phase 1 KPIs against their baseline, journeys on 96 synthetic people, HRD Corp options
