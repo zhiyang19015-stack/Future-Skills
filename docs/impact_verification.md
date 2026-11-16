@@ -23,11 +23,11 @@ Every step of a learning plan is free: paid courses are never in the plan, its h
 
 | Demo person | Target occupation | Gaps on the path (up to 10 shown) | Free hours | HRD Corp options |
 |---|---|---|---|---|
-| P05 | Digital Forensics Analysts | 10 | 280.2 | 3 |
-| P01 | Speech-Language Pathology Assistants | 10 | 247.7 | 0 |
-| P02 | Tax Preparers | 10 | 609 | 2 |
-| P03 | Solar Energy Systems Engineers | 10 | 319.7 | 1 |
-| P04 | Talent Directors | 10 | 311.7 | 0 |
+| P05 | Digital Forensics Analysts | 10 | 284.2 | 3 |
+| P01 | Speech-Language Pathology Assistants | 10 | 251.7 | 0 |
+| P02 | Tax Preparers | 10 | 613 | 2 |
+| P03 | Solar Energy Systems Engineers | 10 | 323.7 | 1 |
+| P04 | Talent Directors | 10 | 315.7 | 0 |
 
 ## SDG targets the demo paths serve
 
@@ -35,14 +35,14 @@ Free study hours on the five demo people's first paths, added up per target (`sc
 
 | SDG target | Planned free hours |
 |---|---|
-| 8.10 | 609 |
+| 8.10 | 613 |
 | 4.4 | 528 |
-| 9.c | 346.5 |
-| 9.4 | 319.7 |
-| 7.2 | 319.7 |
-| 11.4 | 311.7 |
-| 9.5 | 280.2 |
-| 3.c | 247.7 |
+| 9.c | 350.5 |
+| 9.4 | 323.7 |
+| 7.2 | 323.7 |
+| 11.4 | 315.7 |
+| 9.5 | 284.2 |
+| 3.c | 251.7 |
 | 4.6 | 207 |
 | 8.2 | 166 |
 | 16.6 | 150 |

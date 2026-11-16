@@ -98,23 +98,27 @@ class TestCoursesNotInEnglish(unittest.TestCase):
             return [r for r in csv.DictReader(f) if r["language"] != "en"]
 
     def test_each_has_a_provider_free_hours_a_source_and_a_checked_date(self):
-        rows = self.rows()
-        self.assertEqual({r["resource_id"] for r in rows}, {"R070", "R071", "R072"})
-        for r in rows:
-            self.assertEqual(r["language"], "zh")
-            self.assertEqual(r["provider"], "Microsoft Learn")
-            self.assertTrue(r["url"].startswith("https://learn.microsoft.com/zh-cn/training/"), r["url"])
+        rows = {r["resource_id"]: r for r in self.rows()}
+        self.assertEqual(set(rows), {"R070", "R071", "R072", "R073"})
+        for r in rows.values():
             self.assertGreater(float(r["duration_hours"]), 0)
             self.assertEqual(r["cost_myr"], "0")
-            self.assertTrue(r["source_url"].startswith("https://learn.microsoft.com/api/catalog/"))
-            self.assertTrue(r["verified_date"])
+            self.assertTrue(r["provider"] and r["source_url"] and r["verified_date"])
+        for rid in ("R070", "R071", "R072"):
+            self.assertEqual((rows[rid]["language"], rows[rid]["provider"]), ("zh", "Microsoft Learn"))
+            self.assertTrue(rows[rid]["url"].startswith("https://learn.microsoft.com/zh-cn/training/"))
+            self.assertTrue(rows[rid]["source_url"].startswith("https://learn.microsoft.com/api/catalog/"))
+        self.assertEqual(rows["R073"]["language"], "ms")
+        self.assertTrue(rows["R073"]["url"].startswith("https://rakyatdigital.gov.my/"))
 
     def test_they_reach_the_demo_paths_and_say_their_language(self):
         _, page = post("/api/learn", {"profile_id": "P05", "occ_id": first_move("P05")})  # Aiman
         langs = {r["id"]: r["language"] for s in page["stages"] for r in s["resources"]}
         langs.update({r["id"]: r["language"] for s in page["skills"] for r in s["resources"]})
-        self.assertEqual({k for k, v in langs.items() if v != "en"}, {"R070", "R071", "R072"})
-        self.assertIn('"path.lang.zh"', (STATIC / "i18n.js").read_text(encoding="utf-8"))
+        self.assertEqual({k for k, v in langs.items() if v != "en"}, {"R070", "R071", "R072", "R073"})
+        text = (STATIC / "i18n.js").read_text(encoding="utf-8")
+        self.assertIn('"path.lang.zh"', text)
+        self.assertIn('"path.lang.ms"', text)
 
 
 class TestSecondSource(unittest.TestCase):
