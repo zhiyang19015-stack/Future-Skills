@@ -34,7 +34,7 @@ A profile (the body of /api/match, /api/explain, /api/learn, /api/futures, /api/
     trend_changes (a what-if, scripts/whatif.py)
 or "profile_id" for one of the fictional demo people.
 
-PORT sets the port (default 8080). The update job also runs by itself once the fetched data is
+PORT sets the port (default 8080) and HOST the address to listen on (default: every interface). The update job also runs by itself once the fetched data is
 AUTO_UPDATE_DAYS old (default 7; 0 turns it off), checked every hour.
 """
 
@@ -1276,7 +1276,8 @@ def main() -> None:
     load_env_file()  # here, not on import, so the tests never pick up a real API key
     AUTO_UPDATE_DAYS = float(os.getenv("AUTO_UPDATE_DAYS", "7"))  # a value in .env counts too
     port = int(os.environ.get("PORT") or 8080)
-    server = ThreadingHTTPServer(("", port), Handler)
+    host = os.environ.get("HOST", "")  # "" listens on every interface, as a hosted container needs
+    server = ThreadingHTTPServer((host, port), Handler)
     print(f"Future Skills is up: http://localhost:{port}", flush=True)
     print(f"Explanations: LLM {'configured' if explain.configured() else 'not configured'}"
           f" (variables seen: {explain.llm_variables_set() or 'none'})", flush=True)

@@ -1,0 +1,19 @@
+# Render Blueprint: the public copy of Future Skills (https://render.com/docs/blueprint-spec).
+# Standard library only, so there is nothing to install; Render sets PORT itself.
+services:
+  - type: web
+    name: future-skills
+    runtime: python
+    plan: free
+    region: oregon            # Singapore free instances were disrupted several times in 2026
+    buildCommand: python --version
+    startCommand: python src/main.py
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.7
+      # The public copy shows the data committed in the repo. The "Update data" button still works,
+      # but nothing updates by itself while the free instance sleeps and wakes.
+      - key: AUTO_UPDATE_DAYS
+        value: "0"
