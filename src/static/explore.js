@@ -440,6 +440,7 @@ PAGES.matches = async () => {
     ${replanNote(m)}
     ${scenarioControl({ adoption: m.adoption, horizon: m.horizon_year }, m.scenarios)}
     ${verdictNote(m)}
+    ${hasProfile() ? robustCard(m.robust) : ""}
     ${cur ? `<section class="card stack" style="border-color:var(--brand)"><div class="row between"><div><p class="eyebrow">${t("match.now")}</p><h2>${esc(cur.title)}</h2></div>${statusChip(cur.outlook.status)}</div>
       <p>${t("match.now.p", fmt(cur.outlook.ai_share, 0), fmt(cur.outlook.ai_share_reference, 0), signed(cur.outlook.change), cur.moves_above ? t("match.now.above", cur.moves_above) : t("match.now.top"))}</p>
       <div class="row"><a class="btn small" href="#/occ/${esc(cur.occ_id)}">${t("match.now.tasks")}</a></div></section>` : ""}

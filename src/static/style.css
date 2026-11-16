@@ -77,6 +77,9 @@ main { max-width: 1120px; margin: 0 auto; padding: 28px 16px 56px; min-height: 6
 .grid { display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
 .grid.three { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 .grid.two { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.robust .grid.two { grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); }
+.plainlist { list-style: none; margin: 0; padding: 0; }
+.plainlist li { overflow-wrap: anywhere; }
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); }
 .card.flat { box-shadow: none; background: var(--surface-2); }
 .card.pad-s { padding: 14px 16px; }

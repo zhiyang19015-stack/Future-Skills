@@ -178,6 +178,7 @@ PAGES.futures = async () => {
       <p class="lead">${t("fut.lead")}${demo ? ` ${t("fut.for", esc(demo.name))}` : ""}</p></header>
     ${!hasProfile() ? `<div class="warn row between"><span>${t("match.empty")}</span><a class="btn small" href="#/you">${t("home.start")}</a></div>` : ""}
     ${verdict ? `<p class="note"><strong>${verdict}</strong> ${t("scn.estimate.long")}</p>` : ""}
+    ${hasProfile() ? robustCard(f.robust) : ""}
     <div class="cols">${f.scenarios.map(futureColumn).join("")}</div>
     <section class="card stack"><h2>${t("fut.moves.h")}</h2><p class="muted small">${t("fut.moves.p")}</p>${movesTable(f)}</section>
     ${simulationCard(f)}
