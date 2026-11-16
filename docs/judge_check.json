@@ -1,6 +1,6 @@
 {
  "date": "2026-11-16",
- "commit": "515126d",
+ "commit": "947f7f7",
  "targets": {
   "first_move_changed": 3,
   "top5_changed": 4,
@@ -1580,9 +1580,9 @@
   "pass": false
  },
  "public": {
-  "url": null,
-  "reachable": null,
-  "detail": "none",
-  "pass": false
+  "url": "https://future-skills-sq6h.onrender.com",
+  "reachable": true,
+  "detail": "HTTP 200 from /api/health",
+  "pass": true
  }
 }
