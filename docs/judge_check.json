@@ -1,6 +1,6 @@
 {
  "date": "2026-11-16",
- "commit": "6381887",
+ "commit": "e907697",
  "targets": {
   "first_move_changed": 3,
   "top5_changed": 4,
@@ -9,24 +9,23 @@
  },
  "blank": {
   "status": 200,
-  "ranked": 10,
-  "listed": 426,
-  "top": [
-   {
-    "title": "Digital Forensics Analysts",
-    "total": 92.0
-   },
-   {
-    "title": "Mechatronics Engineers",
-    "total": 91.7
-   },
-   {
-    "title": "Automotive Engineers",
-    "total": 90.7
-   }
-  ],
-  "message": null,
-  "pass": false
+  "ranked": 0,
+  "listed": 0,
+  "top": [],
+  "message": {
+   "code": "blank_profile",
+   "message": "You have not told us anything about yourself yet, so there is no ranking. Fill in your profile first: pick fields you like, answer the interest questions, rate your skills, add the tools you use or upload a CV.",
+   "fill": [
+    "fields",
+    "cv_fields",
+    "interest",
+    "skills",
+    "technologies",
+    "current_occupation",
+    "missions_done"
+   ]
+  },
+  "pass": true
  },
  "scenarios": {
   "slow": "slow",
@@ -952,7 +951,7 @@
      "after": 83.5,
      "move": -1.2
     },
-    "path_changed": true
+    "path_changed": false
    },
    {
     "news": "data_agents",
@@ -1128,7 +1127,7 @@
   "first_changed": 1,
   "own_job_runs": 24,
   "own_job_moved": 5,
-  "path_changed": 6,
+  "path_changed": 5,
   "news_moving_named_person": 4,
   "news_with_person": 4
  },
@@ -1142,7 +1141,8 @@
      "change": 2.5,
      "thin": false,
      "manual": true,
-     "ilo_mean": 0.29
+     "ilo_mean": 0.29,
+     "second_source": "disagree"
     },
     {
      "title": "Stationary Engineers and Boiler Operators",
@@ -1151,7 +1151,8 @@
      "change": 2.4,
      "thin": false,
      "manual": true,
-     "ilo_mean": 0.2
+     "ilo_mean": 0.2,
+     "second_source": "confirmed"
     },
     {
      "title": "Waiters and Waitresses",
@@ -1160,7 +1161,8 @@
      "change": 2.4,
      "thin": false,
      "manual": true,
-     "ilo_mean": 0.28
+     "ilo_mean": 0.28,
+     "second_source": "disagree"
     },
     {
      "title": "Geothermal Technicians",
@@ -1169,7 +1171,8 @@
      "change": 2.3,
      "thin": false,
      "manual": true,
-     "ilo_mean": 0.28
+     "ilo_mean": 0.28,
+     "second_source": "disagree"
     },
     {
      "title": "Correctional Officers and Jailers",
@@ -1178,7 +1181,8 @@
      "change": 2.3,
      "thin": false,
      "manual": false,
-     "ilo_mean": 0.14
+     "ilo_mean": 0.14,
+     "second_source": "confirmed"
     },
     {
      "title": "Agricultural Technicians",
@@ -1187,7 +1191,8 @@
      "change": 2.2,
      "thin": false,
      "manual": false,
-     "ilo_mean": 0.26
+     "ilo_mean": 0.26,
+     "second_source": "confirmed"
     },
     {
      "title": "Nursing Assistants",
@@ -1196,14 +1201,16 @@
      "change": 2.1,
      "thin": false,
      "manual": false,
-     "ilo_mean": 0.14
+     "ilo_mean": 0.14,
+     "second_source": "confirmed"
     }
    ],
    "thin": 0,
    "manual": 4,
    "unmeasured": 4,
    "listed": 7,
-   "title": null
+   "title": null,
+   "confirmed": 4
   },
   "fast": {
    "rows": [
@@ -1214,7 +1221,8 @@
      "change": 4.9,
      "thin": false,
      "manual": true,
-     "ilo_mean": 0.29
+     "ilo_mean": 0.29,
+     "second_source": "disagree"
     },
     {
      "title": "Waiters and Waitresses",
@@ -1223,7 +1231,8 @@
      "change": 4.8,
      "thin": false,
      "manual": true,
-     "ilo_mean": 0.28
+     "ilo_mean": 0.28,
+     "second_source": "disagree"
     },
     {
      "title": "Stationary Engineers and Boiler Operators",
@@ -1232,7 +1241,8 @@
      "change": 4.7,
      "thin": false,
      "manual": true,
-     "ilo_mean": 0.2
+     "ilo_mean": 0.2,
+     "second_source": "confirmed"
     },
     {
      "title": "Agricultural Technicians",
@@ -1241,7 +1251,8 @@
      "change": 4.5,
      "thin": false,
      "manual": false,
-     "ilo_mean": 0.26
+     "ilo_mean": 0.26,
+     "second_source": "confirmed"
     },
     {
      "title": "Geothermal Technicians",
@@ -1250,7 +1261,8 @@
      "change": 4.5,
      "thin": false,
      "manual": true,
-     "ilo_mean": 0.28
+     "ilo_mean": 0.28,
+     "second_source": "disagree"
     },
     {
      "title": "Correctional Officers and Jailers",
@@ -1259,7 +1271,8 @@
      "change": 4.5,
      "thin": false,
      "manual": false,
-     "ilo_mean": 0.14
+     "ilo_mean": 0.14,
+     "second_source": "confirmed"
     },
     {
      "title": "Nursing Assistants",
@@ -1268,7 +1281,8 @@
      "change": 4.2,
      "thin": false,
      "manual": false,
-     "ilo_mean": 0.14
+     "ilo_mean": 0.14,
+     "second_source": "confirmed"
     },
     {
      "title": "Pharmacy Technicians",
@@ -1277,7 +1291,8 @@
      "change": 4.0,
      "thin": false,
      "manual": false,
-     "ilo_mean": 0.3
+     "ilo_mean": 0.3,
+     "second_source": "confirmed"
     },
     {
      "title": "First-Line Supervisors of Production and Operating Workers",
@@ -1286,7 +1301,8 @@
      "change": 3.9,
      "thin": false,
      "manual": true,
-     "ilo_mean": 0.35
+     "ilo_mean": 0.35,
+     "second_source": "confirmed"
     },
     {
      "title": "Medical Dosimetrists",
@@ -1295,7 +1311,8 @@
      "change": 3.9,
      "thin": false,
      "manual": false,
-     "ilo_mean": null
+     "ilo_mean": null,
+     "second_source": "one_source"
     },
     {
      "title": "Inspectors, Testers, Sorters, Samplers, and Weighers",
@@ -1304,7 +1321,8 @@
      "change": 3.8,
      "thin": false,
      "manual": true,
-     "ilo_mean": 0.31
+     "ilo_mean": 0.31,
+     "second_source": "confirmed"
     },
     {
      "title": "Biomass Power Plant Managers",
@@ -1313,7 +1331,8 @@
      "change": 3.5,
      "thin": false,
      "manual": false,
-     "ilo_mean": 0.42
+     "ilo_mean": 0.42,
+     "second_source": "disagree"
     },
     {
      "title": "Digital Forensics Analysts",
@@ -1322,7 +1341,8 @@
      "change": 2.8,
      "thin": false,
      "manual": false,
-     "ilo_mean": 0.49
+     "ilo_mean": 0.49,
+     "second_source": "disagree"
     },
     {
      "title": "Chief Executives",
@@ -1331,7 +1351,8 @@
      "change": 2.8,
      "thin": false,
      "manual": false,
-     "ilo_mean": 0.38
+     "ilo_mean": 0.38,
+     "second_source": "confirmed"
     },
     {
      "title": "Hosts and Hostesses, Restaurant, Lounge, and Coffee Shop",
@@ -1340,14 +1361,22 @@
      "change": 2.8,
      "thin": false,
      "manual": true,
-     "ilo_mean": 0.51
+     "ilo_mean": 0.51,
+     "second_source": "disagree"
     }
    ],
    "thin": 0,
    "manual": 7,
    "unmeasured": 7,
    "listed": 15,
-   "title": null
+   "title": null,
+   "confirmed": 8
+  },
+  "second_source": {
+   "confirmed": 789,
+   "disagree": 91,
+   "one_source": 30,
+   "occupations": 910
   },
   "pass": false
  },
@@ -1358,27 +1387,21 @@
     "name": "Aiman",
     "kind": "working",
     "occupation": "Digital Forensics Analysts",
-    "resources": 16,
-    "job_search": [
-     "PRDV102: Resume Writing",
-     "PRDV103: Interviewing Skills"
-    ],
-    "job_search_unsuited": [
-     "PRDV102: Resume Writing",
-     "PRDV103: Interviewing Skills"
-    ],
-    "non_english": 0,
-    "non_english_pct": 0.0,
+    "resources": 17,
+    "job_search": [],
+    "job_search_unsuited": [],
+    "non_english": 3,
+    "non_english_pct": 17.6,
     "skills": 10,
     "no_course": [
      "MITRE ATT&CK software"
     ],
     "top_provider": {
      "name": "Saylor Academy",
-     "count": 12
+     "count": 10
     },
-    "hours": 286.0,
-    "weeks": 47.7,
+    "hours": 280.2,
+    "weeks": 46.7,
     "hours_per_week": 6
    },
    {
@@ -1386,22 +1409,22 @@
     "name": "Nurul",
     "kind": "student",
     "occupation": "Speech-Language Pathology Assistants",
-    "resources": 16,
+    "resources": 17,
     "job_search": [
      "PRDV102: Resume Writing",
      "PRDV103: Interviewing Skills"
     ],
     "job_search_unsuited": [],
-    "non_english": 0,
-    "non_english_pct": 0.0,
+    "non_english": 1,
+    "non_english_pct": 5.9,
     "skills": 10,
     "no_course": [],
     "top_provider": {
      "name": "Saylor Academy",
      "count": 13
     },
-    "hours": 247.0,
-    "weeks": 41.2,
+    "hours": 247.7,
+    "weeks": 41.3,
     "hours_per_week": 6
    },
    {
@@ -1410,24 +1433,18 @@
     "kind": "working",
     "occupation": "Tax Preparers",
     "resources": 21,
-    "job_search": [
-     "PRDV102: Resume Writing",
-     "PRDV103: Interviewing Skills"
-    ],
-    "job_search_unsuited": [
-     "PRDV102: Resume Writing",
-     "PRDV103: Interviewing Skills"
-    ],
-    "non_english": 0,
-    "non_english_pct": 0.0,
+    "job_search": [],
+    "job_search_unsuited": [],
+    "non_english": 2,
+    "non_english_pct": 9.5,
     "skills": 10,
     "no_course": [],
     "top_provider": {
      "name": "Saylor Academy",
-     "count": 18
+     "count": 16
     },
-    "hours": 618.0,
-    "weeks": 123.6,
+    "hours": 609.0,
+    "weeks": 121.8,
     "hours_per_week": 5
    },
    {
@@ -1435,22 +1452,22 @@
     "name": "Kumar",
     "kind": "student",
     "occupation": "Solar Energy Systems Engineers",
-    "resources": 18,
+    "resources": 19,
     "job_search": [
      "PRDV102: Resume Writing",
      "PRDV103: Interviewing Skills"
     ],
     "job_search_unsuited": [],
-    "non_english": 0,
-    "non_english_pct": 0.0,
+    "non_english": 1,
+    "non_english_pct": 5.3,
     "skills": 10,
     "no_course": [],
     "top_provider": {
      "name": "Saylor Academy",
      "count": 13
     },
-    "hours": 319.0,
-    "weeks": 39.9,
+    "hours": 319.7,
+    "weeks": 40.0,
     "hours_per_week": 8
    },
    {
@@ -1458,29 +1475,29 @@
     "name": "Mei Ling",
     "kind": "switcher",
     "occupation": "Talent Directors",
-    "resources": 15,
+    "resources": 16,
     "job_search": [
      "PRDV102: Resume Writing",
      "PRDV103: Interviewing Skills"
     ],
     "job_search_unsuited": [],
-    "non_english": 0,
-    "non_english_pct": 0.0,
+    "non_english": 1,
+    "non_english_pct": 6.2,
     "skills": 10,
     "no_course": [],
     "top_provider": {
      "name": "Saylor Academy",
      "count": 14
     },
-    "hours": 311.0,
-    "weeks": 31.1,
+    "hours": 311.7,
+    "weeks": 31.2,
     "hours_per_week": 10
    }
   ],
-  "unsuited": 4,
+  "unsuited": 0,
   "no_course": 1,
-  "resources": 86,
-  "non_english_pct": 0.0,
+  "resources": 90,
+  "non_english_pct": 8.9,
   "pass": false
  },
  "links": {
@@ -1530,9 +1547,16 @@
     "detail": "200"
    },
    {
-    "id": "H003",
-    "title": "CT-NETWORK+: CompTIA Network+ Certification",
-    "url": "https://trainocate.com.my/courses/ct-network-comptia-network/",
+    "id": "H005",
+    "title": "Professional Certificate in Data Analytics",
+    "url": "https://www.ukm.my/studyukm/professional-certificate-in-data-analytics/",
+    "verdict": "ok",
+    "detail": "200"
+   },
+   {
+    "id": "R072",
+    "title": "AI 概念简介 (Introduction to AI concepts; in Chinese)",
+    "url": "https://learn.microsoft.com/zh-cn/training/modules/get-started-ai-fundamentals/",
     "verdict": "ok",
     "detail": "200"
    },
@@ -1547,13 +1571,6 @@
     "id": "H002",
     "title": "TMY-AILMW: AI Literacy for the Modern Workplace",
     "url": "https://trainocate.com.my/courses/tmy-ailmw-ai-literacy-for-the-modern-workplace/",
-    "verdict": "ok",
-    "detail": "200"
-   },
-   {
-    "id": "R063",
-    "title": "FAO elearning Academy: free courses on food, farming and fisheries",
-    "url": "https://elearning.fao.org/",
     "verdict": "ok",
     "detail": "200"
    }
