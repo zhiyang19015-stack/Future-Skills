@@ -201,7 +201,10 @@ PAGES.occ = async (args) => {
         ${ai.automation_pct !== null && ai.automation_pct !== undefined ? `<span class="chip plain">${t("sig.auto", fmt(ai.automation_pct, 0))}</span>` : ""}
         ${ai.usage_pct_my !== null && ai.usage_pct_my !== undefined ? `<span class="chip plain">${t("sig.usage", fmt(ai.usage_pct_my, 2), fmt(ai.usage_pct, 2))}</span>` : ""}</div>
       ${aiSource(r.source)}
+      <div class="row">${evStamp({ grade: r.evidence && r.evidence.grade, parts: [[t("stamp.ai"), r.source && r.source.economic_index && r.source.economic_index.release_date], [t("stamp.demand"), r.demand && r.demand.computed_date]] })}</div>
     </section>
+
+    ${taskStrip(r.tasks)}
 
     <section class="grid two">
       <div class="card stack"><h2>${t("occ.ai.h")}</h2><div>${seen.slice(0, 5).map(taskRow).join("") || `<p class="small muted">${t("occ.ai.none")}</p>`}</div></div>
@@ -310,6 +313,7 @@ function detailHtml(m, sim) {
         ${unrated > 0 ? `<p class="src">${t("match.gap.unrated", unrated)} <a href="#/you/skills">${t("sk.start")}</a></p>` : ""}
       </div>
     </div>
+    ${stripFor(m.occ_id)}
     ${ai.ai_tasks && ai.ai_tasks.length ? `<div class="grid two">
       <div class="stack tight"><h3>${t("occ.ai.h")}</h3><div>${ai.ai_tasks.map(taskRow).join("")}</div></div>
       <div class="stack tight"><h3>${t("occ.human.h")}</h3><div>${ai.human_tasks.map(taskRow).join("")}</div></div></div>` : ""}
@@ -318,6 +322,21 @@ function detailHtml(m, sim) {
     ${m.sdg.length ? `<div class="stack tight"><h3>${t("occ.sdg.h")}</h3>${m.sdg.slice(0, 2).map((x) => `<p class="small">${sdgChip(x.target)} ${esc(sdgWhy(x.rationale))}</p>`).join("")}</div>` : ""}
     <div class="row between"><a class="btn small" href="#/occ/${esc(m.occ_id)}">${t("match.occ")}</a>${jobLinks(m.search_title)}</div>
   </div>`;
+}
+
+/* The task strip inside an open match: the occupation's tasks are fetched once, when it is opened. */
+const stripLoading = new Set();
+function stripFor(id) {
+  ui.occTasks = ui.occTasks || {};
+  if (ui.occTasks[id]) return taskStrip(ui.occTasks[id]);
+  if (!stripLoading.has(id)) {
+    stripLoading.add(id);
+    cached(`/api/occupations/${encodeURIComponent(id)}?${scenarioQuery()}`).then((r) => {
+      ui.occTasks[id] = r.tasks; stripLoading.delete(id);
+      if (location.hash.startsWith("#/matches")) redraw();
+    }).catch(() => { stripLoading.delete(id); });
+  }
+  return loading();
 }
 
 const FLAGS_SHOWN = ["more_study", "needs_extra_education", "below_education", "current_occupation", "licence_needed", "restricted"];
@@ -345,14 +364,17 @@ function matchCard(m, sim) {
   const s = m.stability;
   const flags = [...m.flags, ...(m.restriction ? ["restricted"] : [])].filter((f) => FLAGS_SHOWN.includes(f));
   const goals = m.sdg_choice && m.sdg_choice.bonus ? `<span class="chip rising">${t("match.sdg.bonus", m.sdg_choice.goals.join(", "), fmt(m.sdg_choice.bonus, 0))}</span>` : "";
-  return `<article class="card match" id="m-${esc(m.occ_id)}">
+  const marks = ui.newsMarks ? ui.newsMarks(m.occ_id) : "";
+  return `<article class="card match${marks ? " fs-changed" : ""}" id="m-${esc(m.occ_id)}" data-rank="${m.rank}">
     <span class="rank" aria-label="${t("match.rank", m.rank)}">${m.rank}</span>
     <div class="body stack tight">
       <div><h2><a href="#/occ/${esc(m.occ_id)}" style="color:inherit;text-decoration:none">${esc(nm(m.title))}</a></h2><span class="small muted">${esc(fieldName(m.field_id))}</span></div>
       <div class="tags">${statusChip(m.outlook.status)}${mycolChip(m.mycol)}${s ? `<span class="chip ai" title="${esc(t("match.stability.title", sim.futures))}">${t("match.stability", fmt(s.top3, 0))}</span>` : ""}${scenarioRanks(m)}${evidenceChip(m.evidence && m.evidence.grade)}${goals}
         ${flags.map((f) => flagChip(f, m)).join("")}</div>
+      ${moveChip(m)}${marks}
     </div>
-    <div class="ring" style="--v:${m.total}" role="img" aria-label="${t("match.score", fmt(m.total))}"><span>${fmt(m.total)}<small>/ 100</small></span></div>
+    <div class="stack tight fs-score"><div class="ring" style="--v:${m.total}" role="img" aria-label="${t("match.score", fmt(m.total))}"><span>${fmt(m.total)}<small>/ 100</small></span></div>
+      ${ui.trend ? evStamp({ grade: m.evidence && m.evidence.grade, parts: [[t("stamp.ai"), ui.trend.ai_usage_release]] }) : ""}</div>
     <div class="full stack tight">${partBars(m)}
       ${m.skill_detail.tech_missing.length ? `<div class="row" style="gap:6px"><span class="small strong">${t("match.learn")}</span>${m.skill_detail.tech_missing.slice(0, 3).map(dotName).join("")}</div>` : ""}
       <div class="row"><button type="button" class="btn small" data-act="why" data-id="${esc(m.occ_id)}" aria-expanded="${open}">${t(open ? "match.less" : "match.why")}</button>
@@ -434,11 +456,16 @@ PAGES.matches = async () => {
   const beyond = m.ranking.filter((x) => x.flags.includes("needs_extra_education")).slice(0, 8);
   const below = m.ranking.filter((x) => x.flags.includes("below_education")).length;
   const cur = m.current;
+  ui.trend = m.trend_data;
+  ui.moveWhy = Object.fromEntries(((m.robust && m.robust.dependent) || []).map((x) => [x.occ_id, x.why]));
+  const nb = newsMarks(m);
+  ui.newsMarks = nb.mark;
   return `<div class="stack loose">
     <header class="stack tight"><p class="eyebrow">${t("step", 3)} · ${t("nav.matches")}</p>
       <h1>${demo ? t("match.h1.demo", esc(demo.name)) : t("match.h1")}</h1>
       <p class="lead">${demo ? esc(t("persona." + demo.profile_id) === "persona." + demo.profile_id ? demo.story : t("persona." + demo.profile_id)) : t("match.lead", m.total_occupations)}</p></header>
     ${replanNote(m)}
+    ${nb.banner}
     ${scenarioControl({ adoption: m.adoption, horizon: m.horizon_year }, m.scenarios)}
     ${verdictNote(m)}
     ${hasProfile() ? robustCard(m.robust) : ""}
@@ -449,6 +476,7 @@ PAGES.matches = async () => {
       <div class="stack tight">${m.fields.filter((f) => f.fit !== null).slice(0, 6).map((f) => `<div class="meter"><span>${esc(fieldName(f.id))}</span>${bar(f.fit)}<span class="v">${fmt(f.fit, 0)}</span></div><p class="tiny muted">${fieldExplain(f)}</p>`).join("") || `<p class="small muted">${t("match.fields.none")}</p>`}</div>
       ${m.insights.length ? `<ul class="small">${m.insights.map((i) => `<li>${esc(insightText(i))}</li>`).join("")}</ul>` : ""}
       <p class="src">${t("match.fields.src")}</p></section>
+    ${shown.length ? roadmap(shown[0], cur) : ""}
     ${goalPicker(m)}
     <section class="stack"><div class="row between"><h2>${t(cur ? "match.moves.h" : "match.top.h")}</h2><span class="small muted">${t("match.sim", m.simulation ? m.simulation.futures : 0)}</span></div>
       ${shown.map((x) => matchCard(x, m.simulation || { futures: 0 })).join("")}
@@ -523,8 +551,8 @@ PAGES.pathway = async (args) => {
   if (!options.some((x) => x.occ_id === occId)) options.push({ occ_id: occId, title: L.role.name, rank: null });
   const badges = [["start", p.ticked.length >= 1], ["half", p.share >= 0.5], ["done", p.all.length > 0 && p.share >= 1]];
   let n = 0;
-  const stage = (title, body, note = "") => (body ? `<section class="card stack"><div class="row"><span class="rank" style="width:30px;height:30px;border-radius:50%;background:var(--brand-soft);color:var(--brand-strong);display:grid;place-items:center;font-weight:750">${++n}</span><h2>${title}</h2></div>${note ? `<p class="small muted">${note}</p>` : ""}${body}</section>` : "");
-  const skills = L.skills.map((s) => `<div class="stack tight" style="padding:10px 0;border-top:1px solid var(--line)">
+  const stage = (title, body, note = "", id = "") => (body ? `<section class="card stack"${id ? ` id="${id}"` : ""}><div class="row"><span class="rank" style="width:30px;height:30px;border-radius:50%;background:var(--brand-soft);color:var(--brand-strong);display:grid;place-items:center;font-weight:750">${++n}</span><h2>${title}</h2></div>${note ? `<p class="small muted">${note}</p>` : ""}${body}</section>` : "");
+  const skills = L.skills.map((s, i) => `<div class="stack tight" id="path-sk-${i}" style="padding:10px 0;border-top:1px solid var(--line)">
       <div class="row">${dotName({ ...s.ai, skill_name: s.skill_name })}${s.your_level !== undefined && s.kind !== "technology" ? `<span class="small muted">${t("path.level", fmt(s.your_level), fmt(s.level_needed))}</span>` : ""}${(s.sdg || []).slice(0, 2).map((x) => sdgChip(x.target)).join("")}</div>
       ${s.resources.length ? s.resources.map((r) => resourceRow(r, occId)).join("") : `<p class="small muted">${t("path.nocourse")}</p>`}</div>`).join("");
   const handsOn = L.hands_on.map((r) => `<p class="small"><a href="${safeUrl(r.url)}" target="_blank" rel="noopener">${esc(nm(r.title))}</a> · ${esc(r.provider)}<br><span class="muted">${esc(nm(r.notes))}</span></p>`).join("");
@@ -546,13 +574,14 @@ PAGES.pathway = async (args) => {
       <div class="tags">${badges.map(([id, on]) => `<span class="badge${on ? " on" : ""}">${on ? "★" : "☆"} ${t("badge." + id)}</span>`).join("")}</div>
       <div class="row"><button type="button" class="btn small" data-act="ics" data-id="${esc(occId)}">${t("path.ics")}</button><span class="src">${t("path.ics.note")}</span></div>
     </section>
+    ${metroMap(L, occId)}
     ${(L.flags || []).includes("more_study") ? `<p class="warn">${t("path.study", t("zone." + L.role.job_zone))}</p>` : ""}
     ${licenceCard(L.licence)}
     ${stage(t("path.s1", esc(fieldName(L.role.field_id))), L.stages[0].resources.map((r) => resourceRow(r, occId)).join(""),
-      L.stages[0].kind === "working" && (L.stages[0].left_out || []).length ? t("path.s1.working", L.stages[0].left_out.length) : undefined)}
-    ${stage(t("path.s2"), skills, t("path.s2.p") + (L.skills_not_shown ? ` ${t("path.s2.more", L.skills_not_shown)}` : ""))}
-    ${stage(t("path.s3"), handsOn, t("path.s3.p"))}
-    ${stage(t("path.hrd"), claimable, t("path.hrd.p"))}
+      L.stages[0].kind === "working" && (L.stages[0].left_out || []).length ? t("path.s1.working", L.stages[0].left_out.length) : undefined, "path-s1")}
+    ${stage(t("path.s2"), skills, t("path.s2.p") + (L.skills_not_shown ? ` ${t("path.s2.more", L.skills_not_shown)}` : ""), "path-s2")}
+    ${stage(t("path.s3"), handsOn, t("path.s3.p"), "path-s3")}
+    ${stage(t("path.hrd"), claimable, t("path.hrd.p"), "path-hrd")}
     <div class="row"><a class="btn primary" href="#/sdg">${t("path.sdg")} →</a><a class="btn" href="#/matches">${t("nav.matches")}</a>${jobLinks(L.role.search_title)}</div>
     <p class="src">${t("path.src")}</p>
   </div>`;

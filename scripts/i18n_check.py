@@ -35,13 +35,14 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 STATIC = ROOT / "src" / "static"
-TABLES = ("i18n.js", "lab-i18n.js", "pilot-i18n.js")
+TABLES = ("i18n.js", "lab-i18n.js", "pilot-i18n.js", "ui-i18n.js")
 LANGS = ("en", "ms", "zh")
 
 # Which pages each script draws (its PAGES.* entries), so a count can be read per page.
 PAGE_FILES = {
     "index.html": "header, skip link",
     "app.js": "home, sources, header and footer, errors",
+    "ui.js": "redesign pieces: task strip, roadmap, learning line, evidence stamps, rank moves, profile progress",
     "you.js": "1 You",
     "explore.js": "2 Radar, occupation, 3 Matches, 4 Pathway, 5 SDG",
     "futures.js": "6 Futures, news",

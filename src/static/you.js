@@ -24,8 +24,8 @@ async function profilePage() {
   const quiz = quizDone() ? await cached("/api/questionnaire/score", { answers: state.answers }) : null;
   return `<div class="stack loose">
     <header class="stack tight"><p class="eyebrow">${t("step", 1)} · ${t("nav.you")}</p><h1>${t("you.h1")}</h1><p class="lead">${t("you.lead")}</p></header>
-    ${demo ? `<div class="note row between"><span>${t("you.demo", `<strong>${esc(demo.name)}</strong>`)}</span><button type="button" class="btn small" data-act="own">${t("you.demo.own")}</button></div>` : ""}
-    <section class="stack"><p class="small muted">${t("you.or.demo")}</p>
+    ${demo ? `<div class="note row between"><span>${t("you.demo", `<strong>${esc(demo.name)}</strong>`)}</span><button type="button" class="btn small" data-act="own">${t("you.demo.own")}</button></div>` : profileProgress()}
+    <section class="stack"><p class="small muted">${t("you.or.demo")} <span class="chip plain">${t("home.fictional")}</span></p>
       <div class="tags">${people.map((p) => `<button type="button" class="toggle" data-act="demo" data-id="${esc(p.profile_id)}" aria-pressed="${state.demo === p.profile_id}">${esc(p.name)} · ${t("kind." + (p.kind || "student"))}</button>`).join("")}</div></section>
     ${whoCard(occs)}
     ${fieldsCard()}
@@ -55,7 +55,7 @@ function whoCard(occs) {
       ${current ? `<p class="small"><span class="chip brand">${esc(nm(current.title))}</span> <button type="button" class="btn small ghost" data-act="occClear">${t("you.occ.clear")}</button></p>` : ""}
       <div class="tags" id="occ-list">${occChoices(occs)}</div>
       <p class="small muted">${t("you.occ.note")}</p></div>`;
-  return `<section class="card stack">
+  return `<section class="card stack" id="you-who">
     <h2>${t("you.who.h")}</h2>
     <div class="seg" role="group" aria-label="${t("you.who.h")}">${kinds.map((k) =>
       `<button type="button" data-act="kind" data-id="${k}" aria-pressed="${!state.demo && state.kind === k}">${t("kind." + k)}</button>`).join("")}</div>
@@ -73,7 +73,7 @@ const occChoices = (occs) => {
 /* Fields: tap once for "interested", twice for "not for me", a third time to clear. */
 function fieldsCard() {
   const ids = Object.keys(FIELDS);
-  return `<section class="card stack">
+  return `<section class="card stack" id="you-fields">
     <div class="row between"><h2>${t("fields.h")}</h2><span class="chip plain">${t("optional")}</span></div>
     <p class="muted small">${t("fields.p")}</p>
     <div class="tags">${ids.map((id) => {
@@ -95,7 +95,7 @@ function cvCard() {
       ${r.knowledge.length ? `<p class="small"><span class="strong">${t("cv.subjects")}</span> ${r.knowledge.map((k) => `${esc(nm(k.name))} (${t("level.n", fmt(k.level, 0))})`).join(" · ")}</p>` : ""}
       ${r.occupations.length ? `<p class="small"><span class="strong">${t("cv.titles")}</span> ${r.occupations.map((o) => `${esc(o.matched)} → ${occLink(o.occ_id, o.title)}`).join(" · ")}</p>` : ""}
     </div>` : state.cv ? `<p class="note">${t("cv.kept")}</p>` : "";
-  return `<section class="card stack">
+  return `<section class="card stack" id="you-cv">
     <div class="row between"><h2>${t("cv.h")}</h2><span class="chip plain">${t("optional")}</span></div>
     <p class="muted small">${t("cv.p")}</p>
     <div class="row">
@@ -115,7 +115,7 @@ function cvCard() {
 const sortedTools = (techs) => [...techs].sort((a, b) => b.occupations - a.occupations || a.name.localeCompare(b.name));
 function toolsCard(techs) {
   const picked = new Set(state.techs);
-  return `<section class="card stack">
+  return `<section class="card stack" id="you-tools">
     <div class="row between"><h2>${t("tools.h")}</h2><span class="chip brand">${t("tools.count", picked.size)}</span></div>
     <p class="muted small">${t("tools.p")}</p>
     <input type="search" placeholder="${esc(t("tools.search", techs.length))}" value="${esc(ui.techQuery)}" data-in="techQuery" aria-label="${esc(t("tools.search", techs.length))}">
@@ -134,14 +134,14 @@ function toolChips(techs, picked) {
 
 function interestCard(quiz) {
   if (quiz) {
-    return `<section class="card stack">
+    return `<section class="card stack" id="you-interests">
       <div class="row between"><h2>${t("int.h")}</h2><span class="chip rising">${t("int.done")}</span></div>
       <p>${t("int.result", `<strong>${esc(quiz.code)}</strong>`, quiz.code.split("").map((k) => t("riasec.short." + k)).join(", "))}</p>
       <div class="row"><a class="btn small" href="#/you/interests">${t("int.see")}</a><button type="button" class="btn small ghost" data-act="quizClear">${t("int.clear")}</button></div>
     </section>`;
   }
   const started = Array.isArray(state.answers) && state.answers.some((a) => a !== null);
-  return `<section class="card stack">
+  return `<section class="card stack" id="you-interests">
     <div class="row between"><h2>${t("int.h")}</h2><span class="chip plain">${t("optional")}</span></div>
     <p class="muted small">${t("int.p")}</p>
     <div class="row"><a class="btn small" href="#/you/interests">${t(started ? "int.continue" : "int.start")}</a></div>
@@ -150,7 +150,7 @@ function interestCard(quiz) {
 
 function skillsCard() {
   const n = ratedCount();
-  return `<section class="card stack">
+  return `<section class="card stack" id="you-skills">
     <div class="row between"><h2>${t("sk.h")}</h2><span class="chip ${n ? "rising" : "plain"}">${n ? t("sk.count", n) : t("optional")}</span></div>
     <p class="muted small">${t("sk.p")}</p>
     <div class="row"><a class="btn small" href="#/you/skills">${t(n ? "sk.edit" : "sk.start")}</a>
