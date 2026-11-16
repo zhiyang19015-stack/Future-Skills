@@ -1,6 +1,6 @@
 {
  "date": "2026-11-17",
- "commit": "566f8e2",
+ "commit": "0b294b2",
  "targets": {
   "first_move_changed": 3,
   "top5_changed": 4,
@@ -1728,17 +1728,18 @@
  },
  "languages": {
   "summary": {
-   "9. UI strings missing or falling back to English, BM / ZH (of 1102 rows)": "0 / 0",
+   "9. UI strings missing or falling back to English, BM / ZH (of 1103 rows)": "0 / 0",
    "9. Rows whose BM / ZH text is the English text": "0 / 0",
    "9. English text written into the page, not through i18n": 0,
    "9. SDG reasons shown in English only, BM / ZH (of 162)": "0 / 0",
    "9. Sources-page descriptions shown in English only (of 28)": 0,
-   "9. BM rows using an Indonesian word (rule of thumb)": 0,
+   "9. Names from the data shown in English only, BM / ZH (occupations, skills, MASCO groups, course notes; of 1009)": "0 / 0",
+   "9. BM lines using an Indonesian word (rule of thumb)": 0,
    "9. Form fields with no label": 0,
    "9. Colour pairs below WCAG AA 4.5:1 (light + dark, of 46)": 0,
    "9. <html lang> follows the chosen language": "yes"
   },
-  "rows": 1102,
+  "rows": 1103,
   "totals": {
    "en": {
     "missing_key": 0,
@@ -1860,6 +1861,28 @@
    "untranslated": 0
   },
   "indonesian": [],
+  "names": {
+   "occupations": {
+    "rows": 910,
+    "missing_ms": 0,
+    "missing_zh": 0
+   },
+   "skills_knowledge": {
+    "rows": 67,
+    "missing_ms": 0,
+    "missing_zh": 0
+   },
+   "masco_groups": {
+    "rows": 9,
+    "missing_ms": 0,
+    "missing_zh": 0
+   },
+   "course_notes": {
+    "rows": 23,
+    "missing_ms": 0,
+    "missing_zh": 0
+   }
+  },
   "contrast_fail": [],
   "lang_attr": true,
   "pass": true

@@ -9,7 +9,7 @@ const NEWS_SKILLS = 8;
 function futureColumn(c) {
   return `<section class="card future"><div class="row between"><h2>${t("scn." + c.id)}</h2><span class="chip plain num">${Math.round(c.adoption * 100)}%</span></div>
     <p class="tiny muted">${t("scn." + c.id + ".desc")}</p>
-    <div>${c.top.map((m) => `<div class="line"><b>${m.rank}</b><a href="#/occ/${esc(m.occ_id)}" style="color:inherit;text-decoration:none">${esc(m.title)}</a><span class="num strong">${fmt(m.total)}</span>
+    <div>${c.top.map((m) => `<div class="line"><b>${m.rank}</b><a href="#/occ/${esc(m.occ_id)}" style="color:inherit;text-decoration:none">${esc(nm(m.title))}</a><span class="num strong">${fmt(m.total)}</span>
       <span></span><span class="row" style="gap:6px">${statusChip(m.status)}<span class="tiny muted">${t("fut.outlook", fmt(m.outlook, 0))}</span></span><span></span></div>`).join("")}</div></section>`;
 }
 
@@ -31,7 +31,7 @@ function simulationCard(f) {
   const best = [...f.moves].filter((m) => m.stability).sort((a, b) => b.stability.top3 - a.stability.top3).slice(0, 6);
   return `<section class="card stack"><h2>${t("fut.sim.h", sim.futures)}</h2>
     <p class="muted small">${t("fut.sim.p", Math.round(sim.adoption.low * 100), Math.round(sim.adoption.mid * 100), Math.round(sim.adoption.high * 100), f.horizon_year)}</p>
-    ${best.map((m) => `<div class="meter"><span>${esc(m.title)}</span>${bar(m.stability.top3, "ai")}<span class="v">${fmt(m.stability.top3, 0)}%</span></div>
+    ${best.map((m) => `<div class="meter"><span>${esc(nm(m.title))}</span>${bar(m.stability.top3, "ai")}<span class="v">${fmt(m.stability.top3, 0)}%</span></div>
       <p class="tiny muted">${t("fut.sim.row", fmt(m.stability.top1, 0), fmt(m.stability.score_low), fmt(m.stability.score_high))}</p>`).join("")}
     <p class="src">${t("fut.sim.src", sim.assumptions.demand_sd, Math.round(sim.assumptions.param_spread * 100))}</p></section>`;
 }
@@ -43,17 +43,17 @@ function beforeAfter(w) {
     const old = was[m.occ_id];
     const d = isAfter && old ? old.rank - m.rank : 0;
     const pts = isAfter && old ? m.total - old.total : 0;
-    return `<div class="future"><div class="line"><b>${m.rank}</b><span>${esc(m.title)}</span><span class="num">${fmt(m.total)}${isAfter ? ` ${old ? moveCell(d) : `<span class="move up">${t("wi.new")}</span>`}${Math.abs(pts) >= 0.05 ? ` <span class="tiny muted">${signed(pts)}</span>` : ""}` : ""}</span></div></div>`;
+    return `<div class="future"><div class="line"><b>${m.rank}</b><span>${esc(nm(m.title))}</span><span class="num">${fmt(m.total)}${isAfter ? ` ${old ? moveCell(d) : `<span class="move up">${t("wi.new")}</span>`}${Math.abs(pts) >= 0.05 ? ` <span class="tiny muted">${signed(pts)}</span>` : ""}` : ""}</span></div></div>`;
   }).join("")}</div>`;
   return `<div class="ba">${col(w.before, t("fut.before"), false)}${col(w.after, t("fut.after"), true)}</div>`;
 }
 
 function changeLine(c) {
-  if (c.kind === "mycol") return t("wi.mycol", esc(c.label), esc(c.before), esc(c.after));
-  if (c.kind === "job_ads") return t("wi.ads", esc(c.label), signed(c.after, 0));
+  if (c.kind === "mycol") return t("wi.mycol", esc(nm(c.label)), esc(c.before), esc(c.after));
+  if (c.kind === "job_ads") return t("wi.ads", esc(nm(c.label)), signed(c.after, 0));
   if (c.kind === "arxiv") return t("wi.arxiv", signed(c.after, 0));
-  if (c.kind === "handoff") return `${t("wi.handoff", esc(c.label), fmt(c.before, 0), fmt(c.after, 0))}${c.skills && c.skills.length ? ` <span class="muted">(${c.skills.length})</span>` : ""}`;
-  return t(c.tasks === 1 ? "wi.share.one" : "wi.share", esc(c.label), fmt(c.before, 0), fmt(c.after, 0), c.tasks);
+  if (c.kind === "handoff") return `${t("wi.handoff", esc(nm(c.label)), fmt(c.before, 0), fmt(c.after, 0))}${c.skills && c.skills.length ? ` <span class="muted">(${c.skills.length})</span>` : ""}`;
+  return t(c.tasks === 1 ? "wi.share.one" : "wi.share", esc(nm(c.label)), fmt(c.before, 0), fmt(c.after, 0), c.tasks);
 }
 
 const arrow = (b, a, unit = "") => `${fmt(b, 0)}${unit} → ${fmt(a, 0)}${unit}`;
@@ -87,15 +87,15 @@ function whatIfResult(w, ctx = {}) {
   const y = w.you || {};
   const roles = w.roles.slice(0, NEWS_ROLES).map((r) => `<div class="meter"><span>${occLink(r.occ_id, r.title)}</span>
       <span class="small">${statusChip(r.before.status)} → ${statusChip(r.after.status)}</span><span class="v ${r.move > 0 ? "pass" : r.move < 0 ? "fail" : ""}">${signed(r.move)}</span></div>`).join("");
-  const skills = w.skills.slice(0, NEWS_SKILLS).map((s) => `<div class="meter"><span>${esc(s.skill_name)}</span>
+  const skills = w.skills.slice(0, NEWS_SKILLS).map((s) => `<div class="meter"><span>${esc(nm(s.skill_name))}</span>
       <span class="small">${statusChip(s.before.status)} → ${statusChip(s.after.status)}</span><span class="v">${s.after.handoff === null ? "–" : `${arrow(s.before.handoff, s.after.handoff)}%`}</span></div>`).join("");
-  const tools = (y.tools || []).map((x) => `<div class="meter"><span>${esc(x.skill_name)}</span><span class="small">${turn(x.status)}</span>
+  const tools = (y.tools || []).map((x) => `<div class="meter"><span>${esc(nm(x.skill_name))}</span><span class="small">${turn(x.status)}</span>
       <span class="v small">${x.handoff.after === null || x.handoff.before === null ? "–" : t("wi.you.handoff", fmt(x.handoff.before, 0), fmt(x.handoff.after, 0))}</span></div>`).join("");
   const reached = (y.reached || []).map((x) => `<div class="meter"><span>${occLink(x.occ_id, x.title)}</span>
       <span class="small muted">${t("wi.you.reached.row", fmt(x.ai_share.before, 0), fmt(x.ai_share.after, 0), x.tasks_moved, x.tasks)}</span>
       <span class="v">#${x.rank.before}${x.rank.before !== x.rank.after ? ` → #${x.rank.after}` : ""} <span class="tiny muted">${signed(x.total_move)}</span></span></div>`).join("");
-  const first = y.first && y.first.after ? (y.first.changed ? t("wi.top.changed", esc(y.first.before.title), esc(y.first.after.title))
-    : t("wi.first.same", esc(y.first.after.title))) : "";
+  const first = y.first && y.first.after ? (y.first.changed ? t("wi.top.changed", esc(nm(y.first.before.title)), esc(nm(y.first.after.title)))
+    : t("wi.first.same", esc(nm(y.first.after.title)))) : "";
   const p = w.path;
   const learn = (side) => side.learn_next.map(dotName).join("") || `<span class="small muted">–</span>`;
   let pathNote = "";
@@ -103,7 +103,7 @@ function whatIfResult(w, ctx = {}) {
     const was = Object.fromEntries(p.before.learn_next.map((x) => [x.skill_id, x.status]));
     const turned = p.after.learn_next.filter((x) => was[x.skill_id] && was[x.skill_id] !== "declining" && x.status === "declining");
     pathNote = p.order_changed ? t("wi.path.changed")
-      : turned.length ? t("wi.path.status", turned.length, turned.map((x) => esc(x.skill_name)).join(", ")) : t("wi.path.same");
+      : turned.length ? t("wi.path.status", turned.length, turned.map((x) => esc(nm(x.skill_name))).join(", ")) : t("wi.path.same");
   }
   return `<section class="card stack fade" style="border-color:var(--ai)" id="whatif-result">
     <div class="row between"><h2>${ctx.name ? t("wi.you.for", esc(ctx.name)) : t("wi.you.h")}</h2><span class="chip warn">${t("wi.copy")}</span></div>
@@ -134,13 +134,13 @@ function customCard(wi) {
   if (c.kind === "mycol") {
     picker = `<label class="field">${t("wi.c.occ")}<input type="search" placeholder="${esc(t("radar.search.ph"))}" value="${esc(c.query || "")}" data-in="customQuery"></label>
       <div class="tags" id="custom-occs">${customOccs(c)}</div>`;
-    field = `<label class="field">${t("wi.c.status")}<select data-on="customValue">${["yes", "near", "no"].map((o) => `<option value="${o}"${o === (c.value || "no") ? " selected" : ""}>${o}</option>`).join("")}</select></label>`;
+    field = `<label class="field">${t("wi.c.status")}<select data-on="customValue">${["yes", "near", "no"].map((o) => `<option value="${o}"${o === (c.value || "no") ? " selected" : ""}>${t("mycol." + o)}</option>`).join("")}</select></label>`;
     source = "MyCOL 2024/2025";
   } else {
     const items = wi.inputs.filter((i) => i.kind === c.kind);
     const item = items.find((i) => i.id === c.id) || items[0];
     if (item && items.length > 1) {
-      picker = `<label class="field">${t("wi.c.pick")}<select data-on="customId">${items.map((i) => `<option value="${esc(i.id)}"${i.id === item.id ? " selected" : ""}>${esc(i.kind === "job_ads" ? `MASCO ${i.id} · ${i.label}` : i.label)}</option>`).join("")}</select></label>`;
+      picker = `<label class="field">${t("wi.c.pick")}<select data-on="customId">${items.map((i) => `<option value="${esc(i.id)}"${i.id === item.id ? " selected" : ""}>${esc(i.kind === "job_ads" ? `MASCO ${i.id} · ${nm(i.label)}` : nm(i.label))}</option>`).join("")}</select></label>`;
     }
     if (item) {
       const v = c.id === item.id && c.value !== undefined ? c.value : item.value;
@@ -162,7 +162,7 @@ function customCard(wi) {
 function customOccs(c) {
   const all = ui.occList || [];
   const found = c.query ? occMatches(all, c.query, "", 10) : [];
-  return found.map((o) => `<button type="button" class="toggle" data-act="customOcc" data-id="${esc(o.occ_id)}" aria-pressed="${c.id === o.occ_id}">${esc(o.title)} · MyCOL ${esc(o.mycol)}</button>`).join("");
+  return found.map((o) => `<button type="button" class="toggle" data-act="customOcc" data-id="${esc(o.occ_id)}" aria-pressed="${c.id === o.occ_id}">${esc(nm(o.title))} · MyCOL ${esc(o.mycol)}</button>`).join("");
 }
 
 /* Real AI news (scripts/news.py): the page is checked word for word, AI only proposes which work it
@@ -192,7 +192,7 @@ function realItem(n, view, person) {
   const canDecide = n.proposal && !n.approved;
   return `<article class="card stack" style="border-color:${n.approved ? "var(--rise)" : "var(--line)"}">
     <div class="row"><span class="chip brand">${t("rn.real")}</span>${realCheck(n.check)}${fieldChip(n.field)}</div>
-    <p class="headline"><a href="${esc(n.url)}" target="_blank" rel="noopener">${esc(n.title)}</a></p>
+    <p class="headline"><a href="${esc(n.url)}" target="_blank" rel="noopener">${esc(nm(n.title))}</a></p>
     <p class="small muted">${esc(n.publisher)} · ${t("rn.published", dateText(n.published))}</p>
     ${n.quotes.map((q, i) => { const c = n.check && n.check.quotes[i]; return `<blockquote class="small">“${esc(q)}”${c && c.found !== null ? ` <span class="${c.found ? "pass" : "fail"}">${c.found ? "✓" : "✗"}</span>` : ""}</blockquote>`; }).join("")}
     ${n.check && n.check.page_date ? `<p class="src">${t("rn.pagedate", dateText(n.check.page_date))}</p>` : ""}

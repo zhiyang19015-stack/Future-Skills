@@ -13,7 +13,7 @@ Object.assign(STRINGS, {
   "lab.tab.missions": ["Missions", "Misi", "行动任务"],
   "lab.pick": ["Occupation", "Pekerjaan", "职业"],
   "lab.pick.other": ["Compare with", "Bandingkan dengan", "对比的职业"],
-  "lab.pick.ph": ["Type at least two letters of a job title", "Taip sekurang-kurangnya dua huruf nama jawatan", "输入职位名称（至少两个字母，英文）"],
+  "lab.pick.ph": ["Type at least two letters of a job title", "Taip sekurang-kurangnya dua huruf nama jawatan", "输入职位名称（至少两个字，中英文皆可）"],
 
   "lab.kind": ["Kind of number", "Jenis angka", "数字类型"],
   "lab.kind.observed": ["Observed", "Dicerap", "实际观察"],

@@ -52,7 +52,7 @@ function whoCard(occs) {
   const current = occs.find((o) => o.occ_id === state.currentOcc);
   const picker = state.kind === "student" ? "" : `<div class="stack tight">
       <label class="field">${t("you.occ")}<input type="search" placeholder="${esc(t("you.occ.ph"))}" value="${esc(ui.occQuery)}" data-in="occQuery" aria-label="${esc(t("you.occ"))}"></label>
-      ${current ? `<p class="small"><span class="chip brand">${esc(current.title)}</span> <button type="button" class="btn small ghost" data-act="occClear">${t("you.occ.clear")}</button></p>` : ""}
+      ${current ? `<p class="small"><span class="chip brand">${esc(nm(current.title))}</span> <button type="button" class="btn small ghost" data-act="occClear">${t("you.occ.clear")}</button></p>` : ""}
       <div class="tags" id="occ-list">${occChoices(occs)}</div>
       <p class="small muted">${t("you.occ.note")}</p></div>`;
   return `<section class="card stack">
@@ -66,7 +66,7 @@ function whoCard(occs) {
 const occChoices = (occs) => {
   if (!ui.occQuery.trim()) return "";
   const found = occMatches(occs, ui.occQuery, "", 12);
-  return found.length ? found.map((o) => `<button type="button" class="toggle" data-act="occPick" data-id="${esc(o.occ_id)}" aria-pressed="${state.currentOcc === o.occ_id}">${esc(o.title)}</button>`).join("")
+  return found.length ? found.map((o) => `<button type="button" class="toggle" data-act="occPick" data-id="${esc(o.occ_id)}" aria-pressed="${state.currentOcc === o.occ_id}">${esc(nm(o.title))}</button>`).join("")
     : `<span class="small muted">${t("you.occ.none")}</span>`;
 };
 
@@ -90,9 +90,9 @@ function cvCard() {
   const result = r ? `<div class="card flat stack tight">
       <p>${esc(r.summary)}</p>
       <p class="src">${t("cv.by.match")}</p>
-      ${r.technologies.length ? `<div><p class="small strong">${t("cv.found", r.technologies.length)}</p><div class="tags">${r.technologies.map((x) => `<span class="chip brand" title="${esc(t("cv.matched", x.matched))}">${esc(x.skill_name)}</span>`).join("")}</div></div>` : `<p class="small muted">${t("cv.none")}</p>`}
-      ${r.qualifications.length ? `<p class="small"><span class="strong">${t("cv.quals")}</span> ${r.qualifications.map((q) => esc(q.title)).join(" · ")}</p>` : ""}
-      ${r.knowledge.length ? `<p class="small"><span class="strong">${t("cv.subjects")}</span> ${r.knowledge.map((k) => `${esc(k.name)} (${t("level.n", fmt(k.level, 0))})`).join(" · ")}</p>` : ""}
+      ${r.technologies.length ? `<div><p class="small strong">${t("cv.found", r.technologies.length)}</p><div class="tags">${r.technologies.map((x) => `<span class="chip brand" title="${esc(t("cv.matched", x.matched))}">${esc(nm(x.skill_name))}</span>`).join("")}</div></div>` : `<p class="small muted">${t("cv.none")}</p>`}
+      ${r.qualifications.length ? `<p class="small"><span class="strong">${t("cv.quals")}</span> ${r.qualifications.map((q) => esc(nm(q.title))).join(" · ")}</p>` : ""}
+      ${r.knowledge.length ? `<p class="small"><span class="strong">${t("cv.subjects")}</span> ${r.knowledge.map((k) => `${esc(nm(k.name))} (${t("level.n", fmt(k.level, 0))})`).join(" · ")}</p>` : ""}
       ${r.occupations.length ? `<p class="small"><span class="strong">${t("cv.titles")}</span> ${r.occupations.map((o) => `${esc(o.matched)} → ${occLink(o.occ_id, o.title)}`).join(" · ")}</p>` : ""}
     </div>` : state.cv ? `<p class="note">${t("cv.kept")}</p>` : "";
   return `<section class="card stack">
@@ -313,7 +313,7 @@ async function skillsPage() {
   const card = (q) => {
     const mine = state.skills[q.element_id];
     return `<section class="card stack tight" id="sk-${esc(q.element_id)}">
-      <div class="row between"><h2 style="font-size:1.05rem">${esc(q.name)}</h2><span class="chip plain">${t(q.kind === "skill" ? "skill.kind.general" : "skill.kind.knowledge")}</span></div>
+      <div class="row between"><h2 style="font-size:1.05rem">${esc(nm(q.name))}</h2><span class="chip plain">${t(q.kind === "skill" ? "skill.kind.general" : "skill.kind.knowledge")}</span></div>
       <p class="tiny muted">${esc(q.description)}</p>
       <div class="options">${q.options.map((o) => `<button type="button" data-act="skillLevel" data-id="${esc(q.element_id)}" data-v="${o.level}" aria-pressed="${mine === o.level}">
         ${o.text ? `<span class="tiny muted">${t("level.n", fmt(o.level, 0))}</span> ${esc(o.text)}` : t("sk.notyet")}</button>`).join("")}</div>
