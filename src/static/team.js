@@ -53,7 +53,7 @@ PAGES.team = async () => {
       <p class="small">${t("team.move.p", fmt(r.move.total, 0), fmt(r.move.hours, 0), fmt(r.move.weeks, 0), v.team.hours_per_week)}</p>
       ${r.move.gaps.length ? `<div class="tags">${r.move.gaps.slice(0, 5).map((g) => `<span class="chip plain">${esc(g.skill_name)} +${fmt(g.gap)}</span>`).join("")}</div>` : ""}
       ${r.move.courses.length ? `<ul class="small">${r.move.courses.map((c) => `<li><a href="${safeUrl(c.url)}" target="_blank" rel="noopener">${esc(c.title)}</a> <span class="muted">· ${esc(c.provider)}${c.hours ? ` · ${t("path.hours", fmt(c.hours, 0))}` : ""} · ${t("path.checked", dateText(c.verified_date))}</span></li>`).join("")}</ul>` : ""}
-      ${r.move.sdg.map((s) => `<p class="small">${sdgChip(s.target)} ${esc(s.rationale)}</p>`).join("")}
+      ${r.move.sdg.map((s) => `<p class="small">${sdgChip(s.target)} ${esc(sdgWhy(s.rationale))}</p>`).join("")}
     </article>`;
   return `<div class="stack loose">
     <header class="stack tight"><p class="eyebrow">${t("team.eyebrow")}</p><h1>${t("team.h1")}</h1>
@@ -63,7 +63,7 @@ PAGES.team = async () => {
     <section class="grid three">
       <div class="card pad-s tile"><span class="small muted">${t("team.t.declining")}</span><div class="big">${v.counts.declining} <small>/ ${v.team.people}</small></div></div>
       <div class="card pad-s tile"><span class="small muted">${t("team.t.hours")}</span><div class="big">${fmt(b.person_hours, 0)}</div><span class="tiny muted">${t("team.t.hours.sub", b.people, fmt(b.longest_weeks, 0))}</span></div>
-      <div class="card pad-s tile"><span class="small muted">${t("team.t.cost")}</span><div class="big">RM ${fmt(b.cost_myr, 0)}</div><span class="tiny muted">${t("team.t.cost.sub")}</span></div>
+      <div class="card pad-s tile"><span class="small muted">${t("team.t.cost")}</span><div class="big">RM ${whole(b.cost_myr)}</div><span class="tiny muted">${t("team.t.cost.sub")}</span></div>
     </section>
     <section class="card stack"><h2>${t("team.roles.h")}</h2><p class="muted small">${t("team.roles.p")}</p>
       <div class="table-wrap"><table><thead><tr><th>${t("team.col.job")}</th><th class="n">${t("team.col.people")}</th><th class="n">${t("team.col.ai")}</th><th>${t("team.col.outlook")}</th><th>${t("ev.h")}</th></tr></thead>
@@ -82,7 +82,7 @@ PAGES.team = async () => {
         <p class="tiny muted">${g.roles.map((r) => `${esc(r.title)} × ${r.headcount}`).join(" · ")}</p>`).join("")}
     </section>` : ""}
     ${v.sdg.length ? `<section class="card stack"><h2>${t("team.sdg.h")}</h2><p class="muted small">${t("team.sdg.p")}</p>
-      ${v.sdg.map((s) => `<p class="small">${sdgChip(s.target)} <span class="strong">${t("team.sdg.row", s.people, fmt(s.person_hours, 0))}</span> ${esc(s.rationale)}</p>`).join("")}
+      ${v.sdg.map((s) => `<p class="small">${sdgChip(s.target)} <span class="strong">${t("team.sdg.row", s.people, fmt(s.person_hours, 0))}</span> ${esc(sdgWhy(s.rationale))}</p>`).join("")}
     </section>` : ""}
     <p class="src">${t("team.method")} ${esc(b.note)}</p>
     <div class="row"><a class="btn" href="#/pilot">${t("home.pilot.go")}</a><a class="btn" href="#/radar">${t("nav.radar")}</a><a class="btn" href="#/sources">${t("nav.sources")}</a></div>

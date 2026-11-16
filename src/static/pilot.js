@@ -206,7 +206,7 @@ Object.assign(ACT, {
       route();
     } catch (e) {
       el.disabled = false;
-      alert(e.message);
+      alert(errText(e));
     }
   },
   pilotOpen: async (el) => {
@@ -215,7 +215,7 @@ Object.assign(ACT, {
       const s = await request("/api/pilot/session", {});
       savePilotKeys({ ...pilotKeys(), [s.code]: s.key });
       pilotUi.opened = s.code;
-    } catch (e) { alert(e.message); }
+    } catch (e) { alert(errText(e)); }
     redraw();
   },
   pilotRefresh: async (el) => { el.disabled = true; await pilotLoad(el.dataset.id).catch(() => null); redraw(); },

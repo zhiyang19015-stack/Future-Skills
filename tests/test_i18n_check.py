@@ -62,6 +62,11 @@ class AppTest(unittest.TestCase):
         self.assertEqual(lg["summary"], i18n_check.summary(i18n_check.run()))
         self.assertEqual(lg["pass"], all(v in (0, "0 / 0", "yes") for v in lg["summary"].values()))
 
+    def test_every_sdg_reason_has_a_line(self):
+        side = i18n_check.side_tables()
+        self.assertEqual(side["sdg_reasons"]["missing_ms"], 0)
+        self.assertEqual(side["sdg_reasons"]["missing_zh"], 0)
+
 
 if __name__ == "__main__":
     unittest.main()
