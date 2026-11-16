@@ -1,6 +1,6 @@
 {
  "date": "2026-11-16",
- "commit": "e907697",
+ "commit": "515126d",
  "targets": {
   "first_move_changed": 3,
   "top5_changed": 4,
@@ -1387,11 +1387,11 @@
     "name": "Aiman",
     "kind": "working",
     "occupation": "Digital Forensics Analysts",
-    "resources": 17,
+    "resources": 18,
     "job_search": [],
     "job_search_unsuited": [],
-    "non_english": 3,
-    "non_english_pct": 17.6,
+    "non_english": 4,
+    "non_english_pct": 22.2,
     "skills": 10,
     "no_course": [
      "MITRE ATT&CK software"
@@ -1400,8 +1400,8 @@
      "name": "Saylor Academy",
      "count": 10
     },
-    "hours": 280.2,
-    "weeks": 46.7,
+    "hours": 284.2,
+    "weeks": 47.4,
     "hours_per_week": 6
    },
    {
@@ -1409,22 +1409,22 @@
     "name": "Nurul",
     "kind": "student",
     "occupation": "Speech-Language Pathology Assistants",
-    "resources": 17,
+    "resources": 18,
     "job_search": [
      "PRDV102: Resume Writing",
      "PRDV103: Interviewing Skills"
     ],
     "job_search_unsuited": [],
-    "non_english": 1,
-    "non_english_pct": 5.9,
+    "non_english": 2,
+    "non_english_pct": 11.1,
     "skills": 10,
     "no_course": [],
     "top_provider": {
      "name": "Saylor Academy",
      "count": 13
     },
-    "hours": 247.7,
-    "weeks": 41.3,
+    "hours": 251.7,
+    "weeks": 41.9,
     "hours_per_week": 6
    },
    {
@@ -1432,19 +1432,19 @@
     "name": "Siti Hajar",
     "kind": "working",
     "occupation": "Tax Preparers",
-    "resources": 21,
+    "resources": 22,
     "job_search": [],
     "job_search_unsuited": [],
-    "non_english": 2,
-    "non_english_pct": 9.5,
+    "non_english": 3,
+    "non_english_pct": 13.6,
     "skills": 10,
     "no_course": [],
     "top_provider": {
      "name": "Saylor Academy",
      "count": 16
     },
-    "hours": 609.0,
-    "weeks": 121.8,
+    "hours": 613.0,
+    "weeks": 122.6,
     "hours_per_week": 5
    },
    {
@@ -1452,22 +1452,22 @@
     "name": "Kumar",
     "kind": "student",
     "occupation": "Solar Energy Systems Engineers",
-    "resources": 19,
+    "resources": 20,
     "job_search": [
      "PRDV102: Resume Writing",
      "PRDV103: Interviewing Skills"
     ],
     "job_search_unsuited": [],
-    "non_english": 1,
-    "non_english_pct": 5.3,
+    "non_english": 2,
+    "non_english_pct": 10.0,
     "skills": 10,
     "no_course": [],
     "top_provider": {
      "name": "Saylor Academy",
      "count": 13
     },
-    "hours": 319.7,
-    "weeks": 40.0,
+    "hours": 323.7,
+    "weeks": 40.5,
     "hours_per_week": 8
    },
    {
@@ -1475,29 +1475,29 @@
     "name": "Mei Ling",
     "kind": "switcher",
     "occupation": "Talent Directors",
-    "resources": 16,
+    "resources": 17,
     "job_search": [
      "PRDV102: Resume Writing",
      "PRDV103: Interviewing Skills"
     ],
     "job_search_unsuited": [],
-    "non_english": 1,
-    "non_english_pct": 6.2,
+    "non_english": 2,
+    "non_english_pct": 11.8,
     "skills": 10,
     "no_course": [],
     "top_provider": {
      "name": "Saylor Academy",
      "count": 14
     },
-    "hours": 311.7,
-    "weeks": 31.2,
+    "hours": 315.7,
+    "weeks": 31.6,
     "hours_per_week": 10
    }
   ],
   "unsuited": 0,
   "no_course": 1,
-  "resources": 90,
-  "non_english_pct": 8.9,
+  "resources": 95,
+  "non_english_pct": 13.7,
   "pass": false
  },
  "links": {
@@ -1547,9 +1547,9 @@
     "detail": "200"
    },
    {
-    "id": "H005",
-    "title": "Professional Certificate in Data Analytics",
-    "url": "https://www.ukm.my/studyukm/professional-certificate-in-data-analytics/",
+    "id": "H004",
+    "title": "AWS-TE: AWS Technical Essentials",
+    "url": "https://trainocate.com.my/courses/aws-te-aws-technical-essentials/",
     "verdict": "ok",
     "detail": "200"
    },
@@ -1568,9 +1568,9 @@
     "detail": "200"
    },
    {
-    "id": "H002",
-    "title": "TMY-AILMW: AI Literacy for the Modern Workplace",
-    "url": "https://trainocate.com.my/courses/tmy-ailmw-ai-literacy-for-the-modern-workplace/",
+    "id": "H001",
+    "title": "PMI-PMP: Project Management Professional",
+    "url": "https://trainocate.com.my/courses/pmp-project-management-professional/",
     "verdict": "ok",
     "detail": "200"
    }
