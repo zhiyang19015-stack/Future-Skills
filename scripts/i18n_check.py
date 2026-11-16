@@ -14,6 +14,8 @@ Chinese:
     contrast  pairs of text and background colours in style.css below WCAG AA (4.5:1), light and dark
     tables    UN goal names, goal texts, the 36 interest statements and the SDG reasons of
               data/sdg_map.csv with no Bahasa Melayu or Chinese line; Sources-page descriptions
+    names     occupation titles, skill and knowledge names, MASCO groups and course notes from the data
+              with no line in names-i18n.js (our own translation, shown through nm())
     indonesian Bahasa Melayu rows with a word on the INDONESIAN list (a rule of thumb)
 
 Counts are per page file, named by the pages it draws (PAGE_FILES). The scan is a rule on the source
@@ -59,6 +61,8 @@ KEEP_AS_IS: dict[str, tuple[str, ...]] = {
 }
 # Text in index.html that is meant to be read in all three languages at once.
 TRILINGUAL = {"Language / Bahasa / 语言"}
+# Malaysian phrases that contain a word from the list below and are right as they are.
+MALAYSIAN_OK = ("perhubungan perusahaan",)  # industrial relations: Jabatan Perhubungan Perusahaan Malaysia
 # Words that are Indonesian and not Bahasa Malaysia (the Malaysian word in brackets). A rule of thumb for
 # "BM, not Indonesian": a hit is a word to check, not proof of an error.
 INDONESIAN = ("bisa (boleh)", "karena (kerana)", "rekomendasi (cadangan)", "kualitas (kualiti)",
@@ -263,7 +267,41 @@ def indonesian() -> list[dict]:
     """Bahasa Melayu rows that use a word from INDONESIAN."""
     words = [w.split(" (")[0] for w in INDONESIAN]
     pat = re.compile(r"\b(" + "|".join(re.escape(w) for w in words) + r")\b", re.I)
-    return [{"key": k, "word": m.group(1)} for k, r in tables().items() for m in [pat.search(r["ms"])] if m]
+    ms = {k: r["ms"] for k, r in tables().items()}
+    for name in ("sdg-i18n.js", "names-i18n.js"):
+        ms.update({f"{name}: {en[:50]}": pair[0] for en, pair in _pairs(name).items()})
+    ok = re.compile("|".join(re.escape(x) for x in MALAYSIAN_OK), re.I)
+    return [{"key": k, "word": m.group(1)} for k, text in ms.items() for m in [pat.search(ok.sub(" ", text))] if m]
+
+
+def _pairs(name: str) -> dict:
+    """English -> [ms, zh] rows of a static table file (sdg-i18n.js, names-i18n.js); empty when absent."""
+    path = STATIC / name
+    if not path.exists():
+        return {}
+    rows = {}
+    for m in re.finditer(r'^\s*("(?:[^"\\]|\\.)*"):\s*(\[.*\]),\s*$', path.read_text(encoding="utf-8"), re.M):
+        rows[json.loads(m.group(1))] = json.loads(m.group(2))
+    return rows
+
+
+def data_names() -> dict:
+    """Names the data keeps in English that the page shows through nm() (names-i18n.js): occupation titles,
+    O*NET skill and knowledge names, MASCO major groups and course notes, with how many have no BM / ZH line."""
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import demand  # noqa: E402
+    have = _pairs("names-i18n.js")
+    sets = {}
+    with (ROOT / "data" / "occupations.csv").open(encoding="utf-8") as f:
+        sets["occupations"] = sorted({r["title"] for r in csv.DictReader(f)})
+    with (ROOT / "data" / "elements.csv").open(encoding="utf-8") as f:
+        sets["skills_knowledge"] = sorted({r["name"] for r in csv.DictReader(f)})
+    sets["masco_groups"] = sorted({v[0] for v in demand.MASCO_MAJOR.values()})
+    with (ROOT / "data" / "learning_resources.csv").open(encoding="utf-8") as f:
+        sets["course_notes"] = sorted({r["notes"] for r in csv.DictReader(f) if r["notes"].strip()})
+    return {k: {"rows": len(v), "missing_ms": sum(1 for e in v if not (e in have and have[e][0].strip())),
+                "missing_zh": sum(1 for e in v if not (e in have and len(have[e]) > 1 and have[e][1].strip()))}
+            for k, v in sets.items()}
 
 
 def side_tables() -> dict:
@@ -410,7 +448,8 @@ def run() -> dict:
     return {"rows": len(rows), "pages": pages, "all_rows": all_rows, "totals": totals,
             "unlabelled": sum(len(p["unlabelled"]) for p in pages.values()),
             "contrast": con, "contrast_fail": sum(1 for c in con if not c["pass"]),
-            "lang_attr": _lang_attr(), "indonesian": indonesian(), "side": side_tables(), "sources": source_rows()}
+            "lang_attr": _lang_attr(), "indonesian": indonesian(), "side": side_tables(), "sources": source_rows(),
+            "names": data_names()}
 
 
 def _lang_attr() -> bool:
@@ -431,7 +470,11 @@ def summary(r: dict) -> dict:
             f"{r['side']['sdg_reasons']['missing_ms']} / {r['side']['sdg_reasons']['missing_zh']}",
         "9. Sources-page descriptions shown in English only (of {})".format(r["sources"]["parts"]):
             r["sources"]["untranslated"],
-        "9. BM rows using an Indonesian word (rule of thumb)": len(r["indonesian"]),
+        "9. Names from the data shown in English only, BM / ZH (occupations, skills, MASCO groups, course notes; of {})"
+        .format(sum(v["rows"] for v in r["names"].values())):
+            "{} / {}".format(sum(v["missing_ms"] for v in r["names"].values()),
+                             sum(v["missing_zh"] for v in r["names"].values())),
+        "9. BM lines using an Indonesian word (rule of thumb)": len(r["indonesian"]),
         "9. Form fields with no label": r["unlabelled"],
         "9. Colour pairs below WCAG AA 4.5:1 (light + dark, of {})".format(len(r["contrast"])): r["contrast_fail"],
         "9. <html lang> follows the chosen language": "yes" if r["lang_attr"] else "no",
@@ -462,6 +505,7 @@ def as_text(r: dict) -> str:
     for h in r["indonesian"]:
         out.append(f"- Indonesian word in ms {h['key']}: {h['word']}")
     out.append("- other tables: " + json.dumps(r["side"]))
+    out.append("- names from the data: " + json.dumps(r["names"]))
     for c in r["contrast"]:
         if not c["pass"]:
             out.append(f"- contrast {c['theme']}: --{c['text']} on --{c['on']} = {c['ratio']}:1")

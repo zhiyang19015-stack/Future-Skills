@@ -386,7 +386,7 @@ def languages() -> dict:
                           "hardcoded": [f"{h['line']}: {h['text'][:60]}" for h in p["hardcoded"]],
                           "unlabelled": [f"{h['line']}: {h['field']}" for h in p["unlabelled"]]}
                       for f, p in r["pages"].items()},
-            "side": r["side"], "sources": r["sources"], "indonesian": r["indonesian"],
+            "side": r["side"], "sources": r["sources"], "indonesian": r["indonesian"], "names": r["names"],
             "contrast_fail": [c for c in r["contrast"] if not c["pass"]], "lang_attr": r["lang_attr"],
             "pass": all(v in (0, "0 / 0", "yes") for v in i18n_check.summary(r).values())}
 
@@ -614,8 +614,8 @@ def as_markdown(r: dict, base: dict | None) -> str:
                 "Read from the page's own files by `scripts/i18n_check.py` (no browser): every `t(\"key\")` call, "
                 f"the {lg['rows']} rows of the string tables, the markup in the scripts and `index.html`, the SDG reasons "
                 "of `data/sdg_map.csv`, the Sources page's descriptions and the colour tokens of `style.css`. Occupation "
-                "titles, task statements, skill names and course data stay as their source wrote them (English) and "
-                "are not counted. A rule on source text: it can miss text built in an unusual way.", "",
+                "descriptions, task statements and course titles stay as their source wrote them and are not counted; "
+                "occupation, skill and MASCO group names and course notes are counted against our own translation. A rule on source text: it can miss text built in an unusual way.", "",
                 "| Page file (pages) | Missing keys | BM / ZH falling back to English | English written into the page "
                 "| Fields with no label |", "|---|---|---|---|---|"]
         for f, x in lg["pages"].items():
@@ -626,6 +626,9 @@ def as_markdown(r: dict, base: dict | None) -> str:
         out += ["", "Other tables, lines with no BM / ZH: " + "; ".join(
             f"{name.replace('_', ' ')} {v['missing_ms']} / {v['missing_zh']} of {v['rows']}" for name, v in sd.items())
             + f". Sources-page descriptions in English only: {lg['sources']['untranslated']} of {lg['sources']['parts']}."
+            + ("" if "names" not in lg else " Names from the data with no BM / ZH line: " + "; ".join(
+                f"{name.replace('_', ' ')} {v['missing_ms']} / {v['missing_zh']} of {v['rows']}" for name, v in lg["names"].items())
+               + " (our own translation, not official).")
             + " Colour pairs below 4.5:1: " + ("none" if not lg["contrast_fail"] else "; ".join(
                 f"{c['theme']} --{c['text']} on --{c['on']} {c['ratio']}:1" for c in lg["contrast_fail"])) + ".", ""]
     return "\n".join(out)
