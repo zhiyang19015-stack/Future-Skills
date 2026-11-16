@@ -18,6 +18,8 @@ The six steps of the app and the endpoints behind them:
     5 SDG       GET  /api/sdg/summary, POST /api/sdg/record             the anonymous total
     6 Futures   POST /api/futures          the three scenarios side by side
                 GET  /api/whatif, POST /api/whatif                      simulated news and changed numbers
+                GET  /api/news, POST /api/news/check, /api/news/propose, /api/news/decide
+                                                                         real news: checked, proposed, approved
     Team        GET  /api/team?scenario=   the fictional team through the same engine: jobs, moves,
                 POST /api/team             skill-gap heatmap, training groups, hours, SDG (or your own team)
     Pilot       POST /api/pilot/session, /api/pilot/answer, /api/pilot/summary    the clarity check: three
@@ -40,6 +42,7 @@ AUTO_UPDATE_DAYS old (default 7; 0 turns it off), checked every hour.
 
 import gzip
 import hashlib
+import hmac
 import json
 import os
 import re
@@ -74,6 +77,7 @@ import interest  # noqa: E402
 import learning  # noqa: E402
 import matching  # noqa: E402
 import missions  # noqa: E402
+import news  # noqa: E402
 import outlook  # noqa: E402
 import pilot  # noqa: E402
 import registry  # noqa: E402
@@ -328,6 +332,11 @@ def scenario_of(args: dict) -> tuple[str | None, float]:
     return scenario, outlook.adoption_of(scenario)
 
 
+def live_data() -> dict:
+    """The data every page uses: the measured tables plus the real news a person approved (news.py)."""
+    return news.apply(matching.load_data())
+
+
 def scenario_info(scenario: str | None, adoption: float) -> dict:
     if scenario:
         return {"id": scenario, **outlook.SCENARIOS[scenario]}
@@ -352,7 +361,7 @@ def what_if(body: dict, required: bool = False) -> dict | None:
 
 def request_context(body: dict, required_changes: bool = False) -> tuple[dict, dict, str | None, float, dict | None]:
     """The data (changed when the body sends a what-if), profile, scenario and adoption of a request."""
-    data = matching.load_data()
+    data = live_data()
     changes = what_if(body, required_changes)
     if changes and not required_changes:
         data = whatif.changed_data(data, changes)
@@ -378,8 +387,12 @@ def data_version(data: dict, changes: dict | None = None) -> dict:
             h.update(path.read_bytes())
     if changes:
         h.update(json.dumps(changes, sort_keys=True).encode("utf-8"))
+    approved = (data.get("news") or {}).get("approved") or []
+    if approved:
+        h.update(json.dumps(approved).encode("utf-8"))
     src = data["ai"]["source"]["economic_index"]
     return {"id": h.hexdigest()[:12], "computed_date": data["demand"]["computed_date"], "what_if": bool(changes),
+            "news_approved": approved,
             "ai_usage_period": data["ai"]["context"]["latest"], "ai_usage_release": src["release_date"]}
 
 
@@ -542,12 +555,12 @@ def radar_payload(data: dict, scenario: str | None, adoption: float) -> dict:
 @route("GET", "/api/radar")
 def radar(req):
     scenario, adoption = scenario_of(req.args)
-    return reply(radar_payload(matching.load_data(), scenario, adoption))
+    return reply(radar_payload(live_data(), scenario, adoption))
 
 
 @route("GET", "/api/occupations/<occ_id>")
 def occupation_detail(req, occ_id: str):
-    data = matching.load_data()
+    data = live_data()
     occ = data["by_id"].get(occ_id)
     if occ is None:
         return reply(error="not found", status=404)
@@ -731,7 +744,7 @@ def job_ad(req):
     text = body.get("text")
     if not isinstance(text, str) or len(text.strip()) < 40:
         raise Refused("'text' must be the job ad's text (at least 40 characters)")
-    data = matching.load_data()
+    data = live_data()
     mine = body.get("technologies", [])
     if not isinstance(mine, list) or any(t not in data["technologies"] for t in mine):
         raise Refused("'technologies' must be a list of tech_ids")
@@ -873,12 +886,65 @@ def what_if_run(req):
                  you=whatif.person_change(profile, data, after, adoption, before_rows, after_rows))
 
 
+# --- verified real news: AI reads, rules decide, a person approves (scripts/news.py) -----------------
+
+NEWS_REVIEW_CODE = "NEWS_REVIEW_CODE"   # when this variable is set, approving, rejecting and undoing need it
+
+
+def news_id(body: dict) -> str:
+    value = body.get("id")
+    if not isinstance(value, str) or not value:
+        raise Refused("'id' must be the id of an item in data/news.json")
+    return value
+
+
+@route("GET", "/api/news")
+def news_list(req):
+    try:
+        out = news.view()
+    except (news.NewsError, OSError, ValueError, KeyError) as problem:
+        raise Refused(f"data/news.json cannot be read: {problem}") from None
+    return reply(**out, review_code_required=bool(os.environ.get(NEWS_REVIEW_CODE)))
+
+
+@route("POST", "/api/news/check")
+def news_check(req):
+    """Open the item's page now: are the quotes there word for word, and is the date the page's own?"""
+    try:
+        return reply(news.check(news_id(req.json())))
+    except news.NewsError as problem:
+        raise Refused(str(problem)) from None
+
+
+@route("POST", "/api/news/propose")
+def news_propose(req):
+    """Which activities and topics the item is about (LLM or keyword rule), sized by the fixed rule. Changes nothing."""
+    try:
+        return reply(news.propose(news_id(req.json())))
+    except news.NewsError as problem:
+        raise Refused(str(problem)) from None
+
+
+@route("POST", "/api/news/decide")
+def news_decide(req):
+    """A person approves, rejects or undoes. Only an approved, verified item changes the data."""
+    body = req.json()
+    wanted = os.environ.get(NEWS_REVIEW_CODE, "")
+    if wanted and not hmac.compare_digest(str(body.get("code") or "").encode(), wanted.encode()):
+        return reply(status=403, error="this site needs the reviewer code to approve, reject or undo")
+    try:
+        return reply(news.decide(news_id(body), str(body.get("action") or ""), body.get("proposal_id"),
+                                 body.get("reviewer")))
+    except news.NewsError as problem:
+        raise Refused(str(problem)) from None
+
+
 # --- the team view: the same engine for an HR or career-centre officer ------------------------------
 
 @route("GET", "/api/team")
 def team_sample(req):
     scenario, adoption = scenario_of(req.args)
-    return reply(**team.view(None, matching.load_data(), adoption=adoption), scenario=scenario_info(scenario, adoption),
+    return reply(**team.view(None, live_data(), adoption=adoption), scenario=scenario_info(scenario, adoption),
                  scenarios=scenario_list())
 
 
@@ -889,7 +955,7 @@ def team_own(req):
     body = req.json()
     scenario, adoption = scenario_of(body)
     try:
-        result = team.view(body, matching.load_data(), adoption=adoption)
+        result = team.view(body, live_data(), adoption=adoption)
     except team.TeamError as error:
         raise Refused(str(error)) from None
     return reply(**result, scenario=scenario_info(scenario, adoption), scenarios=scenario_list())
@@ -1017,7 +1083,7 @@ def pilot_summary(req):
 @route("GET", "/api/metrics")
 def metrics(req):
     """The metric registry: every number's source, dates, method, confidence, limits and transformation."""
-    return reply(metrics=registry.registry(matching.load_data(), read_csv("demand_inputs.csv")),
+    return reply(metrics=registry.registry(live_data(), read_csv("demand_inputs.csv")),
                  kinds=list(registry.KINDS))
 
 
@@ -1189,7 +1255,7 @@ def source_rows(data: dict) -> list[dict]:
 
 @route("GET", "/api/sources")
 def sources(req):
-    data = matching.load_data()
+    data = live_data()
     return reply(sources=source_rows(data), update=update_status(), parameters=outlook.parameters(),
                  weights=matching.WEIGHTS, field_weights=matching.FIELD_WEIGHTS, skill_split=matching.SKILL_SPLIT,
                  sdg_bonus=matching.SDG_BONUS, scenarios=scenario_list(),

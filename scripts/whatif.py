@@ -230,6 +230,17 @@ def changed(changes: dict | None) -> bool:
     return bool(changes and any(changes.get(k) for k in KEYS))
 
 
+def with_news(data: dict, changes: dict) -> dict:
+    """The AI-layer changes of a what-if on top of the approved real news already in data (news.apply):
+    a what-if hands-off value replaces the news one; for an activity's AI share the higher floor holds."""
+    base = (data.get("news") or {}).get("changes") or {}
+    handoff = {**(base.get("handoff") or {}), **(changes.get("handoff") or {})}
+    share = dict(base.get("ai_share") or {})
+    for k, v in (changes.get("ai_share") or {}).items():
+        share[k] = max(v, share.get(k, v))
+    return {"handoff": handoff or None, "ai_share": share or None}
+
+
 def changed_data(data: dict, changes: dict) -> dict:
     """A copy of a matching.load_data() result built from the changed inputs."""
     d = data["demand"]
@@ -237,7 +248,7 @@ def changed_data(data: dict, changes: dict) -> dict:
         d = demand.build(changes={k: changes[k] for k in ("job_ads", "arxiv", "mycol") if changes.get(k)})
     ai = data["ai"]
     if changes.get("handoff") or changes.get("ai_share"):
-        ai = ai_exposure.build(changes={"handoff": changes.get("handoff"), "ai_share": changes.get("ai_share")})
+        ai = ai_exposure.build(changes=with_news(data, changes))
     by_id = data["by_id"]
     if changes.get("mycol"):
         occupations = [{**o, "mycol": changes["mycol"].get(o["occ_id"], o["mycol"])} for o in data["occupations"]]

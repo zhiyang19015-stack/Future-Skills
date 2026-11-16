@@ -22,4 +22,5 @@ Every table the app reads. Generated tables are rebuilt by the scripts named bel
 | `regulated.csv` | 16 | Professions that need registration in Malaysia, the body, what it requires, and the O*NET codes it covers | by hand |
 | `interest_items.json` | 36 | The interest statements, six for each RIASEC type | by hand |
 | `sample_profiles.json` | 5 | Fictional people for the demo | by hand |
+| `news.json` | 2 | Real AI news a person picked from a trusted site: link, publisher, title, the date the page gives, the quotes to check word for word, the field it is about | by hand, checked by `scripts/news.py` |
 | `sample_team.json` | 8 | A fictional team of 20 for the Team view: job titles and headcounts | by hand |

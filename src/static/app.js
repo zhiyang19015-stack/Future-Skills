@@ -380,7 +380,7 @@ PAGES.home = async () => {
       <p class="headline big">“${esc(t("news." + news.id + ".title"))}”</p>
       <p class="muted">${t("home.news.p")}</p>
       <div class="row"><button type="button" class="btn primary" data-act="newsFor" data-id="${esc(news.id)}" data-person="${own ? "" : esc(news.person || "")}">${newsGo}</button>
-        <a class="btn ghost" href="#/futures">${t("home.news.more")}</a></div>
+        <a class="btn ghost" href="#/futures">${t("home.news.more")}</a><a class="btn ghost" href="#/futures">${t("home.news.real")} →</a></div>
     </section>` : ""}
 
     <section class="card stack">

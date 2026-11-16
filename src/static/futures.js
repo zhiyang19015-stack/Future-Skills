@@ -1,5 +1,6 @@
 /* Step 6, "Futures": the same person under three speeds of AI adoption and across 1,000 drawn
-   futures; then one piece of simulated AI news, or any changed number, before and after. */
+   futures; then real AI news checked against its page and approved by a person, one piece of
+   simulated AI news, or any changed number, before and after. */
 "use strict";
 
 const NEWS_ROLES = 8;
@@ -107,6 +108,7 @@ function whatIfResult(w, ctx = {}) {
   return `<section class="card stack fade" style="border-color:var(--ai)" id="whatif-result">
     <div class="row between"><h2>${ctx.name ? t("wi.you.for", esc(ctx.name)) : t("wi.you.h")}</h2><span class="chip warn">${t("wi.copy")}</span></div>
     ${ui.news ? `<p class="small muted"><span class="chip ai">${t("news.simulated")}</span> “${esc(t("news." + ui.news + ".title"))}”</p>` : ""}
+    ${ui.realNews ? `<p class="small muted"><span class="chip brand">${t("rn.real")}</span> ${t("rn.preview.note")}</p>` : ""}
     ${y.subject ? subjectBlock(y, ctx.horizon || 2030) : ""}
     ${tools ? `<div class="stack tight"><h3>${t("wi.you.tools.h")}</h3>${tools}</div>` : ""}
     <div class="stack tight"><h3>${t("wi.you.reached.h")}</h3>${first ? `<p class="small strong">${first}</p>` : ""}
@@ -163,10 +165,72 @@ function customOccs(c) {
   return found.map((o) => `<button type="button" class="toggle" data-act="customOcc" data-id="${esc(o.occ_id)}" aria-pressed="${c.id === o.occ_id}">${esc(o.title)} · MyCOL ${esc(o.mycol)}</button>`).join("");
 }
 
+/* Real AI news (scripts/news.py): the page is checked word for word, AI only proposes which work it
+   is about, a fixed rule sizes the change, and nothing moves until a person approves. */
+const when = (iso) => (iso ? String(iso).replace("T", " ").slice(0, 16) + " UTC" : "–");
+function realCheck(c) {
+  if (!c) return `<span class="chip plain">${t("rn.unchecked")}</span>`;
+  if (c.status === "verified") return `<span class="chip rising" style="white-space:normal">✓ ${t("rn.verified", when(c.at))}</span>`;
+  return `<span class="chip declining" style="white-space:normal">✗ ${t("rn.notverified")} · ${t("rn.problem." + (c.problem || "unreachable"))}</span>`;
+}
+function realProposal(p, rule) {
+  if (!p) return "";
+  const by = p.method === "llm" ? t("rn.by.llm", esc(p.model)) : t("rn.by.keyword", esc(p.fallback_reason || ""));
+  const rows = p.rows.map((r) => `<div class="meter"><span>${esc(r.name.replace(/\.$/, ""))}<div class="tiny muted">${t("rn.words", esc((p.shared_words[r.name] || []).join(", ") || "–"))}</div></span>
+      <span class="small muted">${r.kind === "ai_share" ? t("rn.row.share", r.tasks_raised, r.tasks) : t("rn.row.handoff")}</span>
+      <span class="v">${fmt(r.before, 1)} → ${fmt(r.after, 1)}</span></div>`).join("");
+  return `<div class="stack tight"><h3>${t("rn.prop.h")}</h3><p class="small muted">${by}</p>${rows || `<p class="small muted">${t("rn.prop.none")}</p>`}
+    <p class="src">${t("rn.rule", fmt(rule.activity_step, 0), fmt(rule.activity_max, 0), fmt(rule.topic_step, 0), fmt(rule.topic_max, 0))}</p></div>`;
+}
+function realItem(n, view, person) {
+  const busy = ui.busy["rn:" + n.id];
+  const verified = n.check && n.check.status === "verified";
+  const d = n.decision;
+  const decided = n.approved ? `<p class="note"><strong>${t("rn.approved", esc(d.reviewer), when(d.at))}</strong> ${t("rn.approved.p")}</p>`
+    : d && d.step === "rejected" ? `<p class="small muted">${t("rn.rejected", esc(d.reviewer), when(d.at))}</p>`
+    : d && d.step === "undone" ? `<p class="small muted">${t("rn.undone", esc(d.reviewer), when(d.at))}</p>` : "";
+  const canDecide = n.proposal && !n.approved;
+  return `<article class="card stack" style="border-color:${n.approved ? "var(--rise)" : "var(--line)"}">
+    <div class="row"><span class="chip brand">${t("rn.real")}</span>${realCheck(n.check)}${fieldChip(n.field)}</div>
+    <p class="headline"><a href="${esc(n.url)}" target="_blank" rel="noopener">${esc(n.title)}</a></p>
+    <p class="small muted">${esc(n.publisher)} · ${t("rn.published", esc(n.published))}</p>
+    ${n.quotes.map((q, i) => { const c = n.check && n.check.quotes[i]; return `<blockquote class="small">“${esc(q)}”${c && c.found !== null ? ` <span class="${c.found ? "pass" : "fail"}">${c.found ? "✓" : "✗"}</span>` : ""}</blockquote>`; }).join("")}
+    ${n.check && n.check.page_date ? `<p class="src">${t("rn.pagedate", esc(n.check.page_date))}</p>` : ""}
+    <div class="row"><button type="button" class="btn small" data-act="rnCheck" data-id="${esc(n.id)}"${busy ? " disabled" : ""}>1 · ${t("rn.check")}</button>
+      <button type="button" class="btn small" data-act="rnPropose" data-id="${esc(n.id)}"${busy || n.approved ? " disabled" : ""}>2 · ${t("rn.propose")}</button>
+      ${n.proposal && !n.approved ? `<button type="button" class="btn small" data-act="rnPreview" data-id="${esc(n.id)}"${busy ? " disabled" : ""}>3 · ${person ? t("rn.preview.for", esc(person)) : t("rn.preview")}</button>` : ""}</div>
+    ${busy ? loading(t("rn.working")) : ""}
+    ${realProposal(n.proposal, view.rule)}
+    ${decided}
+    ${canDecide || n.approved ? `<div class="row">
+      <label class="field small">${t("rn.reviewer")}<input type="text" maxlength="40" data-in="rnReviewer" value="${esc(ui.rnReviewer || "")}"></label>
+      ${view.review_code_required ? `<label class="field small">${t("rn.code")}<input type="text" autocomplete="off" data-in="rnCode" value="${esc(ui.rnCode || "")}"></label>` : ""}
+      ${canDecide ? `<button type="button" class="btn small primary" data-act="rnDecide" data-do="approve" data-id="${esc(n.id)}"${verified && !busy ? "" : " disabled"}>4 · ${t("rn.approve")}</button>
+        <button type="button" class="btn small" data-act="rnDecide" data-do="reject" data-id="${esc(n.id)}"${busy ? " disabled" : ""}>${t("rn.reject")}</button>` : ""}
+      ${n.approved ? `<button type="button" class="btn small" data-act="rnDecide" data-do="undo" data-id="${esc(n.id)}"${busy ? " disabled" : ""}>${t("rn.undo")}</button>` : ""}
+    </div>${canDecide && !verified ? `<p class="small fail">${t("rn.needcheck")}</p>` : ""}` : ""}
+    ${ui.rnError && ui.rnError.id === n.id ? `<p class="small fail" role="alert">${esc(ui.rnError.text)}</p>` : ""}
+  </article>`;
+}
+function realNews(view, person) {
+  if (!view || !view.items.length) return "";
+  const approved = view.items.filter((n) => n.approved).length;
+  const log = view.log.map((e) => `<li class="tiny"><span class="muted">${when(e.at)}</span> · <b>${t("rn.step." + e.step)}</b> · ${esc(e.id)}${e.reviewer ? ` · ${esc(e.reviewer)}` : ""}${e.status ? ` · ${esc(e.status)}` : ""}${e.method ? ` · ${esc(e.method)}` : ""}</li>`).join("");
+  return `<section class="stack" id="real-news">
+    <div><div class="row"><h2>${t("rn.h")}</h2><span class="chip brand">${t("rn.real")}</span></div>
+      <p class="muted small">${t("rn.p")}</p>
+      <p class="small">${approved ? t("rn.live", approved) : t("rn.none")}</p></div>
+    <div class="grid">${view.items.map((n) => realItem(n, view, person)).join("")}</div>
+    <details class="more"><summary>${t("rn.log", view.log_lines)}</summary><ul class="stack tight">${log || `<li class="small muted">–</li>`}</ul>
+      <p class="src">${t("rn.trusted", esc(view.trusted.join(", ")))}</p></details>
+  </section>`;
+}
+
 PAGES.futures = async () => {
   const [f, wi, occs] = await Promise.all([cached("/api/futures", { ...profileBody(), hours_per_week: state.hours, sdg_goals: state.sdgGoals, show_restricted: Boolean(state.showRestricted), top: 5 }),
     cached("/api/whatif"), cached("/api/occupations")]);
   ui.occList = occs;
+  const real = await cached("/api/news").catch(() => null);
   rememberScenarios(f.scenarios);
   if (f.needs_input) return blankPage(6, "futures");
   const people = state.demo ? await cached("/api/profiles") : [];
@@ -182,6 +246,8 @@ PAGES.futures = async () => {
     <div class="cols">${f.scenarios.map(futureColumn).join("")}</div>
     <section class="card stack"><h2>${t("fut.moves.h")}</h2><p class="muted small">${t("fut.moves.p")}</p>${movesTable(f)}</section>
     ${simulationCard(f)}
+
+    ${realNews(real, hasProfile() && !state.demo ? "" : (demo && demo.name) || "Aiman")}
 
     <section class="stack">
       <div><div class="row"><h2>${t("news.h")}</h2><span class="chip ai">${t("news.simulated")}</span></div><p class="muted small">${t("news.p")}</p></div>
@@ -210,26 +276,68 @@ async function runWhatIf(changes) {
   const el = $("#whatif-result");
   if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
 }
+async function realStep(id, path, body) {
+  ui.busy["rn:" + id] = true; ui.rnError = null; redraw();
+  try {
+    await request(path, body);
+  } catch (e) {
+    ui.rnError = { id, text: e.message };
+  }
+  ui.busy["rn:" + id] = false;
+  cache.delete("/api/news");
+  await route(true);
+}
+/* Preview: the proposal as a what-if for the person (their own profile, else the demo person the news
+   is about). Nothing is saved and nobody else's numbers move. */
+async function realPreview(id) {
+  const view = await cached("/api/news");
+  const n = view.items.find((x) => x.id === id);
+  if (!n || !n.proposal) return;
+  if (!hasProfile() && n.person) {
+    state = Object.assign(blank(), { demo: n.person, scenario: state.scenario, adoption: state.adoption, learner: state.learner });
+    save();
+  }
+  ui.news = null; ui.realNews = id;
+  runWhatIf(n.proposal.changes);
+}
 Object.assign(ACT, {
+  rnCheck: (el) => realStep(el.dataset.id, "/api/news/check", { id: el.dataset.id }),
+  rnPropose: (el) => realStep(el.dataset.id, "/api/news/propose", { id: el.dataset.id }),
+  rnPreview: (el) => realPreview(el.dataset.id),
+  rnDecide: async (el) => {
+    const view = await cached("/api/news");
+    const n = view.items.find((x) => x.id === el.dataset.id);
+    ui.busy["rn:" + n.id] = true; ui.rnError = null; redraw();
+    try {
+      await request("/api/news/decide", { id: n.id, action: el.dataset.do, reviewer: ui.rnReviewer || "",
+        code: ui.rnCode || "", proposal_id: n.proposal ? n.proposal.proposal_id : null });
+      cache.clear(); ui.whatif = null; ui.realNews = null;  // every kept result used the data before this
+    } catch (e) {
+      ui.rnError = { id: n.id, text: e.message };
+      cache.delete("/api/news");
+    }
+    ui.busy["rn:" + n.id] = false;
+    await route(true);
+  },
   news: async (el) => {
     const wi = await cached("/api/whatif");
     const n = wi.news.find((x) => x.id === el.dataset.id);
-    ui.news = n.id;
+    ui.news = n.id; ui.realNews = null;
     runWhatIf(n.changes);
   },
   example: async (el) => {
     const wi = await cached("/api/whatif");
     const e = wi.examples.find((x) => x.id === el.dataset.id);
-    ui.news = null;
+    ui.news = null; ui.realNews = null;
     runWhatIf(e.changes);
   },
-  newsClear: () => { ui.news = null; ui.whatif = null; redraw(); },
+  newsClear: () => { ui.news = null; ui.realNews = null; ui.whatif = null; redraw(); },
   customKind: (el) => { ui.custom = { kind: el.dataset.id }; ui.customOpen = true; redraw(); },
   customOcc: (el) => { ui.custom = { ...(ui.custom || { kind: "mycol" }), id: el.dataset.id }; ui.customOpen = true; redraw(); },
   customRun: async () => {
     const wi = await cached("/api/whatif");
     const c = ui.custom || { kind: "job_ads" };
-    ui.news = null; ui.customOpen = true;
+    ui.news = null; ui.realNews = null; ui.customOpen = true;
     if (c.kind === "mycol") {
       if (!c.id) { ui.customError = t("wi.c.pickocc"); redraw(); return; }
       runWhatIf({ mycol: { [c.id]: c.value || "no" } });
@@ -243,6 +351,8 @@ Object.assign(ACT, {
   },
 });
 Object.assign(ON, {
+  rnReviewer: (el) => { ui.rnReviewer = el.value; },
+  rnCode: (el) => { ui.rnCode = el.value; },
   customId: (el) => { ui.custom = { kind: (ui.custom || { kind: "job_ads" }).kind, id: el.value }; ui.customOpen = true; redraw(); },
   customValue: async (el) => {
     const c = ui.custom || { kind: "job_ads" };

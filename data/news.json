@@ -1,0 +1,32 @@
+{
+  "about": "Real AI news a person picked from a trusted site (scripts/news.py TRUSTED). Each item gives the page's own words to check, word for word, and the date the page shows. Nothing here changes any number until a person approves it on the Futures page. Never add an item you have not opened yourself; the check marks anything it cannot find on the page as not verified.",
+  "items": [
+    {
+      "id": "copilot_testing_dotnet",
+      "url": "https://devblogs.microsoft.com/dotnet/github-copilot-testing-for-dotnet-available-in-visual-studio/",
+      "publisher": "Microsoft .NET Blog",
+      "title": "GitHub Copilot Testing for .NET Brings AI-powered Unit Tests to Visual Studio 2026",
+      "published": "2026-02-11",
+      "quotes": [
+        "GitHub Copilot testing for .NET makes it dramatically faster and more convenient to generate high-quality unit tests without leaving your code.",
+        "Builds and runs those tests automatically"
+      ],
+      "field": "15",
+      "person": "P05",
+      "added": "2026-11-17"
+    },
+    {
+      "id": "mistral_rails_tests",
+      "url": "https://mistral.ai/news/rails-testing-on-autopilot-building-an-agent-that-writes-what-developers-wont",
+      "publisher": "Mistral AI",
+      "title": "Rails testing on autopilot: Building an agent that writes what developers won't",
+      "published": "2026-03-11",
+      "quotes": [
+        "It reads Rails source files, generates or improves RSpec tests, validates them against style rules and coverage targets, and runs inside a CI/CD pipeline with no human intervention."
+      ],
+      "field": "15",
+      "person": "P05",
+      "added": "2026-11-17"
+    }
+  ]
+}
