@@ -122,11 +122,11 @@ const goalOf = (target) => String(target).split(".")[0];
 const sdgChip = (target, title = "") => `<span class="chip sdg" style="--sdg:${SDG_COLOR[goalOf(target)] || "#19486a"}" title="${esc(title || sdgText(target))}"><i class="dot"></i>SDG ${esc(target)}</span>`;
 const statusChip = (s) => `<span class="chip ${esc(s)}" title="${esc(t("status.title"))}"><i class="dot"></i>${t("status." + s)}</span>`;
 const handoffTitle = (x) => (x.handoff === null || x.handoff === undefined ? t("skill.nodata") : t("skill.handoff.title", fmt(x.handoff, 0)));
-const dotName = (x) => `<span class="chip ${esc(x.status)}" title="${esc(handoffTitle(x))}"><i class="dot"></i>${esc(x.skill_name)}</span>`;
+const dotName = (x) => `<span class="chip ${esc(x.status)}" title="${esc(handoffTitle(x))}"><i class="dot"></i>${esc(nm(x.skill_name))}</span>`;
 const bar = (value, cls = "", extra = "") => `<div class="bar ${cls}" role="img" aria-label="${fmt(value, 0)}"><i style="width:${clamp(value || 0, 0, 100)}%"></i>${extra}</div>`;
 const loading = (text) => `<div class="loading"><span class="spinner" aria-hidden="true"></span><span>${esc(text || t("loading"))}</span></div>`;
 const initials = (name) => esc(String(name || "?").trim()[0] || "?");
-const occLink = (id, title) => `<a href="#/occ/${esc(id)}">${esc(title)}</a>`;
+const occLink = (id, title) => `<a href="#/occ/${esc(id)}"${nmTranslated(title) ? ` title="${esc(title)}" ` : ""}>${esc(nm(title))}</a>`;
 const mycolChip = (m) => (m === "yes" ? `<span class="chip brand" title="${esc(t("mycol.yes"))}">MyCOL</span>`
   : m === "near" ? `<span class="chip plain" title="${esc(t("mycol.near"))}">MyCOL ~</span>` : "");
 const dateText = (iso) => {
@@ -173,7 +173,7 @@ function robustWhy(w) {
   if (k === "share_low" || k === "share_high") s = t("rb.why." + k, fmt(w.ai_share, 0), fmt(w.ai_share_reference, 0), signed(w.outlook_move), signed(w.total_move));
   else if (k === "builder") s = t("rb.why.builder", fmt(w.builder, 0), fmt(w.builder_reference, 0), signed(w.outlook_move), signed(w.total_move));
   else if (k === "skills_up" || k === "skills_down") s = t("rb.why." + k, signed(w.skill_move), signed(w.total_move));
-  else s = w.crossed ? t("rb.why.others", signed(w.total_move), esc(w.crossed.title), signed(w.crossed.total_move), fmt(w.crossed.ai_share, 0))
+  else s = w.crossed ? t("rb.why.others", signed(w.total_move), esc(nm(w.crossed.title)), signed(w.crossed.total_move), fmt(w.crossed.ai_share, 0))
     : t("rb.why.others.none", signed(w.total_move));
   return w.thin && (k === "share_low" || k === "share_high") ? `${s}${LANG === "zh" ? "" : " "}${t("rb.thin")}` : s;
 }
@@ -211,7 +211,7 @@ function jobLinks(searchTitle) {
 function occMatches(list, query, field = "", limit = 30) {
   const q = String(query || "").trim().toLowerCase();
   const words = q.split(/\s+/).filter(Boolean);
-  return list.filter((o) => (!field || o.field_id === field) && words.every((w) => o.title.toLowerCase().includes(w))).slice(0, limit);
+  return list.filter((o) => (!field || o.field_id === field) && words.every((w) => o.title.toLowerCase().includes(w) || nm(o.title).toLowerCase().includes(w))).slice(0, limit);
 }
 
 /* ---------- navigation ---------- */

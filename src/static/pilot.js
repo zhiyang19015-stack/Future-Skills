@@ -23,18 +23,18 @@ function pilotForm(phase, occs, options) {
   const d = pilotUi.draft || (pilotUi.draft = emptyAnswer());
   const picked = occs.find((o) => o.occ_id === d.occ_id);
   const group = (kind) => `<optgroup label="${esc(t("chk.kind." + kind))}">${options.elements.filter((e) => e.kind === kind).map((e) =>
-    `<option value="${esc(e.id)}"${d.gap_id === e.id ? " selected" : ""}>${esc(e.name)}</option>`).join("")}</optgroup>`;
+    `<option value="${esc(e.id)}"${d.gap_id === e.id ? " selected" : ""}>${esc(nm(e.name))}</option>`).join("")}</optgroup>`;
   return `<section class="card stack">
     <h2>${t(phase === "before" ? "chk.before.h" : "chk.after.h")}</h2>
     <label class="field">${t("chk.q1")}
-      <input type="search" list="chk-occs" value="${esc(picked ? picked.title : pilotUi.occText)}" placeholder="${esc(t("chk.q1.ph"))}" data-in="pilotOcc" autocomplete="off"></label>
-    <datalist id="chk-occs">${occs.map((o) => `<option value="${esc(o.title)}"></option>`).join("")}</datalist>
-    <p class="small muted" id="chk-picked">${picked ? t("chk.q1.picked", esc(picked.title)) : t("chk.q1.none")}</p>
+      <input type="search" list="chk-occs" value="${esc(picked ? nm(picked.title) : pilotUi.occText)}" placeholder="${esc(t("chk.q1.ph"))}" data-in="pilotOcc" autocomplete="off"></label>
+    <datalist id="chk-occs">${occs.map((o) => `<option value="${esc(nm(o.title))}"></option>`).join("")}</datalist>
+    <p class="small muted" id="chk-picked">${picked ? t("chk.q1.picked", esc(nm(picked.title))) : t("chk.q1.none")}</p>
     <label class="field">${t("chk.q2")}
       <select data-on="pilotGap"><option value="">${t("chk.unsure")}</option>${group("skill")}${group("knowledge")}</select></label>
     <label class="field">${t("chk.q3")}
       <select data-on="pilotCourse"><option value="">${t("chk.unsure")}</option>${options.resources.map((r) =>
-        `<option value="${esc(r.id)}"${d.resource_id === r.id ? " selected" : ""}>${esc(r.title)} · ${esc(r.provider)}</option>`).join("")}</select></label>
+        `<option value="${esc(r.id)}"${d.resource_id === r.id ? " selected" : ""}>${esc(nm(r.title))} · ${esc(r.provider)}</option>`).join("")}</select></label>
     <div class="row"><button type="button" class="btn primary" data-act="pilotSend" data-phase="${phase}">${t("chk.send")}</button></div>
   </section>`;
 }
@@ -253,11 +253,11 @@ Object.assign(ON, {
   pilotOcc: async (el) => {  // a title from the list is a pick; anything else is "not sure yet"
     const occs = await cached("/api/occupations");
     const text = el.value.trim().toLowerCase();
-    const found = occs.find((o) => o.title.toLowerCase() === text);
+    const found = occs.find((o) => o.title.toLowerCase() === text || nm(o.title).toLowerCase() === text);
     const d = pilotUi.draft || (pilotUi.draft = emptyAnswer());
     d.occ_id = found ? found.occ_id : "";
     pilotUi.occText = el.value;
     const note = $("#chk-picked");
-    if (note) note.innerHTML = found ? t("chk.q1.picked", esc(found.title)) : t("chk.q1.none");
+    if (note) note.innerHTML = found ? t("chk.q1.picked", esc(nm(found.title))) : t("chk.q1.none");
   },
 });

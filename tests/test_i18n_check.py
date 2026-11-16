@@ -62,6 +62,10 @@ class AppTest(unittest.TestCase):
         self.assertEqual(lg["summary"], i18n_check.summary(i18n_check.run()))
         self.assertEqual(lg["pass"], all(v in (0, "0 / 0", "yes") for v in lg["summary"].values()))
 
+    def test_every_name_from_the_data_has_a_line(self):
+        for name, v in i18n_check.data_names().items():
+            self.assertEqual((v["missing_ms"], v["missing_zh"]), (0, 0), name)
+
     def test_indonesian_rule_keeps_the_malaysian_term(self):
         with mock.patch.object(i18n_check, "tables", lambda: {
                 "a": {"ms": "Pakar Perhubungan Perusahaan"}, "b": {"ms": "Perusahaan anda bisa membantu"}}),                 mock.patch.object(i18n_check, "_pairs", lambda name: {}):

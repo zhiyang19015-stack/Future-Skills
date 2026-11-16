@@ -1,7 +1,7 @@
 /* English, Bahasa Melayu and Chinese for the interface: every line is [en, ms, zh].
    t("key", a, b) fills {0}, {1}. UN goal names go through nameOf(); field names come from the data.
-   What comes from the data stays as its source wrote it: O*NET occupation titles, task statements and
-   skill names, and course titles are in English. */
+   Occupation titles, skill names, MASCO groups and course notes from the data are shown through nm()
+   (names-i18n.js, our own translation); task statements, descriptions and course titles stay as written. */
 "use strict";
 
 const LANG_KEY = "future-skills-lang";
@@ -247,6 +247,7 @@ const STRINGS = {
   "mycol.yes": ["On Malaysia's critical occupations list", "Dalam senarai pekerjaan kritikal Malaysia", "列入马来西亚关键职业清单"],
   "nav.futures": ["Futures", "Masa depan", "对比未来"],
   "nav.matches": ["Matches", "Padanan", "匹配"],
+  "name.ours": ["our translation of the O*NET title", "terjemahan kami bagi nama O*NET", "O*NET 名称，由我们翻译"],
   "nav.pathway": ["Pathway", "Laluan", "学习路径"],
   "nav.radar": ["Radar", "Radar", "技能雷达"],
   "nav.sdg": ["SDG", "SDG", "SDG"],
@@ -411,7 +412,7 @@ const STRINGS = {
   "radar.ref": ["Typical AI use: {0}%", "Penggunaan AI biasa: {0}%", "AI 使用的典型值：{0}%"],
   "radar.search.h": ["Find any of the {0} occupations", "Cari mana-mana daripada {0} pekerjaan", "查找全部 {0} 个职业"],
   "radar.search.hint": ["Type a job title or pick a field.", "Taip nama jawatan atau pilih bidang.", "输入职位名称或选择行业。"],
-  "radar.search.ph": ["Search occupations (English titles), e.g. nurse, chef, engineer", "Cari pekerjaan (nama Inggeris), cth. nurse, chef, engineer", "搜索职业（英文名称），例如 nurse、chef、engineer"],
+  "radar.search.ph": ["Search occupations, e.g. nurse, chef, engineer", "Cari pekerjaan, cth. jururawat, cef, jurutera", "搜索职业，例如 护士、厨师、工程师（中英文皆可）"],
   "radar.share": ["AI share of tasks {0}%{1}", "Bahagian AI dalam tugas {0}%{1}", "任务的 AI 占比 {0}%{1}"],
   "radar.skills.h": ["Fields and skills: rising and declining", "Bidang dan kemahiran: meningkat dan menurun", "行业与技能：上升与下降"],
   "radar.skills.p": ["Hands-off share = when AI is used for a skill, how often the whole thing is handed over. Above typical AI use ({0}%), a skill sets you apart less as AI spreads; below it, or if it builds AI, it counts for more.", "Bahagian diserahkan = apabila AI digunakan untuk sesuatu kemahiran, berapa kerap keseluruhannya diserahkan. Melebihi penggunaan biasa ({0}%), kemahiran itu kurang membezakan anda apabila AI tersebar; di bawahnya, atau jika ia membina AI, ia lebih bernilai.", "整件交给 AI 的比例 = 用 AI 做这项技能时，整件交给 AI 的频率。高于典型值（{0}%）的技能，随着 AI 普及越难让你脱颖而出；低于典型值或用于构建 AI 的技能则更有价值。"],
@@ -615,7 +616,7 @@ const STRINGS = {
   "srcs.limits.2": ["Two months of usage (April and May 2026). We do not read a trend from two points.", "Dua bulan penggunaan (April dan Mei 2026). Kami tidak membaca trend daripada dua titik.", "只有两个月的使用数据（2026 年 4 月和 5 月），我们不会用两个点去推趋势。"],
   "srcs.limits.3": ["Malaysian demand has few signals: one MyCOL edition, and DOSM online job ads by major occupation group only.", "Permintaan di Malaysia mempunyai sedikit isyarat: satu edisi MyCOL, dan iklan kerja dalam talian DOSM mengikut kumpulan pekerjaan utama sahaja.", "马来西亚需求的信号很少：一版 MyCOL，以及只到职业大类的 DOSM 网络招聘广告。"],
   "srcs.limits.4": ["Occupations and skills follow O*NET (US). The link to Malaysia's MASCO goes through ISCO-08 and the ESCO crosswalk; tool-to-topic links are our own.", "Pekerjaan dan kemahiran mengikut O*NET (AS). Kaitan dengan MASCO Malaysia melalui ISCO-08 dan jadual padanan ESCO; kaitan alat dengan topik adalah kami sendiri.", "职业和技能沿用 O*NET（美国）。与马来西亚 MASCO 的对应经由 ISCO-08 和 ESCO 对照表；工具与主题的对应由我们编写。"],
-  "srcs.limits.5": ["Job titles and descriptions are in English as O*NET writes them; the rest of the page is translated.", "Nama dan huraian pekerjaan dalam bahasa Inggeris seperti yang ditulis O*NET; bahagian lain halaman diterjemahkan.", "职业名称和描述保留 O*NET 的英文原文；页面其他部分已翻译。"],
+  "srcs.limits.5": ["Occupation, skill and MASCO group names and course notes in Bahasa Melayu and Chinese are our own translation, not an official one, and not yet reviewed by a native speaker; the English original is shown on each occupation's page. Descriptions, tasks and course titles stay as their source wrote them.", "Nama pekerjaan, kemahiran dan kumpulan MASCO serta nota kursus dalam Bahasa Melayu dan bahasa Cina ialah terjemahan kami sendiri, bukan terjemahan rasmi, dan belum disemak oleh penutur asli; nama asal bahasa Inggeris dipaparkan di halaman setiap pekerjaan. Huraian, tugas dan tajuk kursus kekal seperti yang ditulis oleh sumbernya.", "职业、技能和 MASCO 大类的名称以及课程说明的马来文和中文是我们自己的翻译，不是官方译名，也还没有经母语者审核；每个职业页面都显示英文原名。职业描述、任务和课程标题保留来源的原文。"],
   "srcs.limits.h": ["Limits you should know", "Had yang perlu anda tahu", "你应该知道的局限"],
   "srcs.llm.off": ["none configured; a template is used", "tiada dikonfigurasi; templat digunakan", "未配置，使用模板"],
   "srcs.model.h": ["The model, in full", "Model sepenuhnya", "完整模型"],
@@ -757,7 +758,7 @@ const STRINGS = {
   "you.more.h": ["Three last things", "Tiga perkara terakhir", "最后三项"],
   "you.occ": ["Your job now", "Kerja anda sekarang", "你现在的工作"],
   "you.occ.clear": ["Remove", "Buang", "移除"],
-  "you.occ.none": ["No occupation matches. Try a shorter or more general word (titles are in English).", "Tiada pekerjaan sepadan. Cuba perkataan yang lebih pendek atau umum (nama dalam bahasa Inggeris).", "没有匹配的职业。试试更短或更通用的英文词。"],
+  "you.occ.none": ["No occupation matches. Try a shorter or more general word.", "Tiada pekerjaan sepadan. Cuba perkataan yang lebih pendek atau umum, dalam Bahasa Melayu atau Inggeris.", "没有匹配的职业。试试更短或更通用的词，中英文皆可。"],
   "you.occ.note": ["Doing a job counts as having its O*NET skills and knowledge at the level the job needs. Tools are never assumed: add the ones you use.", "Melakukan sesuatu kerja dikira sebagai memiliki kemahiran dan pengetahuan O*NET pada tahap yang diperlukan. Alat tidak diandaikan: tambah yang anda gunakan.", "做着某份工作，就视为具备该工作所需水平的 O*NET 技能和知识。工具不会被默认，请添加你用的工具。"],
   "you.occ.ph": ["Type a job title, e.g. nurse, accountant, electrician", "Taip nama jawatan, cth. jururawat, akauntan, juruelektrik", "输入职位名称，例如 nurse、accountant、electrician"],
   "you.or.demo": ["Short on time? Load a fictional person:", "Kesuntukan masa? Muatkan watak rekaan:", "没时间？直接载入一位虚构人物："],

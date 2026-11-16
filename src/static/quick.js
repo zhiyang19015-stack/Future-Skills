@@ -32,7 +32,7 @@ async function quickResults() {
   const first = moves[0];
   const [L, F] = await Promise.all([cached("/api/learn", matchBody({ occ_id: first.occ_id })),
     cached("/api/futures", matchBody({}))]);
-  const gaps = (x) => (x.skill_detail && x.skill_detail.gaps || []).slice(0, 2).map((g) => esc(g.skill_name)).join(", ");
+  const gaps = (x) => (x.skill_detail && x.skill_detail.gaps || []).slice(0, 2).map((g) => esc(nm(g.skill_name))).join(", ");
   const parts = (x) => ["field", "interest", "skill", "outlook"].filter((k) => x.components && x.components[k] && x.components[k].score !== null)
     .map((k) => `${t("part." + k)} ${fmt(x.components[k].score, 0)}`).join(" · ");
   const list = moves.slice(0, QUICK_TOP).map((x, i) => `<div class="stack tight" style="padding:10px 0;border-top:1px solid var(--line)">
@@ -44,11 +44,11 @@ async function quickResults() {
   const sdg = (L.sdg || []).slice(0, 4).map((x) => sdgChip(x.target)).join("");
   const top3 = (id) => {
     const s = (F.scenarios || []).find((x) => x.id === id);
-    return s ? `<div class="card pad-s stack tight"><span class="strong">${t("scn." + id)}</span><ol class="small">${s.top.slice(0, 3).map((x) => `<li>${esc(x.title)}</li>`).join("")}</ol></div>` : "";
+    return s ? `<div class="card pad-s stack tight"><span class="strong">${t("scn." + id)}</span><ol class="small">${s.top.slice(0, 3).map((x) => `<li>${esc(nm(x.title))}</li>`).join("")}</ol></div>` : "";
   };
   return `<section class="card stack"><div class="row between"><h2>${t("quick.r.matches")}</h2><a class="small" href="#/matches">${t("quick.more")} →</a></div>
       <p class="small muted">${t("quick.r.matches.p")}</p>${list}</section>
-    <section class="card stack"><div class="row between"><h2>${t("quick.r.plan", esc(first.title))}</h2><a class="small" href="#/pathway/${esc(first.occ_id)}">${t("quick.more")} →</a></div>
+    <section class="card stack"><div class="row between"><h2>${t("quick.r.plan", esc(nm(first.title)))}</h2><a class="small" href="#/pathway/${esc(first.occ_id)}">${t("quick.more")} →</a></div>
       <p class="small muted">${t("quick.r.plan.p", fmt(L.total_hours, 0), fmt(L.weeks, 0), L.hours_per_week)}</p>${plan || `<p class="small muted">${t("path.nocourse")}</p>`}
       ${(L.claimable || []).length ? `<p class="small">${t("quick.r.hrd", L.claimable.length)}</p>` : ""}</section>
     <section class="card stack"><div class="row between"><h2>${t("quick.r.sdg")}</h2><a class="small" href="#/sdg">${t("quick.more")} →</a></div>

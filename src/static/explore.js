@@ -11,7 +11,7 @@ const SEARCH_RESULTS = 30;
 
 function occRow(x) {
   return `<div class="item">
-    <a class="title" href="#/occ/${esc(x.occ_id)}">${esc(x.title)}</a>
+    <a class="title" href="#/occ/${esc(x.occ_id)}">${esc(nm(x.title))}</a>
     <div class="val">${fmt(x.outlook, 0)}<small>${signed(x.change)}</small></div>
     <div class="meta">${fieldChip(x.field_id)}<span>${t("radar.demand", fmt(x.demand, 0))}</span><span>${t("radar.share", fmt(x.ai_share, 0), "")}</span>${mycolChip(x.mycol)}
       ${x.thin_evidence ? `<span class="chip warn" title="${esc(t("radar.thin.title"))}">${t("radar.thin")}</span>` : ""}${secondChip(x.second_source)}</div>
@@ -46,7 +46,7 @@ function topicItem(x, ref) {
 function skillItem(x) {
   const kind = { technology: "skill.kind.tech", skill: "skill.kind.general", knowledge: "skill.kind.knowledge" }[x.skill_type];
   return `<div class="item">
-    <span class="strong">${esc(x.skill_name)}</span>
+    <span class="strong">${esc(nm(x.skill_name))}</span>
     <div class="val">${x.handoff === null ? "–" : `${fmt(x.handoff, 0)}%`}<small>${t("radar.handoff")}</small></div>
     <div class="meta">${statusChip(x.status)}<span class="chip plain">${t(kind)}</span>${x.builder ? `<span class="chip ai">${t("radar.builder")}</span>` : ""}
       ${x.occupations ? `<span>${t("radar.occs", x.occupations)}</span>` : ""}${x.sdg.slice(0, 2).map((s) => sdgChip(s)).join("")}</div>
@@ -161,7 +161,7 @@ function demandSignals(d) {
   if (!d) return "";
   return d.signals.map((s) => s.signal === "mycol"
     ? `<li>${t("sig.mycol." + s.status, esc(s.occupation || ""))}</li>`
-    : `<li>${t("sig.ads", esc(s.group_name), signed(s.change_pct))}</li>`).join("")
+    : `<li>${t("sig.ads", esc(nm(s.group_name)), signed(s.change_pct))}</li>`).join("")
     + (d.wage ? `<li>${t("sig.wage", whole(d.wage.median), d.wage.year)}</li>` : "");
 }
 
@@ -177,7 +177,8 @@ PAGES.occ = async (args) => {
   const skills = r.skills.filter((s) => s.kind === "skill"), knowledge = r.skills.filter((s) => s.kind === "knowledge");
   return `<div class="stack loose">
     <header class="stack tight"><p class="eyebrow"><a href="#/radar">${t("nav.radar")}</a> · ${esc(fieldName(occ.field_id))}</p>
-      <h1>${esc(occ.title)}</h1>
+      <h1>${esc(nm(occ.title))}</h1>
+      ${nmTranslated(occ.title) ? `<p class="small muted"><span lang="en">${esc(occ.title)}</span> · ${t("name.ours")}</p>` : ""}
       <p class="lead">${esc(occ.description)}</p>
       ${r.titles.length ? `<p class="small muted">${t("occ.titles")} ${r.titles.slice(0, 6).map(esc).join(" · ")}</p>` : ""}
       <div class="tags">${occ.mycol === "yes" ? `<span class="chip brand">${t("mycol.yes")}</span>` : occ.mycol === "near" ? `<span class="chip plain">${t("mycol.near")}</span>` : `<span class="chip plain">${t("mycol.no")}</span>`}
@@ -219,7 +220,7 @@ PAGES.occ = async (args) => {
     <section class="card stack"><h2>${t("occ.sdg.h")}</h2>${r.sdg.map((s) =>
       `<div class="stack tight"><div class="row">${sdgChip(s.target)}<span class="strong small">${esc(sdgText(s.target))}</span></div><p class="small muted">${esc(sdgWhy(s.rationale))}</p></div>`).join("") || `<p class="small muted">–</p>`}</section>
 
-    ${r.related.length ? `<section class="card stack"><h2>${t("occ.related")}</h2><div class="tags">${r.related.map((x) => `<a class="chip plain" href="#/occ/${esc(x.occ_id)}">${esc(x.title)}</a>`).join("")}</div></section>` : ""}
+    ${r.related.length ? `<section class="card stack"><h2>${t("occ.related")}</h2><div class="tags">${r.related.map((x) => `<a class="chip plain" href="#/occ/${esc(x.occ_id)}">${esc(nm(x.title))}</a>`).join("")}</div></section>` : ""}
 
     <div class="row"><a class="btn primary" href="#/pathway/${esc(occ.occ_id)}">${t("occ.path")} →</a><a class="btn" href="#/matches">${t("you.go")}</a></div>
   </div>`;
@@ -305,7 +306,7 @@ function detailHtml(m, sim) {
       <div class="stack tight"><h3>${t("match.have.h")}</h3><div class="tags">${[...d.tech_used, ...d.strengths.slice(0, 6)].map(dotName).join("") || `<span class="small muted">${t("match.have.none")}</span>`}</div></div>
       <div class="stack tight"><h3>${t("match.gap.h")}</h3>
         <div class="tags">${d.tech_missing.slice(0, 8).map(dotName).join("")}</div>
-        ${gaps.map((g) => `<div class="meter"><span>${esc(g.skill_name)}</span>${bar(100 * g.your_level / g.level_needed, g.ai.status)}<span class="v">${fmt(g.your_level)} → ${fmt(g.level_needed)}</span></div>`).join("")}
+        ${gaps.map((g) => `<div class="meter"><span>${esc(nm(g.skill_name))}</span>${bar(100 * g.your_level / g.level_needed, g.ai.status)}<span class="v">${fmt(g.your_level)} → ${fmt(g.level_needed)}</span></div>`).join("")}
         ${unrated > 0 ? `<p class="src">${t("match.gap.unrated", unrated)} <a href="#/you/skills">${t("sk.start")}</a></p>` : ""}
       </div>
     </div>
@@ -328,7 +329,7 @@ const flagChip = (f, m) => `<span class="chip ${f === "current_occupation" ? "br
 function verdictNote(m) {
   const v = m.verdict;
   if (!v || !hasProfile()) return "";
-  const slow = esc(v.slow_first.title), fast = esc(v.fast_first.title);
+  const slow = esc(nm(v.slow_first.title)), fast = esc(nm(v.fast_first.title));
   const head = v.kind === "top" ? t("fut.verdict.top", slow, fast) : t(v.kind === "top3" ? "fut.verdict.top3" : "fut.verdict.same", slow);
   let why = "";
   if (v.kind === "top" && v.slow_first.ai_share > v.ai_share_reference) {
@@ -347,7 +348,7 @@ function matchCard(m, sim) {
   return `<article class="card match" id="m-${esc(m.occ_id)}">
     <span class="rank" aria-label="${t("match.rank", m.rank)}">${m.rank}</span>
     <div class="body stack tight">
-      <div><h2><a href="#/occ/${esc(m.occ_id)}" style="color:inherit;text-decoration:none">${esc(m.title)}</a></h2><span class="small muted">${esc(fieldName(m.field_id))}</span></div>
+      <div><h2><a href="#/occ/${esc(m.occ_id)}" style="color:inherit;text-decoration:none">${esc(nm(m.title))}</a></h2><span class="small muted">${esc(fieldName(m.field_id))}</span></div>
       <div class="tags">${statusChip(m.outlook.status)}${mycolChip(m.mycol)}${s ? `<span class="chip ai" title="${esc(t("match.stability.title", sim.futures))}">${t("match.stability", fmt(s.top3, 0))}</span>` : ""}${scenarioRanks(m)}${evidenceChip(m.evidence && m.evidence.grade)}${goals}
         ${flags.map((f) => flagChip(f, m)).join("")}</div>
     </div>
@@ -384,7 +385,7 @@ function goalPicker(m) {
 
 function adCard() {
   const r = ui.ad;
-  const list = (rows) => rows.map((x) => `<div class="row" style="gap:6px">${dotName(x)}${x.course ? `<a class="small" href="${safeUrl(x.course.url)}" target="_blank" rel="noopener">${esc(x.course.title)}</a>` : ""}</div>`).join("");
+  const list = (rows) => rows.map((x) => `<div class="row" style="gap:6px">${dotName(x)}${x.course ? `<a class="small" href="${safeUrl(x.course.url)}" target="_blank" rel="noopener">${esc(nm(x.course.title))}</a>` : ""}</div>`).join("");
   return `<section class="card stack">
     <div><h2>${t("ad.h")}</h2><p class="muted small">${t("ad.p")}</p></div>
     <textarea id="ad-text" aria-label="${esc(t("ad.ph"))}" placeholder="${esc(t("ad.ph"))}">${esc(ui.adText)}</textarea>
@@ -441,7 +442,7 @@ PAGES.matches = async () => {
     ${scenarioControl({ adoption: m.adoption, horizon: m.horizon_year }, m.scenarios)}
     ${verdictNote(m)}
     ${hasProfile() ? robustCard(m.robust) : ""}
-    ${cur ? `<section class="card stack" style="border-color:var(--brand)"><div class="row between"><div><p class="eyebrow">${t("match.now")}</p><h2>${esc(cur.title)}</h2></div>${statusChip(cur.outlook.status)}</div>
+    ${cur ? `<section class="card stack" style="border-color:var(--brand)"><div class="row between"><div><p class="eyebrow">${t("match.now")}</p><h2>${esc(nm(cur.title))}</h2></div>${statusChip(cur.outlook.status)}</div>
       <p>${t("match.now.p", fmt(cur.outlook.ai_share, 0), fmt(cur.outlook.ai_share_reference, 0), signed(cur.outlook.change), cur.moves_above ? t("match.now.above", cur.moves_above) : t("match.now.top"))}</p>
       <div class="row"><a class="btn small" href="#/occ/${esc(cur.occ_id)}">${t("match.now.tasks")}</a></div></section>` : ""}
     <section class="card stack"><h2>${t("match.fields.h")}</h2>
@@ -508,7 +509,7 @@ function resourceRow(r, occId) {
   const meta = [esc(r.provider), ...(r.language && r.language !== "en" ? [t("path.lang." + r.language)] : []), r.hours ? t("path.hours", fmt(r.hours, r.hours < 1 ? 1 : 0)) : t("path.nohours"), t("fmt." + (r.format || "course")),
     r.cost_myr ? `RM ${whole(r.cost_myr)}` : t("path.free"), t("path.checked", dateText(r.verified_date))];
   return `<label class="step${done ? " done" : ""}"><input type="checkbox" data-on="done" data-url="${esc(r.url)}"${done ? " checked" : ""} aria-label="${esc(t("path.tick", r.title))}">
-    <span><a class="t" href="${safeUrl(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a><span class="src" style="display:block">${meta.join(" · ")}</span>${r.notes ? `<span class="tiny muted">${esc(r.notes)}</span>` : ""}</span></label>`;
+    <span><a class="t" href="${safeUrl(r.url)}" target="_blank" rel="noopener">${esc(nm(r.title))}</a><span class="src" style="display:block">${meta.join(" · ")}</span>${r.notes ? `<span class="tiny muted">${esc(nm(r.notes))}</span>` : ""}</span></label>`;
 }
 
 PAGES.pathway = async (args) => {
@@ -518,7 +519,7 @@ PAGES.pathway = async (args) => {
   const [L, m] = await Promise.all([cached("/api/learn", matchBody({ occ_id: occId })), getMatches()]);
   const p = progressOf(L);
   const options = m.results.filter(isMove).slice(0, 12);
-  if (m.current) options.push({ occ_id: m.current.occ_id, title: `${m.current.title} (${t("flag.current_occupation")})`, rank: null });
+  if (m.current) options.push({ occ_id: m.current.occ_id, title: `${nm(m.current.title)} (${t("flag.current_occupation")})`, rank: null });
   if (!options.some((x) => x.occ_id === occId)) options.push({ occ_id: occId, title: L.role.name, rank: null });
   const badges = [["start", p.ticked.length >= 1], ["half", p.share >= 0.5], ["done", p.all.length > 0 && p.share >= 1]];
   let n = 0;
@@ -526,13 +527,13 @@ PAGES.pathway = async (args) => {
   const skills = L.skills.map((s) => `<div class="stack tight" style="padding:10px 0;border-top:1px solid var(--line)">
       <div class="row">${dotName({ ...s.ai, skill_name: s.skill_name })}${s.your_level !== undefined && s.kind !== "technology" ? `<span class="small muted">${t("path.level", fmt(s.your_level), fmt(s.level_needed))}</span>` : ""}${(s.sdg || []).slice(0, 2).map((x) => sdgChip(x.target)).join("")}</div>
       ${s.resources.length ? s.resources.map((r) => resourceRow(r, occId)).join("") : `<p class="small muted">${t("path.nocourse")}</p>`}</div>`).join("");
-  const handsOn = L.hands_on.map((r) => `<p class="small"><a href="${safeUrl(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a> · ${esc(r.provider)}<br><span class="muted">${esc(r.notes)}</span></p>`).join("");
-  const claimable = (L.claimable || []).map((r) => `<p class="small"><a href="${safeUrl(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a> · ${esc(r.provider)} · <b>${r.cost_myr ? `RM ${whole(r.cost_myr)}` : t("path.quote")}</b>${r.teaches_gaps ? ` · ${t("path.hrd.gaps", r.teaches_gaps)}` : ""}<br><span class="muted">${esc(r.notes)} · ${t("path.checked", dateText(r.verified_date))}</span></p>`).join("");
+  const handsOn = L.hands_on.map((r) => `<p class="small"><a href="${safeUrl(r.url)}" target="_blank" rel="noopener">${esc(nm(r.title))}</a> · ${esc(r.provider)}<br><span class="muted">${esc(nm(r.notes))}</span></p>`).join("");
+  const claimable = (L.claimable || []).map((r) => `<p class="small"><a href="${safeUrl(r.url)}" target="_blank" rel="noopener">${esc(nm(r.title))}</a> · ${esc(r.provider)} · <b>${r.cost_myr ? `RM ${whole(r.cost_myr)}` : t("path.quote")}</b>${r.teaches_gaps ? ` · ${t("path.hrd.gaps", r.teaches_gaps)}` : ""}<br><span class="muted">${esc(nm(r.notes))} · ${t("path.checked", dateText(r.verified_date))}</span></p>`).join("");
   return `<div class="stack loose">
-    <header class="stack tight"><p class="eyebrow">${t("step", 4)} · ${t("nav.pathway")}</p><h1>${t("path.h1", esc(L.role.name))}</h1>
+    <header class="stack tight"><p class="eyebrow">${t("step", 4)} · ${t("nav.pathway")}</p><h1>${t("path.h1", esc(nm(L.role.name)))}</h1>
       <p class="lead">${t(L.personal && hasProfile() ? "path.lead.personal" : "path.lead.role")}</p></header>
     <section class="card pad-s row between">
-      <label class="field" style="flex:1 1 260px">${t("path.role")}<select data-on="pathOcc">${options.map((x) => `<option value="${esc(x.occ_id)}"${x.occ_id === occId ? " selected" : ""}>${x.rank ? `#${x.rank} ` : ""}${esc(x.title)}</option>`).join("")}</select></label>
+      <label class="field" style="flex:1 1 260px">${t("path.role")}<select data-on="pathOcc">${options.map((x) => `<option value="${esc(x.occ_id)}"${x.occ_id === occId ? " selected" : ""}>${x.rank ? `#${x.rank} ` : ""}${esc(nm(x.title))}</option>`).join("")}</select></label>
       <label class="field">${t("you.hours")}<select data-on="pathHours" class="inline">${[3, 5, 8, 10, 15, 20].map((h) => `<option value="${h}"${state.hours === h ? " selected" : ""}>${t("you.hours.n", h)}</option>`).join("")}</select></label>
     </section>
     <section class="grid three">
@@ -611,16 +612,16 @@ PAGES.sdg = async () => {
   const targets = L.sdg.map((x) => `<div class="stack tight" style="padding:12px 0;border-top:1px solid var(--line)">
       <div class="row between"><div class="row">${sdgChip(x.target)}<span class="strong">${esc(sdgText(x.target))}</span></div><span class="num strong">${t("path.hours", fmt(x.hours, 0))}</span></div>
       ${x.role ? `<p class="small"><span class="chip ${x.role.link_strength === "direct" ? "rising" : "plain"}">${t("sdg.link." + x.role.link_strength)}</span> ${esc(sdgWhy(x.role.rationale))}</p>` : ""}
-      ${x.skills.length ? `<p class="small muted">${t("sdg.through", x.skills.length)} ${x.skills.slice(0, 6).map((k) => `<span title="${esc(sdgWhy(k.rationale))}">${esc(k.skill_name)}</span>`).join(" · ")}${x.skills.length > 6 ? " …" : ""}</p>` : ""}</div>`).join("");
+      ${x.skills.length ? `<p class="small muted">${t("sdg.through", x.skills.length)} ${x.skills.slice(0, 6).map((k) => `<span title="${esc(sdgWhy(k.rationale))}">${esc(nm(k.skill_name))}</span>`).join(" · ")}${x.skills.length > 6 ? " …" : ""}</p>` : ""}</div>`).join("");
   const listed = m.results.filter((x) => !x.flags.includes("needs_extra_education") && !x.flags.includes("below_education"));
   const without = [...listed].sort((a, b) => b.sdg_choice.total_without - a.sdg_choice.total_without).map((x) => x.occ_id);
   const lifted = listed.filter((x) => x.sdg_choice.bonus).map((x) => ({ ...x, was: without.indexOf(x.occ_id) + 1, now: listed.indexOf(x) + 1 }));
   const first = listed[0];
   const tradeoff = lifted.filter((x) => x.was !== x.now).slice(0, 4).map((x) => `<li>${t("sdg.moved", occLink(x.occ_id, x.title), x.was, x.now, x.sdg_choice.goals.join(", "), fmt(x.sdg_choice.bonus, 0))}
-      ${first && x.occ_id !== first.occ_id ? t("sdg.cost", fmt(x.pathway.total_hours, 0), fmt(first.pathway.total_hours, 0), esc(first.title)) : ""}</li>`).join("");
+      ${first && x.occ_id !== first.occ_id ? t("sdg.cost", fmt(x.pathway.total_hours, 0), fmt(first.pathway.total_hours, 0), esc(nm(first.title))) : ""}</li>`).join("");
   return `<div class="stack loose">
     <header class="stack tight"><p class="eyebrow">${t("step", 5)} · ${t("nav.sdg")}</p><h1>${t("sdg.h1")}</h1><p class="lead">${t("sdg.lead")}</p></header>
-    <section class="card stack"><div class="row between"><h2>${t("sdg.path.h", esc(L.role.name))}</h2><a class="btn small" href="#/pathway/${esc(occId)}">${t("nav.pathway")}</a></div>
+    <section class="card stack"><div class="row between"><h2>${t("sdg.path.h", esc(nm(L.role.name)))}</h2><a class="btn small" href="#/pathway/${esc(occId)}">${t("nav.pathway")}</a></div>
       <p class="muted small">${t("sdg.path.p", fmt(L.total_hours, 0), L.sdg.length)}</p><div>${targets}</div>
       <p class="src">${t("sdg.src")}</p></section>
     ${goalPicker(m)}

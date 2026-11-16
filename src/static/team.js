@@ -27,7 +27,7 @@ function routeLines(r) {
   if (!r || !r.related) return "";
   return `<div class="stack tight"><h3>${t("routes.h")}</h3>
     <p class="small">${t("routes.p", r.open, r.related, fmt(r.reach_points, 0))}</p>
-    ${r.routes.length ? `<div class="tags">${r.routes.map((x) => `<a class="chip ${esc(x.status)}" href="#/occ/${esc(x.occ_id)}"><i class="dot"></i>${esc(x.title)} · ${fmt(x.total, 0)}</a>`).join("")}</div>` : `<p class="small muted">${t("routes.none")}</p>`}
+    ${r.routes.length ? `<div class="tags">${r.routes.map((x) => `<a class="chip ${esc(x.status)}" href="#/occ/${esc(x.occ_id)}"><i class="dot"></i>${esc(nm(x.title))} · ${fmt(x.total, 0)}</a>`).join("")}</div>` : `<p class="small muted">${t("routes.none")}</p>`}
     <p class="src">${t("routes.src")}</p></div>`;
 }
 
@@ -48,11 +48,11 @@ PAGES.team = async () => {
       <td>${SCENARIO_IDS.map((id) => `<span class="chip ${esc(r.statuses[id])}" title="${esc(t("scn." + id))}"><i class="dot"></i>${t("scn." + id)}</span>`).join(" ")}</td>
       <td>${evidenceChip(r.evidence)}</td></tr>`;
   const moveCard = (r) => `<article class="card pad-s stack tight">
-      <div class="row between"><div><p class="tiny muted">${t("team.from", r.headcount, esc(r.title))}</p><h3>${occLink(r.move.occ_id, r.move.title)}</h3></div>
+      <div class="row between"><div><p class="tiny muted">${t("team.from", r.headcount, esc(nm(r.title)))}</p><h3>${occLink(r.move.occ_id, r.move.title)}</h3></div>
         <div class="tags">${statusChip(r.move.status)}${evidenceChip(r.move.evidence)}</div></div>
       <p class="small">${t("team.move.p", fmt(r.move.total, 0), fmt(r.move.hours, 0), fmt(r.move.weeks, 0), v.team.hours_per_week)}</p>
-      ${r.move.gaps.length ? `<div class="tags">${r.move.gaps.slice(0, 5).map((g) => `<span class="chip plain">${esc(g.skill_name)} +${fmt(g.gap)}</span>`).join("")}</div>` : ""}
-      ${r.move.courses.length ? `<ul class="small">${r.move.courses.map((c) => `<li><a href="${safeUrl(c.url)}" target="_blank" rel="noopener">${esc(c.title)}</a> <span class="muted">· ${esc(c.provider)}${c.hours ? ` · ${t("path.hours", fmt(c.hours, 0))}` : ""} · ${t("path.checked", dateText(c.verified_date))}</span></li>`).join("")}</ul>` : ""}
+      ${r.move.gaps.length ? `<div class="tags">${r.move.gaps.slice(0, 5).map((g) => `<span class="chip plain">${esc(nm(g.skill_name))} +${fmt(g.gap)}</span>`).join("")}</div>` : ""}
+      ${r.move.courses.length ? `<ul class="small">${r.move.courses.map((c) => `<li><a href="${safeUrl(c.url)}" target="_blank" rel="noopener">${esc(nm(c.title))}</a> <span class="muted">· ${esc(c.provider)}${c.hours ? ` · ${t("path.hours", fmt(c.hours, 0))}` : ""} · ${t("path.checked", dateText(c.verified_date))}</span></li>`).join("")}</ul>` : ""}
       ${r.move.sdg.map((s) => `<p class="small">${sdgChip(s.target)} ${esc(sdgWhy(s.rationale))}</p>`).join("")}
     </article>`;
   return `<div class="stack loose">
@@ -74,12 +74,12 @@ PAGES.team = async () => {
       ${v.declining_without_move.length ? `<p class="note">${t("team.nomove", v.declining_without_move.map(esc).join(", "))}</p>` : ""}
     </section>
     ${v.heatmap.skills.length ? `<section class="card stack"><h2>${t("team.heat.h")}</h2><p class="muted small">${t("team.heat.p")}</p>
-      <div class="table-wrap"><table class="heatmap"><thead><tr><th>${t("team.col.job")}</th>${v.heatmap.skills.map((s) => `<th class="n">${esc(s.skill_name)}<div class="tiny muted">${t("team.kind." + s.kind)}</div></th>`).join("")}</tr></thead>
-        <tbody>${v.heatmap.rows.map((r) => `<tr><td>${esc(r.title)} <span class="muted">× ${r.headcount}</span></td>${r.gaps.map(heatCell).join("")}</tr>`).join("")}</tbody></table></div>
+      <div class="table-wrap"><table class="heatmap"><thead><tr><th>${t("team.col.job")}</th>${v.heatmap.skills.map((s) => `<th class="n">${esc(nm(s.skill_name))}<div class="tiny muted">${t("team.kind." + s.kind)}</div></th>`).join("")}</tr></thead>
+        <tbody>${v.heatmap.rows.map((r) => `<tr><td>${esc(nm(r.title))} <span class="muted">× ${r.headcount}</span></td>${r.gaps.map(heatCell).join("")}</tr>`).join("")}</tbody></table></div>
     </section>
     <section class="card stack"><h2>${t("team.groups.h")}</h2><p class="muted small">${t("team.groups.p")}</p>
-      ${v.groups.map((g) => `<div class="meter"><span>${esc(g.skill_name)}</span>${bar(100 * g.people / v.team.people)}<span class="v">${t("team.people", g.people)}</span></div>
-        <p class="tiny muted">${g.roles.map((r) => `${esc(r.title)} × ${r.headcount}`).join(" · ")}</p>`).join("")}
+      ${v.groups.map((g) => `<div class="meter"><span>${esc(nm(g.skill_name))}</span>${bar(100 * g.people / v.team.people)}<span class="v">${t("team.people", g.people)}</span></div>
+        <p class="tiny muted">${g.roles.map((r) => `${esc(nm(r.title))} × ${r.headcount}`).join(" · ")}</p>`).join("")}
     </section>` : ""}
     ${v.sdg.length ? `<section class="card stack"><h2>${t("team.sdg.h")}</h2><p class="muted small">${t("team.sdg.p")}</p>
       ${v.sdg.map((s) => `<p class="small">${sdgChip(s.target)} <span class="strong">${t("team.sdg.row", s.people, fmt(s.person_hours, 0))}</span> ${esc(sdgWhy(s.rationale))}</p>`).join("")}
