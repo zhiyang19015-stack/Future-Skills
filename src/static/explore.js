@@ -14,7 +14,7 @@ function occRow(x) {
     <a class="title" href="#/occ/${esc(x.occ_id)}">${esc(x.title)}</a>
     <div class="val">${fmt(x.outlook, 0)}<small>${signed(x.change)}</small></div>
     <div class="meta">${fieldChip(x.field_id)}<span>${t("radar.demand", fmt(x.demand, 0))}</span><span>${t("radar.share", fmt(x.ai_share, 0), "")}</span>${mycolChip(x.mycol)}
-      ${x.thin_evidence ? `<span class="chip warn" title="${esc(t("radar.thin.title"))}">${t("radar.thin")}</span>` : ""}</div>
+      ${x.thin_evidence ? `<span class="chip warn" title="${esc(t("radar.thin.title"))}">${t("radar.thin")}</span>` : ""}${secondChip(x.second_source)}</div>
   </div>`;
 }
 
@@ -425,6 +425,7 @@ function insightText(i) {
 PAGES.matches = async () => {
   const m = await getMatches(ui.showMore ? 30 : 12);
   rememberScenarios(m.scenarios);
+  if (m.needs_input) return blankPage(3, "matches");
   const people = state.demo ? await cached("/api/profiles") : [];
   const demo = people.find((p) => p.profile_id === state.demo);
   const listed = m.results.filter((x) => !x.flags.includes("needs_extra_education") && !x.flags.includes("below_education") && !x.flags.includes("current_occupation") && !x.flags.includes("restricted_my"));
@@ -436,7 +437,6 @@ PAGES.matches = async () => {
     <header class="stack tight"><p class="eyebrow">${t("step", 3)} · ${t("nav.matches")}</p>
       <h1>${demo ? t("match.h1.demo", esc(demo.name)) : t("match.h1")}</h1>
       <p class="lead">${demo ? esc(t("persona." + demo.profile_id) === "persona." + demo.profile_id ? demo.story : t("persona." + demo.profile_id)) : t("match.lead", m.total_occupations)}</p></header>
-    ${!hasProfile() ? `<div class="warn row between"><span>${t("match.empty")}</span><a class="btn small" href="#/you">${t("home.start")}</a></div>` : ""}
     ${replanNote(m)}
     ${scenarioControl({ adoption: m.adoption, horizon: m.horizon_year }, m.scenarios)}
     ${verdictNote(m)}
@@ -488,7 +488,7 @@ async function chosenOccupation(arg) {
   if (state.occId) return state.occId;
   const m = await getMatches();
   const first = m.results.find((x) => isMove(x)) || m.results[0];
-  return first.occ_id;
+  return first ? first.occ_id : null;  // none: a blank profile has no ranking
 }
 const pathResources = (L) => {
   const seen = new Map();
@@ -504,7 +504,7 @@ function progressOf(L) {
 }
 function resourceRow(r, occId) {
   const done = Boolean((state.done[occId] || {})[r.url]);
-  const meta = [esc(r.provider), r.hours ? t("path.hours", fmt(r.hours, 0)) : t("path.nohours"), t("fmt." + (r.format || "course")),
+  const meta = [esc(r.provider), ...(r.language && r.language !== "en" ? [t("path.lang." + r.language)] : []), r.hours ? t("path.hours", fmt(r.hours, r.hours < 1 ? 1 : 0)) : t("path.nohours"), t("fmt." + (r.format || "course")),
     r.cost_myr ? `RM ${fmt(r.cost_myr, 0)}` : t("path.free"), t("path.checked", dateText(r.verified_date))];
   return `<label class="step${done ? " done" : ""}"><input type="checkbox" data-on="done" data-url="${esc(r.url)}"${done ? " checked" : ""} aria-label="${esc(t("path.tick", r.title))}">
     <span><a class="t" href="${safeUrl(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a><span class="src" style="display:block">${meta.join(" · ")}</span>${r.notes ? `<span class="tiny muted">${esc(r.notes)}</span>` : ""}</span></label>`;
@@ -512,6 +512,7 @@ function resourceRow(r, occId) {
 
 PAGES.pathway = async (args) => {
   const occId = await chosenOccupation(args[0]);
+  if (!occId) return blankPage(4, "pathway");
   ui.pathOcc = occId;  // the occupation this page shows: a ticked box belongs to it
   const [L, m] = await Promise.all([cached("/api/learn", matchBody({ occ_id: occId })), getMatches()]);
   const p = progressOf(L);
@@ -545,7 +546,8 @@ PAGES.pathway = async (args) => {
     </section>
     ${(L.flags || []).includes("more_study") ? `<p class="warn">${t("path.study", t("zone." + L.role.job_zone))}</p>` : ""}
     ${licenceCard(L.licence)}
-    ${stage(t("path.s1", esc(fieldName(L.role.field_id))), L.stages[0].resources.map((r) => resourceRow(r, occId)).join(""))}
+    ${stage(t("path.s1", esc(fieldName(L.role.field_id))), L.stages[0].resources.map((r) => resourceRow(r, occId)).join(""),
+      L.stages[0].kind === "working" && (L.stages[0].left_out || []).length ? t("path.s1.working", L.stages[0].left_out.length) : undefined)}
     ${stage(t("path.s2"), skills, t("path.s2.p") + (L.skills_not_shown ? ` ${t("path.s2.more", L.skills_not_shown)}` : ""))}
     ${stage(t("path.s3"), handsOn, t("path.s3.p"))}
     ${stage(t("path.hrd"), claimable, t("path.hrd.p"))}
@@ -603,6 +605,7 @@ ACT.ics = async (el) => {
 
 PAGES.sdg = async () => {
   const occId = await chosenOccupation();
+  if (!occId) return blankPage(5, "sdg");
   const [L, m, all] = await Promise.all([cached("/api/learn", matchBody({ occ_id: occId })), getMatches(), cached("/api/sdg/summary")]);
   const targets = L.sdg.map((x) => `<div class="stack tight" style="padding:12px 0;border-top:1px solid var(--line)">
       <div class="row between"><div class="row">${sdgChip(x.target)}<span class="strong">${esc(sdgText(x.target))}</span></div><span class="num strong">${t("path.hours", fmt(x.hours, 0))}</span></div>

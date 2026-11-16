@@ -5,18 +5,22 @@
 
 /* The evidence grade of an occupation's numbers: a letter from three rule-based checks, with the
    reason for each on hover or in the open card. Never a percentage. */
+/* The second source (ILO WP140) checking the AI share: shown only when it does not confirm it. */
+const secondChip = (verdict) => (verdict === "disagree" || verdict === "one_source"
+  ? `<span class="chip warn" title="${esc(t("ev.second." + verdict, "–", "–"))}">${t("ev.second.chip." + verdict)}</span>` : "");
 const evidenceChip = (grade) => (grade ? `<span class="chip grade-${esc(grade)}" title="${esc(t("ev." + grade))}">${t("ev.chip", esc(grade))}</span>` : "");
 function evidenceLines(e) {
   if (!e) return "";
   const line = (c) => {
     if (c.check === "ai_usage") return t("ev.ai." + c.reason, c.tasks_covered, c.tasks);
     if (c.check === "mapping") return t("ev.map." + c.reason);
+    if (c.check === "second_source") return t("ev.second." + c.reason, fmt(c.percentile_observed, 0), fmt(c.percentile_potential, 0));
     return t("ev.fresh." + c.reason, c.ai_release_days === null ? "–" : c.ai_release_days, c.demand_days === null ? "–" : c.demand_days);
   };
   return `<div class="stack tight"><h3>${t("ev.h")} ${evidenceChip(e.grade)}</h3>
     <p class="small">${t("ev." + e.grade)}</p>
-    <ul class="small">${e.checks.map((c) => `<li>${line(c)} <span class="muted">(${c.points}/2)</span></li>`).join("")}</ul>
-    <p class="src">${t("ev.note", e.points, e.max_points)}</p></div>`;
+    <ul class="small">${e.checks.map((c) => `<li>${line(c)}${c.points === null || c.points === undefined ? "" : ` <span class="muted">(${c.points}/2)</span>`}</li>`).join("")}</ul>
+    <p class="src">${t("ev.note", e.points, e.max_points)}${e.capped ? ` ${t("ev.capped")}` : ""}</p></div>`;
 }
 /* Career routes: the related occupations that stay open from this one under the scenario. */
 function routeLines(r) {

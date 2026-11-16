@@ -89,13 +89,13 @@ def check() -> list[str]:
     every_field = {r["entity_id"] for r in read("sdg_map.csv") if r["entity_type"] == "field"}
     need(every_field == fields, f"fields without an SDG link: {sorted(fields - every_field)}")
 
-    targets_ok = re.compile(r"^(all|field:\d\d|element:[0-9A-Za-z.]+|tech:[a-z0-9-]+)$")
+    targets_ok = re.compile(r"^(all|jobseeker|field:\d\d|element:[0-9A-Za-z.]+|tech:[a-z0-9-]+)$")
     seen_urls = set()
     for i, r in enumerate(read("learning_resources.csv"), 2):
         for t in filter(None, r["targets"].split(";")):
             need(targets_ok.match(t) is not None, f"learning_resources line {i}: bad target {t}")
             kind, _, code = t.partition(":")
-            need({"all": True, "field": code in fields, "element": code in elements, "tech": code in techs}[kind],
+            need({"all": True, "jobseeker": True, "field": code in fields, "element": code in elements, "tech": code in techs}[kind],
                  f"learning_resources line {i}: unknown {t}")
         need(r["url"].startswith("https://"), f"learning_resources line {i}: url is not https")
         need(r["url"] not in seen_urls, f"learning_resources line {i}: the same url twice")

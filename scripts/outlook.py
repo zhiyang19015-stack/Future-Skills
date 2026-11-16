@@ -33,6 +33,10 @@ Skill weight (the skill fit in matching.py, and "rising / declining" on the Rada
   A skill AI takes over more than typical AI use does counts for less as adoption grows: having
   it sets a person apart less. A skill people keep doing themselves counts for more.
 
+Second source: every outlook carries ilo.agreement(), the ILO WP140 research estimate checking the
+AI share it uses ("confirmed", "disagree" or "one_source"). It is a flag on the reading, not a part
+of the formula: no number above changes with it.
+
 Status: a role is "rising" when pace x shift is at least ROLE_BAND points, "declining" when at
 most -ROLE_BAND; a skill when its weight leaves 1 +- SKILL_BAND. At adoption 0 everything is
 "steady", so rising and declining are always read under a named scenario, never as one verdict.
@@ -47,6 +51,8 @@ Every constant below is our assumption, not data (SOURCES.md, "Choices and limit
 import hashlib
 import json
 import random
+
+import ilo
 
 HORIZON_YEAR = 2030
 SCENARIOS = {
@@ -135,7 +141,8 @@ def role_outlook(role: dict, data: dict, adoption: float) -> dict:
     return {**s, "adoption": adoption, "pace": round(v["pace"], 3),
             "exposure_points": round(v["exposure_points"], 1), "builder_points": round(v["builder_points"], 1),
             "change": round(change, 1), "outlook": round(v["outlook"], 1), "status": status(change, ROLE_BAND),
-            "ai_share_reference": ref["role_ai_share"], "builder_reference": ref["role_builder_share"]}
+            "ai_share_reference": ref["role_ai_share"], "builder_reference": ref["role_builder_share"],
+            "second_source": ilo.agreement(role, data)}
 
 
 def skill_weight(skill: dict | None, adoption: float, reference: dict) -> dict:

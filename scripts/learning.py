@@ -1,7 +1,9 @@
 """The learning page for one occupation: what to learn, in order, with checked free links.
 
 Stages:
-  1. Foundations     free resources for the occupation's field and for every job seeker
+  1. Foundations     free resources for the occupation's field and for everyone ("all"); job-search
+                     courses ("jobseeker": CV writing, interviews) only for students, career switchers
+                     and when the person's status is not known, never for someone already in work
   2. Skills to build its skills, knowledge areas and Hot technologies, biggest gap first, each
                      with free resources (data/learning_resources.csv). With a profile these are
                      the person's own gaps (matching.py); without one, the occupation's own list
@@ -28,6 +30,17 @@ MAX_PER_SKILL = 2
 MAX_CLAIMABLE = 3
 MIN_CLAIMABLE_POINTS = 4
 TOP_ELEMENTS = 8           # the occupation's most important skills and knowledge a course may match
+# Which general targets the Foundations stage uses for each status (main.KINDS). None: not known.
+FOUNDATION_TARGETS = {"student": ("all", "jobseeker"), "switcher": ("all", "jobseeker"), "working": ("all",),
+                      None: ("all", "jobseeker")}
+
+
+def foundations_for(occ: dict, data: dict, kind: str | None) -> tuple[list[dict], list[str]]:
+    """The free Foundations resources for this status, and the titles left out because of it."""
+    targets = FOUNDATION_TARGETS.get(kind, FOUNDATION_TARGETS[None])
+    kept = {r["url"]: r for t in (f"field:{occ['field_id']}",) + targets for r in free_for(t, data)}
+    every = {r["url"]: r for t in FOUNDATION_TARGETS[None] for r in free_for(t, data)}
+    return list(kept.values()), [r["title"] for u, r in every.items() if u not in kept]
 
 
 def free_for(target: str, data: dict) -> list[dict]:
@@ -150,9 +163,11 @@ def study_hours(resources: list[dict]) -> tuple[float, int]:
     return round(sum(stated), 1), len(unique) - len(stated)
 
 
-def page(occ_id: str, data: dict | None = None, match: dict | None = None, hours_per_week: float = 0.0) -> dict | None:
+def page(occ_id: str, data: dict | None = None, match: dict | None = None, hours_per_week: float = 0.0,
+         kind: str | None = None) -> dict | None:
     """The whole learning page of one occupation; with match (matching.detailed), built on that person's gaps.
-    hours_per_week 0 means the usual study time (matching.DEFAULT_HOURS_PER_WEEK)."""
+    hours_per_week 0 means the usual study time (matching.DEFAULT_HOURS_PER_WEEK). kind: the person's
+    status (student, working, switcher), which decides the general Foundations; None when not known."""
     weekly = hours_per_week or matching.DEFAULT_HOURS_PER_WEEK
     if data is None:
         data = matching.load_data()
@@ -160,7 +175,7 @@ def page(occ_id: str, data: dict | None = None, match: dict | None = None, hours
     if not occ:
         return None
     field_target = f"field:{occ['field_id']}"
-    foundations = list({r["url"]: r for t in (field_target, "all") for r in free_for(t, data)}.values())
+    foundations, left_out = foundations_for(occ, data, kind)
     skills, not_shown = skill_rows(occ, data, match)
     hands_on = programmes_for([f"element:{e[0]}" for e in data["occ_elements"].get(occ_id, [])] + [field_target], data)
     top = sorted(data["occ_elements"].get(occ_id, []), key=lambda e: e[1], reverse=True)[:TOP_ELEMENTS]
@@ -176,7 +191,7 @@ def page(occ_id: str, data: dict | None = None, match: dict | None = None, hours
                  "description": occ["description"], "search_title": occ["search_title"]},
         "personal": bool(match),
         "flags": list(match["flags"]) if match else [],  # "more_study": the page names the qualification it needs
-        "stages": [{"id": "foundations", "resources": foundations}],
+        "stages": [{"id": "foundations", "resources": foundations, "kind": kind, "left_out": left_out}],
         "skills": skills,
         "skills_not_shown": not_shown,
         "hands_on": hands_on,
