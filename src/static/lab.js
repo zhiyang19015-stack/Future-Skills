@@ -55,7 +55,7 @@ function mixBar(mix) {
 const mixLegend = (mix) => `<div class="tags">${CATS.map((c) => `<span class="chip plain"><i class="dot m-${c}"></i>${t("lab.cat." + c)} ${fmt(mix[c], 0)}%</span>`).join("")}</div>`;
 
 function slider(on, label, value, min, max, step, shown) {
-  return `<label class="field"><span>${label}: <b class="num">${shown}</b></span>
+  return `<label class="field"><span>${label}${LANG === "zh" ? "：" : ": "}<b class="num">${shown}</b></span>
     <input type="range" min="${min}" max="${max}" step="${step}" value="${value}" data-on="${on}" aria-label="${esc(label)}"></label>`;
 }
 
@@ -71,7 +71,7 @@ function routeCard(r, hours) {
     <p class="small">${t("lab.train", fmt(tr.hours, 0), fmt(tr.weeks, 0), hours)}${tr.fees_unknown ? ` ${t("lab.fees.unknown")}` : ""}${r.fits_time === false ? ` <span class="chip declining">${t("lab.toolong")}</span>` : ""}</p>
     ${r.qualification.steps_up ? `<p class="small">${t("lab.qual", r.qualification.job_zone)}</p>` : ""}
     ${r.qualification.licence ? `<p class="small">${t("lab.licence", esc(r.qualification.licence.body))}</p>` : ""}
-    <p class="tiny muted">${t("lab.local", fmt(loc.demand, 0), loc.ads_group ? esc(loc.ads_group) : "–", signed(loc.ads_change_pct))} ${loc.group_wage_myr ? t("lab.wage", Math.round(loc.group_wage_myr).toLocaleString(LOCALE[LANG])) : t("lab.nowage")}</p>
+    <p class="tiny muted">${t("lab.local", fmt(loc.demand, 0), loc.ads_group ? esc(loc.ads_group) : "–", signed(loc.ads_change_pct))} ${loc.group_wage_myr ? t("lab.wage", whole(loc.group_wage_myr)) : t("lab.nowage")}</p>
     <p class="tiny muted">${t("lab.score", fmt(r.score, 0), fmt(r.parts.coverage, 0), fmt(r.parts.outlook, 0), fmt(r.parts.readiness, 0))}</p>
   </article>`;
 }
@@ -201,7 +201,7 @@ async function mapPage(occId) {
 const checkChip = (c) => {
   const cls = c.ok === false ? "declining" : c.ok === true ? "rising" : "plain";
   const text = c.limit === "time" ? t("lab.chk.time", fmt(c.value, 0), fmt(c.limit_value, 0))
-    : c.limit === "budget" ? t("lab.chk.budget", fmt(c.value, 0), fmt(c.limit_value, 0)) + (c.unknown_fees ? ` ${t("lab.fees.unknown")}` : "")
+    : c.limit === "budget" ? t("lab.chk.budget", whole(c.value), whole(c.limit_value)) + (c.unknown_fees ? ` ${t("lab.fees.unknown")}` : "")
     : c.limit === "qualification" ? t("lab.chk.qual", c.value, c.limit_value)
     : c.limit === "licence" ? t("lab.chk.licence", esc(c.value)) : t("lab.chk.location");
   return `<li><span class="chip ${cls}">${t("lab.chk." + (c.ok === false ? "no" : c.ok === true ? "ok" : "check"))}</span> ${text}</li>`;
@@ -214,10 +214,10 @@ async function decidePage() {
       <p class="eyebrow">${t("lab.path." + o.path)}</p><h3>${occLink(o.occ_id, o.title)}</h3>
       <div class="tags">${statusChip(o.local.status)}${mycolChip(o.local.mycol)}${o.fits ? `<span class="chip rising">${t("lab.fits")}</span>` : `<span class="chip declining">${t("lab.nofit")}</span>`}</div>
       <div class="meter"><span>${t("lab.coverage")}</span>${bar(o.coverage)}<span class="v">${fmt(o.coverage, 0)}%</span></div>
-      <p class="small">${t("lab.train", fmt(o.training.hours, 0), fmt(o.training.weeks, 0), d.hours_per_week)} ${t("lab.fees", fmt(o.training.course_fees_myr, 0))}</p>
+      <p class="small">${t("lab.train", fmt(o.training.hours, 0), fmt(o.training.weeks, 0), d.hours_per_week)} ${t("lab.fees", whole(o.training.course_fees_myr))}</p>
       <p class="small">${o.critical_count ? `${t("lab.critical", o.critical_count)} ${o.critical.slice(0, 4).map((g) => `<span class="chip warn">${esc(g.skill_name)} +${fmt(g.gap)}</span>`).join(" ")}` : t("lab.critical.none")}</p>
       <p class="small">${t("lab.robust", o.robust_scenarios)} ${Object.entries(o.local.statuses).map(([id, s]) => `<span class="chip ${esc(s)}" title="${esc(t("scn." + id))}"><i class="dot"></i>${t("scn." + id)}</span>`).join(" ")}</p>
-      <p class="tiny muted">${t("lab.local", fmt(o.local.demand, 0), o.local.ads_group ? esc(o.local.ads_group) : "–", signed(o.local.ads_change_pct))} ${o.local.group_wage_myr ? t("lab.wage", Math.round(o.local.group_wage_myr).toLocaleString(LOCALE[LANG])) : t("lab.nowage")}</p>
+      <p class="tiny muted">${t("lab.local", fmt(o.local.demand, 0), o.local.ads_group ? esc(o.local.ads_group) : "–", signed(o.local.ads_change_pct))} ${o.local.group_wage_myr ? t("lab.wage", whole(o.local.group_wage_myr)) : t("lab.nowage")}</p>
       <ul class="small stack tight checks">${o.checks.map(checkChip).join("")}</ul>
       ${o.fallback ? `<p class="small">${t("lab.fallback", occLink(o.fallback.occ_id, o.fallback.title), fmt(o.fallback.coverage, 0))} ${statusChip(o.fallback.status)}</p>` : ""}
       ${o.path !== "stay" ? `<a class="small" href="#/lab/why/${esc(d.options[0].occ_id)}" data-act="labCompare" data-id="${esc(o.occ_id)}">${t("lab.whynot", esc(d.options[0].title))}</a>` : ""}
@@ -225,7 +225,7 @@ async function decidePage() {
   return `<section class="card stack"><h2>${t("lab.decide.h")}</h2><p class="muted small">${t("lab.decide.p", esc(d.origin.title))}</p>
       <div class="grid two">
         ${slider("labWeeks", t("lab.weeks"), L.maxWeeks, 4, 156, 4, L.maxWeeks)}
-        ${slider("labBudget", t("lab.budget"), L.budget, 0, 5000, 100, `RM ${L.budget}`)}
+        ${slider("labBudget", t("lab.budget"), L.budget, 0, 5000, 100, `RM ${whole(L.budget)}`)}
         ${slider("labHours", t("lab.hours"), state.hours, 1, 40, 1, state.hours)}
       </div>
       <p class="tiny muted">${t("lab.location")}</p></section>
@@ -284,7 +284,7 @@ async function missionsPage(occId) {
       ${m.resources.length ? `<p class="small">${t("lab.help")} ${m.resources.map((x) => `<a href="${safeUrl(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a>`).join(" · ")}</p>` : ""}
       ${m.done ? `<p class="small">${t("lab.mdone")}${L.missions[m.mission_id] && L.missions[m.mission_id].url ? ` · <a href="${safeUrl(L.missions[m.mission_id].url)}" target="_blank" rel="noopener">${t("lab.mevidence")}</a>` : ""}</p>
         <button type="button" class="btn small" data-act="labUndo" data-id="${esc(m.mission_id)}">${t("lab.undo")}</button>`
-        : `<div class="row"><input type="url" class="grow" placeholder="${esc(t("lab.url.ph"))}" id="ev-${esc(m.mission_id)}">
+        : `<div class="row"><input type="url" class="grow" aria-label="${esc(t("lab.url.ph"))}" placeholder="${esc(t("lab.url.ph"))}" id="ev-${esc(m.mission_id)}">
         <button type="button" class="btn small primary" data-act="labDone" data-id="${esc(m.mission_id)}">${t("lab.markdone")}</button></div>`}
     </article>`;
   return `<section class="card stack"><h2>${t("lab.missions.h", esc(r.title))}</h2><p class="muted small">${t("lab.missions.p")}</p>

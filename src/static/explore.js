@@ -162,7 +162,7 @@ function demandSignals(d) {
   return d.signals.map((s) => s.signal === "mycol"
     ? `<li>${t("sig.mycol." + s.status, esc(s.occupation || ""))}</li>`
     : `<li>${t("sig.ads", esc(s.group_name), signed(s.change_pct))}</li>`).join("")
-    + (d.wage ? `<li>${t("sig.wage", Math.round(d.wage.median).toLocaleString(LOCALE[LANG]), d.wage.year)}</li>` : "");
+    + (d.wage ? `<li>${t("sig.wage", whole(d.wage.median), d.wage.year)}</li>` : "");
 }
 
 PAGES.occ = async (args) => {
@@ -217,7 +217,7 @@ PAGES.occ = async (args) => {
 
     ${r.evidence ? `<section class="card stack">${evidenceLines(r.evidence)}</section>` : ""}
     <section class="card stack"><h2>${t("occ.sdg.h")}</h2>${r.sdg.map((s) =>
-      `<div class="stack tight"><div class="row">${sdgChip(s.target)}<span class="strong small">${esc(sdgText(s.target))}</span></div><p class="small muted">${esc(s.rationale)}</p></div>`).join("") || `<p class="small muted">–</p>`}</section>
+      `<div class="stack tight"><div class="row">${sdgChip(s.target)}<span class="strong small">${esc(sdgText(s.target))}</span></div><p class="small muted">${esc(sdgWhy(s.rationale))}</p></div>`).join("") || `<p class="small muted">–</p>`}</section>
 
     ${r.related.length ? `<section class="card stack"><h2>${t("occ.related")}</h2><div class="tags">${r.related.map((x) => `<a class="chip plain" href="#/occ/${esc(x.occ_id)}">${esc(x.title)}</a>`).join("")}</div></section>` : ""}
 
@@ -314,7 +314,7 @@ function detailHtml(m, sim) {
       <div class="stack tight"><h3>${t("occ.human.h")}</h3><div>${ai.human_tasks.map(taskRow).join("")}</div></div></div>` : ""}
     <div class="grid two">${routeLines(m.routes)}${evidenceLines(m.evidence)}</div>
     ${m.licence ? `<p class="small">${t("lic.short", esc(m.licence.body))}</p>` : ""}
-    ${m.sdg.length ? `<div class="stack tight"><h3>${t("occ.sdg.h")}</h3>${m.sdg.slice(0, 2).map((x) => `<p class="small">${sdgChip(x.target)} ${esc(x.rationale)}</p>`).join("")}</div>` : ""}
+    ${m.sdg.length ? `<div class="stack tight"><h3>${t("occ.sdg.h")}</h3>${m.sdg.slice(0, 2).map((x) => `<p class="small">${sdgChip(x.target)} ${esc(sdgWhy(x.rationale))}</p>`).join("")}</div>` : ""}
     <div class="row between"><a class="btn small" href="#/occ/${esc(m.occ_id)}">${t("match.occ")}</a>${jobLinks(m.search_title)}</div>
   </div>`;
 }
@@ -387,8 +387,8 @@ function adCard() {
   const list = (rows) => rows.map((x) => `<div class="row" style="gap:6px">${dotName(x)}${x.course ? `<a class="small" href="${safeUrl(x.course.url)}" target="_blank" rel="noopener">${esc(x.course.title)}</a>` : ""}</div>`).join("");
   return `<section class="card stack">
     <div><h2>${t("ad.h")}</h2><p class="muted small">${t("ad.p")}</p></div>
-    <textarea id="ad-text" placeholder="${esc(t("ad.ph"))}">${esc(ui.adText)}</textarea>
-    <div class="row"><button type="button" class="btn small primary" data-act="adRun">${t("ad.go")}</button>${ui.adError ? `<span class="small fail">${esc(ui.adError)}</span>` : ""}</div>
+    <textarea id="ad-text" aria-label="${esc(t("ad.ph"))}" placeholder="${esc(t("ad.ph"))}">${esc(ui.adText)}</textarea>
+    <div class="row"><button type="button" class="btn small primary" data-act="adRun">${t("ad.go")}</button>${ui.adError ? `<span class="small fail" role="alert">${esc(ui.adError)}</span>` : ""}</div>
     ${r ? `<div class="grid two">
         <div class="stack tight"><h3>${t("ad.have", r.have.length)}</h3>${list(r.have) || `<p class="small muted">${t("ad.none")}</p>`}</div>
         <div class="stack tight"><h3>${t("ad.miss", r.missing.length)}</h3>${list(r.missing) || `<p class="small muted">${t("ad.none")}</p>`}</div></div>
@@ -475,7 +475,8 @@ Object.assign(ACT, {
   adRun: async () => {
     ui.adText = $("#ad-text").value;
     ui.adError = null;
-    try { ui.ad = await request("/api/jobad", { text: ui.adText, technologies: state.demo ? [] : state.techs, ...scenarioBody() }); } catch (e) { ui.ad = null; ui.adError = e.message; }
+    if (ui.adText.trim().length < 40) { ui.ad = null; ui.adError = t("ad.short"); redraw(); return; }  // the API's own minimum
+    try { ui.ad = await request("/api/jobad", { text: ui.adText, technologies: state.demo ? [] : state.techs, ...scenarioBody() }); } catch (e) { ui.ad = null; ui.adError = errText(e); }
     redraw();
   },
 });
@@ -505,7 +506,7 @@ function progressOf(L) {
 function resourceRow(r, occId) {
   const done = Boolean((state.done[occId] || {})[r.url]);
   const meta = [esc(r.provider), ...(r.language && r.language !== "en" ? [t("path.lang." + r.language)] : []), r.hours ? t("path.hours", fmt(r.hours, r.hours < 1 ? 1 : 0)) : t("path.nohours"), t("fmt." + (r.format || "course")),
-    r.cost_myr ? `RM ${fmt(r.cost_myr, 0)}` : t("path.free"), t("path.checked", dateText(r.verified_date))];
+    r.cost_myr ? `RM ${whole(r.cost_myr)}` : t("path.free"), t("path.checked", dateText(r.verified_date))];
   return `<label class="step${done ? " done" : ""}"><input type="checkbox" data-on="done" data-url="${esc(r.url)}"${done ? " checked" : ""} aria-label="${esc(t("path.tick", r.title))}">
     <span><a class="t" href="${safeUrl(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a><span class="src" style="display:block">${meta.join(" · ")}</span>${r.notes ? `<span class="tiny muted">${esc(r.notes)}</span>` : ""}</span></label>`;
 }
@@ -526,7 +527,7 @@ PAGES.pathway = async (args) => {
       <div class="row">${dotName({ ...s.ai, skill_name: s.skill_name })}${s.your_level !== undefined && s.kind !== "technology" ? `<span class="small muted">${t("path.level", fmt(s.your_level), fmt(s.level_needed))}</span>` : ""}${(s.sdg || []).slice(0, 2).map((x) => sdgChip(x.target)).join("")}</div>
       ${s.resources.length ? s.resources.map((r) => resourceRow(r, occId)).join("") : `<p class="small muted">${t("path.nocourse")}</p>`}</div>`).join("");
   const handsOn = L.hands_on.map((r) => `<p class="small"><a href="${safeUrl(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a> · ${esc(r.provider)}<br><span class="muted">${esc(r.notes)}</span></p>`).join("");
-  const claimable = (L.claimable || []).map((r) => `<p class="small"><a href="${safeUrl(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a> · ${esc(r.provider)} · <b>${r.cost_myr ? `RM ${fmt(r.cost_myr, 0)}` : t("path.quote")}</b>${r.teaches_gaps ? ` · ${t("path.hrd.gaps", r.teaches_gaps)}` : ""}<br><span class="muted">${esc(r.notes)} · ${t("path.checked", dateText(r.verified_date))}</span></p>`).join("");
+  const claimable = (L.claimable || []).map((r) => `<p class="small"><a href="${safeUrl(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a> · ${esc(r.provider)} · <b>${r.cost_myr ? `RM ${whole(r.cost_myr)}` : t("path.quote")}</b>${r.teaches_gaps ? ` · ${t("path.hrd.gaps", r.teaches_gaps)}` : ""}<br><span class="muted">${esc(r.notes)} · ${t("path.checked", dateText(r.verified_date))}</span></p>`).join("");
   return `<div class="stack loose">
     <header class="stack tight"><p class="eyebrow">${t("step", 4)} · ${t("nav.pathway")}</p><h1>${t("path.h1", esc(L.role.name))}</h1>
       <p class="lead">${t(L.personal && hasProfile() ? "path.lead.personal" : "path.lead.role")}</p></header>
@@ -609,8 +610,8 @@ PAGES.sdg = async () => {
   const [L, m, all] = await Promise.all([cached("/api/learn", matchBody({ occ_id: occId })), getMatches(), cached("/api/sdg/summary")]);
   const targets = L.sdg.map((x) => `<div class="stack tight" style="padding:12px 0;border-top:1px solid var(--line)">
       <div class="row between"><div class="row">${sdgChip(x.target)}<span class="strong">${esc(sdgText(x.target))}</span></div><span class="num strong">${t("path.hours", fmt(x.hours, 0))}</span></div>
-      ${x.role ? `<p class="small"><span class="chip ${x.role.link_strength === "direct" ? "rising" : "plain"}">${t("sdg.link." + x.role.link_strength)}</span> ${esc(x.role.rationale)}</p>` : ""}
-      ${x.skills.length ? `<p class="small muted">${t("sdg.through", x.skills.length)} ${x.skills.slice(0, 6).map((k) => `<span title="${esc(k.rationale)}">${esc(k.skill_name)}</span>`).join(" · ")}${x.skills.length > 6 ? " …" : ""}</p>` : ""}</div>`).join("");
+      ${x.role ? `<p class="small"><span class="chip ${x.role.link_strength === "direct" ? "rising" : "plain"}">${t("sdg.link." + x.role.link_strength)}</span> ${esc(sdgWhy(x.role.rationale))}</p>` : ""}
+      ${x.skills.length ? `<p class="small muted">${t("sdg.through", x.skills.length)} ${x.skills.slice(0, 6).map((k) => `<span title="${esc(sdgWhy(k.rationale))}">${esc(k.skill_name)}</span>`).join(" · ")}${x.skills.length > 6 ? " …" : ""}</p>` : ""}</div>`).join("");
   const listed = m.results.filter((x) => !x.flags.includes("needs_extra_education") && !x.flags.includes("below_education"));
   const without = [...listed].sort((a, b) => b.sdg_choice.total_without - a.sdg_choice.total_without).map((x) => x.occ_id);
   const lifted = listed.filter((x) => x.sdg_choice.bonus).map((x) => ({ ...x, was: without.indexOf(x.occ_id) + 1, now: listed.indexOf(x) + 1 }));

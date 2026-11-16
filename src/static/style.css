@@ -4,7 +4,7 @@
 :root {
   --bg: #f4f7f6; --surface: #ffffff; --surface-2: #f8fbfa; --ink: #0e1f1d; --muted: #586966; --line: #dfe7e5;
   --brand: #0f6e66; --brand-strong: #0a524c; --brand-soft: #e3f3f0; --on-brand: #ffffff;
-  --ai: #6b4eff; --ai-soft: #eeeaff;
+  --ai: #5b3df5; --ai-soft: #eeeaff;  /* #5b3df5 on --ai-soft is 5.2:1 (WCAG AA) */
   --rise: #157a43; --rise-soft: #e3f5ea; --fall: #b3261e; --fall-soft: #fdeceb;
   --steady: #48566a; --steady-soft: #edf1f5; --warn: #8a5a00; --warn-soft: #fff5dc;
   --shadow: 0 1px 2px rgba(14, 31, 29, .05), 0 6px 20px rgba(14, 31, 29, .06);
@@ -192,6 +192,7 @@ details.more > *:not(summary) { margin-top: 10px; }
 .part { display: flex; flex-direction: column; gap: 4px; font-size: .82rem; color: var(--muted); }
 .part .pv { color: var(--ink); font-weight: 650; font-variant-numeric: tabular-nums; }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tags .chip { white-space: normal; max-width: 100%; }  /* a long chip wraps at phone width instead of pushing the page sideways */
 .task { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; padding: 10px 0; border-top: 1px solid var(--line); font-size: .92rem; }
 .task:first-child { border-top: 0; }
 .task .bar { grid-column: 1 / -1; }
@@ -292,7 +293,7 @@ table.heatmap th.n { min-width: 92px; vertical-align: bottom; font-weight: 600; 
 td.heat { font-variant-numeric: tabular-nums; font-weight: 650; }
 td.heat.h1 { background: var(--warn-soft); color: var(--warn); }
 td.heat.h2 { background: color-mix(in srgb, var(--warn) 30%, var(--surface)); color: var(--ink); }
-td.heat.h3 { background: color-mix(in srgb, var(--warn) 60%, var(--surface)); color: var(--ink); }
+td.heat.h3 { background: color-mix(in srgb, var(--warn) 60%, var(--surface)); color: #0b1211; }  /* dark text: light text on this cell is 3.4:1 in dark mode */
 
 /* ---------- the Lab (lab.js) ---------- */
 .seg a.segbtn { color: var(--muted); font-weight: 650; font-size: .92rem; padding: 8px 14px; border-radius: 9px; min-height: 38px; display: inline-flex; align-items: center; text-decoration: none; }

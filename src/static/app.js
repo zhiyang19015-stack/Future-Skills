@@ -12,6 +12,8 @@ const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "
 const safeUrl = (u) => (/^https?:\/\//i.test(u || "") ? esc(u) : "#");
 const fmt = (n, d = 1) => (n === null || n === undefined || n === "" || Number.isNaN(Number(n)) ? "–" : Number(n).toFixed(d));
 const signed = (n, d = 1) => (n === null || n === undefined ? "–" : `${n > 0 ? "+" : n < 0 ? "−" : ""}${Math.abs(n).toFixed(d)}`);
+/* A whole number of ringgit (or any count) grouped the Malaysian way: 12,000. */
+const whole = (n) => (n === null || n === undefined || n === "" || Number.isNaN(Number(n)) ? "–" : Math.round(Number(n)).toLocaleString(LOCALE[LANG]));
 const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
 
 /* ---------- the person: kept in this browser only; nothing personal is saved on the server ---------- */
@@ -76,8 +78,19 @@ async function request(path, body) {
   }
   let answer = {};
   try { answer = await res.json(); } catch (e) { /* not JSON: the status says what happened */ }
-  if (!res.ok) throw new Error(answer.error || `HTTP ${res.status}`);
+  if (!res.ok) throw Object.assign(new Error(answer.error || `HTTP ${res.status}`), { status: res.status });
   return answer;
+}
+/* An error in the page's language. The server's own reason is in English and kept after it, in
+   brackets, because it names exactly what to fix; an error made in this page is already translated. */
+function errText(e) {
+  if (!e) return "";
+  if (e.offline) return t("err.offline");
+  if (!e.status) return e.message;
+  const what = e.status === 404 ? t("err.notfound") : e.status === 400 ? t("err.input") : e.status === 409 ? t("err.busy")
+    : t("err.server");
+  if (e.status === 404 || e.message === `HTTP ${e.status}`) return what;  // nothing more to say than the status
+  return LANG === "en" && e.status === 400 ? `${what} ${e.message}` : `${what} (${e.message})`;
 }
 function cached(path, body) {
   const key = path + (body === undefined ? "" : "\n" + JSON.stringify(body));
@@ -220,6 +233,9 @@ function drawChrome(current) {
   btn.setAttribute("aria-label", t(dark ? "theme.light" : "theme.dark"));
   btn.title = btn.getAttribute("aria-label");
   $("#lang").value = LANG;
+  // the page shell in index.html: its text and labels name their key
+  $$("[data-i18n]").forEach((el) => { el.textContent = t(el.dataset.i18n); });
+  $$("[data-i18n-aria]").forEach((el) => { if (el.id !== "theme") el.setAttribute("aria-label", t(el.dataset.i18nAria)); });
   document.documentElement.lang = LANG === "zh" ? "zh-Hans" : LANG;
 }
 function isDark() {
@@ -244,7 +260,7 @@ async function route(keepScroll = false) {
   } catch (e) {
     if (seq !== routeSeq) return;
     const offline = Boolean(e && e.offline);
-    app.innerHTML = `<div class="err stack tight" role="alert"><p>${offline ? t("err.offline") : `${t("err.generic")} ${esc(e.message)}`}</p>
+    app.innerHTML = `<div class="err stack tight" role="alert"><p>${offline || (e && e.status) ? esc(errText(e)) : `${t("err.generic")} ${esc(e && e.message)}`}</p>
       <div class="row"><button class="btn small" type="button" data-act="retry">${t("err.retry")}</button><a href="#/">${t("err.home")}</a></div></div>`;
   }
 }
@@ -427,15 +443,43 @@ function updatePanel(u) {
   </section>`;
 }
 
+/* The source table's own words (ours, not the sources') in the chosen language. The text comes from
+   /api/sources in English; a row or a phrase with no line in i18n.js is shown as the API wrote it. */
+function sourceText(r, part, autoDays) {
+  const raw = r[part] || "";
+  const has = (k) => STRINGS[k] !== undefined;
+  if (part === "name") return has(`srcrow.${r.id}.name`) ? t(`srcrow.${r.id}.name`) : raw;
+  if (part === "used_for") {
+    if (r.id === "onet") return t("srcrow.onet.used", r.rows);
+    if (r.id === "my_restrictions") return `${t("srcrow.my_restrictions.used")} ${raw.split(": ").slice(1).join(": ")}`;
+    return has(`srcrow.${r.id}.used`) ? t(`srcrow.${r.id}.used`) : raw;
+  }
+  if (part === "refresh") {
+    if (/^Fetched again/.test(raw)) return autoDays > 0 ? t("srcrow.fetch.every", fmt(autoDays, 0)) : t("srcrow.fetch.pressed");
+    if (raw === "Checked by hand.") return t("srcrow.hand");
+    return has(`srcrow.${r.id}.refresh`) ? t(`srcrow.${r.id}.refresh`) : raw;
+  }
+  // covers: a count, a date range, or a phrase
+  let m;
+  if ((m = raw.match(/^(\d+) (resources|targets|professions|missions|occupations)$/))) return t("srcrow.n." + m[2], m[1]);
+  if ((m = raw.match(/^(\d+) ISCO-08 occupations$/))) return t("srcrow.n.isco", m[1]);
+  if ((m = raw.match(/^(\S+) edition, (\d+) occupations$/))) return t("srcrow.mycol.covers", m[1], m[2]);
+  if ((m = raw.match(/^(\d{4}-\d{2}(?:-\d{2})?) to (\d{4}-\d{2}(?:-\d{2})?)$/))) {
+    const d = (x) => (x.length === 7 ? monthText(x) : dateText(x));
+    return t("srcrow.to", d(m[1]), d(m[2]));
+  }
+  return has(`srcrow.${r.id}.covers`) ? t(`srcrow.${r.id}.covers`) : raw;
+}
+
 PAGES.sources = async () => {
   const s = await request("/api/sources");  // never cached: this page shows how fresh the data is now
   const p = s.parameters, x = s.exposure, w = s.weights, fw = s.field_weights, d = s.demand;
   const rows = s.sources.map((r) => `<tr>
-      <td><span class="strong">${r.url ? `<a href="${safeUrl(r.url)}" target="_blank" rel="noopener">${esc(r.name)}</a>` : esc(r.name)}</span>
-        <div class="small muted">${esc(r.used_for)}</div>${r.licence ? `<div class="tiny muted">${esc(r.licence)}</div>` : ""}</td>
-      <td class="n">${r.released ? dateText(r.released) : esc(r.covers || "–")}</td>
+      <td><span class="strong">${r.url ? `<a href="${safeUrl(r.url)}" target="_blank" rel="noopener">${esc(sourceText(r, "name"))}</a>` : esc(sourceText(r, "name"))}</span>
+        <div class="small muted">${esc(sourceText(r, "used_for"))}</div>${r.licence ? `<div class="tiny muted">${esc(r.licence)}</div>` : ""}</td>
+      <td class="n">${r.released ? dateText(r.released) : esc(sourceText(r, "covers") || "–")}</td>
       <td class="n">${dateText(r.fetched)}</td>
-      <td class="small muted">${esc(r.refresh)}</td>
+      <td class="small muted">${esc(sourceText(r, "refresh", s.update.auto_update_days))}</td>
       <td class="n">${r.rows}</td></tr>`).join("");
   const pct = (v) => `${Math.round(v * 100)}%`;
   return `<div class="stack loose">

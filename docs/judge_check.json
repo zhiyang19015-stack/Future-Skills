@@ -1,6 +1,6 @@
 {
  "date": "2026-11-17",
- "commit": "1ec6fb4",
+ "commit": "566f8e2",
  "targets": {
   "first_move_changed": 3,
   "top5_changed": 4,
@@ -1724,6 +1724,144 @@
    ]
   },
   "log_steps": 7,
+  "pass": true
+ },
+ "languages": {
+  "summary": {
+   "9. UI strings missing or falling back to English, BM / ZH (of 1102 rows)": "0 / 0",
+   "9. Rows whose BM / ZH text is the English text": "0 / 0",
+   "9. English text written into the page, not through i18n": 0,
+   "9. SDG reasons shown in English only, BM / ZH (of 162)": "0 / 0",
+   "9. Sources-page descriptions shown in English only (of 28)": 0,
+   "9. BM rows using an Indonesian word (rule of thumb)": 0,
+   "9. Form fields with no label": 0,
+   "9. Colour pairs below WCAG AA 4.5:1 (light + dark, of 46)": 0,
+   "9. <html lang> follows the chosen language": "yes"
+  },
+  "rows": 1102,
+  "totals": {
+   "en": {
+    "missing_key": 0,
+    "fallback": 0,
+    "same_as_en": 0,
+    "hardcoded": 0
+   },
+   "ms": {
+    "missing_key": 0,
+    "fallback": 0,
+    "same_as_en": 0,
+    "hardcoded": 0
+   },
+   "zh": {
+    "missing_key": 0,
+    "fallback": 0,
+    "same_as_en": 0,
+    "hardcoded": 0
+   }
+  },
+  "pages": {
+   "index.html": {
+    "pages": "header, skip link",
+    "missing_keys": 0,
+    "fallback_ms": 0,
+    "fallback_zh": 0,
+    "hardcoded": [],
+    "unlabelled": []
+   },
+   "app.js": {
+    "pages": "home, sources, header and footer, errors",
+    "missing_keys": 0,
+    "fallback_ms": 0,
+    "fallback_zh": 0,
+    "hardcoded": [],
+    "unlabelled": []
+   },
+   "you.js": {
+    "pages": "1 You",
+    "missing_keys": 0,
+    "fallback_ms": 0,
+    "fallback_zh": 0,
+    "hardcoded": [],
+    "unlabelled": []
+   },
+   "explore.js": {
+    "pages": "2 Radar, occupation, 3 Matches, 4 Pathway, 5 SDG",
+    "missing_keys": 0,
+    "fallback_ms": 0,
+    "fallback_zh": 0,
+    "hardcoded": [],
+    "unlabelled": []
+   },
+   "futures.js": {
+    "pages": "6 Futures, news",
+    "missing_keys": 0,
+    "fallback_ms": 0,
+    "fallback_zh": 0,
+    "hardcoded": [],
+    "unlabelled": []
+   },
+   "quick.js": {
+    "pages": "quick start",
+    "missing_keys": 0,
+    "fallback_ms": 0,
+    "fallback_zh": 0,
+    "hardcoded": [],
+    "unlabelled": []
+   },
+   "team.js": {
+    "pages": "team",
+    "missing_keys": 0,
+    "fallback_ms": 0,
+    "fallback_zh": 0,
+    "hardcoded": [],
+    "unlabelled": []
+   },
+   "lab.js": {
+    "pages": "lab",
+    "missing_keys": 0,
+    "fallback_ms": 0,
+    "fallback_zh": 0,
+    "hardcoded": [],
+    "unlabelled": []
+   },
+   "pilot.js": {
+    "pages": "workshop check",
+    "missing_keys": 0,
+    "fallback_ms": 0,
+    "fallback_zh": 0,
+    "hardcoded": [],
+    "unlabelled": []
+   }
+  },
+  "side": {
+   "goal_names": {
+    "rows": 17,
+    "missing_ms": 0,
+    "missing_zh": 0
+   },
+   "goal_texts": {
+    "rows": 77,
+    "missing_ms": 0,
+    "missing_zh": 0
+   },
+   "interest_items": {
+    "rows": 36,
+    "missing_ms": 0,
+    "missing_zh": 0
+   },
+   "sdg_reasons": {
+    "rows": 162,
+    "missing_ms": 0,
+    "missing_zh": 0
+   }
+  },
+  "sources": {
+   "parts": 28,
+   "untranslated": 0
+  },
+  "indonesian": [],
+  "contrast_fail": [],
+  "lang_attr": true,
   "pass": true
  }
 }

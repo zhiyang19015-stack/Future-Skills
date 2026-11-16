@@ -21,6 +21,11 @@ calls the same JSON API the web page calls (main.dispatch), so it checks what a 
     8 Real news         each real news item's page opened: are its quotes and date there? Can an item be
                         approved before that check? Aiman's own job before approval, after it, and after
                         undo (on a log of its own, so the app's own approvals are untouched)
+    9 Languages, labels UI text in English, Bahasa Melayu and Chinese: strings missing or falling back to
+                        English, English written into the page instead of through i18n, SDG reasons and
+                        Sources-page text in English only, form fields with no label, colour pairs below
+                        WCAG AA, and whether <html lang> follows the language (scripts/i18n_check.py,
+                        read from the page's files; no browser)
 
     python scripts/judge_check.py                    # print the report
     python scripts/judge_check.py --write            # save docs/judge_check.md and .json
@@ -50,6 +55,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 sys.path.insert(0, str(ROOT / "src"))
 
 import check_links  # noqa: E402
+import i18n_check  # noqa: E402
 import ilo  # noqa: E402
 import main  # noqa: E402
 import matching  # noqa: E402
@@ -368,7 +374,21 @@ def run(seed: int = DEFAULT_SEED, offline: bool = False, url: str | None = None)
     return {"date": date.today().isoformat(), "commit": commit(), "targets": TARGETS,
             "blank": blank_profile(), "scenarios": scenarios(), "news": news_runs(), "radar": radar(),
             "paths": paths(), "links": links(seed, offline), "public": public_url(url, offline),
-            "real_news": real_news(offline)}
+            "real_news": real_news(offline), "languages": languages()}
+
+
+def languages() -> dict:
+    """Check 9, from scripts/i18n_check.py: the counts, and the findings each count is made of."""
+    r = i18n_check.run()
+    return {"summary": i18n_check.summary(r), "rows": r["rows"], "totals": r["totals"],
+            "pages": {f: {"pages": p["pages"], "missing_keys": len(p["missing_keys"]),
+                          "fallback_ms": p["langs"]["ms"]["fallback"], "fallback_zh": p["langs"]["zh"]["fallback"],
+                          "hardcoded": [f"{h['line']}: {h['text'][:60]}" for h in p["hardcoded"]],
+                          "unlabelled": [f"{h['line']}: {h['field']}" for h in p["unlabelled"]]}
+                      for f, p in r["pages"].items()},
+            "side": r["side"], "sources": r["sources"], "indonesian": r["indonesian"],
+            "contrast_fail": [c for c in r["contrast"] if not c["pass"]], "lang_attr": r["lang_attr"],
+            "pass": all(v in (0, "0 / 0", "yes") for v in i18n_check.summary(r).values())}
 
 
 def headline(r: dict) -> dict:
@@ -406,6 +426,7 @@ def headline(r: dict) -> dict:
         "7. Public URL": r["public"]["detail"] if not r["public"]["url"] else
         f"{r['public']['url']} ({r['public']['detail']})",
         **real_news_headline(r.get("real_news")),
+        **(r["languages"]["summary"] if r.get("languages") else {}),
     }
 
 
@@ -586,6 +607,27 @@ def as_markdown(r: dict, base: dict | None) -> str:
                     f"{'yes' if d['undo_restores'] else 'no'}. Rule-sized changes: "
                     + "; ".join(f"{x['name'].rstrip('.')} {x['before']:g} → {x['after']:g}" for x in d["rows"]) + "."]
         out += [""]
+
+    lg = r.get("languages")
+    if lg:
+        out += [f"## 9. Languages and labels — {mark(lg['pass'])}", "",
+                "Read from the page's own files by `scripts/i18n_check.py` (no browser): every `t(\"key\")` call, "
+                f"the {lg['rows']} rows of the string tables, the markup in the scripts and `index.html`, the SDG reasons "
+                "of `data/sdg_map.csv`, the Sources page's descriptions and the colour tokens of `style.css`. Occupation "
+                "titles, task statements, skill names and course data stay as their source wrote them (English) and "
+                "are not counted. A rule on source text: it can miss text built in an unusual way.", "",
+                "| Page file (pages) | Missing keys | BM / ZH falling back to English | English written into the page "
+                "| Fields with no label |", "|---|---|---|---|---|"]
+        for f, x in lg["pages"].items():
+            hard = f"{len(x['hardcoded'])}" + (f" ({'; '.join(x['hardcoded'])})" if x["hardcoded"] else "")
+            unl = f"{len(x['unlabelled'])}" + (f" ({'; '.join(x['unlabelled'])})" if x["unlabelled"] else "")
+            out += [f"| {f} ({x['pages']}) | {x['missing_keys']} | {x['fallback_ms']} / {x['fallback_zh']} | {hard} | {unl} |"]
+        sd = lg["side"]
+        out += ["", "Other tables, lines with no BM / ZH: " + "; ".join(
+            f"{name.replace('_', ' ')} {v['missing_ms']} / {v['missing_zh']} of {v['rows']}" for name, v in sd.items())
+            + f". Sources-page descriptions in English only: {lg['sources']['untranslated']} of {lg['sources']['parts']}."
+            + " Colour pairs below 4.5:1: " + ("none" if not lg["contrast_fail"] else "; ".join(
+                f"{c['theme']} --{c['text']} on --{c['on']} {c['ratio']}:1" for c in lg["contrast_fail"])) + ".", ""]
     return "\n".join(out)
 
 

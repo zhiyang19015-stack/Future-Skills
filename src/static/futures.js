@@ -156,7 +156,7 @@ function customCard(wi) {
       <div class="seg" role="group">${CUSTOM_KINDS.map((k) => `<button type="button" data-act="customKind" data-id="${k}" aria-pressed="${c.kind === k}">${t("wi.kind." + k)}</button>`).join("")}</div>
       <div class="grid two">${picker}${field}</div>
       ${source ? `<p class="src">${source}</p>` : ""}
-      <div class="row"><button type="button" class="btn small primary" data-act="customRun">${t("wi.c.run")}</button>${ui.customError ? `<span class="small fail">${esc(ui.customError)}</span>` : ""}</div>
+      <div class="row"><button type="button" class="btn small primary" data-act="customRun">${t("wi.c.run")}</button>${ui.customError ? `<span class="small fail" role="alert">${esc(ui.customError)}</span>` : ""}</div>
     </div></details></section>`;
 }
 function customOccs(c) {
@@ -193,9 +193,9 @@ function realItem(n, view, person) {
   return `<article class="card stack" style="border-color:${n.approved ? "var(--rise)" : "var(--line)"}">
     <div class="row"><span class="chip brand">${t("rn.real")}</span>${realCheck(n.check)}${fieldChip(n.field)}</div>
     <p class="headline"><a href="${esc(n.url)}" target="_blank" rel="noopener">${esc(n.title)}</a></p>
-    <p class="small muted">${esc(n.publisher)} · ${t("rn.published", esc(n.published))}</p>
+    <p class="small muted">${esc(n.publisher)} · ${t("rn.published", dateText(n.published))}</p>
     ${n.quotes.map((q, i) => { const c = n.check && n.check.quotes[i]; return `<blockquote class="small">“${esc(q)}”${c && c.found !== null ? ` <span class="${c.found ? "pass" : "fail"}">${c.found ? "✓" : "✗"}</span>` : ""}</blockquote>`; }).join("")}
-    ${n.check && n.check.page_date ? `<p class="src">${t("rn.pagedate", esc(n.check.page_date))}</p>` : ""}
+    ${n.check && n.check.page_date ? `<p class="src">${t("rn.pagedate", dateText(n.check.page_date))}</p>` : ""}
     <div class="row"><button type="button" class="btn small" data-act="rnCheck" data-id="${esc(n.id)}"${busy ? " disabled" : ""}>1 · ${t("rn.check")}</button>
       <button type="button" class="btn small" data-act="rnPropose" data-id="${esc(n.id)}"${busy || n.approved ? " disabled" : ""}>2 · ${t("rn.propose")}</button>
       ${n.proposal && !n.approved ? `<button type="button" class="btn small" data-act="rnPreview" data-id="${esc(n.id)}"${busy ? " disabled" : ""}>3 · ${person ? t("rn.preview.for", esc(person)) : t("rn.preview")}</button>` : ""}</div>
@@ -269,7 +269,7 @@ async function runWhatIf(changes) {
   try {
     ui.whatif = await request("/api/whatif", matchBody({ trend_changes: changes }));
   } catch (e) {
-    ui.customError = e.message;
+    ui.customError = errText(e);
   }
   ui.busy.whatif = false;
   await route(true);
@@ -281,7 +281,7 @@ async function realStep(id, path, body) {
   try {
     await request(path, body);
   } catch (e) {
-    ui.rnError = { id, text: e.message };
+    ui.rnError = { id, text: errText(e) };
   }
   ui.busy["rn:" + id] = false;
   cache.delete("/api/news");
@@ -313,7 +313,7 @@ Object.assign(ACT, {
         code: ui.rnCode || "", proposal_id: n.proposal ? n.proposal.proposal_id : null });
       cache.clear(); ui.whatif = null; ui.realNews = null;  // every kept result used the data before this
     } catch (e) {
-      ui.rnError = { id: n.id, text: e.message };
+      ui.rnError = { id: n.id, text: errText(e) };
       cache.delete("/api/news");
     }
     ui.busy["rn:" + n.id] = false;

@@ -104,9 +104,9 @@ function cvCard() {
       <button type="button" class="btn ghost" data-act="cvPaste" aria-expanded="${Boolean(ui.cvPaste)}">${t("cv.paste")}</button>
       ${state.cv ? `<button type="button" class="btn ghost" data-act="cvClear">${t("cv.clear")}</button>` : ""}
     </div>
-    ${ui.cvPaste ? `<div class="stack tight"><textarea id="cv-text" placeholder="${esc(t("cv.paste.ph"))}"></textarea><div><button type="button" class="btn small primary" data-act="cvRead">${t("cv.read")}</button></div></div>` : ""}
+    ${ui.cvPaste ? `<div class="stack tight"><textarea id="cv-text" aria-label="${esc(t("cv.paste.ph"))}" placeholder="${esc(t("cv.paste.ph"))}"></textarea><div><button type="button" class="btn small primary" data-act="cvRead">${t("cv.read")}</button></div></div>` : ""}
     ${ui.busy.cv ? loading(t("cv.reading")) : ""}
-    ${ui.cvError ? `<p class="err">${esc(ui.cvError)}</p>` : ""}
+    ${ui.cvError ? `<p class="err" role="alert">${esc(ui.cvError)}</p>` : ""}
     ${result}
     <p class="src">${t("cv.privacy")}</p>
   </section>`;
@@ -197,7 +197,7 @@ Object.assign(ON, {
   cvFile: async (el) => {
     const file = el.files && el.files[0];
     if (!file) return;
-    try { readCV(await cvRequestBody(file)); } catch (e) { ui.cvError = e.message; redraw(); }
+    try { readCV(await cvRequestBody(file)); } catch (e) { ui.cvError = errText(e); redraw(); }
   },
 });
 
@@ -248,7 +248,7 @@ async function readCV(body) {
     ui.cvPaste = false;
     leaveDemo(); save(); cache.clear();
   } catch (e) {
-    ui.cvError = e.message;
+    ui.cvError = errText(e);
   }
   ui.busy.cv = false; redraw();
 }
