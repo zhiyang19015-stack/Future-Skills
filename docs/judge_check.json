@@ -1,6 +1,6 @@
 {
- "date": "2026-11-16",
- "commit": "947f7f7",
+ "date": "2026-11-17",
+ "commit": "1ec6fb4",
  "targets": {
   "first_move_changed": 3,
   "top5_changed": 4,
@@ -1583,6 +1583,147 @@
   "url": "https://future-skills-sq6h.onrender.com",
   "reachable": true,
   "detail": "HTTP 200 from /api/health",
+  "pass": true
+ },
+ "real_news": {
+  "items": [
+   {
+    "id": "copilot_testing_dotnet",
+    "publisher": "Microsoft .NET Blog",
+    "published": "2026-02-11",
+    "url": "https://devblogs.microsoft.com/dotnet/github-copilot-testing-for-dotnet-available-in-visual-studio/",
+    "person": "P05",
+    "method": "keyword",
+    "activities": [
+     "Test software performance.",
+     "Develop testing routines or procedures.",
+     "Test computer system operations to ensure proper functioning.",
+     "Write computer programming code."
+    ],
+    "topics": [
+     "Test writing and running",
+     "AI app building"
+    ],
+    "status": "verified",
+    "problem": null,
+    "page_date": "2026-02-11",
+    "quotes_found": 2,
+    "quotes": 2
+   },
+   {
+    "id": "mistral_rails_tests",
+    "publisher": "Mistral AI",
+    "published": "2026-03-11",
+    "url": "https://mistral.ai/news/rails-testing-on-autopilot-building-an-agent-that-writes-what-developers-wont",
+    "person": "P05",
+    "method": "keyword",
+    "activities": [
+     "Develop testing routines or procedures.",
+     "Recommend changes to improve computer or information systems.",
+     "Test software performance.",
+     "Test computer system operations to ensure proper functioning."
+    ],
+    "topics": [
+     "Test writing and running",
+     "AI agent design"
+    ],
+    "status": "verified",
+    "problem": null,
+    "page_date": "2026-03-11",
+    "quotes_found": 1,
+    "quotes": 1
+   }
+  ],
+  "verified": 2,
+  "checked": true,
+  "refused_unchecked": 2,
+  "demo": {
+   "id": "copilot_testing_dotnet",
+   "name": "Aiman",
+   "approved": true,
+   "own_job": {
+    "before": {
+     "title": "Software Quality Assurance Analysts and Testers",
+     "rank": 1,
+     "total": 85.6,
+     "ai_share": 30.2,
+     "outlook": 84.7,
+     "status": "declining"
+    },
+    "approved": {
+     "title": "Software Quality Assurance Analysts and Testers",
+     "rank": 1,
+     "total": 85.0,
+     "ai_share": 36.8,
+     "outlook": 82.8,
+     "status": "declining"
+    },
+    "undone": {
+     "title": "Software Quality Assurance Analysts and Testers",
+     "rank": 1,
+     "total": 85.6,
+     "ai_share": 30.2,
+     "outlook": 84.7,
+     "status": "declining"
+    }
+   },
+   "top5_changed": false,
+   "top10_order_changed": true,
+   "undo_restores": true,
+   "rows": [
+    {
+     "kind": "ai_share",
+     "name": "Test software performance.",
+     "before": 25.9,
+     "after": 45.9,
+     "tasks": 21,
+     "tasks_raised": 14,
+     "rule": "average 25.9 + 20, at most 95"
+    },
+    {
+     "kind": "ai_share",
+     "name": "Develop testing routines or procedures.",
+     "before": 9.2,
+     "after": 29.2,
+     "tasks": 19,
+     "tasks_raised": 15,
+     "rule": "average 9.2 + 20, at most 95"
+    },
+    {
+     "kind": "ai_share",
+     "name": "Test computer system operations to ensure proper functioning.",
+     "before": 18.8,
+     "after": 38.8,
+     "tasks": 18,
+     "tasks_raised": 11,
+     "rule": "average 18.8 + 20, at most 95"
+    },
+    {
+     "kind": "ai_share",
+     "name": "Write computer programming code.",
+     "before": 46.8,
+     "after": 66.8,
+     "tasks": 22,
+     "tasks_raised": 14,
+     "rule": "average 46.8 + 20, at most 95"
+    },
+    {
+     "kind": "handoff",
+     "name": "Test writing and running",
+     "before": 68.49,
+     "after": 78.5,
+     "rule": "68.49 + 10, at most 98"
+    },
+    {
+     "kind": "handoff",
+     "name": "AI app building",
+     "before": 69.07,
+     "after": 79.1,
+     "rule": "69.07 + 10, at most 98"
+    }
+   ]
+  },
+  "log_steps": 7,
   "pass": true
  }
 }

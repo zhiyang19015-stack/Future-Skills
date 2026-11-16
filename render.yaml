@@ -17,3 +17,7 @@ services:
       # but nothing updates by itself while the free instance sleeps and wakes.
       - key: AUTO_UPDATE_DAYS
         value: "0"
+      # Approving, rejecting or undoing real news (Futures page) needs this code when it is set.
+      # Its value is typed in Render's dashboard, never committed: sync false keeps it out of the repo.
+      - key: NEWS_REVIEW_CODE
+        sync: false

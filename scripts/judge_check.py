@@ -18,6 +18,9 @@ calls the same JSON API the web page calls (main.dispatch), so it checks what a 
                         someone in work, the share of resources not in English, skills with no course
     6 Course links      10 learning-resource links drawn at random (seed printed): does each open?
     7 Public URL        is the app reachable at a public address? ("none" when there is none)
+    8 Real news         each real news item's page opened: are its quotes and date there? Can an item be
+                        approved before that check? Aiman's own job before approval, after it, and after
+                        undo (on a log of its own, so the app's own approvals are untouched)
 
     python scripts/judge_check.py                    # print the report
     python scripts/judge_check.py --write            # save docs/judge_check.md and .json
@@ -51,6 +54,7 @@ import ilo  # noqa: E402
 import main  # noqa: E402
 import matching  # noqa: E402
 import outlook  # noqa: E402
+import news  # noqa: E402
 import robust  # noqa: E402
 
 DOCS = ROOT / "docs"
@@ -293,10 +297,78 @@ def commit() -> str:
         return "unknown"
 
 
+# --- 8 real news ------------------------------------------------------------------------------------
+
+def own_job(body: dict, occ_id: str) -> dict | None:
+    for i, m in enumerate(body.get("results") or [], 1):
+        if m["occ_id"] == occ_id:
+            return {"title": m["title"], "rank": i, "total": m["total"], "ai_share": m["ai"]["ai_share"],
+                    "outlook": m["outlook"]["outlook"], "status": m["outlook"]["status"]}
+    return None
+
+
+def real_news(offline: bool) -> dict:
+    """The real news flow through the API, on a log of its own."""
+    import tempfile
+    old = os.environ.get("NEWS_LOG")
+    with tempfile.TemporaryDirectory() as tmp:
+        os.environ["NEWS_LOG"] = str(Path(tmp) / "judge_news_log.jsonl")
+        try:
+            _, view = call("GET", "/api/news")
+            items, refused = [], 0
+            for n in view["items"]:
+                # before any check: propose, then try to approve; the rules must refuse
+                _, p = call("POST", "/api/news/propose", {"id": n["id"]})
+                status, _ = call("POST", "/api/news/decide", {"id": n["id"], "action": "approve",
+                                                              "proposal_id": p.get("proposal_id")})
+                refused += status == 400
+                row = {"id": n["id"], "publisher": n["publisher"], "published": n["published"], "url": n["url"],
+                       "person": n.get("person"), "method": p.get("method"),
+                       "activities": p.get("activities"), "topics": p.get("topics")}
+                if offline:
+                    row["status"] = "not checked (offline)"
+                else:
+                    _, c = call("POST", "/api/news/check", {"id": n["id"]})
+                    row.update(status=c["status"], problem=c.get("problem"), page_date=c.get("page_date"),
+                               quotes_found=sum(1 for q in c["quotes"] if q["found"]), quotes=len(c["quotes"]))
+                items.append(row)
+            demo = None
+            first = next((x for x in items if x["status"] == "verified" and x["person"]), None)
+            if first:
+                person = next(p for p in people() if p["profile_id"] == first["person"])
+                body = {"profile_id": person["profile_id"], "scenario": "moderate", "top": 10}
+                job = person.get("current_occupation")
+                _, before = call("POST", "/api/match", body)
+                _, p = call("POST", "/api/news/propose", {"id": first["id"]})
+                status, _ = call("POST", "/api/news/decide", {"id": first["id"], "action": "approve",
+                                                              "proposal_id": p["proposal_id"], "reviewer": "judge_check"})
+                _, after = call("POST", "/api/match", body)
+                call("POST", "/api/news/decide", {"id": first["id"], "action": "undo", "reviewer": "judge_check"})
+                _, back = call("POST", "/api/match", body)
+                top = lambda r: [m["occ_id"] for m in r["results"][:TOP]]  # noqa: E731
+                ten = lambda r: [m["occ_id"] for m in r["results"][:10]]  # noqa: E731
+                demo = {"id": first["id"], "name": person["name"], "approved": status == 200,
+                        "own_job": {"before": own_job(before, job), "approved": own_job(after, job),
+                                    "undone": own_job(back, job)},
+                        "top5_changed": top(before) != top(after), "top10_order_changed": ten(before) != ten(after),
+                        "undo_restores": ten(before) == ten(back) and before["trend_data"]["id"] == back["trend_data"]["id"],
+                        "rows": p["rows"]}
+            steps = [e["step"] for e in news.read_log()]
+        finally:
+            if old is None:
+                os.environ.pop("NEWS_LOG", None)
+            else:
+                os.environ["NEWS_LOG"] = old
+    return {"items": items, "verified": sum(1 for x in items if x["status"] == "verified"),
+            "checked": not offline, "refused_unchecked": refused, "demo": demo, "log_steps": len(steps),
+            "pass": not offline and bool(items) and refused == len(items) and bool(demo and demo["undo_restores"])}
+
+
 def run(seed: int = DEFAULT_SEED, offline: bool = False, url: str | None = None) -> dict:
     return {"date": date.today().isoformat(), "commit": commit(), "targets": TARGETS,
             "blank": blank_profile(), "scenarios": scenarios(), "news": news_runs(), "radar": radar(),
-            "paths": paths(), "links": links(seed, offline), "public": public_url(url, offline)}
+            "paths": paths(), "links": links(seed, offline), "public": public_url(url, offline),
+            "real_news": real_news(offline)}
 
 
 def headline(r: dict) -> dict:
@@ -333,6 +405,23 @@ def headline(r: dict) -> dict:
         "6. Course links returning 200 (of 10)": lk.get("ok_200") if lk["checked"] else "not checked",
         "7. Public URL": r["public"]["detail"] if not r["public"]["url"] else
         f"{r['public']['url']} ({r['public']['detail']})",
+        **real_news_headline(r.get("real_news")),
+    }
+
+
+def real_news_headline(rn: dict | None) -> dict:
+    if not rn:
+        return {}
+    d = rn["demo"]
+    job = (d or {}).get("own_job") or {}
+    share = " / ".join("—" if not job.get(k) else format(job[k]["ai_share"], "g") for k in ("before", "approved", "undone"))
+    return {
+        f"8. Real news items whose quotes and date are on their page (of {len(rn['items'])})":
+            rn["verified"] if rn["checked"] else "not checked",
+        f"8. Approval refused before the page was checked (of {len(rn['items'])})": rn["refused_unchecked"],
+        "8. Aiman's own-job AI share (%): before / approved / undone": share if d else "not run",
+        "8. Aiman's top 10 order changed after approval": ("yes" if d["top10_order_changed"] else "no") if d else "not run",
+        "8. Undo restores the ranking and data version": ("yes" if d["undo_restores"] else "no") if d else "not run",
     }
 
 
@@ -471,6 +560,32 @@ def as_markdown(r: dict, base: dict | None) -> str:
 
     out += [f"## 7. Public URL — {mark(pub['pass'])}", "",
             "None: the app has no public address yet." if not pub["url"] else f"{pub['url']}: {pub['detail']}.", ""]
+
+    rn = r.get("real_news")
+    if rn:
+        out += [f"## 8. Real news — {mark(rn['pass']) if rn['checked'] else 'not checked'}", "",
+                "Each item in `data/news.json` through the API on a log of its own (`scripts/news.py`): first an approval "
+                "tried before any check (it must be refused), then the page opened and every quote and the date looked "
+                f"for. Refused before the check: {rn['refused_unchecked']} of {len(rn['items'])}.", "",
+                "| Item | Publisher, date | Page check | Proposed (method): activities; topics |", "|---|---|---|---|"]
+        for x in rn["items"]:
+            check = x["status"] if "quotes" not in x else (f"{x['status']}: {x['quotes_found']} of {x['quotes']} quotes, "
+                                                          f"page date {x['page_date']}")
+            out += [f"| [{x['id']}]({x['url']}) | {x['publisher']}, {x['published']} | {check} | ({x['method']}) "
+                    f"{'; '.join(x['activities'] or []) or '—'}; {'; '.join(x['topics'] or []) or '—'} |"]
+        d = rn["demo"]
+        if d:
+            out += ["", f"Approved, then undone, for {d['name']} (moderate adoption), `{d['id']}`:", "",
+                    "| Own job | Before | Approved | Undone |", "|---|---|---|---|"]
+            for label, key in (("Rank in the list", "rank"), ("Match score", "total"), ("AI share of its tasks (%)", "ai_share"),
+                               ("Outlook", "outlook"), ("Status", "status")):
+                out += [f"| {label} | " + " | ".join("—" if not d["own_job"][k] else str(d["own_job"][k][key])
+                                                     for k in ("before", "approved", "undone")) + " |"]
+            out += ["", f"Top 5 changed: {'yes' if d['top5_changed'] else 'no'}; top 10 order changed: "
+                    f"{'yes' if d['top10_order_changed'] else 'no'}; undo restores the ranking and the data version: "
+                    f"{'yes' if d['undo_restores'] else 'no'}. Rule-sized changes: "
+                    + "; ".join(f"{x['name'].rstrip('.')} {x['before']:g} → {x['after']:g}" for x in d["rows"]) + "."]
+        out += [""]
     return "\n".join(out)
 
 
