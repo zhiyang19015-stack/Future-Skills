@@ -26,6 +26,10 @@ calls the same JSON API the web page calls (main.dispatch), so it checks what a 
                         Sources-page text in English only, form fields with no label, colour pairs below
                         WCAG AA, and whether <html lang> follows the language (scripts/i18n_check.py,
                         read from the page's files; no browser)
+   10 First-time path   clicks and required answers from the home page to a ranked list and to a learning
+                        plan, counted from the paths in scripts/first_path.py, each step checked against the
+                        page's source and the answers sent to the real API; plus the browser checks (390px
+                        sideways scroll, console errors) saved in docs/ui_check.json by a browser run
 
     python scripts/judge_check.py                    # print the report
     python scripts/judge_check.py --write            # save docs/judge_check.md and .json
@@ -55,6 +59,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 sys.path.insert(0, str(ROOT / "src"))
 
 import check_links  # noqa: E402
+import first_path  # noqa: E402
 import i18n_check  # noqa: E402
 import ilo  # noqa: E402
 import main  # noqa: E402
@@ -65,6 +70,8 @@ import robust  # noqa: E402
 
 DOCS = ROOT / "docs"
 REPORT, RESULT, BASELINE = DOCS / "judge_check.md", DOCS / "judge_check.json", DOCS / "judge_check_baseline.json"
+UI_BEFORE = DOCS / "judge_check_ui_before.json"   # the run on main just before the UI redesign
+UI_CHECK = DOCS / "ui_check.json"                 # browser measurements (scripts/a11y_audit.js), not made here
 TOP = 5                      # how far down a person's list the scenarios are compared
 RADAR_TOP = 15               # how many of the Radar's rising occupations are read
 LINKS = 10                   # course links drawn
@@ -374,7 +381,39 @@ def run(seed: int = DEFAULT_SEED, offline: bool = False, url: str | None = None)
     return {"date": date.today().isoformat(), "commit": commit(), "targets": TARGETS,
             "blank": blank_profile(), "scenarios": scenarios(), "news": news_runs(), "radar": radar(),
             "paths": paths(), "links": links(seed, offline), "public": public_url(url, offline),
-            "real_news": real_news(offline), "languages": languages()}
+            "real_news": real_news(offline), "languages": languages(), "first_path": first_time_path()}
+
+
+def first_time_path() -> dict:
+    """Check 10: the path counts from scripts/first_path.py and, when a browser run saved them, the
+    browser's own measurements. A browser number this script did not make is labelled as such."""
+    r = first_path.run()
+    if UI_CHECK.exists():
+        r["browser"] = json.loads(UI_CHECK.read_text(encoding="utf-8"))
+    return r
+
+
+def first_path_headline(fp: dict | None) -> dict:
+    if not fp:
+        return {}
+    own, demo, b = fp["paths"]["own"], fp["paths"]["demo"], fp.get("browser")
+    cell = lambda x: "path broken" if not x else f"{x['clicks']} / {x['inputs']}"
+    out = {
+        "10. Own answers: clicks / required answers to a ranked list": cell(own["to_ranking"]),
+        "10. Own answers: clicks / required answers to a learning plan": cell(own["to_plan"]),
+        "10. Fictional demo person: clicks to a ranked list / to the Pathway page":
+            f"{demo['to_ranking']['clicks'] if demo['to_ranking'] else '—'} / {demo['to_plan']['clicks'] if demo['to_plan'] else '—'}",
+        f"10. Fields where one tap gives a ranking and a plan (of {fp['api']['fields']})": fp["api"]["one_tap_ok"],
+        "10. Path steps whose button is missing from the page source": sum(len(p["broken"]) for p in fp["paths"].values()),
+    }
+    if b:
+        out["10. Pages with sideways scroll at 390px (browser)"] = f"{b['overflow_pages']} of {b['pages']}"
+        out["10. Console errors on the pages visited (browser)"] = b["console_errors"]
+    else:
+        out["10. Pages with sideways scroll at 390px (browser)"] = "not measured"
+        out["10. Console errors on the pages visited (browser)"] = "not measured"
+    out["10. Minutes for a first-time user"] = "not measured"
+    return out
 
 
 def languages() -> dict:
@@ -427,6 +466,7 @@ def headline(r: dict) -> dict:
         f"{r['public']['url']} ({r['public']['detail']})",
         **real_news_headline(r.get("real_news")),
         **(r["languages"]["summary"] if r.get("languages") else {}),
+        **first_path_headline(r.get("first_path")),
     }
 
 
@@ -473,6 +513,13 @@ def as_markdown(r: dict, base: dict | None) -> str:
         out += [f"| {k} | {was.get(k, '—')} | {v} |" for k, v in now.items()]
     else:
         out += ["## Summary", "", "| Check | Now |", "|---|---|"] + [f"| {k} | {v} |" for k, v in now.items()]
+    if UI_BEFORE.exists():
+        ui = json.loads(UI_BEFORE.read_text(encoding="utf-8"))
+        was = headline(ui)
+        out += ["", "## UI redesign: before and after", "",
+                f"Before = the run on main on {ui['date']} at commit `{ui['commit']}`, just before the UI redesign.", "",
+                "| Check | Before redesign | Now |", "|---|---|---|"]
+        out += [f"| {k} | {was.get(k, '—')} | {v} |" for k, v in now.items()]
     out += ["", "Targets for the improvement plan: first move differs for at least "
             f"{TARGETS['first_move_changed']} of 5 people and another occupation enters the top 5 for at least "
             f"{TARGETS['top5_changed']}; no occupation with an AI share the data cannot measure in the Radar's rising "
