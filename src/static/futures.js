@@ -168,6 +168,7 @@ PAGES.futures = async () => {
     cached("/api/whatif"), cached("/api/occupations")]);
   ui.occList = occs;
   rememberScenarios(f.scenarios);
+  if (f.needs_input) return blankPage(6, "futures");
   const people = state.demo ? await cached("/api/profiles") : [];
   const demo = people.find((p) => p.profile_id === state.demo);
   const tops = f.scenarios.map((c) => c.top[0]).filter(Boolean);
@@ -176,7 +177,6 @@ PAGES.futures = async () => {
   return `<div class="stack loose">
     <header class="stack tight"><p class="eyebrow">${t("step", 6)} · ${t("nav.futures")}</p><h1>${t("fut.h1")}</h1>
       <p class="lead">${t("fut.lead")}${demo ? ` ${t("fut.for", esc(demo.name))}` : ""}</p></header>
-    ${!hasProfile() ? `<div class="warn row between"><span>${t("match.empty")}</span><a class="btn small" href="#/you">${t("home.start")}</a></div>` : ""}
     ${verdict ? `<p class="note"><strong>${verdict}</strong> ${t("scn.estimate.long")}</p>` : ""}
     ${hasProfile() ? robustCard(f.robust) : ""}
     <div class="cols">${f.scenarios.map(futureColumn).join("")}</div>

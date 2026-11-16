@@ -194,10 +194,13 @@ def radar() -> dict:
             rows.append({"title": r["title"], "field_id": r["field_id"], "ai_share": r["ai_share"],
                          "change": r["change"], "thin": bool(r["thin_evidence"]),
                          "manual": r["field_id"] in MANUAL_FIELDS,
-                         "ilo_mean": ilo_row["mean"] if ilo_row else None})
+                         "ilo_mean": ilo_row["mean"] if ilo_row else None,
+                         "second_source": r.get("second_source", "not checked")})
         out[name] = {"rows": rows, "thin": sum(r["thin"] for r in rows), "manual": sum(r["manual"] for r in rows),
                      "unmeasured": sum(r["thin"] or r["manual"] for r in rows),
-                     "listed": len(rows), "title": body.get("rising_title")}
+                     "listed": len(rows), "title": body.get("rising_title"),
+                     "confirmed": sum(1 for r in rows if r["second_source"] == "confirmed")}
+    out["second_source"] = ilo.coverage(data)
     # a renamed list that says why can pass too; the page sends its own title when it has one
     out["pass"] = all(out[n]["unmeasured"] <= TARGETS["radar_unmeasured_max"] or out[n]["title"]
                       for n in ("moderate", "fast"))
@@ -318,6 +321,12 @@ def headline(r: dict) -> dict:
             f"{r['radar']['moderate']['unmeasured']} of {r['radar']['moderate']['listed']}",
         "4. Radar rising top 15, AI share not measurable (fast)":
             f"{r['radar']['fast']['unmeasured']} of {r['radar']['fast']['listed']}",
+        "4. Occupations whose AI share a second source confirms / disputes / cannot check (of 910)":
+            "{confirmed} / {disagree} / {one_source}".format(**r["radar"]["second_source"])
+            if r["radar"].get("second_source") else "not checked",
+        "4. Radar rising top 15 confirmed by a second source (moderate)":
+            f"{r['radar']['moderate']['confirmed']} of {r['radar']['moderate']['listed']}"
+            if "confirmed" in r["radar"]["moderate"] else "not checked",
         "5. Job-search courses given to people in work": p["unsuited"],
         "5. Resources not in English (%)": p["non_english_pct"],
         "5. Skills on a path with no free course": p["no_course"],
@@ -425,9 +434,11 @@ def as_markdown(r: dict, base: dict | None) -> str:
         x = rd[name]
         out += [f"**{name}**: {x['unmeasured']} of {x['listed']} not measurable ({x['thin']} thin, {x['manual']} "
                 f"manual)." + (f" The page titles the list \"{x['title']}\"." if x["title"] else ""), "",
-                "| # | Occupation | Field | AI share | Outlook change | Thin | ILO exposure |", "|---|---|---|---|---|---|---|"]
+                "| # | Occupation | Field | AI share | Outlook change | Thin | ILO exposure | Second source |",
+                "|---|---|---|---|---|---|---|---|"]
         out += [f"| {i} | {o['title']} | {o['field_id']}{' (manual)' if o['manual'] else ''} | {o['ai_share']:g}% | "
-                f"{o['change']:+g} | {'yes' if o['thin'] else 'no'} | {'—' if o['ilo_mean'] is None else o['ilo_mean']} |"
+                f"{o['change']:+g} | {'yes' if o['thin'] else 'no'} | {'—' if o['ilo_mean'] is None else o['ilo_mean']} | "
+                f"{o.get('second_source', 'not checked')} |"
                 for i, o in enumerate(x["rows"], 1)]
         out += [""]
 

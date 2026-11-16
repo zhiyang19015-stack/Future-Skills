@@ -86,6 +86,10 @@ function cached(path, body) {
 }
 const getRadar = () => cached(`/api/radar?${scenarioQuery()}`);
 const getMatches = (top = 12) => cached("/api/match", matchBody({ top }));
+/* A profile with no answers gets no ranking (the API's needs_input): this says why and where to start. */
+const blankCard = () => `<div class="warn row between" role="status"><span>${t("match.blank")}</span><a class="btn small" href="#/you">${t("home.start")}</a></div>`;
+const blankPage = (step, nav) => `<div class="stack loose"><header class="stack tight"><p class="eyebrow">${t("step", step)} · ${t("nav." + nav)}</p>
+    <h1>${t("match.blank.h1")}</h1></header>${blankCard()}</div>`;
 
 /* ---------- fields: the 22 kinds of work, named in the page's language ---------- */
 

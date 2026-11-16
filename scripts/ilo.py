@@ -12,6 +12,12 @@ They measure different things, so they are never averaged. Where they disagree s
 says so: the occupation's percentile among all occupations on each measure is compared, and a gap
 of DIVERGENCE points or more is a "sources disagree" note with both numbers.
 
+agreement() is that same comparison used as a check on every occupation's AI reading, so one source
+never decides alone: "confirmed" (the ILO places the occupation within DIVERGENCE percentile points
+of where its observed AI use places it), "disagree" (further apart: flagged, and the evidence grade
+is at most B, scripts/evidence.py), or "one_source" (no ILO score for its ISCO-08 group, or no AI
+share of its own). The check changes no score and no weight.
+
 An O*NET occupation reaches the ILO score through its ISCO-08 unit group (ESCO crosswalk); the
 mapping basis (exact, close, broad) goes with every score.
 """
@@ -111,7 +117,37 @@ def for_occupation(occ: dict, data: dict, task_examples: int = 3) -> dict | None
             "source": t["source"]}
 
 
+VERDICTS = ("confirmed", "disagree", "one_source")
+
+
+def agreement(occ: dict, data: dict) -> dict:
+    """Whether the ILO's research estimate confirms where the observed AI use puts this occupation."""
+    r = ranks(data)
+    obs, pot = r["observed"].get(occ["occ_id"]), r["potential"].get(occ["occ_id"])
+    if obs is None or pot is None:
+        why = "no_ilo" if not tables()["occupations"].get(occ.get("isco") or "") else "no_share"
+        return {"verdict": "one_source", "percentile_observed": obs, "percentile_potential": pot, "gap": None,
+                "direction": None, "why": why}
+    gap = round(pot - obs, 1)
+    disagree = abs(gap) >= DIVERGENCE
+    return {"verdict": "disagree" if disagree else "confirmed", "percentile_observed": obs,
+            "percentile_potential": pot, "gap": gap,
+            "direction": ("potential_above_use" if gap > 0 else "use_above_potential") if disagree else None,
+            "why": None}
+
+
+def coverage(data: dict) -> dict:
+    """How many occupations' AI readings the second source confirms, disputes or cannot check."""
+    counts = {v: 0 for v in VERDICTS}
+    for occ in data["occupations"]:
+        counts[agreement(occ, data)["verdict"]] += 1
+    return {**counts, "occupations": len(data["occupations"])}
+
+
 def rules() -> dict:
     return {"divergence_points": DIVERGENCE, "gradients": list(GRADIENT_ORDER), "source": tables()["source"],
+            "verdicts": list(VERDICTS),
             "note": "ILO scores are technical potential (0-1); Anthropic shares are observed use (0-100). "
-                    "They are shown side by side and never averaged."}
+                    "They are shown side by side and never averaged. The ILO percentile checks each "
+                    "occupation's observed-use percentile: within the divergence points it confirms it, "
+                    "further apart it is flagged and the evidence grade is at most B."}

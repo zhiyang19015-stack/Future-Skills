@@ -483,7 +483,8 @@ def radar_payload(data: dict, scenario: str | None, adoption: float) -> dict:
         rows.append({"occ_id": occ["occ_id"], "title": occ["title"], "field_id": occ["field_id"], "mycol": occ["mycol"],
                      "job_zone": occ["job_zone"], "demand": o["demand"], "ai_share": o["ai_share"],
                      "ai_share_low": o["ai_share_low"], "ai_share_high": o["ai_share_high"], "outlook": o["outlook"],
-                     "change": o["change"], "status": o["status"], "thin_evidence": ai.get("thin_evidence", False)})
+                     "change": o["change"], "status": o["status"], "thin_evidence": ai.get("thin_evidence", False),
+                     "second_source": o["second_source"]["verdict"]})
         by_field.setdefault(occ["field_id"], []).append(rows[-1])
     fields = []
     for fid, f in data["fields"].items():
@@ -586,6 +587,30 @@ def listed(m: dict) -> bool:
     return not (matching.UNLISTED_FLAGS | {"current_occupation"}) & set(m["flags"])
 
 
+# What a profile must have at least one of before it is ranked. Education level and kind alone are
+# not enough: both have defaults, so they say nothing about this person.
+PROFILE_ANSWERS = ("fields", "cv_fields", "interest", "skills", "technologies", "current_occupation", "missions_done")
+BLANK_MESSAGE = ("You have not told us anything about yourself yet, so there is no ranking. Fill in your "
+                 "profile first: pick fields you like, answer the interest questions, rate your skills, add "
+                 "the tools you use or upload a CV.")
+
+
+def needs_input(body: dict, profile: dict) -> dict | None:
+    """A request that says nothing about the person gets no ranking, only this message. Ranking
+    910 occupations for nobody would show outlook alone as if it were a match."""
+    if "profile_id" in body or any(profile.get(k) for k in PROFILE_ANSWERS):
+        return None
+    return {"code": "blank_profile", "message": BLANK_MESSAGE, "fill": list(PROFILE_ANSWERS)}
+
+
+def blank_reply(need: dict, data: dict, scenario: str | None, adoption: float, changes: dict | None) -> Response:
+    return reply(needs_input=need, results=[], ranking=[], listed=0, total_occupations=len(data["occupations"]),
+                 fields=[], insights=[], best=None, current=None, verdict=None, robust=None, simulation=None,
+                 horizon_year=outlook.HORIZON_YEAR, scenario=scenario_info(scenario, adoption),
+                 scenarios=scenario_list(), trend_data=data_version(data, changes),
+                 sdg_goals=matching.sdg_goal_options(data), reference=data["ai"]["reference"])
+
+
 VERDICT_TOP = 3               # how far down the list the scenarios are compared for the one-line verdict
 
 
@@ -635,6 +660,9 @@ def match(req):
     if isinstance(top, bool) or not isinstance(top, int) or not 1 <= top <= 50:
         raise Refused("'top' must be a whole number from 1 to 50")
     data, profile, scenario, adoption, changes = request_context(body)
+    need = needs_input(body, profile)
+    if need:
+        return blank_reply(need, data, scenario, adoption, changes)
     include = [o for o in body.get("include", []) if isinstance(o, str)][:5] if isinstance(body.get("include"), list) else []
     if profile.get("current_occupation"):
         include.append(profile["current_occupation"])
@@ -737,7 +765,7 @@ def job_ad(req):
 @route("POST", "/api/learn")
 def learn_for_person(req):
     data, profile, found, _, _ = one_match(req.json())
-    return reply(learning.page(found["occ_id"], data, found, profile["hours_per_week"]))
+    return reply(learning.page(found["occ_id"], data, found, profile["hours_per_week"], kind=profile.get("kind")))
 
 
 @route("GET", "/api/learn/<occ_id>")
@@ -777,6 +805,12 @@ def futures(req):
     if isinstance(top, bool) or not isinstance(top, int) or not 1 <= top <= 25:
         raise Refused("'top' must be a whole number from 1 to 25")
     data, profile, _, _, changes = request_context(body)
+    need = needs_input(body, profile)
+    if need:
+        return reply(needs_input=need, scenarios=[{"id": k, **v, "top": []} for k, v in outlook.SCENARIOS.items()],
+                     moves=[], horizon_year=outlook.HORIZON_YEAR, top_changes=False, top3_changes=False,
+                     simulation=None, trend_data=data_version(data, changes), parameters=outlook.parameters(),
+                     robust=None)
     result = matching.match_person(profile, data, scenario=outlook.DEFAULT_SCENARIO, top=top)
     stability = {m["occ_id"]: m["stability"] for m in result["results"]}
     columns, ranks, totals, detail = [], {}, {}, {}

@@ -17,9 +17,11 @@ class TestEvidenceGrade(unittest.TestCase):
         for occ in DATA["occupations"]:
             g = evidence.occupation_grade(occ, DATA)
             self.assertIn(g["grade"], "ABC")
-            self.assertEqual([c["check"] for c in g["checks"]], ["ai_usage", "mapping", "freshness"])
-            self.assertEqual(g["points"], sum(c["points"] for c in g["checks"]))
-            self.assertTrue(all(0 <= c["points"] <= 2 for c in g["checks"]))
+            self.assertEqual([c["check"] for c in g["checks"]], ["ai_usage", "mapping", "freshness", "second_source"])
+            scored = g["checks"][:3]  # the second source earns no points: it can only cap the grade
+            self.assertIsNone(g["checks"][3]["points"])
+            self.assertEqual(g["points"], sum(c["points"] for c in scored))
+            self.assertTrue(all(0 <= c["points"] <= 2 for c in scored))
 
     def test_the_grade_follows_the_evidence(self):
         grades = {o["occ_id"]: evidence.occupation_grade(o, DATA) for o in DATA["occupations"]}

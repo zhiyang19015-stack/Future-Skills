@@ -71,7 +71,7 @@ def journey(person: dict, data: dict) -> dict:
     if move is None:
         return {"id": person["profile_id"], "target": None, "gaps": 0, "free_course": False, "claimable": 0,
                 "hours": 0.0, "sdg": {}}
-    page = learning.page(move["occ_id"], data, move)
+    page = learning.page(move["occ_id"], data, move, kind=person.get("kind"))
     gaps = [s for s in page["skills"] if s.get("level_needed", 0) > s.get("your_level", 0) or s["kind"] == "technology"]
     return {"id": person["profile_id"], "target": move["title"], "gaps": len(gaps),
             "free_course": any(s["resources"] for s in page["skills"]) or bool(page["stages"][0]["resources"]),

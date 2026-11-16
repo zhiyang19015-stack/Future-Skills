@@ -118,7 +118,7 @@ def path_of(occ_id: str) -> tuple[set, set]:
             raise PilotError(f"unknown occ_id '{occ_id}'")
         skills = {e[0] for e in data["occ_elements"].get(occ_id, [])}
         targets = [f"element:{s}" for s in skills] + [f"tech:{t}" for t in data["occ_techs"].get(occ_id, [])]
-        targets += [f"field:{occ['field_id']}", "all"]
+        targets += [f"field:{occ['field_id']}", "all", "jobseeker"]  # status not known: as learning.page with kind None
         _paths[occ_id] = (skills, {r["resource_id"] for t in targets for r in data["by_target"].get(t, []) if matching.is_free(r)})
     return _paths[occ_id]
 

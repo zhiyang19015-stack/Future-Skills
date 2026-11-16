@@ -18,7 +18,7 @@ Every table the app reads. Generated tables are rebuilt by the scripts named bel
 | `demand_inputs.csv` | | DOSM online job ads by MASCO major group, OpenDOSM median wages, arXiv paper counts | `scripts/demand.py` ("Update data") |
 | `demand.csv` | 910 | Each occupation's Malaysian demand and its parts | `demand.py` |
 | `sdg_map.csv` | ~200 | Our links from fields, occupation groups, occupations and skills to UN SDG targets, each with a reason | `scripts/build_sdg_map.py` |
-| `learning_resources.csv` | 69 | Free courses and training programmes, what they teach (`element:`, `tech:`, `field:`, `all`), hours as the provider states them, the date each link was checked | by hand, checked by `scripts/check_links.py` |
+| `learning_resources.csv` | 73 | Free courses and training programmes, what they teach (`element:`, `tech:`, `field:`, `all`, or `jobseeker` for job-search courses, which people in work are not given), hours as the provider states them, the date each link was checked | by hand, checked by `scripts/check_links.py` |
 | `regulated.csv` | 16 | Professions that need registration in Malaysia, the body, what it requires, and the O*NET codes it covers | by hand |
 | `interest_items.json` | 36 | The interest statements, six for each RIASEC type | by hand |
 | `sample_profiles.json` | 5 | Fictional people for the demo | by hand |

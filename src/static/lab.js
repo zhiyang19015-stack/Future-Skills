@@ -29,7 +29,8 @@ async function labOcc(arg) {
   if (state.occId) return state.occId;
   const m = await getMatches();
   const first = m.results.find((x) => !x.flags.includes("needs_extra_education") && !x.flags.includes("current_occupation"));
-  return (first || m.results[0]).occ_id;
+  const pick = first || m.results[0];
+  return pick ? pick.occ_id : null;  // none: a blank profile has no ranking
 }
 
 function occPicker(tab, current, key = "query", target = "") {
@@ -298,7 +299,7 @@ async function missionsPage(occId) {
 PAGES.lab = async (args) => {
   const tab = LAB_TABS.includes(args[0]) ? args[0] : "stress";
   const occId = tab === "decide" ? null : await labOcc(args[1]);
-  const inner = tab === "stress" ? await stressPage(occId) : tab === "map" ? await mapPage(occId)
+  const inner = tab !== "decide" && !occId ? blankCard() : tab === "stress" ? await stressPage(occId) : tab === "map" ? await mapPage(occId)
     : tab === "decide" ? await decidePage() : tab === "why" ? await whyPage(occId) : await missionsPage(occId);
   return `<div class="stack loose">
     <header class="stack tight"><p class="eyebrow">${t("nav.lab")}</p><h1>${t("lab.h1")}</h1><p class="lead">${t("lab.lead")}</p></header>
