@@ -141,6 +141,7 @@ Everywhere: light and dark, built for a phone and slow mobile data (no images, n
 Open **https://future-skills-sq6h.onrender.com**. It runs `python src/main.py` from `render.yaml` on Render's free plan (region Oregon, US). Things to know:
 
 - It sleeps after 15 minutes without visitors. The first request after that waits while it wakes (Render says 50 seconds or more); open it once before a demo.
+- Approving real news needs the reviewer code set as `NEWS_REVIEW_CODE` in Render (Environment). Without it anyone with the link could approve. The code is shared with the team, not kept in the repository.
 - It shows the data committed in this repository (`AUTO_UPDATE_DAYS=0`). "Update data" still works, but what it fetches is lost when the instance restarts, and so are the SDG tally and pilot answers in `.cache/`.
 - No language model key is set there, so "Why this score?" uses its template text.
 
