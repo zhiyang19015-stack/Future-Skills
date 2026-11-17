@@ -2083,18 +2083,7 @@
   },
   {
    "file": "README.md",
-   "line": 233,
-   "numbers": [
-    "30%",
-    "46%"
-   ],
-   "text": "An honest limit: **the first recommendation changes between slow and fast adoption for 1 of the 5 demo people** (Siti Hajar). We tried three sourced variants of the outlook formula (the AI share projected towards the ILO",
-   "status": "fine",
-   "why": "experiments described in docs/scenario_report.md"
-  },
-  {
-   "file": "README.md",
-   "line": 268,
+   "line": 269,
    "numbers": [
     "5%"
    ],
@@ -2124,7 +2113,7 @@
   },
   {
    "file": "SOURCES.md",
-   "line": 58,
+   "line": 59,
    "numbers": [
     "20%",
     "109%"
@@ -2135,7 +2124,7 @@
   },
   {
    "file": "SOURCES.md",
-   "line": 59,
+   "line": 60,
    "numbers": [
     "40%"
    ],
@@ -2145,7 +2134,7 @@
   },
   {
    "file": "SOURCES.md",
-   "line": 62,
+   "line": 63,
    "numbers": [
     "20%",
     "15%",
@@ -2160,7 +2149,7 @@
   },
   {
    "file": "SOURCES.md",
-   "line": 65,
+   "line": 66,
    "numbers": [
     "95%"
    ],
@@ -2170,7 +2159,7 @@
   },
   {
    "file": "SOURCES.md",
-   "line": 67,
+   "line": 68,
    "numbers": [
     "1,000",
     "30%"
@@ -2320,7 +2309,7 @@
   },
   {
    "file": "docs/pitch/deck_outline.md",
-   "line": 53,
+   "line": 54,
    "numbers": [
     "25%"
    ],
@@ -2330,7 +2319,7 @@
   },
   {
    "file": "docs/pitch/deck_outline.md",
-   "line": 55,
+   "line": 56,
    "numbers": [
     "1,196"
    ],
@@ -2340,7 +2329,7 @@
   },
   {
    "file": "docs/pitch/deck_outline.md",
-   "line": 63,
+   "line": 64,
    "numbers": [
     "20%"
    ],
@@ -2350,7 +2339,7 @@
   },
   {
    "file": "docs/pitch/deck_outline.md",
-   "line": 89,
+   "line": 90,
    "numbers": [
     "5%"
    ],
@@ -2360,7 +2349,7 @@
   },
   {
    "file": "docs/pitch/deck_outline.md",
-   "line": 100,
+   "line": 101,
    "numbers": [
     "10%"
    ],
@@ -2505,7 +2494,7 @@
   "constants_not_shown": 21,
   "constants_assumption_not_shown": 0,
   "constants_not_checked": 0,
-  "prose_uncited": 32,
+  "prose_uncited": 31,
   "prose_not_checked": 0,
   "ui_numbers": 18,
   "ui_not_checked": 0

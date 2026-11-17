@@ -4,7 +4,7 @@
  "label": "Synthetic data, not validated with real people.",
  "versions": {
   "now": {
-   "commit": "ccec816",
+   "commit": "225f6cd",
    "rows": [
     {
      "id": "E01",
@@ -5615,6 +5615,15 @@
   "mycol_yes": 186,
   "mycol_titles": 58,
   "pro_low_zone": 27,
-  "pro_low_zone_examples": []
+  "pro_low_zone_examples": [
+   "Coroners → 2619 Legal professionals not elsewhere classified",
+   "Tax Preparers → 2411 Accountants",
+   "Telecommunications Engineering Specialists → 2153 Telecommunications engineers",
+   "Network and Computer Systems Administrators → 2523 Computer network professionals"
+  ],
+  "isco_review": {
+   "unverified": 27,
+   "corrected": 9
+  }
  }
 }

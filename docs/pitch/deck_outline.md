@@ -45,8 +45,9 @@
 
 - **标题：** We measure how much of each job's tasks people already hand to AI: 18,592 O*NET tasks, Malaysia next to the world
 - **内容：**
-  - AI 份额是从 Anthropic Economic Index 量出来的，不是模型的意见。每个职业都有 A/B/C 证据等级；ILO 作为第二来源：789 个确认、91 个有分歧、30 个查不了（JC 第 4 项）。
+  - AI 份额是从 Anthropic Economic Index 量出来的，不是模型的意见。每个职业都有 A/B/C 证据等级；ILO 作为第二来源：786 个确认、94 个有分歧、30 个查不了（JC 第 4 项）。
   - 真新闻要人批准：2 条真新闻都核对过原文引语和日期；核对之前申请批准，2 次都被拒绝；批准后 Aiman 本职的 AI 份额 30.2% → 36.8%，撤销后回到 30.2%（JC 第 8 项）。
+  - **稳健选择是卖点：** 三种情景下都排在前 3 的职业，页面直接标为 robust choice，并对每个会随情景变动的选择说明原因（JC 第 2 项：5 个示例人物的页面 5 of 5 都做到）。切换慢/快情景时，变的是前 5 名的组成：评测里 62.5% 的人（25/40）前 5 名组成会变，第一推荐会变的是 27.5%（EV）。示例人物里第一推荐会变的是 0 of 5（JC）：这本身就是答案，说明第一选择站得住。
   - 和现有平台不同：MYFutureJobs、JobStreet、LinkedIn 只给职位；Coursera、e-LATiH 只给课程。我们给的是"你的任务里哪些已经交给 AI"，再接上路径。
 - **截图：** `07-occupation-task-strip-desktop.jpg`、`10-news-approved-banner-desktop.jpg`
 
@@ -74,10 +75,10 @@
 
   | 指标 | v1 | 现在 | 出处 |
   |---|---|---|---|
-  | 第一推荐被标注接受 | 12.5%（5/40） | 35%（14/40，95% 区间 22–51） | EV |
-  | 前 5 名里有被接受的职业 | 15% | 62.5%（25/40，47–76） | EV |
-  | 学习计划里的免费资源 | — | 100%（688/688） | EV |
-  | 学习计划里的非英文资源 | 0% | 14.2% | EV |
+  | 第一推荐被标注接受 | 12.5%（5/40） | 32.5%（13/40，95% 区间 20.1–48） | EV |
+  | 前 5 名里有被接受的职业 | 15% | 62.5%（25/40，47–75.8） | EV |
+  | 学习计划里的免费资源 | — | 100%（662/662） | EV |
+  | 学习计划里的非英文资源 | 0% | 14.4% | EV |
   | 给在职人员的求职课 | — | 0（5e2a48f 时是 20） | EV |
 
   - 成本：200 人的试点每月 RM 49.95，每人 RM 0.25；5 万人时每人 RM 0.0112（CM）。
@@ -99,24 +100,24 @@
 
 ## 6. Presentation：Honest limits（10%）
 
-- **标题：** What we do not know: KPI 1 is not measured, 5 occupations take 20 of 40 first moves, the first move changes for only 20% between slow and fast
+- **标题：** What we do not know: KPI 1 is not measured, 5 occupations still take 15 of 40 first moves, and Malaysian demand is a coarse signal
 - **内容：**
-  - 评测里，第一推荐只集中在少数几个职业上：
-    - 40 人只出现 23 个不同的第一推荐。
-    - CNC Tool Programmers 5 人，Tax Preparers 5 人，Talent Directors 4 人，Medical Equipment Repairers 3 人，Registered Nurses 3 人：前 5 个职业占了 20 人（EV）。
-    - 原因已经查清：26 个没对上的人里，26 个是靠前景分赢的（平均多 6.8 分）；前景分大部分来自马来西亚需求分，而需求分在 910 个职业上只有 15 个不同的值，其中 111 个职业并列最高的 90.6（EV 的 "Why first moves concentrate"）。
-    - 我们没有为了提高分数去调参数。要改，就用新的一批人物验证。
+  - 第一推荐仍偏集中（EV）：
+    - 40 人里有 29 个不同的第一推荐；前 5 个职业占了 15 人（阶段 7 之前是 20 人）。
+    - 原因：没对上的人里，第一推荐大多靠前景分赢；前景分大部分来自马来西亚需求分，而需求分在 910 个职业上只有 15 种取值（EV 的 "Why first moves concentrate"）。
+    - 阶段 7 只做了有依据的数据修正：36 个 ISCO 映射里 9 个改正、27 个标"未核实"（`data/isco_review.csv`）。没有调任何权重。
   - 情景：
-    - 慢和快两种情景下，前 5 名组成变了的人有 70%（28/40，EV）。
-    - 第一推荐变了的只有 20%（8/40，EV）。v1 是 45%，因为 v1 只在 25 个 IT 职位里重新排序。
+    - 慢和快两种情景下，前 5 名组成会变的人有 62.5%（25/40，EV），第一推荐会变的是 27.5%（11/40，EV）。v1 是 45%，因为 v1 只在 25 个 IT 职位里重新排序。
+    - 5 个示例人物的第一推荐都不随情景变（0 of 5，JC）：我们把它当作稳健选择来讲，不说"第一推荐会翻转"。
   - 数据限制：
     - AI 使用数据只来自一家公司的产品，只有两个月。
     - 机器人和机器做的工作不在数据里。
+    - 马来西亚需求只有 MyCOL 状态和 9 个大类的招聘广告，职业页面会写明这是弱证据。
   - 我们提供的是估计，不是预测。
 - **讲法：** 主动讲弱点。评分表要求 "Honest that predictions are estimates and about data limits"。
 
 ## 7. 结尾：Next
 
 - 真人试点：用 Workshop check 做 20 人以上的前后测，算 KPI 1。
-- 第一推荐太集中：把需求分做细（MyCOL 只认确切职称，不再按 ISCO 组继承；重新核对 ESCO 对照），并且只用留出集之外的新人物来验证。
+- 第一推荐仍偏集中：接入更细的需求数据（ILMIA MyJobProfile 的 MASCO 4 位码招聘数据），并核对另一类等级不符的映射（Job Zone 2 却在 ISCO 大组 3）；都用新的一批人物验证。
 - 合作方：大学和 TVET 的就业中心先上，企业 HR 放在试点之后。

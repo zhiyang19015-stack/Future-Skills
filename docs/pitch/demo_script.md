@@ -39,7 +39,7 @@ Render 免费版闲置 15 分钟就会休眠，第一次请求要等 50 秒以�
 | 1:05–1:40 | **Matches**：第一张卡 → "Why this score?" | "85.6 = field 18.6 + interest 14.5 + skills 22.8 + outlook 29.6. What would raise it is listed under it. His own job is marked declining under moderate adoption." |
 | 1:40–2:10 | **Pathway**：学习线，然后 HRD Corp 分支 | "Free courses on his own gaps, biggest gap first, with hours and weeks at 6 hours a week. Every link was opened and dated. HRD Corp-claimable courses are listed apart: they are paid by the employer." |
 | 2:10–2:30 | **SDG**：选一个目标，看哪些职业上升 | "Every occupation and skill is tied to an SDG target with a written reason. Choosing a goal moves occupations up. It is a real choice, not a badge." |
-| 2:30–3:10 | **Futures**：慢 / 中 / 快并排；稳健选择和依赖情景的选择 | "Slow, moderate, fast. These are estimates, labelled as such. Digital Forensics Analysts stays in his top 3 in all three. The choices that depend on the scenario each say why." |
+| 2:30–3:10 | **Futures**：慢 / 中 / 快并排；稳健选择和依赖情景的选择 | "Slow, moderate, fast. These are estimates, labelled as such. Digital Forensics Analysts stays first in all three: that is a robust choice, and the page says so. What moves is the rest of his top 5: under fast adoption a new occupation enters, and each choice that depends on the scenario says why." Point at the top-5 change and its why; do not say the first move flips.（JC 第 2 项） |
 | 3:10–3:40 | **Futures**：发布模拟新闻 "AI coding agents now ship whole features" | "Simulated news, clearly marked. His own job's outlook goes 84.7 to 81.1, and his learning path changes. Nothing is saved." |
 | 3:40–4:00 | Impact slide（或 EV 表） | "We tested on 40 synthetic people. Their labels were written by an independent annotator before we ran them. 62.5% got a counsellor-accepted role in their top 5; the competition version got 15%. Synthetic, not real people, and we say so." |
 
@@ -58,9 +58,9 @@ Render 免费版闲置 15 分钟就会休眠，第一次请求要等 50 秒以�
 3. **查课程是不是真的：** 评委在 Pathway 随便点一门课，在新标签页打开。
    - 说明：抽查 10 个链接，9 个返回 200。e-LATiH 有时连不上，照实说（JC 第 6 项）。
 
-如果评委问"为什么第一推荐没变"：
+如果评委问"为什么切换情景第一名不变"：
 
-> "Often it holds: on our 40 test people the first move changes for 20% between slow and fast, while the top-5 set changes for 70%. A list that holds is an answer too, and the page says why."（EV）
+> "Because his first choice is robust: it stays first whatever the speed of AI, and we label it as such. On our 40 test people the top-5 set changes for 62.5% between slow and fast, the first move for 27.5%. A choice that holds is an answer too, and the page says why."（EV；5 个示例人物里第一推荐会变的是 0 of 5，JC）
 
 ## 时间不够时的删减顺序
 

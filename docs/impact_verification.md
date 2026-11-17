@@ -21,12 +21,12 @@ For a person to name a target role, its missing skills and a next course, the ap
 
 Synthetic data, not validated with real people. The Phase 1 proposal set no baseline for recommendation quality, so the competition version (v1) is the baseline, run on the same people. Labels were written by an independent annotator before the run ([eval/LABELING.md](../eval/LABELING.md)); details, intervals and a third version in [eval_results.md](eval_results.md).
 
-| Metric | Competition v1 `fdf158d` | Now `cd6d453` |
+| Metric | Competition v1 `fdf158d` | Now `225f6cd` |
 |---|---|---|
-| First move a counsellor would accept (labels) | 12.5% (5/40) | 35% (14/40) |
+| First move a counsellor would accept (labels) | 12.5% (5/40) | 32.5% (13/40) |
 | Top 5 holds an occupation a counsellor would accept | 15% (6/40) | 62.5% (25/40) |
-| Learning-plan resources that are free | 100% (731/731) | 100% (688/688) |
-| Learning-plan resources not in English | 0% (0/731) | 14.2% (98/688) |
+| Learning-plan resources that are free | 100% (731/731) | 100% (662/662) |
+| Learning-plan resources not in English | 0% (0/731) | 14.4% (95/662) |
 
 ## Learning cost
 
@@ -36,7 +36,7 @@ Every step of a learning plan is free: paid courses are never in the plan, its h
 |---|---|---|---|---|
 | P05 | Digital Forensics Analysts | 10 | 284.2 | 3 |
 | P01 | Speech-Language Pathology Assistants | 10 | 251.7 | 0 |
-| P02 | Tax Preparers | 10 | 613 | 2 |
+| P02 | Budget Analysts | 10 | 582.7 | 2 |
 | P03 | Solar Energy Systems Engineers | 10 | 323.7 | 1 |
 | P04 | Talent Directors | 10 | 315.7 | 0 |
 
@@ -46,12 +46,12 @@ Free study hours on the five demo people's first paths, added up per target (`sc
 
 | SDG target | Planned free hours |
 |---|---|
-| 8.10 | 613 |
-| 4.4 | 528 |
-| 9.c | 350.5 |
+| 8.10 | 582.7 |
+| 4.4 | 541 |
 | 9.4 | 323.7 |
 | 7.2 | 323.7 |
 | 11.4 | 315.7 |
+| 9.c | 284.2 |
 | 9.5 | 284.2 |
 | 3.c | 251.7 |
 | 4.6 | 207 |
@@ -59,7 +59,7 @@ Free study hours on the five demo people's first paths, added up per target (`sc
 | 16.6 | 150 |
 | 3.4 | 46 |
 | 8.5 | 38 |
-| 4.c | 32 |
+| 4.c | 16 |
 | 16.10 | 8 |
 
 ## How to check

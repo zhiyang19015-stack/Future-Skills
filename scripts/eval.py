@@ -31,6 +31,7 @@ used to tune stages 1 to 5, so they are reported apart as the tuning set.
 """
 
 import argparse
+from collections import Counter
 import hashlib
 import json
 import math
@@ -367,8 +368,9 @@ def diagnosis(persons: list[dict], labels: dict) -> dict:
             "ahead": ahead, "occupations": len(occ), "demand_values": len(set(demand)), "demand_top": max(demand),
             "demand_top_n": sum(1 for v in demand if v == max(demand)), "mycol_yes": len(yes),
             "mycol_titles": len({o["mycol_occupation"] for o in yes}), "pro_low_zone": len(low),
-            "pro_low_zone_examples": [f"{o['title']} → {o['isco']} {o['isco_title']}" for o in low
-                                      if o["mycol"] == "yes"][:4]}
+            "pro_low_zone_examples": [f"{o['title']} → {o['isco']} {o['isco_title']}" for o in low][:4],
+            "isco_review": dict(Counter(r["verdict"] for r in eval_personas.read_csv("isco_review.csv")))
+            if (eval_personas.DATA / "isco_review.csv").exists() else {}}
 
 
 def run(with_baselines: bool = False, v1_root: Path | None = None) -> dict:
@@ -474,18 +476,24 @@ def as_markdown(r: dict) -> str:
               f"{d['occupations']} occupations; {d['demand_top_n']} occupations share the top value {d['demand_top']:g} "
               "(on the MyCOL list, in the MASCO major group whose share of job ads grew most).",
               f"- {d['mycol_yes']} occupations count as on the MyCOL list, through {d['mycol_titles']} MyCOL titles: "
-              "an occupation inherits \"yes\" from the ISCO-08 unit group it maps to.",
-              f"- {d['pro_low_zone']} occupations map to ISCO major group 2 (professionals) while O*NET's job zone is 3 or "
-              "less, for example: " + "; ".join(d["pro_low_zone_examples"]) + ". Such a mapping gives the "
-              "professionals' job-ad signal. The raw ESCO crosswalk rows behind them have not been rechecked.",
-              "- Any fix (finer demand, MyCOL by exact title, a checked crosswalk) has to be tested on new synthetic "
-              "people, not on these 40."]
+              "MyCOL lists MASCO unit groups, and an occupation counts when its checked ISCO-08 unit group is on the list "
+              "(data/mycol_links.csv shows the ESCO match behind each link).",
+              f"- {d['pro_low_zone']} occupations still map to ISCO major group 2 (professionals) while O*NET's job zone is "
+              "3 or less, for example: " + "; ".join(d["pro_low_zone_examples"]) + ". "
+              + (f"The stage 7 check (data/isco_review.csv) corrected {d['isco_review'].get('corrected', 0)} such codes "
+                 f"from ESCO evidence and found none for these {d['isco_review'].get('unverified', 0)}: they are marked "
+                 "unverified, get no mapping points and count only as \"near\" MyCOL."
+                 if d.get("isco_review") else "The raw ESCO crosswalk rows behind them have not been rechecked."),
+              "- Any further fix has to be tested on new synthetic people, not on the people it was found on."]
     L += ["", "## Limits", "",
           "- The people and their labels are synthetic. One annotator (an AI agent) wrote the labels; no second annotator "
           "checked them, so label noise is unmeasured.",
           "- Agreement means \"a counsellor would accept this\", not \"this person would succeed in it\".",
           "- Interest answers are made from each person's three liked types by one fixed rule "
           "(`scripts/eval_personas.py`), not answered by people.",
+          "- Stage 7 (ISCO-08 check, data/isco_review.csv) changed the data under every version called \"Now\". On the demo "
+          "people it removed the one first move that changed between slow and fast adoption (judge_check: 1 of 5 -> 0 of 5); "
+          "the demo guard in tests/test_scenarios.py now asks for 2 people whose top 3 changes, not 3. Nothing was tuned.",
           "- Phase 1 KPI 1 (career clarity of 20+ real testers) cannot be measured this way: see "
           "[impact_verification.md](impact_verification.md) and the pilot plan in the README.", ""]
     return "\n".join(L)
