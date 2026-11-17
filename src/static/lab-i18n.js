@@ -58,6 +58,8 @@ Object.assign(STRINGS, {
   "lab.map.exact": ["exact mapping", "pemetaan tepat", "完全对应"],
   "lab.map.close": ["close mapping", "pemetaan hampir", "相近对应"],
   "lab.map.broad": ["broad mapping (its group's score)", "pemetaan luas (skor kumpulannya)", "宽泛对应（用所属大组的分数）"],
+  "lab.map.corrected": ["corrected mapping", "pemetaan dibetulkan", "已改正的对应"],
+  "lab.map.unverified": ["unverified mapping", "pemetaan belum disahkan", "未核实的对应"],
   "lab.map.none": ["no ISCO-08 mapping", "tiada pemetaan ISCO-08", "没有 ISCO-08 对应"],
   "lab.ilo.none": ["No ILO score for its ISCO-08 group: the scenario cannot move its tasks beyond what is observed.", "Tiada skor ILO bagi kumpulan ISCO-08nya: senario tidak boleh menggerakkan tugasnya melebihi apa yang dicerap.", "其 ISCO-08 组没有 ILO 分数：情景无法把任务推到观察值之外。"],
   "lab.disagree.potential_above_use": ["Sources disagree: this occupation is at percentile {1} of ILO exposure but only percentile {0} of observed AI use. AI could do more here than people use it for so far. Both are shown; they are not averaged.", "Sumber tidak sepakat: pekerjaan ini pada persentil ke-{1} pendedahan ILO tetapi hanya ke-{0} penggunaan AI yang dicerap. AI boleh buat lebih daripada yang digunakan setakat ini. Kedua-duanya ditunjukkan; tidak dipuratakan.", "来源分歧：这个职业的 ILO 暴露度处于第 {1} 百分位，但实际 AI 使用只在第 {0} 百分位——AI 在这里能做的比目前用得多。两者并列显示，不做平均。"],

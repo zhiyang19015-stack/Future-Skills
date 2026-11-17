@@ -195,6 +195,7 @@ PAGES.occ = async (args) => {
     <section class="card stack"><h2>${t("occ.signals.h")}</h2>
       <div class="meter"><span>${t("sig.demand")}</span>${bar(o.demand)}<span class="v">${fmt(o.demand, 0)}</span></div>
       <ul class="small stack tight">${demandSignals(r.demand)}</ul>
+      ${r.demand_levels ? `<p class="small muted">${t("sig.coarse", r.demand_levels.values, r.demand_levels.occupations)}</p>` : ""}
       <div class="meter"><span>${t("sig.share")}</span>${bar(o.ai_share, "ai tall", band + `<span class="mark" style="left:${o.ai_share_reference}%" title="${esc(t("radar.avg", fmt(o.ai_share_reference, 0)))}"></span>`)}<span class="v">${fmt(o.ai_share, 0)}%</span></div>
       <p class="small muted">${t("sig.share.p", fmt(o.ai_share, 0), fmt(o.ai_share_low, 0), fmt(o.ai_share_high, 0), fmt(o.ai_share_reference, 0), ai.tasks_covered, ai.tasks)}${ai.thin_evidence ? ` ${t(ai.prior_basis === "anthropic_exposure" ? "radar.thin.exposure" : "radar.thin.title")}` : ""}</p>
       <div class="tags"><span class="chip plain">${t("sig.tempo", fmt(o.tempo, 2))}</span>${o.builder ? `<span class="chip plain">${t("sig.builder", fmt(o.builder, 0))}</span>` : ""}

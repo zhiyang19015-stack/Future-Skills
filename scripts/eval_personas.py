@@ -23,6 +23,9 @@ EVAL = ROOT / "eval"
 DATA = ROOT / "data"
 PERSONAS = EVAL / "personas.json"
 LABELS = EVAL / "labels.json"
+# The second held-out set (stage 7): written and labelled before any stage 7 change was run on it.
+SETS = {"a": (PERSONAS, LABELS, "annotator_view.md"),
+        "b": (EVAL / "personas_b.json", EVAL / "labels_b.json", "annotator_view_b.md")}
 TYPE_WORDS = {"R": "hands-on (Realistic)", "I": "investigating (Investigative)", "A": "creative (Artistic)",
               "S": "helping people (Social)", "E": "persuading and leading (Enterprising)",
               "C": "organising and records (Conventional)"}
@@ -39,8 +42,8 @@ def read_csv(name: str) -> list[dict]:
         return list(csv.DictReader(f))
 
 
-def people() -> list[dict]:
-    return json.loads(PERSONAS.read_text(encoding="utf-8"))["people"]
+def people(which: str = "a") -> list[dict]:
+    return json.loads(SETS[which][0].read_text(encoding="utf-8"))["people"]
 
 
 def interest_answers(types: dict) -> list[int]:
@@ -61,7 +64,7 @@ def app_profile(person: dict) -> dict:
     return p
 
 
-def annotator_view() -> str:
+def annotator_view(which: str = "a") -> str:
     fields = {r["field_id"]: r["name_en"] for r in read_csv("fields.csv")}
     occ = {r["occ_id"]: r["title"] for r in read_csv("occupations.csv")}
     tech = {r["tech_id"]: r["name"] for r in read_csv("technologies.csv")}
@@ -69,7 +72,7 @@ def annotator_view() -> str:
     lines = ["# The 40 evaluation people, as the annotator sees them", "",
              "Fictional people. Synthetic data, not validated with real people. Label them by the rules in "
              "`eval/LABELING.md`, choosing occupation ids from `eval/occupation_list.csv`.", ""]
-    for x in people():
+    for x in people(which):
         p = x["profile"]
         it = p["interest_types"]
         lines += [f"## {x['id']} {x['name']} ({GROUP_WORDS[x['group']]})", "", x["story"], "",
@@ -85,8 +88,8 @@ def annotator_view() -> str:
     return "\n".join(lines)
 
 
-def write_annotator_files() -> None:
-    (EVAL / "annotator_view.md").write_text(annotator_view(), encoding="utf-8", newline="\n")
+def write_annotator_files(which: str = "a") -> None:
+    (EVAL / SETS[which][2]).write_text(annotator_view(which), encoding="utf-8", newline="\n")
     fields = {r["field_id"]: r["name_en"] for r in read_csv("fields.csv")}
     with open(EVAL / "occupation_list.csv", "w", encoding="utf-8", newline="") as f:
         w = csv.writer(f)
@@ -97,5 +100,7 @@ def write_annotator_files() -> None:
 
 
 if __name__ == "__main__":
-    write_annotator_files()
-    print("wrote eval/annotator_view.md and eval/occupation_list.csv")
+    import sys
+    which = sys.argv[1] if len(sys.argv) > 1 else "a"
+    write_annotator_files(which)
+    print(f"wrote eval/{SETS[which][2]} and eval/occupation_list.csv")

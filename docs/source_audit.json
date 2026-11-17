@@ -160,6 +160,16 @@
    "status": "sourced per row"
   },
   {
+   "file": "isco_review.csv",
+   "rows": 36,
+   "row_level": true,
+   "empty_rows": [],
+   "file_level": [
+    "SOURCES.md"
+   ],
+   "status": "sourced per row"
+  },
+  {
    "file": "learning_resources.csv",
    "rows": 84,
    "row_level": true,
@@ -189,6 +199,14 @@
   {
    "file": "my_restrictions.csv",
    "rows": 1,
+   "row_level": true,
+   "empty_rows": [],
+   "file_level": [],
+   "status": "sourced per row"
+  },
+  {
+   "file": "mycol_links.csv",
+   "rows": 342,
    "row_level": true,
    "empty_rows": [],
    "file_level": [],
@@ -436,7 +454,7 @@
   },
   {
    "file": "src/main.py",
-   "line": 627,
+   "line": 629,
    "name": "VERDICT_TOP",
    "values": [
     3.0
@@ -715,7 +733,7 @@
   },
   {
    "file": "scripts/evidence.py",
-   "line": 35,
+   "line": 37,
    "name": "MAPPING_POINTS",
    "values": [
     0.0,
@@ -2065,18 +2083,7 @@
   },
   {
    "file": "README.md",
-   "line": 233,
-   "numbers": [
-    "30%",
-    "46%"
-   ],
-   "text": "An honest limit: **the first recommendation changes between slow and fast adoption for 1 of the 5 demo people** (Siti Hajar). We tried three sourced variants of the outlook formula (the AI share projected towards the ILO",
-   "status": "fine",
-   "why": "experiments described in docs/scenario_report.md"
-  },
-  {
-   "file": "README.md",
-   "line": 268,
+   "line": 269,
    "numbers": [
     "5%"
    ],
@@ -2106,7 +2113,7 @@
   },
   {
    "file": "SOURCES.md",
-   "line": 55,
+   "line": 59,
    "numbers": [
     "20%",
     "109%"
@@ -2117,7 +2124,7 @@
   },
   {
    "file": "SOURCES.md",
-   "line": 56,
+   "line": 60,
    "numbers": [
     "40%"
    ],
@@ -2127,7 +2134,7 @@
   },
   {
    "file": "SOURCES.md",
-   "line": 59,
+   "line": 63,
    "numbers": [
     "20%",
     "15%",
@@ -2142,7 +2149,7 @@
   },
   {
    "file": "SOURCES.md",
-   "line": 62,
+   "line": 66,
    "numbers": [
     "95%"
    ],
@@ -2152,7 +2159,7 @@
   },
   {
    "file": "SOURCES.md",
-   "line": 64,
+   "line": 68,
    "numbers": [
     "1,000",
     "30%"
@@ -2302,7 +2309,7 @@
   },
   {
    "file": "docs/pitch/deck_outline.md",
-   "line": 53,
+   "line": 54,
    "numbers": [
     "25%"
    ],
@@ -2312,7 +2319,7 @@
   },
   {
    "file": "docs/pitch/deck_outline.md",
-   "line": 55,
+   "line": 56,
    "numbers": [
     "1,196"
    ],
@@ -2322,7 +2329,7 @@
   },
   {
    "file": "docs/pitch/deck_outline.md",
-   "line": 63,
+   "line": 64,
    "numbers": [
     "20%"
    ],
@@ -2332,7 +2339,7 @@
   },
   {
    "file": "docs/pitch/deck_outline.md",
-   "line": 89,
+   "line": 90,
    "numbers": [
     "5%"
    ],
@@ -2342,7 +2349,7 @@
   },
   {
    "file": "docs/pitch/deck_outline.md",
-   "line": 100,
+   "line": 101,
    "numbers": [
     "10%"
    ],
@@ -2417,42 +2424,42 @@
   },
   {
    "file": "src/static/lab-i18n.js",
-   "line": 70,
+   "line": 72,
    "text": "\"Defaults (moderate adoption, 30% resistance, no demand change)\"",
    "status": "fine",
    "why": "the Stress Test's default slider value, labelled as a default"
   },
   {
    "file": "src/static/lab-i18n.js",
-   "line": 70,
+   "line": 72,
    "text": "\"Lalai (penggunaan sederhana, rintangan 30%, tiada perubahan permintaan)\"",
    "status": "fine",
    "why": "the Stress Test's default slider value, labelled as a default"
   },
   {
    "file": "src/static/lab-i18n.js",
-   "line": 70,
+   "line": 72,
    "text": "\"默认（中速普及、30% 阻力、需求不变）\"",
    "status": "fine",
    "why": "the Stress Test's default slider value, labelled as a default"
   },
   {
    "file": "src/static/lab-i18n.js",
-   "line": 174,
+   "line": 176,
    "text": "\"No adoption speed from 0 to 90% swaps them.\"",
    "status": "fine",
    "why": "the adoption slider's range (Sources page: adoption_max)"
   },
   {
    "file": "src/static/lab-i18n.js",
-   "line": 174,
+   "line": 176,
    "text": "\"Tiada kelajuan penggunaan dari 0 hingga 90% yang menukar susunan.\"",
    "status": "fine",
    "why": "the adoption slider's range (Sources page: adoption_max)"
   },
   {
    "file": "src/static/lab-i18n.js",
-   "line": 174,
+   "line": 176,
    "text": "\"0–90% 之间任何普及速度都不会让两者换位。\"",
    "status": "fine",
    "why": "the adoption slider's range (Sources page: adoption_max)"
@@ -2480,14 +2487,14 @@
   }
  ],
  "summary": {
-  "data_files": 36,
+  "data_files": 38,
   "data_no_source": 0,
   "data_rows_empty": 0,
   "constants": 130,
   "constants_not_shown": 21,
   "constants_assumption_not_shown": 0,
   "constants_not_checked": 0,
-  "prose_uncited": 32,
+  "prose_uncited": 31,
   "prose_not_checked": 0,
   "ui_numbers": 18,
   "ui_not_checked": 0

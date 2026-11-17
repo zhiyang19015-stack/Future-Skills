@@ -32,7 +32,9 @@ import ilo
 FRESH_AI_DAYS = 270          # an Economic Index release older than about nine months is stale
 FRESH_DEMAND_DAYS = 60       # "Update data" runs weekly; two months without it is stale
 GRADES = ((5, "A"), (3, "B"), (0, "C"))
-MAPPING_POINTS = {"exact": 2, "close": 1, "broad": 0, "none": 0}
+# "corrected": a code set by data/isco_review.csv from the occupation's own ESCO matches; "unverified": a code whose
+# group's ISCO-08 skill level clashes with the occupation's Job Zone and that the review could not replace.
+MAPPING_POINTS = {"exact": 2, "close": 1, "corrected": 1, "broad": 0, "unverified": 0, "none": 0}
 DISAGREE_CAP = "B"           # the best grade when the two AI sources disagree
 
 

@@ -1,0 +1,1202 @@
+{
+ "about": "Second held-out evaluation set: 40 fictional people (E41-E80; 10 students, 10 in work, 10 switchers, 10 job seekers), written on 2026-11-17 for stage 7 before any stage 7 change was run on them. Synthetic data, not validated with real people. Same rules as eval/personas.json (eval/LABELING.md).",
+ "people": [
+  {
+   "id": "E41",
+   "name": "Haziq",
+   "group": "student",
+   "story": "20, finishing a diploma in mechanical (manufacturing) at a polytechnic in Shah Alam. Enjoys running lathes and milling machines in the workshop. Wants a factory floor job after the diploma, no degree.",
+   "profile": {
+    "kind": "student",
+    "education_job_zone": 3,
+    "fields": {
+     "51": 100,
+     "49": 60
+    },
+    "interest_types": {
+     "top": [
+      "R",
+      "C",
+      "I"
+     ],
+     "low": "S"
+    },
+    "technologies": [
+     "autodesk-autocad"
+    ],
+    "skills": {
+     "2.B.3.h": 3,
+     "2.C.3.e": 4
+    },
+    "hours_per_week": 10
+   }
+  },
+  {
+   "id": "E42",
+   "name": "Tan Mei Yi",
+   "group": "student",
+   "story": "22, final year of a biomedical science degree in Kuala Lumpur. Likes laboratory work on samples and careful testing. Wants a lab role in a hospital or diagnostics company. Not interested in selling.",
+   "profile": {
+    "kind": "student",
+    "education_job_zone": 4,
+    "fields": {
+     "29": 100,
+     "19": 60
+    },
+    "interest_types": {
+     "top": [
+      "I",
+      "S",
+      "C"
+     ],
+     "low": "E"
+    },
+    "technologies": [
+     "microsoft-excel"
+    ],
+    "skills": {
+     "2.C.4.d": 5,
+     "2.C.4.c": 4
+    },
+    "hours_per_week": 8
+   }
+  },
+  {
+   "id": "E43",
+   "name": "Syafiq",
+   "group": "student",
+   "story": "18, SPM leaver in Kuching who helps his uncle on building sites. Wants a construction trade such as electrical wiring, plumbing or carpentry, and will take a skills certificate for it.",
+   "profile": {
+    "kind": "student",
+    "education_job_zone": 2,
+    "fields": {
+     "47": 100,
+     "49": 40
+    },
+    "interest_types": {
+     "top": [
+      "R",
+      "C",
+      "E"
+     ],
+     "low": "A"
+    },
+    "technologies": [],
+    "skills": {
+     "2.C.3.d": 3
+    },
+    "hours_per_week": 10,
+    "study_levels": 1
+   }
+  },
+  {
+   "id": "E44",
+   "name": "Priyanka",
+   "group": "student",
+   "story": "21, film and video production degree student in Cyberjaya. Shoots and edits short videos for clients. Wants work in video production, editing or motion graphics.",
+   "profile": {
+    "kind": "student",
+    "education_job_zone": 4,
+    "fields": {
+     "27": 100,
+     "41": 40
+    },
+    "interest_types": {
+     "top": [
+      "A",
+      "E",
+      "S"
+     ],
+     "low": "C"
+    },
+    "technologies": [
+     "adobe-premiere-pro",
+     "adobe-after-effects",
+     "canva"
+    ],
+    "skills": {
+     "2.C.9.b": 4,
+     "2.C.7.c": 4
+    },
+    "hours_per_week": 10,
+    "study_levels": 1
+   }
+  },
+  {
+   "id": "E45",
+   "name": "Lim Jun Hao",
+   "group": "student",
+   "story": "22, actuarial science degree student in Kuala Lumpur, passed two exams. Good with numbers and spreadsheets. Wants an insurance, actuarial or risk analyst job.",
+   "profile": {
+    "kind": "student",
+    "education_job_zone": 4,
+    "fields": {
+     "13": 100,
+     "15": 50
+    },
+    "interest_types": {
+     "top": [
+      "C",
+      "I",
+      "E"
+     ],
+     "low": "A"
+    },
+    "technologies": [
+     "microsoft-excel",
+     "structured-query-language-sql"
+    ],
+    "skills": {
+     "2.A.1.e": 5,
+     "2.C.1.c": 4
+    },
+    "hours_per_week": 8
+   }
+  },
+  {
+   "id": "E46",
+   "name": "Nur Izzah",
+   "group": "student",
+   "story": "19, diploma in nursing student in Alor Setar, would do a degree later. Likes caring for patients and practical clinical work. Does not like sales.",
+   "profile": {
+    "kind": "student",
+    "education_job_zone": 3,
+    "fields": {
+     "31": 100,
+     "29": 60
+    },
+    "interest_types": {
+     "top": [
+      "S",
+      "R",
+      "C"
+     ],
+     "low": "E"
+    },
+    "technologies": [],
+    "skills": {
+     "2.B.1.a": 4,
+     "2.C.4.d": 3
+    },
+    "hours_per_week": 8,
+    "study_levels": 1
+   }
+  },
+  {
+   "id": "E47",
+   "name": "Darren",
+   "group": "student",
+   "story": "20, diploma in hotel management in Penang. Interned at a hotel front office and restaurant. Wants to work in hotel operations, food and beverage service or events.",
+   "profile": {
+    "kind": "student",
+    "education_job_zone": 3,
+    "fields": {
+     "35": 100,
+     "41": 40
+    },
+    "interest_types": {
+     "top": [
+      "E",
+      "S",
+      "R"
+     ],
+     "low": "I"
+    },
+    "technologies": [],
+    "skills": {
+     "2.C.1.e": 4,
+     "2.B.5.a": 3
+    },
+    "hours_per_week": 10
+   }
+  },
+  {
+   "id": "E48",
+   "name": "Aishah",
+   "group": "student",
+   "story": "22, social work degree student in Kota Bharu. Volunteers with a community centre for families. Wants to be a social worker or community service worker.",
+   "profile": {
+    "kind": "student",
+    "education_job_zone": 4,
+    "fields": {
+     "21": 100,
+     "25": 60
+    },
+    "interest_types": {
+     "top": [
+      "S",
+      "A",
+      "I"
+     ],
+     "low": "R"
+    },
+    "technologies": [
+     "microsoft-word"
+    ],
+    "skills": {
+     "2.B.1.a": 5,
+     "2.C.4.e": 4
+    },
+    "hours_per_week": 8
+   }
+  },
+  {
+   "id": "E49",
+   "name": "Kelvin",
+   "group": "student",
+   "story": "20, diploma in computer networking in Seremban. Built a home lab with routers and Linux servers. Wants an IT support or network technician job straight after the diploma.",
+   "profile": {
+    "kind": "student",
+    "education_job_zone": 3,
+    "fields": {
+     "15": 100
+    },
+    "interest_types": {
+     "top": [
+      "R",
+      "I",
+      "C"
+     ],
+     "low": "S"
+    },
+    "technologies": [
+     "microsoft-windows",
+     "linux"
+    ],
+    "skills": {
+     "2.B.3.k": 4,
+     "2.C.3.a": 4
+    },
+    "hours_per_week": 12
+   }
+  },
+  {
+   "id": "E50",
+   "name": "Farhana",
+   "group": "student",
+   "story": "23, chemical engineering degree student in Johor Bahru. Did an internship at a palm oil refinery. Wants a process or chemical engineering job in a plant.",
+   "profile": {
+    "kind": "student",
+    "education_job_zone": 4,
+    "fields": {
+     "17": 100,
+     "19": 40
+    },
+    "interest_types": {
+     "top": [
+      "I",
+      "R",
+      "C"
+     ],
+     "low": "S"
+    },
+    "technologies": [
+     "autodesk-autocad",
+     "the-mathworks-matlab"
+    ],
+    "skills": {
+     "2.C.4.c": 4,
+     "2.C.3.b": 4
+    },
+    "hours_per_week": 10
+   }
+  },
+  {
+   "id": "E51",
+   "name": "Rosli",
+   "group": "working",
+   "story": "44, welder at a shipyard in Lumut for 20 years, SPM and a welding certificate. Wants to stay in welding or move to welding inspection or supervision. Will not go back for a degree.",
+   "profile": {
+    "kind": "working",
+    "education_job_zone": 2,
+    "fields": {
+     "51": 100,
+     "49": 60
+    },
+    "interest_types": {
+     "top": [
+      "R",
+      "C",
+      "I"
+     ],
+     "low": "S"
+    },
+    "technologies": [],
+    "skills": {
+     "2.B.3.h": 5,
+     "2.B.3.m": 4
+    },
+    "hours_per_week": 5,
+    "current_occupation": "51-4121.00"
+   }
+  },
+  {
+   "id": "E52",
+   "name": "Chong Wai Kit",
+   "group": "working",
+   "story": "38, administrative secretary at a logistics firm in Klang, diploma. Much of her scheduling and letters are now done by software. Wants to stay in office work: office management, HR administration or procurement.",
+   "profile": {
+    "kind": "working",
+    "education_job_zone": 3,
+    "fields": {
+     "43": 100,
+     "13": 60
+    },
+    "interest_types": {
+     "top": [
+      "C",
+      "S",
+      "E"
+     ],
+     "low": "A"
+    },
+    "technologies": [
+     "microsoft-office-software"
+    ],
+    "skills": {
+     "2.C.1.b": 5,
+     "2.A.1.c": 4
+    },
+    "hours_per_week": 5,
+    "current_occupation": "43-6014.00"
+   }
+  },
+  {
+   "id": "E53",
+   "name": "Dr. Siva",
+   "group": "working",
+   "story": "40, physician (general practice) in Ipoh. Uses AI to draft referral letters. Wants to stay in medicine, possibly in public health or clinical management.",
+   "profile": {
+    "kind": "working",
+    "education_job_zone": 5,
+    "fields": {
+     "29": 100
+    },
+    "interest_types": {
+     "top": [
+      "I",
+      "S",
+      "A"
+     ],
+     "low": "C"
+    },
+    "technologies": [
+     "epic-systems"
+    ],
+    "skills": {
+     "2.C.5.a": 6,
+     "2.A.2.a": 5
+    },
+    "hours_per_week": 3,
+    "current_occupation": "29-1215.00"
+   }
+  },
+  {
+   "id": "E54",
+   "name": "Mohd Faiz",
+   "group": "working",
+   "story": "35, lorry driver in Pasir Gudang, SPM. Healthy and likes driving; worried about self-driving trucks. Wants to stay in transport and logistics, for example as a bus or tanker driver, or a fleet or dispatch role with a short course.",
+   "profile": {
+    "kind": "working",
+    "education_job_zone": 2,
+    "fields": {
+     "53": 100,
+     "43": 40
+    },
+    "interest_types": {
+     "top": [
+      "R",
+      "C",
+      "E"
+     ],
+     "low": "A"
+    },
+    "technologies": [],
+    "skills": {
+     "2.C.10": 5
+    },
+    "hours_per_week": 5,
+    "study_levels": 1,
+    "current_occupation": "53-3032.00"
+   }
+  },
+  {
+   "id": "E55",
+   "name": "Melissa",
+   "group": "working",
+   "story": "30, accountant at a manufacturer in Penang, accounting degree and part of the way through ACCA. Bookkeeping is being automated. Wants to move to financial analysis, audit or financial management.",
+   "profile": {
+    "kind": "working",
+    "education_job_zone": 4,
+    "fields": {
+     "13": 100
+    },
+    "interest_types": {
+     "top": [
+      "C",
+      "E",
+      "I"
+     ],
+     "low": "A"
+    },
+    "technologies": [
+     "microsoft-excel",
+     "sap-software"
+    ],
+    "skills": {
+     "2.C.1.c": 5,
+     "2.A.1.e": 5
+    },
+    "hours_per_week": 5,
+    "current_occupation": "13-2011.00"
+   }
+  },
+  {
+   "id": "E56",
+   "name": "Kumar Raj",
+   "group": "working",
+   "story": "41, industrial machinery mechanic at a rubber gloves factory in Klang, diploma. Wants to stay in maintenance, move to maintenance planning or supervision, or become a mechatronics technician.",
+   "profile": {
+    "kind": "working",
+    "education_job_zone": 3,
+    "fields": {
+     "49": 100,
+     "17": 50
+    },
+    "interest_types": {
+     "top": [
+      "R",
+      "I",
+      "C"
+     ],
+     "low": "S"
+    },
+    "technologies": [],
+    "skills": {
+     "2.B.3.j": 5,
+     "2.B.3.l": 5
+    },
+    "hours_per_week": 5,
+    "current_occupation": "49-9041.00"
+   }
+  },
+  {
+   "id": "E57",
+   "name": "Hui Min",
+   "group": "working",
+   "story": "27, software tester in Penang, computer science degree. Wants to move to test automation, software development or DevOps.",
+   "profile": {
+    "kind": "working",
+    "education_job_zone": 4,
+    "fields": {
+     "15": 100
+    },
+    "interest_types": {
+     "top": [
+      "I",
+      "C",
+      "R"
+     ],
+     "low": "S"
+    },
+    "technologies": [
+     "selenium",
+     "python",
+     "atlassian-jira"
+    ],
+    "skills": {
+     "2.B.3.e": 4,
+     "2.B.3.m": 5
+    },
+    "hours_per_week": 6,
+    "current_occupation": "15-1253.00"
+   }
+  },
+  {
+   "id": "E58",
+   "name": "Azman",
+   "group": "working",
+   "story": "47, security guard at a shopping mall in Kuala Lumpur, SPM. Cameras with AI now watch the halls. Wants to stay in security, for example as a supervisor or a CCTV control room operator.",
+   "profile": {
+    "kind": "working",
+    "education_job_zone": 2,
+    "fields": {
+     "33": 100
+    },
+    "interest_types": {
+     "top": [
+      "R",
+      "S",
+      "C"
+     ],
+     "low": "A"
+    },
+    "technologies": [],
+    "skills": {
+     "2.C.8.a": 4
+    },
+    "hours_per_week": 5,
+    "current_occupation": "33-9032.00"
+   }
+  },
+  {
+   "id": "E59",
+   "name": "Sharifah",
+   "group": "working",
+   "story": "36, primary school teacher in Putrajaya, education degree. Wants to stay in education: special education, school counselling or curriculum work.",
+   "profile": {
+    "kind": "working",
+    "education_job_zone": 4,
+    "fields": {
+     "25": 100,
+     "21": 50
+    },
+    "interest_types": {
+     "top": [
+      "S",
+      "A",
+      "C"
+     ],
+     "low": "R"
+    },
+    "technologies": [
+     "google-workspace-software"
+    ],
+    "skills": {
+     "2.B.1.e": 5,
+     "2.C.6": 5
+    },
+    "hours_per_week": 5,
+    "current_occupation": "25-2021.00"
+   }
+  },
+  {
+   "id": "E60",
+   "name": "Teoh",
+   "group": "working",
+   "story": "39, insurance sales agent in Melaka, diploma. Online insurance sales are growing. Wants to stay in sales or move into financial advice or customer relationship roles.",
+   "profile": {
+    "kind": "working",
+    "education_job_zone": 3,
+    "fields": {
+     "41": 100,
+     "13": 60
+    },
+    "interest_types": {
+     "top": [
+      "E",
+      "C",
+      "S"
+     ],
+     "low": "R"
+    },
+    "technologies": [
+     "microsoft-excel",
+     "salesforce-software"
+    ],
+    "skills": {
+     "2.B.1.c": 5,
+     "2.C.1.d": 4
+    },
+    "hours_per_week": 5,
+    "current_occupation": "41-3021.00"
+   }
+  },
+  {
+   "id": "E61",
+   "name": "Shahrul",
+   "group": "switcher",
+   "story": "29, restaurant cook in Kuantan, SPM. Fixes things at home and wants to become an air-conditioning or electrical technician; will take a skills certificate.",
+   "profile": {
+    "kind": "switcher",
+    "education_job_zone": 2,
+    "fields": {
+     "49": 100,
+     "47": 50
+    },
+    "interest_types": {
+     "top": [
+      "R",
+      "C",
+      "I"
+     ],
+     "low": "S"
+    },
+    "technologies": [],
+    "skills": {
+     "2.B.3.l": 3
+    },
+    "hours_per_week": 8,
+    "study_levels": 1,
+    "current_occupation": "35-2014.00"
+   }
+  },
+  {
+   "id": "E62",
+   "name": "Michelle",
+   "group": "switcher",
+   "story": "27, retail salesperson in Kuala Lumpur with a design degree she never used. Has done a UX course online. Wants to switch to UX/UI or web design.",
+   "profile": {
+    "kind": "switcher",
+    "education_job_zone": 4,
+    "fields": {
+     "27": 100,
+     "15": 40
+    },
+    "interest_types": {
+     "top": [
+      "A",
+      "I",
+      "E"
+     ],
+     "low": "C"
+    },
+    "technologies": [
+     "figma",
+     "canva",
+     "adobe-photoshop"
+    ],
+    "skills": {
+     "2.C.3.c": 4
+    },
+    "hours_per_week": 10,
+    "current_occupation": "41-2031.00"
+   }
+  },
+  {
+   "id": "E63",
+   "name": "Ganesh",
+   "group": "switcher",
+   "story": "45, delivery truck driver in Ipoh with a diploma in logistics. Wants an office job in logistics: purchasing, inventory, shipping coordination.",
+   "profile": {
+    "kind": "switcher",
+    "education_job_zone": 3,
+    "fields": {
+     "43": 100,
+     "13": 40
+    },
+    "interest_types": {
+     "top": [
+      "C",
+      "E",
+      "R"
+     ],
+     "low": "A"
+    },
+    "technologies": [
+     "microsoft-excel"
+    ],
+    "skills": {
+     "2.C.10": 4,
+     "2.B.5.a": 4
+    },
+    "hours_per_week": 6,
+    "current_occupation": "53-3032.00"
+   }
+  },
+  {
+   "id": "E64",
+   "name": "Noraini",
+   "group": "switcher",
+   "story": "37, factory quality inspector in Kulim, SPM. Cared for her mother for years. Wants to switch to caregiving: nursing assistant, home health aide or elderly care, with a certificate.",
+   "profile": {
+    "kind": "switcher",
+    "education_job_zone": 2,
+    "fields": {
+     "31": 100,
+     "39": 60
+    },
+    "interest_types": {
+     "top": [
+      "S",
+      "R",
+      "C"
+     ],
+     "low": "E"
+    },
+    "technologies": [],
+    "skills": {
+     "2.B.1.a": 4
+    },
+    "hours_per_week": 8,
+    "study_levels": 1,
+    "current_occupation": "51-9061.00"
+   }
+  },
+  {
+   "id": "E65",
+   "name": "Ivan",
+   "group": "switcher",
+   "story": "33, personal financial advisor in Kuala Lumpur, economics degree. Learning Python and SQL. Wants to switch to data analysis or data science.",
+   "profile": {
+    "kind": "switcher",
+    "education_job_zone": 4,
+    "fields": {
+     "15": 100,
+     "13": 50
+    },
+    "interest_types": {
+     "top": [
+      "I",
+      "C",
+      "E"
+     ],
+     "low": "S"
+    },
+    "technologies": [
+     "python",
+     "structured-query-language-sql",
+     "microsoft-excel"
+    ],
+    "skills": {
+     "2.B.3.e": 3,
+     "2.A.1.e": 5
+    },
+    "hours_per_week": 10,
+    "current_occupation": "13-2052.00"
+   }
+  },
+  {
+   "id": "E66",
+   "name": "Sabariah",
+   "group": "switcher",
+   "story": "40, customer service supervisor in Shah Alam, diploma. Runs training for new staff. Wants to switch to training and development or teaching assistant work.",
+   "profile": {
+    "kind": "switcher",
+    "education_job_zone": 3,
+    "fields": {
+     "25": 100,
+     "21": 50
+    },
+    "interest_types": {
+     "top": [
+      "S",
+      "A",
+      "C"
+     ],
+     "low": "R"
+    },
+    "technologies": [
+     "microsoft-powerpoint"
+    ],
+    "skills": {
+     "2.B.1.e": 4
+    },
+    "hours_per_week": 6,
+    "current_occupation": "43-4051.00"
+   }
+  },
+  {
+   "id": "E67",
+   "name": "Brandon",
+   "group": "switcher",
+   "story": "28, former state-level badminton coach in Penang with a sports science degree. Wants to switch to physical education teaching, fitness training or sports therapy support.",
+   "profile": {
+    "kind": "switcher",
+    "education_job_zone": 4,
+    "fields": {
+     "25": 100,
+     "31": 40
+    },
+    "interest_types": {
+     "top": [
+      "S",
+      "R",
+      "E"
+     ],
+     "low": "C"
+    },
+    "technologies": [],
+    "skills": {
+     "2.B.1.e": 4
+    },
+    "hours_per_week": 8,
+    "current_occupation": "27-2022.00"
+   }
+  },
+  {
+   "id": "E68",
+   "name": "Zulkifli",
+   "group": "switcher",
+   "story": "43, construction labourer in Johor Bahru, SPM. Knees are bad. Wants to switch to operating equipment such as cranes, forklifts or excavators, with a licence course.",
+   "profile": {
+    "kind": "switcher",
+    "education_job_zone": 2,
+    "fields": {
+     "53": 100,
+     "49": 40
+    },
+    "interest_types": {
+     "top": [
+      "R",
+      "C",
+      "E"
+     ],
+     "low": "A"
+    },
+    "technologies": [],
+    "skills": {
+     "2.B.3.h": 4
+    },
+    "hours_per_week": 6,
+    "study_levels": 1,
+    "current_occupation": "47-2061.00"
+   }
+  },
+  {
+   "id": "E69",
+   "name": "Ling",
+   "group": "switcher",
+   "story": "35, business lecturer at a private college in Kuala Lumpur, master's degree, college is downsizing. Wants to switch to management consulting, business analysis or marketing management.",
+   "profile": {
+    "kind": "switcher",
+    "education_job_zone": 4,
+    "fields": {
+     "13": 100,
+     "11": 50
+    },
+    "interest_types": {
+     "top": [
+      "E",
+      "I",
+      "S"
+     ],
+     "low": "R"
+    },
+    "technologies": [
+     "microsoft-excel"
+    ],
+    "skills": {
+     "2.C.1.a": 4,
+     "2.C.1.d": 4
+    },
+    "hours_per_week": 6,
+    "current_occupation": "25-1011.00"
+   }
+  },
+  {
+   "id": "E70",
+   "name": "Rahim",
+   "group": "switcher",
+   "story": "39, firefighter in Kota Kinabalu, diploma. Wants to switch to occupational safety and health work in industry.",
+   "profile": {
+    "kind": "switcher",
+    "education_job_zone": 3,
+    "fields": {
+     "33": 100,
+     "17": 40
+    },
+    "interest_types": {
+     "top": [
+      "R",
+      "S",
+      "E"
+     ],
+     "low": "A"
+    },
+    "technologies": [],
+    "skills": {
+     "2.C.8.a": 5
+    },
+    "hours_per_week": 6,
+    "current_occupation": "33-2011.00"
+   }
+  },
+  {
+   "id": "E71",
+   "name": "Hanis",
+   "group": "jobseeker",
+   "story": "24, human resource management graduate in Shah Alam, unemployed for six months. Looking for a first HR job: recruitment, payroll or HR assistant.",
+   "profile": {
+    "kind": "student",
+    "education_job_zone": 4,
+    "fields": {
+     "13": 100,
+     "43": 50
+    },
+    "interest_types": {
+     "top": [
+      "C",
+      "E",
+      "S"
+     ],
+     "low": "R"
+    },
+    "technologies": [
+     "microsoft-excel"
+    ],
+    "skills": {
+     "2.C.1.f": 4
+    },
+    "hours_per_week": 15
+   }
+  },
+  {
+   "id": "E72",
+   "name": "Ravi Kumar",
+   "group": "jobseeker",
+   "story": "31, retrenched factory assembler in Senai, SPM. Looking for any steady factory or warehouse job: machine operator, packer, forklift.",
+   "profile": {
+    "kind": "switcher",
+    "education_job_zone": 2,
+    "fields": {
+     "51": 100,
+     "53": 50
+    },
+    "interest_types": {
+     "top": [
+      "R",
+      "C",
+      "S"
+     ],
+     "low": "A"
+    },
+    "technologies": [],
+    "skills": {
+     "2.B.3.h": 3
+    },
+    "hours_per_week": 15,
+    "current_occupation": "51-2092.00"
+   }
+  },
+  {
+   "id": "E73",
+   "name": "Amelia",
+   "group": "jobseeker",
+   "story": "25, LLB graduate in Kuala Lumpur who did not finish chambering. Looking for legal work that needs no practising certificate: compliance, legal assistant or contracts.",
+   "profile": {
+    "kind": "student",
+    "education_job_zone": 4,
+    "fields": {
+     "23": 100,
+     "13": 40
+    },
+    "interest_types": {
+     "top": [
+      "E",
+      "C",
+      "S"
+     ],
+     "low": "R"
+    },
+    "technologies": [
+     "microsoft-word"
+    ],
+    "skills": {
+     "2.C.8.b": 4,
+     "2.A.1.c": 4
+    },
+    "hours_per_week": 15
+   }
+  },
+  {
+   "id": "E74",
+   "name": "Hakimi",
+   "group": "jobseeker",
+   "story": "22, diploma in civil engineering in Kota Bharu, looking for a first job. Wants to be a site technician, draughtsman or surveying assistant.",
+   "profile": {
+    "kind": "student",
+    "education_job_zone": 3,
+    "fields": {
+     "17": 100,
+     "49": 50
+    },
+    "interest_types": {
+     "top": [
+      "R",
+      "I",
+      "C"
+     ],
+     "low": "S"
+    },
+    "technologies": [
+     "autodesk-autocad"
+    ],
+    "skills": {
+     "2.C.3.d": 4
+    },
+    "hours_per_week": 15
+   }
+  },
+  {
+   "id": "E75",
+   "name": "Joyce",
+   "group": "jobseeker",
+   "story": "24, marketing graduate in Kuching, unemployed four months. Looking for digital marketing or sales roles.",
+   "profile": {
+    "kind": "student",
+    "education_job_zone": 4,
+    "fields": {
+     "41": 100,
+     "13": 50
+    },
+    "interest_types": {
+     "top": [
+      "E",
+      "S",
+      "C"
+     ],
+     "low": "I"
+    },
+    "technologies": [
+     "hubspot-software",
+     "canva"
+    ],
+    "skills": {
+     "2.C.1.d": 4
+    },
+    "hours_per_week": 15
+   }
+  },
+  {
+   "id": "E76",
+   "name": "Faridah",
+   "group": "jobseeker",
+   "story": "48, hotel housekeeper in Langkawi, laid off when the hotel closed; SPM. Looking for housekeeping, cleaning supervisor or laundry work nearby.",
+   "profile": {
+    "kind": "switcher",
+    "education_job_zone": 2,
+    "fields": {
+     "37": 100,
+     "39": 50
+    },
+    "interest_types": {
+     "top": [
+      "R",
+      "S",
+      "C"
+     ],
+     "low": "I"
+    },
+    "technologies": [],
+    "skills": {
+     "2.B.5.a": 3
+    },
+    "hours_per_week": 15,
+    "current_occupation": "37-2012.00"
+   }
+  },
+  {
+   "id": "E77",
+   "name": "Afiq",
+   "group": "jobseeker",
+   "story": "24, computer engineering graduate in Melaka, unemployed after a short contract. Looking for embedded software, firmware or IoT jobs.",
+   "profile": {
+    "kind": "student",
+    "education_job_zone": 4,
+    "fields": {
+     "15": 100,
+     "17": 40
+    },
+    "interest_types": {
+     "top": [
+      "I",
+      "R",
+      "C"
+     ],
+     "low": "S"
+    },
+    "technologies": [
+     "python",
+     "c-plus-plus",
+     "linux"
+    ],
+    "skills": {
+     "2.B.3.e": 4
+    },
+    "hours_per_week": 15
+   }
+  },
+  {
+   "id": "E78",
+   "name": "Christina",
+   "group": "jobseeker",
+   "story": "32, cashier in Kota Kinabalu with a diploma in business, looking for better work: bank teller, accounts clerk or office administration.",
+   "profile": {
+    "kind": "switcher",
+    "education_job_zone": 3,
+    "fields": {
+     "43": 100,
+     "41": 50
+    },
+    "interest_types": {
+     "top": [
+      "C",
+      "S",
+      "E"
+     ],
+     "low": "A"
+    },
+    "technologies": [
+     "microsoft-excel"
+    ],
+    "skills": {
+     "2.C.1.e": 4,
+     "2.C.1.b": 4
+    },
+    "hours_per_week": 15,
+    "current_occupation": "41-2011.00"
+   }
+  },
+  {
+   "id": "E79",
+   "name": "Yusof",
+   "group": "jobseeker",
+   "story": "19, SPM leaver in Pahang from a family of smallholders. Looking for work in plantations or agriculture, would take a certificate in agriculture.",
+   "profile": {
+    "kind": "student",
+    "education_job_zone": 2,
+    "fields": {
+     "45": 100,
+     "51": 40
+    },
+    "interest_types": {
+     "top": [
+      "R",
+      "I",
+      "C"
+     ],
+     "low": "E"
+    },
+    "technologies": [],
+    "skills": {
+     "2.C.2.b": 3
+    },
+    "hours_per_week": 15,
+    "study_levels": 1
+   }
+  },
+  {
+   "id": "E80",
+   "name": "Nadhirah",
+   "group": "jobseeker",
+   "story": "26, sociology graduate in Bangi, short research contracts only. Looking for research work: survey research, social science research assistant; would study a master's.",
+   "profile": {
+    "kind": "student",
+    "education_job_zone": 4,
+    "fields": {
+     "19": 100,
+     "25": 40
+    },
+    "interest_types": {
+     "top": [
+      "I",
+      "A",
+      "S"
+     ],
+     "low": "E"
+    },
+    "technologies": [
+     "r",
+     "ibm-spss-statistics"
+    ],
+    "skills": {
+     "2.A.1.e": 4,
+     "2.C.4.f": 4
+    },
+    "hours_per_week": 15,
+    "study_levels": 1
+   }
+  }
+ ]
+}

@@ -157,10 +157,15 @@ def mycol_links(occupations: dict, isco: dict) -> dict:
     """O*NET code -> (MyCOL status yes / near / no, the MyCOL occupation it is linked to).
 
     yes   the MyCOL list names the occupation itself (mycol_map.csv onet_codes), or its ISCO-08
-          unit group, found through an exact or close ESCO match
-    near  its ISCO-08 unit group is on the list but only through broad ESCO matches, or another
-          unit group of the same ISCO-08 minor group is on the list
-    no    neither"""
+          unit group, found through an exact or close ESCO match, or set by the reviewed table
+          data/isco_review.csv ("corrected", with its ESCO evidence)
+    near  its ISCO-08 unit group is on the list but only through broad ESCO matches, or through a
+          code the review could not confirm ("unverified": its Job Zone clashes with the group's
+          ISCO-08 skill level), or another unit group of the same ISCO-08 minor group is on the list
+    no    neither
+    MyCOL lists MASCO 4-digit unit groups (most of its titles are ISCO-08 unit group titles), so an
+    occupation's link is its membership of the group; data/mycol_links.csv lists every link with the
+    ESCO match behind it, for a person to check."""
     rows = read(DATA / "mycol_map.csv")
     by_isco = {r["isco"]: r["occupation"] for r in rows if r["isco"]}
     by_onet = {}
@@ -176,7 +181,7 @@ def mycol_links(occupations: dict, isco: dict) -> dict:
         if soc in by_onet:
             out[soc] = ("yes", by_onet[soc])
         elif code in by_isco:
-            out[soc] = ("near" if basis == "broad" else "yes", by_isco[code])
+            out[soc] = ("near" if basis in ("broad", "unverified") else "yes", by_isco[code])
         elif code and code[:3] in minors:
             out[soc] = ("near", minors[code[:3]])
         else:
@@ -240,6 +245,11 @@ def main() -> int:
             high[r["O*NET-SOC Code"]][HIGH_POINTS.index(r["Element ID"])] = int(float(r["Data Value"]))
     zones = {r["O*NET-SOC Code"]: r["Job Zone"] for r in read(db / "job_zones.csv")}
     isco, isco_titles = isco_codes(raw)
+    review = DATA / "isco_review.csv"   # scripts/isco_review.py: codes checked against ISCO-08 skill levels
+    if review.exists():
+        for r in read(review):
+            if r["occ_id"] in isco:
+                isco[r["occ_id"]] = (r["isco_after"], r["isco_title_after"], r["verdict"])
     mycol = mycol_links(keep, isco)
 
     occupations = []

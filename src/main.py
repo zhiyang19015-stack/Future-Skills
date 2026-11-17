@@ -581,7 +581,9 @@ def occupation_detail(req, occ_id: str):
     related = [{"occ_id": r, "title": data["by_id"][r]["title"], "field_id": data["by_id"][r]["field_id"]}
                for r in data["related"].get(occ_id, [])[:8]]
     d = data["demand"]["occupations"].get(occ_id)
-    return reply(occupation={k: occ[k] for k in ("occ_id", "title", "description", "field_id", "field_name", "job_zone",
+    every = data["demand"]["occupations"].values()
+    levels = {"values": len({round(v["demand"], 1) for v in every}), "occupations": len(every)}
+    return reply(demand_levels=levels,occupation={k: occ[k] for k in ("occ_id", "title", "description", "field_id", "field_name", "job_zone",
                                                  "riasec", "isco", "isco_title", "isco_basis", "masco_major", "mycol",
                                                  "mycol_occupation", "search_title")},
                  titles=[t["title"] for t in data["titles"].get(occ_id, [])][:10],
