@@ -111,4 +111,30 @@ Object.assign(STRINGS, {
   "home.flow.3": ["Build your next-step pathway", "Bina laluan langkah seterusnya", "规划下一步学习路线"],
   "home.flow.3.p": ["Free courses for your gaps, biggest gap first, with HRD Corp options shown apart.", "Kursus percuma untuk jurang anda, jurang terbesar dahulu, dengan pilihan HRD Corp ditunjukkan berasingan.", "针对你的缺口推荐免费课程，缺口最大的在前；HRD Corp 课程单独列出。"],
   "home.fictional": ["Fictional demo profile", "Profil demo rekaan", "虚构演示人物"],
+
+  /* app shell (redesign v2): sidebar, top bar, right rail, phone bottom bar */
+  "nav.home": ["Home", "Laman utama", "首页"],
+  "nav.group.path": ["Your path", "Laluan anda", "你的路线"],
+  "nav.group.tools": ["Tools", "Alatan", "工具"],
+  "nav.more": ["More", "Lagi", "更多"],
+  "shell.data": ["AI use data {0} · released {1}", "Data penggunaan AI {0} · dikeluarkan {1}", "AI 使用数据 {0} · 发布于 {1}"],
+  "shell.adopt": ["{0}% of the gap between today's AI use and full use closes by 2030", "{0}% jurang antara penggunaan AI hari ini dan penggunaan penuh ditutup menjelang 2030", "到 2030 年，今天的 AI 使用与全面使用之间的差距缩小 {0}%"],
+  "shell.demo.h": ["Whose answers", "Jawapan siapa", "谁的回答"],
+  "shell.demo.own": ["Use my own answers", "Guna jawapan saya sendiri", "改用我自己的回答"],
+  "shell.read.h": ["Reading the numbers", "Membaca angka", "怎么读这些数字"],
+  "shell.read.1": ["AI share: the part of a job's tasks people already hand to AI.", "Bahagian AI: bahagian tugas sesuatu kerja yang sudah diserahkan kepada AI.", "AI 份额：一份工作的任务中，人们已经交给 AI 的部分。"],
+  "shell.read.2": ["Outlook: demand and AI's effect by 2030, from 0 to 100.", "Prospek: permintaan dan kesan AI menjelang 2030, dari 0 hingga 100.", "前景：到 2030 年的需求与 AI 影响，0 到 100。"],
+  "shell.read.3": ["The small line under a number names its source and date.", "Baris kecil di bawah angka menamakan sumber dan tarikhnya.", "数字下面的小字写着它的来源和日期。"],
+
+  /* home (redesign v2): the exposure chart and the key numbers */
+  "home.viz.h": ["AI share by field", "Bahagian AI mengikut bidang", "各领域的 AI 份额"],
+  "home.viz.p": ["One bar per field: the share of its tasks people already hand to AI.", "Satu bar bagi setiap bidang: bahagian tugasnya yang sudah diserahkan kepada AI.", "每根柱子是一个领域：其任务中人们已交给 AI 的比例。"],
+  "home.viz.aria": ["Bar chart of AI share in {0} fields: highest {1} at {2}%, lowest {3} at {4}%.", "Carta bar bahagian AI dalam {0} bidang: tertinggi {1} pada {2}%, terendah {3} pada {4}%.", "{0} 个领域的 AI 份额柱状图：最高为{1} {2}%，最低为{3} {4}%。"],
+  "home.viz.hi": ["Higher AI share", "Bahagian AI lebih tinggi", "AI 份额较高"],
+  "home.viz.lo": ["Lower", "Lebih rendah", "较低"],
+  "home.kpi.occ": ["Occupations measured", "Pekerjaan yang diukur", "衡量的职业"],
+  "home.kpi.occ.p": ["In {0} fields of work, from the O*NET database.", "Dalam {0} bidang kerja, daripada pangkalan data O*NET.", "来自 O*NET 数据库，覆盖 {0} 个工作领域。"],
+  "home.kpi.split": ["Lose ground by {0}, moderate AI adoption", "Merosot menjelang {0}, penggunaan AI sederhana", "到 {0} 年走低的职业（AI 普及中等）"],
+  "home.kpi.work": ["AI use for work, Malaysia", "Penggunaan AI untuk kerja, Malaysia", "马来西亚用于工作的 AI 使用"],
+  "home.kpi.handoff": ["Handed over entirely, Malaysia", "Diserahkan sepenuhnya, Malaysia", "马来西亚整件交给 AI 的比例"],
 });
