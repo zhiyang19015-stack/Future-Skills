@@ -1,6 +1,6 @@
 {
  "date": "2026-11-17",
- "commit": "3695c79",
+ "commit": "f7e9499",
  "targets": {
   "first_move_changed": 3,
   "top5_changed": 4,
@@ -1728,7 +1728,7 @@
  },
  "languages": {
   "summary": {
-   "9. UI strings missing or falling back to English, BM / ZH (of 1185 rows)": "0 / 0",
+   "9. UI strings missing or falling back to English, BM / ZH (of 1194 rows)": "0 / 0",
    "9. Rows whose BM / ZH text is the English text": "0 / 0",
    "9. English text written into the page, not through i18n": 0,
    "9. SDG reasons shown in English only, BM / ZH (of 162)": "0 / 0",
@@ -1739,7 +1739,7 @@
    "9. Colour pairs below WCAG AA 4.5:1 (light + dark, of 46)": 0,
    "9. <html lang> follows the chosen language": "yes"
   },
-  "rows": 1185,
+  "rows": 1194,
   "totals": {
    "en": {
     "missing_key": 0,
