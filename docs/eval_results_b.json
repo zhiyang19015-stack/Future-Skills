@@ -1,0 +1,5592 @@
+{
+ "date": "2026-11-17",
+ "labels_sha256": "67fc77fe212a6e9b32199b23cb27e9da9e76fa44959446513e775a24202c52c3",
+ "label": "Synthetic data, not validated with real people.",
+ "versions": {
+  "now": {
+   "commit": "641f749",
+   "rows": [
+    {
+     "id": "E41",
+     "error": null,
+     "first": "Computer Numerically Controlled Tool Programmers",
+     "first_id": "51-9162.00",
+     "top5": [
+      "Computer Numerically Controlled Tool Programmers",
+      "Mechanical Engineering Technologists and Technicians",
+      "Medical Equipment Repairers",
+      "Electro-Mechanical and Mechatronics Technologists and Technicians",
+      "Photonics Technicians"
+     ],
+     "first_ok": true,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Computer Numerically Controlled Tool Programmers",
+      "Computer Numerically Controlled Tool Programmers"
+     ],
+     "plan": {
+      "resources": 19,
+      "listed": 21,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 2,
+      "should_not": 2,
+      "free": 19,
+      "non_english": 3
+     }
+    },
+    {
+     "id": "E42",
+     "error": null,
+     "first": "Registered Nurses",
+     "first_id": "29-1141.00",
+     "top5": [
+      "Registered Nurses",
+      "Acute Care Nurses",
+      "Ophthalmic Medical Technicians",
+      "Diagnostic Medical Sonographers",
+      "Magnetic Resonance Imaging Technologists"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [
+      "29-1141.00"
+     ],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Registered Nurses",
+      "Registered Nurses"
+     ],
+     "plan": {
+      "resources": 16,
+      "listed": 18,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 2,
+      "should_not": 2,
+      "free": 16,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E43",
+     "error": null,
+     "first": "Computer Numerically Controlled Tool Programmers",
+     "first_id": "51-9162.00",
+     "top5": [
+      "Computer Numerically Controlled Tool Programmers",
+      "Recycling Coordinators",
+      "Ship Engineers",
+      "Rail-Track Laying and Maintenance Equipment Operators",
+      "Energy Auditors"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Computer Numerically Controlled Tool Programmers",
+      "Computer Numerically Controlled Tool Programmers"
+     ],
+     "plan": {
+      "resources": 19,
+      "listed": 21,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 2,
+      "should_not": 2,
+      "free": 19,
+      "non_english": 3
+     }
+    },
+    {
+     "id": "E44",
+     "error": null,
+     "first": "Talent Directors",
+     "first_id": "27-2012.04",
+     "top5": [
+      "Talent Directors",
+      "Art Directors",
+      "Graphic Designers",
+      "Media Programming Directors",
+      "Special Effects Artists and Animators"
+     ],
+     "first_ok": false,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Talent Directors",
+      "Talent Directors"
+     ],
+     "plan": {
+      "resources": 18,
+      "listed": 19,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 1,
+      "should_not": 1,
+      "free": 18,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E45",
+     "error": null,
+     "first": "Financial Examiners",
+     "first_id": "13-2061.00",
+     "top5": [
+      "Financial Examiners",
+      "Budget Analysts",
+      "Logisticians",
+      "Fraud Examiners, Investigators and Analysts",
+      "Business Continuity Planners"
+     ],
+     "first_ok": true,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": true,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Budget Analysts",
+      "Financial Examiners"
+     ],
+     "plan": {
+      "resources": 17,
+      "listed": 20,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 3,
+      "should_not": 3,
+      "free": 17,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E46",
+     "error": null,
+     "first": "Occupational Therapy Aides",
+     "first_id": "31-2012.00",
+     "top5": [
+      "Occupational Therapy Aides",
+      "Occupational Therapy Assistants",
+      "Speech-Language Pathology Assistants",
+      "Registered Nurses",
+      "Medical Equipment Repairers"
+     ],
+     "first_ok": false,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Occupational Therapy Aides",
+      "Occupational Therapy Aides"
+     ],
+     "plan": {
+      "resources": 17,
+      "listed": 19,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 2,
+      "should_not": 2,
+      "free": 17,
+      "non_english": 3
+     }
+    },
+    {
+     "id": "E47",
+     "error": null,
+     "first": "Recycling Coordinators",
+     "first_id": "53-1042.01",
+     "top5": [
+      "Recycling Coordinators",
+      "Tax Preparers",
+      "Hosts and Hostesses, Restaurant, Lounge, and Coffee Shop",
+      "First-Line Supervisors of Food Preparation and Serving Workers",
+      "First-Line Supervisors of Production and Operating Workers"
+     ],
+     "first_ok": false,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Recycling Coordinators",
+      "Recycling Coordinators"
+     ],
+     "plan": {
+      "resources": 17,
+      "listed": 19,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 2,
+      "should_not": 2,
+      "free": 17,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E48",
+     "error": null,
+     "first": "Child, Family, and School Social Workers",
+     "first_id": "21-1021.00",
+     "top5": [
+      "Child, Family, and School Social Workers",
+      "Health Education Specialists",
+      "Registered Nurses",
+      "Music Therapists",
+      "Directors, Religious Activities and Education"
+     ],
+     "first_ok": true,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Child, Family, and School Social Workers",
+      "Child, Family, and School Social Workers"
+     ],
+     "plan": {
+      "resources": 15,
+      "listed": 18,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 3,
+      "should_not": 3,
+      "free": 15,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E49",
+     "error": null,
+     "first": "Medical Equipment Repairers",
+     "first_id": "49-9062.00",
+     "top5": [
+      "Medical Equipment Repairers",
+      "Computer Numerically Controlled Tool Programmers",
+      "Network and Computer Systems Administrators",
+      "Computer Systems Engineers/Architects",
+      "Electro-Mechanical and Mechatronics Technologists and Technicians"
+     ],
+     "first_ok": false,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Medical Equipment Repairers",
+      "Medical Equipment Repairers"
+     ],
+     "plan": {
+      "resources": 18,
+      "listed": 18,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 0,
+      "should_not": 0,
+      "free": 18,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E50",
+     "error": null,
+     "first": "Fuel Cell Engineers",
+     "first_id": "17-2141.01",
+     "top5": [
+      "Fuel Cell Engineers",
+      "Chemical Engineers",
+      "Materials Engineers",
+      "Mechatronics Engineers",
+      "Petroleum Engineers"
+     ],
+     "first_ok": false,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Fuel Cell Engineers",
+      "Fuel Cell Engineers"
+     ],
+     "plan": {
+      "resources": 19,
+      "listed": 19,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 0,
+      "should_not": 0,
+      "free": 19,
+      "non_english": 3
+     }
+    },
+    {
+     "id": "E51",
+     "error": null,
+     "first": "Computer Numerically Controlled Tool Programmers",
+     "first_id": "51-9162.00",
+     "top5": [
+      "Computer Numerically Controlled Tool Programmers",
+      "Tire Builders",
+      "Structural Metal Fabricators and Fitters",
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+      "Rail-Track Laying and Maintenance Equipment Operators"
+     ],
+     "first_ok": false,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Computer Numerically Controlled Tool Programmers",
+      "Computer Numerically Controlled Tool Programmers"
+     ],
+     "plan": {
+      "resources": 17,
+      "listed": 20,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 3,
+      "should_not": 3,
+      "free": 17,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E52",
+     "error": null,
+     "first": "Tax Preparers",
+     "first_id": "13-2082.00",
+     "top5": [
+      "Tax Preparers",
+      "Sales Representatives of Services, Except Advertising, Insurance, Financial Services, and Travel",
+      "Library Assistants, Clerical",
+      "Solar Sales Representatives and Assessors",
+      "Desktop Publishers"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Tax Preparers",
+      "Tax Preparers"
+     ],
+     "plan": {
+      "resources": 18,
+      "listed": 20,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 2,
+      "should_not": 2,
+      "free": 18,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E53",
+     "error": null,
+     "first": "Pharmacists",
+     "first_id": "29-1051.00",
+     "top5": [
+      "Pharmacists",
+      "Physical Therapists",
+      "Physical Medicine and Rehabilitation Physicians",
+      "Nurse Practitioners",
+      "History Teachers, Postsecondary"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": true,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Physical Medicine and Rehabilitation Physicians",
+      "Pharmacists"
+     ],
+     "plan": {
+      "resources": 20,
+      "listed": 20,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 0,
+      "should_not": 0,
+      "free": 20,
+      "non_english": 3
+     }
+    },
+    {
+     "id": "E54",
+     "error": null,
+     "first": "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+     "first_id": "53-4022.00",
+     "top5": [
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+      "Computer Numerically Controlled Tool Programmers",
+      "Industrial Truck and Tractor Operators",
+      "Medical Equipment Repairers",
+      "Rail-Track Laying and Maintenance Equipment Operators"
+     ],
+     "first_ok": false,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers"
+     ],
+     "plan": {
+      "resources": 13,
+      "listed": 13,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 0,
+      "should_not": 0,
+      "free": 13,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E55",
+     "error": null,
+     "first": "Budget Analysts",
+     "first_id": "13-2031.00",
+     "top5": [
+      "Budget Analysts",
+      "Tax Preparers",
+      "Financial Examiners",
+      "Fraud Examiners, Investigators and Analysts",
+      "Actuaries"
+     ],
+     "first_ok": true,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Budget Analysts",
+      "Budget Analysts"
+     ],
+     "plan": {
+      "resources": 12,
+      "listed": 12,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 0,
+      "should_not": 0,
+      "free": 12,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E56",
+     "error": null,
+     "first": "Computer Numerically Controlled Tool Programmers",
+     "first_id": "51-9162.00",
+     "top5": [
+      "Computer Numerically Controlled Tool Programmers",
+      "Medical Equipment Repairers",
+      "Bus and Truck Mechanics and Diesel Engine Specialists",
+      "Maintenance Workers, Machinery",
+      "Rail-Track Laying and Maintenance Equipment Operators"
+     ],
+     "first_ok": false,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Computer Numerically Controlled Tool Programmers",
+      "Computer Numerically Controlled Tool Programmers"
+     ],
+     "plan": {
+      "resources": 18,
+      "listed": 21,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 3,
+      "should_not": 3,
+      "free": 18,
+      "non_english": 3
+     }
+    },
+    {
+     "id": "E57",
+     "error": null,
+     "first": "Digital Forensics Analysts",
+     "first_id": "15-1299.06",
+     "top5": [
+      "Digital Forensics Analysts",
+      "Data Scientists",
+      "Validation Engineers",
+      "Mechatronics Engineers",
+      "Information Security Engineers"
+     ],
+     "first_ok": false,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Digital Forensics Analysts",
+      "Digital Forensics Analysts"
+     ],
+     "plan": {
+      "resources": 15,
+      "listed": 16,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 1,
+      "should_not": 1,
+      "free": 15,
+      "non_english": 3
+     }
+    },
+    {
+     "id": "E58",
+     "error": null,
+     "first": "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+     "first_id": "53-4022.00",
+     "top5": [
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+      "Computer Numerically Controlled Tool Programmers",
+      "Recycling Coordinators",
+      "Rail-Track Laying and Maintenance Equipment Operators",
+      "Dining Room and Cafeteria Attendants and Bartender Helpers"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers"
+     ],
+     "plan": {
+      "resources": 11,
+      "listed": 12,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 1,
+      "should_not": 1,
+      "free": 11,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E59",
+     "error": null,
+     "first": "Adult Basic Education, Adult Secondary Education, and English as a Second Language Instructors",
+     "first_id": "25-3011.00",
+     "top5": [
+      "Adult Basic Education, Adult Secondary Education, and English as a Second Language Instructors",
+      "Talent Directors",
+      "Kindergarten Teachers, Except Special Education",
+      "Special Education Teachers, Kindergarten",
+      "Special Education Teachers, Preschool"
+     ],
+     "first_ok": true,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Adult Basic Education, Adult Secondary Education, and English as a Second Language Instructors",
+      "Adult Basic Education, Adult Secondary Education, and English as a Second Language Instructors"
+     ],
+     "plan": {
+      "resources": 11,
+      "listed": 11,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 0,
+      "should_not": 0,
+      "free": 11,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E60",
+     "error": null,
+     "first": "Sales Representatives of Services, Except Advertising, Insurance, Financial Services, and Travel",
+     "first_id": "41-3091.00",
+     "top5": [
+      "Sales Representatives of Services, Except Advertising, Insurance, Financial Services, and Travel",
+      "Tax Preparers",
+      "Solar Sales Representatives and Assessors",
+      "Advertising Sales Agents",
+      "Desktop Publishers"
+     ],
+     "first_ok": true,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": true,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Sales Representatives of Services, Except Advertising, Insurance, Financial Services, and Travel",
+      "Tax Preparers"
+     ],
+     "plan": {
+      "resources": 15,
+      "listed": 16,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 1,
+      "should_not": 1,
+      "free": 15,
+      "non_english": 3
+     }
+    },
+    {
+     "id": "E61",
+     "error": null,
+     "first": "Medical Equipment Repairers",
+     "first_id": "49-9062.00",
+     "top5": [
+      "Medical Equipment Repairers",
+      "Computer Numerically Controlled Tool Programmers",
+      "Surveying and Mapping Technicians",
+      "Civil Engineering Technologists and Technicians",
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Medical Equipment Repairers",
+      "Medical Equipment Repairers"
+     ],
+     "plan": {
+      "resources": 17,
+      "listed": 18,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 1,
+      "should_not": 1,
+      "free": 17,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E62",
+     "error": null,
+     "first": "Talent Directors",
+     "first_id": "27-2012.04",
+     "top5": [
+      "Talent Directors",
+      "Graphic Designers",
+      "Art Directors",
+      "Special Effects Artists and Animators",
+      "Fashion Designers"
+     ],
+     "first_ok": false,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": true,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Special Effects Artists and Animators",
+      "Talent Directors"
+     ],
+     "plan": {
+      "resources": 18,
+      "listed": 19,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 1,
+      "should_not": 1,
+      "free": 18,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E63",
+     "error": null,
+     "first": "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+     "first_id": "53-4022.00",
+     "top5": [
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+      "Computer Numerically Controlled Tool Programmers",
+      "Medical Equipment Repairers",
+      "Rail-Track Laying and Maintenance Equipment Operators",
+      "Recycling Coordinators"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": true,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Computer Numerically Controlled Tool Programmers",
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers"
+     ],
+     "plan": {
+      "resources": 13,
+      "listed": 14,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 1,
+      "should_not": 1,
+      "free": 13,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E64",
+     "error": null,
+     "first": "Occupational Therapy Aides",
+     "first_id": "31-2012.00",
+     "top5": [
+      "Occupational Therapy Aides",
+      "Occupational Therapy Assistants",
+      "Speech-Language Pathology Assistants",
+      "Computer Numerically Controlled Tool Programmers",
+      "Ophthalmic Medical Technicians"
+     ],
+     "first_ok": true,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Occupational Therapy Aides",
+      "Occupational Therapy Aides"
+     ],
+     "plan": {
+      "resources": 17,
+      "listed": 19,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 2,
+      "should_not": 2,
+      "free": 17,
+      "non_english": 3
+     }
+    },
+    {
+     "id": "E65",
+     "error": null,
+     "first": "Digital Forensics Analysts",
+     "first_id": "15-1299.06",
+     "top5": [
+      "Digital Forensics Analysts",
+      "Actuaries",
+      "Data Scientists",
+      "Business Intelligence Analysts",
+      "Information Security Engineers"
+     ],
+     "first_ok": false,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": true,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Actuaries",
+      "Digital Forensics Analysts"
+     ],
+     "plan": {
+      "resources": 17,
+      "listed": 18,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 1,
+      "should_not": 1,
+      "free": 17,
+      "non_english": 3
+     }
+    },
+    {
+     "id": "E66",
+     "error": null,
+     "first": "Preschool Teachers, Except Special Education",
+     "first_id": "25-2011.00",
+     "top5": [
+      "Preschool Teachers, Except Special Education",
+      "Tutors",
+      "Tax Preparers",
+      "Desktop Publishers",
+      "Speech-Language Pathology Assistants"
+     ],
+     "first_ok": true,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": true,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Tutors",
+      "Preschool Teachers, Except Special Education"
+     ],
+     "plan": {
+      "resources": 18,
+      "listed": 20,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 2,
+      "should_not": 2,
+      "free": 18,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E67",
+     "error": null,
+     "first": "Talent Directors",
+     "first_id": "27-2012.04",
+     "top5": [
+      "Talent Directors",
+      "Preschool Teachers, Except Special Education",
+      "Adult Basic Education, Adult Secondary Education, and English as a Second Language Instructors",
+      "Special Education Teachers, Preschool",
+      "Registered Nurses"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Talent Directors",
+      "Talent Directors"
+     ],
+     "plan": {
+      "resources": 18,
+      "listed": 21,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 3,
+      "should_not": 3,
+      "free": 18,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E68",
+     "error": null,
+     "first": "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+     "first_id": "53-4022.00",
+     "top5": [
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+      "Computer Numerically Controlled Tool Programmers",
+      "Industrial Truck and Tractor Operators",
+      "Recycling Coordinators",
+      "Ship Engineers"
+     ],
+     "first_ok": false,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers"
+     ],
+     "plan": {
+      "resources": 18,
+      "listed": 18,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 0,
+      "should_not": 0,
+      "free": 18,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E69",
+     "error": null,
+     "first": "Personal Financial Advisors",
+     "first_id": "13-2052.00",
+     "top5": [
+      "Personal Financial Advisors",
+      "Financial Examiners",
+      "Budget Analysts",
+      "Fraud Examiners, Investigators and Analysts",
+      "Business Continuity Planners"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": true,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Personal Financial Advisors",
+      "Financial Examiners"
+     ],
+     "plan": {
+      "resources": 18,
+      "listed": 20,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 2,
+      "should_not": 2,
+      "free": 18,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E70",
+     "error": null,
+     "first": "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+     "first_id": "53-4022.00",
+     "top5": [
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+      "Fire Inspectors and Investigators",
+      "Medical Equipment Repairers",
+      "Recycling Coordinators",
+      "Occupational Therapy Aides"
+     ],
+     "first_ok": false,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": true,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+      "Medical Equipment Repairers"
+     ],
+     "plan": {
+      "resources": 11,
+      "listed": 12,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 1,
+      "should_not": 1,
+      "free": 11,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E71",
+     "error": null,
+     "first": "Budget Analysts",
+     "first_id": "13-2031.00",
+     "top5": [
+      "Budget Analysts",
+      "Financial Examiners",
+      "Tax Preparers",
+      "Personal Financial Advisors",
+      "Business Continuity Planners"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Budget Analysts",
+      "Budget Analysts"
+     ],
+     "plan": {
+      "resources": 19,
+      "listed": 20,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 1,
+      "should_not": 1,
+      "free": 19,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E72",
+     "error": null,
+     "first": "Computer Numerically Controlled Tool Programmers",
+     "first_id": "51-9162.00",
+     "top5": [
+      "Computer Numerically Controlled Tool Programmers",
+      "Tire Builders",
+      "Rail-Track Laying and Maintenance Equipment Operators",
+      "Structural Metal Fabricators and Fitters",
+      "Tire Repairers and Changers"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Computer Numerically Controlled Tool Programmers",
+      "Computer Numerically Controlled Tool Programmers"
+     ],
+     "plan": {
+      "resources": 17,
+      "listed": 21,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 4,
+      "should_not": 4,
+      "free": 17,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E73",
+     "error": null,
+     "first": "Human Resources Managers",
+     "first_id": "11-3121.00",
+     "top5": [
+      "Human Resources Managers",
+      "Sales Managers",
+      "General and Operations Managers",
+      "Fundraising Managers",
+      "Advertising and Promotions Managers"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Human Resources Managers",
+      "Human Resources Managers"
+     ],
+     "plan": {
+      "resources": 16,
+      "listed": 19,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 3,
+      "should_not": 3,
+      "free": 16,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E74",
+     "error": null,
+     "first": "Computer Numerically Controlled Tool Programmers",
+     "first_id": "51-9162.00",
+     "top5": [
+      "Computer Numerically Controlled Tool Programmers",
+      "Mechanical Engineering Technologists and Technicians",
+      "Civil Engineering Technologists and Technicians",
+      "Photonics Technicians",
+      "Electrical and Electronic Engineering Technologists and Technicians"
+     ],
+     "first_ok": false,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Computer Numerically Controlled Tool Programmers",
+      "Computer Numerically Controlled Tool Programmers"
+     ],
+     "plan": {
+      "resources": 19,
+      "listed": 21,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 2,
+      "should_not": 2,
+      "free": 19,
+      "non_english": 3
+     }
+    },
+    {
+     "id": "E75",
+     "error": null,
+     "first": "Sales Managers",
+     "first_id": "11-2022.00",
+     "top5": [
+      "Sales Managers",
+      "General and Operations Managers",
+      "Human Resources Managers",
+      "Advertising and Promotions Managers",
+      "Fundraising Managers"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Sales Managers",
+      "Sales Managers"
+     ],
+     "plan": {
+      "resources": 18,
+      "listed": 19,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 1,
+      "should_not": 1,
+      "free": 18,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E76",
+     "error": null,
+     "first": "Dining Room and Cafeteria Attendants and Bartender Helpers",
+     "first_id": "35-9011.00",
+     "top5": [
+      "Dining Room and Cafeteria Attendants and Bartender Helpers",
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+      "Computer Numerically Controlled Tool Programmers",
+      "Food Preparation Workers",
+      "Rail-Track Laying and Maintenance Equipment Operators"
+     ],
+     "first_ok": true,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Dining Room and Cafeteria Attendants and Bartender Helpers",
+      "Dining Room and Cafeteria Attendants and Bartender Helpers"
+     ],
+     "plan": {
+      "resources": 16,
+      "listed": 17,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 1,
+      "should_not": 1,
+      "free": 16,
+      "non_english": 3
+     }
+    },
+    {
+     "id": "E77",
+     "error": null,
+     "first": "Digital Forensics Analysts",
+     "first_id": "15-1299.06",
+     "top5": [
+      "Digital Forensics Analysts",
+      "Computer Network Architects",
+      "Information Security Engineers",
+      "Penetration Testers",
+      "Materials Scientists"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Digital Forensics Analysts",
+      "Digital Forensics Analysts"
+     ],
+     "plan": {
+      "resources": 17,
+      "listed": 19,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 2,
+      "should_not": 2,
+      "free": 17,
+      "non_english": 3
+     }
+    },
+    {
+     "id": "E78",
+     "error": null,
+     "first": "Tax Preparers",
+     "first_id": "13-2082.00",
+     "top5": [
+      "Tax Preparers",
+      "Library Assistants, Clerical",
+      "Telephone Operators",
+      "Desktop Publishers",
+      "Receptionists and Information Clerks"
+     ],
+     "first_ok": false,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Tax Preparers",
+      "Tax Preparers"
+     ],
+     "plan": {
+      "resources": 20,
+      "listed": 22,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 2,
+      "should_not": 2,
+      "free": 20,
+      "non_english": 3
+     }
+    },
+    {
+     "id": "E79",
+     "error": null,
+     "first": "Medical Equipment Repairers",
+     "first_id": "49-9062.00",
+     "top5": [
+      "Medical Equipment Repairers",
+      "Mechanical Engineering Technologists and Technicians",
+      "Electrical and Electronic Engineering Technologists and Technicians",
+      "Electro-Mechanical and Mechatronics Technologists and Technicians",
+      "Automotive Engineering Technicians"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Medical Equipment Repairers",
+      "Medical Equipment Repairers"
+     ],
+     "plan": {
+      "resources": 19,
+      "listed": 19,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 0,
+      "should_not": 0,
+      "free": 19,
+      "non_english": 3
+     }
+    },
+    {
+     "id": "E80",
+     "error": null,
+     "first": "Materials Scientists",
+     "first_id": "19-2032.00",
+     "top5": [
+      "Materials Scientists",
+      "Physical Medicine and Rehabilitation Physicians",
+      "Chemists",
+      "Sociology Teachers, Postsecondary",
+      "Anthropology and Archeology Teachers, Postsecondary"
+     ],
+     "first_ok": false,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Materials Scientists",
+      "Materials Scientists"
+     ],
+     "plan": {
+      "resources": 20,
+      "listed": 22,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 2,
+      "should_not": 2,
+      "free": 20,
+      "non_english": 3
+     }
+    }
+   ],
+   "summary": {
+    "all": {
+     "people": 40,
+     "first_ok": {
+      "k": 9,
+      "n": 40,
+      "pct": 22.5,
+      "ci": [
+       12.3,
+       37.5
+      ]
+     },
+     "top5_ok": {
+      "k": 25,
+      "n": 40,
+      "pct": 62.5,
+      "ci": [
+       47.0,
+       75.8
+      ]
+     },
+     "top5_bad": {
+      "k": 1,
+      "n": 40,
+      "pct": 2.5,
+      "ci": [
+       0.4,
+       12.9
+      ]
+     },
+     "first_changed": {
+      "k": 9,
+      "n": 40,
+      "pct": 22.5,
+      "ci": [
+       12.3,
+       37.5
+      ]
+     },
+     "top5_set_changed": {
+      "k": 20,
+      "n": 40,
+      "pct": 50.0,
+      "ci": [
+       35.2,
+       64.8
+      ]
+     },
+     "resources": 671,
+     "listed": 731,
+     "should_not": 60,
+     "should_not_by_rule": {
+      "job_search_for_working": 0,
+      "paid_in_plan": 0,
+      "already_have": 0,
+      "duplicates": 60
+     },
+     "free": {
+      "k": 671,
+      "n": 671,
+      "pct": 100.0,
+      "ci": [
+       99.4,
+       100.0
+      ]
+     },
+     "non_english": {
+      "k": 96,
+      "n": 671,
+      "pct": 14.3,
+      "ci": [
+       11.9,
+       17.2
+      ]
+     },
+     "no_plan": 0,
+     "distinct_first": 22,
+     "common_first": [
+      [
+       "Computer Numerically Controlled Tool Programmers",
+       6
+      ],
+      [
+       "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+       5
+      ],
+      [
+       "Digital Forensics Analysts",
+       3
+      ],
+      [
+       "Medical Equipment Repairers",
+       3
+      ],
+      [
+       "Talent Directors",
+       3
+      ]
+     ],
+     "errors": 0
+    },
+    "student": {
+     "people": 10,
+     "first_ok": {
+      "k": 3,
+      "n": 10,
+      "pct": 30.0,
+      "ci": [
+       10.8,
+       60.3
+      ]
+     },
+     "top5_ok": {
+      "k": 8,
+      "n": 10,
+      "pct": 80.0,
+      "ci": [
+       49.0,
+       94.3
+      ]
+     },
+     "top5_bad": {
+      "k": 1,
+      "n": 10,
+      "pct": 10.0,
+      "ci": [
+       1.8,
+       40.4
+      ]
+     },
+     "first_changed": {
+      "k": 1,
+      "n": 10,
+      "pct": 10.0,
+      "ci": [
+       1.8,
+       40.4
+      ]
+     },
+     "top5_set_changed": {
+      "k": 4,
+      "n": 10,
+      "pct": 40.0,
+      "ci": [
+       16.8,
+       68.7
+      ]
+     },
+     "resources": 175,
+     "listed": 192,
+     "should_not": 17,
+     "should_not_by_rule": {
+      "job_search_for_working": 0,
+      "paid_in_plan": 0,
+      "already_have": 0,
+      "duplicates": 17
+     },
+     "free": {
+      "k": 175,
+      "n": 175,
+      "pct": 100.0,
+      "ci": [
+       97.9,
+       100.0
+      ]
+     },
+     "non_english": {
+      "k": 24,
+      "n": 175,
+      "pct": 13.7,
+      "ci": [
+       9.4,
+       19.6
+      ]
+     },
+     "no_plan": 0,
+     "distinct_first": 9,
+     "common_first": [
+      [
+       "Computer Numerically Controlled Tool Programmers",
+       2
+      ],
+      [
+       "Child, Family, and School Social Workers",
+       1
+      ],
+      [
+       "Financial Examiners",
+       1
+      ],
+      [
+       "Fuel Cell Engineers",
+       1
+      ],
+      [
+       "Medical Equipment Repairers",
+       1
+      ]
+     ],
+     "errors": 0
+    },
+    "working": {
+     "people": 10,
+     "first_ok": {
+      "k": 3,
+      "n": 10,
+      "pct": 30.0,
+      "ci": [
+       10.8,
+       60.3
+      ]
+     },
+     "top5_ok": {
+      "k": 7,
+      "n": 10,
+      "pct": 70.0,
+      "ci": [
+       39.7,
+       89.2
+      ]
+     },
+     "top5_bad": {
+      "k": 0,
+      "n": 10,
+      "pct": 0.0,
+      "ci": [
+       0.0,
+       27.8
+      ]
+     },
+     "first_changed": {
+      "k": 2,
+      "n": 10,
+      "pct": 20.0,
+      "ci": [
+       5.7,
+       51.0
+      ]
+     },
+     "top5_set_changed": {
+      "k": 5,
+      "n": 10,
+      "pct": 50.0,
+      "ci": [
+       23.7,
+       76.3
+      ]
+     },
+     "resources": 150,
+     "listed": 161,
+     "should_not": 11,
+     "should_not_by_rule": {
+      "job_search_for_working": 0,
+      "paid_in_plan": 0,
+      "already_have": 0,
+      "duplicates": 11
+     },
+     "free": {
+      "k": 150,
+      "n": 150,
+      "pct": 100.0,
+      "ci": [
+       97.5,
+       100.0
+      ]
+     },
+     "non_english": {
+      "k": 24,
+      "n": 150,
+      "pct": 16.0,
+      "ci": [
+       11.0,
+       22.7
+      ]
+     },
+     "no_plan": 0,
+     "distinct_first": 8,
+     "common_first": [
+      [
+       "Computer Numerically Controlled Tool Programmers",
+       2
+      ],
+      [
+       "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+       2
+      ],
+      [
+       "Adult Basic Education, Adult Secondary Education, and English as a Second Language Instructors",
+       1
+      ],
+      [
+       "Budget Analysts",
+       1
+      ],
+      [
+       "Digital Forensics Analysts",
+       1
+      ]
+     ],
+     "errors": 0
+    },
+    "switcher": {
+     "people": 10,
+     "first_ok": {
+      "k": 2,
+      "n": 10,
+      "pct": 20.0,
+      "ci": [
+       5.7,
+       51.0
+      ]
+     },
+     "top5_ok": {
+      "k": 6,
+      "n": 10,
+      "pct": 60.0,
+      "ci": [
+       31.3,
+       83.2
+      ]
+     },
+     "top5_bad": {
+      "k": 0,
+      "n": 10,
+      "pct": 0.0,
+      "ci": [
+       0.0,
+       27.8
+      ]
+     },
+     "first_changed": {
+      "k": 6,
+      "n": 10,
+      "pct": 60.0,
+      "ci": [
+       31.3,
+       83.2
+      ]
+     },
+     "top5_set_changed": {
+      "k": 4,
+      "n": 10,
+      "pct": 40.0,
+      "ci": [
+       16.8,
+       68.7
+      ]
+     },
+     "resources": 165,
+     "listed": 179,
+     "should_not": 14,
+     "should_not_by_rule": {
+      "job_search_for_working": 0,
+      "paid_in_plan": 0,
+      "already_have": 0,
+      "duplicates": 14
+     },
+     "free": {
+      "k": 165,
+      "n": 165,
+      "pct": 100.0,
+      "ci": [
+       97.7,
+       100.0
+      ]
+     },
+     "non_english": {
+      "k": 22,
+      "n": 165,
+      "pct": 13.3,
+      "ci": [
+       9.0,
+       19.4
+      ]
+     },
+     "no_plan": 0,
+     "distinct_first": 7,
+     "common_first": [
+      [
+       "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+       3
+      ],
+      [
+       "Talent Directors",
+       2
+      ],
+      [
+       "Digital Forensics Analysts",
+       1
+      ],
+      [
+       "Medical Equipment Repairers",
+       1
+      ],
+      [
+       "Occupational Therapy Aides",
+       1
+      ]
+     ],
+     "errors": 0
+    },
+    "jobseeker": {
+     "people": 10,
+     "first_ok": {
+      "k": 1,
+      "n": 10,
+      "pct": 10.0,
+      "ci": [
+       1.8,
+       40.4
+      ]
+     },
+     "top5_ok": {
+      "k": 4,
+      "n": 10,
+      "pct": 40.0,
+      "ci": [
+       16.8,
+       68.7
+      ]
+     },
+     "top5_bad": {
+      "k": 0,
+      "n": 10,
+      "pct": 0.0,
+      "ci": [
+       0.0,
+       27.8
+      ]
+     },
+     "first_changed": {
+      "k": 0,
+      "n": 10,
+      "pct": 0.0,
+      "ci": [
+       0.0,
+       27.8
+      ]
+     },
+     "top5_set_changed": {
+      "k": 7,
+      "n": 10,
+      "pct": 70.0,
+      "ci": [
+       39.7,
+       89.2
+      ]
+     },
+     "resources": 181,
+     "listed": 199,
+     "should_not": 18,
+     "should_not_by_rule": {
+      "job_search_for_working": 0,
+      "paid_in_plan": 0,
+      "already_have": 0,
+      "duplicates": 18
+     },
+     "free": {
+      "k": 181,
+      "n": 181,
+      "pct": 100.0,
+      "ci": [
+       97.9,
+       100.0
+      ]
+     },
+     "non_english": {
+      "k": 26,
+      "n": 181,
+      "pct": 14.4,
+      "ci": [
+       10.0,
+       20.2
+      ]
+     },
+     "no_plan": 0,
+     "distinct_first": 9,
+     "common_first": [
+      [
+       "Computer Numerically Controlled Tool Programmers",
+       2
+      ],
+      [
+       "Budget Analysts",
+       1
+      ],
+      [
+       "Digital Forensics Analysts",
+       1
+      ],
+      [
+       "Dining Room and Cafeteria Attendants and Bartender Helpers",
+       1
+      ],
+      [
+       "Human Resources Managers",
+       1
+      ]
+     ],
+     "errors": 0
+    }
+   }
+  },
+  "v2_before": {
+   "commit": "641f749",
+   "rows": [
+    {
+     "id": "E41",
+     "error": null,
+     "first": "Computer Numerically Controlled Tool Programmers",
+     "first_id": "51-9162.00",
+     "top5": [
+      "Computer Numerically Controlled Tool Programmers",
+      "Mechanical Engineering Technologists and Technicians",
+      "Medical Equipment Repairers",
+      "Electro-Mechanical and Mechatronics Technologists and Technicians",
+      "Photonics Technicians"
+     ],
+     "first_ok": true,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Computer Numerically Controlled Tool Programmers",
+      "Computer Numerically Controlled Tool Programmers"
+     ],
+     "plan": {
+      "resources": 19,
+      "listed": 21,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 2,
+      "should_not": 2,
+      "free": 19,
+      "non_english": 3
+     }
+    },
+    {
+     "id": "E42",
+     "error": null,
+     "first": "Registered Nurses",
+     "first_id": "29-1141.00",
+     "top5": [
+      "Registered Nurses",
+      "Acute Care Nurses",
+      "Ophthalmic Medical Technicians",
+      "Diagnostic Medical Sonographers",
+      "Magnetic Resonance Imaging Technologists"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [
+      "29-1141.00"
+     ],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Registered Nurses",
+      "Registered Nurses"
+     ],
+     "plan": {
+      "resources": 16,
+      "listed": 18,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 2,
+      "should_not": 2,
+      "free": 16,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E43",
+     "error": null,
+     "first": "Computer Numerically Controlled Tool Programmers",
+     "first_id": "51-9162.00",
+     "top5": [
+      "Computer Numerically Controlled Tool Programmers",
+      "Recycling Coordinators",
+      "Ship Engineers",
+      "Rail-Track Laying and Maintenance Equipment Operators",
+      "Energy Auditors"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Computer Numerically Controlled Tool Programmers",
+      "Computer Numerically Controlled Tool Programmers"
+     ],
+     "plan": {
+      "resources": 19,
+      "listed": 21,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 2,
+      "should_not": 2,
+      "free": 19,
+      "non_english": 3
+     }
+    },
+    {
+     "id": "E44",
+     "error": null,
+     "first": "Talent Directors",
+     "first_id": "27-2012.04",
+     "top5": [
+      "Talent Directors",
+      "Art Directors",
+      "Graphic Designers",
+      "Media Programming Directors",
+      "Special Effects Artists and Animators"
+     ],
+     "first_ok": false,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Talent Directors",
+      "Talent Directors"
+     ],
+     "plan": {
+      "resources": 18,
+      "listed": 19,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 1,
+      "should_not": 1,
+      "free": 18,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E45",
+     "error": null,
+     "first": "Financial Examiners",
+     "first_id": "13-2061.00",
+     "top5": [
+      "Financial Examiners",
+      "Budget Analysts",
+      "Logisticians",
+      "Fraud Examiners, Investigators and Analysts",
+      "Business Continuity Planners"
+     ],
+     "first_ok": true,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": true,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Budget Analysts",
+      "Financial Examiners"
+     ],
+     "plan": {
+      "resources": 17,
+      "listed": 20,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 3,
+      "should_not": 3,
+      "free": 17,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E46",
+     "error": null,
+     "first": "Occupational Therapy Aides",
+     "first_id": "31-2012.00",
+     "top5": [
+      "Occupational Therapy Aides",
+      "Occupational Therapy Assistants",
+      "Speech-Language Pathology Assistants",
+      "Registered Nurses",
+      "Medical Equipment Repairers"
+     ],
+     "first_ok": false,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Occupational Therapy Aides",
+      "Occupational Therapy Aides"
+     ],
+     "plan": {
+      "resources": 17,
+      "listed": 19,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 2,
+      "should_not": 2,
+      "free": 17,
+      "non_english": 3
+     }
+    },
+    {
+     "id": "E47",
+     "error": null,
+     "first": "Recycling Coordinators",
+     "first_id": "53-1042.01",
+     "top5": [
+      "Recycling Coordinators",
+      "Tax Preparers",
+      "Hosts and Hostesses, Restaurant, Lounge, and Coffee Shop",
+      "First-Line Supervisors of Food Preparation and Serving Workers",
+      "First-Line Supervisors of Production and Operating Workers"
+     ],
+     "first_ok": false,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Recycling Coordinators",
+      "Recycling Coordinators"
+     ],
+     "plan": {
+      "resources": 17,
+      "listed": 19,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 2,
+      "should_not": 2,
+      "free": 17,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E48",
+     "error": null,
+     "first": "Child, Family, and School Social Workers",
+     "first_id": "21-1021.00",
+     "top5": [
+      "Child, Family, and School Social Workers",
+      "Health Education Specialists",
+      "Registered Nurses",
+      "Music Therapists",
+      "Directors, Religious Activities and Education"
+     ],
+     "first_ok": true,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Child, Family, and School Social Workers",
+      "Child, Family, and School Social Workers"
+     ],
+     "plan": {
+      "resources": 15,
+      "listed": 18,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 3,
+      "should_not": 3,
+      "free": 15,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E49",
+     "error": null,
+     "first": "Medical Equipment Repairers",
+     "first_id": "49-9062.00",
+     "top5": [
+      "Medical Equipment Repairers",
+      "Computer Numerically Controlled Tool Programmers",
+      "Network and Computer Systems Administrators",
+      "Computer Systems Engineers/Architects",
+      "Electro-Mechanical and Mechatronics Technologists and Technicians"
+     ],
+     "first_ok": false,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Medical Equipment Repairers",
+      "Medical Equipment Repairers"
+     ],
+     "plan": {
+      "resources": 18,
+      "listed": 18,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 0,
+      "should_not": 0,
+      "free": 18,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E50",
+     "error": null,
+     "first": "Fuel Cell Engineers",
+     "first_id": "17-2141.01",
+     "top5": [
+      "Fuel Cell Engineers",
+      "Chemical Engineers",
+      "Materials Engineers",
+      "Mechatronics Engineers",
+      "Petroleum Engineers"
+     ],
+     "first_ok": false,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Fuel Cell Engineers",
+      "Fuel Cell Engineers"
+     ],
+     "plan": {
+      "resources": 19,
+      "listed": 19,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 0,
+      "should_not": 0,
+      "free": 19,
+      "non_english": 3
+     }
+    },
+    {
+     "id": "E51",
+     "error": null,
+     "first": "Computer Numerically Controlled Tool Programmers",
+     "first_id": "51-9162.00",
+     "top5": [
+      "Computer Numerically Controlled Tool Programmers",
+      "Tire Builders",
+      "Structural Metal Fabricators and Fitters",
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+      "Rail-Track Laying and Maintenance Equipment Operators"
+     ],
+     "first_ok": false,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Computer Numerically Controlled Tool Programmers",
+      "Computer Numerically Controlled Tool Programmers"
+     ],
+     "plan": {
+      "resources": 17,
+      "listed": 20,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 3,
+      "should_not": 3,
+      "free": 17,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E52",
+     "error": null,
+     "first": "Tax Preparers",
+     "first_id": "13-2082.00",
+     "top5": [
+      "Tax Preparers",
+      "Sales Representatives of Services, Except Advertising, Insurance, Financial Services, and Travel",
+      "Library Assistants, Clerical",
+      "Solar Sales Representatives and Assessors",
+      "Desktop Publishers"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Tax Preparers",
+      "Tax Preparers"
+     ],
+     "plan": {
+      "resources": 18,
+      "listed": 20,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 2,
+      "should_not": 2,
+      "free": 18,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E53",
+     "error": null,
+     "first": "Pharmacists",
+     "first_id": "29-1051.00",
+     "top5": [
+      "Pharmacists",
+      "Physical Therapists",
+      "Physical Medicine and Rehabilitation Physicians",
+      "Nurse Practitioners",
+      "History Teachers, Postsecondary"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": true,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Physical Medicine and Rehabilitation Physicians",
+      "Pharmacists"
+     ],
+     "plan": {
+      "resources": 20,
+      "listed": 20,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 0,
+      "should_not": 0,
+      "free": 20,
+      "non_english": 3
+     }
+    },
+    {
+     "id": "E54",
+     "error": null,
+     "first": "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+     "first_id": "53-4022.00",
+     "top5": [
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+      "Computer Numerically Controlled Tool Programmers",
+      "Industrial Truck and Tractor Operators",
+      "Medical Equipment Repairers",
+      "Rail-Track Laying and Maintenance Equipment Operators"
+     ],
+     "first_ok": false,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers"
+     ],
+     "plan": {
+      "resources": 13,
+      "listed": 13,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 0,
+      "should_not": 0,
+      "free": 13,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E55",
+     "error": null,
+     "first": "Budget Analysts",
+     "first_id": "13-2031.00",
+     "top5": [
+      "Budget Analysts",
+      "Tax Preparers",
+      "Financial Examiners",
+      "Fraud Examiners, Investigators and Analysts",
+      "Actuaries"
+     ],
+     "first_ok": true,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Budget Analysts",
+      "Budget Analysts"
+     ],
+     "plan": {
+      "resources": 12,
+      "listed": 12,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 0,
+      "should_not": 0,
+      "free": 12,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E56",
+     "error": null,
+     "first": "Computer Numerically Controlled Tool Programmers",
+     "first_id": "51-9162.00",
+     "top5": [
+      "Computer Numerically Controlled Tool Programmers",
+      "Medical Equipment Repairers",
+      "Bus and Truck Mechanics and Diesel Engine Specialists",
+      "Maintenance Workers, Machinery",
+      "Rail-Track Laying and Maintenance Equipment Operators"
+     ],
+     "first_ok": false,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Computer Numerically Controlled Tool Programmers",
+      "Computer Numerically Controlled Tool Programmers"
+     ],
+     "plan": {
+      "resources": 18,
+      "listed": 21,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 3,
+      "should_not": 3,
+      "free": 18,
+      "non_english": 3
+     }
+    },
+    {
+     "id": "E57",
+     "error": null,
+     "first": "Digital Forensics Analysts",
+     "first_id": "15-1299.06",
+     "top5": [
+      "Digital Forensics Analysts",
+      "Data Scientists",
+      "Validation Engineers",
+      "Mechatronics Engineers",
+      "Information Security Engineers"
+     ],
+     "first_ok": false,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Digital Forensics Analysts",
+      "Digital Forensics Analysts"
+     ],
+     "plan": {
+      "resources": 15,
+      "listed": 16,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 1,
+      "should_not": 1,
+      "free": 15,
+      "non_english": 3
+     }
+    },
+    {
+     "id": "E58",
+     "error": null,
+     "first": "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+     "first_id": "53-4022.00",
+     "top5": [
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+      "Computer Numerically Controlled Tool Programmers",
+      "Recycling Coordinators",
+      "Rail-Track Laying and Maintenance Equipment Operators",
+      "Dining Room and Cafeteria Attendants and Bartender Helpers"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers"
+     ],
+     "plan": {
+      "resources": 11,
+      "listed": 12,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 1,
+      "should_not": 1,
+      "free": 11,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E59",
+     "error": null,
+     "first": "Adult Basic Education, Adult Secondary Education, and English as a Second Language Instructors",
+     "first_id": "25-3011.00",
+     "top5": [
+      "Adult Basic Education, Adult Secondary Education, and English as a Second Language Instructors",
+      "Talent Directors",
+      "Kindergarten Teachers, Except Special Education",
+      "Special Education Teachers, Kindergarten",
+      "Special Education Teachers, Preschool"
+     ],
+     "first_ok": true,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Adult Basic Education, Adult Secondary Education, and English as a Second Language Instructors",
+      "Adult Basic Education, Adult Secondary Education, and English as a Second Language Instructors"
+     ],
+     "plan": {
+      "resources": 11,
+      "listed": 11,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 0,
+      "should_not": 0,
+      "free": 11,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E60",
+     "error": null,
+     "first": "Sales Representatives of Services, Except Advertising, Insurance, Financial Services, and Travel",
+     "first_id": "41-3091.00",
+     "top5": [
+      "Sales Representatives of Services, Except Advertising, Insurance, Financial Services, and Travel",
+      "Tax Preparers",
+      "Solar Sales Representatives and Assessors",
+      "Advertising Sales Agents",
+      "Desktop Publishers"
+     ],
+     "first_ok": true,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": true,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Sales Representatives of Services, Except Advertising, Insurance, Financial Services, and Travel",
+      "Tax Preparers"
+     ],
+     "plan": {
+      "resources": 15,
+      "listed": 16,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 1,
+      "should_not": 1,
+      "free": 15,
+      "non_english": 3
+     }
+    },
+    {
+     "id": "E61",
+     "error": null,
+     "first": "Medical Equipment Repairers",
+     "first_id": "49-9062.00",
+     "top5": [
+      "Medical Equipment Repairers",
+      "Computer Numerically Controlled Tool Programmers",
+      "Surveying and Mapping Technicians",
+      "Civil Engineering Technologists and Technicians",
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Medical Equipment Repairers",
+      "Medical Equipment Repairers"
+     ],
+     "plan": {
+      "resources": 17,
+      "listed": 18,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 1,
+      "should_not": 1,
+      "free": 17,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E62",
+     "error": null,
+     "first": "Talent Directors",
+     "first_id": "27-2012.04",
+     "top5": [
+      "Talent Directors",
+      "Graphic Designers",
+      "Art Directors",
+      "Special Effects Artists and Animators",
+      "Fashion Designers"
+     ],
+     "first_ok": false,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": true,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Special Effects Artists and Animators",
+      "Talent Directors"
+     ],
+     "plan": {
+      "resources": 18,
+      "listed": 19,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 1,
+      "should_not": 1,
+      "free": 18,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E63",
+     "error": null,
+     "first": "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+     "first_id": "53-4022.00",
+     "top5": [
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+      "Computer Numerically Controlled Tool Programmers",
+      "Medical Equipment Repairers",
+      "Rail-Track Laying and Maintenance Equipment Operators",
+      "Recycling Coordinators"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": true,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Computer Numerically Controlled Tool Programmers",
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers"
+     ],
+     "plan": {
+      "resources": 13,
+      "listed": 14,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 1,
+      "should_not": 1,
+      "free": 13,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E64",
+     "error": null,
+     "first": "Occupational Therapy Aides",
+     "first_id": "31-2012.00",
+     "top5": [
+      "Occupational Therapy Aides",
+      "Occupational Therapy Assistants",
+      "Speech-Language Pathology Assistants",
+      "Computer Numerically Controlled Tool Programmers",
+      "Ophthalmic Medical Technicians"
+     ],
+     "first_ok": true,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Occupational Therapy Aides",
+      "Occupational Therapy Aides"
+     ],
+     "plan": {
+      "resources": 17,
+      "listed": 19,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 2,
+      "should_not": 2,
+      "free": 17,
+      "non_english": 3
+     }
+    },
+    {
+     "id": "E65",
+     "error": null,
+     "first": "Digital Forensics Analysts",
+     "first_id": "15-1299.06",
+     "top5": [
+      "Digital Forensics Analysts",
+      "Actuaries",
+      "Data Scientists",
+      "Business Intelligence Analysts",
+      "Information Security Engineers"
+     ],
+     "first_ok": false,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": true,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Actuaries",
+      "Digital Forensics Analysts"
+     ],
+     "plan": {
+      "resources": 17,
+      "listed": 18,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 1,
+      "should_not": 1,
+      "free": 17,
+      "non_english": 3
+     }
+    },
+    {
+     "id": "E66",
+     "error": null,
+     "first": "Preschool Teachers, Except Special Education",
+     "first_id": "25-2011.00",
+     "top5": [
+      "Preschool Teachers, Except Special Education",
+      "Tutors",
+      "Tax Preparers",
+      "Desktop Publishers",
+      "Speech-Language Pathology Assistants"
+     ],
+     "first_ok": true,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": true,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Tutors",
+      "Preschool Teachers, Except Special Education"
+     ],
+     "plan": {
+      "resources": 18,
+      "listed": 20,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 2,
+      "should_not": 2,
+      "free": 18,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E67",
+     "error": null,
+     "first": "Talent Directors",
+     "first_id": "27-2012.04",
+     "top5": [
+      "Talent Directors",
+      "Preschool Teachers, Except Special Education",
+      "Adult Basic Education, Adult Secondary Education, and English as a Second Language Instructors",
+      "Special Education Teachers, Preschool",
+      "Registered Nurses"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Talent Directors",
+      "Talent Directors"
+     ],
+     "plan": {
+      "resources": 18,
+      "listed": 21,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 3,
+      "should_not": 3,
+      "free": 18,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E68",
+     "error": null,
+     "first": "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+     "first_id": "53-4022.00",
+     "top5": [
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+      "Computer Numerically Controlled Tool Programmers",
+      "Industrial Truck and Tractor Operators",
+      "Recycling Coordinators",
+      "Ship Engineers"
+     ],
+     "first_ok": false,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers"
+     ],
+     "plan": {
+      "resources": 18,
+      "listed": 18,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 0,
+      "should_not": 0,
+      "free": 18,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E69",
+     "error": null,
+     "first": "Personal Financial Advisors",
+     "first_id": "13-2052.00",
+     "top5": [
+      "Personal Financial Advisors",
+      "Financial Examiners",
+      "Budget Analysts",
+      "Fraud Examiners, Investigators and Analysts",
+      "Business Continuity Planners"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": true,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Personal Financial Advisors",
+      "Financial Examiners"
+     ],
+     "plan": {
+      "resources": 18,
+      "listed": 20,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 2,
+      "should_not": 2,
+      "free": 18,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E70",
+     "error": null,
+     "first": "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+     "first_id": "53-4022.00",
+     "top5": [
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+      "Fire Inspectors and Investigators",
+      "Medical Equipment Repairers",
+      "Recycling Coordinators",
+      "Occupational Therapy Aides"
+     ],
+     "first_ok": false,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": true,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+      "Medical Equipment Repairers"
+     ],
+     "plan": {
+      "resources": 11,
+      "listed": 12,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 1,
+      "should_not": 1,
+      "free": 11,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E71",
+     "error": null,
+     "first": "Budget Analysts",
+     "first_id": "13-2031.00",
+     "top5": [
+      "Budget Analysts",
+      "Financial Examiners",
+      "Tax Preparers",
+      "Personal Financial Advisors",
+      "Business Continuity Planners"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Budget Analysts",
+      "Budget Analysts"
+     ],
+     "plan": {
+      "resources": 19,
+      "listed": 20,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 1,
+      "should_not": 1,
+      "free": 19,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E72",
+     "error": null,
+     "first": "Computer Numerically Controlled Tool Programmers",
+     "first_id": "51-9162.00",
+     "top5": [
+      "Computer Numerically Controlled Tool Programmers",
+      "Tire Builders",
+      "Rail-Track Laying and Maintenance Equipment Operators",
+      "Structural Metal Fabricators and Fitters",
+      "Tire Repairers and Changers"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Computer Numerically Controlled Tool Programmers",
+      "Computer Numerically Controlled Tool Programmers"
+     ],
+     "plan": {
+      "resources": 17,
+      "listed": 21,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 4,
+      "should_not": 4,
+      "free": 17,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E73",
+     "error": null,
+     "first": "Human Resources Managers",
+     "first_id": "11-3121.00",
+     "top5": [
+      "Human Resources Managers",
+      "Sales Managers",
+      "General and Operations Managers",
+      "Fundraising Managers",
+      "Advertising and Promotions Managers"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Human Resources Managers",
+      "Human Resources Managers"
+     ],
+     "plan": {
+      "resources": 16,
+      "listed": 19,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 3,
+      "should_not": 3,
+      "free": 16,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E74",
+     "error": null,
+     "first": "Computer Numerically Controlled Tool Programmers",
+     "first_id": "51-9162.00",
+     "top5": [
+      "Computer Numerically Controlled Tool Programmers",
+      "Mechanical Engineering Technologists and Technicians",
+      "Civil Engineering Technologists and Technicians",
+      "Photonics Technicians",
+      "Electrical and Electronic Engineering Technologists and Technicians"
+     ],
+     "first_ok": false,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Computer Numerically Controlled Tool Programmers",
+      "Computer Numerically Controlled Tool Programmers"
+     ],
+     "plan": {
+      "resources": 19,
+      "listed": 21,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 2,
+      "should_not": 2,
+      "free": 19,
+      "non_english": 3
+     }
+    },
+    {
+     "id": "E75",
+     "error": null,
+     "first": "Sales Managers",
+     "first_id": "11-2022.00",
+     "top5": [
+      "Sales Managers",
+      "General and Operations Managers",
+      "Human Resources Managers",
+      "Advertising and Promotions Managers",
+      "Fundraising Managers"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Sales Managers",
+      "Sales Managers"
+     ],
+     "plan": {
+      "resources": 18,
+      "listed": 19,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 1,
+      "should_not": 1,
+      "free": 18,
+      "non_english": 2
+     }
+    },
+    {
+     "id": "E76",
+     "error": null,
+     "first": "Dining Room and Cafeteria Attendants and Bartender Helpers",
+     "first_id": "35-9011.00",
+     "top5": [
+      "Dining Room and Cafeteria Attendants and Bartender Helpers",
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+      "Computer Numerically Controlled Tool Programmers",
+      "Food Preparation Workers",
+      "Rail-Track Laying and Maintenance Equipment Operators"
+     ],
+     "first_ok": true,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Dining Room and Cafeteria Attendants and Bartender Helpers",
+      "Dining Room and Cafeteria Attendants and Bartender Helpers"
+     ],
+     "plan": {
+      "resources": 16,
+      "listed": 17,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 1,
+      "should_not": 1,
+      "free": 16,
+      "non_english": 3
+     }
+    },
+    {
+     "id": "E77",
+     "error": null,
+     "first": "Digital Forensics Analysts",
+     "first_id": "15-1299.06",
+     "top5": [
+      "Digital Forensics Analysts",
+      "Computer Network Architects",
+      "Information Security Engineers",
+      "Penetration Testers",
+      "Materials Scientists"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Digital Forensics Analysts",
+      "Digital Forensics Analysts"
+     ],
+     "plan": {
+      "resources": 17,
+      "listed": 19,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 2,
+      "should_not": 2,
+      "free": 17,
+      "non_english": 3
+     }
+    },
+    {
+     "id": "E78",
+     "error": null,
+     "first": "Tax Preparers",
+     "first_id": "13-2082.00",
+     "top5": [
+      "Tax Preparers",
+      "Library Assistants, Clerical",
+      "Telephone Operators",
+      "Desktop Publishers",
+      "Receptionists and Information Clerks"
+     ],
+     "first_ok": false,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Tax Preparers",
+      "Tax Preparers"
+     ],
+     "plan": {
+      "resources": 20,
+      "listed": 22,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 2,
+      "should_not": 2,
+      "free": 20,
+      "non_english": 3
+     }
+    },
+    {
+     "id": "E79",
+     "error": null,
+     "first": "Medical Equipment Repairers",
+     "first_id": "49-9062.00",
+     "top5": [
+      "Medical Equipment Repairers",
+      "Mechanical Engineering Technologists and Technicians",
+      "Electrical and Electronic Engineering Technologists and Technicians",
+      "Electro-Mechanical and Mechatronics Technologists and Technicians",
+      "Automotive Engineering Technicians"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Medical Equipment Repairers",
+      "Medical Equipment Repairers"
+     ],
+     "plan": {
+      "resources": 19,
+      "listed": 19,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 0,
+      "should_not": 0,
+      "free": 19,
+      "non_english": 3
+     }
+    },
+    {
+     "id": "E80",
+     "error": null,
+     "first": "Materials Scientists",
+     "first_id": "19-2032.00",
+     "top5": [
+      "Materials Scientists",
+      "Physical Medicine and Rehabilitation Physicians",
+      "Chemists",
+      "Sociology Teachers, Postsecondary",
+      "Anthropology and Archeology Teachers, Postsecondary"
+     ],
+     "first_ok": false,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Materials Scientists",
+      "Materials Scientists"
+     ],
+     "plan": {
+      "resources": 20,
+      "listed": 22,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 2,
+      "should_not": 2,
+      "free": 20,
+      "non_english": 3
+     }
+    }
+   ],
+   "summary": {
+    "all": {
+     "people": 40,
+     "first_ok": {
+      "k": 9,
+      "n": 40,
+      "pct": 22.5,
+      "ci": [
+       12.3,
+       37.5
+      ]
+     },
+     "top5_ok": {
+      "k": 25,
+      "n": 40,
+      "pct": 62.5,
+      "ci": [
+       47.0,
+       75.8
+      ]
+     },
+     "top5_bad": {
+      "k": 1,
+      "n": 40,
+      "pct": 2.5,
+      "ci": [
+       0.4,
+       12.9
+      ]
+     },
+     "first_changed": {
+      "k": 9,
+      "n": 40,
+      "pct": 22.5,
+      "ci": [
+       12.3,
+       37.5
+      ]
+     },
+     "top5_set_changed": {
+      "k": 20,
+      "n": 40,
+      "pct": 50.0,
+      "ci": [
+       35.2,
+       64.8
+      ]
+     },
+     "resources": 671,
+     "listed": 731,
+     "should_not": 60,
+     "should_not_by_rule": {
+      "job_search_for_working": 0,
+      "paid_in_plan": 0,
+      "already_have": 0,
+      "duplicates": 60
+     },
+     "free": {
+      "k": 671,
+      "n": 671,
+      "pct": 100.0,
+      "ci": [
+       99.4,
+       100.0
+      ]
+     },
+     "non_english": {
+      "k": 96,
+      "n": 671,
+      "pct": 14.3,
+      "ci": [
+       11.9,
+       17.2
+      ]
+     },
+     "no_plan": 0,
+     "distinct_first": 22,
+     "common_first": [
+      [
+       "Computer Numerically Controlled Tool Programmers",
+       6
+      ],
+      [
+       "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+       5
+      ],
+      [
+       "Digital Forensics Analysts",
+       3
+      ],
+      [
+       "Medical Equipment Repairers",
+       3
+      ],
+      [
+       "Talent Directors",
+       3
+      ]
+     ],
+     "errors": 0
+    },
+    "student": {
+     "people": 10,
+     "first_ok": {
+      "k": 3,
+      "n": 10,
+      "pct": 30.0,
+      "ci": [
+       10.8,
+       60.3
+      ]
+     },
+     "top5_ok": {
+      "k": 8,
+      "n": 10,
+      "pct": 80.0,
+      "ci": [
+       49.0,
+       94.3
+      ]
+     },
+     "top5_bad": {
+      "k": 1,
+      "n": 10,
+      "pct": 10.0,
+      "ci": [
+       1.8,
+       40.4
+      ]
+     },
+     "first_changed": {
+      "k": 1,
+      "n": 10,
+      "pct": 10.0,
+      "ci": [
+       1.8,
+       40.4
+      ]
+     },
+     "top5_set_changed": {
+      "k": 4,
+      "n": 10,
+      "pct": 40.0,
+      "ci": [
+       16.8,
+       68.7
+      ]
+     },
+     "resources": 175,
+     "listed": 192,
+     "should_not": 17,
+     "should_not_by_rule": {
+      "job_search_for_working": 0,
+      "paid_in_plan": 0,
+      "already_have": 0,
+      "duplicates": 17
+     },
+     "free": {
+      "k": 175,
+      "n": 175,
+      "pct": 100.0,
+      "ci": [
+       97.9,
+       100.0
+      ]
+     },
+     "non_english": {
+      "k": 24,
+      "n": 175,
+      "pct": 13.7,
+      "ci": [
+       9.4,
+       19.6
+      ]
+     },
+     "no_plan": 0,
+     "distinct_first": 9,
+     "common_first": [
+      [
+       "Computer Numerically Controlled Tool Programmers",
+       2
+      ],
+      [
+       "Child, Family, and School Social Workers",
+       1
+      ],
+      [
+       "Financial Examiners",
+       1
+      ],
+      [
+       "Fuel Cell Engineers",
+       1
+      ],
+      [
+       "Medical Equipment Repairers",
+       1
+      ]
+     ],
+     "errors": 0
+    },
+    "working": {
+     "people": 10,
+     "first_ok": {
+      "k": 3,
+      "n": 10,
+      "pct": 30.0,
+      "ci": [
+       10.8,
+       60.3
+      ]
+     },
+     "top5_ok": {
+      "k": 7,
+      "n": 10,
+      "pct": 70.0,
+      "ci": [
+       39.7,
+       89.2
+      ]
+     },
+     "top5_bad": {
+      "k": 0,
+      "n": 10,
+      "pct": 0.0,
+      "ci": [
+       0.0,
+       27.8
+      ]
+     },
+     "first_changed": {
+      "k": 2,
+      "n": 10,
+      "pct": 20.0,
+      "ci": [
+       5.7,
+       51.0
+      ]
+     },
+     "top5_set_changed": {
+      "k": 5,
+      "n": 10,
+      "pct": 50.0,
+      "ci": [
+       23.7,
+       76.3
+      ]
+     },
+     "resources": 150,
+     "listed": 161,
+     "should_not": 11,
+     "should_not_by_rule": {
+      "job_search_for_working": 0,
+      "paid_in_plan": 0,
+      "already_have": 0,
+      "duplicates": 11
+     },
+     "free": {
+      "k": 150,
+      "n": 150,
+      "pct": 100.0,
+      "ci": [
+       97.5,
+       100.0
+      ]
+     },
+     "non_english": {
+      "k": 24,
+      "n": 150,
+      "pct": 16.0,
+      "ci": [
+       11.0,
+       22.7
+      ]
+     },
+     "no_plan": 0,
+     "distinct_first": 8,
+     "common_first": [
+      [
+       "Computer Numerically Controlled Tool Programmers",
+       2
+      ],
+      [
+       "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+       2
+      ],
+      [
+       "Adult Basic Education, Adult Secondary Education, and English as a Second Language Instructors",
+       1
+      ],
+      [
+       "Budget Analysts",
+       1
+      ],
+      [
+       "Digital Forensics Analysts",
+       1
+      ]
+     ],
+     "errors": 0
+    },
+    "switcher": {
+     "people": 10,
+     "first_ok": {
+      "k": 2,
+      "n": 10,
+      "pct": 20.0,
+      "ci": [
+       5.7,
+       51.0
+      ]
+     },
+     "top5_ok": {
+      "k": 6,
+      "n": 10,
+      "pct": 60.0,
+      "ci": [
+       31.3,
+       83.2
+      ]
+     },
+     "top5_bad": {
+      "k": 0,
+      "n": 10,
+      "pct": 0.0,
+      "ci": [
+       0.0,
+       27.8
+      ]
+     },
+     "first_changed": {
+      "k": 6,
+      "n": 10,
+      "pct": 60.0,
+      "ci": [
+       31.3,
+       83.2
+      ]
+     },
+     "top5_set_changed": {
+      "k": 4,
+      "n": 10,
+      "pct": 40.0,
+      "ci": [
+       16.8,
+       68.7
+      ]
+     },
+     "resources": 165,
+     "listed": 179,
+     "should_not": 14,
+     "should_not_by_rule": {
+      "job_search_for_working": 0,
+      "paid_in_plan": 0,
+      "already_have": 0,
+      "duplicates": 14
+     },
+     "free": {
+      "k": 165,
+      "n": 165,
+      "pct": 100.0,
+      "ci": [
+       97.7,
+       100.0
+      ]
+     },
+     "non_english": {
+      "k": 22,
+      "n": 165,
+      "pct": 13.3,
+      "ci": [
+       9.0,
+       19.4
+      ]
+     },
+     "no_plan": 0,
+     "distinct_first": 7,
+     "common_first": [
+      [
+       "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+       3
+      ],
+      [
+       "Talent Directors",
+       2
+      ],
+      [
+       "Digital Forensics Analysts",
+       1
+      ],
+      [
+       "Medical Equipment Repairers",
+       1
+      ],
+      [
+       "Occupational Therapy Aides",
+       1
+      ]
+     ],
+     "errors": 0
+    },
+    "jobseeker": {
+     "people": 10,
+     "first_ok": {
+      "k": 1,
+      "n": 10,
+      "pct": 10.0,
+      "ci": [
+       1.8,
+       40.4
+      ]
+     },
+     "top5_ok": {
+      "k": 4,
+      "n": 10,
+      "pct": 40.0,
+      "ci": [
+       16.8,
+       68.7
+      ]
+     },
+     "top5_bad": {
+      "k": 0,
+      "n": 10,
+      "pct": 0.0,
+      "ci": [
+       0.0,
+       27.8
+      ]
+     },
+     "first_changed": {
+      "k": 0,
+      "n": 10,
+      "pct": 0.0,
+      "ci": [
+       0.0,
+       27.8
+      ]
+     },
+     "top5_set_changed": {
+      "k": 7,
+      "n": 10,
+      "pct": 70.0,
+      "ci": [
+       39.7,
+       89.2
+      ]
+     },
+     "resources": 181,
+     "listed": 199,
+     "should_not": 18,
+     "should_not_by_rule": {
+      "job_search_for_working": 0,
+      "paid_in_plan": 0,
+      "already_have": 0,
+      "duplicates": 18
+     },
+     "free": {
+      "k": 181,
+      "n": 181,
+      "pct": 100.0,
+      "ci": [
+       97.9,
+       100.0
+      ]
+     },
+     "non_english": {
+      "k": 26,
+      "n": 181,
+      "pct": 14.4,
+      "ci": [
+       10.0,
+       20.2
+      ]
+     },
+     "no_plan": 0,
+     "distinct_first": 9,
+     "common_first": [
+      [
+       "Computer Numerically Controlled Tool Programmers",
+       2
+      ],
+      [
+       "Budget Analysts",
+       1
+      ],
+      [
+       "Digital Forensics Analysts",
+       1
+      ],
+      [
+       "Dining Room and Cafeteria Attendants and Bartender Helpers",
+       1
+      ],
+      [
+       "Human Resources Managers",
+       1
+      ]
+     ],
+     "errors": 0
+    }
+   }
+  },
+  "v1": {
+   "commit": "fdf158d",
+   "rows": [
+    {
+     "id": "E41",
+     "error": null,
+     "first": "Network and Computer Systems Administrators",
+     "first_id": "15-1244.00",
+     "top5": [
+      "Network and Computer Systems Administrators",
+      "Computer User Support Specialists",
+      "Computer Systems Engineers/Architects",
+      "Web Developers"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Network and Computer Systems Administrators",
+      "Network and Computer Systems Administrators"
+     ],
+     "plan": {
+      "resources": 24,
+      "listed": 27,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 3,
+      "should_not": 3,
+      "free": 24,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E42",
+     "error": null,
+     "first": "Network and Computer Systems Administrators",
+     "first_id": "15-1244.00",
+     "top5": [
+      "Network and Computer Systems Administrators",
+      "Computer Network Support Specialists",
+      "Computer User Support Specialists",
+      "Computer Network Architects",
+      "Computer Systems Engineers/Architects"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Network and Computer Systems Administrators",
+      "Network and Computer Systems Administrators"
+     ],
+     "plan": {
+      "resources": 24,
+      "listed": 27,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 3,
+      "should_not": 3,
+      "free": 24,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E43",
+     "error": null,
+     "first": null,
+     "first_id": null,
+     "top5": [],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      null,
+      null
+     ],
+     "plan": {
+      "resources": 0,
+      "listed": 0,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 0,
+      "should_not": 0,
+      "free": 0,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E44",
+     "error": null,
+     "first": "Software Developers",
+     "first_id": "15-1252.00",
+     "top5": [
+      "Software Developers",
+      "Computer Programmers",
+      "Penetration Testers",
+      "Information Security Analysts",
+      "Digital Forensics Analysts"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": true,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Network and Computer Systems Administrators",
+      "Penetration Testers"
+     ],
+     "plan": {
+      "resources": 21,
+      "listed": 21,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 0,
+      "should_not": 0,
+      "free": 21,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E45",
+     "error": null,
+     "first": "Data Scientists",
+     "first_id": "15-2051.00",
+     "top5": [
+      "Data Scientists",
+      "Network and Computer Systems Administrators",
+      "Computer Network Architects",
+      "Business Intelligence Analysts",
+      "Computer User Support Specialists"
+     ],
+     "first_ok": true,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": true,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Data Scientists",
+      "Computer Network Architects"
+     ],
+     "plan": {
+      "resources": 30,
+      "listed": 30,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 0,
+      "should_not": 0,
+      "free": 30,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E46",
+     "error": null,
+     "first": "Network and Computer Systems Administrators",
+     "first_id": "15-1244.00",
+     "top5": [
+      "Network and Computer Systems Administrators",
+      "Computer User Support Specialists",
+      "Computer Systems Engineers/Architects",
+      "Web Developers"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": true,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Network and Computer Systems Administrators",
+      "Computer User Support Specialists"
+     ],
+     "plan": {
+      "resources": 24,
+      "listed": 27,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 3,
+      "should_not": 3,
+      "free": 24,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E47",
+     "error": null,
+     "first": "Network and Computer Systems Administrators",
+     "first_id": "15-1244.00",
+     "top5": [
+      "Network and Computer Systems Administrators",
+      "Computer User Support Specialists",
+      "Computer Systems Engineers/Architects",
+      "Web Developers"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Network and Computer Systems Administrators",
+      "Network and Computer Systems Administrators"
+     ],
+     "plan": {
+      "resources": 24,
+      "listed": 27,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 3,
+      "should_not": 3,
+      "free": 24,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E48",
+     "error": null,
+     "first": "Computer Programmers",
+     "first_id": "15-1251.00",
+     "top5": [
+      "Computer Programmers",
+      "Digital Forensics Analysts",
+      "Information Security Engineers",
+      "Software Developers",
+      "Information Security Analysts"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": true,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Computer Programmers",
+      "Digital Forensics Analysts"
+     ],
+     "plan": {
+      "resources": 20,
+      "listed": 21,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 1,
+      "should_not": 1,
+      "free": 20,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E49",
+     "error": null,
+     "first": "Network and Computer Systems Administrators",
+     "first_id": "15-1244.00",
+     "top5": [
+      "Network and Computer Systems Administrators",
+      "Computer User Support Specialists",
+      "Computer Systems Engineers/Architects",
+      "Web Developers"
+     ],
+     "first_ok": true,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": true,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Network and Computer Systems Administrators",
+      "Computer User Support Specialists"
+     ],
+     "plan": {
+      "resources": 25,
+      "listed": 27,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 2,
+      "should_not": 2,
+      "free": 25,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E50",
+     "error": null,
+     "first": "Computer Programmers",
+     "first_id": "15-1251.00",
+     "top5": [
+      "Computer Programmers",
+      "Digital Forensics Analysts",
+      "Information Security Engineers",
+      "Information Security Analysts",
+      "Software Developers"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": true,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Computer Programmers",
+      "Digital Forensics Analysts"
+     ],
+     "plan": {
+      "resources": 20,
+      "listed": 21,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 1,
+      "should_not": 1,
+      "free": 20,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E51",
+     "error": null,
+     "first": null,
+     "first_id": null,
+     "top5": [],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      null,
+      null
+     ],
+     "plan": {
+      "resources": 0,
+      "listed": 0,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 0,
+      "should_not": 0,
+      "free": 0,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E52",
+     "error": null,
+     "first": "Network and Computer Systems Administrators",
+     "first_id": "15-1244.00",
+     "top5": [
+      "Network and Computer Systems Administrators",
+      "Computer User Support Specialists",
+      "Computer Systems Engineers/Architects",
+      "Web Developers"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Network and Computer Systems Administrators",
+      "Network and Computer Systems Administrators"
+     ],
+     "plan": {
+      "resources": 24,
+      "listed": 27,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 3,
+      "should_not": 3,
+      "free": 24,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E53",
+     "error": null,
+     "first": "Software Developers",
+     "first_id": "15-1252.00",
+     "top5": [
+      "Software Developers",
+      "Computer Programmers",
+      "Digital Forensics Analysts",
+      "Information Security Engineers",
+      "Information Security Analysts"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Software Developers",
+      "Software Developers"
+     ],
+     "plan": {
+      "resources": 21,
+      "listed": 21,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 0,
+      "should_not": 0,
+      "free": 21,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E54",
+     "error": null,
+     "first": null,
+     "first_id": null,
+     "top5": [],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      null,
+      null
+     ],
+     "plan": {
+      "resources": 0,
+      "listed": 0,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 0,
+      "should_not": 0,
+      "free": 0,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E55",
+     "error": null,
+     "first": "Network and Computer Systems Administrators",
+     "first_id": "15-1244.00",
+     "top5": [
+      "Network and Computer Systems Administrators",
+      "Computer Network Architects",
+      "Data Scientists",
+      "Computer Network Support Specialists",
+      "Computer User Support Specialists"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": true,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Data Scientists",
+      "Computer Network Architects"
+     ],
+     "plan": {
+      "resources": 24,
+      "listed": 27,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 3,
+      "should_not": 3,
+      "free": 24,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E56",
+     "error": null,
+     "first": "Network and Computer Systems Administrators",
+     "first_id": "15-1244.00",
+     "top5": [
+      "Network and Computer Systems Administrators",
+      "Computer User Support Specialists",
+      "Computer Systems Engineers/Architects",
+      "Web Developers"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Network and Computer Systems Administrators",
+      "Network and Computer Systems Administrators"
+     ],
+     "plan": {
+      "resources": 24,
+      "listed": 27,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 3,
+      "should_not": 3,
+      "free": 24,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E57",
+     "error": null,
+     "first": "Computer Programmers",
+     "first_id": "15-1251.00",
+     "top5": [
+      "Computer Programmers",
+      "Penetration Testers",
+      "Information Security Engineers",
+      "Information Security Analysts",
+      "Digital Forensics Analysts"
+     ],
+     "first_ok": true,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": true,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Computer Programmers",
+      "Penetration Testers"
+     ],
+     "plan": {
+      "resources": 20,
+      "listed": 21,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 1,
+      "should_not": 1,
+      "free": 20,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E58",
+     "error": null,
+     "first": null,
+     "first_id": null,
+     "top5": [],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      null,
+      null
+     ],
+     "plan": {
+      "resources": 0,
+      "listed": 0,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 0,
+      "should_not": 0,
+      "free": 0,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E59",
+     "error": null,
+     "first": "Information Security Engineers",
+     "first_id": "15-1299.05",
+     "top5": [
+      "Information Security Engineers",
+      "Information Security Analysts",
+      "Penetration Testers",
+      "Software Developers",
+      "Computer Programmers"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": true,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Network and Computer Systems Administrators",
+      "Information Security Engineers"
+     ],
+     "plan": {
+      "resources": 25,
+      "listed": 28,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 3,
+      "should_not": 3,
+      "free": 25,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E60",
+     "error": null,
+     "first": "Network and Computer Systems Administrators",
+     "first_id": "15-1244.00",
+     "top5": [
+      "Network and Computer Systems Administrators",
+      "Computer User Support Specialists",
+      "Computer Systems Engineers/Architects",
+      "Web Developers"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Network and Computer Systems Administrators",
+      "Network and Computer Systems Administrators"
+     ],
+     "plan": {
+      "resources": 24,
+      "listed": 27,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 3,
+      "should_not": 3,
+      "free": 24,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E61",
+     "error": null,
+     "first": null,
+     "first_id": null,
+     "top5": [],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      null,
+      null
+     ],
+     "plan": {
+      "resources": 0,
+      "listed": 0,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 0,
+      "should_not": 0,
+      "free": 0,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E62",
+     "error": null,
+     "first": "Special Effects Artists and Animators",
+     "first_id": "27-1014.00",
+     "top5": [
+      "Special Effects Artists and Animators",
+      "Video Game Designers",
+      "Web and Digital Interface Designers",
+      "Web Developers",
+      "Web Administrators"
+     ],
+     "first_ok": true,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Special Effects Artists and Animators",
+      "Special Effects Artists and Animators"
+     ],
+     "plan": {
+      "resources": 18,
+      "listed": 22,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 4,
+      "should_not": 4,
+      "free": 18,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E63",
+     "error": null,
+     "first": "Network and Computer Systems Administrators",
+     "first_id": "15-1244.00",
+     "top5": [
+      "Network and Computer Systems Administrators",
+      "Computer User Support Specialists",
+      "Computer Systems Engineers/Architects",
+      "Web Developers"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Network and Computer Systems Administrators",
+      "Network and Computer Systems Administrators"
+     ],
+     "plan": {
+      "resources": 24,
+      "listed": 27,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 3,
+      "should_not": 3,
+      "free": 24,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E64",
+     "error": null,
+     "first": null,
+     "first_id": null,
+     "top5": [],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      null,
+      null
+     ],
+     "plan": {
+      "resources": 0,
+      "listed": 0,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 0,
+      "should_not": 0,
+      "free": 0,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E65",
+     "error": null,
+     "first": "Data Scientists",
+     "first_id": "15-2051.00",
+     "top5": [
+      "Data Scientists",
+      "Data Warehousing Specialists",
+      "Database Architects",
+      "Database Administrators",
+      "Business Intelligence Analysts"
+     ],
+     "first_ok": true,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": true,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Data Scientists",
+      "Data Warehousing Specialists"
+     ],
+     "plan": {
+      "resources": 30,
+      "listed": 30,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 0,
+      "should_not": 0,
+      "free": 30,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E66",
+     "error": null,
+     "first": "Network and Computer Systems Administrators",
+     "first_id": "15-1244.00",
+     "top5": [
+      "Network and Computer Systems Administrators",
+      "Computer User Support Specialists",
+      "Computer Systems Engineers/Architects",
+      "Web Developers"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Network and Computer Systems Administrators",
+      "Network and Computer Systems Administrators"
+     ],
+     "plan": {
+      "resources": 24,
+      "listed": 27,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 3,
+      "should_not": 3,
+      "free": 24,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E67",
+     "error": null,
+     "first": "Information Security Engineers",
+     "first_id": "15-1299.05",
+     "top5": [
+      "Information Security Engineers",
+      "Software Developers",
+      "Computer Programmers",
+      "Network and Computer Systems Administrators",
+      "Information Security Analysts"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": true,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Network and Computer Systems Administrators",
+      "Information Security Engineers"
+     ],
+     "plan": {
+      "resources": 25,
+      "listed": 28,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 3,
+      "should_not": 3,
+      "free": 25,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E68",
+     "error": null,
+     "first": null,
+     "first_id": null,
+     "top5": [],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      null,
+      null
+     ],
+     "plan": {
+      "resources": 0,
+      "listed": 0,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 0,
+      "should_not": 0,
+      "free": 0,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E69",
+     "error": null,
+     "first": "Network and Computer Systems Administrators",
+     "first_id": "15-1244.00",
+     "top5": [
+      "Network and Computer Systems Administrators",
+      "Computer Network Support Specialists",
+      "Computer User Support Specialists",
+      "Computer Network Architects",
+      "Computer Systems Engineers/Architects"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": true,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Network and Computer Systems Administrators",
+      "Computer Network Support Specialists"
+     ],
+     "plan": {
+      "resources": 24,
+      "listed": 27,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 3,
+      "should_not": 3,
+      "free": 24,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E70",
+     "error": null,
+     "first": "Network and Computer Systems Administrators",
+     "first_id": "15-1244.00",
+     "top5": [
+      "Network and Computer Systems Administrators",
+      "Computer User Support Specialists",
+      "Computer Systems Engineers/Architects",
+      "Web Developers"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Network and Computer Systems Administrators",
+      "Network and Computer Systems Administrators"
+     ],
+     "plan": {
+      "resources": 24,
+      "listed": 27,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 3,
+      "should_not": 3,
+      "free": 24,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E71",
+     "error": null,
+     "first": "Network and Computer Systems Administrators",
+     "first_id": "15-1244.00",
+     "top5": [
+      "Network and Computer Systems Administrators",
+      "Computer Network Support Specialists",
+      "Computer User Support Specialists",
+      "Computer Network Architects",
+      "Computer Systems Engineers/Architects"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Network and Computer Systems Administrators",
+      "Network and Computer Systems Administrators"
+     ],
+     "plan": {
+      "resources": 24,
+      "listed": 27,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 3,
+      "should_not": 3,
+      "free": 24,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E72",
+     "error": null,
+     "first": null,
+     "first_id": null,
+     "top5": [],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      null,
+      null
+     ],
+     "plan": {
+      "resources": 0,
+      "listed": 0,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 0,
+      "should_not": 0,
+      "free": 0,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E73",
+     "error": null,
+     "first": "Digital Forensics Analysts",
+     "first_id": "15-1299.06",
+     "top5": [
+      "Digital Forensics Analysts",
+      "Software Developers",
+      "Penetration Testers",
+      "Computer Programmers",
+      "Information Security Engineers"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Digital Forensics Analysts",
+      "Digital Forensics Analysts"
+     ],
+     "plan": {
+      "resources": 21,
+      "listed": 23,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 2,
+      "should_not": 2,
+      "free": 21,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E74",
+     "error": null,
+     "first": "Network and Computer Systems Administrators",
+     "first_id": "15-1244.00",
+     "top5": [
+      "Network and Computer Systems Administrators",
+      "Computer User Support Specialists",
+      "Computer Systems Engineers/Architects",
+      "Web Developers"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Network and Computer Systems Administrators",
+      "Network and Computer Systems Administrators"
+     ],
+     "plan": {
+      "resources": 24,
+      "listed": 27,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 3,
+      "should_not": 3,
+      "free": 24,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E75",
+     "error": null,
+     "first": "Software Developers",
+     "first_id": "15-1252.00",
+     "top5": [
+      "Software Developers",
+      "Computer Programmers",
+      "Information Security Analysts",
+      "Penetration Testers",
+      "Digital Forensics Analysts"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": true,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Network and Computer Systems Administrators",
+      "Software Developers"
+     ],
+     "plan": {
+      "resources": 21,
+      "listed": 21,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 0,
+      "should_not": 0,
+      "free": 21,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E76",
+     "error": null,
+     "first": null,
+     "first_id": null,
+     "top5": [],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      null,
+      null
+     ],
+     "plan": {
+      "resources": 0,
+      "listed": 0,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 0,
+      "should_not": 0,
+      "free": 0,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E77",
+     "error": null,
+     "first": "Computer Programmers",
+     "first_id": "15-1251.00",
+     "top5": [
+      "Computer Programmers",
+      "Software Developers",
+      "Software Quality Assurance Analysts and Testers",
+      "Blockchain Engineers",
+      "Digital Forensics Analysts"
+     ],
+     "first_ok": true,
+     "top5_ok": true,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Computer Programmers",
+      "Computer Programmers"
+     ],
+     "plan": {
+      "resources": 20,
+      "listed": 21,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 1,
+      "should_not": 1,
+      "free": 20,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E78",
+     "error": null,
+     "first": "Network and Computer Systems Administrators",
+     "first_id": "15-1244.00",
+     "top5": [
+      "Network and Computer Systems Administrators",
+      "Computer User Support Specialists",
+      "Computer Systems Engineers/Architects",
+      "Web Developers"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      "Network and Computer Systems Administrators",
+      "Network and Computer Systems Administrators"
+     ],
+     "plan": {
+      "resources": 24,
+      "listed": 27,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 3,
+      "should_not": 3,
+      "free": 24,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E79",
+     "error": null,
+     "first": null,
+     "first_id": null,
+     "top5": [],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": false,
+     "top5_set_changed": false,
+     "first_slow_fast": [
+      null,
+      null
+     ],
+     "plan": {
+      "resources": 0,
+      "listed": 0,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 0,
+      "should_not": 0,
+      "free": 0,
+      "non_english": 0
+     }
+    },
+    {
+     "id": "E80",
+     "error": null,
+     "first": "Computer Programmers",
+     "first_id": "15-1251.00",
+     "top5": [
+      "Computer Programmers",
+      "Software Developers",
+      "Blockchain Engineers",
+      "Information Security Analysts",
+      "Penetration Testers"
+     ],
+     "first_ok": false,
+     "top5_ok": false,
+     "top5_bad": [],
+     "labelled": true,
+     "first_changed": true,
+     "top5_set_changed": true,
+     "first_slow_fast": [
+      "Data Scientists",
+      "Computer Programmers"
+     ],
+     "plan": {
+      "resources": 20,
+      "listed": 21,
+      "job_search_for_working": [],
+      "paid_in_plan": [],
+      "already_have": [],
+      "duplicates": 1,
+      "should_not": 1,
+      "free": 20,
+      "non_english": 0
+     }
+    }
+   ],
+   "summary": {
+    "all": {
+     "people": 40,
+     "first_ok": {
+      "k": 6,
+      "n": 40,
+      "pct": 15.0,
+      "ci": [
+       7.1,
+       29.1
+      ]
+     },
+     "top5_ok": {
+      "k": 6,
+      "n": 40,
+      "pct": 15.0,
+      "ci": [
+       7.1,
+       29.1
+      ]
+     },
+     "top5_bad": {
+      "k": 0,
+      "n": 40,
+      "pct": 0.0,
+      "ci": [
+       0.0,
+       8.8
+      ]
+     },
+     "first_changed": {
+      "k": 14,
+      "n": 40,
+      "pct": 35.0,
+      "ci": [
+       22.1,
+       50.5
+      ]
+     },
+     "top5_set_changed": {
+      "k": 17,
+      "n": 40,
+      "pct": 42.5,
+      "ci": [
+       28.5,
+       57.8
+      ]
+     },
+     "resources": 697,
+     "listed": 761,
+     "should_not": 64,
+     "should_not_by_rule": {
+      "job_search_for_working": 0,
+      "paid_in_plan": 0,
+      "already_have": 0,
+      "duplicates": 64
+     },
+     "free": {
+      "k": 697,
+      "n": 697,
+      "pct": 100.0,
+      "ci": [
+       99.5,
+       100.0
+      ]
+     },
+     "non_english": {
+      "k": 0,
+      "n": 697,
+      "pct": 0.0,
+      "ci": [
+       0.0,
+       0.5
+      ]
+     },
+     "no_plan": 10,
+     "distinct_first": 7,
+     "common_first": [
+      [
+       "Network and Computer Systems Administrators",
+       16
+      ],
+      [
+       "Computer Programmers",
+       5
+      ],
+      [
+       "Software Developers",
+       3
+      ],
+      [
+       "Data Scientists",
+       2
+      ],
+      [
+       "Information Security Engineers",
+       2
+      ]
+     ],
+     "errors": 0
+    },
+    "student": {
+     "people": 10,
+     "first_ok": {
+      "k": 2,
+      "n": 10,
+      "pct": 20.0,
+      "ci": [
+       5.7,
+       51.0
+      ]
+     },
+     "top5_ok": {
+      "k": 2,
+      "n": 10,
+      "pct": 20.0,
+      "ci": [
+       5.7,
+       51.0
+      ]
+     },
+     "top5_bad": {
+      "k": 0,
+      "n": 10,
+      "pct": 0.0,
+      "ci": [
+       0.0,
+       27.8
+      ]
+     },
+     "first_changed": {
+      "k": 6,
+      "n": 10,
+      "pct": 60.0,
+      "ci": [
+       31.3,
+       83.2
+      ]
+     },
+     "top5_set_changed": {
+      "k": 5,
+      "n": 10,
+      "pct": 50.0,
+      "ci": [
+       23.7,
+       76.3
+      ]
+     },
+     "resources": 212,
+     "listed": 228,
+     "should_not": 16,
+     "should_not_by_rule": {
+      "job_search_for_working": 0,
+      "paid_in_plan": 0,
+      "already_have": 0,
+      "duplicates": 16
+     },
+     "free": {
+      "k": 212,
+      "n": 212,
+      "pct": 100.0,
+      "ci": [
+       98.2,
+       100.0
+      ]
+     },
+     "non_english": {
+      "k": 0,
+      "n": 212,
+      "pct": 0.0,
+      "ci": [
+       0.0,
+       1.8
+      ]
+     },
+     "no_plan": 1,
+     "distinct_first": 4,
+     "common_first": [
+      [
+       "Network and Computer Systems Administrators",
+       5
+      ],
+      [
+       "Computer Programmers",
+       2
+      ],
+      [
+       "Data Scientists",
+       1
+      ],
+      [
+       "Software Developers",
+       1
+      ]
+     ],
+     "errors": 0
+    },
+    "working": {
+     "people": 10,
+     "first_ok": {
+      "k": 1,
+      "n": 10,
+      "pct": 10.0,
+      "ci": [
+       1.8,
+       40.4
+      ]
+     },
+     "top5_ok": {
+      "k": 1,
+      "n": 10,
+      "pct": 10.0,
+      "ci": [
+       1.8,
+       40.4
+      ]
+     },
+     "top5_bad": {
+      "k": 0,
+      "n": 10,
+      "pct": 0.0,
+      "ci": [
+       0.0,
+       27.8
+      ]
+     },
+     "first_changed": {
+      "k": 3,
+      "n": 10,
+      "pct": 30.0,
+      "ci": [
+       10.8,
+       60.3
+      ]
+     },
+     "top5_set_changed": {
+      "k": 4,
+      "n": 10,
+      "pct": 40.0,
+      "ci": [
+       16.8,
+       68.7
+      ]
+     },
+     "resources": 162,
+     "listed": 178,
+     "should_not": 16,
+     "should_not_by_rule": {
+      "job_search_for_working": 0,
+      "paid_in_plan": 0,
+      "already_have": 0,
+      "duplicates": 16
+     },
+     "free": {
+      "k": 162,
+      "n": 162,
+      "pct": 100.0,
+      "ci": [
+       97.7,
+       100.0
+      ]
+     },
+     "non_english": {
+      "k": 0,
+      "n": 162,
+      "pct": 0.0,
+      "ci": [
+       0.0,
+       2.3
+      ]
+     },
+     "no_plan": 3,
+     "distinct_first": 4,
+     "common_first": [
+      [
+       "Network and Computer Systems Administrators",
+       4
+      ],
+      [
+       "Computer Programmers",
+       1
+      ],
+      [
+       "Information Security Engineers",
+       1
+      ],
+      [
+       "Software Developers",
+       1
+      ]
+     ],
+     "errors": 0
+    },
+    "switcher": {
+     "people": 10,
+     "first_ok": {
+      "k": 2,
+      "n": 10,
+      "pct": 20.0,
+      "ci": [
+       5.7,
+       51.0
+      ]
+     },
+     "top5_ok": {
+      "k": 2,
+      "n": 10,
+      "pct": 20.0,
+      "ci": [
+       5.7,
+       51.0
+      ]
+     },
+     "top5_bad": {
+      "k": 0,
+      "n": 10,
+      "pct": 0.0,
+      "ci": [
+       0.0,
+       27.8
+      ]
+     },
+     "first_changed": {
+      "k": 3,
+      "n": 10,
+      "pct": 30.0,
+      "ci": [
+       10.8,
+       60.3
+      ]
+     },
+     "top5_set_changed": {
+      "k": 3,
+      "n": 10,
+      "pct": 30.0,
+      "ci": [
+       10.8,
+       60.3
+      ]
+     },
+     "resources": 169,
+     "listed": 188,
+     "should_not": 19,
+     "should_not_by_rule": {
+      "job_search_for_working": 0,
+      "paid_in_plan": 0,
+      "already_have": 0,
+      "duplicates": 19
+     },
+     "free": {
+      "k": 169,
+      "n": 169,
+      "pct": 100.0,
+      "ci": [
+       97.8,
+       100.0
+      ]
+     },
+     "non_english": {
+      "k": 0,
+      "n": 169,
+      "pct": 0.0,
+      "ci": [
+       0.0,
+       2.2
+      ]
+     },
+     "no_plan": 3,
+     "distinct_first": 4,
+     "common_first": [
+      [
+       "Network and Computer Systems Administrators",
+       4
+      ],
+      [
+       "Data Scientists",
+       1
+      ],
+      [
+       "Information Security Engineers",
+       1
+      ],
+      [
+       "Special Effects Artists and Animators",
+       1
+      ]
+     ],
+     "errors": 0
+    },
+    "jobseeker": {
+     "people": 10,
+     "first_ok": {
+      "k": 1,
+      "n": 10,
+      "pct": 10.0,
+      "ci": [
+       1.8,
+       40.4
+      ]
+     },
+     "top5_ok": {
+      "k": 1,
+      "n": 10,
+      "pct": 10.0,
+      "ci": [
+       1.8,
+       40.4
+      ]
+     },
+     "top5_bad": {
+      "k": 0,
+      "n": 10,
+      "pct": 0.0,
+      "ci": [
+       0.0,
+       27.8
+      ]
+     },
+     "first_changed": {
+      "k": 2,
+      "n": 10,
+      "pct": 20.0,
+      "ci": [
+       5.7,
+       51.0
+      ]
+     },
+     "top5_set_changed": {
+      "k": 5,
+      "n": 10,
+      "pct": 50.0,
+      "ci": [
+       23.7,
+       76.3
+      ]
+     },
+     "resources": 154,
+     "listed": 167,
+     "should_not": 13,
+     "should_not_by_rule": {
+      "job_search_for_working": 0,
+      "paid_in_plan": 0,
+      "already_have": 0,
+      "duplicates": 13
+     },
+     "free": {
+      "k": 154,
+      "n": 154,
+      "pct": 100.0,
+      "ci": [
+       97.6,
+       100.0
+      ]
+     },
+     "non_english": {
+      "k": 0,
+      "n": 154,
+      "pct": 0.0,
+      "ci": [
+       0.0,
+       2.4
+      ]
+     },
+     "no_plan": 3,
+     "distinct_first": 4,
+     "common_first": [
+      [
+       "Network and Computer Systems Administrators",
+       3
+      ],
+      [
+       "Computer Programmers",
+       2
+      ],
+      [
+       "Digital Forensics Analysts",
+       1
+      ],
+      [
+       "Software Developers",
+       1
+      ]
+     ],
+     "errors": 0
+    }
+   }
+  }
+ },
+ "tuning_set": {
+  "people": 5,
+  "first_changed": {
+   "k": 1,
+   "n": 5,
+   "pct": 20.0,
+   "ci": [
+    3.6,
+    62.4
+   ]
+  },
+  "top5_set_changed": {
+   "k": 3,
+   "n": 5,
+   "pct": 60.0,
+   "ci": [
+    23.1,
+    88.2
+   ]
+  },
+  "should_not": 8,
+  "free": {
+   "k": 86,
+   "n": 86,
+   "pct": 100.0,
+   "ci": [
+    95.7,
+    100.0
+   ]
+  },
+  "non_english": {
+   "k": 13,
+   "n": 86,
+   "pct": 15.1,
+   "ci": [
+    9.1,
+    24.2
+   ]
+  }
+ },
+ "diagnosis": {
+  "misses": 31,
+  "lead": {
+   "field": -0.2,
+   "interest": -0.4,
+   "skill": -0.7,
+   "outlook": 5.7
+  },
+  "ahead": {
+   "field": 5,
+   "interest": 13,
+   "skill": 11,
+   "outlook": 28
+  },
+  "occupations": 910,
+  "demand_values": 15,
+  "demand_top": 90.6,
+  "demand_top_n": 111,
+  "mycol_yes": 190,
+  "mycol_titles": 60,
+  "pro_low_zone": 36,
+  "pro_low_zone_examples": [
+   "Tax Preparers → 2411 Accountants",
+   "Network and Computer Systems Administrators → 2523 Computer network professionals",
+   "Computer Systems Engineers/Architects → 2511 Systems analysts",
+   "Desktop Publishers → 2166 Graphic and multimedia designers"
+  ]
+ }
+}
