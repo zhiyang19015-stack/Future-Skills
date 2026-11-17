@@ -1,0 +1,29 @@
+{
+ "date": "2026-11-17",
+ "catalogue": {
+  "v1": {
+   "commit": "fdf158d",
+   "occupations": 25,
+   "fields": 5,
+   "resources": 158,
+   "resources_free": 158,
+   "resources_not_english": 0,
+   "languages": [
+    "en"
+   ]
+  },
+  "now": {
+   "commit": "cd6d453",
+   "occupations": 910,
+   "fields": 22,
+   "resources": 84,
+   "resources_free": 71,
+   "resources_not_english": 4,
+   "languages": [
+    "en",
+    "ms",
+    "zh"
+   ]
+  }
+ }
+}

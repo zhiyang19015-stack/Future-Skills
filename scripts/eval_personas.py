@@ -86,7 +86,7 @@ def annotator_view() -> str:
 
 
 def write_annotator_files() -> None:
-    (EVAL / "annotator_view.md").write_text(annotator_view(), encoding="utf-8")
+    (EVAL / "annotator_view.md").write_text(annotator_view(), encoding="utf-8", newline="\n")
     fields = {r["field_id"]: r["name_en"] for r in read_csv("fields.csv")}
     with open(EVAL / "occupation_list.csv", "w", encoding="utf-8", newline="") as f:
         w = csv.writer(f)
