@@ -1272,6 +1272,9 @@ def sources(req):
                                   "not in our data is thrown away."},
                  reference=data["ai"]["reference"], evidence=evidence.rules(),
                  routes={"reach_points": matching.ROUTE_REACH},
+                 # our own assumptions that the formulas above do not show (scripts/source_audit.py found them)
+                 assumptions={"current_job_field": matching.CURRENT_FIELD, "cv_title_field": cv_reader.TITLE_EVIDENCE,
+                              "whatif_handoff_max": whatif.HANDOFF_MAX, "explain_neutral_band": explain.NEUTRAL_BAND},
                  lab={"stress": stress_test.rules(), "transfer": transfer.rules(), "ilo": ilo.rules()})
 
 
