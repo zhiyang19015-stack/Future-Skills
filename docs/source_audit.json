@@ -551,12 +551,10 @@
    "values": [
     70.0
    ],
-   "shown": false,
-   "not_shown": [
-    70.0
-   ],
-   "kind": "assumption",
-   "why": "a job title named in a CV counts as 70 of 100 experience evidence for its field"
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
   },
   {
    "file": "scripts/cv_reader.py",
@@ -800,12 +798,10 @@
    "values": [
     12.5
    ],
-   "shown": false,
-   "not_shown": [
-    12.5
-   ],
-   "kind": "assumption",
-   "why": "explanation wording: a part within 12.5 points of the middle is called neutral"
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
   },
   {
    "file": "scripts/ilo.py",
@@ -1038,12 +1034,10 @@
    "values": [
     80.0
    ],
-   "shown": false,
-   "not_shown": [
-    80.0
-   ],
-   "kind": "assumption",
-   "why": "the job a person does now counts as 80 of 100 experience evidence for its field"
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
   },
   {
    "file": "scripts/matching.py",
@@ -1496,11 +1490,9 @@
    "values": [
     70.0
    ],
-   "shown": false,
-   "not_shown": [
-    70.0
-   ],
-   "kind": "limit",
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
    "why": "the Phase 1 KPI 1 target (70%), from the Phase 1 proposal"
   },
   {
@@ -1885,12 +1877,10 @@
    "values": [
     98.0
    ],
-   "shown": false,
-   "not_shown": [
-    98.0
-   ],
-   "kind": "assumption",
-   "why": "a topic's hands-off share is capped at 98% in a what-if"
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
   },
   {
    "file": "scripts/whatif.py",
@@ -1913,11 +1903,9 @@
    "values": [
     80.0
    ],
-   "shown": false,
-   "not_shown": [
-    80.0
-   ],
-   "kind": "limit",
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
    "why": "work activities offered on the page"
   },
   {
@@ -2077,7 +2065,7 @@
   },
   {
    "file": "README.md",
-   "line": 232,
+   "line": 233,
    "numbers": [
     "30%",
     "46%"
@@ -2088,7 +2076,7 @@
   },
   {
    "file": "README.md",
-   "line": 267,
+   "line": 268,
    "numbers": [
     "5%"
    ],
@@ -2164,7 +2152,7 @@
   },
   {
    "file": "SOURCES.md",
-   "line": 63,
+   "line": 64,
    "numbers": [
     "1,000",
     "30%"
@@ -2274,7 +2262,7 @@
   },
   {
    "file": "docs/pitch/deck_outline.md",
-   "line": 20,
+   "line": 22,
    "numbers": [
     "1440"
    ],
@@ -2284,7 +2272,7 @@
   },
   {
    "file": "docs/pitch/deck_outline.md",
-   "line": 23,
+   "line": 25,
    "numbers": [
     "15%"
    ],
@@ -2294,7 +2282,7 @@
   },
   {
    "file": "docs/pitch/deck_outline.md",
-   "line": 42,
+   "line": 44,
    "numbers": [
     "25%"
    ],
@@ -2304,7 +2292,7 @@
   },
   {
    "file": "docs/pitch/deck_outline.md",
-   "line": 44,
+   "line": 46,
    "numbers": [
     "18,592"
    ],
@@ -2314,7 +2302,7 @@
   },
   {
    "file": "docs/pitch/deck_outline.md",
-   "line": 51,
+   "line": 53,
    "numbers": [
     "25%"
    ],
@@ -2324,17 +2312,17 @@
   },
   {
    "file": "docs/pitch/deck_outline.md",
-   "line": 53,
+   "line": 55,
    "numbers": [
-    "1,194"
+    "1,196"
    ],
-   "text": "- **标题：** Deployed, and the judges' checks run as code: blank profile ranks 0 (was 10), 9 of 10 sampled course links open, 0 of 1,194 UI strings missing",
+   "text": "- **标题：** Deployed, and the judges' checks run as code: blank profile ranks 0 (was 10), 9 of 10 sampled course links open, 0 of 1,196 UI strings missing",
    "status": "fine",
    "why": "judge_check check 9 (JC)"
   },
   {
    "file": "docs/pitch/deck_outline.md",
-   "line": 61,
+   "line": 63,
    "numbers": [
     "20%"
    ],
@@ -2344,7 +2332,7 @@
   },
   {
    "file": "docs/pitch/deck_outline.md",
-   "line": 87,
+   "line": 89,
    "numbers": [
     "5%"
    ],
@@ -2354,7 +2342,7 @@
   },
   {
    "file": "docs/pitch/deck_outline.md",
-   "line": 98,
+   "line": 100,
    "numbers": [
     "10%"
    ],
@@ -2496,8 +2484,8 @@
   "data_no_source": 0,
   "data_rows_empty": 0,
   "constants": 130,
-  "constants_not_shown": 27,
-  "constants_assumption_not_shown": 4,
+  "constants_not_shown": 21,
+  "constants_assumption_not_shown": 0,
   "constants_not_checked": 0,
   "prose_uncited": 32,
   "prose_not_checked": 0,

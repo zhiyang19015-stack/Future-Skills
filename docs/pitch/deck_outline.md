@@ -1,5 +1,7 @@
 # Deck 大纲（决赛）
 
+成品 deck（11 页，Slides artifact，私有，需要从页面的 Share 菜单分享给队友）：https://claude.ai/artifact/2cDkghtzswsc7KJch1D8jL 。它按本大纲做，多了一页 "Live demo" 过渡页，Impact 拆成两页（基线和评测、成本和覆盖）。
+
 规则：一个评分点一页，标题就是带数字的结论。每个数字都写出处文件，评委问"从哪来"时可以当场打开。评测数字一律写上"synthetic data, not validated with real people"。截图都在 `docs/ui-redesign/`，是新 UI。
 
 数字出处缩写：
@@ -50,7 +52,7 @@
 
 ## 3. Technical Execution（25%）
 
-- **标题：** Deployed, and the judges' checks run as code: blank profile ranks 0 (was 10), 9 of 10 sampled course links open, 0 of 1,194 UI strings missing
+- **标题：** Deployed, and the judges' checks run as code: blank profile ranks 0 (was 10), 9 of 10 sampled course links open, 0 of 1,196 UI strings missing
 - **内容：**
   - 公开网址检查通过（JC 第 7 项，HTTP 200）。
   - 空白档案：以前会排 10 个职业、第一名 92 分；现在排 0 个，并告诉用户先填什么（JC 第 1 项）。

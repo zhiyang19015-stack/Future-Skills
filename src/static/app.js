@@ -512,6 +512,7 @@ PAGES.sources = async () => {
         <p><span class="strong">${t("srcs.f.share")}</span><br><code>${t("srcs.f.share.code", x.automation_weight, x.augmentation_weight, x.min_usage_pct)}</code></p>
         ${s.evidence ? `<p><span class="strong">${t("srcs.f.evidence")}</span><br><span class="small">${t("srcs.ev.p", s.evidence.fresh_ai_days, s.evidence.fresh_demand_days, fmt(s.routes.reach_points, 0))}</span></p>` : ""}
         <p><span class="strong">${t("srcs.f.sim")}</span><br><span class="small">${t("srcs.f.sim.p", p.futures, p.demand_sd, Math.round(p.param_spread * 100))}</span></p>
+        ${s.assumptions ? `<p><span class="strong">${t("srcs.f.other")}</span><br><span class="small">${t("srcs.f.other.p", fmt(s.assumptions.current_job_field, 0), fmt(s.assumptions.cv_title_field, 0), fmt(s.assumptions.whatif_handoff_max, 0), fmt(50 + s.assumptions.explain_neutral_band, 1), fmt(50 - s.assumptions.explain_neutral_band, 1))}</span></p>` : ""}
       </div>
       <div class="tags">${s.scenarios.map((sc) => `<span class="chip plain">${t("scn." + sc.id)}: ${Math.round(sc.adoption * 100)}%</span>`).join("")}
         <span class="chip plain">${t("srcs.horizon", p.horizon_year)}</span>

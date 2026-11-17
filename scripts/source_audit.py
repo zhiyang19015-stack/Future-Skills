@@ -71,10 +71,6 @@ CONST_KIND = {
     "TARGET_PCT": ("limit", "the Phase 1 KPI 1 target (70%), from the Phase 1 proposal"),
     "KEEP_DAYS": ("limit", "retention of workshop answers (README: 180 days)"),
     "NEWS_FLOOR": ("limit", "simulated-news floor of 95%, stated in SOURCES.md (Simulated news)"),
-    "CURRENT_FIELD": ("assumption", "the job a person does now counts as 80 of 100 experience evidence for its field"),
-    "TITLE_EVIDENCE": ("assumption", "a job title named in a CV counts as 70 of 100 experience evidence for its field"),
-    "HANDOFF_MAX": ("assumption", "a topic's hands-off share is capped at 98% in a what-if"),
-    "NEUTRAL_BAND": ("assumption", "explanation wording: a part within 12.5 points of the middle is called neutral"),
 }
 
 # Prose lines checked by hand: (file, text the line contains, why it is fine). "" matches every line of the file.
@@ -96,7 +92,7 @@ PROSE_OK = [
     ("docs/pitch/deck_outline.md", "（20%）", "rubric weight"), ("docs/pitch/deck_outline.md", "（10%）", "rubric weight"),
     ("docs/pitch/deck_outline.md", "（5%）", "rubric weight"), ("docs/pitch/deck_outline.md", "1440", "a screenshot file name"),
     ("docs/pitch/deck_outline.md", "18,592 O*NET tasks", "count of data/onet/tasks.csv"),
-    ("docs/pitch/deck_outline.md", "1,194 UI strings", "judge_check check 9 (JC)"),
+    ("docs/pitch/deck_outline.md", "1,196 UI strings", "judge_check check 9 (JC)"),
 ]
 UI_OK = [("i18n.js", "rise 15%", "a what-if example's own input, labelled as a what-if"),
          ("i18n.js", "naik 15%", "same, BM"), ("i18n.js", "上升 15%", "same, ZH"),
