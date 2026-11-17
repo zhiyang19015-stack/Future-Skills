@@ -52,6 +52,7 @@ Object.assign(STRINGS, {
   "metro.hrd": ["Branch line: HRD Corp claimable", "Laluan cabang: boleh dituntut HRD Corp", "支线：HRD Corp 可报销课程"],
   "metro.hrd.p": ["{0} paid courses an employer can claim; the best one covers {1} of your gaps. Not in the free hours.", "{0} kursus berbayar yang boleh dituntut majikan; yang terbaik meliputi {1} jurang anda. Tidak termasuk dalam jam percuma.", "{0} 门雇主可报销的付费课程；最多的一门覆盖你 {1} 个缺口。不计入免费学时。"],
   "metro.key.free": ["solid line: free courses", "garisan padu: kursus percuma", "实线：免费课程"],
+  "metro.more": ["… {0} more stops (show all)", "… {0} hentian lagi (tunjuk semua)", "… 还有 {0} 站（全部显示）"],
   "metro.key.hrd": ["dashed branch: paid, employer can claim", "cabang putus-putus: berbayar, majikan boleh tuntut", "虚线支线：付费，雇主可报销"],
 
   /* rank moves */
@@ -69,6 +70,14 @@ Object.assign(STRINGS, {
   "nb.hide": ["Hide these marks", "Sembunyikan tanda ini", "隐藏这些标记"],
   "nb.row": ["news: #{0} → #{1}", "berita: #{0} → #{1}", "新闻：第 {0} → 第 {1}"],
   "nb.row.new": ["news: new in top 12", "berita: baharu dalam 12 teratas", "新闻：新进前 12"],
+  "nb.path.moved": ["In this plan, {0} skills changed (marked below) and {1} left the plan.", "Dalam pelan ini, {0} kemahiran berubah (ditanda di bawah) dan {1} keluar daripada pelan.", "这份计划里有 {0} 项技能变了（下面已标出），{1} 项移出了计划。"],
+  "nb.path.same": ["This plan's skills kept their order and AI marks.", "Kemahiran pelan ini kekal susunan dan tanda AI-nya.", "这份计划的技能顺序和 AI 标记都没变。"],
+  "nb.path.hours": ["Total hours {0} → {1}.", "Jumlah jam {0} → {1}.", "总学时 {0} → {1}。"],
+  "nb.path.unkept": ["This plan was not kept before the approval (only your chosen job and top 3 moves are), so its changes cannot be shown.", "Pelan ini tidak disimpan sebelum kelulusan (hanya pekerjaan pilihan anda dan 3 teratas), jadi perubahannya tidak dapat ditunjukkan.", "批准前没有保存这份计划（只保存了你选的职业和前 3 个），所以无法显示它的变化。"],
+  "nb.path.new": ["new in plan", "baharu dalam pelan", "新进计划"],
+  "nb.path.step": ["step {0} → {1}", "langkah {0} → {1}", "第 {0} 步 → 第 {1} 步"],
+  "nb.path.ai": ["AI: {0} → {1}", "AI: {0} → {1}", "AI：{0} → {1}"],
+  "nb.path.row": ["news: {0}", "berita: {0}", "新闻：{0}"],
 
   /* profile progress */
   "prog.h": ["Your answers so far", "Jawapan anda setakat ini", "你目前的回答"],

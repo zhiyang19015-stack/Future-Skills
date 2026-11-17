@@ -408,3 +408,9 @@ input.grow { flex: 1; min-width: 0; }
 @media (max-width: 640px) {
   .match .fs-score { grid-column: 1 / -1; justify-self: start; flex-direction: row; flex-wrap: wrap; }
 }
+.fs-metro .fs-stop.hid { display: none; }
+.fs-metro.open .fs-stop.hid { display: flex; }
+.fs-metro.open .fs-stop.fold { display: none; }
+.fs-stop.fold::after { border-style: dotted; background: var(--surface); }
+.fs-stop.fold::before { background: repeating-linear-gradient(var(--brand) 0 3px, transparent 3px 7px); }
+#app:focus-visible { outline: none; }  /* focus moves to <main> after each route for screen readers; it is not a control */

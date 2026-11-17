@@ -95,17 +95,29 @@ function metroMap(L, occId) {
   L.skills.forEach((s, i) => stops.push(station(nm(s.skill_name), s.resources, `path-sk-${i}`)));
   if (L.hands_on.length) stops.push(`<li class="fs-stop end"><button type="button" class="linklike" data-act="jump" data-id="path-s3"><span class="strong">${t("metro.hands")}</span></button><span class="tiny muted">${t("metro.hands.p", L.hands_on.length)}</span></li>`);
   const claim = L.claimable || [];
+  // a long line folds its middle: the first METRO_HEAD stops and the last one stay, a button shows the rest
+  let line = stops.join("");
+  if (stops.length > METRO_MAX) {
+    const hidden = stops.slice(METRO_HEAD, -1);
+    line = stops.slice(0, METRO_HEAD).join("")
+      + `<li class="fs-stop fold"><button type="button" class="linklike" data-act="metroMore" aria-expanded="false"><span class="strong">${t("metro.more", hidden.length)}</span></button></li>`
+      + hidden.map((h) => h.replace('<li class="fs-stop', '<li class="fs-stop hid')).join("") + stops[stops.length - 1];
+  }
   return `<section class="card stack fs-metro" aria-label="${esc(t("metro.h"))}">
     <div><h2>${t("metro.h")}</h2><p class="small muted">${t("metro.p")}</p></div>
-    <ol class="fs-line">${stops.join("")}</ol>
+    <ol class="fs-line">${line}</ol>
     ${claim.length ? `<div class="fs-spur"><button type="button" class="linklike" data-act="jump" data-id="path-hrd"><span class="strong">${t("metro.hrd")}</span></button>
       <span class="tiny muted">${t("metro.hrd.p", claim.length, Math.max(...claim.map((r) => r.teaches_gaps || 0)))}</span></div>` : ""}
     <p class="tiny muted"><span class="fs-key line"></span> ${t("metro.key.free")} &nbsp; <span class="fs-key spur"></span> ${t("metro.key.hrd")}</p>
   </section>`;
 }
+const METRO_MAX = 8, METRO_HEAD = 5;
+ACT.metroMore = (el) => { const box = el.closest(".fs-metro"); if (box) box.classList.add("open"); };
 ACT.jump = (el) => {
   const to = document.getElementById(el.dataset.id);
   if (!to) return;
+  const box = el.closest(".fs-metro");
+  if (box) box.classList.add("open");
   to.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
   to.setAttribute("tabindex", "-1"); to.focus({ preventScroll: true });
 };
@@ -162,6 +174,38 @@ function newsMarks(m) {
   return { banner, mark };
 }
 ACT.newsMarksOff = () => { ui.newsBefore = null; redraw(); };
+
+/* The plans kept just before an approval (futures.js rnDecide): the chosen job and the top 3 moves. */
+const planOf = (L) => ({ hours: L.total_hours, skills: Object.fromEntries(L.skills.map((s, i) => [s.skill_id, { i, status: s.ai.status }])) });
+async function plansBefore(m) {
+  const ids = [...new Set([state.occId, ...(m.results || []).filter(isMove).slice(0, 3).map((r) => r.occ_id)].filter(Boolean))];
+  const out = {};
+  await Promise.all(ids.map(async (id) => {
+    try { out[id] = planOf(await cached("/api/learn", matchBody({ occ_id: id }))); } catch (e) { /* not kept: the page says so */ }
+  }));
+  return out;
+}
+const statusWord = (s) => (STRINGS["status.word." + s] ? t("status.word." + s) : esc(s));
+function pathNewsMarks(L, occId) {
+  const b = ui.newsBefore;
+  if (!b || !b.after) return { banner: "", mark: () => "" };
+  const off = `<a href="#/futures">${t("nb.go")} →</a> <button type="button" class="linklike" data-act="newsMarksOff">${t("nb.hide")}</button>`;
+  const was = (b.plans || {})[occId];
+  if (!was) return { banner: `<div class="note small" role="status"><span class="strong">${t("nb.h", esc(b.title))}</span> ${t("nb.path.unkept")} ${off}</div>`, mark: () => "" };
+  const now = planOf(L);
+  const marks = {};
+  L.skills.forEach((s, i) => {
+    const w = was.skills[s.skill_id];
+    const bits = !w ? [t("nb.path.new")] : [w.i !== i ? t("nb.path.step", w.i + 1, i + 1) : "", w.status !== s.ai.status ? t("nb.path.ai", statusWord(w.status), statusWord(s.ai.status)) : ""].filter(Boolean);
+    if (bits.length) marks[s.skill_id] = bits.join(" · ");
+  });
+  const gone = Object.keys(was.skills).filter((id) => !now.skills[id]).length;
+  const n = Object.keys(marks).length;
+  const hours = Math.round(now.hours) !== Math.round(was.hours) ? ` ${t("nb.path.hours", fmt(was.hours, 0), fmt(now.hours, 0))}` : "";
+  const banner = `<div class="note stack tight fs-newsmark" role="status"><p class="strong">${t("nb.h", esc(b.title))}</p>
+    <p class="small">${n || gone ? t("nb.path.moved", n, gone) : t("nb.path.same")}${hours} ${t("nb.undo")} ${off}</p></div>`;
+  return { banner, mark: (id) => (marks[id] ? `<span class="fs-move changed">${t("nb.path.row", marks[id])}</span>` : "") };
+}
 
 /* ---------- the profile's progress: which optional parts have an answer ---------- */
 

@@ -259,7 +259,7 @@ An honest limit: **the first recommendation changes between slow and fast adopti
 ## Future Improvements
 
 - Not done in the UI redesign (Design & UX is 5% of the final rubric): a collapsible sidebar app shell and mobile bottom navigation, a home hero illustration, page-transition micro-interactions, and the new tokens on the structure of the SDG, Futures, Lab, Team and Sources pages (they get the colours and controls only).
-- Approved-news marks are shown on Matches only, and only in the tab where the approval was made; the Pathway page does not mark what changed yet.
+- Approved-news marks live only in the tab where the approval was made. Pathway marks changes only for the plans kept just before the approval (the chosen job and the top 3 moves); for any other job it says the plan was not kept. For the item tested (Copilot testing for .NET), none of ten software plans changed, so Pathway mostly reports "kept their order".
 - Real-person test of the first-time path (time to a ranking and a plan): not measured; plan: five people who have not seen the app, screen recorded, no instructions.
 
 ## History

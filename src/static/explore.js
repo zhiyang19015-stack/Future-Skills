@@ -551,15 +551,17 @@ PAGES.pathway = async (args) => {
   if (!options.some((x) => x.occ_id === occId)) options.push({ occ_id: occId, title: L.role.name, rank: null });
   const badges = [["start", p.ticked.length >= 1], ["half", p.share >= 0.5], ["done", p.all.length > 0 && p.share >= 1]];
   let n = 0;
+  const nb = pathNewsMarks(L, occId);
   const stage = (title, body, note = "", id = "") => (body ? `<section class="card stack"${id ? ` id="${id}"` : ""}><div class="row"><span class="rank" style="width:30px;height:30px;border-radius:50%;background:var(--brand-soft);color:var(--brand-strong);display:grid;place-items:center;font-weight:750">${++n}</span><h2>${title}</h2></div>${note ? `<p class="small muted">${note}</p>` : ""}${body}</section>` : "");
   const skills = L.skills.map((s, i) => `<div class="stack tight" id="path-sk-${i}" style="padding:10px 0;border-top:1px solid var(--line)">
-      <div class="row">${dotName({ ...s.ai, skill_name: s.skill_name })}${s.your_level !== undefined && s.kind !== "technology" ? `<span class="small muted">${t("path.level", fmt(s.your_level), fmt(s.level_needed))}</span>` : ""}${(s.sdg || []).slice(0, 2).map((x) => sdgChip(x.target)).join("")}</div>
+      <div class="row">${dotName({ ...s.ai, skill_name: s.skill_name })}${s.your_level !== undefined && s.kind !== "technology" ? `<span class="small muted">${t("path.level", fmt(s.your_level), fmt(s.level_needed))}</span>` : ""}${(s.sdg || []).slice(0, 2).map((x) => sdgChip(x.target)).join("")}${nb.mark(s.skill_id)}</div>
       ${s.resources.length ? s.resources.map((r) => resourceRow(r, occId)).join("") : `<p class="small muted">${t("path.nocourse")}</p>`}</div>`).join("");
   const handsOn = L.hands_on.map((r) => `<p class="small"><a href="${safeUrl(r.url)}" target="_blank" rel="noopener">${esc(nm(r.title))}</a> · ${esc(r.provider)}<br><span class="muted">${esc(nm(r.notes))}</span></p>`).join("");
   const claimable = (L.claimable || []).map((r) => `<p class="small"><a href="${safeUrl(r.url)}" target="_blank" rel="noopener">${esc(nm(r.title))}</a> · ${esc(r.provider)} · <b>${r.cost_myr ? `RM ${whole(r.cost_myr)}` : t("path.quote")}</b>${r.teaches_gaps ? ` · ${t("path.hrd.gaps", r.teaches_gaps)}` : ""}<br><span class="muted">${esc(nm(r.notes))} · ${t("path.checked", dateText(r.verified_date))}</span></p>`).join("");
   return `<div class="stack loose">
     <header class="stack tight"><p class="eyebrow">${t("step", 4)} · ${t("nav.pathway")}</p><h1>${t("path.h1", esc(nm(L.role.name)))}</h1>
       <p class="lead">${t(L.personal && hasProfile() ? "path.lead.personal" : "path.lead.role")}</p></header>
+    ${nb.banner}
     <section class="card pad-s row between">
       <label class="field" style="flex:1 1 260px">${t("path.role")}<select data-on="pathOcc">${options.map((x) => `<option value="${esc(x.occ_id)}"${x.occ_id === occId ? " selected" : ""}>${x.rank ? `#${x.rank} ` : ""}${esc(nm(x.title))}</option>`).join("")}</select></label>
       <label class="field">${t("you.hours")}<select data-on="pathHours" class="inline">${[3, 5, 8, 10, 15, 20].map((h) => `<option value="${h}"${state.hours === h ? " selected" : ""}>${t("you.hours.n", h)}</option>`).join("")}</select></label>
