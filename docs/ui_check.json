@@ -1,9 +1,9 @@
 {
  "date": "2026-11-17",
- "commit": "3695c79",
+ "commit": "4975ea9",
  "width": 390,
- "how": "Built-in browser at 390x844. Each page opened by its hash; sideways scroll = document scrollWidth > clientWidth. Console errors read from the browser console after the walk. Quick start with one field liked; Matches and Pathway with the first fictional demo person. Two more Matches states were also checked and did not scroll sideways: after switching to Fast, and with 'Why this score?' open (task strip loaded); they are not counted in 'pages' so the count matches the run before the redesign.",
- "visited": ["#/", "#/you", "#/radar", "#/occ/15-1252.00", "#/quick (one field)", "#/matches (demo)", "#/pathway (demo)", "#/sdg", "#/futures", "#/lab", "#/team", "#/sources"],
+ "how": "Headless Microsoft Edge over the DevTools protocol at 390x844 (redesign v2). Each page opened by its hash after clearing storage; sideways scroll = document scrollWidth > window innerWidth. Console errors and failed loads read from the protocol's Runtime and Log events during each page. Matches, Pathway, SDG, Futures, Lab and the occupation page with the first fictional demo person (Aiman). Quick start was opened without a field picked, unlike the run before the redesign (one field liked). The phone's More sheet was also opened on Radar and did not scroll sideways; it is not counted in 'pages'.",
+ "visited": ["#/", "#/you", "#/radar", "#/occ/15-1299.06 (demo)", "#/quick (no field)", "#/matches (demo)", "#/pathway (demo)", "#/sdg (demo)", "#/futures (demo)", "#/lab (demo)", "#/team", "#/sources"],
  "pages": 12,
  "overflow_pages": 0,
  "console_errors": 0
