@@ -218,18 +218,56 @@ function occMatches(list, query, field = "", limit = 30) {
 
 const STEPS = [["you", "nav.you"], ["radar", "nav.radar"], ["matches", "nav.matches"], ["pathway", "nav.pathway"],
   ["sdg", "nav.sdg"], ["futures", "nav.futures"]];
+const TOOLS = [["lab", "nav.lab"], ["team", "nav.team"], ["sources", "nav.sources"]];
+/* the page each route belongs to in the navigation: an occupation sits under the Radar, the quick
+   start under You, the workshop check under Team */
+const NAV_OF = { occ: "radar", quick: "you", check: "team", pilot: "team" };
+const icon = (id, cls = "ico") => `<svg class="${cls}" aria-hidden="true" focusable="false"><use href="#i-${id}"/></svg>`;
+const here = (id, at) => (at === id ? ' aria-current="page"' : "");
+/* The app shell: the sidebar (the six steps, then the tools), the top bar (where you are, the
+   scenario every page uses, the data date), the right rail on wide screens, and the phone's
+   bottom bar. All of it is drawn again on every route, from state and the cached API answers. */
 function drawChrome(current) {
-  const at = current === "occ" ? "radar" : current;
-  $("#steps").innerHTML = STEPS.map(([id, key], i) =>
-    `<a href="#/${id}"${at === id ? ' aria-current="page"' : ""}><b>${i + 1}</b><span>${t(key)}</span></a>`).join("")
-    + `<a href="#/lab"${at === "lab" ? ' aria-current="page"' : ""}><b>⚗</b><span>${t("nav.lab")}</span></a>`
-    + `<a href="#/team"${at === "team" ? ' aria-current="page"' : ""}><b>+</b><span>${t("nav.team")}</span></a>`
-    + `<a href="#/sources"${at === "sources" ? ' aria-current="page"' : ""}><b>i</b><span>${t("nav.sources")}</span></a>`;
+  const at = NAV_OF[current] || current;
+  document.body.dataset.page = at;  // the stylesheet gives the home page the full width (no rail)
+  const stepNo = STEPS.findIndex(([id]) => id === at);
+  const done = { you: hasProfile() };
+  $("#steps").innerHTML = `<a class="nav" href="#/"${here("home", at)}>${icon("home")}<span>${t("nav.home")}</span></a>
+    <p class="nav-h">${t("nav.group.path")}</p>
+    ${STEPS.map(([id, key], i) => `<a class="nav" href="#/${id}"${here(id, at)}><b class="n${done[id] ? " done" : ""}">${done[id] ? icon("check", "ico tick") : i + 1}</b><span>${t(key)}</span></a>`).join("")}
+    <p class="nav-h">${t("nav.group.tools")}</p>
+    ${TOOLS.map(([id, key]) => `<a class="nav" href="#/${id}"${here(id, at)}>${icon(id)}<span>${t(key)}</span></a>`).join("")}`;
+  $("#side-foot").innerHTML = `<p class="tiny muted">${t("foot.privacy")}${LANG === "zh" ? "。" : "."}</p><a class="tiny" href="#/" data-act="reset">${t("foot.reset")}</a>`;
+  $("#crumb").innerHTML = at === "home" ? `<span class="strong">${t("nav.home")}</span>`
+    : stepNo >= 0 ? `<span class="muted">${t("step", stepNo + 1)}</span><span class="muted" aria-hidden="true">/</span><span class="strong">${t(STEPS[stepNo][1])}</span>`
+    : `<span class="strong">${t("nav." + at) === "nav." + at ? "" : t("nav." + at)}</span>`;
+  const scn = SCENARIO_IDS.map((id) => `<button type="button" data-act="scenario" data-id="${id}" aria-pressed="${state.scenario === id}"><i class="sd sd-${id}" aria-hidden="true"></i>${t("scn." + id + ".short")}</button>`).join("");
+  $("#top-scn").innerHTML = `<div class="seg mini" role="group" aria-label="${esc(t("scn.label"))}">${scn}</div>`;
+  const d = ui.dataDates;
+  $("#top-stamp").innerHTML = d ? `<a class="live" href="#/sources" title="${esc(t("stamp.title"))}"><i class="pulse" aria-hidden="true"></i>${t("shell.data", monthText(d.month), dateText(d.release))}</a>` : "";
+  const pct = Math.round((state.adoption || 0) * 100);
+  $("#rail").innerHTML = `<section class="rail-block"><p class="rail-h">${t("scn.label")}</p>
+      <p class="strong"><i class="sd sd-${esc(state.scenario)}" aria-hidden="true"></i> ${state.scenario === "custom" ? `${pct}%` : t("scn." + state.scenario)}</p>
+      <p class="small muted">${t(state.scenario === "custom" ? "scn.custom.desc" : `scn.${state.scenario}.desc`, pct)}</p>
+      <div class="adopt" role="img" aria-label="${esc(t("shell.adopt", pct))}"><i style="width:${clamp(pct, 0, 100)}%"></i></div>
+      <p class="tiny muted">${t("shell.adopt", pct)}</p></section>
+    ${state.demo ? `<section class="rail-block"><p class="rail-h">${t("shell.demo.h")}</p><p class="small"><span class="chip warn">${t("home.fictional")}</span></p><a class="small" href="#/you">${t("shell.demo.own")} →</a></section>` : ""}
+    <section class="rail-block"><p class="rail-h">${t("shell.read.h")}</p>
+      <ul class="rail-list small"><li>${t("shell.read.1")}</li><li>${t("shell.read.2")}</li><li>${t("shell.read.3")}</li></ul></section>
+    <section class="rail-block rail-note small">${t("foot.human")}</section>
+    ${d ? `<a class="rail-block rail-src small" href="#/sources"><span class="rail-h">${t("nav.sources")}</span><span>${t("shell.data", monthText(d.month), dateText(d.release))}</span></a>` : ""}`;
+  const tabs = [["home", "/", "nav.home"], ["you", "/you", "nav.you"], ["radar", "/radar", "nav.radar"], ["matches", "/matches", "nav.matches"]];
+  const inMore = !tabs.some(([id]) => id === at);
+  $("#bnav").innerHTML = tabs.map(([id, href, key]) => `<a href="#${href}"${here(id, at)}>${icon(id)}<span>${t(key)}</span></a>`).join("")
+    + `<button type="button" data-act="moreNav" aria-expanded="false" aria-controls="more"${inMore ? ' aria-current="page"' : ""}>${icon("more")}<span>${t("nav.more")}</span></button>`;
+  $("#more").innerHTML = `<div class="more-in"><p class="nav-h">${t("nav.more")}</p>${[["pathway", "nav.pathway"], ["sdg", "nav.sdg"], ["futures", "nav.futures"], ...TOOLS].map(([id, key]) =>
+    `<a class="nav" href="#/${id}"${here(id, at)}>${icon(id)}<span>${t(key)}</span></a>`).join("")}</div>`;
+  $("#more").hidden = true;
   $("#foot").innerHTML = `<p>${t("foot.estimates")}</p><p>${t("foot.human")}</p>
     <p>${t("foot.privacy")} · <a href="#/sources">${t("nav.sources")}</a> · <a href="#/" data-act="reset">${t("foot.reset")}</a></p>`;
   const dark = isDark();
   const btn = $("#theme");
-  btn.textContent = dark ? "☀" : "☾";
+  btn.innerHTML = icon(dark ? "sun" : "moon");
   btn.setAttribute("aria-label", t(dark ? "theme.light" : "theme.dark"));
   btn.title = btn.getAttribute("aria-label");
   $("#lang").value = LANG;
@@ -272,6 +310,13 @@ const redraw = () => route(true);
 const ACT = {
   retry: () => route(),
   scenario: (el) => setScenario(el.dataset.id),
+  /* the phone's "More" sheet: the steps and tools that do not fit in the bottom bar */
+  moreNav: (el) => {
+    const box = $("#more");
+    box.hidden = !box.hidden;
+    el.setAttribute("aria-expanded", String(!box.hidden));
+    if (!box.hidden) { const first = box.querySelector("a"); if (first) first.focus(); }
+  },
   reset: (el, e) => {
     e.preventDefault();
     if (!confirm(t("foot.reset.confirm"))) return;
@@ -347,7 +392,7 @@ document.addEventListener("input", (e) => {
 /* ---------- home ---------- */
 
 function personaCards(people) {
-  return `<div class="grid">${people.map((p) => `
+  return `<div class="grid people">${people.map((p) => `
     <button type="button" class="card persona" data-act="demo" data-id="${esc(p.profile_id)}">
       <div class="row"><span class="avatar" aria-hidden="true">${initials(p.name)}</span>
         <div><div class="strong">${esc(p.name)}</div><span class="chip brand">${t("kind." + (p.kind || "student"))}</span> <span class="chip plain">${t("home.fictional")}</span></div></div>
@@ -370,6 +415,43 @@ function factTiles(c, src) {
     <div class="row">${evStamp({ parts: [[t("stamp.ai"), (src && (src.ai_usage || src.economic_index || src).release_date)]] })}</div>${aiSource(src)}`;
 }
 
+/* The hero's picture: every field as one bar, its height the share of its tasks people already hand
+   to AI (/api/radar, moderate). The person's own field, when they chose one, is drawn in the brand
+   colour; otherwise the highest. Real numbers only: a bar is never drawn without one. */
+function exposureSkyline(fields) {
+  const list = [...fields].filter((f) => f.ai_share !== null && f.ai_share !== undefined).sort((a, b) => b.ai_share - a.ai_share);
+  if (!list.length) return "";
+  const mine = Object.keys(state.fields || {}).filter((id) => state.fields[id] > 0);  // you.js: 100 = chosen, 0 = ruled out
+  const pick = list.find((f) => mine.includes(f.field_id)) || list[0];
+  const top = Math.max(10, Math.ceil(list[0].ai_share / 10) * 10);
+  const W = 560, H = 250, L = 34, R = 8, T = 30, B = 210;
+  const bw = (W - L - R) / list.length;
+  const y = (v) => B - ((B - T) * v) / top;
+  const lvl = (v) => Math.min(5, Math.floor((v / top) * 6));
+  const ticks = [0, top / 2, top].map((v) => `<line x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}" class="gl"/><text x="${L - 6}" y="${y(v) + 4}" text-anchor="end" class="tk">${fmt(v, 0)}%</text>`).join("");
+  const bars = list.map((f, i) => {
+    const x = L + i * bw + 2, h = Math.max(2, B - y(f.ai_share));
+    return `<rect x="${fmt(x, 1)}" y="${fmt(B - h, 1)}" width="${fmt(bw - 4, 1)}" height="${fmt(h, 1)}" rx="3" class="${f === pick ? "pick" : "h" + lvl(f.ai_share)}"><title>${esc(fieldName(f.field_id))}: ${fmt(f.ai_share)}%</title></rect>`;
+  }).join("");
+  const i = list.indexOf(pick), px = L + i * bw + bw / 2, anchor = i > list.length / 2 ? "end" : "start";
+  const label = `<line x1="${fmt(px, 1)}" x2="${fmt(px, 1)}" y1="${fmt(y(pick.ai_share) - 4, 1)}" y2="${T - 8}" class="lead-l"/>
+    <text x="${fmt(px + (anchor === "start" ? -4 : 4), 1)}" y="${T - 14}" text-anchor="${anchor}" class="call">${esc(fieldName(pick.field_id))} · ${fmt(pick.ai_share)}%</text>`;
+  const low = list[list.length - 1];
+  const aria = t("home.viz.aria", list.length, fieldName(list[0].field_id), fmt(list[0].ai_share), fieldName(low.field_id), fmt(low.ai_share));
+  return `<svg class="skyline" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(aria)}">${ticks}${bars}${label}
+    <text x="${L}" y="${B + 18}" class="tk">${t("home.viz.hi")}</text><text x="${W - R}" y="${B + 18}" text-anchor="end" class="tk">${t("home.viz.lo")}</text></svg>
+    <ol class="viz-top">${list.slice(0, 3).map((f) => `<li><span>${esc(fieldName(f.field_id))}</span><b class="num">${fmt(f.ai_share)}%</b></li>`).join("")}</ol>`;
+}
+
+/* How the occupations split under the scenario: rising, steady, declining, with words, not colour alone. */
+const SPLIT = ["rising", "steady", "declining"];
+function statusSplit(c) {
+  const n = (c.rising || 0) + (c.steady || 0) + (c.declining || 0) || 1;
+  return `<div class="split" role="img" aria-label="${esc(SPLIT.map((s) => `${t("status." + s)} ${c[s]}`).join(", "))}">${SPLIT.map((s) =>
+    `<i class="sp-${s}" style="width:${(100 * c[s]) / n}%"></i>`).join("")}</div>
+    <ul class="split-key">${SPLIT.map((s) => `<li><i class="sw sp-${s}" aria-hidden="true"></i>${t("status." + s)} <b class="num">${c[s]}</b></li>`).join("")}</ul>`;
+}
+
 PAGES.home = async () => {
   const [radar, people, wi] = await Promise.all([cached("/api/radar?scenario=moderate"), cached("/api/profiles"), cached("/api/whatif")]);
   rememberScenarios(radar.scenarios);
@@ -379,19 +461,39 @@ PAGES.home = async () => {
   const about = news && people.find((p) => p.profile_id === news.person);
   const newsGo = own ? t("home.news.go.you") : about ? t("home.news.go.person", esc(about.name)) : t("home.news.go");
   const counts = radar.fields.reduce((n, f) => n + f.occupations, 0);
-  return `<div class="stack loose">
-    <section class="hero stack fs-hero">
-      <div class="fs-songket" aria-hidden="true"></div>
-      <p class="eyebrow">${t("home.eyebrow")}</p>
-      <h1>${t("home.h1")}</h1>
-      <p class="lead">${t("home.lead", counts, radar.fields.length)}</p>
-      <div class="row">
-        ${started ? `<a class="btn primary" href="#/matches">${t("home.continue")}</a>` : `<a class="btn primary" href="#/quick">${t("home.cta.profile")} →</a>`}
-        <a class="btn" href="#/radar">${t("home.cta.radar")}</a>
-        ${started ? "" : `<a class="small" href="#/you">${t("home.cta.full")}</a>`}
+  const c = radar.context, src = radar.sources, months = c.months || [], index = c.usage_index_my || {};
+  const aiDate = src && (src.ai_usage || src.economic_index || src).release_date;
+  return `<div class="stack loose home">
+    <section class="hero fs-hero">
+      <div class="hero-copy stack">
+        <p class="eyebrow">${t("home.eyebrow")}</p>
+        <h1>${t("home.h1")}</h1>
+        <p class="lead">${t("home.lead", counts, radar.fields.length)}</p>
+        <div class="row">
+          ${started ? `<a class="btn primary big" href="#/matches">${t("home.continue")} ${icon("arrow")}</a>` : `<a class="btn primary big" href="#/quick">${icon("quick")}${t("home.cta.profile")}</a>`}
+          <a class="btn big" href="#/radar">${icon("radar")}${t("home.cta.radar")}</a>
+        </div>
+        ${started ? "" : `<p class="small muted">${t("home.cta.note")} <a href="#/you">${t("home.cta.full")}</a></p>`}
+        <div class="tags"><span class="chip plain">${icon("check", "ico xs")}${t("home.free")}</span><span class="chip plain">${icon("check", "ico xs")}${t("home.nologin")}</span><span class="chip plain">${icon("check", "ico xs")}${t("home.private")}</span><span class="chip plain">English · Bahasa Melayu · 中文</span></div>
       </div>
-      ${started ? "" : `<p class="small muted">${t("home.cta.note")}</p>`}
-      <div class="tags"><span class="chip plain">${t("home.free")}</span><span class="chip plain">${t("home.nologin")}</span><span class="chip plain">${t("home.private")}</span><span class="chip plain">English · Bahasa Melayu · 中文</span></div>
+      <figure class="hero-viz">
+        <figcaption class="row between"><span class="strong">${t("home.viz.h")}</span><span class="chip brand">${t("scn.moderate")}</span></figcaption>
+        <p class="tiny muted">${t("home.viz.p")}</p>
+        ${exposureSkyline(radar.fields)}
+        <div class="row">${evStamp({ parts: [[t("stamp.ai"), aiDate]] })}</div>
+      </figure>
+    </section>
+
+    <section class="stack" aria-labelledby="facts-h">
+      <div class="sec-h"><h2 id="facts-h">${t("home.facts.h")}</h2><a class="small" href="#/radar">${t("home.cta.radar")} →</a></div>
+      <div class="kpis">
+        <div class="card kpi"><p class="k-l">${t("home.kpi.occ")}</p><p class="k-v num">${whole(counts)}</p><p class="small muted">${t("home.kpi.occ.p", radar.fields.length)}</p></div>
+        <div class="card kpi wide"><p class="k-l">${t("home.kpi.split", radar.horizon_year)}</p><p class="k-v num">${radar.counts.declining}<small> / ${whole(counts)}</small></p>${statusSplit(radar.counts)}</div>
+        <div class="card kpi"><p class="k-l">${t("home.kpi.work")}</p><p class="k-v num">${fmt(c.work_use.malaysia, 0)}%</p><p class="small muted">${t("fact.work", fmt(c.work_use.global, 0))}</p></div>
+        <div class="card kpi"><p class="k-l">${t("home.kpi.handoff")}</p><p class="k-v num">${fmt(c.automation_all.malaysia, 0)}%</p><p class="small muted">${t("fact.handoff", fmt(c.automation_all.global, 0))}</p></div>
+      </div>
+      ${months.length ? `<p class="small muted">${fmt(index[months[months.length - 1]], 2)}× · ${t("fact.index", fmt(index[months[0]], 2), monthText(months[0]), monthText(months[months.length - 1]))}</p>` : ""}
+      ${aiSource(src)}
     </section>
 
     <section class="stack" aria-label="${esc(t("home.flow.h"))}">
@@ -400,38 +502,34 @@ PAGES.home = async () => {
     </section>
 
     <section class="stack">
-      <div><h2>${t("home.persona.h")}</h2><p class="muted small">${t("home.persona.p")}</p></div>
+      <div class="sec-h"><div><h2>${t("home.persona.h")}</h2><p class="muted small">${t("home.persona.p")}</p></div><span class="chip warn">${t("home.fictional")}</span></div>
       ${personaCards(people)}
     </section>
 
-    ${news ? `<section class="card stack" style="border-color:var(--ai)">
-      <div class="row"><span class="chip ai">${t("news.simulated")}</span>${fieldChip(news.field)}</div>
-      <p class="headline big">“${esc(t("news." + news.id + ".title"))}”</p>
-      <p class="muted">${t("home.news.p")}</p>
-      <div class="row"><button type="button" class="btn primary" data-act="newsFor" data-id="${esc(news.id)}" data-person="${own ? "" : esc(news.person || "")}">${newsGo}</button>
-        <a class="btn ghost" href="#/futures">${t("home.news.more")}</a><a class="btn ghost" href="#/futures">${t("home.news.real")} →</a></div>
-    </section>` : ""}
-
-    <section class="card stack">
-      <div><h2>${t("home.team.h")}</h2><p class="muted small">${t("home.team.p")}</p></div>
-      <div class="row"><a class="btn small" href="#/team">${t("home.team.go")} →</a><a class="btn small" href="#/pilot">${t("home.pilot.go")} →</a></div>
-    </section>
+    <div class="grid two">
+      ${news ? `<section class="card stack news-card">
+        <div class="row"><span class="chip ai">${t("news.simulated")}</span>${fieldChip(news.field)}</div>
+        <p class="headline big">“${esc(t("news." + news.id + ".title"))}”</p>
+        <p class="muted small">${t("home.news.p")}</p>
+        <div class="row"><button type="button" class="btn primary small" data-act="newsFor" data-id="${esc(news.id)}" data-person="${own ? "" : esc(news.person || "")}">${newsGo}</button>
+          <a class="btn ghost small" href="#/futures">${t("home.news.more")}</a><a class="btn ghost small" href="#/futures">${t("home.news.real")} →</a></div>
+      </section>` : ""}
+      <section class="card stack">
+        <div class="row">${icon("team", "ico lg")}<h2>${t("home.team.h")}</h2></div><p class="muted small">${t("home.team.p")}</p>
+        <div class="row"><a class="btn small" href="#/team">${t("home.team.go")} →</a><a class="btn small" href="#/pilot">${t("home.pilot.go")} →</a></div>
+      </section>
+    </div>
 
     <section class="stack">
-      <h2>${t("home.facts.h")}</h2>
-      ${factTiles(radar.context, radar.sources)}
+      <h2>${t("home.how.h")}</h2>
+      <div class="journey">${STEPS.map(([id, key], i) => `
+        <a href="#/${id}"><span class="n">${i + 1}</span>${icon(id)}<span class="strong">${t(key)}</span><span class="small muted">${t("how." + id)}</span></a>`).join("")}</div>
     </section>
 
     <section class="stack">
       <h2>${t("home.rules.h")}</h2>
       <div class="grid three">${[1, 2, 3].map((i) => `
-        <div class="card pad-s stack tight"><span class="strong">${t(`home.rules.${i}.h`)}</span><span class="small muted">${t(`home.rules.${i}.p`)}</span></div>`).join("")}</div>
-    </section>
-
-    <section class="stack">
-      <h2>${t("home.how.h")}</h2>
-      <div class="grid three journey">${STEPS.map(([id, key], i) => `
-        <a class="card pad-s" href="#/${id}"><span class="n">${i + 1}</span><span class="strong">${t(key)}</span><span class="small muted">${t("how." + id)}</span></a>`).join("")}</div>
+        <div class="card flat pad-s stack tight"><span class="strong">${t(`home.rules.${i}.h`)}</span><span class="small muted">${t(`home.rules.${i}.p`)}</span></div>`).join("")}</div>
     </section>
   </div>`;
 };
@@ -552,8 +650,17 @@ async function boot() {
     drawChrome(location.hash.replace(/^#\/?/, "").split("/")[0] || "home");
   });
   window.addEventListener("hashchange", () => route());
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !$("#more").hidden) { $("#more").hidden = true; const b = $("#bnav [data-act='moreNav']"); if (b) { b.setAttribute("aria-expanded", "false"); b.focus(); } }
+  });
   try {
     FIELDS = Object.fromEntries((await cached("/api/fields")).map((f) => [f.field_id, f]));
   } catch (e) { /* route() shows the error */ }
   route();
+  // the data date in the top bar: the AI-use month and release the numbers come from (the home page's own answer, cached)
+  cached("/api/radar?scenario=moderate").then((r) => {
+    const ai = r.sources && (r.sources.ai_usage || r.sources.economic_index);
+    ui.dataDates = { month: r.context && r.context.latest, release: ai && ai.release_date };
+    drawChrome(location.hash.replace(/^#\/?/, "").split("/")[0] || "home");
+  }).catch(() => { /* no date: the top bar leaves it out */ });
 }

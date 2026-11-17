@@ -4,9 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f2f5f4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#080d0f" media="(prefers-color-scheme: dark)">
 <meta name="description" content="AI is changing work in every field. See which jobs and skills rise or decline in Malaysia under three futures, where you fit, and the free courses to get there.">
 <title>Future Skills</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230F6E66'/%3E%3Cpath d='M8 22l5.5-6.5 4 3L24 10' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='10' r='2.6' fill='white'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230B7069'/%3E%3Cpath d='M8 22l5.5-6.5 4 3L24 10' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='10' r='2.6' fill='white'/%3E%3C/svg%3E">
 <link href="/static/style.css" rel="stylesheet">
 <script>
   /* the theme the person picked last time, before the page draws, so it never flashes */
@@ -15,26 +17,65 @@
 </head>
 <body>
 <a class="skip" href="#app" data-i18n="chrome.skip">Skip to content</a>
-<header class="top">
-  <div class="top-in">
+<!-- one set of line icons, drawn with the text colour; every use is decoration (aria-hidden) -->
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3.5 10.5 12 4l8.5 6.5V20a1 1 0 0 1-1 1H15v-6H9v6H4.5a1 1 0 0 1-1-1z"/></symbol>
+  <symbol id="i-you" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.4-6 8-6s6.5 2 8 6"/></symbol>
+  <symbol id="i-radar" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="m12 12 6-6"/></symbol>
+  <symbol id="i-matches" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4 6h1M4 12h1M4 18h1"/></symbol>
+  <symbol id="i-pathway" viewBox="0 0 24 24"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h7a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h7"/></symbol>
+  <symbol id="i-sdg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></symbol>
+  <symbol id="i-futures" viewBox="0 0 24 24"><path d="M4 18c5 0 7-12 16-12M4 18c5 0 9-4 16-4M4 18h16"/></symbol>
+  <symbol id="i-lab" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3M7.5 15h9"/></symbol>
+  <symbol id="i-team" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c.8-3.4 3.2-5 6-5s5.2 1.6 6 5M15.5 15c2.4 0 4.2 1.4 5 4"/></symbol>
+  <symbol id="i-sources" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM8 7h7M8 11h5"/></symbol>
+  <symbol id="i-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="19" cy="12" r="1.3"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-quick" viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/></symbol>
+</svg>
+<div class="shell">
+  <aside class="side" id="side">
     <a class="brand" href="#/" aria-label="Future Skills home" data-i18n-aria="chrome.home">
-      <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><rect width="32" height="32" rx="9" fill="currentColor"/><path d="M8 22l5.5-6.5 4 3L24 10" stroke="var(--surface)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="10" r="2.6" fill="var(--surface)"/></svg>
+      <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><rect width="32" height="32" rx="9" fill="currentColor"/><path d="M8 22l5.5-6.5 4 3L24 10" stroke="var(--on-brand)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="10" r="2.6" fill="var(--on-brand)"/></svg>
       <span>Future Skills</span>
     </a>
-    <div class="top-tools">
-      <label class="visually-hidden" for="lang">Language / Bahasa / 语言</label>
-      <select id="lang" class="tool">
-        <option value="en" lang="en">English</option>
-        <option value="ms" lang="ms">Bahasa Melayu</option>
-        <option value="zh" lang="zh-Hans">中文</option>
-      </select>
-      <button type="button" class="tool" id="theme" aria-label="Dark mode" data-i18n-aria="theme.dark"></button>
+    <nav class="steps" id="steps" aria-label="Steps" data-i18n-aria="chrome.steps"></nav>
+    <div class="side-foot" id="side-foot"></div>
+  </aside>
+  <div class="frame">
+    <div class="sheet">
+      <header class="top">
+        <a class="brand m-brand" href="#/" aria-label="Future Skills home" data-i18n-aria="chrome.home">
+          <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><rect width="32" height="32" rx="9" fill="currentColor"/><path d="M8 22l5.5-6.5 4 3L24 10" stroke="var(--on-brand)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="10" r="2.6" fill="var(--on-brand)"/></svg>
+        </a>
+        <div class="crumb" id="crumb"></div>
+        <div class="top-scn" id="top-scn"></div>
+        <div class="top-stamp" id="top-stamp"></div>
+        <div class="top-tools">
+          <label class="visually-hidden" for="lang">Language / Bahasa / 语言</label>
+          <select id="lang" class="tool">
+            <option value="en" lang="en">English</option>
+            <option value="ms" lang="ms">Bahasa Melayu</option>
+            <option value="zh" lang="zh-Hans">中文</option>
+          </select>
+          <button type="button" class="tool icon" id="theme" aria-label="Dark mode" data-i18n-aria="theme.dark"></button>
+        </div>
+      </header>
+      <div class="sheet-body">
+        <div class="col">
+          <main tabindex="-1" id="app"></main>
+          <footer class="foot" id="foot"></footer>
+        </div>
+        <aside class="rail" id="rail"></aside>
+      </div>
     </div>
   </div>
-  <nav class="steps" id="steps" aria-label="Steps" data-i18n-aria="chrome.steps"></nav>
-</header>
-<main tabindex="-1" id="app"></main>
-<footer class="foot" id="foot"></footer>
+</div>
+<nav class="bnav" id="bnav" aria-label="Steps" data-i18n-aria="chrome.steps"></nav>
+<div class="more-sheet" id="more" hidden></div>
 <!-- languages first, then the core, then the pages; boot() draws the first one -->
 <script src="/static/i18n.js" defer></script>
 <script src="/static/quiz-i18n.js" defer></script>
