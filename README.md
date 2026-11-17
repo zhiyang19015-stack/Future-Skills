@@ -253,6 +253,14 @@ An honest limit: **the first recommendation changes between slow and fast adopti
 - Occupation titles, O*NET skill and knowledge names, MASCO group names and course notes are shown in Bahasa Melayu and Chinese in our own translation (`src/static/names-i18n.js`), not an official one; each occupation's page shows the O*NET English title next to it, and search finds an occupation by either. Descriptions, task statements and course titles stay as their source wrote them. These translations, the 162 SDG reasons and the Sources-page lines were drafted with AI and have not been reviewed by a native speaker.
 - The skills check is a self-rating.
 - Real news: two items, both picked by hand. The rule's steps (+20 and +10 points) are assumptions, not measured effects of a news item. Approvals are kept in `.cache/news_log.jsonl`; on the free host the disk is wiped at a restart, so approvals and the log go with it. Without `NEWS_REVIEW_CODE`, anyone with the link can approve.
+- The task breakdown strip on each occupation uses the Lab's stress-test rule on today's observed AI share (thresholds in `scripts/stress_test.py`); tasks whose observed range is too wide are counted but not drawn. It is a share of tasks, not a chance of losing a job.
+- The first-time path (judge_check check 10) is counted from the page's source and the API, not timed with people: minutes for a first-time user are not measured. The 390px and console checks were made in a browser and saved in `docs/ui_check.json`.
+
+## Future Improvements
+
+- Not done in the UI redesign (Design & UX is 5% of the final rubric): a collapsible sidebar app shell and mobile bottom navigation, a home hero illustration, page-transition micro-interactions, and the new tokens on the structure of the SDG, Futures, Lab, Team and Sources pages (they get the colours and controls only).
+- Approved-news marks live only in the tab where the approval was made. Pathway marks changes only for the plans kept just before the approval (the chosen job and the top 3 moves); for any other job it says the plan was not kept. For the item tested (Copilot testing for .NET), none of ten software plans changed, so Pathway mostly reports "kept their order".
+- Real-person test of the first-time path (time to a ranking and a plan): not measured; plan: five people who have not seen the app, screen recorded, no instructions.
 
 ## History
 

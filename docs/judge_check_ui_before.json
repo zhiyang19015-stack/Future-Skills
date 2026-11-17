@@ -1,0 +1,1959 @@
+{
+ "date": "2026-11-17",
+ "commit": "044e251",
+ "targets": {
+  "first_move_changed": 3,
+  "top5_changed": 4,
+  "radar_unmeasured_max": 0,
+  "non_english_min": 10.0
+ },
+ "blank": {
+  "status": 200,
+  "ranked": 0,
+  "listed": 0,
+  "top": [],
+  "message": {
+   "code": "blank_profile",
+   "message": "You have not told us anything about yourself yet, so there is no ranking. Fill in your profile first: pick fields you like, answer the interest questions, rate your skills, add the tools you use or upload a CV.",
+   "fill": [
+    "fields",
+    "cv_fields",
+    "interest",
+    "skills",
+    "technologies",
+    "current_occupation",
+    "missions_done"
+   ]
+  },
+  "pass": true
+ },
+ "scenarios": {
+  "slow": "slow",
+  "fast": "fast",
+  "people": [
+   {
+    "profile_id": "P05",
+    "name": "Aiman",
+    "kind": "working",
+    "first": {
+     "slow": "Digital Forensics Analysts",
+     "moderate": "Digital Forensics Analysts",
+     "fast": "Digital Forensics Analysts"
+    },
+    "first_changed": false,
+    "first_changed_any": false,
+    "top5": {
+     "slow": [
+      "Digital Forensics Analysts",
+      "Data Scientists",
+      "Data Warehousing Specialists",
+      "Information Security Engineers",
+      "Software Developers"
+     ],
+     "moderate": [
+      "Digital Forensics Analysts",
+      "Data Scientists",
+      "Information Security Engineers",
+      "Software Developers",
+      "Data Warehousing Specialists"
+     ],
+     "fast": [
+      "Digital Forensics Analysts",
+      "Data Scientists",
+      "Information Security Engineers",
+      "Actuaries",
+      "Software Developers"
+     ]
+    },
+    "top5_new_in_fast": 1,
+    "top5_order_changed": true,
+    "top5_changed": true,
+    "max_score_move": 6.2,
+    "first_score_move": 0.8,
+    "verdict": "top3",
+    "robust": {
+     "matches": {
+      "robust": [
+       "Digital Forensics Analysts",
+       "Data Scientists"
+      ],
+      "dependent": 2,
+      "with_why": 2,
+      "ok": true
+     },
+     "futures": {
+      "robust": [
+       "Digital Forensics Analysts",
+       "Data Scientists"
+      ],
+      "dependent": 2,
+      "with_why": 2,
+      "ok": true
+     }
+    },
+    "robust_ok": true
+   },
+   {
+    "profile_id": "P01",
+    "name": "Nurul",
+    "kind": "student",
+    "first": {
+     "slow": "Speech-Language Pathology Assistants",
+     "moderate": "Speech-Language Pathology Assistants",
+     "fast": "Speech-Language Pathology Assistants"
+    },
+    "first_changed": false,
+    "first_changed_any": false,
+    "top5": {
+     "slow": [
+      "Speech-Language Pathology Assistants",
+      "Ophthalmic Medical Technicians",
+      "Occupational Therapy Assistants",
+      "Occupational Therapy Aides",
+      "Neurodiagnostic Technologists"
+     ],
+     "moderate": [
+      "Speech-Language Pathology Assistants",
+      "Ophthalmic Medical Technicians",
+      "Occupational Therapy Assistants",
+      "Occupational Therapy Aides",
+      "Neurodiagnostic Technologists"
+     ],
+     "fast": [
+      "Speech-Language Pathology Assistants",
+      "Ophthalmic Medical Technicians",
+      "Occupational Therapy Assistants",
+      "Occupational Therapy Aides",
+      "Neurodiagnostic Technologists"
+     ]
+    },
+    "top5_new_in_fast": 0,
+    "top5_order_changed": false,
+    "top5_changed": false,
+    "max_score_move": 0.0,
+    "first_score_move": 0.0,
+    "verdict": "same",
+    "robust": {
+     "matches": {
+      "robust": [
+       "Speech-Language Pathology Assistants",
+       "Ophthalmic Medical Technicians",
+       "Occupational Therapy Assistants"
+      ],
+      "dependent": 0,
+      "with_why": 0,
+      "ok": true
+     },
+     "futures": {
+      "robust": [
+       "Speech-Language Pathology Assistants",
+       "Ophthalmic Medical Technicians",
+       "Occupational Therapy Assistants"
+      ],
+      "dependent": 0,
+      "with_why": 0,
+      "ok": true
+     }
+    },
+    "robust_ok": true
+   },
+   {
+    "profile_id": "P02",
+    "name": "Siti Hajar",
+    "kind": "working",
+    "first": {
+     "slow": "Tax Preparers",
+     "moderate": "Tax Preparers",
+     "fast": "Budget Analysts"
+    },
+    "first_changed": true,
+    "first_changed_any": true,
+    "top5": {
+     "slow": [
+      "Tax Preparers",
+      "Budget Analysts",
+      "Financial Examiners",
+      "Accountants and Auditors",
+      "Personal Financial Advisors"
+     ],
+     "moderate": [
+      "Tax Preparers",
+      "Budget Analysts",
+      "Financial Examiners",
+      "Accountants and Auditors",
+      "Personal Financial Advisors"
+     ],
+     "fast": [
+      "Budget Analysts",
+      "Tax Preparers",
+      "Financial Examiners",
+      "Accountants and Auditors",
+      "Personal Financial Advisors"
+     ]
+    },
+    "top5_new_in_fast": 0,
+    "top5_order_changed": true,
+    "top5_changed": true,
+    "max_score_move": 2.6,
+    "first_score_move": -1.0,
+    "verdict": "top",
+    "robust": {
+     "matches": {
+      "robust": [
+       "Budget Analysts",
+       "Tax Preparers",
+       "Financial Examiners"
+      ],
+      "dependent": 0,
+      "with_why": 0,
+      "ok": true
+     },
+     "futures": {
+      "robust": [
+       "Budget Analysts",
+       "Tax Preparers",
+       "Financial Examiners"
+      ],
+      "dependent": 0,
+      "with_why": 0,
+      "ok": true
+     }
+    },
+    "robust_ok": true
+   },
+   {
+    "profile_id": "P03",
+    "name": "Kumar",
+    "kind": "student",
+    "first": {
+     "slow": "Solar Energy Systems Engineers",
+     "moderate": "Solar Energy Systems Engineers",
+     "fast": "Solar Energy Systems Engineers"
+    },
+    "first_changed": false,
+    "first_changed_any": false,
+    "top5": {
+     "slow": [
+      "Solar Energy Systems Engineers",
+      "Civil Engineers",
+      "Transportation Engineers",
+      "Wind Energy Engineers",
+      "Materials Scientists"
+     ],
+     "moderate": [
+      "Solar Energy Systems Engineers",
+      "Civil Engineers",
+      "Transportation Engineers",
+      "Wind Energy Engineers",
+      "Fuel Cell Engineers"
+     ],
+     "fast": [
+      "Solar Energy Systems Engineers",
+      "Civil Engineers",
+      "Transportation Engineers",
+      "Wind Energy Engineers",
+      "Mechatronics Engineers"
+     ]
+    },
+    "top5_new_in_fast": 1,
+    "top5_order_changed": true,
+    "top5_changed": true,
+    "max_score_move": 1.2,
+    "first_score_move": -0.1,
+    "verdict": "same",
+    "robust": {
+     "matches": {
+      "robust": [
+       "Solar Energy Systems Engineers",
+       "Civil Engineers",
+       "Transportation Engineers"
+      ],
+      "dependent": 3,
+      "with_why": 3,
+      "ok": true
+     },
+     "futures": {
+      "robust": [
+       "Solar Energy Systems Engineers",
+       "Civil Engineers",
+       "Transportation Engineers"
+      ],
+      "dependent": 3,
+      "with_why": 3,
+      "ok": true
+     }
+    },
+    "robust_ok": true
+   },
+   {
+    "profile_id": "P04",
+    "name": "Mei Ling",
+    "kind": "switcher",
+    "first": {
+     "slow": "Talent Directors",
+     "moderate": "Talent Directors",
+     "fast": "Talent Directors"
+    },
+    "first_changed": false,
+    "first_changed_any": false,
+    "top5": {
+     "slow": [
+      "Talent Directors",
+      "Art Directors",
+      "Media Programming Directors",
+      "Graphic Designers",
+      "Special Effects Artists and Animators"
+     ],
+     "moderate": [
+      "Talent Directors",
+      "Art Directors",
+      "Media Programming Directors",
+      "Graphic Designers",
+      "Special Effects Artists and Animators"
+     ],
+     "fast": [
+      "Talent Directors",
+      "Media Programming Directors",
+      "Art Directors",
+      "Graphic Designers",
+      "Actors"
+     ]
+    },
+    "top5_new_in_fast": 1,
+    "top5_order_changed": true,
+    "top5_changed": true,
+    "max_score_move": 3.9,
+    "first_score_move": 0.0,
+    "verdict": "top3",
+    "robust": {
+     "matches": {
+      "robust": [
+       "Talent Directors",
+       "Art Directors",
+       "Media Programming Directors"
+      ],
+      "dependent": 2,
+      "with_why": 2,
+      "ok": true
+     },
+     "futures": {
+      "robust": [
+       "Talent Directors",
+       "Art Directors",
+       "Media Programming Directors"
+      ],
+      "dependent": 2,
+      "with_why": 2,
+      "ok": true
+     }
+    },
+    "robust_ok": true
+   }
+  ],
+  "first_move_changed": 1,
+  "top5_changed": 4,
+  "top5_set_changed": 3,
+  "max_score_move": 6.2,
+  "robust_ok": 5,
+  "pass": false
+ },
+ "news": {
+  "news": 8,
+  "runs": 40,
+  "errors": 0,
+  "rows": [
+   {
+    "news": "coding_agents",
+    "title": "AI coding agents now ship whole features",
+    "named": true,
+    "profile_id": "P05",
+    "name": "Aiman",
+    "first": {
+     "before": "Digital Forensics Analysts",
+     "after": "Digital Forensics Analysts"
+    },
+    "first_changed": false,
+    "top5_changed": true,
+    "top5_new": 0,
+    "own_job": {
+     "title": "Software Quality Assurance Analysts and Testers",
+     "before": 84.7,
+     "after": 81.1,
+     "move": -3.6
+    },
+    "path_changed": true
+   },
+   {
+    "news": "coding_agents",
+    "title": "AI coding agents now ship whole features",
+    "named": false,
+    "profile_id": "P01",
+    "name": "Nurul",
+    "first": {
+     "before": "Speech-Language Pathology Assistants",
+     "after": "Speech-Language Pathology Assistants"
+    },
+    "first_changed": false,
+    "top5_changed": false,
+    "top5_new": 0,
+    "own_job": null,
+    "path_changed": false
+   },
+   {
+    "news": "coding_agents",
+    "title": "AI coding agents now ship whole features",
+    "named": false,
+    "profile_id": "P02",
+    "name": "Siti Hajar",
+    "first": {
+     "before": "Tax Preparers",
+     "after": "Tax Preparers"
+    },
+    "first_changed": false,
+    "top5_changed": false,
+    "top5_new": 0,
+    "own_job": {
+     "title": "Bookkeeping, Accounting, and Auditing Clerks",
+     "before": 43.6,
+     "after": 43.7,
+     "move": 0.1
+    },
+    "path_changed": false
+   },
+   {
+    "news": "coding_agents",
+    "title": "AI coding agents now ship whole features",
+    "named": false,
+    "profile_id": "P03",
+    "name": "Kumar",
+    "first": {
+     "before": "Solar Energy Systems Engineers",
+     "after": "Solar Energy Systems Engineers"
+    },
+    "first_changed": false,
+    "top5_changed": false,
+    "top5_new": 0,
+    "own_job": null,
+    "path_changed": true
+   },
+   {
+    "news": "coding_agents",
+    "title": "AI coding agents now ship whole features",
+    "named": false,
+    "profile_id": "P04",
+    "name": "Mei Ling",
+    "first": {
+     "before": "Talent Directors",
+     "after": "Talent Directors"
+    },
+    "first_changed": false,
+    "top5_changed": false,
+    "top5_new": 0,
+    "own_job": {
+     "title": "Retail Salespersons",
+     "before": 27.9,
+     "after": 28.0,
+     "move": 0.1
+    },
+    "path_changed": true
+   },
+   {
+    "news": "clinical_scribes",
+    "title": "AI scribes now write clinical notes",
+    "named": false,
+    "profile_id": "P05",
+    "name": "Aiman",
+    "first": {
+     "before": "Digital Forensics Analysts",
+     "after": "Digital Forensics Analysts"
+    },
+    "first_changed": false,
+    "top5_changed": false,
+    "top5_new": 0,
+    "own_job": {
+     "title": "Software Quality Assurance Analysts and Testers",
+     "before": 84.7,
+     "after": 84.8,
+     "move": 0.1
+    },
+    "path_changed": false
+   },
+   {
+    "news": "clinical_scribes",
+    "title": "AI scribes now write clinical notes",
+    "named": true,
+    "profile_id": "P01",
+    "name": "Nurul",
+    "first": {
+     "before": "Speech-Language Pathology Assistants",
+     "after": "Speech-Language Pathology Assistants"
+    },
+    "first_changed": false,
+    "top5_changed": true,
+    "top5_new": 0,
+    "own_job": null,
+    "path_changed": false
+   },
+   {
+    "news": "clinical_scribes",
+    "title": "AI scribes now write clinical notes",
+    "named": false,
+    "profile_id": "P02",
+    "name": "Siti Hajar",
+    "first": {
+     "before": "Tax Preparers",
+     "after": "Tax Preparers"
+    },
+    "first_changed": false,
+    "top5_changed": false,
+    "top5_new": 0,
+    "own_job": {
+     "title": "Bookkeeping, Accounting, and Auditing Clerks",
+     "before": 43.6,
+     "after": 43.8,
+     "move": 0.2
+    },
+    "path_changed": false
+   },
+   {
+    "news": "clinical_scribes",
+    "title": "AI scribes now write clinical notes",
+    "named": false,
+    "profile_id": "P03",
+    "name": "Kumar",
+    "first": {
+     "before": "Solar Energy Systems Engineers",
+     "after": "Solar Energy Systems Engineers"
+    },
+    "first_changed": false,
+    "top5_changed": false,
+    "top5_new": 0,
+    "own_job": null,
+    "path_changed": false
+   },
+   {
+    "news": "clinical_scribes",
+    "title": "AI scribes now write clinical notes",
+    "named": false,
+    "profile_id": "P04",
+    "name": "Mei Ling",
+    "first": {
+     "before": "Talent Directors",
+     "after": "Talent Directors"
+    },
+    "first_changed": false,
+    "top5_changed": false,
+    "top5_new": 0,
+    "own_job": {
+     "title": "Retail Salespersons",
+     "before": 27.9,
+     "after": 28.1,
+     "move": 0.2
+    },
+    "path_changed": false
+   },
+   {
+    "news": "service_agents",
+    "title": "AI agents answer most customer chats and calls",
+    "named": false,
+    "profile_id": "P05",
+    "name": "Aiman",
+    "first": {
+     "before": "Digital Forensics Analysts",
+     "after": "Digital Forensics Analysts"
+    },
+    "first_changed": false,
+    "top5_changed": false,
+    "top5_new": 0,
+    "own_job": {
+     "title": "Software Quality Assurance Analysts and Testers",
+     "before": 84.7,
+     "after": 84.7,
+     "move": 0.0
+    },
+    "path_changed": false
+   },
+   {
+    "news": "service_agents",
+    "title": "AI agents answer most customer chats and calls",
+    "named": false,
+    "profile_id": "P01",
+    "name": "Nurul",
+    "first": {
+     "before": "Speech-Language Pathology Assistants",
+     "after": "Speech-Language Pathology Assistants"
+    },
+    "first_changed": false,
+    "top5_changed": false,
+    "top5_new": 0,
+    "own_job": null,
+    "path_changed": false
+   },
+   {
+    "news": "service_agents",
+    "title": "AI agents answer most customer chats and calls",
+    "named": false,
+    "profile_id": "P02",
+    "name": "Siti Hajar",
+    "first": {
+     "before": "Tax Preparers",
+     "after": "Budget Analysts"
+    },
+    "first_changed": true,
+    "top5_changed": true,
+    "top5_new": 0,
+    "own_job": {
+     "title": "Bookkeeping, Accounting, and Auditing Clerks",
+     "before": 43.6,
+     "after": 43.7,
+     "move": 0.1
+    },
+    "path_changed": false
+   },
+   {
+    "news": "service_agents",
+    "title": "AI agents answer most customer chats and calls",
+    "named": false,
+    "profile_id": "P03",
+    "name": "Kumar",
+    "first": {
+     "before": "Solar Energy Systems Engineers",
+     "after": "Solar Energy Systems Engineers"
+    },
+    "first_changed": false,
+    "top5_changed": false,
+    "top5_new": 0,
+    "own_job": null,
+    "path_changed": false
+   },
+   {
+    "news": "service_agents",
+    "title": "AI agents answer most customer chats and calls",
+    "named": false,
+    "profile_id": "P04",
+    "name": "Mei Ling",
+    "first": {
+     "before": "Talent Directors",
+     "after": "Talent Directors"
+    },
+    "first_changed": false,
+    "top5_changed": false,
+    "top5_new": 0,
+    "own_job": {
+     "title": "Retail Salespersons",
+     "before": 27.9,
+     "after": 28.0,
+     "move": 0.1
+    },
+    "path_changed": false
+   },
+   {
+    "news": "auto_bookkeeping",
+    "title": "AI closes the monthly books",
+    "named": false,
+    "profile_id": "P05",
+    "name": "Aiman",
+    "first": {
+     "before": "Digital Forensics Analysts",
+     "after": "Digital Forensics Analysts"
+    },
+    "first_changed": false,
+    "top5_changed": false,
+    "top5_new": 0,
+    "own_job": {
+     "title": "Software Quality Assurance Analysts and Testers",
+     "before": 84.7,
+     "after": 84.8,
+     "move": 0.1
+    },
+    "path_changed": false
+   },
+   {
+    "news": "auto_bookkeeping",
+    "title": "AI closes the monthly books",
+    "named": false,
+    "profile_id": "P01",
+    "name": "Nurul",
+    "first": {
+     "before": "Speech-Language Pathology Assistants",
+     "after": "Speech-Language Pathology Assistants"
+    },
+    "first_changed": false,
+    "top5_changed": false,
+    "top5_new": 0,
+    "own_job": null,
+    "path_changed": false
+   },
+   {
+    "news": "auto_bookkeeping",
+    "title": "AI closes the monthly books",
+    "named": true,
+    "profile_id": "P02",
+    "name": "Siti Hajar",
+    "first": {
+     "before": "Tax Preparers",
+     "after": "Tax Preparers"
+    },
+    "first_changed": false,
+    "top5_changed": true,
+    "top5_new": 0,
+    "own_job": {
+     "title": "Bookkeeping, Accounting, and Auditing Clerks",
+     "before": 43.6,
+     "after": 36.6,
+     "move": -7.0
+    },
+    "path_changed": false
+   },
+   {
+    "news": "auto_bookkeeping",
+    "title": "AI closes the monthly books",
+    "named": false,
+    "profile_id": "P03",
+    "name": "Kumar",
+    "first": {
+     "before": "Solar Energy Systems Engineers",
+     "after": "Solar Energy Systems Engineers"
+    },
+    "first_changed": false,
+    "top5_changed": false,
+    "top5_new": 0,
+    "own_job": null,
+    "path_changed": false
+   },
+   {
+    "news": "auto_bookkeeping",
+    "title": "AI closes the monthly books",
+    "named": false,
+    "profile_id": "P04",
+    "name": "Mei Ling",
+    "first": {
+     "before": "Talent Directors",
+     "after": "Talent Directors"
+    },
+    "first_changed": false,
+    "top5_changed": false,
+    "top5_new": 0,
+    "own_job": {
+     "title": "Retail Salespersons",
+     "before": 27.9,
+     "after": 26.9,
+     "move": -1.0
+    },
+    "path_changed": false
+   },
+   {
+    "news": "legal_drafting",
+    "title": "AI drafts contracts and finds the case law",
+    "named": false,
+    "profile_id": "P05",
+    "name": "Aiman",
+    "first": {
+     "before": "Digital Forensics Analysts",
+     "after": "Digital Forensics Analysts"
+    },
+    "first_changed": false,
+    "top5_changed": false,
+    "top5_new": 0,
+    "own_job": {
+     "title": "Software Quality Assurance Analysts and Testers",
+     "before": 84.7,
+     "after": 84.8,
+     "move": 0.1
+    },
+    "path_changed": false
+   },
+   {
+    "news": "legal_drafting",
+    "title": "AI drafts contracts and finds the case law",
+    "named": false,
+    "profile_id": "P01",
+    "name": "Nurul",
+    "first": {
+     "before": "Speech-Language Pathology Assistants",
+     "after": "Speech-Language Pathology Assistants"
+    },
+    "first_changed": false,
+    "top5_changed": false,
+    "top5_new": 0,
+    "own_job": null,
+    "path_changed": false
+   },
+   {
+    "news": "legal_drafting",
+    "title": "AI drafts contracts and finds the case law",
+    "named": false,
+    "profile_id": "P02",
+    "name": "Siti Hajar",
+    "first": {
+     "before": "Tax Preparers",
+     "after": "Tax Preparers"
+    },
+    "first_changed": false,
+    "top5_changed": false,
+    "top5_new": 0,
+    "own_job": {
+     "title": "Bookkeeping, Accounting, and Auditing Clerks",
+     "before": 43.6,
+     "after": 41.8,
+     "move": -1.8
+    },
+    "path_changed": true
+   },
+   {
+    "news": "legal_drafting",
+    "title": "AI drafts contracts and finds the case law",
+    "named": false,
+    "profile_id": "P03",
+    "name": "Kumar",
+    "first": {
+     "before": "Solar Energy Systems Engineers",
+     "after": "Solar Energy Systems Engineers"
+    },
+    "first_changed": false,
+    "top5_changed": false,
+    "top5_new": 0,
+    "own_job": null,
+    "path_changed": false
+   },
+   {
+    "news": "legal_drafting",
+    "title": "AI drafts contracts and finds the case law",
+    "named": false,
+    "profile_id": "P04",
+    "name": "Mei Ling",
+    "first": {
+     "before": "Talent Directors",
+     "after": "Talent Directors"
+    },
+    "first_changed": false,
+    "top5_changed": false,
+    "top5_new": 0,
+    "own_job": {
+     "title": "Retail Salespersons",
+     "before": 27.9,
+     "after": 28.1,
+     "move": 0.2
+    },
+    "path_changed": false
+   },
+   {
+    "news": "ai_tutors",
+    "title": "AI tutors mark homework and plan lessons",
+    "named": false,
+    "profile_id": "P05",
+    "name": "Aiman",
+    "first": {
+     "before": "Digital Forensics Analysts",
+     "after": "Digital Forensics Analysts"
+    },
+    "first_changed": false,
+    "top5_changed": false,
+    "top5_new": 0,
+    "own_job": {
+     "title": "Software Quality Assurance Analysts and Testers",
+     "before": 84.7,
+     "after": 84.8,
+     "move": 0.1
+    },
+    "path_changed": false
+   },
+   {
+    "news": "ai_tutors",
+    "title": "AI tutors mark homework and plan lessons",
+    "named": false,
+    "profile_id": "P01",
+    "name": "Nurul",
+    "first": {
+     "before": "Speech-Language Pathology Assistants",
+     "after": "Speech-Language Pathology Assistants"
+    },
+    "first_changed": false,
+    "top5_changed": false,
+    "top5_new": 0,
+    "own_job": null,
+    "path_changed": false
+   },
+   {
+    "news": "ai_tutors",
+    "title": "AI tutors mark homework and plan lessons",
+    "named": false,
+    "profile_id": "P02",
+    "name": "Siti Hajar",
+    "first": {
+     "before": "Tax Preparers",
+     "after": "Tax Preparers"
+    },
+    "first_changed": false,
+    "top5_changed": false,
+    "top5_new": 0,
+    "own_job": {
+     "title": "Bookkeeping, Accounting, and Auditing Clerks",
+     "before": 43.6,
+     "after": 43.8,
+     "move": 0.2
+    },
+    "path_changed": false
+   },
+   {
+    "news": "ai_tutors",
+    "title": "AI tutors mark homework and plan lessons",
+    "named": false,
+    "profile_id": "P03",
+    "name": "Kumar",
+    "first": {
+     "before": "Solar Energy Systems Engineers",
+     "after": "Solar Energy Systems Engineers"
+    },
+    "first_changed": false,
+    "top5_changed": false,
+    "top5_new": 0,
+    "own_job": null,
+    "path_changed": false
+   },
+   {
+    "news": "ai_tutors",
+    "title": "AI tutors mark homework and plan lessons",
+    "named": false,
+    "profile_id": "P04",
+    "name": "Mei Ling",
+    "first": {
+     "before": "Talent Directors",
+     "after": "Talent Directors"
+    },
+    "first_changed": false,
+    "top5_changed": false,
+    "top5_new": 0,
+    "own_job": {
+     "title": "Retail Salespersons",
+     "before": 27.9,
+     "after": 28.1,
+     "move": 0.2
+    },
+    "path_changed": false
+   },
+   {
+    "news": "data_agents",
+    "title": "AI analysts go from a question to a finished dashboard",
+    "named": false,
+    "profile_id": "P05",
+    "name": "Aiman",
+    "first": {
+     "before": "Digital Forensics Analysts",
+     "after": "Digital Forensics Analysts"
+    },
+    "first_changed": false,
+    "top5_changed": true,
+    "top5_new": 0,
+    "own_job": {
+     "title": "Software Quality Assurance Analysts and Testers",
+     "before": 84.7,
+     "after": 83.5,
+     "move": -1.2
+    },
+    "path_changed": false
+   },
+   {
+    "news": "data_agents",
+    "title": "AI analysts go from a question to a finished dashboard",
+    "named": false,
+    "profile_id": "P01",
+    "name": "Nurul",
+    "first": {
+     "before": "Speech-Language Pathology Assistants",
+     "after": "Speech-Language Pathology Assistants"
+    },
+    "first_changed": false,
+    "top5_changed": false,
+    "top5_new": 0,
+    "own_job": null,
+    "path_changed": false
+   },
+   {
+    "news": "data_agents",
+    "title": "AI analysts go from a question to a finished dashboard",
+    "named": false,
+    "profile_id": "P02",
+    "name": "Siti Hajar",
+    "first": {
+     "before": "Tax Preparers",
+     "after": "Tax Preparers"
+    },
+    "first_changed": false,
+    "top5_changed": false,
+    "top5_new": 0,
+    "own_job": {
+     "title": "Bookkeeping, Accounting, and Auditing Clerks",
+     "before": 43.6,
+     "after": 43.7,
+     "move": 0.1
+    },
+    "path_changed": false
+   },
+   {
+    "news": "data_agents",
+    "title": "AI analysts go from a question to a finished dashboard",
+    "named": false,
+    "profile_id": "P03",
+    "name": "Kumar",
+    "first": {
+     "before": "Solar Energy Systems Engineers",
+     "after": "Solar Energy Systems Engineers"
+    },
+    "first_changed": false,
+    "top5_changed": false,
+    "top5_new": 0,
+    "own_job": null,
+    "path_changed": true
+   },
+   {
+    "news": "data_agents",
+    "title": "AI analysts go from a question to a finished dashboard",
+    "named": false,
+    "profile_id": "P04",
+    "name": "Mei Ling",
+    "first": {
+     "before": "Talent Directors",
+     "after": "Talent Directors"
+    },
+    "first_changed": false,
+    "top5_changed": false,
+    "top5_new": 0,
+    "own_job": {
+     "title": "Retail Salespersons",
+     "before": 27.9,
+     "after": 28.0,
+     "move": 0.1
+    },
+    "path_changed": false
+   },
+   {
+    "news": "design_generators",
+    "title": "Design tools generate whole campaigns from a brief",
+    "named": false,
+    "profile_id": "P05",
+    "name": "Aiman",
+    "first": {
+     "before": "Digital Forensics Analysts",
+     "after": "Digital Forensics Analysts"
+    },
+    "first_changed": false,
+    "top5_changed": false,
+    "top5_new": 0,
+    "own_job": {
+     "title": "Software Quality Assurance Analysts and Testers",
+     "before": 84.7,
+     "after": 84.7,
+     "move": 0.0
+    },
+    "path_changed": false
+   },
+   {
+    "news": "design_generators",
+    "title": "Design tools generate whole campaigns from a brief",
+    "named": false,
+    "profile_id": "P01",
+    "name": "Nurul",
+    "first": {
+     "before": "Speech-Language Pathology Assistants",
+     "after": "Speech-Language Pathology Assistants"
+    },
+    "first_changed": false,
+    "top5_changed": true,
+    "top5_new": 0,
+    "own_job": null,
+    "path_changed": false
+   },
+   {
+    "news": "design_generators",
+    "title": "Design tools generate whole campaigns from a brief",
+    "named": false,
+    "profile_id": "P02",
+    "name": "Siti Hajar",
+    "first": {
+     "before": "Tax Preparers",
+     "after": "Tax Preparers"
+    },
+    "first_changed": false,
+    "top5_changed": false,
+    "top5_new": 0,
+    "own_job": {
+     "title": "Bookkeeping, Accounting, and Auditing Clerks",
+     "before": 43.6,
+     "after": 43.7,
+     "move": 0.1
+    },
+    "path_changed": false
+   },
+   {
+    "news": "design_generators",
+    "title": "Design tools generate whole campaigns from a brief",
+    "named": false,
+    "profile_id": "P03",
+    "name": "Kumar",
+    "first": {
+     "before": "Solar Energy Systems Engineers",
+     "after": "Solar Energy Systems Engineers"
+    },
+    "first_changed": false,
+    "top5_changed": false,
+    "top5_new": 0,
+    "own_job": null,
+    "path_changed": false
+   },
+   {
+    "news": "design_generators",
+    "title": "Design tools generate whole campaigns from a brief",
+    "named": true,
+    "profile_id": "P04",
+    "name": "Mei Ling",
+    "first": {
+     "before": "Talent Directors",
+     "after": "Talent Directors"
+    },
+    "first_changed": false,
+    "top5_changed": true,
+    "top5_new": 1,
+    "own_job": {
+     "title": "Retail Salespersons",
+     "before": 27.9,
+     "after": 28.0,
+     "move": 0.1
+    },
+    "path_changed": false
+   }
+  ],
+  "top5_changed": 7,
+  "first_changed": 1,
+  "own_job_runs": 24,
+  "own_job_moved": 5,
+  "path_changed": 5,
+  "news_moving_named_person": 4,
+  "news_with_person": 4
+ },
+ "radar": {
+  "moderate": {
+   "rows": [
+    {
+     "title": "Locker Room, Coatroom, and Dressing Room Attendants",
+     "field_id": "39",
+     "ai_share": 1.6,
+     "change": 2.5,
+     "thin": false,
+     "manual": true,
+     "ilo_mean": 0.29,
+     "second_source": "disagree"
+    },
+    {
+     "title": "Stationary Engineers and Boiler Operators",
+     "field_id": "51",
+     "ai_share": 2.0,
+     "change": 2.4,
+     "thin": false,
+     "manual": true,
+     "ilo_mean": 0.2,
+     "second_source": "confirmed"
+    },
+    {
+     "title": "Waiters and Waitresses",
+     "field_id": "35",
+     "ai_share": 1.8,
+     "change": 2.4,
+     "thin": false,
+     "manual": true,
+     "ilo_mean": 0.28,
+     "second_source": "disagree"
+    },
+    {
+     "title": "Geothermal Technicians",
+     "field_id": "49",
+     "ai_share": 2.3,
+     "change": 2.3,
+     "thin": false,
+     "manual": true,
+     "ilo_mean": 0.28,
+     "second_source": "disagree"
+    },
+    {
+     "title": "Correctional Officers and Jailers",
+     "field_id": "33",
+     "ai_share": 2.3,
+     "change": 2.3,
+     "thin": false,
+     "manual": false,
+     "ilo_mean": 0.14,
+     "second_source": "confirmed"
+    },
+    {
+     "title": "Agricultural Technicians",
+     "field_id": "19",
+     "ai_share": 2.4,
+     "change": 2.2,
+     "thin": false,
+     "manual": false,
+     "ilo_mean": 0.26,
+     "second_source": "confirmed"
+    },
+    {
+     "title": "Nursing Assistants",
+     "field_id": "31",
+     "ai_share": 2.9,
+     "change": 2.1,
+     "thin": false,
+     "manual": false,
+     "ilo_mean": 0.14,
+     "second_source": "confirmed"
+    }
+   ],
+   "thin": 0,
+   "manual": 4,
+   "unmeasured": 4,
+   "listed": 7,
+   "title": null,
+   "confirmed": 4
+  },
+  "fast": {
+   "rows": [
+    {
+     "title": "Locker Room, Coatroom, and Dressing Room Attendants",
+     "field_id": "39",
+     "ai_share": 1.6,
+     "change": 4.9,
+     "thin": false,
+     "manual": true,
+     "ilo_mean": 0.29,
+     "second_source": "disagree"
+    },
+    {
+     "title": "Waiters and Waitresses",
+     "field_id": "35",
+     "ai_share": 1.8,
+     "change": 4.8,
+     "thin": false,
+     "manual": true,
+     "ilo_mean": 0.28,
+     "second_source": "disagree"
+    },
+    {
+     "title": "Stationary Engineers and Boiler Operators",
+     "field_id": "51",
+     "ai_share": 2.0,
+     "change": 4.7,
+     "thin": false,
+     "manual": true,
+     "ilo_mean": 0.2,
+     "second_source": "confirmed"
+    },
+    {
+     "title": "Agricultural Technicians",
+     "field_id": "19",
+     "ai_share": 2.4,
+     "change": 4.5,
+     "thin": false,
+     "manual": false,
+     "ilo_mean": 0.26,
+     "second_source": "confirmed"
+    },
+    {
+     "title": "Geothermal Technicians",
+     "field_id": "49",
+     "ai_share": 2.3,
+     "change": 4.5,
+     "thin": false,
+     "manual": true,
+     "ilo_mean": 0.28,
+     "second_source": "disagree"
+    },
+    {
+     "title": "Correctional Officers and Jailers",
+     "field_id": "33",
+     "ai_share": 2.3,
+     "change": 4.5,
+     "thin": false,
+     "manual": false,
+     "ilo_mean": 0.14,
+     "second_source": "confirmed"
+    },
+    {
+     "title": "Nursing Assistants",
+     "field_id": "31",
+     "ai_share": 2.9,
+     "change": 4.2,
+     "thin": false,
+     "manual": false,
+     "ilo_mean": 0.14,
+     "second_source": "confirmed"
+    },
+    {
+     "title": "Pharmacy Technicians",
+     "field_id": "29",
+     "ai_share": 3.2,
+     "change": 4.0,
+     "thin": false,
+     "manual": false,
+     "ilo_mean": 0.3,
+     "second_source": "confirmed"
+    },
+    {
+     "title": "First-Line Supervisors of Production and Operating Workers",
+     "field_id": "51",
+     "ai_share": 3.4,
+     "change": 3.9,
+     "thin": false,
+     "manual": true,
+     "ilo_mean": 0.35,
+     "second_source": "confirmed"
+    },
+    {
+     "title": "Medical Dosimetrists",
+     "field_id": "29",
+     "ai_share": 3.3,
+     "change": 3.9,
+     "thin": false,
+     "manual": false,
+     "ilo_mean": null,
+     "second_source": "one_source"
+    },
+    {
+     "title": "Inspectors, Testers, Sorters, Samplers, and Weighers",
+     "field_id": "51",
+     "ai_share": 3.5,
+     "change": 3.8,
+     "thin": false,
+     "manual": true,
+     "ilo_mean": 0.31,
+     "second_source": "confirmed"
+    },
+    {
+     "title": "Biomass Power Plant Managers",
+     "field_id": "11",
+     "ai_share": 4.0,
+     "change": 3.5,
+     "thin": false,
+     "manual": false,
+     "ilo_mean": 0.42,
+     "second_source": "disagree"
+    },
+    {
+     "title": "Digital Forensics Analysts",
+     "field_id": "15",
+     "ai_share": 5.2,
+     "change": 2.8,
+     "thin": false,
+     "manual": false,
+     "ilo_mean": 0.49,
+     "second_source": "disagree"
+    },
+    {
+     "title": "Chief Executives",
+     "field_id": "11",
+     "ai_share": 5.2,
+     "change": 2.8,
+     "thin": false,
+     "manual": false,
+     "ilo_mean": 0.38,
+     "second_source": "confirmed"
+    },
+    {
+     "title": "Hosts and Hostesses, Restaurant, Lounge, and Coffee Shop",
+     "field_id": "35",
+     "ai_share": 5.3,
+     "change": 2.8,
+     "thin": false,
+     "manual": true,
+     "ilo_mean": 0.51,
+     "second_source": "disagree"
+    }
+   ],
+   "thin": 0,
+   "manual": 7,
+   "unmeasured": 7,
+   "listed": 15,
+   "title": null,
+   "confirmed": 8
+  },
+  "second_source": {
+   "confirmed": 789,
+   "disagree": 91,
+   "one_source": 30,
+   "occupations": 910
+  },
+  "pass": false
+ },
+ "paths": {
+  "people": [
+   {
+    "profile_id": "P05",
+    "name": "Aiman",
+    "kind": "working",
+    "occupation": "Digital Forensics Analysts",
+    "resources": 18,
+    "job_search": [],
+    "job_search_unsuited": [],
+    "non_english": 4,
+    "non_english_pct": 22.2,
+    "skills": 10,
+    "no_course": [
+     "MITRE ATT&CK software"
+    ],
+    "top_provider": {
+     "name": "Saylor Academy",
+     "count": 10
+    },
+    "hours": 284.2,
+    "weeks": 47.4,
+    "hours_per_week": 6
+   },
+   {
+    "profile_id": "P01",
+    "name": "Nurul",
+    "kind": "student",
+    "occupation": "Speech-Language Pathology Assistants",
+    "resources": 18,
+    "job_search": [
+     "PRDV102: Resume Writing",
+     "PRDV103: Interviewing Skills"
+    ],
+    "job_search_unsuited": [],
+    "non_english": 2,
+    "non_english_pct": 11.1,
+    "skills": 10,
+    "no_course": [],
+    "top_provider": {
+     "name": "Saylor Academy",
+     "count": 13
+    },
+    "hours": 251.7,
+    "weeks": 41.9,
+    "hours_per_week": 6
+   },
+   {
+    "profile_id": "P02",
+    "name": "Siti Hajar",
+    "kind": "working",
+    "occupation": "Tax Preparers",
+    "resources": 22,
+    "job_search": [],
+    "job_search_unsuited": [],
+    "non_english": 3,
+    "non_english_pct": 13.6,
+    "skills": 10,
+    "no_course": [],
+    "top_provider": {
+     "name": "Saylor Academy",
+     "count": 16
+    },
+    "hours": 613.0,
+    "weeks": 122.6,
+    "hours_per_week": 5
+   },
+   {
+    "profile_id": "P03",
+    "name": "Kumar",
+    "kind": "student",
+    "occupation": "Solar Energy Systems Engineers",
+    "resources": 20,
+    "job_search": [
+     "PRDV102: Resume Writing",
+     "PRDV103: Interviewing Skills"
+    ],
+    "job_search_unsuited": [],
+    "non_english": 2,
+    "non_english_pct": 10.0,
+    "skills": 10,
+    "no_course": [],
+    "top_provider": {
+     "name": "Saylor Academy",
+     "count": 13
+    },
+    "hours": 323.7,
+    "weeks": 40.5,
+    "hours_per_week": 8
+   },
+   {
+    "profile_id": "P04",
+    "name": "Mei Ling",
+    "kind": "switcher",
+    "occupation": "Talent Directors",
+    "resources": 17,
+    "job_search": [
+     "PRDV102: Resume Writing",
+     "PRDV103: Interviewing Skills"
+    ],
+    "job_search_unsuited": [],
+    "non_english": 2,
+    "non_english_pct": 11.8,
+    "skills": 10,
+    "no_course": [],
+    "top_provider": {
+     "name": "Saylor Academy",
+     "count": 14
+    },
+    "hours": 315.7,
+    "weeks": 31.6,
+    "hours_per_week": 10
+   }
+  ],
+  "unsuited": 0,
+  "no_course": 1,
+  "resources": 95,
+  "non_english_pct": 13.7,
+  "pass": false
+ },
+ "links": {
+  "seed": 2026,
+  "checked": true,
+  "rows": [
+   {
+    "id": "R016",
+    "title": "PRDV217: Introduction to Sales",
+    "url": "https://learn.saylor.org/course/prdv217",
+    "verdict": "ok",
+    "detail": "200"
+   },
+   {
+    "id": "R041",
+    "title": "PHYS102: Introduction to Electromagnetism",
+    "url": "https://learn.saylor.org/course/phys102",
+    "verdict": "ok",
+    "detail": "200"
+   },
+   {
+    "id": "R065",
+    "title": "e-LATiH: free short online courses for Malaysians",
+    "url": "https://elatih.hrdcorp.gov.my/",
+    "verdict": "broken",
+    "detail": "URLError"
+   },
+   {
+    "id": "R066",
+    "title": "Design and Manufacturing I (MIT 2.007)",
+    "url": "https://ocw.mit.edu/courses/2-007-design-and-manufacturing-i-spring-2009/",
+    "verdict": "ok",
+    "detail": "200"
+   },
+   {
+    "id": "R014",
+    "title": "COMM311: Intercultural Communication",
+    "url": "https://learn.saylor.org/course/comm311",
+    "verdict": "ok",
+    "detail": "200"
+   },
+   {
+    "id": "R029",
+    "title": "PRDV225: Managing Employees",
+    "url": "https://learn.saylor.org/course/prdv225",
+    "verdict": "ok",
+    "detail": "200"
+   },
+   {
+    "id": "H004",
+    "title": "AWS-TE: AWS Technical Essentials",
+    "url": "https://trainocate.com.my/courses/aws-te-aws-technical-essentials/",
+    "verdict": "ok",
+    "detail": "200"
+   },
+   {
+    "id": "R072",
+    "title": "AI 概念简介 (Introduction to AI concepts; in Chinese)",
+    "url": "https://learn.microsoft.com/zh-cn/training/modules/get-started-ai-fundamentals/",
+    "verdict": "ok",
+    "detail": "200"
+   },
+   {
+    "id": "R054",
+    "title": "PRDV420: Introduction to R Programming",
+    "url": "https://learn.saylor.org/course/prdv420",
+    "verdict": "ok",
+    "detail": "200"
+   },
+   {
+    "id": "H001",
+    "title": "PMI-PMP: Project Management Professional",
+    "url": "https://trainocate.com.my/courses/pmp-project-management-professional/",
+    "verdict": "ok",
+    "detail": "200"
+   }
+  ],
+  "ok_200": 9,
+  "of": 10,
+  "pass": false
+ },
+ "public": {
+  "url": null,
+  "reachable": null,
+  "detail": "none",
+  "pass": false
+ },
+ "real_news": {
+  "items": [
+   {
+    "id": "copilot_testing_dotnet",
+    "publisher": "Microsoft .NET Blog",
+    "published": "2026-02-11",
+    "url": "https://devblogs.microsoft.com/dotnet/github-copilot-testing-for-dotnet-available-in-visual-studio/",
+    "person": "P05",
+    "method": "keyword",
+    "activities": [
+     "Test software performance.",
+     "Develop testing routines or procedures.",
+     "Test computer system operations to ensure proper functioning.",
+     "Write computer programming code."
+    ],
+    "topics": [
+     "Test writing and running",
+     "AI app building"
+    ],
+    "status": "verified",
+    "problem": null,
+    "page_date": "2026-02-11",
+    "quotes_found": 2,
+    "quotes": 2
+   },
+   {
+    "id": "mistral_rails_tests",
+    "publisher": "Mistral AI",
+    "published": "2026-03-11",
+    "url": "https://mistral.ai/news/rails-testing-on-autopilot-building-an-agent-that-writes-what-developers-wont",
+    "person": "P05",
+    "method": "keyword",
+    "activities": [
+     "Develop testing routines or procedures.",
+     "Recommend changes to improve computer or information systems.",
+     "Test software performance.",
+     "Test computer system operations to ensure proper functioning."
+    ],
+    "topics": [
+     "Test writing and running",
+     "AI agent design"
+    ],
+    "status": "verified",
+    "problem": null,
+    "page_date": "2026-03-11",
+    "quotes_found": 1,
+    "quotes": 1
+   }
+  ],
+  "verified": 2,
+  "checked": true,
+  "refused_unchecked": 2,
+  "demo": {
+   "id": "copilot_testing_dotnet",
+   "name": "Aiman",
+   "approved": true,
+   "own_job": {
+    "before": {
+     "title": "Software Quality Assurance Analysts and Testers",
+     "rank": 1,
+     "total": 85.6,
+     "ai_share": 30.2,
+     "outlook": 84.7,
+     "status": "declining"
+    },
+    "approved": {
+     "title": "Software Quality Assurance Analysts and Testers",
+     "rank": 1,
+     "total": 85.0,
+     "ai_share": 36.8,
+     "outlook": 82.8,
+     "status": "declining"
+    },
+    "undone": {
+     "title": "Software Quality Assurance Analysts and Testers",
+     "rank": 1,
+     "total": 85.6,
+     "ai_share": 30.2,
+     "outlook": 84.7,
+     "status": "declining"
+    }
+   },
+   "top5_changed": false,
+   "top10_order_changed": true,
+   "undo_restores": true,
+   "rows": [
+    {
+     "kind": "ai_share",
+     "name": "Test software performance.",
+     "before": 25.9,
+     "after": 45.9,
+     "tasks": 21,
+     "tasks_raised": 14,
+     "rule": "average 25.9 + 20, at most 95"
+    },
+    {
+     "kind": "ai_share",
+     "name": "Develop testing routines or procedures.",
+     "before": 9.2,
+     "after": 29.2,
+     "tasks": 19,
+     "tasks_raised": 15,
+     "rule": "average 9.2 + 20, at most 95"
+    },
+    {
+     "kind": "ai_share",
+     "name": "Test computer system operations to ensure proper functioning.",
+     "before": 18.8,
+     "after": 38.8,
+     "tasks": 18,
+     "tasks_raised": 11,
+     "rule": "average 18.8 + 20, at most 95"
+    },
+    {
+     "kind": "ai_share",
+     "name": "Write computer programming code.",
+     "before": 46.8,
+     "after": 66.8,
+     "tasks": 22,
+     "tasks_raised": 14,
+     "rule": "average 46.8 + 20, at most 95"
+    },
+    {
+     "kind": "handoff",
+     "name": "Test writing and running",
+     "before": 68.49,
+     "after": 78.5,
+     "rule": "68.49 + 10, at most 98"
+    },
+    {
+     "kind": "handoff",
+     "name": "AI app building",
+     "before": 69.07,
+     "after": 79.1,
+     "rule": "69.07 + 10, at most 98"
+    }
+   ]
+  },
+  "log_steps": 7,
+  "pass": true
+ },
+ "languages": {
+  "summary": {
+   "9. UI strings missing or falling back to English, BM / ZH (of 1103 rows)": "0 / 0",
+   "9. Rows whose BM / ZH text is the English text": "0 / 0",
+   "9. English text written into the page, not through i18n": 0,
+   "9. SDG reasons shown in English only, BM / ZH (of 162)": "0 / 0",
+   "9. Sources-page descriptions shown in English only (of 28)": 0,
+   "9. Names from the data shown in English only, BM / ZH (occupations, skills, MASCO groups, course notes; of 1009)": "0 / 0",
+   "9. BM lines using an Indonesian word (rule of thumb)": 0,
+   "9. Form fields with no label": 0,
+   "9. Colour pairs below WCAG AA 4.5:1 (light + dark, of 46)": 0,
+   "9. <html lang> follows the chosen language": "yes"
+  },
+  "rows": 1103,
+  "totals": {
+   "en": {
+    "missing_key": 0,
+    "fallback": 0,
+    "same_as_en": 0,
+    "hardcoded": 0
+   },
+   "ms": {
+    "missing_key": 0,
+    "fallback": 0,
+    "same_as_en": 0,
+    "hardcoded": 0
+   },
+   "zh": {
+    "missing_key": 0,
+    "fallback": 0,
+    "same_as_en": 0,
+    "hardcoded": 0
+   }
+  },
+  "pages": {
+   "index.html": {
+    "pages": "header, skip link",
+    "missing_keys": 0,
+    "fallback_ms": 0,
+    "fallback_zh": 0,
+    "hardcoded": [],
+    "unlabelled": []
+   },
+   "app.js": {
+    "pages": "home, sources, header and footer, errors",
+    "missing_keys": 0,
+    "fallback_ms": 0,
+    "fallback_zh": 0,
+    "hardcoded": [],
+    "unlabelled": []
+   },
+   "you.js": {
+    "pages": "1 You",
+    "missing_keys": 0,
+    "fallback_ms": 0,
+    "fallback_zh": 0,
+    "hardcoded": [],
+    "unlabelled": []
+   },
+   "explore.js": {
+    "pages": "2 Radar, occupation, 3 Matches, 4 Pathway, 5 SDG",
+    "missing_keys": 0,
+    "fallback_ms": 0,
+    "fallback_zh": 0,
+    "hardcoded": [],
+    "unlabelled": []
+   },
+   "futures.js": {
+    "pages": "6 Futures, news",
+    "missing_keys": 0,
+    "fallback_ms": 0,
+    "fallback_zh": 0,
+    "hardcoded": [],
+    "unlabelled": []
+   },
+   "quick.js": {
+    "pages": "quick start",
+    "missing_keys": 0,
+    "fallback_ms": 0,
+    "fallback_zh": 0,
+    "hardcoded": [],
+    "unlabelled": []
+   },
+   "team.js": {
+    "pages": "team",
+    "missing_keys": 0,
+    "fallback_ms": 0,
+    "fallback_zh": 0,
+    "hardcoded": [],
+    "unlabelled": []
+   },
+   "lab.js": {
+    "pages": "lab",
+    "missing_keys": 0,
+    "fallback_ms": 0,
+    "fallback_zh": 0,
+    "hardcoded": [],
+    "unlabelled": []
+   },
+   "pilot.js": {
+    "pages": "workshop check",
+    "missing_keys": 0,
+    "fallback_ms": 0,
+    "fallback_zh": 0,
+    "hardcoded": [],
+    "unlabelled": []
+   }
+  },
+  "side": {
+   "goal_names": {
+    "rows": 17,
+    "missing_ms": 0,
+    "missing_zh": 0
+   },
+   "goal_texts": {
+    "rows": 77,
+    "missing_ms": 0,
+    "missing_zh": 0
+   },
+   "interest_items": {
+    "rows": 36,
+    "missing_ms": 0,
+    "missing_zh": 0
+   },
+   "sdg_reasons": {
+    "rows": 162,
+    "missing_ms": 0,
+    "missing_zh": 0
+   }
+  },
+  "sources": {
+   "parts": 28,
+   "untranslated": 0
+  },
+  "indonesian": [],
+  "names": {
+   "occupations": {
+    "rows": 910,
+    "missing_ms": 0,
+    "missing_zh": 0
+   },
+   "skills_knowledge": {
+    "rows": 67,
+    "missing_ms": 0,
+    "missing_zh": 0
+   },
+   "masco_groups": {
+    "rows": 9,
+    "missing_ms": 0,
+    "missing_zh": 0
+   },
+   "course_notes": {
+    "rows": 23,
+    "missing_ms": 0,
+    "missing_zh": 0
+   }
+  },
+  "contrast_fail": [],
+  "lang_attr": true,
+  "pass": true
+ },
+ "first_path": {
+  "paths": {
+   "own": {
+    "about": "own answers, through Quick start",
+    "steps": [
+     "click: Home: the button to build a profile (opens Quick start)",
+     "input: Quick start: tap one field you like",
+     "see: ranked occupations",
+     "see: a free learning plan"
+    ],
+    "to_ranking": {
+     "clicks": 2,
+     "inputs": 1
+    },
+    "to_plan": {
+     "clicks": 2,
+     "inputs": 1
+    },
+    "broken": []
+   },
+   "demo": {
+    "about": "a fictional demo person",
+    "steps": [
+     "click: Home: tap a fictional demo person",
+     "see: ranked occupations",
+     "click: Matches: open the plan",
+     "see: the learning plan"
+    ],
+    "to_ranking": {
+     "clicks": 1,
+     "inputs": 0
+    },
+    "to_plan": {
+     "clicks": 2,
+     "inputs": 0
+    },
+    "broken": []
+   }
+  },
+  "api": {
+   "blank_ranked": false,
+   "fields": 22,
+   "one_tap_ok": 22
+  },
+  "pass": true,
+  "browser": {
+   "date": "2026-11-17",
+   "commit": "044e251",
+   "width": 390,
+   "how": "Built-in browser at 390x844. Each page opened by its hash; sideways scroll = document scrollWidth > clientWidth. Console errors read from the browser console after the walk. Quick start with one field liked; Matches and Pathway with the first fictional demo person.",
+   "visited": [
+    "#/",
+    "#/you",
+    "#/radar",
+    "#/occ/15-1252.00",
+    "#/quick (one field)",
+    "#/matches (demo)",
+    "#/pathway (demo)",
+    "#/sdg",
+    "#/futures",
+    "#/lab",
+    "#/team",
+    "#/sources"
+   ],
+   "pages": 12,
+   "overflow_pages": 0,
+   "console_errors": 0
+  }
+ }
+}

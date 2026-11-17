@@ -17,6 +17,7 @@ PAGES.quick = async () => {
     </section>`;
   return `<div class="stack loose">
     <header class="stack tight"><p class="eyebrow">${t("quick.eyebrow")}</p><h1>${t("quick.h1")}</h1><p class="lead">${t("quick.lead")}</p></header>
+    ${state.demo ? "" : quickSteps(ready)}
     ${state.demo ? `<div class="note row between"><span>${t("quick.demo")}</span><button type="button" class="btn small" data-act="own">${t("you.demo.own")}</button></div>` : ""}
     ${whoCard(occs)}
     ${state.kind === "student" || !state.currentOcc ? fieldsCard() : ""}
@@ -24,6 +25,13 @@ PAGES.quick = async () => {
     ${ready ? await quickResults() : `<p class="note">${t("quick.wait")}</p>`}
   </div>`;
 };
+
+/* Where the visitor is in the three steps; step 1 has a default answer, so step 2 is where they start. */
+function quickSteps(ready) {
+  const at = ready ? 3 : 2;
+  return `<ol class="fs-qs" aria-label="${esc(t("qs.h"))}">${[1, 2, 3].map((i) => `<li class="${i < at ? "done" : i === at ? "now" : ""}"${i === at ? ' aria-current="step"' : ""}>
+    <span class="n">${i < at ? "✓" : i}</span>${i === 3 && ready ? `<button type="button" class="linklike" data-act="jump" data-id="quick-results">${t("qs.3")} ↓</button>` : `<span>${t("qs." + i)}</span>`}</li>`).join("")}</ol>`;
+}
 
 async function quickResults() {
   const m = await getMatches();
@@ -46,7 +54,7 @@ async function quickResults() {
     const s = (F.scenarios || []).find((x) => x.id === id);
     return s ? `<div class="card pad-s stack tight"><span class="strong">${t("scn." + id)}</span><ol class="small">${s.top.slice(0, 3).map((x) => `<li>${esc(nm(x.title))}</li>`).join("")}</ol></div>` : "";
   };
-  return `<section class="card stack"><div class="row between"><h2>${t("quick.r.matches")}</h2><a class="small" href="#/matches">${t("quick.more")} →</a></div>
+  return `<section class="card stack" id="quick-results"><div class="row between"><h2>${t("quick.r.matches")}</h2><a class="small" href="#/matches">${t("quick.more")} →</a></div>
       <p class="small muted">${t("quick.r.matches.p")}</p>${list}</section>
     <section class="card stack"><div class="row between"><h2>${t("quick.r.plan", esc(nm(first.title)))}</h2><a class="small" href="#/pathway/${esc(first.occ_id)}">${t("quick.more")} →</a></div>
       <p class="small muted">${t("quick.r.plan.p", fmt(L.total_hours, 0), fmt(L.weeks, 0), L.hours_per_week)}</p>${plan || `<p class="small muted">${t("path.nocourse")}</p>`}

@@ -1,6 +1,6 @@
 {
  "date": "2026-11-17",
- "commit": "0b294b2",
+ "commit": "f7e9499",
  "targets": {
   "first_move_changed": 3,
   "top5_changed": 4,
@@ -1580,10 +1580,10 @@
   "pass": false
  },
  "public": {
-  "url": "https://future-skills-sq6h.onrender.com",
-  "reachable": true,
-  "detail": "HTTP 200 from /api/health",
-  "pass": true
+  "url": null,
+  "reachable": null,
+  "detail": "none",
+  "pass": false
  },
  "real_news": {
   "items": [
@@ -1728,7 +1728,7 @@
  },
  "languages": {
   "summary": {
-   "9. UI strings missing or falling back to English, BM / ZH (of 1103 rows)": "0 / 0",
+   "9. UI strings missing or falling back to English, BM / ZH (of 1194 rows)": "0 / 0",
    "9. Rows whose BM / ZH text is the English text": "0 / 0",
    "9. English text written into the page, not through i18n": 0,
    "9. SDG reasons shown in English only, BM / ZH (of 162)": "0 / 0",
@@ -1739,7 +1739,7 @@
    "9. Colour pairs below WCAG AA 4.5:1 (light + dark, of 46)": 0,
    "9. <html lang> follows the chosen language": "yes"
   },
-  "rows": 1103,
+  "rows": 1194,
   "totals": {
    "en": {
     "missing_key": 0,
@@ -1771,6 +1771,14 @@
    },
    "app.js": {
     "pages": "home, sources, header and footer, errors",
+    "missing_keys": 0,
+    "fallback_ms": 0,
+    "fallback_zh": 0,
+    "hardcoded": [],
+    "unlabelled": []
+   },
+   "ui.js": {
+    "pages": "redesign pieces: task strip, roadmap, learning line, evidence stamps, rank moves, profile progress",
     "missing_keys": 0,
     "fallback_ms": 0,
     "fallback_zh": 0,
@@ -1886,5 +1894,74 @@
   "contrast_fail": [],
   "lang_attr": true,
   "pass": true
+ },
+ "first_path": {
+  "paths": {
+   "own": {
+    "about": "own answers, through Quick start",
+    "steps": [
+     "click: Home: the button to build a profile (opens Quick start)",
+     "input: Quick start: tap one field you like",
+     "see: ranked occupations",
+     "see: a free learning plan"
+    ],
+    "to_ranking": {
+     "clicks": 2,
+     "inputs": 1
+    },
+    "to_plan": {
+     "clicks": 2,
+     "inputs": 1
+    },
+    "broken": []
+   },
+   "demo": {
+    "about": "a fictional demo person",
+    "steps": [
+     "click: Home: tap a fictional demo person",
+     "see: ranked occupations",
+     "click: Matches: open the plan",
+     "see: the learning plan"
+    ],
+    "to_ranking": {
+     "clicks": 1,
+     "inputs": 0
+    },
+    "to_plan": {
+     "clicks": 2,
+     "inputs": 0
+    },
+    "broken": []
+   }
+  },
+  "api": {
+   "blank_ranked": false,
+   "fields": 22,
+   "one_tap_ok": 22
+  },
+  "pass": true,
+  "browser": {
+   "date": "2026-11-17",
+   "commit": "3695c79",
+   "width": 390,
+   "how": "Built-in browser at 390x844. Each page opened by its hash; sideways scroll = document scrollWidth > clientWidth. Console errors read from the browser console after the walk. Quick start with one field liked; Matches and Pathway with the first fictional demo person. Two more Matches states were also checked and did not scroll sideways: after switching to Fast, and with 'Why this score?' open (task strip loaded); they are not counted in 'pages' so the count matches the run before the redesign.",
+   "visited": [
+    "#/",
+    "#/you",
+    "#/radar",
+    "#/occ/15-1252.00",
+    "#/quick (one field)",
+    "#/matches (demo)",
+    "#/pathway (demo)",
+    "#/sdg",
+    "#/futures",
+    "#/lab",
+    "#/team",
+    "#/sources"
+   ],
+   "pages": 12,
+   "overflow_pages": 0,
+   "console_errors": 0
+  }
  }
 }

@@ -251,12 +251,13 @@ async function route(keepScroll = false) {
   const page = PAGES[name || "home"] || PAGES.home;
   const y = window.scrollY;
   drawChrome(name || "home");
-  if (!keepScroll) app.innerHTML = loading();
+  if (!keepScroll) { app.innerHTML = loading(); ui.rankFrom = null; }
   try {
     const html = await page(args.map(decodeURIComponent));
     if (seq !== routeSeq) return;  // the person moved on while this page was loading
     app.innerHTML = `<div class="fade">${html}</div>`;
     if (keepScroll) window.scrollTo(0, y); else { window.scrollTo(0, 0); app.focus({ preventScroll: true }); }
+    playRankMoves();  // ui.js: cards slide to their new place after a scenario change
   } catch (e) {
     if (seq !== routeSeq) return;
     const offline = Boolean(e && e.offline);
@@ -305,13 +306,17 @@ const ACT = {
 const ON = {
   adoption: (el) => {
     const v = Number(el.value) / 100;
+    rememberRanks(scenarioLabel(), state.scenario === "custom" ? null : state.scenario);
     state.adoption = v;
     state.scenario = SCENARIO_IDS.find((id) => Math.abs((SCENARIO_VALUES[id] ?? -1) - v) < 0.001) || "custom";
     afterScenario();
   },
 };
 const SCENARIO_VALUES = { slow: 0.1, moderate: 0.25, fast: 0.5 };  // refreshed from the API
+/* The scenario in words, for "was #3 under slow AI adoption". */
+const scenarioLabel = () => (state.scenario === "custom" ? `${Math.round(state.adoption * 100)}%` : t("scn." + state.scenario));
 function setScenario(id) {
+  if (id !== state.scenario) rememberRanks(scenarioLabel(), state.scenario === "custom" ? null : state.scenario);
   state.scenario = id;
   state.adoption = SCENARIO_VALUES[id] ?? state.adoption;
   afterScenario();
@@ -345,7 +350,7 @@ function personaCards(people) {
   return `<div class="grid">${people.map((p) => `
     <button type="button" class="card persona" data-act="demo" data-id="${esc(p.profile_id)}">
       <div class="row"><span class="avatar" aria-hidden="true">${initials(p.name)}</span>
-        <div><div class="strong">${esc(p.name)}</div><span class="chip brand">${t("kind." + (p.kind || "student"))}</span></div></div>
+        <div><div class="strong">${esc(p.name)}</div><span class="chip brand">${t("kind." + (p.kind || "student"))}</span> <span class="chip plain">${t("home.fictional")}</span></div></div>
       <p class="small muted">${t("persona." + p.profile_id) === "persona." + p.profile_id ? esc(p.story) : t("persona." + p.profile_id)}</p>
       <span class="small strong" style="color:var(--brand)">${t("home.persona.go")} →</span>
     </button>`).join("")}</div>`;
@@ -361,7 +366,8 @@ function factTiles(c, src) {
     [fmt(c.automation_all.malaysia, 0) + "%", t("fact.handoff", fmt(c.automation_all.global, 0))],
   ];
   return `<div class="grid three">${tiles.map(([big, text]) =>
-    `<div class="card tile"><div class="big">${big}</div><p class="small muted">${text}</p></div>`).join("")}</div>${aiSource(src)}`;
+    `<div class="card tile"><div class="big">${big}</div><p class="small muted">${text}</p></div>`).join("")}</div>
+    <div class="row">${evStamp({ parts: [[t("stamp.ai"), (src && (src.ai_usage || src.economic_index || src).release_date)]] })}</div>${aiSource(src)}`;
 }
 
 PAGES.home = async () => {
@@ -374,16 +380,23 @@ PAGES.home = async () => {
   const newsGo = own ? t("home.news.go.you") : about ? t("home.news.go.person", esc(about.name)) : t("home.news.go");
   const counts = radar.fields.reduce((n, f) => n + f.occupations, 0);
   return `<div class="stack loose">
-    <section class="hero stack">
+    <section class="hero stack fs-hero">
+      <div class="fs-songket" aria-hidden="true"></div>
       <p class="eyebrow">${t("home.eyebrow")}</p>
       <h1>${t("home.h1")}</h1>
       <p class="lead">${t("home.lead", counts, radar.fields.length)}</p>
       <div class="row">
-        <a class="btn primary" href="#/${started ? "matches" : "quick"}">${t(started ? "home.continue" : "home.quick")}</a>
-        ${started ? "" : `<a class="btn" href="#/you">${t("home.start")}</a>`}
-        <a class="btn" href="#/radar">${t("home.radar")}</a>
+        ${started ? `<a class="btn primary" href="#/matches">${t("home.continue")}</a>` : `<a class="btn primary" href="#/quick">${t("home.cta.profile")} →</a>`}
+        <a class="btn" href="#/radar">${t("home.cta.radar")}</a>
+        ${started ? "" : `<a class="small" href="#/you">${t("home.cta.full")}</a>`}
       </div>
+      ${started ? "" : `<p class="small muted">${t("home.cta.note")}</p>`}
       <div class="tags"><span class="chip plain">${t("home.free")}</span><span class="chip plain">${t("home.nologin")}</span><span class="chip plain">${t("home.private")}</span><span class="chip plain">English · Bahasa Melayu · 中文</span></div>
+    </section>
+
+    <section class="stack" aria-label="${esc(t("home.flow.h"))}">
+      <h2 class="visually-hidden">${t("home.flow.h")}</h2>
+      <ol class="fs-flow">${[1, 2, 3].map((i) => `<li><span class="n">${i}</span><span class="strong">${t("home.flow." + i)}</span><span class="small muted">${t(`home.flow.${i}.p`)}</span></li>`).join("")}</ol>
     </section>
 
     <section class="stack">

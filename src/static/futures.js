@@ -308,10 +308,20 @@ Object.assign(ACT, {
     const view = await cached("/api/news");
     const n = view.items.find((x) => x.id === el.dataset.id);
     ui.busy["rn:" + n.id] = true; ui.rnError = null; redraw();
+    // before/after marks (ui.js newsMarks): the person's top 12 now, kept in this tab only
+    let before = null, plans = {};
+    if (el.dataset.do === "approve" && hasProfile()) {
+      try {
+        const m = await getMatches();
+        before = Object.fromEntries((m.ranking || []).slice(0, 12).map((r) => [r.occ_id, r.rank]));
+        plans = await plansBefore(m);  // Pathway's marks: the chosen job and the top 3 moves
+      } catch (e) { before = null; }
+    }
     try {
       await request("/api/news/decide", { id: n.id, action: el.dataset.do, reviewer: ui.rnReviewer || "",
         code: ui.rnCode || "", proposal_id: n.proposal ? n.proposal.proposal_id : null });
       cache.clear(); ui.whatif = null; ui.realNews = null;  // every kept result used the data before this
+      ui.newsBefore = el.dataset.do === "approve" && before ? { title: nm(n.title), ranks: before, plans, after: true } : el.dataset.do === "undo" ? null : ui.newsBefore;
     } catch (e) {
       ui.rnError = { id: n.id, text: errText(e) };
       cache.delete("/api/news");
