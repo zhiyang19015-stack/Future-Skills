@@ -469,23 +469,23 @@ PAGES.matches = async () => {
     ${nb.banner}
     ${scenarioControl({ adoption: m.adoption, horizon: m.horizon_year }, m.scenarios)}
     ${verdictNote(m)}
-    ${hasProfile() ? robustCard(m.robust) : ""}
     ${cur ? `<section class="card stack" style="border-color:var(--brand)"><div class="row between"><div><p class="eyebrow">${t("match.now")}</p><h2>${esc(nm(cur.title))}</h2></div>${statusChip(cur.outlook.status)}</div>
       <p>${t("match.now.p", fmt(cur.outlook.ai_share, 0), fmt(cur.outlook.ai_share_reference, 0), signed(cur.outlook.change), cur.moves_above ? t("match.now.above", cur.moves_above) : t("match.now.top"))}</p>
       <div class="row"><a class="btn small" href="#/occ/${esc(cur.occ_id)}">${t("match.now.tasks")}</a></div></section>` : ""}
-    <section class="card stack"><h2>${t("match.fields.h")}</h2>
-      <div class="stack tight">${m.fields.filter((f) => f.fit !== null).slice(0, 6).map((f) => `<div class="meter"><span>${esc(fieldName(f.id))}</span>${bar(f.fit)}<span class="v">${fmt(f.fit, 0)}</span></div><p class="tiny muted">${fieldExplain(f)}</p>`).join("") || `<p class="small muted">${t("match.fields.none")}</p>`}</div>
-      ${m.insights.length ? `<ul class="small">${m.insights.map((i) => `<li>${esc(insightText(i))}</li>`).join("")}</ul>` : ""}
-      <p class="src">${t("match.fields.src")}</p></section>
-    ${shown.length ? roadmap(shown[0], cur) : ""}
-    ${goalPicker(m)}
-    <section class="stack"><div class="row between"><h2>${t(cur ? "match.moves.h" : "match.top.h")}</h2><span class="small muted">${t("match.sim", m.simulation ? m.simulation.futures : 0)}</span></div>
+    <section class="stack match-list"><div class="row between"><h2>${t(cur ? "match.moves.h" : "match.top.h")}</h2><span class="small muted">${t("match.sim", m.simulation ? m.simulation.futures : 0)}</span></div>
       ${shown.map((x) => matchCard(x, m.simulation || { futures: 0 })).join("")}
       ${!ui.showMore && listed.length > shown.length ? `<div><button type="button" class="btn" data-act="showMore">${t("match.more")}</button></div>` : ""}
       ${beyond.length ? `<p class="small muted">${t("match.beyond", beyond.map((x) => occLink(x.occ_id, x.title)).join(", "))}</p>` : ""}
       ${below ? `<p class="small muted">${t("match.below", below)}</p>` : ""}
       ${m.restricted_hidden || m.restricted_shown ? `<p class="small muted">${t(m.restricted_shown ? "restrict.shown" : "restrict.hidden", m.restricted_hidden)} <button type="button" class="linklike" data-act="restricted">${t(m.restricted_shown ? "restrict.hide" : "restrict.show")}</button></p>` : ""}
     </section>
+    ${shown.length ? roadmap(shown[0], cur) : ""}
+    ${hasProfile() ? robustCard(m.robust) : ""}
+    <section class="card stack"><h2>${t("match.fields.h")}</h2>
+      <div class="stack tight">${m.fields.filter((f) => f.fit !== null).slice(0, 6).map((f) => `<div class="meter"><span>${esc(fieldName(f.id))}</span>${bar(f.fit)}<span class="v">${fmt(f.fit, 0)}</span></div><p class="tiny muted">${fieldExplain(f)}</p>`).join("") || `<p class="small muted">${t("match.fields.none")}</p>`}</div>
+      ${m.insights.length ? `<ul class="small">${m.insights.map((i) => `<li>${esc(insightText(i))}</li>`).join("")}</ul>` : ""}
+      <p class="src">${t("match.fields.src")}</p></section>
+    ${goalPicker(m)}
     ${adCard()}
     <div class="row"><a class="btn primary" href="#/futures">${t("match.futures")} →</a><a class="btn" href="#/you">${t("match.edit")}</a></div>
     <p class="src">${t("src.match", m.trend_data.id, dateText(m.trend_data.computed_date), dateText(m.trend_data.ai_usage_release))}</p>
