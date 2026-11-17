@@ -4,19 +4,19 @@
  "label": "Synthetic data, not validated with real people.",
  "versions": {
   "now": {
-   "commit": "641f749",
+   "commit": "ccec816",
    "rows": [
     {
      "id": "E41",
      "error": null,
-     "first": "Computer Numerically Controlled Tool Programmers",
-     "first_id": "51-9162.00",
+     "first": "Mechanical Engineering Technologists and Technicians",
+     "first_id": "17-3027.00",
      "top5": [
-      "Computer Numerically Controlled Tool Programmers",
       "Mechanical Engineering Technologists and Technicians",
-      "Medical Equipment Repairers",
       "Electro-Mechanical and Mechatronics Technologists and Technicians",
-      "Photonics Technicians"
+      "Photonics Technicians",
+      "Civil Engineering Technologists and Technicians",
+      "Electrical and Electronic Engineering Technologists and Technicians"
      ],
      "first_ok": true,
      "top5_ok": true,
@@ -25,19 +25,19 @@
      "first_changed": false,
      "top5_set_changed": true,
      "first_slow_fast": [
-      "Computer Numerically Controlled Tool Programmers",
-      "Computer Numerically Controlled Tool Programmers"
+      "Mechanical Engineering Technologists and Technicians",
+      "Mechanical Engineering Technologists and Technicians"
      ],
      "plan": {
-      "resources": 19,
-      "listed": 21,
+      "resources": 15,
+      "listed": 17,
       "job_search_for_working": [],
       "paid_in_plan": [],
       "already_have": [],
       "duplicates": 2,
       "should_not": 2,
-      "free": 19,
-      "non_english": 3
+      "free": 15,
+      "non_english": 2
      }
     },
     {
@@ -79,14 +79,14 @@
     {
      "id": "E43",
      "error": null,
-     "first": "Computer Numerically Controlled Tool Programmers",
-     "first_id": "51-9162.00",
+     "first": "Recycling Coordinators",
+     "first_id": "53-1042.01",
      "top5": [
-      "Computer Numerically Controlled Tool Programmers",
       "Recycling Coordinators",
       "Ship Engineers",
       "Rail-Track Laying and Maintenance Equipment Operators",
-      "Energy Auditors"
+      "Energy Auditors",
+      "First-Line Supervisors of Production and Operating Workers"
      ],
      "first_ok": false,
      "top5_ok": false,
@@ -95,19 +95,19 @@
      "first_changed": false,
      "top5_set_changed": true,
      "first_slow_fast": [
-      "Computer Numerically Controlled Tool Programmers",
-      "Computer Numerically Controlled Tool Programmers"
+      "Recycling Coordinators",
+      "Recycling Coordinators"
      ],
      "plan": {
-      "resources": 19,
-      "listed": 21,
+      "resources": 18,
+      "listed": 20,
       "job_search_for_working": [],
       "paid_in_plan": [],
       "already_have": [],
       "duplicates": 2,
       "should_not": 2,
-      "free": 19,
-      "non_english": 3
+      "free": 18,
+      "non_english": 2
      }
     },
     {
@@ -188,7 +188,7 @@
       "Occupational Therapy Assistants",
       "Speech-Language Pathology Assistants",
       "Registered Nurses",
-      "Medical Equipment Repairers"
+      "Physical Therapist Assistants"
      ],
      "first_ok": false,
      "top5_ok": true,
@@ -219,10 +219,10 @@
      "first_id": "53-1042.01",
      "top5": [
       "Recycling Coordinators",
-      "Tax Preparers",
       "Hosts and Hostesses, Restaurant, Lounge, and Coffee Shop",
       "First-Line Supervisors of Food Preparation and Serving Workers",
-      "First-Line Supervisors of Production and Operating Workers"
+      "First-Line Supervisors of Production and Operating Workers",
+      "Dining Room and Cafeteria Attendants and Bartender Helpers"
      ],
      "first_ok": false,
      "top5_ok": true,
@@ -283,35 +283,35 @@
     {
      "id": "E49",
      "error": null,
-     "first": "Medical Equipment Repairers",
-     "first_id": "49-9062.00",
+     "first": "Electro-Mechanical and Mechatronics Technologists and Technicians",
+     "first_id": "17-3024.00",
      "top5": [
-      "Medical Equipment Repairers",
-      "Computer Numerically Controlled Tool Programmers",
-      "Network and Computer Systems Administrators",
-      "Computer Systems Engineers/Architects",
-      "Electro-Mechanical and Mechatronics Technologists and Technicians"
+      "Electro-Mechanical and Mechatronics Technologists and Technicians",
+      "Robotics Technicians",
+      "Electrical and Electronic Engineering Technologists and Technicians",
+      "Mechanical Engineering Technologists and Technicians",
+      "Aerospace Engineering and Operations Technologists and Technicians"
      ],
      "first_ok": false,
      "top5_ok": true,
      "top5_bad": [],
      "labelled": true,
-     "first_changed": false,
+     "first_changed": true,
      "top5_set_changed": true,
      "first_slow_fast": [
-      "Medical Equipment Repairers",
-      "Medical Equipment Repairers"
+      "Electro-Mechanical and Mechatronics Technologists and Technicians",
+      "Mechanical Engineering Technologists and Technicians"
      ],
      "plan": {
       "resources": 18,
-      "listed": 18,
+      "listed": 19,
       "job_search_for_working": [],
       "paid_in_plan": [],
       "already_have": [],
-      "duplicates": 0,
-      "should_not": 0,
+      "duplicates": 1,
+      "should_not": 1,
       "free": 18,
-      "non_english": 2
+      "non_english": 4
      }
     },
     {
@@ -351,14 +351,14 @@
     {
      "id": "E51",
      "error": null,
-     "first": "Computer Numerically Controlled Tool Programmers",
-     "first_id": "51-9162.00",
+     "first": "Tire Builders",
+     "first_id": "51-9197.00",
      "top5": [
-      "Computer Numerically Controlled Tool Programmers",
       "Tire Builders",
       "Structural Metal Fabricators and Fitters",
       "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
-      "Rail-Track Laying and Maintenance Equipment Operators"
+      "Rail-Track Laying and Maintenance Equipment Operators",
+      "Industrial Truck and Tractor Operators"
      ],
      "first_ok": false,
      "top5_ok": true,
@@ -367,18 +367,18 @@
      "first_changed": false,
      "top5_set_changed": false,
      "first_slow_fast": [
-      "Computer Numerically Controlled Tool Programmers",
-      "Computer Numerically Controlled Tool Programmers"
+      "Tire Builders",
+      "Tire Builders"
      ],
      "plan": {
-      "resources": 17,
-      "listed": 20,
+      "resources": 11,
+      "listed": 13,
       "job_search_for_working": [],
       "paid_in_plan": [],
       "already_have": [],
-      "duplicates": 3,
-      "should_not": 3,
-      "free": 17,
+      "duplicates": 2,
+      "should_not": 2,
+      "free": 11,
       "non_english": 2
      }
     },
@@ -389,10 +389,10 @@
      "first_id": "13-2082.00",
      "top5": [
       "Tax Preparers",
-      "Sales Representatives of Services, Except Advertising, Insurance, Financial Services, and Travel",
-      "Library Assistants, Clerical",
+      "Receptionists and Information Clerks",
       "Solar Sales Representatives and Assessors",
-      "Desktop Publishers"
+      "Court, Municipal, and License Clerks",
+      "Telephone Operators"
      ],
      "first_ok": false,
      "top5_ok": false,
@@ -457,10 +457,10 @@
      "first_id": "53-4022.00",
      "top5": [
       "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
-      "Computer Numerically Controlled Tool Programmers",
       "Industrial Truck and Tractor Operators",
-      "Medical Equipment Repairers",
-      "Rail-Track Laying and Maintenance Equipment Operators"
+      "Rail-Track Laying and Maintenance Equipment Operators",
+      "Ship Engineers",
+      "Recycling Coordinators"
      ],
      "first_ok": false,
      "top5_ok": true,
@@ -491,10 +491,10 @@
      "first_id": "13-2031.00",
      "top5": [
       "Budget Analysts",
-      "Tax Preparers",
       "Financial Examiners",
       "Fraud Examiners, Investigators and Analysts",
-      "Actuaries"
+      "Actuaries",
+      "Cost Estimators"
      ],
      "first_ok": true,
      "top5_ok": true,
@@ -521,14 +521,14 @@
     {
      "id": "E56",
      "error": null,
-     "first": "Computer Numerically Controlled Tool Programmers",
-     "first_id": "51-9162.00",
+     "first": "Bus and Truck Mechanics and Diesel Engine Specialists",
+     "first_id": "49-3031.00",
      "top5": [
-      "Computer Numerically Controlled Tool Programmers",
-      "Medical Equipment Repairers",
       "Bus and Truck Mechanics and Diesel Engine Specialists",
+      "Medical Equipment Repairers",
       "Maintenance Workers, Machinery",
-      "Rail-Track Laying and Maintenance Equipment Operators"
+      "Rail-Track Laying and Maintenance Equipment Operators",
+      "Tire Builders"
      ],
      "first_ok": false,
      "top5_ok": true,
@@ -537,19 +537,19 @@
      "first_changed": false,
      "top5_set_changed": false,
      "first_slow_fast": [
-      "Computer Numerically Controlled Tool Programmers",
-      "Computer Numerically Controlled Tool Programmers"
+      "Bus and Truck Mechanics and Diesel Engine Specialists",
+      "Bus and Truck Mechanics and Diesel Engine Specialists"
      ],
      "plan": {
-      "resources": 18,
-      "listed": 21,
+      "resources": 17,
+      "listed": 17,
       "job_search_for_working": [],
       "paid_in_plan": [],
       "already_have": [],
-      "duplicates": 3,
-      "should_not": 3,
-      "free": 18,
-      "non_english": 3
+      "duplicates": 0,
+      "should_not": 0,
+      "free": 17,
+      "non_english": 2
      }
     },
     {
@@ -593,10 +593,10 @@
      "first_id": "53-4022.00",
      "top5": [
       "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
-      "Computer Numerically Controlled Tool Programmers",
       "Recycling Coordinators",
       "Rail-Track Laying and Maintenance Equipment Operators",
-      "Dining Room and Cafeteria Attendants and Bartender Helpers"
+      "Dining Room and Cafeteria Attendants and Bartender Helpers",
+      "Tire Builders"
      ],
      "first_ok": false,
      "top5_ok": false,
@@ -657,48 +657,48 @@
     {
      "id": "E60",
      "error": null,
-     "first": "Sales Representatives of Services, Except Advertising, Insurance, Financial Services, and Travel",
-     "first_id": "41-3091.00",
+     "first": "Solar Sales Representatives and Assessors",
+     "first_id": "41-4011.07",
      "top5": [
-      "Sales Representatives of Services, Except Advertising, Insurance, Financial Services, and Travel",
-      "Tax Preparers",
       "Solar Sales Representatives and Assessors",
+      "Tax Preparers",
       "Advertising Sales Agents",
-      "Desktop Publishers"
+      "Travel Agents",
+      "Title Examiners, Abstractors, and Searchers"
      ],
-     "first_ok": true,
+     "first_ok": false,
      "top5_ok": true,
      "top5_bad": [],
      "labelled": true,
-     "first_changed": true,
+     "first_changed": false,
      "top5_set_changed": true,
      "first_slow_fast": [
-      "Sales Representatives of Services, Except Advertising, Insurance, Financial Services, and Travel",
-      "Tax Preparers"
+      "Solar Sales Representatives and Assessors",
+      "Solar Sales Representatives and Assessors"
      ],
      "plan": {
-      "resources": 15,
-      "listed": 16,
+      "resources": 12,
+      "listed": 13,
       "job_search_for_working": [],
       "paid_in_plan": [],
       "already_have": [],
       "duplicates": 1,
       "should_not": 1,
-      "free": 15,
-      "non_english": 3
+      "free": 12,
+      "non_english": 2
      }
     },
     {
      "id": "E61",
      "error": null,
-     "first": "Medical Equipment Repairers",
-     "first_id": "49-9062.00",
+     "first": "Surveying and Mapping Technicians",
+     "first_id": "17-3031.00",
      "top5": [
-      "Medical Equipment Repairers",
-      "Computer Numerically Controlled Tool Programmers",
       "Surveying and Mapping Technicians",
       "Civil Engineering Technologists and Technicians",
-      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers"
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
+      "Mechanical Drafters",
+      "Bus and Truck Mechanics and Diesel Engine Specialists"
      ],
      "first_ok": false,
      "top5_ok": false,
@@ -707,18 +707,18 @@
      "first_changed": false,
      "top5_set_changed": false,
      "first_slow_fast": [
-      "Medical Equipment Repairers",
-      "Medical Equipment Repairers"
+      "Surveying and Mapping Technicians",
+      "Surveying and Mapping Technicians"
      ],
      "plan": {
-      "resources": 17,
-      "listed": 18,
+      "resources": 20,
+      "listed": 21,
       "job_search_for_working": [],
       "paid_in_plan": [],
       "already_have": [],
       "duplicates": 1,
       "should_not": 1,
-      "free": 17,
+      "free": 20,
       "non_english": 2
      }
     },
@@ -732,7 +732,7 @@
       "Graphic Designers",
       "Art Directors",
       "Special Effects Artists and Animators",
-      "Fashion Designers"
+      "Media Programming Directors"
      ],
      "first_ok": false,
      "top5_ok": true,
@@ -763,19 +763,19 @@
      "first_id": "53-4022.00",
      "top5": [
       "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
-      "Computer Numerically Controlled Tool Programmers",
-      "Medical Equipment Repairers",
       "Rail-Track Laying and Maintenance Equipment Operators",
-      "Recycling Coordinators"
+      "Recycling Coordinators",
+      "Couriers and Messengers",
+      "Hoist and Winch Operators"
      ],
      "first_ok": false,
      "top5_ok": false,
      "top5_bad": [],
      "labelled": true,
-     "first_changed": true,
+     "first_changed": false,
      "top5_set_changed": true,
      "first_slow_fast": [
-      "Computer Numerically Controlled Tool Programmers",
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
       "Railroad Brake, Signal, and Switch Operators and Locomotive Firers"
      ],
      "plan": {
@@ -799,8 +799,8 @@
       "Occupational Therapy Aides",
       "Occupational Therapy Assistants",
       "Speech-Language Pathology Assistants",
-      "Computer Numerically Controlled Tool Programmers",
-      "Ophthalmic Medical Technicians"
+      "Ophthalmic Medical Technicians",
+      "Ophthalmic Medical Technologists"
      ],
      "first_ok": true,
      "top5_ok": true,
@@ -866,16 +866,16 @@
      "top5": [
       "Preschool Teachers, Except Special Education",
       "Tutors",
-      "Tax Preparers",
-      "Desktop Publishers",
-      "Speech-Language Pathology Assistants"
+      "Speech-Language Pathology Assistants",
+      "Occupational Therapy Aides",
+      "Occupational Therapy Assistants"
      ],
      "first_ok": true,
      "top5_ok": true,
      "top5_bad": [],
      "labelled": true,
      "first_changed": true,
-     "top5_set_changed": true,
+     "top5_set_changed": false,
      "first_slow_fast": [
       "Tutors",
       "Preschool Teachers, Except Special Education"
@@ -933,10 +933,10 @@
      "first_id": "53-4022.00",
      "top5": [
       "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
-      "Computer Numerically Controlled Tool Programmers",
       "Industrial Truck and Tractor Operators",
       "Recycling Coordinators",
-      "Ship Engineers"
+      "Ship Engineers",
+      "Tire Builders"
      ],
      "first_ok": false,
      "top5_ok": true,
@@ -1002,19 +1002,19 @@
      "top5": [
       "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
       "Fire Inspectors and Investigators",
-      "Medical Equipment Repairers",
       "Recycling Coordinators",
-      "Occupational Therapy Aides"
+      "Occupational Therapy Aides",
+      "Ophthalmic Medical Technicians"
      ],
      "first_ok": false,
      "top5_ok": true,
      "top5_bad": [],
      "labelled": true,
-     "first_changed": true,
+     "first_changed": false,
      "top5_set_changed": false,
      "first_slow_fast": [
       "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
-      "Medical Equipment Repairers"
+      "Railroad Brake, Signal, and Switch Operators and Locomotive Firers"
      ],
      "plan": {
       "resources": 11,
@@ -1036,16 +1036,16 @@
      "top5": [
       "Budget Analysts",
       "Financial Examiners",
-      "Tax Preparers",
       "Personal Financial Advisors",
-      "Business Continuity Planners"
+      "Business Continuity Planners",
+      "Logisticians"
      ],
      "first_ok": false,
      "top5_ok": false,
      "top5_bad": [],
      "labelled": true,
      "first_changed": false,
-     "top5_set_changed": false,
+     "top5_set_changed": true,
      "first_slow_fast": [
       "Budget Analysts",
       "Budget Analysts"
@@ -1065,14 +1065,14 @@
     {
      "id": "E72",
      "error": null,
-     "first": "Computer Numerically Controlled Tool Programmers",
-     "first_id": "51-9162.00",
+     "first": "Tire Builders",
+     "first_id": "51-9197.00",
      "top5": [
-      "Computer Numerically Controlled Tool Programmers",
       "Tire Builders",
       "Rail-Track Laying and Maintenance Equipment Operators",
       "Structural Metal Fabricators and Fitters",
-      "Tire Repairers and Changers"
+      "Tire Repairers and Changers",
+      "Logging Equipment Operators"
      ],
      "first_ok": false,
      "top5_ok": false,
@@ -1081,18 +1081,18 @@
      "first_changed": false,
      "top5_set_changed": false,
      "first_slow_fast": [
-      "Computer Numerically Controlled Tool Programmers",
-      "Computer Numerically Controlled Tool Programmers"
+      "Tire Builders",
+      "Tire Builders"
      ],
      "plan": {
-      "resources": 17,
-      "listed": 21,
+      "resources": 10,
+      "listed": 10,
       "job_search_for_working": [],
       "paid_in_plan": [],
       "already_have": [],
-      "duplicates": 4,
-      "should_not": 4,
-      "free": 17,
+      "duplicates": 0,
+      "should_not": 0,
+      "free": 10,
       "non_english": 2
      }
     },
@@ -1133,35 +1133,35 @@
     {
      "id": "E74",
      "error": null,
-     "first": "Computer Numerically Controlled Tool Programmers",
-     "first_id": "51-9162.00",
+     "first": "Mechanical Engineering Technologists and Technicians",
+     "first_id": "17-3027.00",
      "top5": [
-      "Computer Numerically Controlled Tool Programmers",
       "Mechanical Engineering Technologists and Technicians",
       "Civil Engineering Technologists and Technicians",
       "Photonics Technicians",
-      "Electrical and Electronic Engineering Technologists and Technicians"
+      "Electrical and Electronic Engineering Technologists and Technicians",
+      "Industrial Engineering Technologists and Technicians"
      ],
      "first_ok": false,
      "top5_ok": true,
      "top5_bad": [],
      "labelled": true,
-     "first_changed": false,
+     "first_changed": true,
      "top5_set_changed": true,
      "first_slow_fast": [
-      "Computer Numerically Controlled Tool Programmers",
-      "Computer Numerically Controlled Tool Programmers"
+      "Civil Engineering Technologists and Technicians",
+      "Mechanical Engineering Technologists and Technicians"
      ],
      "plan": {
-      "resources": 19,
-      "listed": 21,
+      "resources": 15,
+      "listed": 17,
       "job_search_for_working": [],
       "paid_in_plan": [],
       "already_have": [],
       "duplicates": 2,
       "should_not": 2,
-      "free": 19,
-      "non_english": 3
+      "free": 15,
+      "non_english": 2
      }
     },
     {
@@ -1206,16 +1206,16 @@
      "top5": [
       "Dining Room and Cafeteria Attendants and Bartender Helpers",
       "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
-      "Computer Numerically Controlled Tool Programmers",
       "Food Preparation Workers",
-      "Rail-Track Laying and Maintenance Equipment Operators"
+      "Rail-Track Laying and Maintenance Equipment Operators",
+      "Tire Builders"
      ],
      "first_ok": true,
      "top5_ok": true,
      "top5_bad": [],
      "labelled": true,
      "first_changed": false,
-     "top5_set_changed": true,
+     "top5_set_changed": false,
      "first_slow_fast": [
       "Dining Room and Cafeteria Attendants and Bartender Helpers",
       "Dining Room and Cafeteria Attendants and Bartender Helpers"
@@ -1273,10 +1273,10 @@
      "first_id": "13-2082.00",
      "top5": [
       "Tax Preparers",
-      "Library Assistants, Clerical",
       "Telephone Operators",
-      "Desktop Publishers",
-      "Receptionists and Information Clerks"
+      "Receptionists and Information Clerks",
+      "Tellers",
+      "Couriers and Messengers"
      ],
      "first_ok": false,
      "top5_ok": true,
@@ -1303,14 +1303,14 @@
     {
      "id": "E79",
      "error": null,
-     "first": "Medical Equipment Repairers",
-     "first_id": "49-9062.00",
+     "first": "Mechanical Engineering Technologists and Technicians",
+     "first_id": "17-3027.00",
      "top5": [
-      "Medical Equipment Repairers",
       "Mechanical Engineering Technologists and Technicians",
       "Electrical and Electronic Engineering Technologists and Technicians",
       "Electro-Mechanical and Mechatronics Technologists and Technicians",
-      "Automotive Engineering Technicians"
+      "Automotive Engineering Technicians",
+      "Aerospace Engineering and Operations Technologists and Technicians"
      ],
      "first_ok": false,
      "top5_ok": false,
@@ -1319,19 +1319,19 @@
      "first_changed": false,
      "top5_set_changed": true,
      "first_slow_fast": [
-      "Medical Equipment Repairers",
-      "Medical Equipment Repairers"
+      "Mechanical Engineering Technologists and Technicians",
+      "Mechanical Engineering Technologists and Technicians"
      ],
      "plan": {
-      "resources": 19,
-      "listed": 19,
+      "resources": 16,
+      "listed": 18,
       "job_search_for_working": [],
       "paid_in_plan": [],
       "already_have": [],
-      "duplicates": 0,
-      "should_not": 0,
-      "free": 19,
-      "non_english": 3
+      "duplicates": 2,
+      "should_not": 2,
+      "free": 16,
+      "non_english": 2
      }
     },
     {
@@ -1373,12 +1373,12 @@
     "all": {
      "people": 40,
      "first_ok": {
-      "k": 9,
+      "k": 8,
       "n": 40,
-      "pct": 22.5,
+      "pct": 20.0,
       "ci": [
-       12.3,
-       37.5
+       10.5,
+       34.8
       ]
      },
      "top5_ok": {
@@ -1400,35 +1400,35 @@
       ]
      },
      "first_changed": {
-      "k": 9,
+      "k": 8,
       "n": 40,
-      "pct": 22.5,
+      "pct": 20.0,
       "ci": [
-       12.3,
-       37.5
+       10.5,
+       34.8
       ]
      },
      "top5_set_changed": {
-      "k": 20,
+      "k": 19,
       "n": 40,
-      "pct": 50.0,
+      "pct": 47.5,
       "ci": [
-       35.2,
-       64.8
+       32.9,
+       62.5
       ]
      },
-     "resources": 671,
-     "listed": 731,
-     "should_not": 60,
+     "resources": 645,
+     "listed": 700,
+     "should_not": 55,
      "should_not_by_rule": {
       "job_search_for_working": 0,
       "paid_in_plan": 0,
       "already_have": 0,
-      "duplicates": 60
+      "duplicates": 55
      },
      "free": {
-      "k": 671,
-      "n": 671,
+      "k": 645,
+      "n": 645,
       "pct": 100.0,
       "ci": [
        99.4,
@@ -1436,21 +1436,17 @@
       ]
      },
      "non_english": {
-      "k": 96,
-      "n": 671,
+      "k": 92,
+      "n": 645,
       "pct": 14.3,
       "ci": [
-       11.9,
+       11.8,
        17.2
       ]
      },
      "no_plan": 0,
-     "distinct_first": 22,
+     "distinct_first": 25,
      "common_first": [
-      [
-       "Computer Numerically Controlled Tool Programmers",
-       6
-      ],
       [
        "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
        5
@@ -1460,12 +1456,16 @@
        3
       ],
       [
-       "Medical Equipment Repairers",
+       "Mechanical Engineering Technologists and Technicians",
        3
       ],
       [
        "Talent Directors",
        3
+      ],
+      [
+       "Budget Analysts",
+       2
       ]
      ],
      "errors": 0
@@ -1500,12 +1500,12 @@
       ]
      },
      "first_changed": {
-      "k": 1,
+      "k": 2,
       "n": 10,
-      "pct": 10.0,
+      "pct": 20.0,
       "ci": [
-       1.8,
-       40.4
+       5.7,
+       51.0
       ]
      },
      "top5_set_changed": {
@@ -1517,42 +1517,46 @@
        68.7
       ]
      },
-     "resources": 175,
-     "listed": 192,
-     "should_not": 17,
+     "resources": 170,
+     "listed": 188,
+     "should_not": 18,
      "should_not_by_rule": {
       "job_search_for_working": 0,
       "paid_in_plan": 0,
       "already_have": 0,
-      "duplicates": 17
+      "duplicates": 18
      },
      "free": {
-      "k": 175,
-      "n": 175,
+      "k": 170,
+      "n": 170,
       "pct": 100.0,
       "ci": [
-       97.9,
+       97.8,
        100.0
       ]
      },
      "non_english": {
       "k": 24,
-      "n": 175,
-      "pct": 13.7,
+      "n": 170,
+      "pct": 14.1,
       "ci": [
-       9.4,
-       19.6
+       9.7,
+       20.1
       ]
      },
      "no_plan": 0,
      "distinct_first": 9,
      "common_first": [
       [
-       "Computer Numerically Controlled Tool Programmers",
+       "Recycling Coordinators",
        2
       ],
       [
        "Child, Family, and School Social Workers",
+       1
+      ],
+      [
+       "Electro-Mechanical and Mechatronics Technologists and Technicians",
        1
       ],
       [
@@ -1562,10 +1566,6 @@
       [
        "Fuel Cell Engineers",
        1
-      ],
-      [
-       "Medical Equipment Repairers",
-       1
       ]
      ],
      "errors": 0
@@ -1573,12 +1573,12 @@
     "working": {
      "people": 10,
      "first_ok": {
-      "k": 3,
+      "k": 2,
       "n": 10,
-      "pct": 30.0,
+      "pct": 20.0,
       "ci": [
-       10.8,
-       60.3
+       5.7,
+       51.0
       ]
      },
      "top5_ok": {
@@ -1600,12 +1600,12 @@
       ]
      },
      "first_changed": {
-      "k": 2,
+      "k": 1,
       "n": 10,
-      "pct": 20.0,
+      "pct": 10.0,
       "ci": [
-       5.7,
-       51.0
+       1.8,
+       40.4
       ]
      },
      "top5_set_changed": {
@@ -1617,40 +1617,36 @@
        76.3
       ]
      },
-     "resources": 150,
-     "listed": 161,
-     "should_not": 11,
+     "resources": 140,
+     "listed": 147,
+     "should_not": 7,
      "should_not_by_rule": {
       "job_search_for_working": 0,
       "paid_in_plan": 0,
       "already_have": 0,
-      "duplicates": 11
+      "duplicates": 7
      },
      "free": {
-      "k": 150,
-      "n": 150,
+      "k": 140,
+      "n": 140,
       "pct": 100.0,
       "ci": [
-       97.5,
+       97.3,
        100.0
       ]
      },
      "non_english": {
-      "k": 24,
-      "n": 150,
-      "pct": 16.0,
+      "k": 22,
+      "n": 140,
+      "pct": 15.7,
       "ci": [
-       11.0,
-       22.7
+       10.6,
+       22.6
       ]
      },
      "no_plan": 0,
-     "distinct_first": 8,
+     "distinct_first": 9,
      "common_first": [
-      [
-       "Computer Numerically Controlled Tool Programmers",
-       2
-      ],
       [
        "Railroad Brake, Signal, and Switch Operators and Locomotive Firers",
        2
@@ -1661,6 +1657,10 @@
       ],
       [
        "Budget Analysts",
+       1
+      ],
+      [
+       "Bus and Truck Mechanics and Diesel Engine Specialists",
        1
       ],
       [
@@ -1700,15 +1700,6 @@
       ]
      },
      "first_changed": {
-      "k": 6,
-      "n": 10,
-      "pct": 60.0,
-      "ci": [
-       31.3,
-       83.2
-      ]
-     },
-     "top5_set_changed": {
       "k": 4,
       "n": 10,
       "pct": 40.0,
@@ -1717,8 +1708,17 @@
        68.7
       ]
      },
-     "resources": 165,
-     "listed": 179,
+     "top5_set_changed": {
+      "k": 3,
+      "n": 10,
+      "pct": 30.0,
+      "ci": [
+       10.8,
+       60.3
+      ]
+     },
+     "resources": 168,
+     "listed": 182,
      "should_not": 14,
      "should_not_by_rule": {
       "job_search_for_working": 0,
@@ -1727,21 +1727,21 @@
       "duplicates": 14
      },
      "free": {
-      "k": 165,
-      "n": 165,
+      "k": 168,
+      "n": 168,
       "pct": 100.0,
       "ci": [
-       97.7,
+       97.8,
        100.0
       ]
      },
      "non_english": {
       "k": 22,
-      "n": 165,
-      "pct": 13.3,
+      "n": 168,
+      "pct": 13.1,
       "ci": [
-       9.0,
-       19.4
+       8.8,
+       19.0
       ]
      },
      "no_plan": 0,
@@ -1760,11 +1760,11 @@
        1
       ],
       [
-       "Medical Equipment Repairers",
+       "Occupational Therapy Aides",
        1
       ],
       [
-       "Occupational Therapy Aides",
+       "Personal Financial Advisors",
        1
       ]
      ],
@@ -1800,12 +1800,12 @@
       ]
      },
      "first_changed": {
-      "k": 0,
+      "k": 1,
       "n": 10,
-      "pct": 0.0,
+      "pct": 10.0,
       "ci": [
-       0.0,
-       27.8
+       1.8,
+       40.4
       ]
      },
      "top5_set_changed": {
@@ -1817,38 +1817,38 @@
        89.2
       ]
      },
-     "resources": 181,
-     "listed": 199,
-     "should_not": 18,
+     "resources": 167,
+     "listed": 183,
+     "should_not": 16,
      "should_not_by_rule": {
       "job_search_for_working": 0,
       "paid_in_plan": 0,
       "already_have": 0,
-      "duplicates": 18
+      "duplicates": 16
      },
      "free": {
-      "k": 181,
-      "n": 181,
+      "k": 167,
+      "n": 167,
       "pct": 100.0,
       "ci": [
-       97.9,
+       97.8,
        100.0
       ]
      },
      "non_english": {
-      "k": 26,
-      "n": 181,
+      "k": 24,
+      "n": 167,
       "pct": 14.4,
       "ci": [
-       10.0,
-       20.2
+       9.9,
+       20.5
       ]
      },
      "no_plan": 0,
      "distinct_first": 9,
      "common_first": [
       [
-       "Computer Numerically Controlled Tool Programmers",
+       "Mechanical Engineering Technologists and Technicians",
        2
       ],
       [
@@ -5524,12 +5524,12 @@
  "tuning_set": {
   "people": 5,
   "first_changed": {
-   "k": 1,
+   "k": 0,
    "n": 5,
-   "pct": 20.0,
+   "pct": 0.0,
    "ci": [
-    3.6,
-    62.4
+    0.0,
+    43.4
    ]
   },
   "top5_set_changed": {
@@ -5541,52 +5541,47 @@
     88.2
    ]
   },
-  "should_not": 8,
+  "should_not": 10,
   "free": {
-   "k": 86,
-   "n": 86,
+   "k": 84,
+   "n": 84,
    "pct": 100.0,
    "ci": [
-    95.7,
+    95.6,
     100.0
    ]
   },
   "non_english": {
-   "k": 13,
-   "n": 86,
-   "pct": 15.1,
+   "k": 12,
+   "n": 84,
+   "pct": 14.3,
    "ci": [
-    9.1,
-    24.2
+    8.4,
+    23.3
    ]
   }
  },
  "diagnosis": {
-  "misses": 31,
+  "misses": 32,
   "lead": {
-   "field": -0.2,
-   "interest": -0.4,
-   "skill": -0.7,
-   "outlook": 5.7
+   "field": 0.1,
+   "interest": -0.3,
+   "skill": -0.2,
+   "outlook": 3.6
   },
   "ahead": {
-   "field": 5,
-   "interest": 13,
-   "skill": 11,
-   "outlook": 28
+   "field": 6,
+   "interest": 15,
+   "skill": 13,
+   "outlook": 25
   },
   "occupations": 910,
   "demand_values": 15,
   "demand_top": 90.6,
-  "demand_top_n": 111,
-  "mycol_yes": 190,
-  "mycol_titles": 60,
-  "pro_low_zone": 36,
-  "pro_low_zone_examples": [
-   "Tax Preparers → 2411 Accountants",
-   "Network and Computer Systems Administrators → 2523 Computer network professionals",
-   "Computer Systems Engineers/Architects → 2511 Systems analysts",
-   "Desktop Publishers → 2166 Graphic and multimedia designers"
-  ]
+  "demand_top_n": 105,
+  "mycol_yes": 186,
+  "mycol_titles": 58,
+  "pro_low_zone": 27,
+  "pro_low_zone_examples": []
  }
 }

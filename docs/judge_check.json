@@ -1,6 +1,6 @@
 {
  "date": "2026-11-17",
- "commit": "c7b6c25",
+ "commit": "ccec816",
  "targets": {
   "first_move_changed": 3,
   "top5_changed": 4,
@@ -162,32 +162,32 @@
     "name": "Siti Hajar",
     "kind": "working",
     "first": {
-     "slow": "Tax Preparers",
-     "moderate": "Tax Preparers",
+     "slow": "Budget Analysts",
+     "moderate": "Budget Analysts",
      "fast": "Budget Analysts"
     },
-    "first_changed": true,
-    "first_changed_any": true,
+    "first_changed": false,
+    "first_changed_any": false,
     "top5": {
      "slow": [
-      "Tax Preparers",
       "Budget Analysts",
       "Financial Examiners",
       "Accountants and Auditors",
-      "Personal Financial Advisors"
+      "Personal Financial Advisors",
+      "Tax Preparers"
      ],
      "moderate": [
-      "Tax Preparers",
       "Budget Analysts",
       "Financial Examiners",
       "Accountants and Auditors",
-      "Personal Financial Advisors"
+      "Personal Financial Advisors",
+      "Tax Preparers"
      ],
      "fast": [
       "Budget Analysts",
-      "Tax Preparers",
       "Financial Examiners",
       "Accountants and Auditors",
+      "Tax Preparers",
       "Personal Financial Advisors"
      ]
     },
@@ -195,14 +195,14 @@
     "top5_order_changed": true,
     "top5_changed": true,
     "max_score_move": 2.6,
-    "first_score_move": -1.0,
-    "verdict": "top",
+    "first_score_move": -0.1,
+    "verdict": "same",
     "robust": {
      "matches": {
       "robust": [
        "Budget Analysts",
-       "Tax Preparers",
-       "Financial Examiners"
+       "Financial Examiners",
+       "Accountants and Auditors"
       ],
       "dependent": 0,
       "with_why": 0,
@@ -211,8 +211,8 @@
      "futures": {
       "robust": [
        "Budget Analysts",
-       "Tax Preparers",
-       "Financial Examiners"
+       "Financial Examiners",
+       "Accountants and Auditors"
       ],
       "dependent": 0,
       "with_why": 0,
@@ -350,7 +350,7 @@
     "robust_ok": true
    }
   ],
-  "first_move_changed": 1,
+  "first_move_changed": 0,
   "top5_changed": 4,
   "top5_set_changed": 3,
   "max_score_move": 6.2,
@@ -406,8 +406,8 @@
     "profile_id": "P02",
     "name": "Siti Hajar",
     "first": {
-     "before": "Tax Preparers",
-     "after": "Tax Preparers"
+     "before": "Budget Analysts",
+     "after": "Budget Analysts"
     },
     "first_changed": false,
     "top5_changed": false,
@@ -418,7 +418,7 @@
      "after": 43.7,
      "move": 0.1
     },
-    "path_changed": false
+    "path_changed": true
    },
    {
     "news": "coding_agents",
@@ -501,8 +501,8 @@
     "profile_id": "P02",
     "name": "Siti Hajar",
     "first": {
-     "before": "Tax Preparers",
-     "after": "Tax Preparers"
+     "before": "Budget Analysts",
+     "after": "Budget Analysts"
     },
     "first_changed": false,
     "top5_changed": false,
@@ -596,12 +596,12 @@
     "profile_id": "P02",
     "name": "Siti Hajar",
     "first": {
-     "before": "Tax Preparers",
+     "before": "Budget Analysts",
      "after": "Budget Analysts"
     },
-    "first_changed": true,
+    "first_changed": false,
     "top5_changed": true,
-    "top5_new": 0,
+    "top5_new": 1,
     "own_job": {
      "title": "Bookkeeping, Accounting, and Auditing Clerks",
      "before": 43.6,
@@ -691,8 +691,8 @@
     "profile_id": "P02",
     "name": "Siti Hajar",
     "first": {
-     "before": "Tax Preparers",
-     "after": "Tax Preparers"
+     "before": "Budget Analysts",
+     "after": "Budget Analysts"
     },
     "first_changed": false,
     "top5_changed": true,
@@ -786,8 +786,8 @@
     "profile_id": "P02",
     "name": "Siti Hajar",
     "first": {
-     "before": "Tax Preparers",
-     "after": "Tax Preparers"
+     "before": "Budget Analysts",
+     "after": "Budget Analysts"
     },
     "first_changed": false,
     "top5_changed": false,
@@ -798,7 +798,7 @@
      "after": 41.8,
      "move": -1.8
     },
-    "path_changed": true
+    "path_changed": false
    },
    {
     "news": "legal_drafting",
@@ -881,8 +881,8 @@
     "profile_id": "P02",
     "name": "Siti Hajar",
     "first": {
-     "before": "Tax Preparers",
-     "after": "Tax Preparers"
+     "before": "Budget Analysts",
+     "after": "Budget Analysts"
     },
     "first_changed": false,
     "top5_changed": false,
@@ -976,8 +976,8 @@
     "profile_id": "P02",
     "name": "Siti Hajar",
     "first": {
-     "before": "Tax Preparers",
-     "after": "Tax Preparers"
+     "before": "Budget Analysts",
+     "after": "Budget Analysts"
     },
     "first_changed": false,
     "top5_changed": false,
@@ -988,7 +988,7 @@
      "after": 43.7,
      "move": 0.1
     },
-    "path_changed": false
+    "path_changed": true
    },
    {
     "news": "data_agents",
@@ -1071,8 +1071,8 @@
     "profile_id": "P02",
     "name": "Siti Hajar",
     "first": {
-     "before": "Tax Preparers",
-     "after": "Tax Preparers"
+     "before": "Budget Analysts",
+     "after": "Budget Analysts"
     },
     "first_changed": false,
     "top5_changed": false,
@@ -1124,10 +1124,10 @@
    }
   ],
   "top5_changed": 7,
-  "first_changed": 1,
+  "first_changed": 0,
   "own_job_runs": 24,
   "own_job_moved": 5,
-  "path_changed": 5,
+  "path_changed": 6,
   "news_moving_named_person": 4,
   "news_with_person": 4
  },
@@ -1373,8 +1373,8 @@
    "confirmed": 8
   },
   "second_source": {
-   "confirmed": 789,
-   "disagree": 91,
+   "confirmed": 786,
+   "disagree": 94,
    "one_source": 30,
    "occupations": 910
   },
@@ -1431,20 +1431,20 @@
     "profile_id": "P02",
     "name": "Siti Hajar",
     "kind": "working",
-    "occupation": "Tax Preparers",
-    "resources": 22,
+    "occupation": "Budget Analysts",
+    "resources": 20,
     "job_search": [],
     "job_search_unsuited": [],
-    "non_english": 3,
-    "non_english_pct": 13.6,
+    "non_english": 2,
+    "non_english_pct": 10.0,
     "skills": 10,
     "no_course": [],
     "top_provider": {
      "name": "Saylor Academy",
-     "count": 16
+     "count": 15
     },
-    "hours": 613.0,
-    "weeks": 122.6,
+    "hours": 582.7,
+    "weeks": 116.5,
     "hours_per_week": 5
    },
    {
@@ -1496,8 +1496,8 @@
   ],
   "unsuited": 0,
   "no_course": 1,
-  "resources": 95,
-  "non_english_pct": 13.7,
+  "resources": 93,
+  "non_english_pct": 12.9,
   "pass": false
  },
  "links": {
@@ -1728,7 +1728,7 @@
  },
  "languages": {
   "summary": {
-   "9. UI strings missing or falling back to English, BM / ZH (of 1196 rows)": "0 / 0",
+   "9. UI strings missing or falling back to English, BM / ZH (of 1201 rows)": "0 / 0",
    "9. Rows whose BM / ZH text is the English text": "0 / 0",
    "9. English text written into the page, not through i18n": 0,
    "9. SDG reasons shown in English only, BM / ZH (of 162)": "0 / 0",
@@ -1739,7 +1739,7 @@
    "9. Colour pairs below WCAG AA 4.5:1 (light + dark, of 46)": 0,
    "9. <html lang> follows the chosen language": "yes"
   },
-  "rows": 1196,
+  "rows": 1201,
   "totals": {
    "en": {
     "missing_key": 0,
