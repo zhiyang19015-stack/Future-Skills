@@ -99,6 +99,32 @@ def report(data: dict | None = None) -> dict:
             "computed": date.today().isoformat()}
 
 
+def evaluation_lines() -> list[str]:
+    """The held-out evaluation (scripts/eval.py), read from docs/eval_results.json when it has been run."""
+    path = ROOT / "docs" / "eval_results.json"
+    if not path.exists():
+        return []
+    v = json.loads(path.read_text(encoding="utf-8"))["versions"]
+
+    def cell(name: str, key: str) -> str:
+        s = v[name]["summary"]["all"][key] if name in v else None
+        return "—" if not s or s["pct"] is None else f"{s['pct']:g}% ({s['k']}/{s['n']})"
+    names = [n for n in ("v1", "now") if n in v]
+    head = {"v1": "Competition v1", "now": "Now"}
+    rows = [("first_ok", "First move a counsellor would accept (labels)"),
+            ("top5_ok", "Top 5 holds an occupation a counsellor would accept"),
+            ("free", "Learning-plan resources that are free"), ("non_english", "Learning-plan resources not in English")]
+    out = ["## Evaluation on 40 held-out synthetic people (no Phase 1 baseline: v1 is the baseline)", "",
+           "Synthetic data, not validated with real people. The Phase 1 proposal set no baseline for recommendation "
+           "quality, so the competition version (v1) is the baseline, run on the same people. Labels were written by "
+           "an independent annotator before the run ([eval/LABELING.md](../eval/LABELING.md)); details, intervals and "
+           "a third version in [eval_results.md](eval_results.md).", "",
+           "| Metric | " + " | ".join(f"{head[n]} `{v[n]['commit']}`" for n in names) + " |",
+           "|---|" + "---|" * len(names)]
+    out += [f"| {label} | " + " | ".join(cell(n, key) for n in names) + " |" for key, label in rows]
+    return out + [""]
+
+
 def as_markdown(r: dict) -> str:
     p, c, it, j, k = r["phase1"], r["coverage"], r["it"], r["journey"], r["cost"]
     element_share = round(100 * c["elements_covered"] / c["elements"], 1)
@@ -132,6 +158,7 @@ def as_markdown(r: dict) -> str:
     ]
     if j["missing"]:
         out += [f"Not complete for: {', '.join(j['missing'])}.", ""]
+    out += evaluation_lines()
     out += [
         "## Learning cost", "",
         "Every step of a learning plan is free: paid courses are never in the plan, its hours or its count. "
