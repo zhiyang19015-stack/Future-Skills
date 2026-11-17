@@ -4,7 +4,7 @@
  "label": "Synthetic data, not validated with real people.",
  "versions": {
   "now": {
-   "commit": "cd6d453",
+   "commit": "9a10e48",
    "rows": [
     {
      "id": "E01",
@@ -5597,5 +5597,33 @@
     24.2
    ]
   }
+ },
+ "diagnosis": {
+  "misses": 26,
+  "lead": {
+   "field": -1.0,
+   "interest": -0.3,
+   "skill": -0.5,
+   "outlook": 6.8
+  },
+  "ahead": {
+   "field": 7,
+   "interest": 14,
+   "skill": 8,
+   "outlook": 26
+  },
+  "occupations": 910,
+  "demand_values": 15,
+  "demand_top": 90.6,
+  "demand_top_n": 111,
+  "mycol_yes": 190,
+  "mycol_titles": 60,
+  "pro_low_zone": 36,
+  "pro_low_zone_examples": [
+   "Tax Preparers → 2411 Accountants",
+   "Network and Computer Systems Administrators → 2523 Computer network professionals",
+   "Computer Systems Engineers/Architects → 2511 Systems analysts",
+   "Desktop Publishers → 2166 Graphic and multimedia designers"
+  ]
  }
 }

@@ -1,0 +1,2507 @@
+{
+ "date": "2026-11-17",
+ "data": [
+  {
+   "file": "aei/aei_extract.csv",
+   "rows": 40412,
+   "row_level": false,
+   "empty_rows": [],
+   "file_level": [
+    "data/README.md (built by scripts/ai_exposure_extract.py)",
+    "data/aei/source.json"
+   ],
+   "status": "sourced for the whole file in data/README.md (built by scripts/ai_exposure_extract.py), data/aei/source.json"
+  },
+  {
+   "file": "aei/job_exposure.csv",
+   "rows": 748,
+   "row_level": false,
+   "empty_rows": [],
+   "file_level": [
+    "data/README.md (built by scripts/ai_exposure_extract.py)",
+    "data/aei/source.json"
+   ],
+   "status": "sourced for the whole file in data/README.md (built by scripts/ai_exposure_extract.py), data/aei/source.json"
+  },
+  {
+   "file": "aei/source.json",
+   "rows": 0,
+   "row_level": false,
+   "empty_rows": [],
+   "file_level": [
+    "data/README.md (built by scripts/ai_exposure_extract.py)",
+    "data/aei/source.json"
+   ],
+   "status": "sourced for the whole file in data/README.md (built by scripts/ai_exposure_extract.py), data/aei/source.json"
+  },
+  {
+   "file": "aei/task_penetration.csv",
+   "rows": 18449,
+   "row_level": false,
+   "empty_rows": [],
+   "file_level": [
+    "data/README.md (built by scripts/ai_exposure_extract.py)",
+    "data/aei/source.json"
+   ],
+   "status": "sourced for the whole file in data/README.md (built by scripts/ai_exposure_extract.py), data/aei/source.json"
+  },
+  {
+   "file": "ai_occupations.csv",
+   "rows": 910,
+   "row_level": false,
+   "empty_rows": [],
+   "file_level": [
+    "data/README.md (built by scripts/ai_exposure.py)"
+   ],
+   "status": "sourced for the whole file in data/README.md (built by scripts/ai_exposure.py)"
+  },
+  {
+   "file": "ai_skills.csv",
+   "rows": 399,
+   "row_level": false,
+   "empty_rows": [],
+   "file_level": [
+    "data/README.md (built by scripts/ai_exposure.py)"
+   ],
+   "status": "sourced for the whole file in data/README.md (built by scripts/ai_exposure.py)"
+  },
+  {
+   "file": "ai_tasks.csv",
+   "rows": 18592,
+   "row_level": false,
+   "empty_rows": [],
+   "file_level": [
+    "data/README.md (built by scripts/ai_exposure.py)"
+   ],
+   "status": "sourced for the whole file in data/README.md (built by scripts/ai_exposure.py)"
+  },
+  {
+   "file": "ai_topics.csv",
+   "rows": 48,
+   "row_level": false,
+   "empty_rows": [],
+   "file_level": [
+    "data/README.md (built by scripts/ai_exposure.py)"
+   ],
+   "status": "sourced for the whole file in data/README.md (built by scripts/ai_exposure.py)"
+  },
+  {
+   "file": "cost_inputs.csv",
+   "rows": 15,
+   "row_level": true,
+   "empty_rows": [],
+   "file_level": [],
+   "status": "sourced per row"
+  },
+  {
+   "file": "demand.csv",
+   "rows": 910,
+   "row_level": false,
+   "empty_rows": [],
+   "file_level": [
+    "data/README.md (built by demand.py)"
+   ],
+   "status": "sourced for the whole file in data/README.md (built by demand.py)"
+  },
+  {
+   "file": "demand_inputs.csv",
+   "rows": 54,
+   "row_level": true,
+   "empty_rows": [],
+   "file_level": [
+    "data/README.md (built by scripts/demand.py)"
+   ],
+   "status": "sourced per row"
+  },
+  {
+   "file": "elements.csv",
+   "rows": 68,
+   "row_level": true,
+   "empty_rows": [],
+   "file_level": [
+    "data/README.md (built by build_onet.py)"
+   ],
+   "status": "sourced per row"
+  },
+  {
+   "file": "fields.csv",
+   "rows": 22,
+   "row_level": true,
+   "empty_rows": [],
+   "file_level": [],
+   "status": "sourced per row"
+  },
+  {
+   "file": "ilo_exposure.csv",
+   "rows": 427,
+   "row_level": true,
+   "empty_rows": [],
+   "file_level": [
+    "SOURCES.md"
+   ],
+   "status": "sourced per row"
+  },
+  {
+   "file": "ilo_tasks.csv",
+   "rows": 3265,
+   "row_level": false,
+   "empty_rows": [],
+   "file_level": [
+    "SOURCES.md"
+   ],
+   "status": "sourced for the whole file in SOURCES.md"
+  },
+  {
+   "file": "interest_items.json",
+   "rows": 36,
+   "row_level": true,
+   "empty_rows": [],
+   "file_level": [],
+   "status": "sourced per row"
+  },
+  {
+   "file": "learning_resources.csv",
+   "rows": 84,
+   "row_level": true,
+   "empty_rows": [],
+   "file_level": [
+    "data/README.md (built by scripts/check_links.py)"
+   ],
+   "status": "sourced per row"
+  },
+  {
+   "file": "metric_registry.csv",
+   "rows": 20,
+   "row_level": true,
+   "empty_rows": [],
+   "file_level": [],
+   "status": "sourced per row"
+  },
+  {
+   "file": "missions.csv",
+   "rows": 18,
+   "row_level": true,
+   "empty_rows": [],
+   "file_level": [],
+   "status": "fine",
+   "why": "practice tasks we wrote; each names the O*NET element it trains (our own content, labelled so)"
+  },
+  {
+   "file": "my_restrictions.csv",
+   "rows": 1,
+   "row_level": true,
+   "empty_rows": [],
+   "file_level": [],
+   "status": "sourced per row"
+  },
+  {
+   "file": "mycol_map.csv",
+   "rows": 66,
+   "row_level": true,
+   "empty_rows": [],
+   "file_level": [
+    "SOURCES.md"
+   ],
+   "status": "sourced per row"
+  },
+  {
+   "file": "news.json",
+   "rows": 2,
+   "row_level": true,
+   "empty_rows": [],
+   "file_level": [
+    "data/README.md (built by scripts/news.py)"
+   ],
+   "status": "sourced per row"
+  },
+  {
+   "file": "occupation_elements.csv",
+   "rows": 39964,
+   "row_level": false,
+   "empty_rows": [],
+   "file_level": [
+    "data/README.md (built by build_onet.py)"
+   ],
+   "status": "sourced for the whole file in data/README.md (built by build_onet.py)"
+  },
+  {
+   "file": "occupation_technologies.csv",
+   "rows": 11717,
+   "row_level": false,
+   "empty_rows": [],
+   "file_level": [
+    "data/README.md (built by build_onet.py)"
+   ],
+   "status": "sourced for the whole file in data/README.md (built by build_onet.py)"
+  },
+  {
+   "file": "occupation_titles.csv",
+   "rows": 8146,
+   "row_level": false,
+   "empty_rows": [],
+   "file_level": [
+    "data/README.md (built by build_onet.py)"
+   ],
+   "status": "sourced for the whole file in data/README.md (built by build_onet.py)"
+  },
+  {
+   "file": "occupations.csv",
+   "rows": 910,
+   "row_level": true,
+   "empty_rows": [],
+   "file_level": [
+    "data/README.md (built by scripts/build_onet.py)"
+   ],
+   "status": "sourced per row"
+  },
+  {
+   "file": "onet/skill_work_activities.csv",
+   "rows": 232,
+   "row_level": true,
+   "empty_rows": [],
+   "file_level": [
+    "data/README.md (built by build_onet.py)"
+   ],
+   "status": "sourced per row"
+  },
+  {
+   "file": "onet/tasks.csv",
+   "rows": 18592,
+   "row_level": false,
+   "empty_rows": [],
+   "file_level": [
+    "data/README.md (built by build_onet.py)"
+   ],
+   "status": "sourced for the whole file in data/README.md (built by build_onet.py)"
+  },
+  {
+   "file": "regulated.csv",
+   "rows": 16,
+   "row_level": true,
+   "empty_rows": [],
+   "file_level": [],
+   "status": "sourced per row"
+  },
+  {
+   "file": "related_occupations.csv",
+   "rows": 8900,
+   "row_level": false,
+   "empty_rows": [],
+   "file_level": [
+    "data/README.md (built by build_onet.py)"
+   ],
+   "status": "sourced for the whole file in data/README.md (built by build_onet.py)"
+  },
+  {
+   "file": "review_occupations.csv",
+   "rows": 20,
+   "row_level": false,
+   "empty_rows": [],
+   "file_level": [],
+   "status": "fine",
+   "why": "our own list of occupations queued for a manual review (not data shown as fact)"
+  },
+  {
+   "file": "sample_profiles.json",
+   "rows": 5,
+   "row_level": false,
+   "empty_rows": [],
+   "file_level": [],
+   "status": "fine",
+   "why": "fictional demo people, labelled fictional on every page (no source needed)"
+  },
+  {
+   "file": "sample_team.json",
+   "rows": 8,
+   "row_level": false,
+   "empty_rows": [],
+   "file_level": [],
+   "status": "fine",
+   "why": "fictional demo team, labelled fictional (no source needed)"
+  },
+  {
+   "file": "sdg_map.csv",
+   "rows": 197,
+   "row_level": true,
+   "empty_rows": [],
+   "file_level": [
+    "SOURCES.md",
+    "data/README.md (built by scripts/build_sdg_map.py)"
+   ],
+   "status": "sourced per row"
+  },
+  {
+   "file": "skill_topic_map.csv",
+   "rows": 331,
+   "row_level": true,
+   "empty_rows": [],
+   "file_level": [
+    "data/README.md (built by scripts/build_topic_map.py)"
+   ],
+   "status": "sourced per row"
+  },
+  {
+   "file": "technologies.csv",
+   "rows": 331,
+   "row_level": true,
+   "empty_rows": [],
+   "file_level": [
+    "data/README.md (built by build_onet.py)"
+   ],
+   "status": "sourced per row"
+  }
+ ],
+ "constants": [
+  {
+   "file": "src/main.py",
+   "line": 92,
+   "name": "MAX_BODY",
+   "values": [
+    4000000.0
+   ],
+   "shown": false,
+   "not_shown": [
+    4000000.0
+   ],
+   "kind": "limit",
+   "why": "largest request body"
+  },
+  {
+   "file": "src/main.py",
+   "line": 93,
+   "name": "MAX_AD_CHARS",
+   "values": [
+    20000.0
+   ],
+   "shown": false,
+   "not_shown": [
+    20000.0
+   ],
+   "kind": "limit",
+   "why": "longest job ad read"
+  },
+  {
+   "file": "src/main.py",
+   "line": 94,
+   "name": "UPDATE_TIMEOUT_S",
+   "values": [
+    600.0
+   ],
+   "shown": false,
+   "not_shown": [
+    600.0
+   ],
+   "kind": "limit",
+   "why": "update job timeout"
+  },
+  {
+   "file": "src/main.py",
+   "line": 96,
+   "name": "AUTO_CHECK_S",
+   "values": [
+    3600.0
+   ],
+   "shown": false,
+   "not_shown": [
+    3600.0
+   ],
+   "kind": "limit",
+   "why": "how often the update is checked"
+  },
+  {
+   "file": "src/main.py",
+   "line": 97,
+   "name": "RADAR_LIST",
+   "values": [
+    15.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "src/main.py",
+   "line": 98,
+   "name": "RADAR_TOOLS",
+   "values": [
+    120.0
+   ],
+   "shown": false,
+   "not_shown": [
+    120.0
+   ],
+   "kind": "limit",
+   "why": "tools listed on the Radar"
+  },
+  {
+   "file": "src/main.py",
+   "line": 627,
+   "name": "VERDICT_TOP",
+   "values": [
+    3.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/ai_exposure.py",
+   "line": 56,
+   "name": "MIN_USAGE_PCT",
+   "values": [
+    0.01
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/ai_exposure.py",
+   "line": 57,
+   "name": "MIN_ACTIVITY_PCT",
+   "values": [
+    0.5
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/ai_exposure.py",
+   "line": 58,
+   "name": "FULL_EVIDENCE_PCT",
+   "values": [
+    0.25
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/ai_exposure.py",
+   "line": 59,
+   "name": "THIN_SPREAD",
+   "values": [
+    15.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/ai_exposure.py",
+   "line": 60,
+   "name": "AUTOMATION_WEIGHT",
+   "values": [
+    1.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/ai_exposure.py",
+   "line": 61,
+   "name": "AUGMENTATION_WEIGHT",
+   "values": [
+    0.5
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/ai_exposure.py",
+   "line": 62,
+   "name": "DEFAULT_IMPORTANCE",
+   "values": [
+    3.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/cv_reader.py",
+   "line": 25,
+   "name": "MAX_CHARS",
+   "values": [
+    60000.0
+   ],
+   "shown": false,
+   "not_shown": [
+    60000.0
+   ],
+   "kind": "limit",
+   "why": "longest CV read"
+  },
+  {
+   "file": "scripts/cv_reader.py",
+   "line": 26,
+   "name": "TITLE_EVIDENCE",
+   "values": [
+    70.0
+   ],
+   "shown": false,
+   "not_shown": [
+    70.0
+   ],
+   "kind": "assumption",
+   "why": "a job title named in a CV counts as 70 of 100 experience evidence for its field"
+  },
+  {
+   "file": "scripts/cv_reader.py",
+   "line": 27,
+   "name": "EDUCATION",
+   "values": [
+    2.0,
+    3.0,
+    4.0,
+    5.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/cv_reader.py",
+   "line": 34,
+   "name": "KNOWLEDGE_LEVEL",
+   "values": [
+    2.0,
+    3.0,
+    4.0,
+    5.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/demand.py",
+   "line": 57,
+   "name": "BREAK_QUARTER",
+   "values": [
+    3.0,
+    2025.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/demand.py",
+   "line": 58,
+   "name": "SHARE_FULL_PCT",
+   "values": [
+    20.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/demand.py",
+   "line": 59,
+   "name": "ARXIV_FULL_PCT",
+   "values": [
+    40.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/demand.py",
+   "line": 60,
+   "name": "MYCOL_STRENGTH",
+   "values": [
+    0.0,
+    0.5,
+    1.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/demand.py",
+   "line": 62,
+   "name": "CONFIDENCE",
+   "values": [
+    1.0,
+    2.0,
+    3.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/demand.py",
+   "line": 63,
+   "name": "NEUTRAL",
+   "values": [
+    50.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/demand.py",
+   "line": 87,
+   "name": "ARXIV_DELAY_S",
+   "values": [
+    3.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/evidence.py",
+   "line": 32,
+   "name": "FRESH_AI_DAYS",
+   "values": [
+    270.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/evidence.py",
+   "line": 33,
+   "name": "FRESH_DEMAND_DAYS",
+   "values": [
+    60.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/evidence.py",
+   "line": 34,
+   "name": "GRADES",
+   "values": [
+    0.0,
+    3.0,
+    5.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/evidence.py",
+   "line": 35,
+   "name": "MAPPING_POINTS",
+   "values": [
+    0.0,
+    1.0,
+    2.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/explain.py",
+   "line": 29,
+   "name": "TIMEOUT_S",
+   "values": [
+    25.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/explain.py",
+   "line": 30,
+   "name": "MAX_TOKENS",
+   "values": [
+    1500.0
+   ],
+   "shown": false,
+   "not_shown": [
+    1500.0
+   ],
+   "kind": "limit",
+   "why": "LLM reply cut-off"
+  },
+  {
+   "file": "scripts/explain.py",
+   "line": 31,
+   "name": "CACHE_SIZE",
+   "values": [
+    256.0
+   ],
+   "shown": false,
+   "not_shown": [
+    256.0
+   ],
+   "kind": "limit",
+   "why": "LLM reply cache"
+  },
+  {
+   "file": "scripts/explain.py",
+   "line": 33,
+   "name": "REPLY_LIMIT",
+   "values": [
+    220.0,
+    450.0,
+    550.0,
+    700.0,
+    1400.0,
+    1700.0
+   ],
+   "shown": false,
+   "not_shown": [
+    220.0,
+    450.0,
+    550.0,
+    700.0,
+    1400.0,
+    1700.0
+   ],
+   "kind": "limit",
+   "why": "longest LLM reply kept"
+  },
+  {
+   "file": "scripts/explain.py",
+   "line": 93,
+   "name": "NEUTRAL_BAND",
+   "values": [
+    12.5
+   ],
+   "shown": false,
+   "not_shown": [
+    12.5
+   ],
+   "kind": "assumption",
+   "why": "explanation wording: a part within 12.5 points of the middle is called neutral"
+  },
+  {
+   "file": "scripts/ilo.py",
+   "line": 30,
+   "name": "DATA",
+   "values": [
+    1.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/ilo.py",
+   "line": 31,
+   "name": "DIVERGENCE",
+   "values": [
+    40.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/impact.py",
+   "line": 37,
+   "name": "MAX_HOURS",
+   "values": [
+    2000.0
+   ],
+   "shown": false,
+   "not_shown": [
+    2000.0
+   ],
+   "kind": "limit",
+   "why": "sanity cap on reported hours"
+  },
+  {
+   "file": "scripts/interest.py",
+   "line": 28,
+   "name": "FLAT_RANGE",
+   "values": [
+    3.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/interest.py",
+   "line": 29,
+   "name": "LOW_TOTAL",
+   "values": [
+    18.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/learning.py",
+   "line": 28,
+   "name": "MAX_SKILLS",
+   "values": [
+    10.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/learning.py",
+   "line": 29,
+   "name": "MAX_PER_SKILL",
+   "values": [
+    2.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/learning.py",
+   "line": 30,
+   "name": "MAX_CLAIMABLE",
+   "values": [
+    3.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/learning.py",
+   "line": 31,
+   "name": "MIN_CLAIMABLE_POINTS",
+   "values": [
+    4.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/learning.py",
+   "line": 32,
+   "name": "TOP_ELEMENTS",
+   "values": [
+    8.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/matching.py",
+   "line": 71,
+   "name": "DATA",
+   "values": [
+    1.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/matching.py",
+   "line": 73,
+   "name": "FIELD_WEIGHTS",
+   "values": [
+    0.25,
+    0.5
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/matching.py",
+   "line": 75,
+   "name": "WEIGHTS",
+   "values": [
+    0.15,
+    0.2,
+    0.3,
+    0.35
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/matching.py",
+   "line": 76,
+   "name": "SKILL_SPLIT",
+   "values": [
+    0.25,
+    0.5
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/matching.py",
+   "line": 77,
+   "name": "SDG_BONUS",
+   "values": [
+    6.0,
+    10.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/matching.py",
+   "line": 78,
+   "name": "DEFAULT_JOB_ZONE",
+   "values": [
+    4.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/matching.py",
+   "line": 79,
+   "name": "TOO_LOW",
+   "values": [
+    2.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/matching.py",
+   "line": 80,
+   "name": "MAX_STUDY_LEVELS",
+   "values": [
+    2.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/matching.py",
+   "line": 81,
+   "name": "CURRENT_FIELD",
+   "values": [
+    80.0
+   ],
+   "shown": false,
+   "not_shown": [
+    80.0
+   ],
+   "kind": "assumption",
+   "why": "the job a person does now counts as 80 of 100 experience evidence for its field"
+  },
+  {
+   "file": "scripts/matching.py",
+   "line": 82,
+   "name": "CLEAR_LEAD",
+   "values": [
+    10.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/matching.py",
+   "line": 83,
+   "name": "STABILITY_POOL",
+   "values": [
+    30.0
+   ],
+   "shown": false,
+   "not_shown": [
+    30.0
+   ],
+   "kind": "limit",
+   "why": "how many top occupations the drawn futures re-rank (SOURCES.md: the top 30)"
+  },
+  {
+   "file": "scripts/matching.py",
+   "line": 84,
+   "name": "DEFAULT_HOURS_PER_WEEK",
+   "values": [
+    5.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/matching.py",
+   "line": 85,
+   "name": "MIN_PATH_GAP",
+   "values": [
+    0.5
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/matching.py",
+   "line": 86,
+   "name": "MAX_PATH_STEPS",
+   "values": [
+    14.0
+   ],
+   "shown": false,
+   "not_shown": [
+    14.0
+   ],
+   "kind": "limit",
+   "why": "path steps shown"
+  },
+  {
+   "file": "scripts/matching.py",
+   "line": 87,
+   "name": "DETAIL_ITEMS",
+   "values": [
+    12.0
+   ],
+   "shown": false,
+   "not_shown": [
+    12.0
+   ],
+   "kind": "limit",
+   "why": "detail rows shown"
+  },
+  {
+   "file": "scripts/matching.py",
+   "line": 88,
+   "name": "ROUTE_REACH",
+   "values": [
+    15.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/matching.py",
+   "line": 89,
+   "name": "ROUTES_SHOWN",
+   "values": [
+    3.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/matching.py",
+   "line": 91,
+   "name": "STEADY",
+   "values": [
+    1.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/missions.py",
+   "line": 22,
+   "name": "DATA",
+   "values": [
+    1.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/missions.py",
+   "line": 23,
+   "name": "MAX_SHOWN",
+   "values": [
+    6.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/news.py",
+   "line": 61,
+   "name": "ACTIVITY_STEP",
+   "values": [
+    20.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/news.py",
+   "line": 62,
+   "name": "TOPIC_STEP",
+   "values": [
+    10.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/news.py",
+   "line": 63,
+   "name": "MAX_ACTIVITIES",
+   "values": [
+    4.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/news.py",
+   "line": 64,
+   "name": "MAX_TOPICS",
+   "values": [
+    2.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/news.py",
+   "line": 65,
+   "name": "LLM_CANDIDATES",
+   "values": [
+    60.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/news.py",
+   "line": 66,
+   "name": "TIMEOUT_S",
+   "values": [
+    20.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/news.py",
+   "line": 67,
+   "name": "MAX_PAGE",
+   "values": [
+    3000000.0
+   ],
+   "shown": false,
+   "not_shown": [
+    3000000.0
+   ],
+   "kind": "limit",
+   "why": "largest news page read"
+  },
+  {
+   "file": "scripts/news.py",
+   "line": 69,
+   "name": "REVIEWER_CHARS",
+   "values": [
+    40.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/outlook.py",
+   "line": 57,
+   "name": "HORIZON_YEAR",
+   "values": [
+    2030.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/outlook.py",
+   "line": 58,
+   "name": "SCENARIOS",
+   "values": [
+    0.1,
+    0.25,
+    0.5
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/outlook.py",
+   "line": 69,
+   "name": "ADOPTION_MAX",
+   "values": [
+    0.9
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/outlook.py",
+   "line": 71,
+   "name": "EXPOSURE_SHIFT",
+   "values": [
+    100.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/outlook.py",
+   "line": 72,
+   "name": "BUILDER_SHIFT",
+   "values": [
+    60.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/outlook.py",
+   "line": 73,
+   "name": "TEMPO_SPAN",
+   "values": [
+    0.5
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/outlook.py",
+   "line": 74,
+   "name": "SKILL_SHIFT",
+   "values": [
+    2.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/outlook.py",
+   "line": 75,
+   "name": "SKILL_BUILDER_SHIFT",
+   "values": [
+    1.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/outlook.py",
+   "line": 77,
+   "name": "ROLE_BAND",
+   "values": [
+    2.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/outlook.py",
+   "line": 78,
+   "name": "SKILL_BAND",
+   "values": [
+    0.05
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/outlook.py",
+   "line": 79,
+   "name": "NEUTRAL",
+   "values": [
+    50.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/outlook.py",
+   "line": 81,
+   "name": "FUTURES",
+   "values": [
+    1000.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/outlook.py",
+   "line": 82,
+   "name": "ADOPTION_SHAPE",
+   "values": [
+    2.0,
+    4.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/outlook.py",
+   "line": 83,
+   "name": "DEMAND_SD",
+   "values": [
+    5.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/outlook.py",
+   "line": 84,
+   "name": "PARAM_SPREAD",
+   "values": [
+    0.3
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/outlook.py",
+   "line": 85,
+   "name": "GRID_STEP",
+   "values": [
+    0.05
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/outlook.py",
+   "line": 86,
+   "name": "GRID",
+   "values": [
+    1.0,
+    2.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/pilot.py",
+   "line": 39,
+   "name": "TARGET_PCT",
+   "values": [
+    70.0
+   ],
+   "shown": false,
+   "not_shown": [
+    70.0
+   ],
+   "kind": "limit",
+   "why": "the Phase 1 KPI 1 target (70%), from the Phase 1 proposal"
+  },
+  {
+   "file": "scripts/pilot.py",
+   "line": 40,
+   "name": "MIN_PEOPLE",
+   "values": [
+    20.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/pilot.py",
+   "line": 41,
+   "name": "KEEP_DAYS",
+   "values": [
+    180.0
+   ],
+   "shown": false,
+   "not_shown": [
+    180.0
+   ],
+   "kind": "limit",
+   "why": "retention of workshop answers (README: 180 days)"
+  },
+  {
+   "file": "scripts/pilot.py",
+   "line": 42,
+   "name": "MAX_SESSIONS",
+   "values": [
+    200.0
+   ],
+   "shown": false,
+   "not_shown": [
+    200.0
+   ],
+   "kind": "limit",
+   "why": "workshop sessions kept"
+  },
+  {
+   "file": "scripts/pilot.py",
+   "line": 43,
+   "name": "MAX_PEOPLE",
+   "values": [
+    300.0
+   ],
+   "shown": false,
+   "not_shown": [
+    300.0
+   ],
+   "kind": "limit",
+   "why": "people per workshop session"
+  },
+  {
+   "file": "scripts/registry.py",
+   "line": 23,
+   "name": "DATA",
+   "values": [
+    1.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/releases.py",
+   "line": 24,
+   "name": "TIMEOUT_S",
+   "values": [
+    15.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/robust.py",
+   "line": 25,
+   "name": "ROBUST_TOP",
+   "values": [
+    3.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/robust.py",
+   "line": 26,
+   "name": "TOP",
+   "values": [
+    5.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/robust.py",
+   "line": 27,
+   "name": "RANK_SWING",
+   "values": [
+    2.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/robust.py",
+   "line": 28,
+   "name": "OWN_MOVE",
+   "values": [
+    0.3
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/skillcheck.py",
+   "line": 22,
+   "name": "SKILLS_ASKED",
+   "values": [
+    12.0
+   ],
+   "shown": false,
+   "not_shown": [
+    12.0
+   ],
+   "kind": "limit",
+   "why": "skills asked in the skills check"
+  },
+  {
+   "file": "scripts/skillcheck.py",
+   "line": 23,
+   "name": "KNOWLEDGE_ASKED",
+   "values": [
+    8.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/skillcheck.py",
+   "line": 24,
+   "name": "NOT_YET",
+   "values": [
+    0.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/stress_test.py",
+   "line": 41,
+   "name": "AUTOMATE",
+   "values": [
+    50.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/stress_test.py",
+   "line": 42,
+   "name": "AUGMENT",
+   "values": [
+    20.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/stress_test.py",
+   "line": 43,
+   "name": "AUTOMATION_SIDE",
+   "values": [
+    50.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/stress_test.py",
+   "line": 44,
+   "name": "POOR_EVIDENCE",
+   "values": [
+    60.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/stress_test.py",
+   "line": 45,
+   "name": "FRICTION_MAX",
+   "values": [
+    0.9
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/stress_test.py",
+   "line": 47,
+   "name": "SENSITIVITY",
+   "values": [
+    0.3
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/stress_test.py",
+   "line": 48,
+   "name": "ROUTES",
+   "values": [
+    5.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/stress_test.py",
+   "line": 50,
+   "name": "DEFAULTS",
+   "values": [
+    0.0,
+    0.3,
+    5.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/team.py",
+   "line": 32,
+   "name": "DATA",
+   "values": [
+    1.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/team.py",
+   "line": 33,
+   "name": "HEAT_SKILLS",
+   "values": [
+    8.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/transfer.py",
+   "line": 33,
+   "name": "SIMILAR",
+   "values": [
+    25.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/transfer.py",
+   "line": 34,
+   "name": "CRITICAL_IMPORTANCE",
+   "values": [
+    3.5
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/transfer.py",
+   "line": 35,
+   "name": "CRITICAL_GAP",
+   "values": [
+    1.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/transfer.py",
+   "line": 36,
+   "name": "CRITICAL_PENALTY",
+   "values": [
+    20.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/transfer.py",
+   "line": 37,
+   "name": "TRANSFER_WEIGHTS",
+   "values": [
+    0.2,
+    0.25,
+    0.55
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/transfer.py",
+   "line": 38,
+   "name": "EVIDENCE_WEIGHT",
+   "values": [
+    0.5,
+    0.6,
+    0.8,
+    1.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/transfer.py",
+   "line": 39,
+   "name": "SHOWN",
+   "values": [
+    8.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/whatif.py",
+   "line": 43,
+   "name": "HANDOFF_MAX",
+   "values": [
+    98.0
+   ],
+   "shown": false,
+   "not_shown": [
+    98.0
+   ],
+   "kind": "assumption",
+   "why": "a topic's hands-off share is capped at 98% in a what-if"
+  },
+  {
+   "file": "scripts/whatif.py",
+   "line": 44,
+   "name": "NEWS_FLOOR",
+   "values": [
+    95.0
+   ],
+   "shown": false,
+   "not_shown": [
+    95.0
+   ],
+   "kind": "limit",
+   "why": "simulated-news floor of 95%, stated in SOURCES.md (Simulated news)"
+  },
+  {
+   "file": "scripts/whatif.py",
+   "line": 45,
+   "name": "SHOWN_ACTIVITIES",
+   "values": [
+    80.0
+   ],
+   "shown": false,
+   "not_shown": [
+    80.0
+   ],
+   "kind": "limit",
+   "why": "work activities offered on the page"
+  },
+  {
+   "file": "scripts/whatif.py",
+   "line": 47,
+   "name": "TASK_MOVE",
+   "values": [
+    5.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/whatif.py",
+   "line": 48,
+   "name": "TASKS_SHOWN",
+   "values": [
+    5.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/whatif.py",
+   "line": 49,
+   "name": "WATCHED",
+   "values": [
+    10.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/whatif.py",
+   "line": 50,
+   "name": "MOVES_SHOWN",
+   "values": [
+    3.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/whatif.py",
+   "line": 51,
+   "name": "RANK_MOVE",
+   "values": [
+    2.0
+   ],
+   "shown": true,
+   "not_shown": [],
+   "kind": "shown",
+   "why": ""
+  },
+  {
+   "file": "scripts/whatif.py",
+   "line": 53,
+   "name": "EXAMPLES",
+   "values": [
+    12.0,
+    15.0,
+    20.0
+   ],
+   "shown": false,
+   "not_shown": [
+    12.0
+   ],
+   "kind": "limit",
+   "why": "what-if examples, each labelled as a what-if"
+  },
+  {
+   "file": "scripts/whatif.py",
+   "line": 60,
+   "name": "NEWS",
+   "values": [
+    15.0,
+    20.0,
+    25.0,
+    30.0
+   ],
+   "shown": false,
+   "not_shown": [
+    30.0
+   ],
+   "kind": "limit",
+   "why": "the simulated headlines, labelled simulated on screen"
+  }
+ ],
+ "prose": [
+  {
+   "file": "README.md",
+   "line": 13,
+   "numbers": [
+    "56%",
+    "26%",
+    "600,000",
+    "600,000"
+   ],
+   "text": "A school leaver, a graduate or someone already at work in Malaysia has to choose what to learn next while AI changes which tasks still need people, and mostly chooses by guesswork. AI is spreading faster than training: 5",
+   "status": "fine",
+   "why": "quoted from the SDC 2026 Domain 1 problem statement (line 34); the line says so"
+  },
+  {
+   "file": "README.md",
+   "line": 42,
+   "numbers": [
+    "18,592",
+    "0.01%"
+   ],
+   "text": "- **Measured** (latest release, with its date): the AI share of each of the 18,592 O*NET tasks, the mean of two readings: Anthropic's own task coverage, and `automation × 1 + augmentation × 0.5` in the latest month for t",
+   "status": "fine",
+   "why": "counts from data/onet/tasks.csv and the AI-share rule's threshold (Sources page)"
+  },
+  {
+   "file": "README.md",
+   "line": 44,
+   "numbers": [
+    "10%",
+    "25%",
+    "50%",
+    "90%"
+   ],
+   "text": "- **Assumed** (one number you choose): how far, by 2030, AI use moves from where the data has it towards everywhere it can be used. Slow 10%, moderate 25%, fast 50%, or any value up to 90% with the slider.",
+   "status": "fine",
+   "why": "the scenario assumption, on the Sources page"
+  },
+  {
+   "file": "README.md",
+   "line": 47,
+   "numbers": [
+    "20%",
+    "15%",
+    "30%",
+    "35%"
+   ],
+   "text": "- **Match** = 20% field fit + 15% interest + 30% skills + 35% outlook, each part shown. A part you did not answer is left out, never counted as 0.",
+   "status": "fine",
+   "why": "the match weights, our assumption, on the Sources page"
+  },
+  {
+   "file": "README.md",
+   "line": 60,
+   "numbers": [
+    "1,000"
+   ],
+   "text": "3. **Matches** — every occupation ranked for you, with the field fit, interest, skills and outlook parts; one sentence on what the three scenarios do to the top of your list and why (a list that holds is an answer too); ",
+   "status": "fine",
+   "why": "the number of drawn futures, on the Sources page"
+  },
+  {
+   "file": "README.md",
+   "line": 232,
+   "numbers": [
+    "30%",
+    "46%"
+   ],
+   "text": "An honest limit: **the first recommendation changes between slow and fast adoption for 1 of the 5 demo people** (Siti Hajar). We tried three sourced variants of the outlook formula (the AI share projected towards the ILO",
+   "status": "fine",
+   "why": "experiments described in docs/scenario_report.md"
+  },
+  {
+   "file": "README.md",
+   "line": 267,
+   "numbers": [
+    "5%"
+   ],
+   "text": "- Not done in the UI redesign (Design & UX is 5% of the final rubric): a collapsible sidebar app shell and mobile bottom navigation, a home hero illustration, page-transition micro-interactions, and the new tokens on the",
+   "status": "fine",
+   "why": "the rubric weight, from the finalist guide"
+  },
+  {
+   "file": "SOURCES.md",
+   "line": 51,
+   "numbers": [
+    "0.01%"
+   ],
+   "text": "- **AI share of a task** = mean of two readings, Anthropic's task penetration and `automation × 1 + augmentation × 0.5` in the latest month for tasks with at least 0.01% of all use; the two readings are also its range. A",
+   "status": "fine",
+   "why": "SOURCES.md states the model's own formulas and constants; they are assumptions, on the Sources page"
+  },
+  {
+   "file": "SOURCES.md",
+   "line": 52,
+   "numbers": [
+    "0.25%"
+   ],
+   "text": "- **Thin evidence.** Usage is counted in conversations, so an occupation few people bring to Claude shows little use whatever AI could do for it. Its share is trusted in proportion to its usage (full at 0.25% of all use)",
+   "status": "fine",
+   "why": "SOURCES.md states the model's own formulas and constants; they are assumptions, on the Sources page"
+  },
+  {
+   "file": "SOURCES.md",
+   "line": 55,
+   "numbers": [
+    "20%",
+    "109%"
+   ],
+   "text": "- **Malaysian demand** = 50 + 50 × the confidence-weighted mean of: MyCOL (yes 1, near 0.5, no 0; high confidence, near medium) and the change in the major group's share of all online job ads, last two quarters against t",
+   "status": "fine",
+   "why": "SOURCES.md states the model's own formulas and constants; they are assumptions, on the Sources page"
+  },
+  {
+   "file": "SOURCES.md",
+   "line": 56,
+   "numbers": [
+    "40%"
+   ],
+   "text": "- **Research tempo** = 1 + 0.5 × (momentum − 50) ÷ 50, where momentum = 50 + 50 × (growth of AI papers on arXiv ÷ 40%), capped. All papers grew too, so the AI share of papers can fall while AI papers grow; the Sources pa",
+   "status": "fine",
+   "why": "SOURCES.md states the model's own formulas and constants; they are assumptions, on the Sources page"
+  },
+  {
+   "file": "SOURCES.md",
+   "line": 59,
+   "numbers": [
+    "20%",
+    "15%",
+    "30%",
+    "35%",
+    "50%",
+    "25%"
+   ],
+   "text": "- **Match** = 20% field fit + 15% interest + 30% skills + 35% outlook (+ 10 or 6 points for an occupation serving a UN goal the person picked, capped at 100). Field fit = 50% the person's field choices + 25% interest + 2",
+   "status": "fine",
+   "why": "SOURCES.md states the model's own formulas and constants; they are assumptions, on the Sources page"
+  },
+  {
+   "file": "SOURCES.md",
+   "line": 62,
+   "numbers": [
+    "95%"
+   ],
+   "text": "- **Simulated news** is not data. A headline sets a floor of 95% on the AI share of every task under the O*NET detailed work activities it names and raises the hands-off share of its AI-use topics, on a copy of the data ",
+   "status": "fine",
+   "why": "SOURCES.md states the model's own formulas and constants; they are assumptions, on the Sources page"
+  },
+  {
+   "file": "SOURCES.md",
+   "line": 63,
+   "numbers": [
+    "1,000",
+    "30%"
+   ],
+   "text": "- **Drawn futures**: 1,000 per ranking; each draws the adoption speed (beta 2,4 × 0.9), demand (±5 points), the AI share within its range and the two shift constants (±30%), and ranks the top 30 again.",
+   "status": "fine",
+   "why": "SOURCES.md states the model's own formulas and constants; they are assumptions, on the Sources page"
+  },
+  {
+   "file": "docs/feasibility.md",
+   "line": 25,
+   "numbers": [
+    "RM 5",
+    "RM 0"
+   ],
+   "text": "| 200 (a pilot) | 2 | about RM 50 | about RM 0.25 |",
+   "status": "fine",
+   "why": "figures from docs/cost_model.md (scripts/cost_model.py), named in that section"
+  },
+  {
+   "file": "docs/feasibility.md",
+   "line": 26,
+   "numbers": [
+    "5,000",
+    "RM 7",
+    "RM 0"
+   ],
+   "text": "| 5,000 (one university) | 2 | about RM 71 | about RM 0.014 |",
+   "status": "fine",
+   "why": "figures from docs/cost_model.md (scripts/cost_model.py), named in that section"
+  },
+  {
+   "file": "docs/feasibility.md",
+   "line": 27,
+   "numbers": [
+    "50,000",
+    "RM 5",
+    "RM 0"
+   ],
+   "text": "| 50,000 (many institutions) | 14 | about RM 560 | about RM 0.011 |",
+   "status": "fine",
+   "why": "figures from docs/cost_model.md (scripts/cost_model.py), named in that section"
+  },
+  {
+   "file": "docs/feasibility.md",
+   "line": 42,
+   "numbers": [
+    "RM 5"
+   ],
+   "text": "- **Cost:** about RM 50 a month of hosting for two months.",
+   "status": "fine",
+   "why": "figures from docs/cost_model.md (scripts/cost_model.py), named in that section"
+  },
+  {
+   "file": "docs/feasibility.md",
+   "line": 53,
+   "numbers": [
+    "90.8%",
+    "70.2%",
+    "90%"
+   ],
+   "text": "| Path coverage: an occupation's skills and knowledge with a checked free resource | 90.8% on average, lowest 70.2% | 90% |",
+   "status": "fine",
+   "why": "values from docs/kpi_report.md (scripts/kpi.py), named in the table's heading"
+  },
+  {
+   "file": "docs/feasibility.md",
+   "line": 54,
+   "numbers": [
+    "90.4%",
+    "70%"
+   ],
+   "text": "| Occupations with evidence grade A or B | 90.4% | 70% |",
+   "status": "fine",
+   "why": "values from docs/kpi_report.md"
+  },
+  {
+   "file": "docs/feasibility.md",
+   "line": 55,
+   "numbers": [
+    "2,241"
+   ],
+   "text": "| Rows without a source, link and date | 0 of 2,241 | 0 |",
+   "status": "fine",
+   "why": "the data validator's count, in docs/kpi_report.md"
+  },
+  {
+   "file": "docs/feasibility.md",
+   "line": 64,
+   "numbers": [
+    "40%"
+   ],
+   "text": "| Starts the learning path | 0 | 40% tick at least one resource within 8 weeks | The anonymous path tally on the SDG page |",
+   "status": "fine",
+   "why": "a pilot target we set, not a result (the table lists targets)"
+  },
+  {
+   "file": "docs/feasibility.md",
+   "line": 90,
+   "numbers": [
+    "RM 7",
+    "5,000"
+   ],
+   "text": "| Free for everyone, hosted by one institution | A university or agency, as part of its career service | About RM 71 a month at 5,000 students | Who keeps the data current after the first year |",
+   "status": "fine",
+   "why": "figures from docs/cost_model.md (scripts/cost_model.py), named in that section"
+  },
+  {
+   "file": "docs/pitch/deck_outline.md",
+   "line": 20,
+   "numbers": [
+    "1440"
+   ],
+   "text": "- **截图：** `30-home-1440.png`",
+   "status": "fine",
+   "why": "a screenshot file name"
+  },
+  {
+   "file": "docs/pitch/deck_outline.md",
+   "line": 23,
+   "numbers": [
+    "15%"
+   ],
+   "text": "## 1. Problem-Solution Fit（15%）",
+   "status": "fine",
+   "why": "rubric weight"
+  },
+  {
+   "file": "docs/pitch/deck_outline.md",
+   "line": 42,
+   "numbers": [
+    "25%"
+   ],
+   "text": "## 2. Innovation & Creativity（25%）",
+   "status": "fine",
+   "why": "rubric weight"
+  },
+  {
+   "file": "docs/pitch/deck_outline.md",
+   "line": 44,
+   "numbers": [
+    "18,592"
+   ],
+   "text": "- **标题：** We measure how much of each job's tasks people already hand to AI: 18,592 O*NET tasks, Malaysia next to the world",
+   "status": "fine",
+   "why": "count of data/onet/tasks.csv"
+  },
+  {
+   "file": "docs/pitch/deck_outline.md",
+   "line": 51,
+   "numbers": [
+    "25%"
+   ],
+   "text": "## 3. Technical Execution（25%）",
+   "status": "fine",
+   "why": "rubric weight"
+  },
+  {
+   "file": "docs/pitch/deck_outline.md",
+   "line": 53,
+   "numbers": [
+    "1,194"
+   ],
+   "text": "- **标题：** Deployed, and the judges' checks run as code: blank profile ranks 0 (was 10), 9 of 10 sampled course links open, 0 of 1,194 UI strings missing",
+   "status": "fine",
+   "why": "judge_check check 9 (JC)"
+  },
+  {
+   "file": "docs/pitch/deck_outline.md",
+   "line": 61,
+   "numbers": [
+    "20%"
+   ],
+   "text": "## 4. Impact & Feasibility（20%）—— 用评测数字",
+   "status": "fine",
+   "why": "rubric weight"
+  },
+  {
+   "file": "docs/pitch/deck_outline.md",
+   "line": 87,
+   "numbers": [
+    "5%"
+   ],
+   "text": "## 5. Design & UX（5%）",
+   "status": "fine",
+   "why": "rubric weight"
+  },
+  {
+   "file": "docs/pitch/deck_outline.md",
+   "line": 98,
+   "numbers": [
+    "10%"
+   ],
+   "text": "## 6. Presentation：Honest limits（10%）",
+   "status": "fine",
+   "why": "rubric weight"
+  }
+ ],
+ "ui": [
+  {
+   "file": "src/static/i18n.js",
+   "line": 62,
+   "text": "\"Ads for professionals rise 15%\"",
+   "status": "fine",
+   "why": "a what-if example's own input, labelled as a what-if"
+  },
+  {
+   "file": "src/static/i18n.js",
+   "line": 62,
+   "text": "\"Iklan untuk profesional naik 15%\"",
+   "status": "fine",
+   "why": "same, BM"
+  },
+  {
+   "file": "src/static/i18n.js",
+   "line": 62,
+   "text": "\"专业人员招聘广告上升 15%\"",
+   "status": "fine",
+   "why": "same, ZH"
+  },
+  {
+   "file": "src/static/i18n.js",
+   "line": 63,
+   "text": "\"Service and sales job ads fall 20%\"",
+   "status": "fine",
+   "why": "a what-if example's own input"
+  },
+  {
+   "file": "src/static/i18n.js",
+   "line": 63,
+   "text": "\"Iklan kerja perkhidmatan dan jualan turun 20%\"",
+   "status": "fine",
+   "why": "same, BM"
+  },
+  {
+   "file": "src/static/i18n.js",
+   "line": 63,
+   "text": "\"服务与销售类招聘广告下降 20%\"",
+   "status": "fine",
+   "why": "same, ZH"
+  },
+  {
+   "file": "src/static/i18n.js",
+   "line": 204,
+   "text": "\"Field fit = 50% your choices, 25% interests (O*NET interest profiles), 25% CV, tools and current job.\"",
+   "status": "fine",
+   "why": "the field-fit formula, our assumption, on the Sources page"
+  },
+  {
+   "file": "src/static/i18n.js",
+   "line": 204,
+   "text": "\"Kesesuaian bidang = 50% pilihan anda, 25% minat (profil minat O*NET), 25% CV, alat dan kerja semasa.\"",
+   "status": "fine",
+   "why": "the field-fit formula, our assumption, on the Sources page"
+  },
+  {
+   "file": "src/static/i18n.js",
+   "line": 204,
+   "text": "\"行业契合 = 50% 你的选择 + 25% 兴趣（O*NET 兴趣画像）+ 25% 简历、工具和现职。\"",
+   "status": "fine",
+   "why": "the field-fit formula, our assumption, on the Sources page"
+  },
+  {
+   "file": "src/static/lab-i18n.js",
+   "line": 70,
+   "text": "\"Defaults (moderate adoption, 30% resistance, no demand change)\"",
+   "status": "fine",
+   "why": "the Stress Test's default slider value, labelled as a default"
+  },
+  {
+   "file": "src/static/lab-i18n.js",
+   "line": 70,
+   "text": "\"Lalai (penggunaan sederhana, rintangan 30%, tiada perubahan permintaan)\"",
+   "status": "fine",
+   "why": "the Stress Test's default slider value, labelled as a default"
+  },
+  {
+   "file": "src/static/lab-i18n.js",
+   "line": 70,
+   "text": "\"默认（中速普及、30% 阻力、需求不变）\"",
+   "status": "fine",
+   "why": "the Stress Test's default slider value, labelled as a default"
+  },
+  {
+   "file": "src/static/lab-i18n.js",
+   "line": 174,
+   "text": "\"No adoption speed from 0 to 90% swaps them.\"",
+   "status": "fine",
+   "why": "the adoption slider's range (Sources page: adoption_max)"
+  },
+  {
+   "file": "src/static/lab-i18n.js",
+   "line": 174,
+   "text": "\"Tiada kelajuan penggunaan dari 0 hingga 90% yang menukar susunan.\"",
+   "status": "fine",
+   "why": "the adoption slider's range (Sources page: adoption_max)"
+  },
+  {
+   "file": "src/static/lab-i18n.js",
+   "line": 174,
+   "text": "\"0–90% 之间任何普及速度都不会让两者换位。\"",
+   "status": "fine",
+   "why": "the adoption slider's range (Sources page: adoption_max)"
+  },
+  {
+   "file": "src/static/names-i18n.js",
+   "line": 1022,
+   "text": "\"AI and office management skills for a workforce. Page says 100% HRD Corp Claimable; length and fee not stated on the page\"",
+   "status": "fine",
+   "why": "quotes the course provider's page (HRD Corp claimable), linked in learning_resources.csv"
+  },
+  {
+   "file": "src/static/names-i18n.js",
+   "line": 1022,
+   "text": "\"Kemahiran AI dan pengurusan pejabat untuk tenaga kerja. Halaman menyatakan 100% boleh dituntut HRD Corp; tempoh dan yuran tidak dinyatakan di halaman\"",
+   "status": "fine",
+   "why": "quotes the course provider's page (HRD Corp claimable), linked in learning_resources.csv"
+  },
+  {
+   "file": "src/static/names-i18n.js",
+   "line": 1022,
+   "text": "\"面向员工的 AI 与办公室管理技能。页面注明 100% 可向 HRD Corp 申领；页面未注明时长和费用\"",
+   "status": "fine",
+   "why": "quotes the course provider's page (HRD Corp claimable), linked in learning_resources.csv"
+  }
+ ],
+ "summary": {
+  "data_files": 36,
+  "data_no_source": 0,
+  "data_rows_empty": 0,
+  "constants": 130,
+  "constants_not_shown": 27,
+  "constants_assumption_not_shown": 4,
+  "constants_not_checked": 0,
+  "prose_uncited": 32,
+  "prose_not_checked": 0,
+  "ui_numbers": 18,
+  "ui_not_checked": 0
+ }
+}

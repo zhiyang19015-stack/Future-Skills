@@ -319,6 +319,45 @@ def tuning_rows() -> dict:
             "non_english": share(sum(r["plan"]["non_english"] for r in rows), sum(r["plan"]["resources"] for r in rows))}
 
 
+DIAG_TOP = 50
+
+
+def diagnosis(persons: list[dict], labels: dict) -> dict:
+    """Why first moves concentrate, on this checkout: the score parts of each missed first move against the
+    best-placed acceptable occupation, and how coarse the demand signal is. Describes, changes nothing."""
+    import csv
+    sys.path.insert(0, str(ROOT / "src"))
+    import main  # noqa: E402
+    parts = ("field", "interest", "skill", "outlook")
+    leads, ahead, misses = {k: [] for k in parts}, {k: 0 for k in parts}, 0
+    for x in persons:
+        res = main.dispatch("POST", "/api/match", json.dumps({**x["app_profile"], "scenario": "moderate",
+                                                              "top": DIAG_TOP}).encode("utf-8"))
+        ranked = [m for m in json.loads(res.body).get("results", []) if main.listed(m)]
+        ok = set(labels.get(x["id"], {}).get("acceptable", []))
+        if not ranked or ranked[0]["occ_id"] in ok:
+            continue
+        best = next((m for m in ranked if m["occ_id"] in ok), None)
+        if best is None:
+            continue
+        misses += 1
+        for k in parts:
+            a = (ranked[0]["components"].get(k) or {}).get("points") or 0.0
+            b = (best["components"].get(k) or {}).get("points") or 0.0
+            leads[k].append(a - b)
+            ahead[k] += a > b
+    occ = eval_personas.read_csv("occupations.csv")
+    demand = [float(r["demand"]) for r in eval_personas.read_csv("demand.csv")]
+    low = [o for o in occ if o["isco"][:1] == "2" and o["job_zone"] and int(o["job_zone"]) <= 3]
+    yes = [o for o in occ if o["mycol"] == "yes"]
+    return {"misses": misses, "lead": {k: round(sum(v) / len(v), 1) if v else 0.0 for k, v in leads.items()},
+            "ahead": ahead, "occupations": len(occ), "demand_values": len(set(demand)), "demand_top": max(demand),
+            "demand_top_n": sum(1 for v in demand if v == max(demand)), "mycol_yes": len(yes),
+            "mycol_titles": len({o["mycol_occupation"] for o in yes}), "pro_low_zone": len(low),
+            "pro_low_zone_examples": [f"{o['title']} → {o['isco']} {o['isco_title']}" for o in low
+                                      if o["mycol"] == "yes"][:4]}
+
+
 def run(with_baselines: bool = False, v1_root: Path | None = None) -> dict:
     labels, digest = labels_file()
     persons = held_out()
@@ -339,7 +378,7 @@ def run(with_baselines: bool = False, v1_root: Path | None = None) -> dict:
             rows = score(base[name]["records"], labels)
             versions[name] = {"commit": base[name]["commit"], "rows": rows, "summary": summary(rows, group_of)}
     return {"date": date.today().isoformat(), "labels_sha256": digest, "label": LABEL, "versions": versions,
-            "tuning_set": tuning_rows(), "_baselines": base if with_baselines else None}
+            "tuning_set": tuning_rows(), "diagnosis": diagnosis(persons, labels), "_baselines": base if with_baselines else None}
 
 
 # --- report ------------------------------------------------------------------------------------------
@@ -409,6 +448,25 @@ def as_markdown(r: dict) -> str:
         L.append(f"| {row['id']} | {GROUP_NAMES[group_of[row['id']]]} | {row['first'] or '—'} | {'yes' if row['first_ok'] else 'no'} | "
                  f"{'yes' if row['top5_ok'] else 'no'} | {len(row['top5_bad'])} | {row['first_slow_fast'][0]} → {row['first_slow_fast'][1]} | "
                  f"{p['resources']} / {p['should_not']} / {p['free']} / {p['non_english']} |")
+    d = r.get("diagnosis")
+    if d:
+        L += ["", "## Why first moves concentrate (found after the first run; nothing was changed because of it)", "",
+              f"For each of the {d['misses']} people whose first move is not in their acceptable list, the first move is "
+              f"compared with the best-placed acceptable occupation in their top {DIAG_TOP} (moderate adoption). "
+              "Mean points the first move is ahead by, per part of the match score:", "",
+              "| Part (weight) | Mean lead | First move ahead in |", "|---|---|---|"]
+        L += [f"| {k} ({w}%) | {d['lead'][k]:+g} | {d['ahead'][k]} of {d['misses']} |"
+              for k, w in (("field", 20), ("interest", 15), ("skill", 30), ("outlook", 35))]
+        L += ["", f"- Malaysian demand, which is most of the outlook, has {d['demand_values']} distinct values over "
+              f"{d['occupations']} occupations; {d['demand_top_n']} occupations share the top value {d['demand_top']:g} "
+              "(on the MyCOL list, in the MASCO major group whose share of job ads grew most).",
+              f"- {d['mycol_yes']} occupations count as on the MyCOL list, through {d['mycol_titles']} MyCOL titles: "
+              "an occupation inherits \"yes\" from the ISCO-08 unit group it maps to.",
+              f"- {d['pro_low_zone']} occupations map to ISCO major group 2 (professionals) while O*NET's job zone is 3 or "
+              "less, for example: " + "; ".join(d["pro_low_zone_examples"]) + ". Such a mapping gives the "
+              "professionals' job-ad signal. The raw ESCO crosswalk rows behind them have not been rechecked.",
+              "- Any fix (finer demand, MyCOL by exact title, a checked crosswalk) has to be tested on new synthetic "
+              "people, not on these 40."]
     L += ["", "## Limits", "",
           "- The people and their labels are synthetic. One annotator (an AI agent) wrote the labels; no second annotator "
           "checked them, so label noise is unmeasured.",

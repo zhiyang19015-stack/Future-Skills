@@ -10,7 +10,7 @@ It does not predict one future or say a job will disappear. AI use in a task is 
 
 ### Problem
 
-A school leaver, a graduate or someone already at work in Malaysia has to choose what to learn next while AI changes which tasks still need people, and mostly chooses by guesswork. AI is spreading faster than training: 56% of Malaysian professionals use AI tools at work but only 26% have had formal training (Hays Asia Salary Guide 2025), and MOSTI expects more than 600,000 workers to need reskilling within three to five years. Career tests rarely look at Malaysian demand or at how far AI has already entered each kind of work, and course lists do not say which skills matter for which job. A wrong choice costs months of study for a job the person does not fit or that the market needs less.
+A school leaver, a graduate or someone already at work in Malaysia has to choose what to learn next while AI changes which tasks still need people, and mostly chooses by guesswork. AI is spreading faster than training: 56% of Malaysian professionals use AI tools at work but only 26% have had formal training (Hays Asia Salary Guide 2025), and MOSTI expects more than 600,000 workers to need reskilling within three to five years (both as quoted in the SDC 2026 Domain 1 problem statement; we have not found MOSTI's own statement, so the 600,000 rests on that quote). Career tests rarely look at Malaysian demand or at how far AI has already entered each kind of work, and course lists do not say which skills matter for which job. A wrong choice costs months of study for a job the person does not fit or that the market needs less.
 
 ### Who it is for
 
@@ -223,6 +223,7 @@ python scripts/cost_model.py     # times one full journey and prices a month of 
 python scripts/impact_report.py  # the Phase 1 KPIs against their baseline, journeys on 96 synthetic people, HRD Corp options
 python scripts/eval.py --write   # 40 held-out synthetic people against independent labels -> docs/eval_results.md
 python scripts/v1_vs_v2.py --write  # the competition version against this one, from the result files -> docs/v1_vs_v2.md
+python scripts/source_audit.py --write  # everything with no source we can point to -> docs/source_audit.md
 ```
 
 The scenario report ([docs/scenario_report.md](docs/scenario_report.md)) is a regression check, not a target: it states how many demo people's top 3 change between slow and fast adoption, by how much each part moved, and why the others did not change. No ranking is required to flip, and the model is not tuned to make one flip. `tests/test_scenarios.py` guards the demo set instead: the people on the home page must go on showing both a list that changes with the scenario and a list that holds.

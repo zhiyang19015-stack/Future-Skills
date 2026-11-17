@@ -60,7 +60,7 @@
 
 ## 4. Impact & Feasibility（20%）—— 用评测数字
 
-- **标题：** Pathway coverage 14% → 94.8% (IT occupations; 90.8% over all 910) against a 40% Phase 1 target; on 40 held-out synthetic people, 62.5% get a counsellor-accepted role in their top 5 (v1: 15%)
+- **标题：** Pathway coverage 14% → 94.8% (IT occupations; 90.8% over all 910) against a 40% Phase 1 target; on 40 held-out synthetic people, 62.5% get a counsellor-accepted role in their top 5 (v1: 15%)（出处：IV、EV）
 - **内容：**
 
   | 指标 | Phase 1 基线 | 目标 | 现在 | 出处 |
@@ -102,10 +102,11 @@
   - 评测里，第一推荐只集中在少数几个职业上：
     - 40 人只出现 23 个不同的第一推荐。
     - CNC Tool Programmers 5 人，Tax Preparers 5 人，Talent Directors 4 人，Medical Equipment Repairers 3 人，Registered Nurses 3 人：前 5 个职业占了 20 人（EV）。
-    - 我们没有为了提高分数去调参数。
+    - 原因已经查清：26 个没对上的人里，26 个是靠前景分赢的（平均多 6.8 分）；前景分大部分来自马来西亚需求分，而需求分在 910 个职业上只有 15 个不同的值，其中 111 个职业并列最高的 90.6（EV 的 "Why first moves concentrate"）。
+    - 我们没有为了提高分数去调参数。要改，就用新的一批人物验证。
   - 情景：
-    - 慢和快两种情景下，前 5 名组成变了的人有 70%（28/40）。
-    - 第一推荐变了的只有 20%（8/40）。v1 是 45%，因为 v1 只在 25 个 IT 职位里重新排序。
+    - 慢和快两种情景下，前 5 名组成变了的人有 70%（28/40，EV）。
+    - 第一推荐变了的只有 20%（8/40，EV）。v1 是 45%，因为 v1 只在 25 个 IT 职位里重新排序。
   - 数据限制：
     - AI 使用数据只来自一家公司的产品，只有两个月。
     - 机器人和机器做的工作不在数据里。
@@ -115,5 +116,5 @@
 ## 7. 结尾：Next
 
 - 真人试点：用 Workshop check 做 20 人以上的前后测，算 KPI 1。
-- 第一推荐太集中：先查清楚原因（前景分占 35%），再决定改不改，并且只用留出集之外的新人物来验证。
+- 第一推荐太集中：把需求分做细（MyCOL 只认确切职称，不再按 ISCO 组继承；重新核对 ESCO 对照），并且只用留出集之外的新人物来验证。
 - 合作方：大学和 TVET 的就业中心先上，企业 HR 放在试点之后。
